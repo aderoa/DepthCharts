@@ -417,6 +417,7 @@
   <!-- Admin banner -->
   <div id="adminBanner" class="admin-banner">
     🔧 ADMIN MODE — Drag changes are saved for all visitors
+    <span id="connStatus" style="margin-left: 1rem; font-weight: 500;"></span>
     <span id="saveStatus" class="admin-save-status">✓ Saved</span>
   </div>
 
@@ -482,50 +483,85 @@
     
     function initFirebase() {
       try {
-        if (FIREBASE_CONFIG.apiKey === "YOUR_API_KEY") {
-          console.warn('Firebase not configured — using local-only mode');
-          return false;
-        }
         firebase.initializeApp(FIREBASE_CONFIG);
         db = firebase.database();
+        console.log('✅ Firebase initialized successfully');
+        // Quick connection test
+        db.ref('.info/connected').on('value', (snap) => {
+          if (snap.val() === true) {
+            console.log('✅ Firebase connected');
+            updateAdminBannerStatus('🟢 Connected');
+          } else {
+            console.log('⚠️ Firebase disconnected');
+            updateAdminBannerStatus('🔴 Disconnected');
+          }
+        });
         return true;
       } catch (e) {
-        console.error('Firebase init error:', e);
+        console.error('❌ Firebase init error:', e);
+        updateAdminBannerStatus('🔴 Firebase Error: ' + e.message);
         return false;
       }
     }
     
+    function updateAdminBannerStatus(msg) {
+      const banner = document.getElementById('adminBanner');
+      const connStatus = document.getElementById('connStatus');
+      if (connStatus) connStatus.textContent = msg;
+    }
+    
     // Save team order to Firebase
     function saveTeamOrder(teamAbbrev, container) {
-      if (!db || !isAdmin) return;
+      if (!db) {
+        console.error('❌ Save failed: db is null');
+        return;
+      }
+      if (!isAdmin) {
+        console.log('⏭️ Not admin, skipping save');
+        return;
+      }
       
       const columns = container.querySelectorAll('[class*="position-column"]');
       const order = {};
       
       columns.forEach(col => {
         const pos = col.dataset.position;
+        if (!pos) return; // skip elements without position (like headers)
         const cards = col.querySelectorAll('[class*="player-card"]');
         order[pos] = [];
         cards.forEach(card => {
-          order[pos].push(card.dataset.player);
+          if (card.dataset.player) {
+            order[pos].push(card.dataset.player);
+          }
         });
       });
       
+      console.log('💾 Saving order for', teamAbbrev, order);
+      
       db.ref('depthcharts/' + teamAbbrev).set(order).then(() => {
+        console.log('✅ Saved', teamAbbrev);
         showSaveStatus();
       }).catch(err => {
-        console.error('Save error:', err);
+        console.error('❌ Save error for', teamAbbrev, err);
+        const el = document.getElementById('saveStatus');
+        el.textContent = '❌ Save failed!';
+        el.classList.add('visible');
       });
     }
     
     // Load team order from Firebase
     async function loadTeamOrder(teamAbbrev) {
-      if (!db) return null;
+      if (!db) {
+        console.log('⚠️ No Firebase db, using defaults');
+        return null;
+      }
       try {
         const snapshot = await db.ref('depthcharts/' + teamAbbrev).once('value');
-        return snapshot.val();
+        const val = snapshot.val();
+        console.log('📖 Loaded order for', teamAbbrev, val ? 'found' : 'no saved order');
+        return val;
       } catch (e) {
-        console.error('Load error:', e);
+        console.error('❌ Load error for', teamAbbrev, e);
         return null;
       }
     }
@@ -533,6 +569,7 @@
     // Flash save indicator
     function showSaveStatus() {
       const el = document.getElementById('saveStatus');
+      el.textContent = '✓ Saved';
       el.classList.add('visible');
       clearTimeout(el._timeout);
       el._timeout = setTimeout(() => el.classList.remove('visible'), 2000);
@@ -1186,7 +1223,18 @@
         document.getElementById('loading').style.display = 'none';
         
         if (isAdmin && !teamParam) {
-          // Admin mode: show all teams
+          // Admin mode: test Firebase write
+          if (db) {
+            try {
+              await db.ref('_test').set({ timestamp: Date.now() });
+              console.log('✅ Firebase test write successful');
+              await db.ref('_test').remove();
+            } catch (e) {
+              console.error('❌ Firebase test write FAILED:', e);
+              document.getElementById('connStatus').textContent = '🔴 Write Failed: ' + e.message;
+            }
+          }
+          // Show all teams
           await renderAdminAllTeams();
         } else if (teamParam && NBA_TEAMS.some(t => t.abbrev === teamParam)) {
           await renderDepthChart(teamParam);
