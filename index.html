@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Charlotte Hornets Depth Chart</title>
+  <title>NBA Depth Charts by Trade Value</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -14,32 +14,135 @@
     
     body {
       font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(135deg, #1d428a 0%, #00788c 100%);
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
       min-height: 100vh;
-      padding: 2rem;
+      color: white;
     }
     
     .container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
     }
     
     h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .subtitle {
+      color: #8892b0;
+      font-size: 1.1rem;
+    }
+    
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
       color: white;
-      text-align: center;
+      text-decoration: none;
+      font-weight: 500;
       margin-bottom: 1.5rem;
+      transition: all 0.2s;
+    }
+    
+    .back-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    /* Team Grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    
+    .team-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: white;
+    }
+    
+    .team-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+    
+    .team-logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 0.75rem;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+    
+    .team-name {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    
+    .team-abbrev {
+      color: #8892b0;
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+    }
+    
+    /* Depth Chart */
+    .depth-chart-container {
+      display: none;
+    }
+    
+    .depth-chart-container.active {
+      display: block;
+    }
+    
+    .team-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .team-header-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+    
+    .team-header-name {
       font-size: 2rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      font-weight: 700;
     }
     
     .depth-chart {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 0.5rem;
+      gap: 0.75rem;
       background: rgba(255,255,255,0.95);
       border-radius: 16px;
-      padding: 1rem;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      padding: 1.25rem;
+      color: #1a1a2e;
     }
     
     .position-column {
@@ -52,9 +155,9 @@
       text-align: center;
       font-weight: 700;
       font-size: 1.1rem;
-      color: #1d428a;
+      color: #1a1a2e;
       padding: 0.5rem;
-      border-bottom: 3px solid #00788c;
+      border-bottom: 3px solid #667eea;
       margin-bottom: 0.25rem;
     }
     
@@ -63,20 +166,20 @@
       border-radius: 12px;
       padding: 0.75rem;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       transition: transform 0.2s, box-shadow 0.2s;
       border: 2px solid transparent;
     }
     
     .player-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-      border-color: #00788c;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      border-color: #667eea;
     }
     
     .player-card.starter {
-      background: linear-gradient(135deg, #fff 0%, #e6f3f5 100%);
-      border: 2px solid #1d428a;
+      background: linear-gradient(135deg, #fff 0%, #f0f4ff 100%);
+      border: 2px solid #667eea;
     }
     
     .player-image {
@@ -84,7 +187,7 @@
       height: 60px;
       margin: 0 auto 0.5rem;
       border-radius: 8px;
-      background: linear-gradient(135deg, #1d428a 0%, #00788c 100%);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -105,7 +208,7 @@
     
     .player-name {
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #1a1a2e;
       margin-bottom: 0.25rem;
       white-space: nowrap;
@@ -115,32 +218,61 @@
     
     .trade-value {
       font-size: 0.8rem;
-      color: #00788c;
       font-weight: 600;
     }
     
-    .trade-value.high {
-      color: #16a34a;
-    }
-    
-    .trade-value.medium {
-      color: #ca8a04;
-    }
-    
-    .trade-value.low {
-      color: #6b7280;
-    }
+    .trade-value.high { color: #16a34a; }
+    .trade-value.medium { color: #ca8a04; }
+    .trade-value.low { color: #6b7280; }
     
     .loading {
       text-align: center;
-      color: white;
-      font-size: 1.2rem;
+      padding: 4rem 2rem;
+    }
+    
+    .loading-spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid rgba(255,255,255,0.2);
+      border-top-color: #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .error {
+      text-align: center;
       padding: 2rem;
+      color: #f87171;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      color: #8892b0;
+      font-size: 0.9rem;
+    }
+    
+    footer a {
+      color: #667eea;
+      text-decoration: none;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
     }
     
     @media (max-width: 900px) {
       .depth-chart {
         grid-template-columns: repeat(3, 1fr);
+      }
+      .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       }
     }
     
@@ -148,48 +280,123 @@
       .depth-chart {
         grid-template-columns: repeat(2, 1fr);
       }
-      
-      .player-image {
-        width: 60px;
-        height: 45px;
-      }
+      h1 { font-size: 1.75rem; }
+      .team-header-name { font-size: 1.5rem; }
+      .player-image { width: 60px; height: 45px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🐝 Charlotte Hornets Depth Chart</h1>
-    <div id="loading" class="loading">Loading trade values...</div>
-    <div id="depthChart" class="depth-chart" style="display: none;"></div>
+    <header>
+      <h1>🏀 NBA Depth Charts</h1>
+      <p class="subtitle">Ranked by Trade Value</p>
+    </header>
+    
+    <div id="loading" class="loading">
+      <div class="loading-spinner"></div>
+      <p>Loading NBA data...</p>
+    </div>
+    
+    <div id="teamGrid" class="team-grid" style="display: none;"></div>
+    
+    <div id="depthChartContainer" class="depth-chart-container">
+      <a href="?" class="back-btn">← All Teams</a>
+      <div class="team-header">
+        <img id="teamLogo" class="team-header-logo" src="" alt="">
+        <h2 id="teamName" class="team-header-name"></h2>
+      </div>
+      <div id="depthChart" class="depth-chart"></div>
+    </div>
+    
+    <div id="error" class="error" style="display: none;"></div>
+    
+    <footer>
+      Trade values computed using <a href="https://hoopsmatic.com" target="_blank">HoopsMatic</a> methodology
+    </footer>
   </div>
   
   <script>
-    // Charlotte roster with positions (from spreadsheet column BM)
-    const charlotteRoster = [
-      { name: 'LaMelo Ball', position: 'PG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630163.png' },
-      { name: 'Tre Mann', position: 'PG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630195.png' },
-      { name: 'KJ Simpson', position: 'PG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1642249.png' },
-      { name: 'Coby White', position: 'SG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629632.png' },
-      { name: 'Sion James', position: 'SG', headshot: '' },
-      { name: 'Josh Green', position: 'SG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630182.png' },
-      { name: 'Kon Knueppel', position: 'SG', headshot: '' },
-      { name: 'Malaki Branham', position: 'SG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1631103.png' },
-      { name: 'Antonio Reeves', position: 'SG', headshot: '' },
-      { name: 'Brandon Miller', position: 'SF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1641706.png' },
-      { name: 'Liam McNeeley', position: 'SF', headshot: '' },
-      { name: 'Miles Bridges', position: 'PF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628970.png' },
-      { name: 'Grant Williams', position: 'PF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629684.png' },
-      { name: 'Moussa Diabate', position: 'PF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1631217.png' },
-      { name: 'Tidjane Salaun', position: 'PF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1642259.png' },
-      { name: 'Xavier Tillman', position: 'PF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630214.png' },
-      { name: 'Ryan Kalkbrenner', position: 'C', headshot: '' },
-      { name: 'PJ Hall', position: 'C', headshot: '' }
+    // NBA Teams
+    const NBA_TEAMS = [
+      { abbrev: 'ATL', name: 'Atlanta Hawks', logo: 'https://cdn.nba.com/logos/nba/1610612737/global/L/logo.svg' },
+      { abbrev: 'BOS', name: 'Boston Celtics', logo: 'https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg' },
+      { abbrev: 'BKN', name: 'Brooklyn Nets', logo: 'https://cdn.nba.com/logos/nba/1610612751/global/L/logo.svg' },
+      { abbrev: 'CHA', name: 'Charlotte Hornets', logo: 'https://cdn.nba.com/logos/nba/1610612766/global/L/logo.svg' },
+      { abbrev: 'CHI', name: 'Chicago Bulls', logo: 'https://cdn.nba.com/logos/nba/1610612741/global/L/logo.svg' },
+      { abbrev: 'CLE', name: 'Cleveland Cavaliers', logo: 'https://cdn.nba.com/logos/nba/1610612739/global/L/logo.svg' },
+      { abbrev: 'DAL', name: 'Dallas Mavericks', logo: 'https://cdn.nba.com/logos/nba/1610612742/global/L/logo.svg' },
+      { abbrev: 'DEN', name: 'Denver Nuggets', logo: 'https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg' },
+      { abbrev: 'DET', name: 'Detroit Pistons', logo: 'https://cdn.nba.com/logos/nba/1610612765/global/L/logo.svg' },
+      { abbrev: 'GSW', name: 'Golden State Warriors', logo: 'https://cdn.nba.com/logos/nba/1610612744/global/L/logo.svg' },
+      { abbrev: 'HOU', name: 'Houston Rockets', logo: 'https://cdn.nba.com/logos/nba/1610612745/global/L/logo.svg' },
+      { abbrev: 'IND', name: 'Indiana Pacers', logo: 'https://cdn.nba.com/logos/nba/1610612754/global/L/logo.svg' },
+      { abbrev: 'LAC', name: 'LA Clippers', logo: 'https://cdn.nba.com/logos/nba/1610612746/global/L/logo.svg' },
+      { abbrev: 'LAL', name: 'Los Angeles Lakers', logo: 'https://cdn.nba.com/logos/nba/1610612747/global/L/logo.svg' },
+      { abbrev: 'MEM', name: 'Memphis Grizzlies', logo: 'https://cdn.nba.com/logos/nba/1610612763/global/L/logo.svg' },
+      { abbrev: 'MIA', name: 'Miami Heat', logo: 'https://cdn.nba.com/logos/nba/1610612748/global/L/logo.svg' },
+      { abbrev: 'MIL', name: 'Milwaukee Bucks', logo: 'https://cdn.nba.com/logos/nba/1610612749/global/L/logo.svg' },
+      { abbrev: 'MIN', name: 'Minnesota Timberwolves', logo: 'https://cdn.nba.com/logos/nba/1610612750/global/L/logo.svg' },
+      { abbrev: 'NOP', name: 'New Orleans Pelicans', logo: 'https://cdn.nba.com/logos/nba/1610612740/global/L/logo.svg' },
+      { abbrev: 'NYK', name: 'New York Knicks', logo: 'https://cdn.nba.com/logos/nba/1610612752/global/L/logo.svg' },
+      { abbrev: 'OKC', name: 'Oklahoma City Thunder', logo: 'https://cdn.nba.com/logos/nba/1610612760/global/L/logo.svg' },
+      { abbrev: 'ORL', name: 'Orlando Magic', logo: 'https://cdn.nba.com/logos/nba/1610612753/global/L/logo.svg' },
+      { abbrev: 'PHI', name: 'Philadelphia 76ers', logo: 'https://cdn.nba.com/logos/nba/1610612755/global/L/logo.svg' },
+      { abbrev: 'PHX', name: 'Phoenix Suns', logo: 'https://cdn.nba.com/logos/nba/1610612756/global/L/logo.svg' },
+      { abbrev: 'POR', name: 'Portland Trail Blazers', logo: 'https://cdn.nba.com/logos/nba/1610612757/global/L/logo.svg' },
+      { abbrev: 'SAC', name: 'Sacramento Kings', logo: 'https://cdn.nba.com/logos/nba/1610612758/global/L/logo.svg' },
+      { abbrev: 'SAS', name: 'San Antonio Spurs', logo: 'https://cdn.nba.com/logos/nba/1610612759/global/L/logo.svg' },
+      { abbrev: 'TOR', name: 'Toronto Raptors', logo: 'https://cdn.nba.com/logos/nba/1610612761/global/L/logo.svg' },
+      { abbrev: 'UTA', name: 'Utah Jazz', logo: 'https://cdn.nba.com/logos/nba/1610612762/global/L/logo.svg' },
+      { abbrev: 'WAS', name: 'Washington Wizards', logo: 'https://cdn.nba.com/logos/nba/1610612764/global/L/logo.svg' }
     ];
     
-    // Trade value computation (same as Trade Machine)
+    // Team name variations for matching
+    const TEAM_ALIASES = {
+      'Atlanta': 'ATL', 'Hawks': 'ATL',
+      'Boston': 'BOS', 'Celtics': 'BOS',
+      'Brooklyn': 'BKN', 'Nets': 'BKN',
+      'Charlotte': 'CHA', 'Hornets': 'CHA',
+      'Chicago': 'CHI', 'Bulls': 'CHI',
+      'Cleveland': 'CLE', 'Cavaliers': 'CLE', 'Cavs': 'CLE',
+      'Dallas': 'DAL', 'Mavericks': 'DAL', 'Mavs': 'DAL',
+      'Denver': 'DEN', 'Nuggets': 'DEN',
+      'Detroit': 'DET', 'Pistons': 'DET',
+      'Golden State': 'GSW', 'Warriors': 'GSW',
+      'Houston': 'HOU', 'Rockets': 'HOU',
+      'Indiana': 'IND', 'Pacers': 'IND',
+      'LA Clippers': 'LAC', 'Clippers': 'LAC',
+      'Los Angeles Lakers': 'LAL', 'Lakers': 'LAL', 'LA Lakers': 'LAL',
+      'Memphis': 'MEM', 'Grizzlies': 'MEM',
+      'Miami': 'MIA', 'Heat': 'MIA',
+      'Milwaukee': 'MIL', 'Bucks': 'MIL',
+      'Minnesota': 'MIN', 'Timberwolves': 'MIN', 'Wolves': 'MIN',
+      'New Orleans': 'NOP', 'Pelicans': 'NOP',
+      'New York': 'NYK', 'Knicks': 'NYK',
+      'Oklahoma City': 'OKC', 'Thunder': 'OKC',
+      'Orlando': 'ORL', 'Magic': 'ORL',
+      'Philadelphia': 'PHI', '76ers': 'PHI', 'Sixers': 'PHI',
+      'Phoenix': 'PHX', 'Suns': 'PHX',
+      'Portland': 'POR', 'Trail Blazers': 'POR', 'Blazers': 'POR',
+      'Sacramento': 'SAC', 'Kings': 'SAC',
+      'San Antonio': 'SAS', 'Spurs': 'SAS',
+      'Toronto': 'TOR', 'Raptors': 'TOR',
+      'Utah': 'UTA', 'Jazz': 'UTA',
+      'Washington': 'WAS', 'Wizards': 'WAS'
+    };
+    
+    // Trade Value CSV
     const TV_SHEET_ID = '2PACX-1vSg6im6IYB6HXMGzQbmmBnLw9SfQLzxCSo8OfChxlJLhsB6BBCO0wPF_TMch0YgAbtFqYkwDWrsxRe7';
     const TV_GID = '1310971167';
     const TV_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${TV_SHEET_ID}/pub?gid=${TV_GID}&single=true&output=csv`;
+    
+    // Roster CSV (main sheet with positions)
+    const ROSTER_SHEET_ID = '2PACX-1vSg6im6IYB6HXMGzQbmmBnLw9SfQLzxCSo8OfChxlJLhsB6BBCO0wPF_TMch0YgAbtFqYkwDWrsxRe7';
+    const ROSTER_GID = '0';
+    const ROSTER_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${ROSTER_SHEET_ID}/pub?gid=${ROSTER_GID}&single=true&output=csv`;
+    
+    let allPlayers = []; // { name, team, position, tradeValue, headshot }
+    let tradeValueMap = new Map();
     
     function parseCSV(text) {
       const rows = []; let current = '', inQuotes = false, row = [];
@@ -341,14 +548,58 @@
       return result;
     }
     
-    function formatTradeValue(tv) {
-      if (tv >= 1000000) {
-        return '$' + (tv / 1000000).toFixed(1) + 'M';
-      } else if (tv >= 1000) {
-        return '$' + (tv / 1000).toFixed(0) + 'K';
-      } else {
-        return '$' + tv.toLocaleString();
+    function parseRosterCSV(csvText) {
+      const lines = csvText.split('\n');
+      const players = [];
+      
+      // Find header row
+      let headerIdx = -1;
+      let headers = [];
+      for (let i = 0; i < Math.min(5, lines.length); i++) {
+        if (lines[i].includes('PLAYER') && lines[i].includes('TEAM')) {
+          headerIdx = i;
+          headers = lines[i].split(',').map(h => h.trim().replace(/"/g, ''));
+          break;
+        }
       }
+      
+      if (headerIdx < 0) return players;
+      
+      const playerIdx = headers.indexOf('PLAYER');
+      const teamIdx = headers.indexOf('TEAM');
+      const posIdx = headers.indexOf('POSITION');
+      const headshotIdx = headers.indexOf('HEADSHOT');
+      
+      for (let i = headerIdx + 1; i < lines.length; i++) {
+        const row = parseCSV(lines[i])[0];
+        if (!row) continue;
+        
+        const name = row[playerIdx]?.trim();
+        const team = row[teamIdx]?.trim();
+        const position = row[posIdx]?.trim() || '';
+        const headshot = row[headshotIdx]?.trim() || '';
+        
+        if (name && team) {
+          const teamAbbrev = TEAM_ALIASES[team] || team;
+          const tv = tradeValueMap.get(name.toLowerCase()) || 0;
+          
+          players.push({
+            name,
+            team: teamAbbrev,
+            position: position || 'SF', // Default to SF if missing
+            tradeValue: tv,
+            headshot
+          });
+        }
+      }
+      
+      return players;
+    }
+    
+    function formatTradeValue(tv) {
+      if (tv >= 1000000) return '$' + (tv / 1000000).toFixed(1) + 'M';
+      if (tv >= 1000) return '$' + (tv / 1000).toFixed(0) + 'K';
+      return '$' + tv.toLocaleString();
     }
     
     function getValueClass(tv) {
@@ -361,21 +612,50 @@
       return name.split(' ').map(n => n[0]).join('');
     }
     
-    function renderDepthChart(tradeValues) {
-      const positions = ['PG', 'SG', 'SF', 'PF', 'C'];
-      const depthChart = document.getElementById('depthChart');
-      const loading = document.getElementById('loading');
+    function renderTeamGrid() {
+      const grid = document.getElementById('teamGrid');
+      grid.innerHTML = NBA_TEAMS.map(team => `
+        <a href="?team=${team.abbrev}" class="team-card">
+          <img class="team-logo" src="${team.logo}" alt="${team.name}" onerror="this.style.display='none'">
+          <div class="team-name">${team.name}</div>
+          <div class="team-abbrev">${team.abbrev}</div>
+        </a>
+      `).join('');
+      grid.style.display = 'grid';
+    }
+    
+    function renderDepthChart(teamAbbrev) {
+      const team = NBA_TEAMS.find(t => t.abbrev === teamAbbrev);
+      if (!team) {
+        document.getElementById('error').textContent = `Team "${teamAbbrev}" not found`;
+        document.getElementById('error').style.display = 'block';
+        return;
+      }
       
-      // Group players by position and sort by trade value
+      const teamPlayers = allPlayers.filter(p => p.team === teamAbbrev);
+      
+      if (teamPlayers.length === 0) {
+        document.getElementById('error').textContent = `No players found for ${team.name}`;
+        document.getElementById('error').style.display = 'block';
+        return;
+      }
+      
+      // Update header
+      document.getElementById('teamLogo').src = team.logo;
+      document.getElementById('teamName').textContent = team.name;
+      document.title = `${team.name} Depth Chart`;
+      
+      // Group by position
+      const positions = ['PG', 'SG', 'SF', 'PF', 'C'];
       const byPosition = {};
       positions.forEach(pos => byPosition[pos] = []);
       
-      charlotteRoster.forEach(player => {
-        const tv = tradeValues.get(player.name.toLowerCase()) || 0;
-        byPosition[player.position].push({ ...player, tradeValue: tv });
+      teamPlayers.forEach(player => {
+        const pos = positions.includes(player.position) ? player.position : 'SF';
+        byPosition[pos].push(player);
       });
       
-      // Sort each position by trade value (descending)
+      // Sort by trade value
       positions.forEach(pos => {
         byPosition[pos].sort((a, b) => b.tradeValue - a.tradeValue);
       });
@@ -408,22 +688,44 @@
         html += '</div>';
       });
       
-      depthChart.innerHTML = html;
-      depthChart.style.display = 'grid';
-      loading.style.display = 'none';
+      document.getElementById('depthChart').innerHTML = html;
+      document.getElementById('depthChartContainer').classList.add('active');
     }
     
-    // Load data and render
-    fetch(TV_CSV_URL)
-      .then(r => r.ok ? r.text() : Promise.reject('Failed to fetch'))
-      .then(csvText => {
-        const tradeValues = computeTradeValues(csvText);
-        renderDepthChart(tradeValues);
-      })
-      .catch(err => {
+    async function init() {
+      const params = new URLSearchParams(window.location.search);
+      const teamParam = params.get('team')?.toUpperCase();
+      
+      try {
+        // Fetch trade values
+        const tvResponse = await fetch(TV_CSV_URL);
+        if (!tvResponse.ok) throw new Error('Failed to fetch trade values');
+        const tvText = await tvResponse.text();
+        tradeValueMap = computeTradeValues(tvText);
+        
+        // Fetch roster data
+        const rosterResponse = await fetch(ROSTER_CSV_URL);
+        if (!rosterResponse.ok) throw new Error('Failed to fetch roster');
+        const rosterText = await rosterResponse.text();
+        allPlayers = parseRosterCSV(rosterText);
+        
+        document.getElementById('loading').style.display = 'none';
+        
+        if (teamParam && NBA_TEAMS.some(t => t.abbrev === teamParam)) {
+          renderDepthChart(teamParam);
+        } else {
+          renderTeamGrid();
+        }
+        
+      } catch (err) {
         console.error('Error:', err);
-        document.getElementById('loading').textContent = 'Error loading data. Please refresh.';
-      });
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('error').textContent = 'Error loading data. Please refresh.';
+        document.getElementById('error').style.display = 'block';
+      }
+    }
+    
+    init();
   </script>
 </body>
 </html>
