@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NBA Depth Charts by Trade Value</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -47,6 +52,33 @@
     
     .back-btn:hover { background: rgba(255,255,255,0.2); }
     
+    /* Admin banner */
+    .admin-banner {
+      display: none;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #1a1a2e;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      letter-spacing: 0.5px;
+    }
+    
+    .admin-banner.active { display: block; }
+    
+    .admin-save-status {
+      display: inline-block;
+      margin-left: 1rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .admin-save-status.visible { opacity: 1; }
+    
     /* Team Grid */
     .team-grid {
       display: grid;
@@ -82,7 +114,7 @@
     .team-name { font-weight: 600; font-size: 0.95rem; }
     .team-abbrev { color: #8892b0; font-size: 0.8rem; margin-top: 0.25rem; }
     
-    /* Depth Chart */
+    /* Single team Depth Chart */
     .depth-chart-container { display: none; }
     .depth-chart-container.active { display: block; }
     
@@ -242,13 +274,139 @@
     footer a { color: #667eea; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
     
+    /* ===== ADMIN ALL-TEAMS VIEW ===== */
+    .admin-all-teams { display: none; }
+    .admin-all-teams.active { display: block; }
+    
+    .admin-team-row {
+      margin-bottom: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .admin-team-row-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .admin-team-row-logo {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+    
+    .admin-team-row-name {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    
+    .admin-team-row-abbrev {
+      color: #8892b0;
+      font-size: 0.8rem;
+      margin-left: 0.25rem;
+    }
+    
+    .admin-depth-chart {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: rgba(255,255,255,0.92);
+      color: #1a1a2e;
+    }
+    
+    .admin-position-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      min-height: 80px;
+    }
+    
+    .admin-position-header {
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #1a1a2e;
+      padding: 0.3rem;
+      border-bottom: 2px solid #667eea;
+      margin-bottom: 0.2rem;
+    }
+    
+    .admin-player-card {
+      background: white;
+      border-radius: 8px;
+      padding: 0.4rem 0.5rem;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      transition: transform 0.1s, box-shadow 0.1s, opacity 0.1s;
+      border: 2px solid transparent;
+      cursor: grab;
+      user-select: none;
+      font-size: 0.75rem;
+    }
+    
+    .admin-player-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-color: #667eea;
+    }
+    
+    .admin-player-card.starter {
+      background: linear-gradient(135deg, #fff 0%, #f0f4ff 100%);
+      border: 2px solid #667eea;
+    }
+    
+    .admin-player-card.dragging {
+      opacity: 0.5;
+      cursor: grabbing;
+    }
+    
+    .admin-player-card.drag-over {
+      border: 2px dashed #667eea;
+      background: #f0f4ff;
+    }
+    
+    .admin-position-column.drag-over {
+      background: rgba(102, 126, 234, 0.1);
+      border-radius: 6px;
+    }
+    
+    .admin-player-name {
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: #1a1a2e;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      pointer-events: none;
+    }
+    
+    .admin-trade-value {
+      font-size: 0.65rem;
+      font-weight: 600;
+      pointer-events: none;
+      margin-top: 1px;
+    }
+    
+    .admin-trade-value.high { color: #16a34a; }
+    .admin-trade-value.medium { color: #ca8a04; }
+    .admin-trade-value.low { color: #6b7280; }
+    
     @media (max-width: 900px) {
       .depth-chart { grid-template-columns: repeat(3, 1fr); }
+      .admin-depth-chart { grid-template-columns: repeat(3, 1fr); }
       .team-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
     }
     
     @media (max-width: 600px) {
       .depth-chart { grid-template-columns: repeat(2, 1fr); }
+      .admin-depth-chart { grid-template-columns: repeat(2, 1fr); }
       h1 { font-size: 1.75rem; }
       .team-header-name { font-size: 1.5rem; }
       .player-image { width: 60px; height: 45px; }
@@ -256,6 +414,12 @@
   </style>
 </head>
 <body>
+  <!-- Admin banner -->
+  <div id="adminBanner" class="admin-banner">
+    🔧 ADMIN MODE — Drag changes are saved for all visitors
+    <span id="saveStatus" class="admin-save-status">✓ Saved</span>
+  </div>
+
   <div class="container">
     <header>
       <h1>🏀 NBA Depth Charts</h1>
@@ -269,6 +433,7 @@
     
     <div id="teamGrid" class="team-grid" style="display: none;"></div>
     
+    <!-- Single team view (public) -->
     <div id="depthChartContainer" class="depth-chart-container">
       <a href="?" class="back-btn">← All Teams</a>
       <div class="team-header">
@@ -279,6 +444,12 @@
       <div id="depthChart" class="depth-chart"></div>
     </div>
     
+    <!-- Admin all-teams view -->
+    <div id="adminAllTeams" class="admin-all-teams">
+      <p class="drag-hint">💡 Drag players to rearrange — changes save automatically for all visitors</p>
+      <div id="adminTeamsList"></div>
+    </div>
+    
     <div id="error" class="error" style="display: none;"></div>
     
     <footer>
@@ -287,6 +458,86 @@
   </div>
   
   <script>
+    // =====================================================
+    // FIREBASE CONFIG — Replace with your own credentials
+    // =====================================================
+    const FIREBASE_CONFIG = {
+      apiKey: "AIzaSyCJJU85LVzfnbvxO92JZpoVV8hpxF8sn3o",
+      authDomain: "depth-charts.firebaseapp.com",
+      databaseURL: "https://depth-charts-default-rtdb.firebaseio.com",
+      projectId: "depth-charts",
+      storageBucket: "depth-charts.firebasestorage.app",
+      messagingSenderId: "153725062504",
+      appId: "1:153725062504:web:0f81535fca01e943a85add"
+    };
+    
+    // Admin password — change this to whatever you want
+    const ADMIN_KEY = "hoopsmatic2025";
+    
+    // =====================================================
+    
+    // Initialize Firebase
+    let db = null;
+    let isAdmin = false;
+    
+    function initFirebase() {
+      try {
+        if (FIREBASE_CONFIG.apiKey === "YOUR_API_KEY") {
+          console.warn('Firebase not configured — using local-only mode');
+          return false;
+        }
+        firebase.initializeApp(FIREBASE_CONFIG);
+        db = firebase.database();
+        return true;
+      } catch (e) {
+        console.error('Firebase init error:', e);
+        return false;
+      }
+    }
+    
+    // Save team order to Firebase
+    function saveTeamOrder(teamAbbrev, container) {
+      if (!db || !isAdmin) return;
+      
+      const columns = container.querySelectorAll('[class*="position-column"]');
+      const order = {};
+      
+      columns.forEach(col => {
+        const pos = col.dataset.position;
+        const cards = col.querySelectorAll('[class*="player-card"]');
+        order[pos] = [];
+        cards.forEach(card => {
+          order[pos].push(card.dataset.player);
+        });
+      });
+      
+      db.ref('depthcharts/' + teamAbbrev).set(order).then(() => {
+        showSaveStatus();
+      }).catch(err => {
+        console.error('Save error:', err);
+      });
+    }
+    
+    // Load team order from Firebase
+    async function loadTeamOrder(teamAbbrev) {
+      if (!db) return null;
+      try {
+        const snapshot = await db.ref('depthcharts/' + teamAbbrev).once('value');
+        return snapshot.val();
+      } catch (e) {
+        console.error('Load error:', e);
+        return null;
+      }
+    }
+    
+    // Flash save indicator
+    function showSaveStatus() {
+      const el = document.getElementById('saveStatus');
+      el.classList.add('visible');
+      clearTimeout(el._timeout);
+      el._timeout = setTimeout(() => el.classList.remove('visible'), 2000);
+    }
+    
     // NBA Teams
     const NBA_TEAMS = [
       { abbrev: 'ATL', name: 'Atlanta Hawks', logo: 'https://cdn.nba.com/logos/nba/1610612737/global/L/logo.svg' },
@@ -498,7 +749,7 @@
       return result;
     }
     
-    // Parse roster with PapaParse-style header detection
+    // Parse roster
     function parseRosterCSV(csvText) {
       const rows = parseCSV(csvText);
       if (rows.length < 2) return [];
@@ -548,7 +799,7 @@
       return name.split(' ').map(n => n[0]).join('');
     }
     
-    // Render team grid
+    // Render team grid (public landing)
     function renderTeamGrid() {
       const grid = document.getElementById('teamGrid');
       grid.innerHTML = NBA_TEAMS.map(team => `
@@ -561,8 +812,10 @@
       grid.style.display = 'grid';
     }
     
-    // Render depth chart with drag-drop
-    function renderDepthChart(teamAbbrev) {
+    // =====================================================
+    // SINGLE TEAM VIEW (public, with Firebase defaults)
+    // =====================================================
+    async function renderDepthChart(teamAbbrev) {
       const team = NBA_TEAMS.find(t => t.abbrev === teamAbbrev);
       if (!team) {
         document.getElementById('error').textContent = `Team "${teamAbbrev}" not found`;
@@ -583,15 +836,45 @@
       document.title = `${team.name} Depth Chart`;
       
       const positions = ['PG', 'SG', 'SF', 'PF', 'C'];
-      const byPosition = {};
+      
+      // Try loading saved order from Firebase
+      const savedOrder = await loadTeamOrder(teamAbbrev);
+      
+      let byPosition = {};
       positions.forEach(pos => byPosition[pos] = []);
       
-      teamPlayers.forEach(player => {
-        const pos = positions.includes(player.position) ? player.position : 'SF';
-        byPosition[pos].push(player);
-      });
-      
-      positions.forEach(pos => byPosition[pos].sort((a, b) => b.tradeValue - a.tradeValue));
+      if (savedOrder) {
+        // Use saved order from Firebase
+        const playerMap = {};
+        teamPlayers.forEach(p => playerMap[p.name] = p);
+        const placed = new Set();
+        
+        positions.forEach(pos => {
+          if (savedOrder[pos]) {
+            savedOrder[pos].forEach(playerName => {
+              if (playerMap[playerName] && !placed.has(playerName)) {
+                byPosition[pos].push(playerMap[playerName]);
+                placed.add(playerName);
+              }
+            });
+          }
+        });
+        
+        // Add any new players not in saved order (fallback by TV)
+        teamPlayers.forEach(p => {
+          if (!placed.has(p.name)) {
+            const pos = positions.includes(p.position) ? p.position : 'SF';
+            byPosition[pos].push(p);
+          }
+        });
+      } else {
+        // Fallback: sort by trade value
+        teamPlayers.forEach(player => {
+          const pos = positions.includes(player.position) ? player.position : 'SF';
+          byPosition[pos].push(player);
+        });
+        positions.forEach(pos => byPosition[pos].sort((a, b) => b.tradeValue - a.tradeValue));
+      }
       
       let html = '';
       positions.forEach(pos => {
@@ -623,18 +906,125 @@
       document.getElementById('depthChart').innerHTML = html;
       document.getElementById('depthChartContainer').classList.add('active');
       
-      // Setup drag and drop
-      setupDragAndDrop();
+      setupDragAndDrop(document.getElementById('depthChart'), teamAbbrev);
     }
     
-    // Drag and drop functionality
-    function setupDragAndDrop() {
-      const cards = document.querySelectorAll('.player-card');
-      const columns = document.querySelectorAll('.position-column');
+    // =====================================================
+    // ADMIN ALL-TEAMS VIEW
+    // =====================================================
+    async function renderAdminAllTeams() {
+      document.getElementById('adminBanner').classList.add('active');
+      document.title = 'NBA Depth Charts — ADMIN';
+      
+      const container = document.getElementById('adminTeamsList');
+      let html = '';
+      
+      // Pre-load all saved orders
+      const savedOrders = {};
+      if (db) {
+        try {
+          const snapshot = await db.ref('depthcharts').once('value');
+          const allSaved = snapshot.val();
+          if (allSaved) Object.assign(savedOrders, allSaved);
+        } catch (e) {
+          console.error('Failed to load all orders:', e);
+        }
+      }
+      
+      const positions = ['PG', 'SG', 'SF', 'PF', 'C'];
+      
+      for (const team of NBA_TEAMS) {
+        const teamPlayers = allPlayers.filter(p => p.team === team.abbrev);
+        if (teamPlayers.length === 0) continue;
+        
+        const savedOrder = savedOrders[team.abbrev] || null;
+        let byPosition = {};
+        positions.forEach(pos => byPosition[pos] = []);
+        
+        if (savedOrder) {
+          const playerMap = {};
+          teamPlayers.forEach(p => playerMap[p.name] = p);
+          const placed = new Set();
+          
+          positions.forEach(pos => {
+            if (savedOrder[pos]) {
+              savedOrder[pos].forEach(playerName => {
+                if (playerMap[playerName] && !placed.has(playerName)) {
+                  byPosition[pos].push(playerMap[playerName]);
+                  placed.add(playerName);
+                }
+              });
+            }
+          });
+          
+          teamPlayers.forEach(p => {
+            if (!placed.has(p.name)) {
+              const pos = positions.includes(p.position) ? p.position : 'SF';
+              byPosition[pos].push(p);
+            }
+          });
+        } else {
+          teamPlayers.forEach(player => {
+            const pos = positions.includes(player.position) ? player.position : 'SF';
+            byPosition[pos].push(player);
+          });
+          positions.forEach(pos => byPosition[pos].sort((a, b) => b.tradeValue - a.tradeValue));
+        }
+        
+        html += `
+          <div class="admin-team-row" data-team="${team.abbrev}">
+            <div class="admin-team-row-header">
+              <img class="admin-team-row-logo" src="${team.logo}" alt="${team.name}" onerror="this.style.opacity='0.3'">
+              <span class="admin-team-row-name">${team.name}</span>
+              <span class="admin-team-row-abbrev">${team.abbrev}</span>
+            </div>
+            <div class="admin-depth-chart" data-team="${team.abbrev}">`;
+        
+        positions.forEach(pos => {
+          html += `<div class="admin-position-column" data-position="${pos}">
+            <div class="admin-position-header">${pos}</div>`;
+          
+          byPosition[pos].forEach((player, idx) => {
+            const tvFormatted = formatTradeValue(player.tradeValue);
+            const valueClass = getValueClass(player.tradeValue);
+            const isStarter = idx === 0 ? 'starter' : '';
+            
+            html += `
+              <div class="admin-player-card ${isStarter}" draggable="true" data-player="${player.name}" data-tv="${player.tradeValue}">
+                <div class="admin-player-name">${player.name}</div>
+                <div class="admin-trade-value ${valueClass}">${tvFormatted}</div>
+              </div>`;
+          });
+          
+          html += '</div>';
+        });
+        
+        html += `</div></div>`;
+      }
+      
+      container.innerHTML = html;
+      document.getElementById('adminAllTeams').classList.add('active');
+      
+      // Setup drag-drop for each team's chart
+      document.querySelectorAll('.admin-depth-chart').forEach(chart => {
+        const teamAbbrev = chart.dataset.team;
+        setupAdminDragAndDrop(chart, teamAbbrev);
+      });
+    }
+    
+    // =====================================================
+    // DRAG AND DROP — Public single-team view
+    // =====================================================
+    function setupDragAndDrop(container, teamAbbrev) {
+      const cards = container.querySelectorAll('.player-card');
+      const columns = container.querySelectorAll('.position-column');
       
       cards.forEach(card => {
         card.addEventListener('dragstart', handleDragStart);
-        card.addEventListener('dragend', handleDragEnd);
+        card.addEventListener('dragend', function(e) {
+          handleDragEnd.call(this, e);
+          if (isAdmin) saveTeamOrder(teamAbbrev, container);
+        });
         card.addEventListener('dragover', handleDragOver);
         card.addEventListener('drop', handleDrop);
         card.addEventListener('dragleave', handleDragLeave);
@@ -642,11 +1032,45 @@
       
       columns.forEach(col => {
         col.addEventListener('dragover', handleColumnDragOver);
-        col.addEventListener('drop', handleColumnDrop);
+        col.addEventListener('drop', function(e) {
+          handleColumnDrop.call(this, e);
+          if (isAdmin) saveTeamOrder(teamAbbrev, container);
+        });
         col.addEventListener('dragleave', handleColumnDragLeave);
       });
     }
     
+    // =====================================================
+    // DRAG AND DROP — Admin all-teams view
+    // =====================================================
+    function setupAdminDragAndDrop(chart, teamAbbrev) {
+      const cards = chart.querySelectorAll('.admin-player-card');
+      const columns = chart.querySelectorAll('.admin-position-column');
+      
+      cards.forEach(card => {
+        card.addEventListener('dragstart', handleDragStart);
+        card.addEventListener('dragend', function(e) {
+          handleDragEnd.call(this, e);
+          saveTeamOrder(teamAbbrev, chart);
+          updateAdminStarterHighlights(chart);
+        });
+        card.addEventListener('dragover', handleDragOver);
+        card.addEventListener('drop', handleDrop);
+        card.addEventListener('dragleave', handleDragLeave);
+      });
+      
+      columns.forEach(col => {
+        col.addEventListener('dragover', handleColumnDragOver);
+        col.addEventListener('drop', function(e) {
+          handleColumnDrop.call(this, e);
+          saveTeamOrder(teamAbbrev, chart);
+          updateAdminStarterHighlights(chart);
+        });
+        col.addEventListener('dragleave', handleColumnDragLeave);
+      });
+    }
+    
+    // Shared drag handlers
     function handleDragStart(e) {
       draggedElement = this;
       this.classList.add('dragging');
@@ -679,9 +1103,6 @@
       
       if (this !== draggedElement && draggedElement) {
         const targetColumn = this.parentElement;
-        const sourceColumn = draggedElement.parentElement;
-        
-        // Insert before or after based on position
         const targetRect = this.getBoundingClientRect();
         const insertBefore = e.clientY < targetRect.top + targetRect.height / 2;
         
@@ -695,8 +1116,8 @@
     
     function handleColumnDragOver(e) {
       e.preventDefault();
-      // Only highlight if dragging over empty space (not over a card)
-      if (e.target.classList.contains('position-column') || e.target.classList.contains('position-header')) {
+      if (e.target.classList.contains('admin-position-column') || e.target.classList.contains('admin-position-header') ||
+          e.target.classList.contains('position-column') || e.target.classList.contains('position-header')) {
         this.classList.add('drag-over');
       }
     }
@@ -709,8 +1130,7 @@
       e.preventDefault();
       this.classList.remove('drag-over');
       
-      if (draggedElement && !e.target.classList.contains('player-card')) {
-        // Append to end of column
+      if (draggedElement && !e.target.classList.contains('player-card') && !e.target.classList.contains('admin-player-card')) {
         this.appendChild(draggedElement);
       }
     }
@@ -724,10 +1144,28 @@
       });
     }
     
-    // Initialize
+    function updateAdminStarterHighlights(chart) {
+      chart.querySelectorAll('.admin-position-column').forEach(col => {
+        const cards = col.querySelectorAll('.admin-player-card');
+        cards.forEach((card, idx) => {
+          card.classList.toggle('starter', idx === 0);
+        });
+      });
+    }
+    
+    // =====================================================
+    // INIT
+    // =====================================================
     async function init() {
       const params = new URLSearchParams(window.location.search);
       const teamParam = params.get('team')?.toUpperCase();
+      const adminParam = params.get('admin');
+      
+      // Check admin mode
+      isAdmin = (adminParam === ADMIN_KEY);
+      
+      // Init Firebase
+      initFirebase();
       
       try {
         const [tvResponse, rosterResponse] = await Promise.all([
@@ -747,8 +1185,11 @@
         
         document.getElementById('loading').style.display = 'none';
         
-        if (teamParam && NBA_TEAMS.some(t => t.abbrev === teamParam)) {
-          renderDepthChart(teamParam);
+        if (isAdmin && !teamParam) {
+          // Admin mode: show all teams
+          await renderAdminAllTeams();
+        } else if (teamParam && NBA_TEAMS.some(t => t.abbrev === teamParam)) {
+          await renderDepthChart(teamParam);
         } else {
           renderTeamGrid();
         }
