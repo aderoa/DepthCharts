@@ -6,11 +6,7 @@
   <title>NBA Depth Charts by Trade Value</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
       font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -19,16 +15,9 @@
       color: white;
     }
     
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
+    .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
     
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+    header { text-align: center; margin-bottom: 2rem; }
     
     h1 {
       font-size: 2.5rem;
@@ -39,10 +28,7 @@
       background-clip: text;
     }
     
-    .subtitle {
-      color: #8892b0;
-      font-size: 1.1rem;
-    }
+    .subtitle { color: #8892b0; font-size: 1.1rem; }
     
     .back-btn {
       display: inline-flex;
@@ -59,14 +45,12 @@
       transition: all 0.2s;
     }
     
-    .back-btn:hover {
-      background: rgba(255,255,255,0.2);
-    }
+    .back-btn:hover { background: rgba(255,255,255,0.2); }
     
     /* Team Grid */
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 1rem;
     }
     
@@ -89,50 +73,35 @@
     }
     
     .team-logo {
-      width: 64px;
-      height: 64px;
+      width: 56px;
+      height: 56px;
       margin: 0 auto 0.75rem;
-      border-radius: 8px;
       object-fit: contain;
     }
     
-    .team-name {
-      font-weight: 600;
-      font-size: 1rem;
-    }
-    
-    .team-abbrev {
-      color: #8892b0;
-      font-size: 0.85rem;
-      margin-top: 0.25rem;
-    }
+    .team-name { font-weight: 600; font-size: 0.95rem; }
+    .team-abbrev { color: #8892b0; font-size: 0.8rem; margin-top: 0.25rem; }
     
     /* Depth Chart */
-    .depth-chart-container {
-      display: none;
-    }
-    
-    .depth-chart-container.active {
-      display: block;
-    }
+    .depth-chart-container { display: none; }
+    .depth-chart-container.active { display: block; }
     
     .team-header {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
     
-    .team-header-logo {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-    }
+    .team-header-logo { width: 72px; height: 72px; object-fit: contain; }
+    .team-header-name { font-size: 1.75rem; font-weight: 700; }
     
-    .team-header-name {
-      font-size: 2rem;
-      font-weight: 700;
+    .drag-hint {
+      text-align: center;
+      color: #8892b0;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
     }
     
     .depth-chart {
@@ -149,6 +118,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      min-height: 200px;
     }
     
     .position-header {
@@ -167,8 +137,10 @@
       padding: 0.75rem;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
       border: 2px solid transparent;
+      cursor: grab;
+      user-select: none;
     }
     
     .player-card:hover {
@@ -182,6 +154,21 @@
       border: 2px solid #667eea;
     }
     
+    .player-card.dragging {
+      opacity: 0.5;
+      cursor: grabbing;
+    }
+    
+    .player-card.drag-over {
+      border: 2px dashed #667eea;
+      background: #f0f4ff;
+    }
+    
+    .position-column.drag-over {
+      background: rgba(102, 126, 234, 0.1);
+      border-radius: 8px;
+    }
+    
     .player-image {
       width: 80px;
       height: 60px;
@@ -192,6 +179,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      pointer-events: none;
     }
     
     .player-image img {
@@ -214,21 +202,20 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      pointer-events: none;
     }
     
     .trade-value {
       font-size: 0.8rem;
       font-weight: 600;
+      pointer-events: none;
     }
     
     .trade-value.high { color: #16a34a; }
     .trade-value.medium { color: #ca8a04; }
     .trade-value.low { color: #6b7280; }
     
-    .loading {
-      text-align: center;
-      padding: 4rem 2rem;
-    }
+    .loading { text-align: center; padding: 4rem 2rem; }
     
     .loading-spinner {
       width: 48px;
@@ -240,15 +227,9 @@
       margin: 0 auto 1rem;
     }
     
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
     
-    .error {
-      text-align: center;
-      padding: 2rem;
-      color: #f87171;
-    }
+    .error { text-align: center; padding: 2rem; color: #f87171; }
     
     footer {
       text-align: center;
@@ -258,28 +239,16 @@
       font-size: 0.9rem;
     }
     
-    footer a {
-      color: #667eea;
-      text-decoration: none;
-    }
-    
-    footer a:hover {
-      text-decoration: underline;
-    }
+    footer a { color: #667eea; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
     
     @media (max-width: 900px) {
-      .depth-chart {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .team-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      }
+      .depth-chart { grid-template-columns: repeat(3, 1fr); }
+      .team-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
     }
     
     @media (max-width: 600px) {
-      .depth-chart {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .depth-chart { grid-template-columns: repeat(2, 1fr); }
       h1 { font-size: 1.75rem; }
       .team-header-name { font-size: 1.5rem; }
       .player-image { width: 60px; height: 45px; }
@@ -306,6 +275,7 @@
         <img id="teamLogo" class="team-header-logo" src="" alt="">
         <h2 id="teamName" class="team-header-name"></h2>
       </div>
+      <p class="drag-hint">💡 Drag players to rearrange or move between positions</p>
       <div id="depthChart" class="depth-chart"></div>
     </div>
     
@@ -351,7 +321,7 @@
       { abbrev: 'WAS', name: 'Washington Wizards', logo: 'https://cdn.nba.com/logos/nba/1610612764/global/L/logo.svg' }
     ];
     
-    // Team name variations for matching
+    // Team name mapping
     const TEAM_ALIASES = {
       'Atlanta': 'ATL', 'Hawks': 'ATL',
       'Boston': 'BOS', 'Celtics': 'BOS',
@@ -385,19 +355,19 @@
       'Washington': 'WAS', 'Wizards': 'WAS'
     };
     
-    // Trade Value CSV
+    // Data URLs
     const TV_SHEET_ID = '2PACX-1vSg6im6IYB6HXMGzQbmmBnLw9SfQLzxCSo8OfChxlJLhsB6BBCO0wPF_TMch0YgAbtFqYkwDWrsxRe7';
     const TV_GID = '1310971167';
     const TV_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${TV_SHEET_ID}/pub?gid=${TV_GID}&single=true&output=csv`;
     
-    // Roster CSV (main sheet with positions)
-    const ROSTER_SHEET_ID = '2PACX-1vSg6im6IYB6HXMGzQbmmBnLw9SfQLzxCSo8OfChxlJLhsB6BBCO0wPF_TMch0YgAbtFqYkwDWrsxRe7';
     const ROSTER_GID = '0';
-    const ROSTER_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${ROSTER_SHEET_ID}/pub?gid=${ROSTER_GID}&single=true&output=csv`;
+    const ROSTER_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${TV_SHEET_ID}/pub?gid=${ROSTER_GID}&single=true&output=csv`;
     
-    let allPlayers = []; // { name, team, position, tradeValue, headshot }
+    let allPlayers = [];
     let tradeValueMap = new Map();
+    let draggedElement = null;
     
+    // CSV Parser
     function parseCSV(text) {
       const rows = []; let current = '', inQuotes = false, row = [];
       for (let i = 0; i < text.length; i++) {
@@ -421,6 +391,7 @@
       return rows;
     }
     
+    // Trade value computation
     function computeTradeValues(csvText) {
       const rows = parseCSV(csvText);
       const roster = [], historical = [];
@@ -430,14 +401,12 @@
         while (row.length < 22) row.push('');
         if (row[18] && !todayStr) todayStr = row[18];
         if (row[0] && row[1]) {
-          const draftVal = row[20];
-          const draftPick = parseInt(draftVal) || null;
           roster.push({
             player: row[1].trim(),
             rat365: parseFloat(row[2]) || 0,
             salary: parseInt(row[3].replace(/[$,]/g, '')) || 0,
             birthday: row[4] || '',
-            draftPick: draftPick
+            draftPick: parseInt(row[20]) || null
           });
         }
         if (row[6] && row[7]) {
@@ -477,11 +446,9 @@
         
         const cur = hist.filter(h => h.year === '2025-26');
         const curGames = cur.reduce((s,h) => s + h.games, 0);
-        if (curGames > 0 && curGames / 48 >= MIN_PCT) {
-          p.rat365adj = p.rat365 * Math.min(MAX_MULT, Math.pow(48 / curGames, BETA));
-        } else {
-          p.rat365adj = p.rat365;
-        }
+        p.rat365adj = (curGames > 0 && curGames / 48 >= MIN_PCT) 
+          ? p.rat365 * Math.min(MAX_MULT, Math.pow(48 / curGames, BETA)) 
+          : p.rat365;
       }
       
       const parseDate = s => {
@@ -500,13 +467,9 @@
       const maxDev = avgAge - Math.min(...ages);
       
       for (const p of roster) {
-        if (p.age !== null && p.age < avgAge) {
-          p.ageMult = 1.0 + AGE_BONUS * (avgAge - p.age) / maxDev;
-        } else if (p.age !== null && p.age >= OLD_TH) {
-          p.ageMult = Math.max(0.5, 1.0 - OLD_PEN * (p.age - OLD_TH));
-        } else {
-          p.ageMult = 1.0;
-        }
+        if (p.age !== null && p.age < avgAge) p.ageMult = 1.0 + AGE_BONUS * (avgAge - p.age) / maxDev;
+        else if (p.age !== null && p.age >= OLD_TH) p.ageMult = Math.max(0.5, 1.0 - OLD_PEN * (p.age - OLD_TH));
+        else p.ageMult = 1.0;
       }
       
       const totalSalPool = roster.reduce((s,p) => s + p.salary, 0);
@@ -516,86 +479,59 @@
       for (const p of roster) {
         const tvWM = totalWM > 0 ? (Math.pow(Math.max(p.watermark,0), EXP) / totalWM) * totalSalPool : 0;
         const tvRAT = totalRAT > 0 ? (Math.pow(Math.max(p.rat365adj,0), EXP) / totalRAT) * totalSalPool : 0;
-        p.tvPreAge = WM_W * tvWM + RAT_W * tvRAT;
-        p.tvWithAge = p.tvPreAge * p.ageMult;
+        p.tvWithAge = (WM_W * tvWM + RAT_W * tvRAT) * p.ageMult;
       }
       
       const totalWithAge = roster.reduce((s,p) => s + p.tvWithAge, 0);
       
-      const POTENTIAL_MAX = 7000000;
-      const MIN_ROOKIE_AGE = 18 + 300/365;
-      const MAX_POTENTIAL_AGE = 25;
-      const DRAFT_DECAY = 0.05;
-      const AGE_DECAY = 0.5;
-      
-      function calcPotentialBonus(age, draftPick) {
-        if (age === null || age >= MAX_POTENTIAL_AGE || !draftPick || draftPick < 1 || draftPick > 60) {
-          return 0;
-        }
-        const draftFactor = Math.exp(-DRAFT_DECAY * (draftPick - 1));
-        const ageFromMin = Math.max(0, age - MIN_ROOKIE_AGE);
-        const ageFactor = Math.exp(-AGE_DECAY * ageFromMin);
-        return Math.round(POTENTIAL_MAX * draftFactor * ageFactor);
-      }
-      
       const result = new Map();
       for (const p of roster) {
         const baseTV = totalWithAge > 0 ? Math.round((p.tvWithAge / totalWithAge) * totalSalPool) : 0;
-        const potentialBonus = calcPotentialBonus(p.age, p.draftPick);
-        const tv = baseTV + potentialBonus;
-        result.set(p.player.toLowerCase(), tv);
+        let potentialBonus = 0;
+        if (p.age !== null && p.age < 25 && p.draftPick && p.draftPick >= 1 && p.draftPick <= 60) {
+          const draftFactor = Math.exp(-0.05 * (p.draftPick - 1));
+          const ageFactor = Math.exp(-0.5 * Math.max(0, p.age - 18.82));
+          potentialBonus = Math.round(7000000 * draftFactor * ageFactor);
+        }
+        result.set(p.player.toLowerCase(), baseTV + potentialBonus);
       }
       return result;
     }
     
+    // Parse roster with PapaParse-style header detection
     function parseRosterCSV(csvText) {
-      const lines = csvText.split('\n');
+      const rows = parseCSV(csvText);
+      if (rows.length < 2) return [];
+      
+      const header = rows[0];
+      const colIndex = name => header.findIndex(h => h.toUpperCase() === name.toUpperCase());
+      
+      const playerIdx = colIndex('PLAYER');
+      const teamIdx = colIndex('TEAM');
+      const posIdx = colIndex('POSITION');
+      const headshotIdx = colIndex('HEADSHOT');
+      
+      if (playerIdx < 0 || teamIdx < 0) return [];
+      
       const players = [];
-      
-      // Find header row
-      let headerIdx = -1;
-      let headers = [];
-      for (let i = 0; i < Math.min(5, lines.length); i++) {
-        if (lines[i].includes('PLAYER') && lines[i].includes('TEAM')) {
-          headerIdx = i;
-          headers = lines[i].split(',').map(h => h.trim().replace(/"/g, ''));
-          break;
-        }
-      }
-      
-      if (headerIdx < 0) return players;
-      
-      const playerIdx = headers.indexOf('PLAYER');
-      const teamIdx = headers.indexOf('TEAM');
-      const posIdx = headers.indexOf('POSITION');
-      const headshotIdx = headers.indexOf('HEADSHOT');
-      
-      for (let i = headerIdx + 1; i < lines.length; i++) {
-        const row = parseCSV(lines[i])[0];
-        if (!row) continue;
-        
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
         const name = row[playerIdx]?.trim();
         const team = row[teamIdx]?.trim();
-        const position = row[posIdx]?.trim() || '';
-        const headshot = row[headshotIdx]?.trim() || '';
         
-        if (name && team) {
-          const teamAbbrev = TEAM_ALIASES[team] || team;
-          const tv = tradeValueMap.get(name.toLowerCase()) || 0;
-          
-          players.push({
-            name,
-            team: teamAbbrev,
-            position: position || 'SF', // Default to SF if missing
-            tradeValue: tv,
-            headshot
-          });
-        }
+        if (!name || !team) continue;
+        
+        const teamAbbrev = TEAM_ALIASES[team] || team;
+        const position = row[posIdx]?.trim() || 'SF';
+        const headshot = row[headshotIdx]?.trim() || '';
+        const tv = tradeValueMap.get(name.toLowerCase()) || 0;
+        
+        players.push({ name, team: teamAbbrev, position, tradeValue: tv, headshot });
       }
-      
       return players;
     }
     
+    // Utility functions
     function formatTradeValue(tv) {
       if (tv >= 1000000) return '$' + (tv / 1000000).toFixed(1) + 'M';
       if (tv >= 1000) return '$' + (tv / 1000).toFixed(0) + 'K';
@@ -612,11 +548,12 @@
       return name.split(' ').map(n => n[0]).join('');
     }
     
+    // Render team grid
     function renderTeamGrid() {
       const grid = document.getElementById('teamGrid');
       grid.innerHTML = NBA_TEAMS.map(team => `
         <a href="?team=${team.abbrev}" class="team-card">
-          <img class="team-logo" src="${team.logo}" alt="${team.name}" onerror="this.style.display='none'">
+          <img class="team-logo" src="${team.logo}" alt="${team.name}" onerror="this.style.opacity='0.3'">
           <div class="team-name">${team.name}</div>
           <div class="team-abbrev">${team.abbrev}</div>
         </a>
@@ -624,6 +561,7 @@
       grid.style.display = 'grid';
     }
     
+    // Render depth chart with drag-drop
     function renderDepthChart(teamAbbrev) {
       const team = NBA_TEAMS.find(t => t.abbrev === teamAbbrev);
       if (!team) {
@@ -640,12 +578,10 @@
         return;
       }
       
-      // Update header
       document.getElementById('teamLogo').src = team.logo;
       document.getElementById('teamName').textContent = team.name;
       document.title = `${team.name} Depth Chart`;
       
-      // Group by position
       const positions = ['PG', 'SG', 'SF', 'PF', 'C'];
       const byPosition = {};
       positions.forEach(pos => byPosition[pos] = []);
@@ -655,15 +591,11 @@
         byPosition[pos].push(player);
       });
       
-      // Sort by trade value
-      positions.forEach(pos => {
-        byPosition[pos].sort((a, b) => b.tradeValue - a.tradeValue);
-      });
+      positions.forEach(pos => byPosition[pos].sort((a, b) => b.tradeValue - a.tradeValue));
       
-      // Render
       let html = '';
       positions.forEach(pos => {
-        html += `<div class="position-column">
+        html += `<div class="position-column" data-position="${pos}">
           <div class="position-header">${pos}</div>`;
         
         byPosition[pos].forEach((player, idx) => {
@@ -672,7 +604,7 @@
           const isStarter = idx === 0 ? 'starter' : '';
           
           html += `
-            <div class="player-card ${isStarter}">
+            <div class="player-card ${isStarter}" draggable="true" data-player="${player.name}" data-tv="${player.tradeValue}">
               <div class="player-image">
                 ${player.headshot 
                   ? `<img src="${player.headshot}" alt="${player.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${getInitials(player.name)}</span>'">`
@@ -690,23 +622,127 @@
       
       document.getElementById('depthChart').innerHTML = html;
       document.getElementById('depthChartContainer').classList.add('active');
+      
+      // Setup drag and drop
+      setupDragAndDrop();
     }
     
+    // Drag and drop functionality
+    function setupDragAndDrop() {
+      const cards = document.querySelectorAll('.player-card');
+      const columns = document.querySelectorAll('.position-column');
+      
+      cards.forEach(card => {
+        card.addEventListener('dragstart', handleDragStart);
+        card.addEventListener('dragend', handleDragEnd);
+        card.addEventListener('dragover', handleDragOver);
+        card.addEventListener('drop', handleDrop);
+        card.addEventListener('dragleave', handleDragLeave);
+      });
+      
+      columns.forEach(col => {
+        col.addEventListener('dragover', handleColumnDragOver);
+        col.addEventListener('drop', handleColumnDrop);
+        col.addEventListener('dragleave', handleColumnDragLeave);
+      });
+    }
+    
+    function handleDragStart(e) {
+      draggedElement = this;
+      this.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', this.dataset.player);
+    }
+    
+    function handleDragEnd(e) {
+      this.classList.remove('dragging');
+      document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+      draggedElement = null;
+      updateStarterHighlights();
+    }
+    
+    function handleDragOver(e) {
+      e.preventDefault();
+      if (this !== draggedElement) {
+        this.classList.add('drag-over');
+      }
+    }
+    
+    function handleDragLeave(e) {
+      this.classList.remove('drag-over');
+    }
+    
+    function handleDrop(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.classList.remove('drag-over');
+      
+      if (this !== draggedElement && draggedElement) {
+        const targetColumn = this.parentElement;
+        const sourceColumn = draggedElement.parentElement;
+        
+        // Insert before or after based on position
+        const targetRect = this.getBoundingClientRect();
+        const insertBefore = e.clientY < targetRect.top + targetRect.height / 2;
+        
+        if (insertBefore) {
+          targetColumn.insertBefore(draggedElement, this);
+        } else {
+          targetColumn.insertBefore(draggedElement, this.nextSibling);
+        }
+      }
+    }
+    
+    function handleColumnDragOver(e) {
+      e.preventDefault();
+      // Only highlight if dragging over empty space (not over a card)
+      if (e.target.classList.contains('position-column') || e.target.classList.contains('position-header')) {
+        this.classList.add('drag-over');
+      }
+    }
+    
+    function handleColumnDragLeave(e) {
+      this.classList.remove('drag-over');
+    }
+    
+    function handleColumnDrop(e) {
+      e.preventDefault();
+      this.classList.remove('drag-over');
+      
+      if (draggedElement && !e.target.classList.contains('player-card')) {
+        // Append to end of column
+        this.appendChild(draggedElement);
+      }
+    }
+    
+    function updateStarterHighlights() {
+      document.querySelectorAll('.position-column').forEach(col => {
+        const cards = col.querySelectorAll('.player-card');
+        cards.forEach((card, idx) => {
+          card.classList.toggle('starter', idx === 0);
+        });
+      });
+    }
+    
+    // Initialize
     async function init() {
       const params = new URLSearchParams(window.location.search);
       const teamParam = params.get('team')?.toUpperCase();
       
       try {
-        // Fetch trade values
-        const tvResponse = await fetch(TV_CSV_URL);
-        if (!tvResponse.ok) throw new Error('Failed to fetch trade values');
-        const tvText = await tvResponse.text();
-        tradeValueMap = computeTradeValues(tvText);
+        const [tvResponse, rosterResponse] = await Promise.all([
+          fetch(TV_CSV_URL),
+          fetch(ROSTER_CSV_URL)
+        ]);
         
-        // Fetch roster data
-        const rosterResponse = await fetch(ROSTER_CSV_URL);
-        if (!rosterResponse.ok) throw new Error('Failed to fetch roster');
-        const rosterText = await rosterResponse.text();
+        if (!tvResponse.ok || !rosterResponse.ok) throw new Error('Failed to fetch data');
+        
+        const [tvText, rosterText] = await Promise.all([
+          tvResponse.text(),
+          rosterResponse.text()
+        ]);
+        
+        tradeValueMap = computeTradeValues(tvText);
         allPlayers = parseRosterCSV(rosterText);
         
         document.getElementById('loading').style.display = 'none';
