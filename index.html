@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charlotte Hornets Depth Chart</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #1d428a 0%, #00788c 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .depth-chart {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    
+    .position-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .position-header {
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #1d428a;
+      padding: 0.5rem;
+      border-bottom: 3px solid #00788c;
+      margin-bottom: 0.25rem;
+    }
+    
+    .player-card {
+      background: white;
+      border-radius: 12px;
+      padding: 0.75rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 2px solid transparent;
+    }
+    
+    .player-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      border-color: #00788c;
+    }
+    
+    .player-card.starter {
+      background: linear-gradient(135deg, #fff 0%, #e6f3f5 100%);
+      border: 2px solid #1d428a;
+    }
+    
+    .player-image {
+      width: 80px;
+      height: 60px;
+      margin: 0 auto 0.5rem;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1d428a 0%, #00788c 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .player-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .player-image .initials {
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    
+    .player-name {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #1a1a2e;
+      margin-bottom: 0.25rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .trade-value {
+      font-size: 0.8rem;
+      color: #00788c;
+      font-weight: 600;
+    }
+    
+    .trade-value.high {
+      color: #16a34a;
+    }
+    
+    .trade-value.medium {
+      color: #ca8a04;
+    }
+    
+    .trade-value.low {
+      color: #6b7280;
+    }
+    
+    .loading {
+      text-align: center;
+      color: white;
+      font-size: 1.2rem;
+      padding: 2rem;
+    }
+    
+    @media (max-width: 900px) {
+      .depth-chart {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .depth-chart {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .player-image {
+        width: 60px;
+        height: 45px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🐝 Charlotte Hornets Depth Chart</h1>
+    <div id="loading" class="loading">Loading trade values...</div>
+    <div id="depthChart" class="depth-chart" style="display: none;"></div>
+  </div>
+  
+  <script>
+    // Charlotte roster with positions (from spreadsheet column BM)
+    const charlotteRoster = [
+      { name: 'LaMelo Ball', position: 'PG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630163.png' },
+      { name: 'Tre Mann', position: 'PG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630195.png' },
+      { name: 'KJ Simpson', position: 'PG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1642249.png' },
+      { name: 'Coby White', position: 'SG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629632.png' },
+      { name: 'Sion James', position: 'SG', headshot: '' },
+      { name: 'Josh Green', position: 'SG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630182.png' },
+      { name: 'Kon Knueppel', position: 'SG', headshot: '' },
+      { name: 'Malaki Branham', position: 'SG', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1631103.png' },
+      { name: 'Antonio Reeves', position: 'SG', headshot: '' },
+      { name: 'Brandon Miller', position: 'SF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1641706.png' },
+      { name: 'Liam McNeeley', position: 'SF', headshot: '' },
+      { name: 'Miles Bridges', position: 'PF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628970.png' },
+      { name: 'Grant Williams', position: 'PF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629684.png' },
+      { name: 'Moussa Diabate', position: 'PF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1631217.png' },
+      { name: 'Tidjane Salaun', position: 'PF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1642259.png' },
+      { name: 'Xavier Tillman', position: 'PF', headshot: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630214.png' },
+      { name: 'Ryan Kalkbrenner', position: 'C', headshot: '' },
+      { name: 'PJ Hall', position: 'C', headshot: '' }
+    ];
+    
+    // Trade value computation (same as Trade Machine)
+    const TV_SHEET_ID = '2PACX-1vSg6im6IYB6HXMGzQbmmBnLw9SfQLzxCSo8OfChxlJLhsB6BBCO0wPF_TMch0YgAbtFqYkwDWrsxRe7';
+    const TV_GID = '1310971167';
+    const TV_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${TV_SHEET_ID}/pub?gid=${TV_GID}&single=true&output=csv`;
+    
+    function parseCSV(text) {
+      const rows = []; let current = '', inQuotes = false, row = [];
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        if (inQuotes) {
+          if (ch === '"' && text[i+1] === '"') { current += '"'; i++; }
+          else if (ch === '"') inQuotes = false;
+          else current += ch;
+        } else {
+          if (ch === '"') inQuotes = true;
+          else if (ch === ',') { row.push(current.trim()); current = ''; }
+          else if (ch === '\n' || ch === '\r') {
+            if (ch === '\r' && text[i+1] === '\n') i++;
+            row.push(current.trim());
+            if (row.length > 1 || row[0] !== '') rows.push(row);
+            row = []; current = '';
+          } else current += ch;
+        }
+      }
+      if (current || row.length > 0) { row.push(current.trim()); if (row.length > 1 || row[0] !== '') rows.push(row); }
+      return rows;
+    }
+    
+    function computeTradeValues(csvText) {
+      const rows = parseCSV(csvText);
+      const roster = [], historical = [];
+      let todayStr = null;
+      
+      for (const row of rows.slice(1)) {
+        while (row.length < 22) row.push('');
+        if (row[18] && !todayStr) todayStr = row[18];
+        if (row[0] && row[1]) {
+          const draftVal = row[20];
+          const draftPick = parseInt(draftVal) || null;
+          roster.push({
+            player: row[1].trim(),
+            rat365: parseFloat(row[2]) || 0,
+            salary: parseInt(row[3].replace(/[$,]/g, '')) || 0,
+            birthday: row[4] || '',
+            draftPick: draftPick
+          });
+        }
+        if (row[6] && row[7]) {
+          const g = parseInt(row[9]) || 0;
+          if (g > 0) historical.push({
+            year: row[6], player: row[7].trim(),
+            totalRat: parseFloat(row[8].replace(/,/g, '')) || 0, games: g
+          });
+        }
+      }
+      
+      const playerHist = {};
+      for (const h of historical) {
+        const k = h.player.toLowerCase();
+        if (!playerHist[k]) playerHist[k] = [];
+        playerHist[k].push(h);
+      }
+      
+      const WEIGHTS = {'2025-26':1.0,'2024-25':0.6,'2023-24':0.36,'2022-23':0.216,'2021-22':0.1296};
+      const EXPECTED = {'2021-22':82,'2022-23':82,'2023-24':82,'2024-25':82,'2025-26':48};
+      const EXP = 1.8, BETA = 0.8, MAX_MULT = 1.4, MIN_PCT = 0.40;
+      const WM_W = 0.85, RAT_W = 0.15, AGE_BONUS = 1.0, OLD_TH = 35, OLD_PEN = 0.03;
+      
+      for (const p of roster) {
+        const hist = playerHist[p.player.toLowerCase()] || [];
+        let num = 0, den = 0;
+        for (const h of hist) {
+          const w = WEIGHTS[h.year] || 0;
+          if (w <= 0 || h.games <= 0) continue;
+          let perGame = h.totalRat / h.games;
+          const exp = EXPECTED[h.year] || 82;
+          if (h.games / exp >= MIN_PCT) perGame *= Math.min(MAX_MULT, Math.pow(exp / h.games, BETA));
+          num += perGame * w * h.games;
+          den += w * h.games;
+        }
+        p.watermark = den > 0 ? num / den : 0;
+        
+        const cur = hist.filter(h => h.year === '2025-26');
+        const curGames = cur.reduce((s,h) => s + h.games, 0);
+        if (curGames > 0 && curGames / 48 >= MIN_PCT) {
+          p.rat365adj = p.rat365 * Math.min(MAX_MULT, Math.pow(48 / curGames, BETA));
+        } else {
+          p.rat365adj = p.rat365;
+        }
+      }
+      
+      const parseDate = s => {
+        if (!s) return null;
+        const parts = s.split('/');
+        return parts.length === 3 ? new Date(+parts[2], +parts[0]-1, +parts[1]) : null;
+      };
+      const today = parseDate(todayStr) || new Date();
+      const ages = [];
+      for (const p of roster) {
+        const bd = parseDate(p.birthday);
+        p.age = bd ? (today - bd) / (365.25 * 24 * 60 * 60 * 1000) : null;
+        if (p.age) ages.push(p.age);
+      }
+      const avgAge = ages.length > 0 ? ages.reduce((a,b) => a+b, 0) / ages.length : 26;
+      const maxDev = avgAge - Math.min(...ages);
+      
+      for (const p of roster) {
+        if (p.age !== null && p.age < avgAge) {
+          p.ageMult = 1.0 + AGE_BONUS * (avgAge - p.age) / maxDev;
+        } else if (p.age !== null && p.age >= OLD_TH) {
+          p.ageMult = Math.max(0.5, 1.0 - OLD_PEN * (p.age - OLD_TH));
+        } else {
+          p.ageMult = 1.0;
+        }
+      }
+      
+      const totalSalPool = roster.reduce((s,p) => s + p.salary, 0);
+      const totalWM = roster.reduce((s,p) => s + Math.pow(Math.max(p.watermark,0), EXP), 0);
+      const totalRAT = roster.reduce((s,p) => s + Math.pow(Math.max(p.rat365adj,0), EXP), 0);
+      
+      for (const p of roster) {
+        const tvWM = totalWM > 0 ? (Math.pow(Math.max(p.watermark,0), EXP) / totalWM) * totalSalPool : 0;
+        const tvRAT = totalRAT > 0 ? (Math.pow(Math.max(p.rat365adj,0), EXP) / totalRAT) * totalSalPool : 0;
+        p.tvPreAge = WM_W * tvWM + RAT_W * tvRAT;
+        p.tvWithAge = p.tvPreAge * p.ageMult;
+      }
+      
+      const totalWithAge = roster.reduce((s,p) => s + p.tvWithAge, 0);
+      
+      const POTENTIAL_MAX = 7000000;
+      const MIN_ROOKIE_AGE = 18 + 300/365;
+      const MAX_POTENTIAL_AGE = 25;
+      const DRAFT_DECAY = 0.05;
+      const AGE_DECAY = 0.5;
+      
+      function calcPotentialBonus(age, draftPick) {
+        if (age === null || age >= MAX_POTENTIAL_AGE || !draftPick || draftPick < 1 || draftPick > 60) {
+          return 0;
+        }
+        const draftFactor = Math.exp(-DRAFT_DECAY * (draftPick - 1));
+        const ageFromMin = Math.max(0, age - MIN_ROOKIE_AGE);
+        const ageFactor = Math.exp(-AGE_DECAY * ageFromMin);
+        return Math.round(POTENTIAL_MAX * draftFactor * ageFactor);
+      }
+      
+      const result = new Map();
+      for (const p of roster) {
+        const baseTV = totalWithAge > 0 ? Math.round((p.tvWithAge / totalWithAge) * totalSalPool) : 0;
+        const potentialBonus = calcPotentialBonus(p.age, p.draftPick);
+        const tv = baseTV + potentialBonus;
+        result.set(p.player.toLowerCase(), tv);
+      }
+      return result;
+    }
+    
+    function formatTradeValue(tv) {
+      if (tv >= 1000000) {
+        return '$' + (tv / 1000000).toFixed(1) + 'M';
+      } else if (tv >= 1000) {
+        return '$' + (tv / 1000).toFixed(0) + 'K';
+      } else {
+        return '$' + tv.toLocaleString();
+      }
+    }
+    
+    function getValueClass(tv) {
+      if (tv >= 20000000) return 'high';
+      if (tv >= 5000000) return 'medium';
+      return 'low';
+    }
+    
+    function getInitials(name) {
+      return name.split(' ').map(n => n[0]).join('');
+    }
+    
+    function renderDepthChart(tradeValues) {
+      const positions = ['PG', 'SG', 'SF', 'PF', 'C'];
+      const depthChart = document.getElementById('depthChart');
+      const loading = document.getElementById('loading');
+      
+      // Group players by position and sort by trade value
+      const byPosition = {};
+      positions.forEach(pos => byPosition[pos] = []);
+      
+      charlotteRoster.forEach(player => {
+        const tv = tradeValues.get(player.name.toLowerCase()) || 0;
+        byPosition[player.position].push({ ...player, tradeValue: tv });
+      });
+      
+      // Sort each position by trade value (descending)
+      positions.forEach(pos => {
+        byPosition[pos].sort((a, b) => b.tradeValue - a.tradeValue);
+      });
+      
+      // Render
+      let html = '';
+      positions.forEach(pos => {
+        html += `<div class="position-column">
+          <div class="position-header">${pos}</div>`;
+        
+        byPosition[pos].forEach((player, idx) => {
+          const tvFormatted = formatTradeValue(player.tradeValue);
+          const valueClass = getValueClass(player.tradeValue);
+          const isStarter = idx === 0 ? 'starter' : '';
+          
+          html += `
+            <div class="player-card ${isStarter}">
+              <div class="player-image">
+                ${player.headshot 
+                  ? `<img src="${player.headshot}" alt="${player.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${getInitials(player.name)}</span>'">`
+                  : `<span class="initials">${getInitials(player.name)}</span>`
+                }
+              </div>
+              <div class="player-name">${player.name}</div>
+              <div class="trade-value ${valueClass}">${tvFormatted}</div>
+            </div>
+          `;
+        });
+        
+        html += '</div>';
+      });
+      
+      depthChart.innerHTML = html;
+      depthChart.style.display = 'grid';
+      loading.style.display = 'none';
+    }
+    
+    // Load data and render
+    fetch(TV_CSV_URL)
+      .then(r => r.ok ? r.text() : Promise.reject('Failed to fetch'))
+      .then(csvText => {
+        const tradeValues = computeTradeValues(csvText);
+        renderDepthChart(tradeValues);
+      })
+      .catch(err => {
+        console.error('Error:', err);
+        document.getElementById('loading').textContent = 'Error loading data. Please refresh.';
+      });
+  </script>
+</body>
+</html>
