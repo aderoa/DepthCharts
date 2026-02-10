@@ -348,6 +348,7 @@ function parseRosterCSV(csvText) {
 // =====================================================
 function fmtTV(tv) { if (tv>=1e6) return '$'+(tv/1e6).toFixed(1)+'M'; if (tv>=1e3) return '$'+Math.round(tv/1e3)+'K'; return '$'+tv.toLocaleString(); }
 function fmtSal(s) { if (s>=1e6) return '$'+(s/1e6).toFixed(1)+'M'; if (s>=1e3) return '$'+Math.round(s/1e3)+'K'; return '$'+s.toLocaleString(); }
+function fmtSalFull(s) { return '$'+s.toLocaleString('en-US'); }
 function valClass(tv) { return tv>=2e7?'high':tv>=5e6?'medium':'low'; }
 function initials(n) { return n.split(' ').map(w=>w[0]).join(''); }
 
@@ -504,7 +505,7 @@ function exportHTML(withHeadshots) {
   const cellH = withHeadshots ? '130px' : '56px';
   const cellPad = withHeadshots ? '0.6rem 0.4rem' : '0.5rem 0.4rem';
 
-  let out = `<style>\n.ts { margin-bottom: 2rem; }\n.th { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: #16213e; border-radius: 12px 12px 0 0; }\n.th img { width: 36px; height: 36px; object-fit: contain; }\n.th .n { font-weight: 700; font-size: 1.1rem; color: white; }\n.th .a { color: #8892b0; font-size: 0.85rem; margin-left: 0.25rem; }\n.dg { display: grid; grid-template-columns: repeat(5, 1fr); background: #e8ecf1; border-radius: 0 0 12px 12px; overflow: hidden; }\n.pc { display: flex; flex-direction: column; }\n.ph { text-align: center; font-weight: 700; font-size: 0.95rem; color: #1a1a2e; padding: 0.5rem; background: white; border-bottom: 3px solid #4f6df5; }\n.cl { background: #f1f3f7; border: 1px solid #e0e4ea; padding: ${cellPad}; text-align: center; min-height: ${cellH}; display: flex; flex-direction: column; align-items: center; justify-content: center; }\n.cl.st { background: white; border: 2px solid #4f6df5; }\n.cl.tw { background: #fce4ec; }\n.cl.inj { background: #f5c6c6; }\n.cl.em { background: #f1f3f7; min-height: ${cellH}; }\n.hs { width: 72px; height: 52px; border-radius: 6px; background: linear-gradient(135deg, #667eea, #764ba2); overflow: hidden; margin-bottom: 0.3rem; }\n.hs img { width: 100%; height: 100%; object-fit: cover; }\n.pn { font-weight: 600; font-size: 0.8rem; color: #1a1a2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }\n.ps { font-weight: 600; font-size: 0.75rem; color: #d4930b; }\n</style>\n`;
+  let out = `<style>\n.ts { margin-bottom: 2rem; }\n.th { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: #2b2b3d; border-bottom: 1px solid #444; }\n.th img { width: 36px; height: 36px; object-fit: contain; }\n.th .n { font-weight: 700; font-size: 1.1rem; color: white; }\n.th .a { color: #8892b0; font-size: 0.85rem; margin-left: 0.25rem; }\n.dg { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid #ccc; }\n.pc { display: flex; flex-direction: column; }\n.ph { text-align: center; font-weight: 700; font-size: 0.95rem; color: #1a1a2e; padding: 0.5rem; background: white; border-bottom: 3px solid #4f6df5; border-right: 1px solid #ccc; }\n.cl { border: 1px solid #ccc; text-align: center; overflow: hidden; }\n.cl.em { background: #eee; min-height: ${cellH}; }\n.cl .img-wrap { background: white; padding: 0.5rem 0.25rem 0.25rem; display: flex; justify-content: center; }\n.cl .info { background: #e8e8e8; padding: 0.35rem 0.4rem; }\n.cl.st .info { background: #dde4f7; }\n.cl.tw .img-wrap { background: #fce4ec; }\n.cl.tw .info { background: #f8bbd0; }\n.cl.inj .img-wrap { background: #f5c6c6; }\n.cl.inj .info { background: #e89999; }\n.hs { width: 90px; height: 66px; overflow: hidden; }\n.hs img { width: 100%; height: 100%; object-fit: cover; }\n.pn { font-weight: 600; font-size: 0.8rem; color: #1a1a2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }\n.ps { font-weight: 600; font-size: 0.75rem; color: #d4930b; }\n</style>\n`;
 
   for (const team of NBA_TEAMS) {
     const order = teamOrders[team.abbrev];
@@ -530,8 +531,8 @@ function exportHTML(withHeadshots) {
           const sc = r===0 ? 'st' : '';
           const cc = p.colorCode==='twoway' ? 'tw' : p.colorCode==='injured' ? 'inj' : '';
           out += `<div class="cl ${sc} ${cc}">`;
-          if (withHeadshots && p.headshot) out += `<div class="hs"><img src="${p.headshot}" alt="${p.name}" onerror="this.style.display='none'"></div>`;
-          out += `<div class="pn">${p.name}</div><div class="ps">${fmtSal(p.salary)}</div></div>\n`;
+          if (withHeadshots) out += `<div class="img-wrap">${p.headshot ? `<div class="hs"><img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML=''"></div>` : ''}</div>`;
+          out += `<div class="info"><div class="pn">${p.name}</div><div class="ps">${fmtSalFull(p.salary)}</div></div></div>\n`;
         } else {
           out += `<div class="cl em"></div>\n`;
         }
