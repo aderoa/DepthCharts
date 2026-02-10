@@ -43,7 +43,7 @@
     .position-column { display: flex; flex-direction: column; gap: 0.5rem; min-height: 200px; }
     .position-header { text-align: center; font-weight: 700; font-size: 1.1rem; color: #1a1a2e; padding: 0.5rem; border-bottom: 3px solid #667eea; margin-bottom: 0.25rem; }
     .player-card { background: white; border-radius: 12px; padding: 0.75rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s; border: 2px solid transparent; cursor: grab; user-select: none; }
-    .player-card.spacer { background: transparent; box-shadow: none; border: 1px dashed #333; opacity: 0.3; cursor: default; }
+    .player-card.spacer { background: transparent; box-shadow: none; border: 2px solid transparent; opacity: 1; cursor: default; pointer-events: none; }
     .player-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); border-color: #667eea; }
     .player-card.starter { background: linear-gradient(135deg, #fff 0%, #f0f4ff 100%); border: 2px solid #667eea; }
     .player-card.dragging { opacity: 0.5; cursor: grabbing; }
@@ -415,9 +415,9 @@ function renderDepthChart(teamAbbrev) {
     let firstReal = true;
     byPos[pos].forEach((p,i) => {
       if (p === '__SPACER__') {
-        html += `<div class="player-card spacer" draggable="true" data-player="__SPACER__">
+        html += `<div class="player-card spacer" data-player="__SPACER__">
           <div class="player-image"><span class="initials" style="visibility:hidden;">&nbsp;</span></div>
-          <div class="player-name" style="color:#444;">—</div>
+          <div class="player-name" style="visibility:hidden;">—</div>
           <div class="trade-value" style="visibility:hidden;">&nbsp;</div></div>`;
       } else {
         html += `<div class="player-card ${firstReal?'starter':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
@@ -520,7 +520,12 @@ function setupDragDrop(container, teamAbbrev, isAdminView) {
     col.addEventListener('dragleave', function() { this.classList.remove('drag-over'); });
     col.addEventListener('drop', function(e) {
       e.preventDefault(); this.classList.remove('drag-over');
-      if (draggedElement && !e.target.matches(cardSel)) this.appendChild(draggedElement);
+      if (draggedElement && !e.target.matches(cardSel)) {
+        // Insert before the + spacer button if it exists, otherwise append
+        const addBtn = this.querySelector('.add-spacer-btn');
+        if (addBtn) this.insertBefore(draggedElement, addBtn);
+        else this.appendChild(draggedElement);
+      }
     });
   });
 }
