@@ -83,6 +83,7 @@
     .admin-position-column.drag-over { background: rgba(102,126,234,0.1); border-radius: 6px; }
     .admin-player-name { font-weight: 600; font-size: 0.75rem; color: #1a1a2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; }
     .admin-player-card.two-way { background: #fce4ec; }
+    .admin-player-card.ten-day { background: #fff9c4; }
     .admin-player-card.injured { background: #fff3e0; }
     .admin-trade-value { font-size: 0.65rem; font-weight: 600; pointer-events: none; margin-top: 1px; }
     .admin-trade-value.high { color: #16a34a; }
@@ -428,7 +429,7 @@ function renderAdminAllTeams() {
     positions.forEach(pos => {
       html += `<div class="admin-position-column" data-position="${pos}"><div class="admin-position-header">${pos}</div>`;
       byPos[pos].forEach((p,i) => {
-        const sc = p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':'';
+        const sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':'';
         html += `<div class="admin-player-card ${i===0?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtTV(p.tradeValue)}</div></div>`;
       });
       html += '</div>';
@@ -530,7 +531,7 @@ function exportHTML(withHeadshots) {
     out += `<table style="width:100%; text-align:center; border-collapse:collapse; font-size:12px;">\n`;
 
     // Position headers
-    out += `   \n<tr style="background-color: #f2f2f2;">\n`;
+    out += `   \n<tbody><tr style="background-color: #f2f2f2;">\n`;
     positions.forEach(pos => {
       out += `<th style="${td}">${pos}</th>\n`;
     });
@@ -540,9 +541,10 @@ function exportHTML(withHeadshots) {
     for (let r = 0; r < maxRows; r++) {
       const rowPlayers = positions.map(pos => posCols[pos][r] || null);
 
-      // Per-cell color: pink for twoway, lightcoral for injured
+      // Per-cell color: pink for twoway, yellow for 10-day, lightcoral for injured
       const cellColors = rowPlayers.map(p => {
         if (!p) return null;
+        if (p.contractStatus === '10-DAY') return 'yellow';
         if (p.colorCode === 'twoway') return 'pink';
         if (p.colorCode === 'injured') return 'lightcoral';
         return null;
@@ -591,7 +593,7 @@ function exportHTML(withHeadshots) {
       out += `</tr>\n`;
     }
 
-    out += `   \n</table><br>\n`;
+    out += `   \n</tbody></table><br>\n`;
   }
 
   out += '</div>\n';
@@ -604,11 +606,10 @@ function exportHTML(withHeadshots) {
 function copyExportCode() {
   const ta = document.getElementById('exportCode');
   ta.select(); ta.setSelectionRange(0, ta.value.length);
-  navigator.clipboard.writeText(ta.value).then(() => {
-    const btn = document.querySelector('.copy-btn');
-    btn.textContent = '✓ Copied!'; btn.classList.add('copied');
-    setTimeout(() => { btn.textContent = '📋 Copy to Clipboard'; btn.classList.remove('copied'); }, 2000);
-  }).catch(() => { document.execCommand('copy'); });
+  document.execCommand('copy');
+  const btn = document.querySelector('.copy-btn');
+  btn.textContent = '✓ Copied!'; btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = '📋 Copy to Clipboard'; btn.classList.remove('copied'); }, 2000);
 }
 
 function closeExportModal() { document.getElementById('exportModal').classList.remove('active'); }
