@@ -135,6 +135,7 @@
       <button class="export-btn" onclick="exportHTML(true,20,30)">📷 3/3</button>
       <span style="color:#1a1a2e;font-size:0.7rem;margin-left:4px;">|</span>
       <button class="export-btn" onclick="downloadOrderJSON()" style="background:#16a34a;color:white;border-color:#16a34a;">💾 Save Order</button>
+      <span id="refreshStatus" style="color:#1a1a2e;font-size:0.7rem;margin-left:8px;opacity:0.7;">🔄 Auto-refresh: 60s</span>
     </div>
   </div>
   <div class="container">
@@ -807,6 +808,56 @@ function downloadExportCode() {
 function closeExportModal() { document.getElementById('exportModal').classList.remove('active'); }
 
 // =====================================================
+// AUTO-REFRESH DATA (updates cards in-place, preserves order)
+// =====================================================
+async function autoRefreshData() {
+  try {
+    const [tvR, rR] = await Promise.all([fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL)]);
+    if (!tvR.ok || !rR.ok) return;
+    const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
+    tradeValueMap = computeTradeValues(tvText);
+    allPlayers = parseRosterCSV(rText);
+
+    // Build lookup by player name
+    const pMap = {};
+    allPlayers.forEach(p => pMap[p.name] = p);
+
+    // Update every admin card in-place
+    document.querySelectorAll('.admin-player-card').forEach(card => {
+      const name = card.dataset.player;
+      if (!name || name === '__SPACER__') return;
+      const p = pMap[name];
+      if (!p) return;
+
+      // Update salary text
+      const valEl = card.querySelector('.admin-trade-value');
+      if (valEl) {
+        valEl.textContent = fmtSal(p.salary);
+        valEl.className = 'admin-trade-value ' + valClass(p.tradeValue);
+      }
+
+      // Update color classes
+      card.classList.remove('two-way', 'ten-day', 'injured', 'questionable');
+      if (p.contractStatus === '10-DAY') card.classList.add('ten-day');
+      else if (p.colorCode === 'twoway') card.classList.add('two-way');
+      else if (p.colorCode === 'injured') card.classList.add('injured');
+      else if (p.colorCode === 'questionable') card.classList.add('questionable');
+    });
+
+    // Update timestamp
+    const el = document.getElementById('refreshStatus');
+    if (el) {
+      const t = new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+      el.textContent = `🔄 Updated ${t}`;
+      el.style.opacity = '1';
+      setTimeout(() => el.style.opacity = '0.7', 2000);
+    }
+  } catch (e) {
+    console.warn('Auto-refresh failed:', e);
+  }
+}
+
+// =====================================================
 // INIT
 // =====================================================
 async function init() {
@@ -829,7 +880,10 @@ async function init() {
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
     document.getElementById('loading').style.display = 'none';
-    if (isAdmin && !teamParam) renderAdminAllTeams();
+    if (isAdmin && !teamParam) {
+      renderAdminAllTeams();
+      setInterval(autoRefreshData, 60000);
+    }
     else if (teamParam && NBA_TEAMS.some(t=>t.abbrev===teamParam)) renderDepthChart(teamParam);
     else renderTeamGrid();
   } catch (err) {
