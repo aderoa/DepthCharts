@@ -506,13 +506,12 @@ function exportHTML(withHeadshots) {
   const td = 'border:none; padding:4px; text-align:center;';
   const imgS = 'display:block;width:80px;height:80px;object-fit:cover;object-position:center;margin:0 auto;';
 
-  let out = '';
+  // Single outer wrapper div — matches Google Sheets format exactly
+  let out = '<div style="font-family:sans-serif; max-width:800px; margin:0 auto; overflow-x:auto; font-size:16px; text-align:center;">\n';
 
   for (const team of NBA_TEAMS) {
     const order = teamOrders[team.abbrev];
     if (!order) continue;
-    const tp = allPlayers.filter(p => p.team === team.abbrev);
-    const logoUrl = tp[0]?.teamLogo || team.logo;
     const posCols = {}; let maxRows = 0;
     positions.forEach(pos => {
       const names = order[pos]||[];
@@ -524,36 +523,34 @@ function exportHTML(withHeadshots) {
     });
     if (maxRows < 3) maxRows = 3;
 
-    // Team wrapper
-    out += `<div style="font-family:sans-serif; max-width:800px; margin:0 auto; overflow-x:auto; font-size:16px; text-align:center;">\n`;
+    // Team title (bare div, no wrapper)
     out += `<div style="text-align:center; font-size:1.2em; margin-bottom:0.5em;">\n`;
     out += `<strong>${team.name.toUpperCase()}</strong>\n`;
     out += `</div>\n`;
     out += `<table style="width:100%; text-align:center; border-collapse:collapse; font-size:12px;">\n`;
 
     // Position headers
-    out += `<tr style="background-color: #f2f2f2;">\n`;
+    out += `   \n<tr style="background-color: #f2f2f2;">\n`;
     positions.forEach(pos => {
       out += `<th style="${td}">${pos}</th>\n`;
     });
-    out += `</tr>\n`;
+    out += `</tr>\n    \n   \n`;
 
-    // Each depth row = 3 table rows: headshots, names, salaries
+    // Each depth row = 2 or 3 table rows: [headshots], names, salaries
     for (let r = 0; r < maxRows; r++) {
       const rowPlayers = positions.map(pos => posCols[pos][r] || null);
 
-      // Determine background color for name/salary rows
-      // Check if any player in this row has special status
-      const rowColors = rowPlayers.map(p => {
-        if (!p) return '#f2f2f2';
-        if (p.colorCode === 'twoway') return '#f8bbd0';
+      // Per-cell color: pink for twoway, lightcoral for injured
+      const cellColors = rowPlayers.map(p => {
+        if (!p) return null;
+        if (p.colorCode === 'twoway') return 'pink';
         if (p.colorCode === 'injured') return 'lightcoral';
-        return '#f2f2f2';
+        return null;
       });
 
       if (withHeadshots) {
         // Headshot row (white background)
-        out += `<tr style="background-color:#fff; text-align:center;">\n`;
+        out += `\n      <tr style="background-color:#fff; text-align:center;">\n`;
         positions.forEach((pos, i) => {
           const p = rowPlayers[i];
           if (p && p.headshot) {
@@ -565,35 +562,39 @@ function exportHTML(withHeadshots) {
         out += `</tr>\n`;
       }
 
-      // Name row
-      out += `<tr style="text-align:center;">\n`;
+      // Name row — bg on <tr> is #f2f2f2, per-cell override for twoway/injured
+      out += `\n<tr style="background-color: #f2f2f2;">\n`;
       positions.forEach((pos, i) => {
         const p = rowPlayers[i];
-        const bg = rowColors[i];
+        const cc = cellColors[i];
+        const bgAttr = cc ? `background-color:${cc};` : '';
         if (p) {
-          out += `<td style="${td} background-color:${bg};"><strong>${p.name}</strong></td>\n`;
+          out += `<td style="${td} ${bgAttr}" ><strong>${p.name}</strong></td>\n`;
         } else {
-          out += `<td style="${td} background-color:#f2f2f2;"></td>\n`;
+          out += `<td style="${td} " ><strong></strong></td>\n`;
         }
       });
       out += `</tr>\n`;
 
-      // Salary row
-      out += `<tr style="text-align:center;">\n`;
+      // Salary row — same pattern
+      out += `\n<tr style="background-color: #f2f2f2;">\n`;
       positions.forEach((pos, i) => {
         const p = rowPlayers[i];
-        const bg = rowColors[i];
+        const cc = cellColors[i];
+        const bgAttr = cc ? `background-color:${cc};` : '';
         if (p) {
-          out += `<td style="${td} background-color:${bg};">${fmtSalFull(p.salary)}</td>\n`;
+          out += `<td style="${td}${bgAttr}">${fmtSalFull(p.salary)}</td>\n`;
         } else {
-          out += `<td style="${td} background-color:#f2f2f2;"></td>\n`;
+          out += `<td style="${td}"></td>\n`;
         }
       });
       out += `</tr>\n`;
     }
 
-    out += `</table>\n</div>\n<br>\n`;
+    out += `   \n</table><br>\n`;
   }
+
+  out += '</div>\n';
 
   document.getElementById('exportCode').value = out;
   document.getElementById('exportModalTitle').textContent = withHeadshots ? '📷 Export HTML — With Headshots' : '📋 Export HTML — Compact';
