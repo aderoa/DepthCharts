@@ -503,26 +503,8 @@ function exportHTML(withHeadshots) {
     teamOrders[ta] = order;
   });
 
-  // Inline styles
-  const S = {
-    ts: 'margin-bottom:2rem;font-family:DM Sans,sans-serif;',
-    th: 'display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;background:#2b2b3d;',
-    thImg: 'width:36px;height:36px;object-fit:contain;',
-    thN: 'font-weight:700;font-size:1.1rem;color:white;',
-    dg: 'display:grid;grid-template-columns:repeat(5,1fr);',
-    pc: 'display:flex;flex-direction:column;',
-    ph: 'text-align:center;font-weight:700;font-size:0.95rem;color:#1a1a2e;padding:0.5rem;background:white;border-bottom:3px solid #4f6df5;',
-    imgWrap: 'background:white;padding:0.5rem 0.25rem 0.25rem;display:flex;justify-content:center;',
-    hs: 'width:90px;height:66px;overflow:hidden;',
-    hsImg: 'width:100%;height:100%;object-fit:cover;',
-    pn: 'font-weight:600;font-size:0.8rem;color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;',
-    ps: 'font-weight:600;font-size:0.75rem;color:#1a1a2e;',
-    infoNormal: 'background:#e8e8e8;padding:0.35rem 0.4rem;text-align:center;',
-    infoStarter: 'background:#dde4f7;padding:0.35rem 0.4rem;text-align:center;',
-    infoTW: 'background:#f8bbd0;padding:0.35rem 0.4rem;text-align:center;',
-    infoInj: 'background:#e89999;padding:0.35rem 0.4rem;text-align:center;',
-    empty: 'min-height:' + (withHeadshots ? '120px' : '50px') + ';background:#eee;'
-  };
+  const td = 'border:none; padding:4px; text-align:center;';
+  const imgS = 'display:block;width:80px;height:80px;object-fit:cover;object-position:center;margin:0 auto;';
 
   let out = '';
 
@@ -542,30 +524,75 @@ function exportHTML(withHeadshots) {
     });
     if (maxRows < 3) maxRows = 3;
 
-    out += `<div style="${S.ts}">\n`;
-    out += `<div style="${S.th}"><img src="${logoUrl}" style="${S.thImg}" onerror="this.style.opacity='0.3'"><span style="${S.thN}">${team.name}</span></div>\n`;
-    out += `<div style="${S.dg}">\n`;
+    // Team wrapper
+    out += `<div style="font-family:sans-serif; max-width:800px; margin:0 auto; overflow-x:auto; font-size:16px; text-align:center;">\n`;
+    out += `<div style="text-align:center; font-size:1.2em; margin-bottom:0.5em;">\n`;
+    out += `<strong>${team.name.toUpperCase()}</strong>\n`;
+    out += `</div>\n`;
+    out += `<table style="width:100%; text-align:center; border-collapse:collapse; font-size:12px;">\n`;
 
+    // Position headers
+    out += `<tr style="background-color: #f2f2f2;">\n`;
     positions.forEach(pos => {
-      out += `<div style="${S.pc}"><div style="${S.ph}">${pos}</div>\n`;
-      for (let r = 0; r < maxRows; r++) {
-        const p = posCols[pos][r];
-        if (p) {
-          let infoStyle = r === 0 ? S.infoStarter : S.infoNormal;
-          if (p.colorCode === 'twoway') infoStyle = S.infoTW;
-          if (p.colorCode === 'injured') infoStyle = S.infoInj;
-          out += `<div style="text-align:center;overflow:hidden;">`;
-          if (withHeadshots) {
-            out += `<div style="${S.imgWrap}">${p.headshot ? `<div style="${S.hs}"><img src="${p.headshot}" style="${S.hsImg}" onerror="this.parentElement.innerHTML=''"></div>` : ''}</div>`;
-          }
-          out += `<div style="${infoStyle}"><div style="${S.pn}">${p.name}</div><div style="${S.ps}">${fmtSalFull(p.salary)}</div></div></div>\n`;
-        } else {
-          out += `<div style="${S.empty}"></div>\n`;
-        }
-      }
-      out += `</div>\n`;
+      out += `<th style="${td}">${pos}</th>\n`;
     });
-    out += `</div>\n</div>\n`;
+    out += `</tr>\n`;
+
+    // Each depth row = 3 table rows: headshots, names, salaries
+    for (let r = 0; r < maxRows; r++) {
+      const rowPlayers = positions.map(pos => posCols[pos][r] || null);
+
+      // Determine background color for name/salary rows
+      // Check if any player in this row has special status
+      const rowColors = rowPlayers.map(p => {
+        if (!p) return '#f2f2f2';
+        if (p.colorCode === 'twoway') return '#f8bbd0';
+        if (p.colorCode === 'injured') return 'lightcoral';
+        return '#f2f2f2';
+      });
+
+      if (withHeadshots) {
+        // Headshot row (white background)
+        out += `<tr style="background-color:#fff; text-align:center;">\n`;
+        positions.forEach((pos, i) => {
+          const p = rowPlayers[i];
+          if (p && p.headshot) {
+            out += `<td style="${td}"><img src="${p.headshot}" style="${imgS}"/></td>\n`;
+          } else {
+            out += `<td style="${td}"></td>\n`;
+          }
+        });
+        out += `</tr>\n`;
+      }
+
+      // Name row
+      out += `<tr style="text-align:center;">\n`;
+      positions.forEach((pos, i) => {
+        const p = rowPlayers[i];
+        const bg = rowColors[i];
+        if (p) {
+          out += `<td style="${td} background-color:${bg};"><strong>${p.name}</strong></td>\n`;
+        } else {
+          out += `<td style="${td} background-color:#f2f2f2;"></td>\n`;
+        }
+      });
+      out += `</tr>\n`;
+
+      // Salary row
+      out += `<tr style="text-align:center;">\n`;
+      positions.forEach((pos, i) => {
+        const p = rowPlayers[i];
+        const bg = rowColors[i];
+        if (p) {
+          out += `<td style="${td} background-color:${bg};">${fmtSalFull(p.salary)}</td>\n`;
+        } else {
+          out += `<td style="${td} background-color:#f2f2f2;"></td>\n`;
+        }
+      });
+      out += `</tr>\n`;
+    }
+
+    out += `</table>\n</div>\n<br>\n`;
   }
 
   document.getElementById('exportCode').value = out;
