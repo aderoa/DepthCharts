@@ -86,7 +86,7 @@
     .admin-position-column.drag-over { background: rgba(102,126,234,0.1); border-radius: 6px; }
     .admin-drop-indicator { height: 3px; background: #667eea; border-radius: 2px; margin: 1px 0; pointer-events: none; box-shadow: 0 0 6px rgba(102,126,234,0.6); transition: none; }
     .admin-player-name { font-weight: 600; font-size: 0.75rem; color: #1a1a2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; }
-    .admin-player-card.two-way { background: #fce4ec; }
+    .admin-player-card.two-way { background: #e1bee7; }
     .admin-player-card.ten-day { background: #fff9c4; }
     .admin-player-card.spacer { background: #2a2a4e; border: 1px dashed #444; display: flex; align-items: center; justify-content: center; opacity: 0.6; cursor: grab; position: relative; padding: 0.4rem 0.5rem; }
     .admin-player-card.spacer .spacer-label { color: #666; font-size: 0.65rem; }
@@ -652,7 +652,7 @@ function exportHTML(withHeadshots, startIdx, endIdx) {
       const cc = rp.map(p => {
         if (!p) return '';
         if (p.contractStatus === '10-DAY') return 'background-color:yellow;';
-        if (p.colorCode === 'twoway') return 'background-color:pink;';
+        if (p.colorCode === 'twoway') return 'background-color:#e1bee7;';
         if (p.colorCode === 'injured') return 'background-color:lightcoral;';
         if (p.colorCode === 'questionable') return 'background-color:#f5b7b1;';
         return '';
