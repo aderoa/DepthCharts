@@ -114,8 +114,10 @@
     <span>🔧 ADMIN MODE — Drag to reorder, changes saved locally</span>
     <span id="saveStatus" class="admin-save-status">✓ Saved</span>
     <div style="display:flex;gap:0.5rem;">
-      <button class="export-btn" onclick="exportHTML(true)">📷 Export with Headshots</button>
-      <button class="export-btn" onclick="exportHTML(false)">📋 Export Compact</button>
+      <button class="export-btn" onclick="exportHTML(true,0,15)">📷 Headshots (ATL-MEM)</button>
+      <button class="export-btn" onclick="exportHTML(true,15,30)">📷 Headshots (MIA-WAS)</button>
+      <button class="export-btn" onclick="exportHTML(false,0,15)">📋 Compact (ATL-MEM)</button>
+      <button class="export-btn" onclick="exportHTML(false,15,30)">📋 Compact (MIA-WAS)</button>
     </div>
   </div>
   <div class="container">
@@ -492,7 +494,7 @@ function setupDragDrop(container, teamAbbrev, isAdminView) {
 // =====================================================
 // EXPORT HTML
 // =====================================================
-function exportHTML(withHeadshots) {
+function exportHTML(withHeadshots, startIdx, endIdx) {
   const positions = ['PG','SG','SF','PF','C'];
   const playerMap = {}; allPlayers.forEach(p => playerMap[p.name] = p);
   const teamOrders = {};
@@ -511,7 +513,8 @@ function exportHTML(withHeadshots) {
   // Single outer wrapper div — matches Google Sheets format exactly
   let out = '<div style="font-family:sans-serif; max-width:800px; margin:0 auto; overflow-x:auto; font-size:16px; text-align:center;">\n';
 
-  for (const team of NBA_TEAMS) {
+  const teamsSlice = NBA_TEAMS.slice(startIdx, endIdx);
+  for (const team of teamsSlice) {
     const order = teamOrders[team.abbrev];
     if (!order) continue;
     const posCols = {}; let maxRows = 0;
@@ -599,8 +602,10 @@ function exportHTML(withHeadshots) {
 
   out += '</div>\n';
 
+  const blockLabel = startIdx === 0 ? 'ATL–MEM' : 'MIA–WAS';
+  const modeLabel = withHeadshots ? '📷 Headshots' : '📋 Compact';
   document.getElementById('exportCode').value = out;
-  document.getElementById('exportModalTitle').textContent = withHeadshots ? '📷 Export HTML — With Headshots' : '📋 Export HTML — Compact';
+  document.getElementById('exportModalTitle').textContent = `${modeLabel} — ${blockLabel} (${teamsSlice.length} teams)`;
   document.getElementById('exportModal').classList.add('active');
 }
 
