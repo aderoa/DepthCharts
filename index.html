@@ -721,21 +721,19 @@ function downloadOrderJSON() {
 // ?headshots=0 → compact (default: headshots on)
 // =====================================================
 async function renderExportView(exportParam, withHeadshots) {
-  // Hide all UI
-  document.body.style.background = 'white';
-  document.body.style.margin = '0';
-  document.body.style.padding = '0';
+  // Replace entire page with clean white canvas
+  document.body.style.cssText = 'background:white;margin:0;padding:0;';
   document.querySelector('.container').style.display = 'none';
   document.getElementById('adminBanner').style.display = 'none';
 
   const statusEl = document.getElementById('loading');
   statusEl.style.display = 'block';
+  statusEl.style.color = '#333';
   statusEl.querySelector('p').textContent = 'Loading depth charts...';
   statusEl.querySelector('.loading-spinner').style.borderTopColor = '#667eea';
 
   try {
-    // Fetch data + order.json in parallel
-    const orderURL = new URL('order.json', window.location.href).href;
+    const orderURL = new URL('order.json', window.location.href.split('?')[0]).href;
     const [tvR, rR, oR] = await Promise.all([
       fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL), fetch(orderURL)
     ]);
@@ -746,8 +744,10 @@ async function renderExportView(exportParam, withHeadshots) {
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
 
-    const startIdx = exportParam === '2' ? 15 : 0;
-    const endIdx = exportParam === '2' ? 30 : 15;
+    let startIdx, endIdx;
+    if (exportParam === '2') { startIdx = 15; endIdx = 30; }
+    else if (exportParam === 'all') { startIdx = 0; endIdx = 30; }
+    else { startIdx = 0; endIdx = 15; }
 
     const html = generateExportHTML(orderData, withHeadshots, startIdx, endIdx);
 
@@ -755,6 +755,16 @@ async function renderExportView(exportParam, withHeadshots) {
     const wrapper = document.createElement('div');
     wrapper.innerHTML = html;
     document.body.appendChild(wrapper);
+
+    // Auto-resize iframe if embedded
+    function notifyHeight() {
+      const h = document.body.scrollHeight;
+      window.parent.postMessage({type:'resize', height: h}, '*');
+    }
+    notifyHeight();
+    // Re-check after images load
+    window.addEventListener('load', notifyHeight);
+    setTimeout(notifyHeight, 3000);
   } catch (err) {
     console.error('Export render error:', err);
     statusEl.style.display = 'none';
