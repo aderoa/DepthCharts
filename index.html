@@ -125,8 +125,8 @@
     <span>🔧 ADMIN MODE — Drag to reorder, changes saved locally</span>
     <span id="saveStatus" class="admin-save-status">✓ Saved</span>
     <div style="display:flex;gap:0.5rem;align-items:center;">
-      <button class="export-btn" onclick="exportHTML(true,0,15)">📷 Headshots (ATL-MEM)</button>
-      <button class="export-btn" onclick="exportHTML(true,15,30)">📷 Headshots (MIA-WAS)</button>
+      <button class="export-btn" onclick="copyExportDirect(true,0,15)">📷 Copy ATL-MEM</button>
+      <button class="export-btn" onclick="copyExportDirect(true,15,30)">📷 Copy MIA-WAS</button>
       <span id="refreshStatus" style="color:#1a1a2e;font-size:0.7rem;margin-left:8px;opacity:0.7;">🔄 Auto-refresh: 60s</span>
     </div>
   </div>
@@ -771,6 +771,36 @@ async function renderExportView(exportParam, withHeadshots) {
     errDiv.textContent = 'Error: ' + err.message;
     document.body.appendChild(errDiv);
   }
+}
+
+function copyExportDirect(withHeadshots, startIdx, endIdx) {
+  const teamOrders = {};
+  document.querySelectorAll('.admin-depth-chart').forEach(chart => {
+    const ta = chart.dataset.team; const order = {};
+    chart.querySelectorAll('.admin-position-column').forEach(col => {
+      const pos = col.dataset.position; if (!pos) return; order[pos] = [];
+      col.querySelectorAll('.admin-player-card').forEach(card => {
+        if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
+        else if (card.dataset.player) order[pos].push(card.dataset.player);
+      });
+    });
+    teamOrders[ta] = order;
+  });
+  const out = generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx);
+  const btn = event.target.closest('.export-btn');
+  const orig = btn.textContent;
+  const blob = new Blob([out], {type: 'text/plain'});
+  navigator.clipboard.write([new ClipboardItem({'text/plain': blob})]).then(() => {
+    btn.textContent = '✓ Copied!';
+    btn.style.background = '#16a34a'; btn.style.color = 'white';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
+  }).catch(() => {
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = out; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = orig, 2000);
+  });
 }
 
 function copyExportCode() {
