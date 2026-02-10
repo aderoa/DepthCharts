@@ -49,6 +49,8 @@
     .player-card.dragging { opacity: 0.5; cursor: grabbing; }
     .player-card.drag-over { border: 2px dashed #667eea; background: #f0f4ff; }
     .position-column.drag-over { background: rgba(102,126,234,0.1); border-radius: 8px; }
+    /* Drop indicator line */
+    .drop-indicator { height: 3px; background: #667eea; border-radius: 2px; margin: 2px 0; pointer-events: none; box-shadow: 0 0 6px rgba(102,126,234,0.6); transition: none; }
     .player-image { width: 80px; height: 60px; margin: 0 auto 0.5rem; border-radius: 8px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; pointer-events: none; }
     .player-image img { width: 100%; height: 100%; object-fit: cover; }
     .player-image .initials { color: white; font-weight: 700; font-size: 1.2rem; }
@@ -82,6 +84,7 @@
     .admin-player-card.dragging { opacity: 0.5; cursor: grabbing; }
     .admin-player-card.drag-over { border: 2px dashed #667eea; background: #f0f4ff; }
     .admin-position-column.drag-over { background: rgba(102,126,234,0.1); border-radius: 6px; }
+    .admin-drop-indicator { height: 3px; background: #667eea; border-radius: 2px; margin: 1px 0; pointer-events: none; box-shadow: 0 0 6px rgba(102,126,234,0.6); transition: none; }
     .admin-player-name { font-weight: 600; font-size: 0.75rem; color: #1a1a2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; }
     .admin-player-card.two-way { background: #fce4ec; }
     .admin-player-card.ten-day { background: #fff9c4; }
@@ -378,7 +381,7 @@ function renderTeamGrid() {
 // =====================================================
 // BUILD POSITION MAP (shared by single-team & admin)
 // =====================================================
-function buildPositionMap(teamPlayers, savedOrder) {
+function buildPositionMap(teamPlayers, savedOrder, minRows) {
   const positions = ['PG','SG','SF','PF','C'];
   const byPos = {}; positions.forEach(p => byPos[p] = []);
   if (savedOrder) {
@@ -392,6 +395,12 @@ function buildPositionMap(teamPlayers, savedOrder) {
   } else {
     teamPlayers.forEach(p => byPos[positions.includes(p.position)?p.position:'SF'].push(p));
     positions.forEach(pos => byPos[pos].sort((a,b) => b.tradeValue - a.tradeValue));
+  }
+  // Pad columns to minRows with spacers (for admin mode)
+  if (minRows) {
+    positions.forEach(pos => {
+      while (byPos[pos].length < minRows) byPos[pos].push('__SPACER__');
+    });
   }
   return byPos;
 }
@@ -423,7 +432,7 @@ function renderDepthChart(teamAbbrev) {
         html += `<div class="player-card ${firstReal?'starter':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
           <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
           <div class="player-name">${p.name}</div>
-          <div class="trade-value ${valClass(p.tradeValue)}">${fmtTV(p.tradeValue)}</div></div>`;
+          <div class="trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
         firstReal = false;
       }
     });
@@ -447,7 +456,7 @@ function renderAdminAllTeams() {
   for (const team of NBA_TEAMS) {
     const tp = allPlayers.filter(p=>p.team===team.abbrev);
     if (!tp.length) continue;
-    const byPos = buildPositionMap(tp, savedOrders[team.abbrev]||null);
+    const byPos = buildPositionMap(tp, savedOrders[team.abbrev]||null, 5);
     html += `<div class="admin-team-row" data-team="${team.abbrev}">
       <div class="admin-team-row-header"><img class="admin-team-row-logo" src="${team.logo}" alt="${team.name}" onerror="this.style.opacity='0.3'"><span class="admin-team-row-name">${team.name}</span><span class="admin-team-row-abbrev">${team.abbrev}</span></div>
       <div class="admin-depth-chart" data-team="${team.abbrev}">`;
@@ -456,14 +465,13 @@ function renderAdminAllTeams() {
       let firstReal = true;
       byPos[pos].forEach((p,i) => {
         if (p === '__SPACER__') {
-          html += `<div class="admin-player-card spacer" draggable="true" data-player="__SPACER__"><div><div class="admin-player-name" style="color:#666;">— blank —</div><div class="admin-trade-value" style="visibility:hidden;">&nbsp;</div></div><button class="spacer-delete" onclick="removeSpacer(this)" title="Remove spacer">✕</button></div>`;
+          html += `<div class="admin-player-card spacer" draggable="true" data-player="__SPACER__"><div><div class="admin-player-name" style="color:#666;">— blank —</div><div class="admin-trade-value" style="visibility:hidden;">&nbsp;</div></div></div>`;
         } else {
           const sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':p.colorCode==='questionable'?'questionable':'';
-          html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtTV(p.tradeValue)}</div></div>`;
+          html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
           firstReal = false;
         }
       });
-      html += `<button class="add-spacer-btn" onclick="addSpacer(this)" data-team="${team.abbrev}">+ spacer</button>`;
       html += '</div>';
     });
     html += '</div></div>';
@@ -481,52 +489,74 @@ function setupDragDrop(container, teamAbbrev, isAdminView) {
   const colSel = isAdminView ? '.admin-position-column' : '.position-column';
 
   container.querySelectorAll(cardSel).forEach(card => {
-    card.addEventListener('dragstart', function(e) {
-      draggedElement = this; this.classList.add('dragging');
-      e.dataTransfer.effectAllowed = 'move';
-      e.dataTransfer.setData('text/plain', this.dataset.player);
-    });
-    card.addEventListener('dragend', function() {
-      this.classList.remove('dragging');
-      document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
-      draggedElement = null;
-      // Update starter highlights (skip spacers)
-      container.querySelectorAll(colSel).forEach(col => {
-        let firstReal = true;
-        col.querySelectorAll(cardSel).forEach(c => {
-          if (c.classList.contains('spacer')) { c.classList.remove('starter'); return; }
-          c.classList.toggle('starter', firstReal);
-          firstReal = false;
-        });
-      });
-      // Save
-      saveTeamOrder(teamAbbrev, container);
-    });
-    card.addEventListener('dragover', function(e) { e.preventDefault(); if (this !== draggedElement) this.classList.add('drag-over'); });
-    card.addEventListener('dragleave', function() { this.classList.remove('drag-over'); });
-    card.addEventListener('drop', function(e) {
-      e.preventDefault(); e.stopPropagation(); this.classList.remove('drag-over');
-      if (this !== draggedElement && draggedElement) {
-        const col = this.parentElement;
-        const r = this.getBoundingClientRect();
-        if (e.clientY < r.top + r.height/2) col.insertBefore(draggedElement, this);
-        else col.insertBefore(draggedElement, this.nextSibling);
-      }
-    });
+    makeDraggable(card, container, teamAbbrev, cardSel, colSel);
   });
 
   container.querySelectorAll(colSel).forEach(col => {
-    col.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('drag-over'); });
-    col.addEventListener('dragleave', function() { this.classList.remove('drag-over'); });
+    col.addEventListener('dragover', function(e) { e.preventDefault(); });
     col.addEventListener('drop', function(e) {
-      e.preventDefault(); this.classList.remove('drag-over');
-      if (draggedElement && !e.target.matches(cardSel)) {
-        // Insert before the + spacer button if it exists, otherwise append
+      e.preventDefault();
+      if (draggedElement && !e.target.closest(cardSel)) {
+        // Dropped on empty area of column — append (before spacer btn if exists)
         const addBtn = this.querySelector('.add-spacer-btn');
         if (addBtn) this.insertBefore(draggedElement, addBtn);
         else this.appendChild(draggedElement);
       }
     });
+  });
+}
+
+function makeDraggable(card, container, teamAbbrev, cardSel, colSel) {
+  card.addEventListener('dragstart', function(e) {
+    draggedElement = this;
+    this.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', this.dataset.player);
+    // Store original position info for potential cancel
+    this._origParent = this.parentElement;
+    this._origNext = this.nextElementSibling;
+  });
+
+  card.addEventListener('dragend', function() {
+    this.classList.remove('dragging');
+    draggedElement = null;
+    // Update starter highlights
+    container.querySelectorAll(colSel).forEach(col => {
+      let firstReal = true;
+      col.querySelectorAll(cardSel).forEach(c => {
+        if (c.classList.contains('spacer')) { c.classList.remove('starter'); return; }
+        c.classList.toggle('starter', firstReal);
+        firstReal = false;
+      });
+    });
+    saveTeamOrder(teamAbbrev, container);
+  });
+
+  card.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    if (!draggedElement || this === draggedElement) return;
+    // Live preview: move the dragged element into position
+    const col = this.parentElement;
+    const r = this.getBoundingClientRect();
+    const midY = r.top + r.height / 2;
+    if (e.clientY < midY) {
+      // Insert before this card
+      if (draggedElement.nextElementSibling !== this || draggedElement.parentElement !== col) {
+        col.insertBefore(draggedElement, this);
+      }
+    } else {
+      // Insert after this card
+      if (this.nextElementSibling !== draggedElement || draggedElement.parentElement !== col) {
+        col.insertBefore(draggedElement, this.nextSibling);
+      }
+    }
+  });
+
+  card.addEventListener('drop', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    // Card is already in position from dragover — nothing extra needed
   });
 }
 
@@ -557,31 +587,7 @@ function removeSpacer(deleteBtn) {
 }
 
 function attachCardDrag(card, container, teamAbbrev) {
-  card.addEventListener('dragstart', function(e) {
-    draggedElement = this; this.classList.add('dragging');
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/plain', this.dataset.player);
-  });
-  card.addEventListener('dragend', function() {
-    this.classList.remove('dragging');
-    document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
-    draggedElement = null;
-    container.querySelectorAll('.admin-position-column').forEach(col => {
-      col.querySelectorAll('.admin-player-card').forEach((c,i) => c.classList.toggle('starter', i===0 && !c.classList.contains('spacer')));
-    });
-    saveTeamOrder(teamAbbrev, container);
-  });
-  card.addEventListener('dragover', function(e) { e.preventDefault(); if (this !== draggedElement) this.classList.add('drag-over'); });
-  card.addEventListener('dragleave', function() { this.classList.remove('drag-over'); });
-  card.addEventListener('drop', function(e) {
-    e.preventDefault(); e.stopPropagation(); this.classList.remove('drag-over');
-    if (this !== draggedElement && draggedElement) {
-      const col = this.parentElement;
-      const r = this.getBoundingClientRect();
-      if (e.clientY < r.top + r.height/2) col.insertBefore(draggedElement, this);
-      else col.insertBefore(draggedElement, this.nextSibling);
-    }
-  });
+  makeDraggable(card, container, teamAbbrev, '.admin-player-card', '.admin-position-column');
 }
 
 // =====================================================
