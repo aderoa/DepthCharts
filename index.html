@@ -133,6 +133,8 @@
       <button class="export-btn" onclick="exportHTML(true,0,10)">📷 1/3</button>
       <button class="export-btn" onclick="exportHTML(true,10,20)">📷 2/3</button>
       <button class="export-btn" onclick="exportHTML(true,20,30)">📷 3/3</button>
+      <span style="color:#1a1a2e;font-size:0.7rem;margin-left:4px;">|</span>
+      <button class="export-btn" onclick="downloadOrderJSON()" style="background:#16a34a;color:white;border-color:#16a34a;">💾 Save Order</button>
     </div>
   </div>
   <div class="container">
@@ -595,25 +597,11 @@ function attachCardDrag(card, container, teamAbbrev) {
 }
 
 // =====================================================
-// EXPORT HTML
+// EXPORT HTML — shared generator
 // =====================================================
-function exportHTML(withHeadshots, startIdx, endIdx) {
+function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
   const positions = ['PG','SG','SF','PF','C'];
   const playerMap = {}; allPlayers.forEach(p => playerMap[p.name] = p);
-  const teamOrders = {};
-  document.querySelectorAll('.admin-depth-chart').forEach(chart => {
-    const ta = chart.dataset.team; const order = {};
-    chart.querySelectorAll('.admin-position-column').forEach(col => {
-      const pos = col.dataset.position; if (!pos) return; order[pos] = [];
-      col.querySelectorAll('.admin-player-card').forEach(card => {
-        if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
-        else if (card.dataset.player) order[pos].push(card.dataset.player);
-      });
-    });
-    teamOrders[ta] = order;
-  });
-
-  // Minimal inline styles — short as possible
   const S = 'border:none;padding:4px;text-align:center;';
   const iS = 'display:block;width:80px;height:80px;object-fit:cover;margin:0 auto;';
 
@@ -629,8 +617,6 @@ function exportHTML(withHeadshots, startIdx, endIdx) {
       posCols[pos] = names.map(n => n === '__SPACER__' ? null : (playerMap[n]||null));
       if (posCols[pos].length > maxRows) maxRows = posCols[pos].length;
     });
-
-    // Trim trailing empty rows (where all 5 positions are null)
     while (maxRows > 0) {
       const row = positions.map(pos => posCols[pos][maxRows-1] || null);
       if (row.some(p => p !== null)) break;
@@ -646,9 +632,7 @@ function exportHTML(withHeadshots, startIdx, endIdx) {
 
     for (let r = 0; r < maxRows; r++) {
       const rp = positions.map(pos => posCols[pos][r] || null);
-      // Skip completely empty rows
       if (!rp.some(p => p !== null)) continue;
-
       const cc = rp.map(p => {
         if (!p) return '';
         if (p.contractStatus === '10-DAY') return 'background-color:yellow;';
@@ -657,7 +641,6 @@ function exportHTML(withHeadshots, startIdx, endIdx) {
         if (p.colorCode === 'questionable') return 'background-color:#f5b7b1;';
         return '';
       });
-
       if (withHeadshots) {
         out += `<tr style="background-color:#fff;">`;
         rp.forEach((p,i) => {
@@ -665,34 +648,121 @@ function exportHTML(withHeadshots, startIdx, endIdx) {
         });
         out += `</tr>`;
       }
-
       out += `<tr style="background-color:#f2f2f2;">`;
-      rp.forEach((p,i) => {
-        out += `<td style="${S}${cc[i]}">${p ? `<strong>${p.name}</strong>` : ''}</td>`;
-      });
+      rp.forEach((p,i) => { out += `<td style="${S}${cc[i]}">${p ? `<strong>${p.name}</strong>` : ''}</td>`; });
       out += `</tr>`;
-
       out += `<tr style="background-color:#f2f2f2;">`;
-      rp.forEach((p,i) => {
-        out += `<td style="${S}${cc[i]}">${p ? fmtSalFull(p.salary) : ''}</td>`;
-      });
+      rp.forEach((p,i) => { out += `<td style="${S}${cc[i]}">${p ? fmtSalFull(p.salary) : ''}</td>`; });
       out += `</tr>`;
     }
-
     out += `</tbody></table><br>`;
   }
-
   out += '</div>';
+  return out;
+}
 
+function exportHTML(withHeadshots, startIdx, endIdx) {
+  // Read order from DOM
+  const teamOrders = {};
+  document.querySelectorAll('.admin-depth-chart').forEach(chart => {
+    const ta = chart.dataset.team; const order = {};
+    chart.querySelectorAll('.admin-position-column').forEach(col => {
+      const pos = col.dataset.position; if (!pos) return; order[pos] = [];
+      col.querySelectorAll('.admin-player-card').forEach(card => {
+        if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
+        else if (card.dataset.player) order[pos].push(card.dataset.player);
+      });
+    });
+    teamOrders[ta] = order;
+  });
+
+  const out = generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx);
+  const teamsSlice = NBA_TEAMS.slice(startIdx, endIdx);
   const firstTeam = teamsSlice[0]?.abbrev || '?';
   const lastTeam = teamsSlice[teamsSlice.length-1]?.abbrev || '?';
   const blockLabel = `${firstTeam}–${lastTeam}`;
   const modeLabel = withHeadshots ? '📷 Headshots' : '📋 Compact';
-  // Show character count to help with Presto limits
   const sizeKB = (new Blob([out]).size / 1024).toFixed(1);
   document.getElementById('exportCode').value = out;
   document.getElementById('exportModalTitle').textContent = `${modeLabel} — ${blockLabel} (${teamsSlice.length} teams, ${sizeKB} KB)`;
   document.getElementById('exportModal').classList.add('active');
+}
+
+// =====================================================
+// SAVE ORDER JSON (for GitHub Pages export)
+// =====================================================
+function downloadOrderJSON() {
+  const orders = {};
+  document.querySelectorAll('.admin-depth-chart').forEach(chart => {
+    const ta = chart.dataset.team; const order = {};
+    chart.querySelectorAll('.admin-position-column').forEach(col => {
+      const pos = col.dataset.position; if (!pos) return; order[pos] = [];
+      col.querySelectorAll('.admin-player-card').forEach(card => {
+        if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
+        else if (card.dataset.player) order[pos].push(card.dataset.player);
+      });
+    });
+    orders[ta] = order;
+  });
+  const blob = new Blob([JSON.stringify(orders, null, 2)], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = 'order.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+  // Visual feedback
+  const btn = event.target;
+  const orig = btn.textContent;
+  btn.textContent = '✓ Saved!';
+  setTimeout(() => btn.textContent = orig, 2000);
+}
+
+// =====================================================
+// EXPORT RENDER MODE (for iframe embed in Presto)
+// ?export=1 → first half, ?export=2 → second half
+// ?headshots=0 → compact (default: headshots on)
+// =====================================================
+async function renderExportView(exportParam, withHeadshots) {
+  // Hide all UI
+  document.body.style.background = 'white';
+  document.body.style.margin = '0';
+  document.body.style.padding = '0';
+  document.querySelector('.container').style.display = 'none';
+  document.getElementById('adminBanner').style.display = 'none';
+
+  const statusEl = document.getElementById('loading');
+  statusEl.style.display = 'block';
+  statusEl.querySelector('p').textContent = 'Loading depth charts...';
+  statusEl.querySelector('.loading-spinner').style.borderTopColor = '#667eea';
+
+  try {
+    // Fetch data + order.json in parallel
+    const orderURL = new URL('order.json', window.location.href).href;
+    const [tvR, rR, oR] = await Promise.all([
+      fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL), fetch(orderURL)
+    ]);
+    if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch player data');
+    if (!oR.ok) throw new Error('order.json not found — save your order from admin mode first');
+
+    const [tvText, rText, orderData] = await Promise.all([tvR.text(), rR.text(), oR.json()]);
+    tradeValueMap = computeTradeValues(tvText);
+    allPlayers = parseRosterCSV(rText);
+
+    const startIdx = exportParam === '2' ? 15 : 0;
+    const endIdx = exportParam === '2' ? 30 : 15;
+
+    const html = generateExportHTML(orderData, withHeadshots, startIdx, endIdx);
+
+    statusEl.style.display = 'none';
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = html;
+    document.body.appendChild(wrapper);
+  } catch (err) {
+    console.error('Export render error:', err);
+    statusEl.style.display = 'none';
+    const errDiv = document.createElement('div');
+    errDiv.style.cssText = 'text-align:center;padding:2rem;color:#c00;font-family:sans-serif;';
+    errDiv.textContent = 'Error: ' + err.message;
+    document.body.appendChild(errDiv);
+  }
 }
 
 function copyExportCode() {
@@ -726,9 +796,17 @@ function closeExportModal() { document.getElementById('exportModal').classList.r
 // =====================================================
 async function init() {
   const params = new URLSearchParams(window.location.search);
+  const exportParam = params.get('export');
   const teamParam = params.get('team')?.toUpperCase();
   const adminParam = params.get('admin');
   isAdmin = (adminParam === ADMIN_KEY);
+
+  // Export render mode — iframe-friendly, no UI
+  if (exportParam) {
+    const withHeadshots = params.get('headshots') !== '0';
+    return renderExportView(exportParam, withHeadshots);
+  }
+
   try {
     const [tvR, rR] = await Promise.all([fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL)]);
     if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch data');
