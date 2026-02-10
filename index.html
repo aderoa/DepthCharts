@@ -129,6 +129,10 @@
       <button class="export-btn" onclick="exportHTML(true,15,30)">📷 Headshots (MIA-WAS)</button>
       <button class="export-btn" onclick="exportHTML(false,0,15)">📋 Compact (ATL-MEM)</button>
       <button class="export-btn" onclick="exportHTML(false,15,30)">📋 Compact (MIA-WAS)</button>
+      <span style="color:#1a1a2e;font-size:0.7rem;margin-left:4px;">|</span>
+      <button class="export-btn" onclick="exportHTML(true,0,10)">📷 1/3</button>
+      <button class="export-btn" onclick="exportHTML(true,10,20)">📷 2/3</button>
+      <button class="export-btn" onclick="exportHTML(true,20,30)">📷 3/3</button>
     </div>
   </div>
   <div class="container">
@@ -609,11 +613,11 @@ function exportHTML(withHeadshots, startIdx, endIdx) {
     teamOrders[ta] = order;
   });
 
-  const td = 'border:none; padding:4px; text-align:center;';
-  const imgS = 'display:block;width:80px;height:80px;object-fit:cover;object-position:center;margin:0 auto;';
+  // Minimal inline styles — short as possible
+  const S = 'border:none;padding:4px;text-align:center;';
+  const iS = 'display:block;width:80px;height:80px;object-fit:cover;margin:0 auto;';
 
-  // Single outer wrapper div — matches Google Sheets format exactly
-  let out = '<div style="font-family:sans-serif; max-width:800px; margin:0 auto; overflow-x:auto; font-size:16px; text-align:center;">\n';
+  let out = '<div style="font-family:sans-serif;max-width:800px;margin:0 auto;font-size:16px;text-align:center;">';
 
   const teamsSlice = NBA_TEAMS.slice(startIdx, endIdx);
   for (const team of teamsSlice) {
@@ -622,95 +626,72 @@ function exportHTML(withHeadshots, startIdx, endIdx) {
     const posCols = {}; let maxRows = 0;
     positions.forEach(pos => {
       const names = order[pos]||[];
-      // Preserve exact order including spacers — no auto-sorting
-      posCols[pos] = names.map(n => {
-        if (n === '__SPACER__') return null;
-        return playerMap[n] || null;
-      });
+      posCols[pos] = names.map(n => n === '__SPACER__' ? null : (playerMap[n]||null));
       if (posCols[pos].length > maxRows) maxRows = posCols[pos].length;
     });
-    if (maxRows < 3) maxRows = 3;
-    maxRows += 1; // Always include trailing empty row like Google Sheets
 
-    // Team title (bare div, no wrapper)
-    out += `<div style="text-align:center; font-size:1.2em; margin-bottom:0.5em;">\n`;
-    out += `<strong>${team.name.toUpperCase()}</strong>\n`;
-    out += `</div>\n`;
-    out += `<table style="width:100%; text-align:center; border-collapse:collapse; font-size:12px;">\n`;
+    // Trim trailing empty rows (where all 5 positions are null)
+    while (maxRows > 0) {
+      const row = positions.map(pos => posCols[pos][maxRows-1] || null);
+      if (row.some(p => p !== null)) break;
+      maxRows--;
+    }
+    if (maxRows < 1) maxRows = 1;
 
-    // Position headers
-    out += `   \n<tbody><tr style="background-color: #f2f2f2;">\n`;
-    positions.forEach(pos => {
-      out += `<th style="${td}">${pos}</th>\n`;
-    });
-    out += `</tr>\n    \n   \n`;
+    out += `<div style="text-align:center;font-size:1.2em;margin-bottom:.5em;"><strong>${team.name.toUpperCase()}</strong></div>`;
+    out += `<table style="width:100%;text-align:center;border-collapse:collapse;font-size:12px;"><tbody>`;
+    out += `<tr style="background-color:#f2f2f2;">`;
+    positions.forEach(pos => { out += `<th style="${S}">${pos}</th>`; });
+    out += `</tr>`;
 
-    // Each depth row = 2 or 3 table rows: [headshots], names, salaries
     for (let r = 0; r < maxRows; r++) {
-      const rowPlayers = positions.map(pos => posCols[pos][r] || null);
+      const rp = positions.map(pos => posCols[pos][r] || null);
+      // Skip completely empty rows
+      if (!rp.some(p => p !== null)) continue;
 
-      // Per-cell color: pink for twoway, yellow for 10-day, lightcoral for injured, lightsalmon for questionable
-      const cellColors = rowPlayers.map(p => {
-        if (!p) return null;
-        if (p.contractStatus === '10-DAY') return 'yellow';
-        if (p.colorCode === 'twoway') return 'pink';
-        if (p.colorCode === 'injured') return 'lightcoral';
-        if (p.colorCode === 'questionable') return '#f5b7b1';
-        return null;
+      const cc = rp.map(p => {
+        if (!p) return '';
+        if (p.contractStatus === '10-DAY') return 'background-color:yellow;';
+        if (p.colorCode === 'twoway') return 'background-color:pink;';
+        if (p.colorCode === 'injured') return 'background-color:lightcoral;';
+        if (p.colorCode === 'questionable') return 'background-color:#f5b7b1;';
+        return '';
       });
 
       if (withHeadshots) {
-        // Headshot row (white background)
-        out += `\n      <tr style="background-color:#fff; text-align:center;">\n`;
-        positions.forEach((pos, i) => {
-          const p = rowPlayers[i];
-          if (p && p.headshot) {
-            out += `<td style="${td}"><img src="${p.headshot}" style="${imgS}"/></td>\n`;
-          } else {
-            out += `<td style="${td}"></td>\n`;
-          }
+        out += `<tr style="background-color:#fff;">`;
+        rp.forEach((p,i) => {
+          out += p && p.headshot ? `<td style="${S}"><img src="${p.headshot}" style="${iS}"/></td>` : `<td style="${S}"></td>`;
         });
-        out += `</tr>\n`;
+        out += `</tr>`;
       }
 
-      // Name row — bg on <tr> is #f2f2f2, per-cell override for twoway/injured
-      out += `\n<tr style="background-color: #f2f2f2;">\n`;
-      positions.forEach((pos, i) => {
-        const p = rowPlayers[i];
-        const cc = cellColors[i];
-        const bgAttr = cc ? `background-color:${cc};` : '';
-        if (p) {
-          out += `<td style="${td} ${bgAttr}" ><strong>${p.name}</strong></td>\n`;
-        } else {
-          out += `<td style="${td} " ><strong></strong></td>\n`;
-        }
+      out += `<tr style="background-color:#f2f2f2;">`;
+      rp.forEach((p,i) => {
+        out += `<td style="${S}${cc[i]}">${p ? `<strong>${p.name}</strong>` : ''}</td>`;
       });
-      out += `</tr>\n`;
+      out += `</tr>`;
 
-      // Salary row — same pattern
-      out += `\n<tr style="background-color: #f2f2f2;">\n`;
-      positions.forEach((pos, i) => {
-        const p = rowPlayers[i];
-        const cc = cellColors[i];
-        const bgAttr = cc ? `background-color:${cc};` : '';
-        if (p) {
-          out += `<td style="${td}${bgAttr}">${fmtSalFull(p.salary)}</td>\n`;
-        } else {
-          out += `<td style="${td}"></td>\n`;
-        }
+      out += `<tr style="background-color:#f2f2f2;">`;
+      rp.forEach((p,i) => {
+        out += `<td style="${S}${cc[i]}">${p ? fmtSalFull(p.salary) : ''}</td>`;
       });
-      out += `</tr>\n`;
+      out += `</tr>`;
     }
 
-    out += `   \n</tbody></table><br>\n`;
+    out += `</tbody></table><br>`;
   }
 
-  out += '</div>\n';
+  out += '</div>';
 
-  const blockLabel = startIdx === 0 ? 'ATL–MEM' : 'MIA–WAS';
+  const firstTeam = teamsSlice[0]?.abbrev || '?';
+  const lastTeam = teamsSlice[teamsSlice.length-1]?.abbrev || '?';
+  const blockLabel = `${firstTeam}–${lastTeam}`;
   const modeLabel = withHeadshots ? '📷 Headshots' : '📋 Compact';
+  // Show character count to help with Presto limits
+  const sizeKB = (new Blob([out]).size / 1024).toFixed(1);
   document.getElementById('exportCode').value = out;
-  document.getElementById('exportModalTitle').textContent = `${modeLabel} — ${blockLabel} (${teamsSlice.length} teams)`;
+  document.getElementById('exportModalTitle').textContent = `${modeLabel} — ${blockLabel} (${teamsSlice.length} teams, ${sizeKB} KB)`;
   document.getElementById('exportModal').classList.add('active');
 }
 
