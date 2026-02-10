@@ -756,6 +756,11 @@ async function renderExportView(exportParam, withHeadshots) {
     wrapper.innerHTML = html;
     document.body.appendChild(wrapper);
 
+    // Fix mobile scroll: prevent horizontal scroll capture from blocking vertical scroll
+    const style = document.createElement('style');
+    style.textContent = '* { touch-action: pan-y !important; } div { overflow-x: visible !important; }';
+    document.head.appendChild(style);
+
     // Auto-resize iframe if embedded
     function notifyHeight() {
       const h = document.body.scrollHeight;
