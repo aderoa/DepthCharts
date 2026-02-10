@@ -617,7 +617,7 @@ function exportHTML(withHeadshots, startIdx, endIdx) {
   const S = 'border:none;padding:4px;text-align:center;';
   const iS = 'display:block;width:80px;height:80px;object-fit:cover;margin:0 auto;';
 
-  let out = '<div style="font-family:sans-serif;max-width:800px;margin:0 auto;font-size:16px;text-align:center;">';
+  let out = '<div style="font-family:sans-serif;max-width:800px;margin:0 auto;overflow-x:auto;font-size:16px;text-align:center;">';
 
   const teamsSlice = NBA_TEAMS.slice(startIdx, endIdx);
   for (const team of teamsSlice) {
