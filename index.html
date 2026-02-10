@@ -502,10 +502,29 @@ function exportHTML(withHeadshots) {
     });
     teamOrders[ta] = order;
   });
-  const cellH = withHeadshots ? '130px' : '56px';
-  const cellPad = withHeadshots ? '0.6rem 0.4rem' : '0.5rem 0.4rem';
 
-  let out = `<style>\n.ts { margin-bottom: 2rem; }\n.th { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: #2b2b3d; border-bottom: 1px solid #444; }\n.th img { width: 36px; height: 36px; object-fit: contain; }\n.th .n { font-weight: 700; font-size: 1.1rem; color: white; }\n.th .a { color: #8892b0; font-size: 0.85rem; margin-left: 0.25rem; }\n.dg { display: grid; grid-template-columns: repeat(5, 1fr); }\n.pc { display: flex; flex-direction: column; }\n.ph { text-align: center; font-weight: 700; font-size: 0.95rem; color: #1a1a2e; padding: 0.5rem; background: white; border-bottom: 3px solid #4f6df5; }\n.cl { text-align: center; overflow: hidden; }\n.cl.em { background: #eee; min-height: ${cellH}; }\n.cl .img-wrap { background: white; padding: 0.5rem 0.25rem 0.25rem; display: flex; justify-content: center; }\n.cl .info { background: #e8e8e8; padding: 0.35rem 0.4rem; }\n.cl.st .info { background: #dde4f7; }\n.cl.tw .info { background: #f8bbd0; }\n.cl.inj .info { background: #e89999; }\n.hs { width: 90px; height: 66px; overflow: hidden; }\n.hs img { width: 100%; height: 100%; object-fit: cover; }\n.pn { font-weight: 600; font-size: 0.8rem; color: #1a1a2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }\n.ps { font-weight: 600; font-size: 0.75rem; color: #1a1a2e; }\n</style>\n`;
+  // Inline styles
+  const S = {
+    ts: 'margin-bottom:2rem;font-family:DM Sans,sans-serif;',
+    th: 'display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;background:#2b2b3d;',
+    thImg: 'width:36px;height:36px;object-fit:contain;',
+    thN: 'font-weight:700;font-size:1.1rem;color:white;',
+    dg: 'display:grid;grid-template-columns:repeat(5,1fr);',
+    pc: 'display:flex;flex-direction:column;',
+    ph: 'text-align:center;font-weight:700;font-size:0.95rem;color:#1a1a2e;padding:0.5rem;background:white;border-bottom:3px solid #4f6df5;',
+    imgWrap: 'background:white;padding:0.5rem 0.25rem 0.25rem;display:flex;justify-content:center;',
+    hs: 'width:90px;height:66px;overflow:hidden;',
+    hsImg: 'width:100%;height:100%;object-fit:cover;',
+    pn: 'font-weight:600;font-size:0.8rem;color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;',
+    ps: 'font-weight:600;font-size:0.75rem;color:#1a1a2e;',
+    infoNormal: 'background:#e8e8e8;padding:0.35rem 0.4rem;text-align:center;',
+    infoStarter: 'background:#dde4f7;padding:0.35rem 0.4rem;text-align:center;',
+    infoTW: 'background:#f8bbd0;padding:0.35rem 0.4rem;text-align:center;',
+    infoInj: 'background:#e89999;padding:0.35rem 0.4rem;text-align:center;',
+    empty: 'min-height:' + (withHeadshots ? '120px' : '50px') + ';background:#eee;'
+  };
+
+  let out = '';
 
   for (const team of NBA_TEAMS) {
     const order = teamOrders[team.abbrev];
@@ -522,19 +541,26 @@ function exportHTML(withHeadshots) {
       if (posCols[pos].length > maxRows) maxRows = posCols[pos].length;
     });
     if (maxRows < 3) maxRows = 3;
-    out += `<div class="ts">\n<div class="th"><img src="${logoUrl}" alt="${team.name}" onerror="this.style.opacity='0.3'"><span class="n">${team.name}</span></div>\n<div class="dg">\n`;
+
+    out += `<div style="${S.ts}">\n`;
+    out += `<div style="${S.th}"><img src="${logoUrl}" style="${S.thImg}" onerror="this.style.opacity='0.3'"><span style="${S.thN}">${team.name}</span></div>\n`;
+    out += `<div style="${S.dg}">\n`;
+
     positions.forEach(pos => {
-      out += `<div class="pc"><div class="ph">${pos}</div>\n`;
+      out += `<div style="${S.pc}"><div style="${S.ph}">${pos}</div>\n`;
       for (let r = 0; r < maxRows; r++) {
         const p = posCols[pos][r];
         if (p) {
-          const sc = r===0 ? 'st' : '';
-          const cc = p.colorCode==='twoway' ? 'tw' : p.colorCode==='injured' ? 'inj' : '';
-          out += `<div class="cl ${sc} ${cc}">`;
-          if (withHeadshots) out += `<div class="img-wrap">${p.headshot ? `<div class="hs"><img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML=''"></div>` : ''}</div>`;
-          out += `<div class="info"><div class="pn">${p.name}</div><div class="ps">${fmtSalFull(p.salary)}</div></div></div>\n`;
+          let infoStyle = r === 0 ? S.infoStarter : S.infoNormal;
+          if (p.colorCode === 'twoway') infoStyle = S.infoTW;
+          if (p.colorCode === 'injured') infoStyle = S.infoInj;
+          out += `<div style="text-align:center;overflow:hidden;">`;
+          if (withHeadshots) {
+            out += `<div style="${S.imgWrap}">${p.headshot ? `<div style="${S.hs}"><img src="${p.headshot}" style="${S.hsImg}" onerror="this.parentElement.innerHTML=''"></div>` : ''}</div>`;
+          }
+          out += `<div style="${infoStyle}"><div style="${S.pn}">${p.name}</div><div style="${S.ps}">${fmtSalFull(p.salary)}</div></div></div>\n`;
         } else {
-          out += `<div class="cl em"></div>\n`;
+          out += `<div style="${S.empty}"></div>\n`;
         }
       }
       out += `</div>\n`;
@@ -542,7 +568,6 @@ function exportHTML(withHeadshots) {
     out += `</div>\n</div>\n`;
   }
 
-  // Show in modal
   document.getElementById('exportCode').value = out;
   document.getElementById('exportModalTitle').textContent = withHeadshots ? '📷 Export HTML — With Headshots' : '📋 Export HTML — Compact';
   document.getElementById('exportModal').classList.add('active');
