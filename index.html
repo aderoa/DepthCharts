@@ -140,6 +140,7 @@
         <h3 id="exportModalTitle">📋 Export HTML</h3>
         <div class="export-modal-actions">
           <button class="copy-btn" onclick="copyExportCode()">📋 Copy to Clipboard</button>
+          <button class="copy-btn" onclick="downloadExportCode()" style="margin-left:8px;">💾 Download .txt</button>
           <button class="close-btn" onclick="closeExportModal()">✕ Close</button>
         </div>
       </div>
@@ -604,12 +605,27 @@ function exportHTML(withHeadshots) {
 }
 
 function copyExportCode() {
-  const ta = document.getElementById('exportCode');
-  ta.select(); ta.setSelectionRange(0, ta.value.length);
-  document.execCommand('copy');
-  const btn = document.querySelector('.copy-btn');
-  btn.textContent = '✓ Copied!'; btn.classList.add('copied');
-  setTimeout(() => { btn.textContent = '📋 Copy to Clipboard'; btn.classList.remove('copied'); }, 2000);
+  const text = document.getElementById('exportCode').value;
+  // Force plain text only — no HTML clipboard metadata
+  const blob = new Blob([text], {type: 'text/plain'});
+  navigator.clipboard.write([new ClipboardItem({'text/plain': blob})]).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = '✓ Copied!'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '📋 Copy to Clipboard'; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => {
+    // Fallback
+    const ta = document.getElementById('exportCode');
+    ta.select(); ta.setSelectionRange(0, ta.value.length);
+    document.execCommand('copy');
+  });
+}
+
+function downloadExportCode() {
+  const text = document.getElementById('exportCode').value;
+  const blob = new Blob([text], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = 'depth-charts-export.txt';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
 }
 
 function closeExportModal() { document.getElementById('exportModal').classList.remove('active'); }
