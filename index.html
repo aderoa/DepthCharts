@@ -89,6 +89,7 @@
     .admin-player-card.two-way { background: #e1bee7; }
     .admin-player-card.ten-day { background: #fff9c4; }
     .admin-player-card.spacer { background: #2a2a4e; border: 1px dashed #444; display: flex; align-items: center; justify-content: center; opacity: 0.6; cursor: grab; position: relative; padding: 0.4rem 0.5rem; }
+    .admin-player-card.spacer > * { pointer-events: none; }
     .admin-player-card.spacer .spacer-label { color: #666; font-size: 0.65rem; }
     .admin-player-card.spacer .spacer-delete { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #f44; cursor: pointer; font-size: 0.7rem; padding: 2px 4px; line-height: 1; }
     .admin-player-card.spacer .spacer-delete:hover { color: #ff6666; }
@@ -127,7 +128,8 @@
     <div style="display:flex;gap:0.5rem;align-items:center;">
       <button class="export-btn" onclick="copyExportDirect(true,0,15)">📷 Copy ATL-MEM</button>
       <button class="export-btn" onclick="copyExportDirect(true,15,30)">📷 Copy MIA-WAS</button>
-      <span id="refreshStatus" style="color:#1a1a2e;font-size:0.7rem;margin-left:8px;opacity:0.7;">🔄 Auto-refresh: 60s</span>
+      <button class="export-btn" onclick="manualRefresh(this)">🔄 Refresh Data</button>
+      <span id="refreshStatus" style="color:#1a1a2e;font-size:0.7rem;margin-left:8px;opacity:0.7;">Auto-refresh: 60s</span>
     </div>
   </div>
   <div class="container">
@@ -509,6 +511,7 @@ function makeDraggable(card, container, teamAbbrev, cardSel, colSel) {
   card.addEventListener('dragstart', function(e) {
     draggedElement = this;
     this.classList.add('dragging');
+    this._lastSwapTarget = null;
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text/plain', this.dataset.player);
     // Store original position info for potential cancel
@@ -535,17 +538,36 @@ function makeDraggable(card, container, teamAbbrev, cardSel, colSel) {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
     if (!draggedElement || this === draggedElement) return;
-    // Live preview: move the dragged element into position
+
+    // Swap logic: player dropped onto spacer (or vice versa) — swap positions
+    const isSpacer = this.classList.contains('spacer');
+    const draggedIsSpacer = draggedElement.classList.contains('spacer');
+    if (isSpacer !== draggedIsSpacer) {
+      // Throttle: only swap once per target
+      if (draggedElement._lastSwapTarget === this) return;
+      draggedElement._lastSwapTarget = this;
+      const spacer = isSpacer ? this : draggedElement;
+      const player = isSpacer ? draggedElement : this;
+      const spacerParent = spacer.parentElement;
+      const spacerNext = spacer.nextElementSibling;
+      const playerParent = player.parentElement;
+      const playerNext = player.nextElementSibling;
+      if (spacerNext && spacerNext !== player) spacerParent.insertBefore(player, spacerNext);
+      else spacerParent.appendChild(player);
+      if (playerNext && playerNext !== spacer) playerParent.insertBefore(spacer, playerNext);
+      else playerParent.appendChild(spacer);
+      return;
+    }
+
+    // Normal reorder: live preview move
     const col = this.parentElement;
     const r = this.getBoundingClientRect();
     const midY = r.top + r.height / 2;
     if (e.clientY < midY) {
-      // Insert before this card
       if (draggedElement.nextElementSibling !== this || draggedElement.parentElement !== col) {
         col.insertBefore(draggedElement, this);
       }
     } else {
-      // Insert after this card
       if (this.nextElementSibling !== draggedElement || draggedElement.parentElement !== col) {
         col.insertBefore(draggedElement, this.nextSibling);
       }
@@ -877,6 +899,16 @@ async function autoRefreshData() {
   } catch (e) {
     console.warn('Auto-refresh failed:', e);
   }
+}
+
+async function manualRefresh(btn) {
+  const orig = btn.textContent;
+  btn.textContent = '⏳ Refreshing...';
+  btn.disabled = true;
+  await autoRefreshData();
+  btn.textContent = '✓ Updated!';
+  btn.style.background = '#16a34a'; btn.style.color = 'white';
+  setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 2000);
 }
 
 // =====================================================
