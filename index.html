@@ -83,6 +83,7 @@
     .admin-player-card.starter { background: linear-gradient(135deg, #fff 0%, #f0f4ff 100%); border: 2px solid #667eea; }
     .admin-player-card.dragging { opacity: 0.5; cursor: grabbing; }
     .admin-player-card.drag-over { border: 2px dashed #667eea; background: #f0f4ff; }
+    .admin-player-card.spacer.drag-over { opacity: 1; border: 2px solid #667eea; background: #3a3a6e; }
     .admin-position-column.drag-over { background: rgba(102,126,234,0.1); border-radius: 6px; }
     .admin-drop-indicator { height: 3px; background: #667eea; border-radius: 2px; margin: 1px 0; pointer-events: none; box-shadow: 0 0 6px rgba(102,126,234,0.6); transition: none; }
     .admin-player-name { font-weight: 600; font-size: 0.75rem; color: #1a1a2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; }
@@ -511,16 +512,13 @@ function makeDraggable(card, container, teamAbbrev, cardSel, colSel) {
   card.addEventListener('dragstart', function(e) {
     draggedElement = this;
     this.classList.add('dragging');
-    this._lastSwapTarget = null;
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text/plain', this.dataset.player);
-    // Store original position info for potential cancel
-    this._origParent = this.parentElement;
-    this._origNext = this.nextElementSibling;
   });
 
   card.addEventListener('dragend', function() {
     this.classList.remove('dragging');
+    document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
     draggedElement = null;
     // Update starter highlights
     container.querySelectorAll(colSel).forEach(col => {
@@ -539,23 +537,12 @@ function makeDraggable(card, container, teamAbbrev, cardSel, colSel) {
     e.dataTransfer.dropEffect = 'move';
     if (!draggedElement || this === draggedElement) return;
 
-    // Swap logic: player dropped onto spacer (or vice versa) — swap positions
     const isSpacer = this.classList.contains('spacer');
     const draggedIsSpacer = draggedElement.classList.contains('spacer');
+
+    // If one is spacer and other is player, just highlight — swap happens on drop
     if (isSpacer !== draggedIsSpacer) {
-      // Throttle: only swap once per target
-      if (draggedElement._lastSwapTarget === this) return;
-      draggedElement._lastSwapTarget = this;
-      const spacer = isSpacer ? this : draggedElement;
-      const player = isSpacer ? draggedElement : this;
-      const spacerParent = spacer.parentElement;
-      const spacerNext = spacer.nextElementSibling;
-      const playerParent = player.parentElement;
-      const playerNext = player.nextElementSibling;
-      if (spacerNext && spacerNext !== player) spacerParent.insertBefore(player, spacerNext);
-      else spacerParent.appendChild(player);
-      if (playerNext && playerNext !== spacer) playerParent.insertBefore(spacer, playerNext);
-      else playerParent.appendChild(spacer);
+      this.classList.add('drag-over');
       return;
     }
 
@@ -574,10 +561,27 @@ function makeDraggable(card, container, teamAbbrev, cardSel, colSel) {
     }
   });
 
+  card.addEventListener('dragleave', function() {
+    this.classList.remove('drag-over');
+  });
+
   card.addEventListener('drop', function(e) {
     e.preventDefault();
     e.stopPropagation();
-    // Card is already in position from dragover — nothing extra needed
+    this.classList.remove('drag-over');
+    if (!draggedElement || this === draggedElement) return;
+
+    const isSpacer = this.classList.contains('spacer');
+    const draggedIsSpacer = draggedElement.classList.contains('spacer');
+
+    // Swap: player <-> spacer
+    if (isSpacer !== draggedIsSpacer) {
+      const placeholder = document.createElement('div');
+      this.parentElement.insertBefore(placeholder, this);
+      draggedElement.parentElement.insertBefore(this, draggedElement);
+      placeholder.parentElement.insertBefore(draggedElement, placeholder);
+      placeholder.remove();
+    }
   });
 }
 
