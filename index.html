@@ -470,7 +470,7 @@ function renderAdminAllTeams() {
       injuredByPos[pos] = [];
       byPos[pos].forEach(p => {
         if (p === '__SPACER__') return; // skip old spacers
-        if (p.colorCode === 'injured' || p.colorCode === 'questionable') injuredByPos[pos].push(p);
+        if (p.colorCode === 'injured') injuredByPos[pos].push(p);
         else healthyByPos[pos].push(p);
       });
     });
@@ -488,7 +488,7 @@ function renderAdminAllTeams() {
       // Healthy players
       let firstReal = true;
       healthyByPos[pos].forEach(p => {
-        const sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='twoway'?'two-way':'';
+        const sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='twoway'?'two-way':p.colorCode==='questionable'?'questionable':'';
         html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
         firstReal = false;
       });
