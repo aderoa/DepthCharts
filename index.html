@@ -190,9 +190,13 @@ function saveTeamOrder(teamAbbrev, container) {
     const pos = col.dataset.position;
     if (!pos) return;
     order[pos] = [];
-    col.querySelectorAll('[class*="player-card"]').forEach(card => {
-      if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
-      else if (card.dataset.player) order[pos].push(card.dataset.player);
+    col.childNodes.forEach(node => {
+      if (node.classList && node.classList.contains('admin-separator')) {
+        order[pos].push('__SEPARATOR__');
+      } else if (node.classList && (node.classList.contains('admin-player-card') || node.classList.contains('player-card'))) {
+        if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
+        else if (node.dataset.player) order[pos].push(node.dataset.player);
+      }
     });
   });
   const all = loadAllOrders();
@@ -457,23 +461,74 @@ function renderAdminAllTeams() {
   const container = document.getElementById('adminTeamsList');
   const positions = ['PG','SG','SF','PF','C'];
   const savedOrders = loadAllOrders();
+  // Build player lookup
+  const pMap = {};
+  allPlayers.forEach(p => pMap[p.name] = p);
+
   let html = '';
   for (const team of NBA_TEAMS) {
     const tp = allPlayers.filter(p=>p.team===team.abbrev);
     if (!tp.length) continue;
-    const byPos = buildPositionMap(tp, savedOrders[team.abbrev]||null);
+    const saved = savedOrders[team.abbrev] || null;
 
-    // Separate healthy vs injured per position
+    // For each position, build healthy and injured arrays
     const healthyByPos = {}, injuredByPos = {};
     positions.forEach(pos => {
       healthyByPos[pos] = [];
       injuredByPos[pos] = [];
-      byPos[pos].forEach(p => {
-        if (p === '__SPACER__') return; // skip old spacers
+
+      if (saved && saved[pos]) {
+        const sepIdx = saved[pos].indexOf('__SEPARATOR__');
+        const aboveNames = sepIdx >= 0 ? saved[pos].slice(0, sepIdx) : saved[pos];
+        const belowNames = sepIdx >= 0 ? saved[pos].slice(sepIdx + 1) : [];
+        const placed = new Set();
+
+        // Above separator: place saved players, but force Out/Doubtful down
+        aboveNames.forEach(n => {
+          if (n === '__SPACER__') return;
+          const p = pMap[n];
+          if (!p || p.team !== team.abbrev) return;
+          if (p.colorCode === 'injured') { injuredByPos[pos].push(p); placed.add(n); }
+          else { healthyByPos[pos].push(p); placed.add(n); }
+        });
+
+        // Below separator: place saved players, but force non-injured/non-questionable up
+        belowNames.forEach(n => {
+          if (n === '__SPACER__') return;
+          const p = pMap[n];
+          if (!p || p.team !== team.abbrev || placed.has(n)) return;
+          if (p.colorCode === 'injured' || p.colorCode === 'questionable') { injuredByPos[pos].push(p); placed.add(n); }
+          else { healthyByPos[pos].push(p); placed.add(n); }
+        });
+
+        // Any unplaced players (new additions)
+        tp.filter(p => p.position === pos && !placed.has(p.name)).forEach(p => {
+          if (p.colorCode === 'injured') injuredByPos[pos].push(p);
+          else healthyByPos[pos].push(p);
+        });
+      } else {
+        // No saved order — default sort by trade value
+        const posTp = tp.filter(p => p.position === pos).sort((a,b) => b.tradeValue - a.tradeValue);
+        posTp.forEach(p => {
+          if (p.colorCode === 'injured') injuredByPos[pos].push(p);
+          else healthyByPos[pos].push(p);
+        });
+      }
+    });
+
+    // Handle unplaced players (position mismatch)
+    if (saved) {
+      const allPlaced = new Set();
+      positions.forEach(pos => {
+        healthyByPos[pos].forEach(p => allPlaced.add(p.name));
+        injuredByPos[pos].forEach(p => allPlaced.add(p.name));
+      });
+      tp.filter(p => !allPlaced.has(p.name)).forEach(p => {
+        const pos = positions.includes(p.position) ? p.position : 'SF';
         if (p.colorCode === 'injured') injuredByPos[pos].push(p);
         else healthyByPos[pos].push(p);
       });
-    });
+    }
 
     // Count total healthy to determine row count
     const totalHealthy = positions.reduce((s, pos) => s + healthyByPos[pos].length, 0);
@@ -493,9 +548,8 @@ function renderAdminAllTeams() {
         firstReal = false;
       });
 
-      // Pad healthy section with spacers to fill rows
-      const healthySlots = healthyByPos[pos].length;
-      for (let i = healthySlots; i < healthyRows; i++) {
+      // Pad healthy section with spacers
+      for (let i = healthyByPos[pos].length; i < healthyRows; i++) {
         html += `<div class="admin-player-card spacer" draggable="true" data-player="__SPACER__"><div><div class="admin-player-name" style="color:#666;">— blank —</div><div class="admin-trade-value" style="visibility:hidden;">&nbsp;</div></div></div>`;
       }
 
