@@ -271,6 +271,7 @@ const TV_GID = '1310971167';
 const TV_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${TV_SHEET_ID}/pub?gid=${TV_GID}&single=true&output=csv`;
 const ROSTER_GID = '0';
 const ROSTER_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${TV_SHEET_ID}/pub?gid=${ROSTER_GID}&single=true&output=csv`;
+const INJURIES_JSON_URL = 'https://aderoa.github.io/Injuries/injuries.json';
 
 let allPlayers = [], tradeValueMap = new Map(), draggedElement = null;
 
@@ -367,6 +368,26 @@ function parseRosterCSV(csvText) {
     players.push({name, team:abbrev, position:pos, tradeValue:tv, headshot, salary, contractStatus:status, injuryStatus:injury, injuryReason:reason, colorCode:color, teamLogo:logo});
   }
   return players;
+}
+
+// Overlay injury status from GitHub injuries.json onto allPlayers
+function applyInjuriesJSON(injuries) {
+  if (!injuries || !injuries.length) return;
+  // Build latest status per player
+  const latest = {};
+  for (const e of injuries) latest[e.player] = e;
+  // Overlay onto allPlayers
+  for (const p of allPlayers) {
+    const entry = latest[p.name];
+    if (!entry) continue;
+    p.injuryStatus = entry.status;
+    p.injuryReason = entry.injury;
+    // Recalculate colorCode
+    const base = (p.contractStatus === 'TWO-WAY' || p.contractStatus === '10-DAY') ? 'twoway' : 'normal';
+    if (entry.status === 'Out' || entry.status === 'Doubtful') p.colorCode = 'injured';
+    else if (entry.status === 'Questionable') p.colorCode = 'questionable';
+    else p.colorCode = base; // Available/Probable = healthy
+  }
 }
 
 // =====================================================
@@ -840,6 +861,7 @@ async function renderExportView(exportParam, withHeadshots) {
     const [tvText, rText, orderData] = await Promise.all([tvR.text(), rR.text(), oR.json()]);
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
+    try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
 
     let startIdx, endIdx;
     if (exportParam === '2') { startIdx = 15; endIdx = 30; }
@@ -943,6 +965,7 @@ async function autoRefreshData() {
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
+    try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     // Full re-render to move players between healthy/injured sections
     renderAdminAllTeams();
     const el = document.getElementById('refreshStatus');
@@ -967,6 +990,7 @@ async function manualRefresh(btn) {
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
+    try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     // Full re-render preserving saved orders
     renderAdminAllTeams();
     const el = document.getElementById('refreshStatus');
@@ -1000,6 +1024,7 @@ async function init() {
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
+    try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) { console.warn('Injuries JSON unavailable:', e); }
     document.getElementById('loading').style.display = 'none';
     if (isAdmin && !teamParam) {
       renderAdminAllTeams();
