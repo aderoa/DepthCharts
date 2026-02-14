@@ -581,40 +581,38 @@
   },
   "MIL": {
     "PG": [
-      "Ryan Rollins",
-      "Gary Harris",
+      "Kevin Porter",
       "Andre Jackson",
+      "Gary Harris",
       "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Ryan Rollins"
     ],
     "SG": [
-      "Kevin Porter",
+      "AJ Green",
       "Cam Thomas",
       "Gary Trent Jr",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "SF": [
-      "AJ Green",
+      "Kyle Kuzma",
       "Pete Nance",
       "Alex Antetokounmpo",
-      "Taurean Prince",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Taurean Prince"
     ],
     "PF": [
-      "Kyle Kuzma",
       "Bobby Portis",
       "Thanasis Antetokounmpo",
+      "__SEPARATOR__",
       "Giannis Antetokounmpo",
-      "__SPACER__",
-      "__SPACER__"
+      "Ousmane Dieng"
     ],
     "C": [
-      "Myles Turner",
       "Jericho Sims",
-      "Ousmane Dieng",
       "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Myles Turner"
     ]
   },
   "MIN": {
