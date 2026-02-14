@@ -42,36 +42,32 @@
       "Derrick White",
       "Payton Pritchard",
       "Max Shulga",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "SG": [
-      "Jaylen Brown",
       "Baylor Scheierman",
       "Ron Harper Jr",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "SF": [
-      "Sam Hauser",
+      "Jaylen Brown",
       "Hugo Gonzalez",
       "John Tonje",
-      "Jayson Tatum",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Jayson Tatum"
     ],
     "PF": [
+      "Sam Hauser",
       "Luka Garza",
       "Amari Williams",
       "Jordan Walsh",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "C": [
       "Neemias Queta",
       "Nikola Vucevic",
       "__SPACER__",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ]
   },
   "BKN": {
