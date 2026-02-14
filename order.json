@@ -554,14 +554,13 @@
       "Myron Gardner",
       "Dru Smith",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Andrew Wiggins",
       "Tyler Herro"
     ],
     "SF": [
       "Simone Fontecchio",
       "Keshad Johnson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Norman Powell"
     ],
@@ -570,13 +569,15 @@
       "Jaime Jaquez",
       "__SPACER__",
       "__SEPARATOR__",
+      "Andrew Wiggins",
       "Pelle Larsson"
     ],
     "C": [
       "Kel'el Ware",
       "Nikola Jovic",
       "Vladislav Goldin",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Pelle Larsson"
     ]
   },
   "MIL": {
