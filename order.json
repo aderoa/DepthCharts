@@ -467,39 +467,41 @@
   },
   "LAL": {
     "PG": [
+      "Marcus Smart",
       "Nick Smith",
       "Kobe Bufkin",
       "Bronny James",
-      "Luka Doncic",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Luka Doncic"
     ],
     "SG": [
       "Jake LaRavia",
       "Dalton Knecht",
       "Chris Manon",
-      "Marcus Smart",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Jarred Vanderbilt",
       "Luke Kennard",
       "Adou Thiero",
       "Austin Reaves",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "PF": [
       "Rui Hachimura",
       "Maxi Kleber",
-      "__SPACER__",
       "LeBron James",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "C": [
-      "Deandre Ayton",
       "Jaxson Hayes",
       "Drew Timme",
       "__SPACER__",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Deandre Ayton"
     ]
   },
   "MEM": {
