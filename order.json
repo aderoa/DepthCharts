@@ -144,39 +144,40 @@
   },
   "CHI": {
     "PG": [
+      "Collin Sexton",
       "Jaden Ivey",
       "Rob Dillingham",
       "Yuki Kawamura",
-      "Josh Giddey",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Josh Giddey"
     ],
     "SG": [
       "Anfernee Simons",
-      "Collin Sexton",
       "Mac McClung",
-      "Tre Jones",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Tre Jones"
     ],
     "SF": [
-      "Isaac Okoro",
       "Patrick Williams",
       "__SPACER__",
-      "Noa Essengue",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Isaac Okoro",
+      "Noa Essengue"
     ],
     "PF": [
       "Matas Buzelis",
       "Leonard Miller",
       "__SPACER__",
-      "Jalen Smith",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Jalen Smith"
     ],
     "C": [
       "Guerschon Yabusele",
       "Nick Richards",
       "Lachlan Olbrich",
-      "Zach Collins",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Zach Collins"
     ]
   },
   "CLE": {
