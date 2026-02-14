@@ -8,16 +8,17 @@
       "__SEPARATOR__"
     ],
     "SG": [
+      "Dyson Daniels",
       "CJ McCollum",
       "Buddy Hield",
       "RayJ Dennis",
-      "__SEPARATOR__",
-      "Dyson Daniels"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Zaccharie Risacher",
       "Corey Kispert",
       "Nikola Djurisic",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
@@ -25,7 +26,6 @@
       "Asa Newell",
       "Mouhamed Gueye",
       "Caleb Houstan",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jonathan Kuminga"
     ],
