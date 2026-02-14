@@ -660,38 +660,34 @@
       "Herb Jones",
       "Jeremiah Fears",
       "Trey Alexander",
-      "__SPACER__",
-      "Dejounte Murray",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Dejounte Murray"
     ],
     "SG": [
       "Trey Murphy",
       "Bryce McGowens",
       "Jordan Poole",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Saddiq Bey",
-      "Micah Peavy",
       "Jordan Hawkins",
       "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Micah Peavy"
     ],
     "PF": [
       "Zion Williamson",
-      "Karlo Matkovic",
       "Kevon Looney",
-      "__SPACER__",
-      "__SPACER__",
-      "__SPACER__"
+      "DeAndre Jordan",
+      "__SEPARATOR__"
     ],
     "C": [
       "Derik Queen",
-      "Yves Missi",
-      "DeAndre Jordan",
+      "Karlo Matkovic",
       "Hunter Dickinson",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Yves Missi"
     ]
   },
   "NYK": {
