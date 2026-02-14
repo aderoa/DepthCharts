@@ -510,16 +510,15 @@
       "Cam Spencer",
       "Javon Small",
       "__SEPARATOR__",
+      "Walter Clayton",
       "Ja Morant"
     ],
     "SG": [
       "Jaylen Wells",
       "Scotty Pippen Jr",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Cedric Coward",
-      "Walter Clayton"
+      "Cedric Coward"
     ],
     "SF": [
       "Jahmai Mashack",
@@ -531,6 +530,7 @@
     "PF": [
       "Kyle Anderson",
       "Olivier-Maxence Prosper",
+      "__SPACER__",
       "__SEPARATOR__",
       "Brandon Clarke"
     ],
