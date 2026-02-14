@@ -890,13 +890,13 @@
       "Toumani Camara",
       "Scoot Henderson",
       "Blake Wesley",
-      "Rayan Rupert",
       "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
     "SF": [
       "Sidy Cissoko",
-      "Vit Krejci",
+      "Rayan Rupert",
+      "__SPACER__",
       "Javonte Cooke",
       "__SPACER__",
       "__SEPARATOR__",
@@ -905,7 +905,7 @@
     ],
     "PF": [
       "Jerami Grant",
-      "__SPACER__",
+      "Vit Krejci",
       "__SEPARATOR__",
       "Kris Murray"
     ],
