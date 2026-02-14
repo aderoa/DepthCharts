@@ -547,37 +547,36 @@
       "Davion Mitchell",
       "Kasparas Jakucionis",
       "Jahmir Young",
-      "Terry Rozier",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Terry Rozier"
     ],
     "SG": [
-      "Andrew Wiggins",
+      "Myron Gardner",
       "Dru Smith",
       "__SPACER__",
-      "Tyler Herro",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Andrew Wiggins",
+      "Tyler Herro"
     ],
     "SF": [
       "Simone Fontecchio",
-      "Myron Gardner",
       "Keshad Johnson",
-      "Norman Powell",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Norman Powell"
     ],
     "PF": [
       "Bam Adebayo",
       "Jaime Jaquez",
       "__SPACER__",
-      "Pelle Larsson",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Pelle Larsson"
     ],
     "C": [
       "Kel'el Ware",
       "Nikola Jovic",
       "Vladislav Goldin",
-      "__SPACER__",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ]
   },
   "MIL": {
