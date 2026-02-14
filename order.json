@@ -435,36 +435,34 @@
       "Kris Dunn",
       "Kobe Sanders",
       "TyTy Washington",
-      "Darius Garland",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Darius Garland"
     ],
     "SG": [
       "Kawhi Leonard",
       "Jordan Miller",
       "Dalano Banton",
-      "Bradley Beal",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Bradley Beal"
     ],
     "SF": [
       "Derrick Jones",
       "Bennedict Mathurin",
       "Cam Christie",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "PF": [
       "John Collins",
-      "Nicolas Batum",
+      "Isaiah Jackson",
       "Bogdan Bogdanovic",
       "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Nicolas Batum"
     ],
     "C": [
       "Brook Lopez",
       "Yanic Konan Niederhauser",
-      "Isaiah Jackson",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ]
   },
   "LAL": {
