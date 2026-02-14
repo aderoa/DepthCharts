@@ -127,7 +127,7 @@
 </head>
 <body>
   <div id="adminBanner" class="admin-banner">
-    <span>🔧 ADMIN MODE — Drag to reorder, changes saved locally</span>
+    <span>🔧 ADMIN MODE — Drag to reorder, synced to GitHub</span>
     <span id="saveStatus" class="admin-save-status">✓ Saved</span>
     <div style="display:flex;gap:0.5rem;align-items:center;">
       <button class="export-btn" onclick="copyExportDirect(true,0,15)">📷 Copy ATL-MEM</button>
@@ -147,7 +147,7 @@
       <div id="depthChart" class="depth-chart"></div>
     </div>
     <div id="adminAllTeams" class="admin-all-teams">
-      <p class="drag-hint">💡 Drag players to rearrange — changes auto-save to your browser</p>
+      <p class="drag-hint">💡 Drag players to rearrange — changes auto-sync to GitHub</p>
       <div id="adminTeamsList"></div>
     </div>
 
@@ -170,18 +170,32 @@
   </div>
 <script>
 // =====================================================
-// LOCALSTORAGE PERSISTENCE (replaces Firebase)
+// HYBRID PERSISTENCE: localStorage (fast) + GitHub (durable)
 // =====================================================
 const STORAGE_KEY = 'depthcharts_orders';
 const ADMIN_KEY = 'hoopsmatic2025';
+const GH_TOKEN_KEY = 'depthcharts_gh_token';
+const GH_REPO = 'aderoa/DepthCharts';
+const GH_FILE = 'order.json';
+const GH_API = `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`;
 let isAdmin = false;
+let ghSHA = null;         // current SHA of order.json on GitHub
+let ghSaveTimer = null;   // debounce timer for GitHub pushes
+let ghOrdersCache = null; // in-memory cache of the full orders object
 
 function loadAllOrders() {
+  if (ghOrdersCache) return ghOrdersCache;
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
   catch(e) { return {}; }
 }
 function saveAllOrders(orders) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(orders)); } catch(e) { console.error('Storage error:', e); }
+  ghOrdersCache = orders;
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(orders)); } catch(e) {}
+  // Debounce GitHub push (admin only)
+  if (isAdmin) {
+    clearTimeout(ghSaveTimer);
+    ghSaveTimer = setTimeout(() => pushToGitHub(orders), 2000);
+  }
 }
 function saveTeamOrder(teamAbbrev, container) {
   const columns = container.querySelectorAll('[class*="position-column"]');
@@ -202,15 +216,95 @@ function saveTeamOrder(teamAbbrev, container) {
   const all = loadAllOrders();
   all[teamAbbrev] = order;
   saveAllOrders(all);
-  showSaveStatus();
+  showSaveStatus('local');
 }
 function loadTeamOrder(t) { return (loadAllOrders())[t] || null; }
-function showSaveStatus() {
+
+function showSaveStatus(mode) {
   const el = document.getElementById('saveStatus');
-  el.textContent = '✓ Saved';
+  if (mode === 'local') { el.textContent = '💾 Saving...'; el.style.color = '#1a1a2e'; }
+  else if (mode === 'github') { el.textContent = '✓ Synced to GitHub'; el.style.color = '#065f46'; }
+  else if (mode === 'error') { el.textContent = '✗ GitHub sync failed'; el.style.color = '#991b1b'; }
+  else if (mode === 'loading') { el.textContent = '⏳ Loading from GitHub...'; el.style.color = '#1a1a2e'; }
   el.classList.add('visible');
   clearTimeout(el._t);
-  el._t = setTimeout(() => el.classList.remove('visible'), 2000);
+  if (mode === 'github' || mode === 'error') el._t = setTimeout(() => el.classList.remove('visible'), 4000);
+}
+
+// ---- GitHub Token Management ----
+function getGHToken() {
+  return localStorage.getItem(GH_TOKEN_KEY) || null;
+}
+function promptGHToken() {
+  const token = prompt('Enter your GitHub Personal Access Token (needs repo scope).\nThis is stored locally and used to sync order.json to GitHub.');
+  if (token && token.trim()) {
+    localStorage.setItem(GH_TOKEN_KEY, token.trim());
+    return token.trim();
+  }
+  return null;
+}
+
+// ---- Fetch order.json from GitHub (source of truth) ----
+async function fetchFromGitHub() {
+  try {
+    const headers = { 'Accept': 'application/vnd.github.v3+json' };
+    const token = getGHToken();
+    if (token) headers['Authorization'] = `token ${token}`;
+    const resp = await fetch(GH_API, { headers });
+    if (!resp.ok) {
+      if (resp.status === 404) { console.log('order.json not found on GitHub, will create on first save'); return null; }
+      throw new Error(`GitHub API ${resp.status}`);
+    }
+    const data = await resp.json();
+    ghSHA = data.sha;
+    const content = atob(data.content.replace(/\n/g, ''));
+    const orders = JSON.parse(content);
+    // Update localStorage and cache
+    ghOrdersCache = orders;
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(orders)); } catch(e) {}
+    console.log('Loaded order.json from GitHub (SHA: ' + ghSHA.slice(0,7) + ')');
+    return orders;
+  } catch(e) {
+    console.warn('Failed to fetch from GitHub:', e.message);
+    return null;
+  }
+}
+
+// ---- Push order.json to GitHub ----
+async function pushToGitHub(orders) {
+  let token = getGHToken();
+  if (!token) {
+    token = promptGHToken();
+    if (!token) { showSaveStatus('error'); return; }
+  }
+  try {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(orders, null, 2))));
+    const body = {
+      message: `Update depth chart orders — ${new Date().toLocaleString()}`,
+      content: content,
+      branch: 'main'
+    };
+    if (ghSHA) body.sha = ghSHA;
+    const resp = await fetch(GH_API, {
+      method: 'PUT',
+      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (resp.status === 401 || resp.status === 403) {
+      localStorage.removeItem(GH_TOKEN_KEY);
+      showSaveStatus('error');
+      alert('GitHub token expired or invalid. You will be prompted for a new one on next save.');
+      return;
+    }
+    if (!resp.ok) throw new Error(`GitHub PUT ${resp.status}`);
+    const data = await resp.json();
+    ghSHA = data.content.sha;
+    showSaveStatus('github');
+    console.log('Pushed order.json to GitHub (SHA: ' + ghSHA.slice(0,7) + ')');
+  } catch(e) {
+    console.error('GitHub push failed:', e);
+    showSaveStatus('error');
+  }
 }
 
 // =====================================================
@@ -810,27 +904,17 @@ function exportHTML(withHeadshots, startIdx, endIdx) {
 // SAVE ORDER JSON (for GitHub Pages export)
 // =====================================================
 function downloadOrderJSON() {
-  const orders = {};
-  document.querySelectorAll('.admin-depth-chart').forEach(chart => {
-    const ta = chart.dataset.team; const order = {};
-    chart.querySelectorAll('.admin-position-column').forEach(col => {
-      const pos = col.dataset.position; if (!pos) return; order[pos] = [];
-      col.querySelectorAll('.admin-player-card').forEach(card => {
-        if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
-        else if (card.dataset.player) order[pos].push(card.dataset.player);
-      });
-    });
-    orders[ta] = order;
-  });
-  const blob = new Blob([JSON.stringify(orders, null, 2)], {type: 'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href = url; a.download = 'order.json';
-  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
-  // Visual feedback
+  // Force immediate push to GitHub
+  const orders = loadAllOrders();
   const btn = event.target;
   const orig = btn.textContent;
-  btn.textContent = '✓ Saved!';
-  setTimeout(() => btn.textContent = orig, 2000);
+  btn.textContent = '⏳ Pushing...';
+  btn.disabled = true;
+  pushToGitHub(orders).then(() => {
+    btn.textContent = '✓ Pushed!';
+    btn.style.background = '#16a34a'; btn.style.color = 'white';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 2000);
+  });
 }
 
 // =====================================================
@@ -1019,7 +1103,9 @@ async function init() {
   }
 
   try {
-    const [tvR, rR] = await Promise.all([fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL)]);
+    // Fetch player data + order.json from GitHub in parallel
+    const fetches = [fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL), fetchFromGitHub()];
+    const [tvR, rR, ghOrders] = await Promise.all(fetches);
     if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch data');
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
