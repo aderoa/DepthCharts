@@ -919,39 +919,35 @@
   },
   "SAC": {
     "PG": [
-      "Russell Westbrook",
       "Devin Carter",
       "Isaiah Stevens",
-      "Zach LaVine",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Russell Westbrook"
     ],
     "SG": [
       "DeMar DeRozan",
       "Doug McDermott",
-      "__SPACER__",
+      "__SEPARATOR__",
       "Malik Monk",
-      "__SPACER__"
+      "Zach LaVine"
     ],
     "SF": [
       "Nique Clifford",
       "Dylan Cardwell",
-      "__SPACER__",
-      "De'Andre Hunter",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "De'Andre Hunter"
     ],
     "PF": [
       "Precious Achiuwa",
       "Daeqwon Plowden",
-      "__SPACER__",
-      "Keegan Murray",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Keegan Murray"
     ],
     "C": [
       "Maxime Raynaud",
       "Drew Eubanks",
-      "__SPACER__",
-      "Domantas Sabonis",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Domantas Sabonis"
     ]
   },
   "SAS": {
