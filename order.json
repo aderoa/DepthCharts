@@ -295,36 +295,35 @@
       "Cade Cunningham",
       "Daniss Jenkins",
       "Marcus Sasser",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Ausar Thompson",
       "Caris LeVert",
       "Chaz Lanier",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Duncan Robinson",
       "Kevin Huerter",
       "Wendell Moore",
-      "__SPACER__",
+      "__SEPARATOR__",
       "Ron Holland"
     ],
     "PF": [
       "Tobias Harris",
       "Javonte Green",
       "Bobi Klintman",
-      "Tolu Smith",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "C": [
-      "Jalen Duren",
-      "Isaiah Stewart",
       "Paul Reed",
+      "Tolu Smith",
       "Isaac Jones",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jalen Duren",
+      "Isaiah Stewart"
     ]
   },
   "GSW": {
