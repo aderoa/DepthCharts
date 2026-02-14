@@ -223,7 +223,6 @@
       "Tyus Jones",
       "Ryan Nembhard",
       "__SEPARATOR__",
-      "Cooper Flagg",
       "Kyrie Irving"
     ],
     "SG": [
@@ -235,21 +234,21 @@
     "SF": [
       "Naji Marshall",
       "Khris Middleton",
-      "__SPACER__",
       "Miles Kelly",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Cooper Flagg"
     ],
     "PF": [
       "PJ Washington",
       "Marvin Bagley",
       "Moussa Cisse",
-      "__SPACER__",
       "__SEPARATOR__",
       "Caleb Martin"
     ],
     "C": [
       "Daniel Gafford",
       "Dwight Powell",
+      "__SPACER__",
       "__SEPARATOR__",
       "Dereck Lively"
     ]
