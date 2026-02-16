@@ -330,6 +330,7 @@
     "PG": [
       "Pat Spencer",
       "Gary Payton II",
+      "__SPACER__",
       "__SEPARATOR__",
       "Stephen Curry",
       "LJ Cryer"
@@ -337,18 +338,21 @@
     "SG": [
       "De'Anthony Melton",
       "Brandin Podziemski",
+      "Jeenathan Williams",
       "__SEPARATOR__",
       "Will Richard"
     ],
     "SF": [
       "Moses Moody",
       "Al Horford",
+      "__SPACER__",
       "__SEPARATOR__",
       "Seth Curry"
     ],
     "PF": [
       "Gui Santos",
       "Quinten Post",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jimmy Butler"
     ],
