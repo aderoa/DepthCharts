@@ -808,34 +808,38 @@
   "PHI": {
     "PG": [
       "Tyrese Maxey",
+      "Cameron Payne",
       "Kyle Lowry",
-      "Dalen Terry",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "VJ Edgecombe",
       "MarJon Beauchamp",
-      "Jabari Walker",
+      "Dalen Terry",
+      "__SPACER__",
       "__SEPARATOR__",
       "Quentin Grimes"
     ],
     "SF": [
       "Kelly Oubre",
       "Trendon Watford",
-      "Johni Broome",
+      "Jabari Walker",
+      "__SPACER__",
       "__SEPARATOR__",
       "Paul George"
     ],
     "PF": [
       "Dominick Barlow",
       "Justin Edwards",
-      "Charles Bassey",
+      "Johni Broome",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Adem Bona",
       "Andre Drummond",
+      "Charles Bassey",
       "Patrick Baldwin",
       "__SEPARATOR__",
       "Joel Embiid"
