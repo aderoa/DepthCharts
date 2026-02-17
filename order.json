@@ -625,38 +625,35 @@
       "Ayo Dosunmu",
       "Johnny Juzang",
       "__SPACER__",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Anthony Edwards",
       "Bones Hyland",
       "Joe Ingles",
       "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Jaden McDaniels",
       "Jaylen Clark",
       "Terrence Shannon",
-      "__SPACER__",
-      "__SPACER__"
+      "Mike Conley",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Julius Randle",
       "Naz Reid",
       "Julian Phillips",
       "__SPACER__",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "C": [
       "Rudy Gobert",
       "Joan Beringer",
       "Rocco Zikarsky",
       "Enrique Freeman",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ]
   },
   "NOP": {
