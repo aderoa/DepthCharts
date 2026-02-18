@@ -849,28 +849,29 @@
       "Collin Gillespie",
       "Jamaree Bouyea",
       "Koby Brea",
+      "__SPACER__",
       "__SEPARATOR__",
       "Cole Anthony"
     ],
     "SG": [
+      "Devin Booker",
       "Jordan Goodwin",
       "Amir Coffey",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Devin Booker",
-      "Jalen Green"
+      "Jalen Green",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Ryan Dunn",
       "Haywood Highsmith",
+      "Grayson Allen",
       "__SPACER__",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Grayson Allen"
+      "__SEPARATOR__"
     ],
     "PF": [
       "Royce O'Neale",
       "Rasheer Fleming",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Dillon Brooks"
     ],
@@ -878,8 +879,8 @@
       "Mark Williams",
       "Oso Ighodaro",
       "Khaman Maluach",
-      "__SEPARATOR__",
-      "Isaiah Livers"
+      "Isaiah Livers",
+      "__SEPARATOR__"
     ]
   },
   "POR": {
