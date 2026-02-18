@@ -850,7 +850,6 @@
       "Jordan Goodwin",
       "Jamaree Bouyea",
       "Koby Brea",
-      "__SPACER__",
       "__SEPARATOR__",
       "Cole Anthony"
     ],
@@ -858,6 +857,7 @@
       "Devin Booker",
       "Jalen Green",
       "Amir Coffey",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -869,8 +869,10 @@
     ],
     "PF": [
       "Royce O'Neale",
+      "Isaiah Livers",
       "Rasheer Fleming",
       "__SPACER__",
+      "Isaiah Livers",
       "__SEPARATOR__",
       "Dillon Brooks"
     ],
