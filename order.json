@@ -377,26 +377,26 @@
     "SG": [
       "Tari Eason",
       "Aaron Holiday",
-      "__SEPARATOR__",
-      "Tristen Newton"
+      "Tristen Newton",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Kevin Durant",
       "Josh Okogie",
-      "__SEPARATOR__",
       "Isaiah Crawford",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "PF": [
       "Jabari Smith",
       "Jae'Sean Tate",
-      "Jeff Green",
-      "__SEPARATOR__",
-      "Dorian Finney-Smith"
+      "__SPACER__",
+      "Dorian Finney-Smith",
+      "__SEPARATOR__"
     ],
     "C": [
       "Alperen Sengun",
       "Clint Capela",
+      "Jeff Green",
       "__SEPARATOR__",
       "Steven Adams"
     ]
