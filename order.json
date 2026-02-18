@@ -704,13 +704,13 @@
       "Landry Shamet",
       "Jordan Clarkson",
       "Kevin McCullar",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Mikal Bridges",
       "Jeremy Sochan",
       "Pacome Dadiet",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "OG Anunoby"
@@ -725,8 +725,8 @@
     "C": [
       "Karl-Anthony Towns",
       "Mitchell Robinson",
-      "Ariel Hukporti",
       "Trey Jemison",
+      "Ariel Hukporti",
       "__SEPARATOR__"
     ]
   },
