@@ -773,19 +773,21 @@
       "Jalen Suggs",
       "Jase Richardson",
       "Jevon Carter",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Anthony Black",
       "Noah Penda",
+      "Jett Howard",
       "Alex Morales",
-      "__SEPARATOR__",
-      "Jett Howard"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Desmond Bane",
       "Tristan Da Silva",
       "Jamal Cain",
+      "__SPACER__",
       "__SEPARATOR__",
       "Franz Wagner"
     ],
@@ -793,6 +795,7 @@
       "Paolo Banchero",
       "Jonathan Isaac",
       "Colin Castleton",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
