@@ -470,17 +470,22 @@ function applyInjuriesJSON(injuries) {
   // Build latest status per player
   const latest = {};
   for (const e of injuries) latest[e.player] = e;
-  // Overlay onto allPlayers
+  // Reset ALL players to healthy first (JSON is authoritative over spreadsheet)
+  for (const p of allPlayers) {
+    const base = (p.contractStatus === 'TWO-WAY' || p.contractStatus === '10-DAY') ? 'twoway' : 'normal';
+    p.injuryStatus = '';
+    p.injuryReason = '';
+    p.colorCode = base;
+  }
+  // Then overlay JSON entries
   for (const p of allPlayers) {
     const entry = latest[p.name];
     if (!entry) continue;
+    if (entry.status === 'Available' || entry.status === 'Probable') continue;
     p.injuryStatus = entry.status;
     p.injuryReason = entry.injury;
-    // Recalculate colorCode
-    const base = (p.contractStatus === 'TWO-WAY' || p.contractStatus === '10-DAY') ? 'twoway' : 'normal';
     if (entry.status === 'Out' || entry.status === 'Doubtful') p.colorCode = 'injured';
     else if (entry.status === 'Questionable') p.colorCode = 'questionable';
-    else p.colorCode = base; // Available/Probable = healthy
   }
 }
 
