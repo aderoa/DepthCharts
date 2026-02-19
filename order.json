@@ -83,13 +83,14 @@
     "SG": [
       "Nolan Traore",
       "Drake Powell",
-      "Jalen Wilson",
       "Chaney Johnson",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Michael Porter",
       "Josh Minott",
+      "Jalen Wilson",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -97,7 +98,6 @@
       "Noah Clowney",
       "Ziaire Williams",
       "Ochai Agbaji",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
