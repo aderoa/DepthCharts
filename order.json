@@ -921,14 +921,13 @@
   },
   "SAC": {
     "PG": [
+      "Russell Westbrook",
       "Devin Carter",
       "Isaiah Stevens",
-      "Russell Westbrook",
       "__SEPARATOR__"
     ],
     "SG": [
       "DeMar DeRozan",
-      "Doug McDermott",
       "Malik Monk",
       "__SEPARATOR__",
       "Zach LaVine"
@@ -936,6 +935,7 @@
     "SF": [
       "Nique Clifford",
       "Daeqwon Plowden",
+      "Doug McDermott",
       "__SPACER__",
       "__SEPARATOR__",
       "Dylan Cardwell",
