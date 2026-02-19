@@ -192,22 +192,21 @@
       "Donovan Mitchell",
       "Keon Ellis",
       "Tyrese Proctor",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Sam Merrill",
       "Dean Wade",
       "Tristan Enaruna",
-      "Emanuel Miller",
       "__SEPARATOR__",
       "Max Strus"
     ],
     "PF": [
       "Evan Mobley",
-      "__SPACER__",
       "Jaylon Tyson",
+      "Emanuel Miller",
       "Riley Minix",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Nae'Qwan Tomlin"
@@ -216,6 +215,7 @@
       "Jarrett Allen",
       "Thomas Bryant",
       "Larry Nance Jr",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
