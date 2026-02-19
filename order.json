@@ -860,8 +860,8 @@
     ],
     "SG": [
       "Devin Booker",
-      "Grayson Allen",
       "Jalen Green",
+      "Grayson Allen",
       "Jamaree Bouyea",
       "__SEPARATOR__"
     ],
@@ -874,8 +874,9 @@
     ],
     "PF": [
       "Royce O'Neale",
+      "Isaiah Livers",
       "Rasheer Fleming",
-      "__SPACER__",
+      "Rasheer Fleming",
       "__SEPARATOR__",
       "Dillon Brooks"
     ],
@@ -883,7 +884,6 @@
       "Mark Williams",
       "Oso Ighodaro",
       "Khaman Maluach",
-      "Isaiah Livers",
       "__SEPARATOR__"
     ]
   },
