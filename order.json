@@ -257,36 +257,35 @@
       "Jamal Murray",
       "Bruce Brown",
       "__SPACER__",
-      "Tamar Bates",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Tamar Bates"
     ],
     "SG": [
       "Christian Braun",
       "Jalen Pickett",
       "__SPACER__",
-      "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "SF": [
+      "Spencer Jones",
       "Julian Strawther",
       "Tim Hardaway Jr",
       "Curtis Jones",
-      "Spencer Jones",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "PF": [
       "Cameron Johnson",
       "Zeke Nnaji",
       "__SPACER__",
-      "Peyton Watson",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Peyton Watson"
     ],
     "C": [
       "Nikola Jokic",
       "Jonas Valanciunas",
       "DaRon Holmes",
-      "Aaron Gordon",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Aaron Gordon"
     ]
   },
   "DET": {
