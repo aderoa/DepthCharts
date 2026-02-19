@@ -748,6 +748,7 @@
     "PG": [
       "Cason Wallace",
       "Nikola Topic",
+      "__SPACER__",
       "__SEPARATOR__",
       "Shai Gilgeous-Alexander"
     ],
@@ -762,24 +763,21 @@
       "Luguentz Dort",
       "Aaron Wiggins",
       "Brooks Barnhizer",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jalen Williams"
     ],
     "PF": [
+      "Chet Holmgren",
       "Kenrich Williams",
       "Jared McCain",
-      "__SEPARATOR__",
-      "Isaiah Hartenstein"
+      "__SEPARATOR__"
     ],
     "C": [
-      "Chet Holmgren",
       "Jaylin Williams",
-      "__SPACER__",
-      "__SPACER__",
-      "__SEPARATOR__",
       "Branden Carlson",
-      "Thomas Sorber"
+      "__SEPARATOR__",
+      "Thomas Sorber",
+      "Isaiah Hartenstein"
     ]
   },
   "ORL": {
