@@ -1048,14 +1048,14 @@
     "PG": [
       "Isaiah Collier",
       "Vince Williams Jr",
-      "Elijah Harkless",
+      "__SPACER__",
       "__SEPARATOR__",
       "Keyonte George"
     ],
     "SG": [
       "Ace Bailey",
       "John Konchar",
-      "__SPACER__",
+      "Elijah Harkless",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -1068,16 +1068,17 @@
     "PF": [
       "Cody Williams",
       "Kevin Love",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jaren Jackson Jr"
     ],
     "C": [
-      "Jusuf Nurkic",
       "Kyle Filipowski",
       "Oscar Tshiebwe",
-      "Walker Kessler",
+      "__SPACER__",
       "__SEPARATOR__",
-      "__SPACER__"
+      "Jusuf Nurkic",
+      "Walker Kessler"
     ]
   },
   "WAS": {
