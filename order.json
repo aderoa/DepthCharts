@@ -568,17 +568,17 @@
       "__SEPARATOR__"
     ],
     "SF": [
-      "Simone Fontecchio",
+      "Andrew Wiggins",
+      "Jaime Jaquez",
       "Pelle Larsson",
       "Keshad Johnson",
       "Trevor Keels",
-      "__SPACER__",
       "__SEPARATOR__",
       "Norman Powell"
     ],
     "PF": [
       "Bam Adebayo",
-      "Jaime Jaquez",
+      "Simone Fontecchio",
       "Andrew Wiggins",
       "__SPACER__",
       "__SEPARATOR__"
@@ -587,6 +587,7 @@
       "Kel'el Ware",
       "Nikola Jovic",
       "Vladislav Goldin",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
