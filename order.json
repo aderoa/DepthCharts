@@ -861,15 +861,14 @@
     "SG": [
       "Grayson Allen",
       "Jamaree Bouyea",
-      "__SPACER__",
-      "__SPACER__",
+      "Jalen Green",
       "__SEPARATOR__",
-      "Devin Booker",
-      "Jalen Green"
+      "Devin Booker"
     ],
     "SF": [
       "Ryan Dunn",
       "Amir Coffey",
+      "__SPACER__",
       "__SEPARATOR__",
       "Haywood Highsmith"
     ],
@@ -884,8 +883,8 @@
       "Mark Williams",
       "Oso Ighodaro",
       "Khaman Maluach",
-      "__SEPARATOR__",
-      "Isaiah Livers"
+      "Isaiah Livers",
+      "__SEPARATOR__"
     ]
   },
   "POR": {
