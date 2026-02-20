@@ -517,7 +517,6 @@
     "PG": [
       "Jaylen Wells",
       "Javon Small",
-      "__SPACER__",
       "__SEPARATOR__",
       "Walter Clayton",
       "Ja Morant"
@@ -531,6 +530,7 @@
     ],
     "SF": [
       "Taylor Hendricks",
+      "Kyle Anderson",
       "__SEPARATOR__",
       "Scotty Pippen Jr",
       "Kentavious Caldwell-Pope"
@@ -538,13 +538,13 @@
     "PF": [
       "GG Jackson",
       "Olivier-Maxence Prosper",
+      "__SPACER__",
       "__SEPARATOR__",
       "Santiago Aldama",
       "Brandon Clarke"
     ],
     "C": [
       "Lawson Lovering",
-      "Kyle Anderson",
       "__SEPARATOR__",
       "Zach Edey"
     ]
