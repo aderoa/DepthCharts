@@ -484,12 +484,11 @@
   },
   "LAL": {
     "PG": [
+      "Luka Doncic",
       "Marcus Smart",
       "Kobe Bufkin",
       "Bronny James",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Luka Doncic"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Jake LaRavia",
@@ -516,9 +515,8 @@
       "Jaxson Hayes",
       "Maxi Kleber",
       "Drew Timme",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Deandre Ayton"
+      "Deandre Ayton",
+      "__SEPARATOR__"
     ]
   },
   "MEM": {
