@@ -75,24 +75,22 @@
     "PG": [
       "Egor Demin",
       "Terance Mann",
-      "Ben Saraf",
       "Tyson Etienne",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Nolan Traore",
       "Drake Powell",
-      "Chaney Johnson",
-      "__SPACER__",
+      "Ben Saraf",
       "__SEPARATOR__"
     ],
     "SF": [
       "Michael Porter",
-      "Ziaire Williams",
       "Jalen Wilson",
-      "__SPACER__",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Chaney Johnson",
+      "__SEPARATOR__",
+      "Ziaire Williams"
     ],
     "PF": [
       "Noah Clowney",
@@ -104,7 +102,6 @@
       "Day'Ron Sharpe",
       "Danny Wolf",
       "EJ Liddell",
-      "__SPACER__",
       "__SEPARATOR__",
       "Nicolas Claxton"
     ]
