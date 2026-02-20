@@ -406,31 +406,28 @@
   },
   "IND": {
     "PG": [
-      "Andrew Nembhard",
+      "Kam Jones",
       "Taelon Peter",
-      "Quenton Jackson",
-      "__SPACER__",
       "__SEPARATOR__",
+      "Andrew Nembhard",
       "Tyrese Haliburton"
     ],
     "SG": [
       "Ben Sheppard",
-      "Kam Jones",
-      "__SPACER__",
+      "Quenton Jackson",
       "__SEPARATOR__",
       "TJ McConnell"
     ],
     "SF": [
-      "Aaron Nesmith",
       "Ethan Thompson",
       "__SPACER__",
       "__SEPARATOR__",
+      "Aaron Nesmith",
       "Johnny Furphy"
     ],
     "PF": [
       "Jarace Walker",
       "Kobe Brown",
-      "__SPACER__",
       "__SEPARATOR__",
       "Pascal Siakam",
       "Obi Toppin"
@@ -438,7 +435,6 @@
     "C": [
       "Jay Huff",
       "Micah Potter",
-      "__SPACER__",
       "__SEPARATOR__",
       "Ivica Zubac"
     ]
