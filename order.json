@@ -901,7 +901,7 @@
     "SG": [
       "Toumani Camara",
       "Scoot Henderson",
-      "Rayan Rupert",
+      "__SPACER__",
       "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
@@ -909,15 +909,14 @@
       "Deni Avdija",
       "Vit Krejci",
       "Javonte Cooke",
-      "__SPACER__",
       "__SEPARATOR__",
       "Matisse Thybulle"
     ],
     "PF": [
       "Jerami Grant",
+      "Sidy Cissoko",
       "Kris Murray",
-      "__SEPARATOR__",
-      "Sidy Cissoko"
+      "__SEPARATOR__"
     ],
     "C": [
       "Donovan Clingan",
