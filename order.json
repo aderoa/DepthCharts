@@ -230,10 +230,11 @@
       "Kyrie Irving"
     ],
     "SG": [
-      "Max Christie",
       "Klay Thompson",
       "AJ Johnson",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Max Christie"
     ],
     "SF": [
       "Naji Marshall",
@@ -245,14 +246,14 @@
     "PF": [
       "PJ Washington",
       "Marvin Bagley",
-      "Moussa Cisse",
-      "__SEPARATOR__",
-      "Caleb Martin"
+      "__SPACER__",
+      "Caleb Martin",
+      "__SEPARATOR__"
     ],
     "C": [
       "Daniel Gafford",
       "Dwight Powell",
-      "__SPACER__",
+      "Moussa Cisse",
       "__SEPARATOR__",
       "Dereck Lively"
     ]
