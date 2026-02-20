@@ -101,6 +101,7 @@
     .admin-player-card.injured .admin-trade-value { color: #ffcdd2 !important; }
     .admin-player-card.questionable { background: #ef9a9a; }
     .admin-separator { height: 2px; background: #ef5350; margin: 4px 0; border-radius: 1px; opacity: 0.6; pointer-events: none; }
+    .injury-separator { height: 2px; background: #ef5350; margin: 4px 0; border-radius: 1px; opacity: 0.6; }
     .admin-trade-value { font-size: 0.65rem; font-weight: 600; pointer-events: none; margin-top: 1px; }
     .admin-trade-value.high { color: #16a34a; }
     .admin-trade-value.medium { color: #ca8a04; }
@@ -564,24 +565,57 @@ function renderDepthChart(teamAbbrev) {
   document.title = `${team.name} Depth Chart`;
   const positions = ['PG','SG','SF','PF','C'];
   const byPos = buildPositionMap(tp, loadTeamOrder(teamAbbrev));
+
+  // Split each position into healthy and injured
+  const healthyByPos = {}, injuredByPos = {};
+  positions.forEach(pos => {
+    healthyByPos[pos] = [];
+    injuredByPos[pos] = [];
+    byPos[pos].forEach(p => {
+      if (p === '__SPACER__') return;
+      if (p.colorCode === 'injured' || p.colorCode === 'questionable') injuredByPos[pos].push(p);
+      else healthyByPos[pos].push(p);
+    });
+  });
+
+  // Find max healthy rows to align separator
+  const maxHealthy = Math.max(...positions.map(pos => healthyByPos[pos].length), 1);
+
   let html = '';
   positions.forEach(pos => {
     html += `<div class="position-column" data-position="${pos}"><div class="position-header">${pos}</div>`;
     let firstReal = true;
-    byPos[pos].forEach((p,i) => {
-      if (p === '__SPACER__') {
-        html += `<div class="player-card spacer" data-player="__SPACER__">
-          <div class="player-image"><span class="initials" style="visibility:hidden;">&nbsp;</span></div>
-          <div class="player-name" style="visibility:hidden;">—</div>
-          <div class="trade-value" style="visibility:hidden;">&nbsp;</div></div>`;
-      } else {
-        html += `<div class="player-card ${firstReal?'starter':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
-          <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
-          <div class="player-name">${p.name}</div>
-          <div class="trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
-        firstReal = false;
-      }
+
+    // Healthy players
+    healthyByPos[pos].forEach(p => {
+      html += `<div class="player-card ${firstReal?'starter':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
+        <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
+        <div class="player-name">${p.name}</div>
+        <div class="trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
+      firstReal = false;
     });
+
+    // Pad with spacers to align separator across columns
+    for (let i = healthyByPos[pos].length; i < maxHealthy; i++) {
+      html += `<div class="player-card spacer" data-player="__SPACER__">
+        <div class="player-image"><span class="initials" style="visibility:hidden;">&nbsp;</span></div>
+        <div class="player-name" style="visibility:hidden;">—</div>
+        <div class="trade-value" style="visibility:hidden;">&nbsp;</div></div>`;
+    }
+
+    // Red separator line (only if there are injured players on this team)
+    if (injuredByPos[pos].length || positions.some(p2 => injuredByPos[p2].length)) {
+      html += `<div class="injury-separator"></div>`;
+    }
+
+    // Injured players
+    injuredByPos[pos].forEach(p => {
+      html += `<div class="player-card" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
+        <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
+        <div class="player-name">${p.name}</div>
+        <div class="trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
+    });
+
     html += '</div>';
   });
   document.getElementById('depthChart').innerHTML = html;
