@@ -114,28 +114,29 @@
       "LaMelo Ball",
       "Tre Mann",
       "Antonio Reeves",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Coby White"
     ],
     "SG": [
       "Brandon Miller",
       "Sion James",
       "__SPACER__",
       "__SEPARATOR__",
-      "Coby White"
+      "Liam McNeeley"
     ],
     "SF": [
       "Kon Knueppel",
       "Josh Green",
       "Pat Connaughton",
       "__SEPARATOR__",
-      "Liam McNeeley"
+      "Miles Bridges"
     ],
     "PF": [
-      "Grant Williams",
       "Tidjane Salaun",
       "Xavier Tillman",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Miles Bridges"
+      "Grant Williams"
     ],
     "C": [
       "Ryan Kalkbrenner",
