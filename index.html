@@ -487,6 +487,23 @@ function applyInjuriesJSON(injuries) {
     if (entry.status === 'Out' || entry.status === 'Doubtful') p.colorCode = 'injured';
     else if (entry.status === 'Questionable') p.colorCode = 'questionable';
   }
+  // Overlay pending edits from Injuries admin (shared localStorage)
+  try {
+    const saved = localStorage.getItem('injuries_modifications');
+    if (saved) {
+      const mods = JSON.parse(saved);
+      for (const [name, mod] of Object.entries(mods)) {
+        const p = allPlayers.find(x => x.name === name);
+        if (!p) continue;
+        p.injuryStatus = mod.status;
+        p.injuryReason = mod.injury || '';
+        const base = (p.contractStatus === 'TWO-WAY' || p.contractStatus === '10-DAY') ? 'twoway' : 'normal';
+        if (mod.status === 'Out' || mod.status === 'Doubtful') p.colorCode = 'injured';
+        else if (mod.status === 'Questionable') p.colorCode = 'questionable';
+        else p.colorCode = base;
+      }
+    }
+  } catch(e) {}
 }
 
 // =====================================================
