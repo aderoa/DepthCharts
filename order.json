@@ -897,6 +897,7 @@
     "PG": [
       "Jrue Holiday",
       "Caleb Love",
+      "__SPACER__",
       "__SEPARATOR__",
       "Damian Lillard"
     ],
@@ -905,30 +906,27 @@
       "Scoot Henderson",
       "Blake Wesley",
       "__SEPARATOR__",
-      "Shaedon Sharpe",
-      "Matisse Thybulle"
+      "Shaedon Sharpe"
     ],
     "SF": [
       "Sidy Cissoko",
       "Rayan Rupert",
       "Javonte Cooke",
-      "__SPACER__",
-      "__SPACER__",
+      "Deni Avdija",
       "__SEPARATOR__",
-      "Deni Avdija"
+      "Matisse Thybulle"
     ],
     "PF": [
       "Jerami Grant",
       "Vit Krejci",
-      "__SEPARATOR__",
-      "Kris Murray"
+      "Kris Murray",
+      "__SEPARATOR__"
     ],
     "C": [
       "Donovan Clingan",
       "Yang Hansen",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Robert Williams"
+      "Robert Williams",
+      "__SEPARATOR__"
     ]
   },
   "SAC": {
