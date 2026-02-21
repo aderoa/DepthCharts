@@ -884,15 +884,15 @@
   "POR": {
     "PG": [
       "Jrue Holiday",
+      "Scoot Henderson",
       "Caleb Love",
-      "Blake Wesley",
       "__SEPARATOR__",
       "Damian Lillard"
     ],
     "SG": [
       "Toumani Camara",
-      "Scoot Henderson",
-      "__SPACER__",
+      "Matisse Thybulle",
+      "Blake Wesley",
       "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
@@ -900,8 +900,8 @@
       "Deni Avdija",
       "Vit Krejci",
       "Javonte Cooke",
-      "__SEPARATOR__",
-      "Matisse Thybulle"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Jerami Grant",
