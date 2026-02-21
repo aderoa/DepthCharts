@@ -590,8 +590,8 @@
     "PG": [
       "Ryan Rollins",
       "Andre Jackson",
-      "__SEPARATOR__",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SG": [
       "Kevin Porter",
@@ -601,6 +601,7 @@
     ],
     "SF": [
       "AJ Green",
+      "Pete Nance",
       "Gary Trent Jr",
       "Alex Antetokounmpo",
       "__SEPARATOR__",
@@ -609,7 +610,6 @@
     "PF": [
       "Kyle Kuzma",
       "Ousmane Dieng",
-      "Pete Nance",
       "__SEPARATOR__",
       "Giannis Antetokounmpo"
     ],
