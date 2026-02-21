@@ -223,8 +223,8 @@
   },
   "DAL": {
     "PG": [
-      "Brandon Williams",
       "Tyus Jones",
+      "Brandon Williams",
       "Ryan Nembhard",
       "__SEPARATOR__",
       "Kyrie Irving"
@@ -247,7 +247,6 @@
       "PJ Washington",
       "Caleb Martin",
       "Moussa Cisse",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
