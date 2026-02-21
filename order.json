@@ -233,7 +233,6 @@
       "Khris Middleton",
       "Klay Thompson",
       "AJ Johnson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Max Christie"
     ],
@@ -241,7 +240,8 @@
       "Naji Marshall",
       "Miles Kelly",
       "__SEPARATOR__",
-      "Cooper Flagg"
+      "Cooper Flagg",
+      "__SPACER__"
     ],
     "PF": [
       "PJ Washington",
