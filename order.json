@@ -1067,14 +1067,14 @@
   "WAS": {
     "PG": [
       "Tre Johnson",
-      "Kadary Richmond",
       "Sharife Cooper",
+      "__SPACER__",
       "__SEPARATOR__",
       "Trae Young"
     ],
     "SG": [
       "Carlton Carrington",
-      "Alondes Williams",
+      "Kadary Richmond",
       "Jaden Hardy",
       "__SPACER__",
       "__SEPARATOR__",
@@ -1082,7 +1082,7 @@
     ],
     "SF": [
       "Bilal Coulibaly",
-      "__SPACER__",
+      "Alondes Williams",
       "__SEPARATOR__",
       "Kyshawn George"
     ],
