@@ -746,8 +746,8 @@
     ],
     "SG": [
       "Luguentz Dort",
-      "Alex Caruso",
       "Buddy Boeheim",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ajay Mitchell"
     ],
@@ -756,13 +756,14 @@
       "Jared McCain",
       "Brooks Barnhizer",
       "__SEPARATOR__",
-      "Jalen Williams"
+      "Alex Caruso"
     ],
     "PF": [
       "Chet Holmgren",
       "Kenrich Williams",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jalen Williams"
     ],
     "C": [
       "Isaiah Hartenstein",
