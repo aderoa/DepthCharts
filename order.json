@@ -548,10 +548,10 @@
   },
   "MIA": {
     "PG": [
-      "Davion Mitchell",
       "Kasparas Jakucionis",
       "Dru Smith",
       "Jahmir Young",
+      "__SPACER__",
       "__SEPARATOR__",
       "Terry Rozier"
     ],
@@ -560,7 +560,8 @@
       "Tyler Herro",
       "Myron Gardner",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Davion Mitchell"
     ],
     "SF": [
       "Andrew Wiggins",
