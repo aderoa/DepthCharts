@@ -855,14 +855,15 @@
       "Cole Anthony"
     ],
     "SG": [
-      "Devin Booker",
+      "Jalen Green",
       "Amir Coffey",
       "Jamaree Bouyea",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Devin Booker",
       "Grayson Allen"
     ],
     "SF": [
-      "Jalen Green",
       "Ryan Dunn",
       "__SPACER__",
       "__SEPARATOR__",
@@ -872,8 +873,8 @@
       "Royce O'Neale",
       "Isaiah Livers",
       "Rasheer Fleming",
-      "__SEPARATOR__",
-      "Dillon Brooks"
+      "Dillon Brooks",
+      "__SEPARATOR__"
     ],
     "C": [
       "Mark Williams",
