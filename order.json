@@ -439,7 +439,6 @@
       "Jordan Miller",
       "TyTy Washington",
       "Sean Pedulla",
-      "__SPACER__",
       "__SEPARATOR__",
       "Darius Garland"
     ],
@@ -447,23 +446,21 @@
       "Kawhi Leonard",
       "Bennedict Mathurin",
       "Kobe Sanders",
-      "__SPACER__",
       "__SEPARATOR__",
       "Bradley Beal"
     ],
     "SF": [
-      "Derrick Jones",
       "Nicolas Batum",
       "Cam Christie",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
-      "John Collins",
+      "Derrick Jones",
       "Isaiah Jackson",
       "Bogdan Bogdanovic",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "John Collins"
     ],
     "C": [
       "Brook Lopez",
