@@ -916,7 +916,6 @@
       "Russell Westbrook",
       "Devin Carter",
       "Isaiah Stevens",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -930,13 +929,14 @@
       "Keegan Murray",
       "Nique Clifford",
       "Doug McDermott",
+      "__SPACER__",
       "__SEPARATOR__",
       "De'Andre Hunter"
     ],
     "PF": [
       "Precious Achiuwa",
       "Daeqwon Plowden",
-      "__SPACER__",
+      "Patrick Baldwin",
       "__SEPARATOR__",
       "Dylan Cardwell"
     ],
