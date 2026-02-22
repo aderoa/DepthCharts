@@ -376,15 +376,16 @@
     ],
     "SG": [
       "Tari Eason",
-      "Josh Okogie",
+      "Aaron Holiday",
       "Tristen Newton",
       "__SEPARATOR__"
     ],
     "SF": [
       "Kevin Durant",
-      "Jae'Sean Tate",
-      "Aaron Holiday",
-      "__SEPARATOR__"
+      "Josh Okogie",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jae'Sean Tate"
     ],
     "PF": [
       "Jabari Smith",
