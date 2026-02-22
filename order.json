@@ -585,35 +585,35 @@
     "PG": [
       "Ryan Rollins",
       "Andre Jackson",
-      "__SPACER__",
+      "Gary Harris",
       "__SEPARATOR__"
     ],
     "SG": [
       "Kevin Porter",
       "Cam Thomas",
-      "Gary Harris",
+      "Gary Trent Jr",
       "__SEPARATOR__"
     ],
     "SF": [
       "AJ Green",
       "Pete Nance",
-      "Gary Trent Jr",
+      "Alex Antetokounmpo",
       "__SEPARATOR__",
       "Taurean Prince"
     ],
     "PF": [
       "Kyle Kuzma",
       "Ousmane Dieng",
-      "Alex Antetokounmpo",
+      "Thanasis Antetokounmpo",
       "__SEPARATOR__",
       "Giannis Antetokounmpo"
     ],
     "C": [
       "Jericho Sims",
       "Bobby Portis",
-      "Thanasis Antetokounmpo",
-      "__SEPARATOR__",
-      "Myles Turner"
+      "__SPACER__",
+      "Myles Turner",
+      "__SEPARATOR__"
     ]
   },
   "MIN": {
