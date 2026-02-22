@@ -516,7 +516,6 @@
     "PG": [
       "Walter Clayton",
       "Ty Jerome",
-      "__SPACER__",
       "Javon Small",
       "__SEPARATOR__",
       "Ja Morant"
@@ -524,11 +523,11 @@
     "SG": [
       "Jaylen Wells",
       "Cam Spencer",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kentavious Caldwell-Pope"
     ],
     "SF": [
-      "Taylor Hendricks",
       "Scotty Pippen Jr",
       "__SPACER__",
       "__SEPARATOR__",
@@ -543,6 +542,7 @@
       "Santiago Aldama"
     ],
     "C": [
+      "Taylor Hendricks",
       "Lawson Lovering",
       "Olivier-Maxence Prosper",
       "__SPACER__",
