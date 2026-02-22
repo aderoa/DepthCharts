@@ -602,6 +602,7 @@
     ],
     "SF": [
       "AJ Green",
+      "Ousmane Dieng",
       "Pete Nance",
       "Alex Antetokounmpo",
       "__SEPARATOR__",
@@ -609,16 +610,14 @@
     ],
     "PF": [
       "Kyle Kuzma",
-      "Ousmane Dieng",
+      "Bobby Portis",
       "Thanasis Antetokounmpo",
       "__SEPARATOR__",
       "Giannis Antetokounmpo"
     ],
     "C": [
       "Myles Turner",
-      "Bobby Portis",
       "Jericho Sims",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
