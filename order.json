@@ -222,6 +222,7 @@
   },
   "DAL": {
     "PG": [
+      "Max Christie",
       "Tyus Jones",
       "Brandon Williams",
       "Ryan Nembhard",
@@ -229,14 +230,13 @@
       "Kyrie Irving"
     ],
     "SG": [
-      "Max Christie",
-      "Klay Thompson",
+      "Khris Middleton",
       "AJ Johnson",
       "__SEPARATOR__"
     ],
     "SF": [
       "Naji Marshall",
-      "Khris Middleton",
+      "Klay Thompson",
       "Miles Kelly",
       "__SEPARATOR__",
       "Cooper Flagg"
