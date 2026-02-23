@@ -1025,8 +1025,8 @@
     ],
     "SG": [
       "Ace Bailey",
+      "__SPACER__",
       "Elijah Harkless",
-      "Lauri Markkanen",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -1037,16 +1037,16 @@
       "Jaren Jackson Jr"
     ],
     "PF": [
+      "Lauri Markkanen",
       "Cody Williams",
       "Blake Hinson",
-      "Kevin Love",
       "__SEPARATOR__",
       "Jusuf Nurkic"
     ],
     "C": [
       "Kyle Filipowski",
-      "__SPACER__",
       "Oscar Tshiebwe",
+      "Kevin Love",
       "__SEPARATOR__",
       "Walker Kessler"
     ]
