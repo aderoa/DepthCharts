@@ -998,11 +998,11 @@
       "Chucky Hepburn"
     ],
     "SF": [
+      "Scottie Barnes",
       "Ja'Kobe Walter",
       "Jamison Battle",
       "Alijah Martin",
-      "__SEPARATOR__",
-      "Scottie Barnes"
+      "__SEPARATOR__"
     ],
     "PF": [
       "Brandon Ingram",
@@ -1011,10 +1011,11 @@
       "__SEPARATOR__"
     ],
     "C": [
-      "Jakob Poeltl",
       "Sandro Mamukelashvili",
       "Jonathan Mogbo",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jakob Poeltl"
     ]
   },
   "UTA": {
