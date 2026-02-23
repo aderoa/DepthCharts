@@ -908,14 +908,15 @@
   "SAC": {
     "PG": [
       "Russell Westbrook",
-      "Devin Carter",
+      "Killian Hayes",
       "Isaiah Stevens",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Devin Carter"
     ],
     "SG": [
       "DeMar DeRozan",
       "Malik Monk",
-      "Killian Hayes",
+      "__SPACER__",
       "__SEPARATOR__",
       "Zach LaVine"
     ],
@@ -923,7 +924,6 @@
       "Keegan Murray",
       "Nique Clifford",
       "Doug McDermott",
-      "__SPACER__",
       "__SEPARATOR__",
       "De'Andre Hunter"
     ],
