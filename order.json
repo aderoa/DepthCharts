@@ -1026,13 +1026,12 @@
     "SG": [
       "Ace Bailey",
       "Elijah Harkless",
-      "__SEPARATOR__",
-      "Lauri Markkanen"
+      "Lauri Markkanen",
+      "__SEPARATOR__"
     ],
     "SF": [
       "John Konchar",
       "Brice Sensabaugh",
-      "__SPACER__",
       "Sviatoslav Mykhailiuk",
       "__SEPARATOR__",
       "Jaren Jackson Jr"
@@ -1046,8 +1045,8 @@
     ],
     "C": [
       "Kyle Filipowski",
-      "Oscar Tshiebwe",
       "__SPACER__",
+      "Oscar Tshiebwe",
       "__SEPARATOR__",
       "Walker Kessler"
     ]
