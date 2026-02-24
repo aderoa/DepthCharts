@@ -370,10 +370,11 @@
   },
   "HOU": {
     "PG": [
-      "Amen Thompson",
       "Reed Sheppard",
       "JD Davison",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Amen Thompson",
       "Fred VanVleet"
     ],
     "SG": [
@@ -385,14 +386,14 @@
     "SF": [
       "Kevin Durant",
       "Josh Okogie",
-      "__SPACER__",
+      "Isaiah Crawford",
       "__SEPARATOR__",
       "Jae'Sean Tate"
     ],
     "PF": [
       "Jabari Smith",
       "Dorian Finney-Smith",
-      "Isaiah Crawford",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
