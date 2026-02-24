@@ -1025,8 +1025,8 @@
   "UTA": {
     "PG": [
       "Isaiah Collier",
-      "Vince Williams Jr",
       "Elijah Harkless",
+      "__SPACER__",
       "__SEPARATOR__",
       "Keyonte George"
     ],
@@ -1034,7 +1034,8 @@
       "Ace Bailey",
       "Brice Sensabaugh",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Vince Williams Jr"
     ],
     "SF": [
       "Lauri Markkanen",
@@ -1046,6 +1047,7 @@
     "PF": [
       "Cody Williams",
       "John Konchar",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jusuf Nurkic"
     ],
@@ -1053,7 +1055,6 @@
       "Kyle Filipowski",
       "Kevin Love",
       "Oscar Tshiebwe",
-      "__SPACER__",
       "__SEPARATOR__",
       "Walker Kessler"
     ]
