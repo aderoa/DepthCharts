@@ -625,6 +625,7 @@
       "Donte DiVincenzo",
       "Mike Conley",
       "Terrence Shannon",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -638,19 +639,21 @@
       "Jaden McDaniels",
       "Bones Hyland",
       "Julian Phillips",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Julius Randle",
       "Jaylen Clark",
       "Enrique Freeman",
-      "__SEPARATOR__",
-      "Naz Reid"
+      "__SEPARATOR__"
     ],
     "C": [
       "Rudy Gobert",
+      "Naz Reid",
       "Joan Beringer",
       "Rocco Zikarsky",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
