@@ -148,14 +148,13 @@
   },
   "CHI": {
     "PG": [
-      "Josh Giddey",
       "Tre Jones",
       "Yuki Kawamura",
       "__SEPARATOR__",
       "Jaden Ivey"
     ],
     "SG": [
-      "Collin Sexton",
+      "Josh Giddey",
       "Rob Dillingham",
       "__SPACER__",
       "__SEPARATOR__",
@@ -163,6 +162,7 @@
     ],
     "SF": [
       "Isaac Okoro",
+      "Collin Sexton",
       "Mac McClung",
       "__SEPARATOR__",
       "Noa Essengue"
