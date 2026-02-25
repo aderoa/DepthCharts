@@ -191,32 +191,30 @@
       "__SEPARATOR__"
     ],
     "SG": [
-      "Donovan Mitchell",
       "Keon Ellis",
       "Tyrese Proctor",
       "Tristan Enaruna",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Donovan Mitchell"
     ],
     "SF": [
       "Dean Wade",
       "Sam Merrill",
-      "Nae'Qwan Tomlin",
-      "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Max Strus"
     ],
     "PF": [
-      "Evan Mobley",
       "Jaylon Tyson",
+      "Nae'Qwan Tomlin",
       "Riley Minix",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Evan Mobley"
     ],
     "C": [
       "Jarrett Allen",
       "Thomas Bryant",
       "Larry Nance Jr",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
