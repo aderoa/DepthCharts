@@ -737,8 +737,9 @@
   "OKC": {
     "PG": [
       "Cason Wallace",
-      "__SPACER__",
+      "Alex Caruso",
       "Nikola Topic",
+      "__SPACER__",
       "__SEPARATOR__",
       "Shai Gilgeous-Alexander"
     ],
@@ -753,7 +754,6 @@
       "Luguentz Dort",
       "Aaron Wiggins",
       "Brooks Barnhizer",
-      "Alex Caruso",
       "__SEPARATOR__"
     ],
     "PF": [
@@ -1077,7 +1077,6 @@
       "Carlton Carrington",
       "Jaden Hardy",
       "Alondes Williams",
-      "__SPACER__",
       "__SEPARATOR__",
       "D'Angelo Russell"
     ],
@@ -1096,11 +1095,10 @@
       "Anthony Davis"
     ],
     "C": [
+      "Tristan Vukcevic",
       "Anthony Gill",
       "Will Riley",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Tristan Vukcevic",
       "Alex Sarr"
     ]
   }
