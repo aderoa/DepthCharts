@@ -734,10 +734,10 @@
   "OKC": {
     "PG": [
       "Cason Wallace",
-      "Alex Caruso",
       "Nikola Topic",
       "__SPACER__",
       "__SEPARATOR__",
+      "Alex Caruso",
       "Shai Gilgeous-Alexander"
     ],
     "SG": [
@@ -751,20 +751,22 @@
       "Luguentz Dort",
       "Aaron Wiggins",
       "Brooks Barnhizer",
-      "__SEPARATOR__"
-    ],
-    "PF": [
-      "Chet Holmgren",
-      "Kenrich Williams",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jalen Williams"
     ],
+    "PF": [
+      "Kenrich Williams",
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Chet Holmgren"
+    ],
     "C": [
-      "Isaiah Hartenstein",
       "Jaylin Williams",
       "Branden Carlson",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Isaiah Hartenstein",
       "Thomas Sorber"
     ]
   },
