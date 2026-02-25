@@ -239,18 +239,20 @@
       "Naji Marshall",
       "Klay Thompson",
       "Miles Kelly",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "PJ Washington"
     ],
     "PF": [
-      "PJ Washington",
       "Caleb Martin",
       "Moussa Cisse",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Daniel Gafford"
     ],
     "C": [
-      "Daniel Gafford",
       "Marvin Bagley",
       "Dwight Powell",
+      "__SPACER__",
       "__SEPARATOR__",
       "Dereck Lively"
     ]
