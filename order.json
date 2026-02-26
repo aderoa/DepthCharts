@@ -453,16 +453,17 @@
     ],
     "SG": [
       "Kris Dunn",
-      "Bennedict Mathurin",
       "TyTy Washington",
       "__SEPARATOR__",
       "Bradley Beal"
     ],
     "SF": [
-      "Kawhi Leonard",
+      "Bennedict Mathurin",
       "Nicolas Batum",
       "Cam Christie",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Kawhi Leonard"
     ],
     "PF": [
       "Derrick Jones",
