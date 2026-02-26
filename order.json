@@ -453,6 +453,7 @@
     ],
     "SG": [
       "Kris Dunn",
+      "Cam Christie",
       "TyTy Washington",
       "__SEPARATOR__",
       "Bradley Beal"
@@ -460,22 +461,21 @@
     "SF": [
       "Bennedict Mathurin",
       "Nicolas Batum",
-      "Cam Christie",
-      "__SPACER__",
+      "Bogdan Bogdanovic",
       "__SEPARATOR__",
       "Kawhi Leonard"
     ],
     "PF": [
       "Derrick Jones",
       "Isaiah Jackson",
-      "Bogdan Bogdanovic",
+      "Norchad Omier",
       "__SEPARATOR__",
       "John Collins"
     ],
     "C": [
       "Brook Lopez",
       "Yanic Konan Niederhauser",
-      "Norchad Omier",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
