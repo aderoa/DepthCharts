@@ -927,13 +927,13 @@
       "Killian Hayes",
       "Devin Carter",
       "Isaiah Stevens",
-      "__SPACER__",
       "__SEPARATOR__",
       "Russell Westbrook"
     ],
     "SG": [
       "DeMar DeRozan",
       "Malik Monk",
+      "__SPACER__",
       "__SEPARATOR__",
       "Zach LaVine"
     ],
@@ -942,7 +942,6 @@
       "Doug McDermott",
       "__SPACER__",
       "__SEPARATOR__",
-      "Keegan Murray",
       "De'Andre Hunter"
     ],
     "PF": [
@@ -950,6 +949,7 @@
       "Daeqwon Plowden",
       "__SPACER__",
       "__SEPARATOR__",
+      "Keegan Murray",
       "Dylan Cardwell"
     ],
     "C": [
