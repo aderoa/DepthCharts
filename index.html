@@ -467,10 +467,6 @@ function parseRosterCSV(csvText) {
 
 // Overlay injury status from GitHub injuries.json onto allPlayers
 function applyInjuriesJSON(injuries) {
-  if (!injuries || !injuries.length) return;
-  // Build latest status per player
-  const latest = {};
-  for (const e of injuries) latest[e.player] = e;
   // Reset ALL players to healthy first (JSON is authoritative over spreadsheet)
   for (const p of allPlayers) {
     const base = (p.contractStatus === 'TWO-WAY' || p.contractStatus === '10-DAY') ? 'twoway' : 'normal';
@@ -478,33 +474,45 @@ function applyInjuriesJSON(injuries) {
     p.injuryReason = '';
     p.colorCode = base;
   }
-  // Then overlay JSON entries
+
+  // Priority: injuries_latest (instant, written by Injuries admin on every change)
+  // Fallback: injuries.json + injuries_modifications (legacy path)
+  let latest = {};
+  try {
+    const live = localStorage.getItem('injuries_latest');
+    if (live) {
+      latest = JSON.parse(live);
+    }
+  } catch(e) {}
+
+  // If no injuries_latest, build from JSON + modifications (legacy)
+  if (!Object.keys(latest).length) {
+    if (injuries && injuries.length) {
+      for (const e of injuries) latest[e.player] = { status: e.status, injury: e.injury || '' };
+    }
+    try {
+      const saved = localStorage.getItem('injuries_modifications');
+      if (saved) {
+        const mods = JSON.parse(saved);
+        for (const [name, mod] of Object.entries(mods)) {
+          latest[name] = { status: mod.status, injury: mod.injury || '' };
+        }
+      }
+    } catch(e) {}
+  }
+
+  // Apply to all players
   for (const p of allPlayers) {
     const entry = latest[p.name];
     if (!entry) continue;
     if (entry.status === 'Available' || entry.status === 'Probable') continue;
     p.injuryStatus = entry.status;
-    p.injuryReason = entry.injury;
+    p.injuryReason = entry.injury || '';
+    const base = (p.contractStatus === 'TWO-WAY' || p.contractStatus === '10-DAY') ? 'twoway' : 'normal';
     if (entry.status === 'Out' || entry.status === 'Doubtful') p.colorCode = 'injured';
     else if (entry.status === 'Questionable') p.colorCode = 'questionable';
+    else p.colorCode = base;
   }
-  // Overlay pending edits from Injuries admin (shared localStorage)
-  try {
-    const saved = localStorage.getItem('injuries_modifications');
-    if (saved) {
-      const mods = JSON.parse(saved);
-      for (const [name, mod] of Object.entries(mods)) {
-        const p = allPlayers.find(x => x.name === name);
-        if (!p) continue;
-        p.injuryStatus = mod.status;
-        p.injuryReason = mod.injury || '';
-        const base = (p.contractStatus === 'TWO-WAY' || p.contractStatus === '10-DAY') ? 'twoway' : 'normal';
-        if (mod.status === 'Out' || mod.status === 'Doubtful') p.colorCode = 'injured';
-        else if (mod.status === 'Questionable') p.colorCode = 'questionable';
-        else p.colorCode = base;
-      }
-    }
-  } catch(e) {}
 }
 
 // =====================================================
