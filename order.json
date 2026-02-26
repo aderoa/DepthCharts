@@ -186,15 +186,16 @@
   },
   "CLE": {
     "PG": [
-      "James Harden",
       "Dennis Schroeder",
+      "Craig Porter",
       "Darius Brown",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "James Harden"
     ],
     "SG": [
       "Keon Ellis",
       "Tyrese Proctor",
-      "Craig Porter",
       "__SEPARATOR__",
       "Donovan Mitchell"
     ],
@@ -209,7 +210,6 @@
       "Jaylon Tyson",
       "Nae'Qwan Tomlin",
       "Riley Minix",
-      "__SPACER__",
       "__SEPARATOR__",
       "Evan Mobley"
     ],
