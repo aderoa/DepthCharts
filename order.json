@@ -403,6 +403,7 @@
   },
   "IND": {
     "PG": [
+      "Andrew Nembhard",
       "Kam Jones",
       "TJ McConnell",
       "Taelon Peter",
@@ -410,23 +411,22 @@
       "Tyrese Haliburton"
     ],
     "SG": [
-      "Andrew Nembhard",
+      "Ben Sheppard",
       "Quenton Jackson",
       "__SPACER__",
       "__SEPARATOR__",
       "Aaron Nesmith"
     ],
     "SF": [
-      "Ben Sheppard",
-      "Kobe Brown",
+      "Jarace Walker",
+      "__SPACER__",
       "Ethan Thompson",
       "__SEPARATOR__",
       "Johnny Furphy"
     ],
     "PF": [
-      "Jarace Walker",
       "Obi Toppin",
-      "__SPACER__",
+      "Kobe Brown",
       "__SEPARATOR__",
       "Pascal Siakam"
     ],
