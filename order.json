@@ -197,9 +197,9 @@
       "Donovan Mitchell"
     ],
     "SF": [
-      "Dean Wade",
       "Jaylon Tyson",
       "Tristan Enaruna",
+      "__SPACER__",
       "__SEPARATOR__",
       "Keon Ellis"
     ],
@@ -214,7 +214,8 @@
       "Jarrett Allen",
       "Thomas Bryant",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Dean Wade"
     ]
   },
   "DAL": {
