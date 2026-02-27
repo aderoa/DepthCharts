@@ -888,35 +888,35 @@
   "POR": {
     "PG": [
       "Jrue Holiday",
-      "Scoot Henderson",
+      "Blake Wesley",
       "Caleb Love",
       "__SEPARATOR__",
       "Damian Lillard"
     ],
     "SG": [
-      "Toumani Camara",
+      "Scoot Henderson",
       "Matisse Thybulle",
-      "Blake Wesley",
       "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
     "SF": [
-      "Kris Murray",
+      "Toumani Camara",
       "Vit Krejci",
       "Javonte Cooke",
       "__SEPARATOR__",
       "Deni Avdija"
     ],
     "PF": [
-      "Jerami Grant",
+      "Kris Murray",
       "Sidy Cissoko",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
+      "Jerami Grant",
       "Robert Williams",
       "Yang Hansen",
+      "__SPACER__",
       "__SEPARATOR__",
       "Donovan Clingan"
     ]
