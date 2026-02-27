@@ -383,17 +383,18 @@
       "__SEPARATOR__"
     ],
     "SF": [
-      "Kevin Durant",
       "Josh Okogie",
       "Isaiah Crawford",
       "__SEPARATOR__",
       "Jae'Sean Tate"
     ],
     "PF": [
-      "Jabari Smith",
+      "Kevin Durant",
       "Jeff Green",
       "Dorian Finney-Smith",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jabari Smith"
     ],
     "C": [
       "Alperen Sengun",
