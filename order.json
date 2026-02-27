@@ -228,21 +228,21 @@
     "SG": [
       "Khris Middleton",
       "Brandon Williams",
-      "AJ Johnson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Cooper Flagg"
     ],
     "SF": [
       "Naji Marshall",
-      "Klay Thompson",
+      "AJ Johnson",
       "Miles Kelly",
       "__SEPARATOR__",
       "PJ Washington"
     ],
     "PF": [
       "Caleb Martin",
+      "Klay Thompson",
       "Moussa Cisse",
-      "__SPACER__",
       "__SEPARATOR__",
       "Daniel Gafford"
     ],
