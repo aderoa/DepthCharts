@@ -220,37 +220,38 @@
   },
   "DAL": {
     "PG": [
-      "Max Christie",
       "Tyus Jones",
       "Ryan Nembhard",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
     "SG": [
-      "Khris Middleton",
+      "Max Christie",
       "Brandon Williams",
       "__SPACER__",
       "__SEPARATOR__",
       "Cooper Flagg"
     ],
     "SF": [
-      "Naji Marshall",
+      "Khris Middleton",
       "AJ Johnson",
+      "__SPACER__",
       "__SEPARATOR__",
       "PJ Washington"
     ],
     "PF": [
-      "Caleb Martin",
+      "Naji Marshall",
       "Miles Kelly",
       "__SPACER__",
       "__SEPARATOR__",
+      "Caleb Martin",
       "Klay Thompson"
     ],
     "C": [
       "Daniel Gafford",
       "Dwight Powell",
       "Moussa Cisse",
-      "__SPACER__",
       "__SEPARATOR__",
       "Marvin Bagley",
       "Dereck Lively"
