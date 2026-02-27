@@ -1009,7 +1009,6 @@
       "Immanuel Quickley",
       "Jamal Shead",
       "Garrett Temple",
-      "__SPACER__",
       "__SEPARATOR__",
       "Chucky Hepburn"
     ],
@@ -1017,7 +1016,6 @@
       "RJ Barrett",
       "Ja'Kobe Walter",
       "AJ Lawson",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -1030,16 +1028,15 @@
     "PF": [
       "Brandon Ingram",
       "Sandro Mamukelashvili",
-      "Trayce Jackson-Davis",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
-      "Collin Murray-Boyles",
       "Jakob Poeltl",
+      "Trayce Jackson-Davis",
       "Jonathan Mogbo",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Collin Murray-Boyles"
     ]
   },
   "UTA": {
