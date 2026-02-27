@@ -342,14 +342,14 @@
     "SG": [
       "Brandin Podziemski",
       "Gary Payton II",
-      "__SPACER__",
-      "__SPACER__",
+      "Jeenathan Williams",
       "__SEPARATOR__",
       "De'Anthony Melton"
     ],
     "SF": [
       "Moses Moody",
-      "Jeenathan Williams",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Seth Curry"
     ],
@@ -363,9 +363,8 @@
     "C": [
       "Al Horford",
       "Quinten Post",
-      "__SPACER__",
-      "__SEPARATOR__",
       "Draymond Green",
+      "__SEPARATOR__",
       "Kristaps Porzingis"
     ]
   },
