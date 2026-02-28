@@ -268,15 +268,15 @@
     "SG": [
       "Christian Braun",
       "Tim Hardaway Jr",
-      "__SEPARATOR__",
-      "Jalen Pickett"
+      "Jalen Pickett",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Julian Strawther",
       "Spencer Jones",
       "Curtis Jones",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Aaron Gordon"
     ],
     "PF": [
       "Cameron Johnson",
@@ -289,8 +289,7 @@
       "Nikola Jokic",
       "Jonas Valanciunas",
       "DaRon Holmes",
-      "__SEPARATOR__",
-      "Aaron Gordon"
+      "__SEPARATOR__"
     ]
   },
   "DET": {
