@@ -69,11 +69,12 @@
   },
   "BKN": {
     "PG": [
-      "Egor Demin",
       "Terance Mann",
       "Ben Saraf",
       "Tyson Etienne",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Egor Demin"
     ],
     "SG": [
       "Nolan Traore",
