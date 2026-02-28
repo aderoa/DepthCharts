@@ -678,14 +678,14 @@
       "Bryce McGowens",
       "Jordan Poole",
       "Jordan Hawkins",
-      "__SEPARATOR__",
-      "Trey Murphy"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Saddiq Bey",
       "Micah Peavy",
       "Kevon Looney",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Trey Murphy"
     ],
     "PF": [
       "Zion Williamson",
@@ -696,7 +696,6 @@
     "C": [
       "Yves Missi",
       "Derik Queen",
-      "__SPACER__",
       "Hunter Dickinson",
       "__SEPARATOR__"
     ]
