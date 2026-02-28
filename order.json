@@ -220,16 +220,16 @@
   },
   "DAL": {
     "PG": [
+      "Brandon Williams",
       "Tyus Jones",
-      "Ryan Nembhard",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
     "SG": [
       "Max Christie",
-      "Brandon Williams",
-      "__SPACER__",
+      "Ryan Nembhard",
       "__SEPARATOR__",
       "Cooper Flagg"
     ],
