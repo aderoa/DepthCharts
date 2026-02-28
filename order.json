@@ -916,16 +916,16 @@
   },
   "SAC": {
     "PG": [
-      "Devin Carter",
+      "Russell Westbrook",
       "Killian Hayes",
+      "__SPACER__",
       "Isaiah Stevens",
-      "__SEPARATOR__",
-      "Russell Westbrook"
+      "__SEPARATOR__"
     ],
     "SG": [
       "DeMar DeRozan",
       "Malik Monk",
-      "__SPACER__",
+      "Devin Carter",
       "__SEPARATOR__",
       "Zach LaVine"
     ],
