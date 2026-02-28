@@ -669,10 +669,10 @@
   "NOP": {
     "PG": [
       "Herb Jones",
-      "Dejounte Murray",
       "Jeremiah Fears",
       "Trey Alexander",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Dejounte Murray"
     ],
     "SG": [
       "Bryce McGowens",
@@ -684,12 +684,13 @@
     "SF": [
       "Saddiq Bey",
       "Micah Peavy",
+      "Kevon Looney",
       "__SEPARATOR__"
     ],
     "PF": [
       "Zion Williamson",
       "Karlo Matkovic",
-      "Kevon Looney",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
