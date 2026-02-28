@@ -898,6 +898,7 @@
     "SG": [
       "Scoot Henderson",
       "Matisse Thybulle",
+      "__SPACER__",
       "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
@@ -909,18 +910,17 @@
       "Deni Avdija"
     ],
     "PF": [
+      "Robert Williams",
       "Kris Murray",
       "Sidy Cissoko",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
-      "Jerami Grant",
-      "Robert Williams",
-      "Yang Hansen",
+      "Donovan Clingan",
       "__SPACER__",
+      "Yang Hansen",
       "__SEPARATOR__",
-      "Donovan Clingan"
+      "Jerami Grant"
     ]
   },
   "SAC": {
