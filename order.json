@@ -817,14 +817,12 @@
       "Tyrese Maxey",
       "Cameron Payne",
       "Kyle Lowry",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "VJ Edgecombe",
       "Quentin Grimes",
       "Dalen Terry",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -838,17 +836,16 @@
     "PF": [
       "Dominick Barlow",
       "Jabari Walker",
-      "Justin Edwards",
       "__SPACER__",
       "__SEPARATOR__",
       "Johni Broome"
     ],
     "C": [
-      "Joel Embiid",
       "Adem Bona",
       "Andre Drummond",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Justin Edwards",
+      "__SEPARATOR__",
+      "Joel Embiid"
     ]
   },
   "PHX": {
