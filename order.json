@@ -223,7 +223,7 @@
     "PG": [
       "Brandon Williams",
       "Ryan Nembhard",
-      "Tyus Jones",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
@@ -236,6 +236,7 @@
     ],
     "SF": [
       "Khris Middleton",
+      "Klay Thompson",
       "Miles Kelly",
       "__SPACER__",
       "__SEPARATOR__",
@@ -244,10 +245,8 @@
     "PF": [
       "Naji Marshall",
       "Moussa Cisse",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Caleb Martin",
-      "Klay Thompson"
+      "Caleb Martin"
     ],
     "C": [
       "Daniel Gafford",
