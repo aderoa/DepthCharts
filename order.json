@@ -333,28 +333,28 @@
   "GSW": {
     "PG": [
       "De'Anthony Melton",
-      "Will Richard",
       "Pat Spencer",
+      "__SPACER__",
       "LJ Cryer",
       "__SEPARATOR__",
       "Stephen Curry"
     ],
     "SG": [
       "Brandin Podziemski",
-      "Gary Payton II",
+      "Will Richard",
       "Jeenathan Williams",
       "__SEPARATOR__"
     ],
     "SF": [
       "Moses Moody",
-      "Al Horford",
+      "Gary Payton II",
       "__SPACER__",
       "__SEPARATOR__",
       "Seth Curry"
     ],
     "PF": [
       "Gui Santos",
-      "Malevy Leons",
+      "Al Horford",
       "__SPACER__",
       "__SEPARATOR__",
       "Jimmy Butler"
@@ -362,7 +362,7 @@
     "C": [
       "Draymond Green",
       "Quinten Post",
-      "__SPACER__",
+      "Malevy Leons",
       "__SEPARATOR__",
       "Kristaps Porzingis"
     ]
