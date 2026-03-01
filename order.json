@@ -887,13 +887,14 @@
     "SG": [
       "Toumani Camara",
       "Scoot Henderson",
-      "Javonte Cooke",
+      "__SPACER__",
       "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
     "SF": [
       "Kris Murray",
       "Matisse Thybulle",
+      "Javonte Cooke",
       "__SEPARATOR__",
       "Deni Avdija"
     ],
@@ -907,7 +908,6 @@
       "Donovan Clingan",
       "Sidy Cissoko",
       "Yang Hansen",
-      "__SPACER__",
       "__SEPARATOR__",
       "Robert Williams"
     ]
