@@ -187,14 +187,14 @@
     "PG": [
       "James Harden",
       "Dennis Schroeder",
-      "Craig Porter",
+      "__SPACER__",
       "Darius Brown",
       "__SEPARATOR__"
     ],
     "SG": [
       "Sam Merrill",
       "Keon Ellis",
-      "__SPACER__",
+      "Craig Porter",
       "__SEPARATOR__",
       "Donovan Mitchell"
     ],
