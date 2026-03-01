@@ -894,15 +894,15 @@
     "SF": [
       "Matisse Thybulle",
       "Sidy Cissoko",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Deni Avdija",
-      "Kris Murray"
+      "Deni Avdija"
     ],
     "PF": [
       "Jerami Grant",
       "Vit Krejci",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Kris Murray"
     ],
     "C": [
       "Donovan Clingan",
