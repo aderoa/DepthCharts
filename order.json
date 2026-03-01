@@ -892,23 +892,24 @@
       "Shaedon Sharpe"
     ],
     "SF": [
-      "Jerami Grant",
       "Matisse Thybulle",
       "Sidy Cissoko",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Deni Avdija"
+      "Deni Avdija",
+      "Kris Murray"
     ],
     "PF": [
-      "Kris Murray",
+      "Jerami Grant",
       "Vit Krejci",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Donovan Clingan",
-      "Robert Williams",
       "Yang Hansen",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Robert Williams"
     ]
   },
   "SAC": {
