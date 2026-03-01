@@ -5,13 +5,13 @@
       "Gabe Vincent",
       "Keaton Wallace",
       "RayJ Dennis",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Dyson Daniels",
       "Nickeil Alexander-Walker",
       "Buddy Hield",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -24,7 +24,6 @@
     "PF": [
       "Jalen Johnson",
       "Jonathan Kuminga",
-      "Mouhamed Gueye",
       "Asa Newell",
       "__SEPARATOR__"
     ],
@@ -32,6 +31,7 @@
       "Onyeka Okongwu",
       "Jock Landale",
       "Christian Koloko",
+      "Mouhamed Gueye",
       "__SPACER__",
       "__SEPARATOR__"
     ]
