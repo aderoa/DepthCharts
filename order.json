@@ -25,15 +25,15 @@
       "Jalen Johnson",
       "Jonathan Kuminga",
       "Asa Newell",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Onyeka Okongwu",
-      "Jock Landale",
-      "Christian Koloko",
       "Mouhamed Gueye",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Jock Landale",
+      "__SEPARATOR__",
+      "Christian Koloko"
     ]
   },
   "BOS": {
