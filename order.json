@@ -455,7 +455,7 @@
     ],
     "SG": [
       "Kris Dunn",
-      "Bennedict Mathurin",
+      "Jordan Miller",
       "Bogdan Bogdanovic",
       "__SPACER__",
       "__SEPARATOR__",
@@ -463,17 +463,18 @@
     ],
     "SF": [
       "Kawhi Leonard",
-      "Derrick Jones",
+      "Bennedict Mathurin",
       "Cam Christie",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
-      "John Collins",
+      "Derrick Jones",
       "Nicolas Batum",
-      "Jordan Miller",
       "Norchad Omier",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "John Collins"
     ],
     "C": [
       "Brook Lopez",
