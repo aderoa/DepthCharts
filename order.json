@@ -448,25 +448,27 @@
       "Kris Dunn",
       "Kobe Sanders",
       "Sean Pedulla",
+      "__SPACER__",
       "__SEPARATOR__",
       "Darius Garland"
     ],
     "SG": [
-      "Kawhi Leonard",
       "Bennedict Mathurin",
       "Jordan Miller",
       "TyTy Washington",
+      "__SPACER__",
       "__SEPARATOR__",
       "Bradley Beal"
     ],
     "SF": [
+      "Kawhi Leonard",
       "Bogdan Bogdanovic",
       "Cam Christie",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "John Collins",
-      "Derrick Jones",
       "Nicolas Batum",
       "Norchad Omier",
       "__SEPARATOR__"
@@ -475,6 +477,7 @@
       "Brook Lopez",
       "Yanic Konan Niederhauser",
       "Isaiah Jackson",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
