@@ -594,6 +594,7 @@
       "Kevin Porter",
       "Andre Jackson",
       "Ryan Rollins",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -607,6 +608,7 @@
       "Kyle Kuzma",
       "Ousmane Dieng",
       "Alex Antetokounmpo",
+      "__SPACER__",
       "__SEPARATOR__",
       "Taurean Prince"
     ],
@@ -614,14 +616,16 @@
       "Giannis Antetokounmpo",
       "Bobby Portis",
       "Gary Trent Jr",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Thanasis Antetokounmpo"
     ],
     "C": [
       "Myles Turner",
       "Jericho Sims",
       "Pete Nance",
-      "__SEPARATOR__",
-      "Thanasis Antetokounmpo"
+      "__SPACER__",
+      "__SEPARATOR__"
     ]
   },
   "MIN": {
