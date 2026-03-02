@@ -500,7 +500,6 @@
     "SF": [
       "Austin Reaves",
       "Rui Hachimura",
-      "__SPACER__",
       "Dalton Knecht",
       "Chris Manon",
       "__SEPARATOR__"
@@ -508,7 +507,6 @@
     "PF": [
       "LeBron James",
       "Maxi Kleber",
-      "Jarred Vanderbilt",
       "Adou Thiero",
       "__SPACER__",
       "__SEPARATOR__"
@@ -516,6 +514,7 @@
     "C": [
       "Deandre Ayton",
       "Jaxson Hayes",
+      "Jarred Vanderbilt",
       "Drew Timme",
       "__SEPARATOR__"
     ]
