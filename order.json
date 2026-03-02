@@ -1048,15 +1048,16 @@
     "PF": [
       "Cody Williams",
       "John Konchar",
-      "Mo Bamba",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jusuf Nurkic"
     ],
     "C": [
       "Kyle Filipowski",
-      "Kevin Love",
       "Oscar Tshiebwe",
+      "Mo Bamba",
       "__SEPARATOR__",
+      "Kevin Love",
       "Walker Kessler"
     ]
   },
