@@ -1084,23 +1084,24 @@
     "SF": [
       "Bilal Coulibaly",
       "Justin Champagnie",
-      "Leaky Black",
       "__SPACER__",
       "__SEPARATOR__",
+      "Leaky Black",
       "Cam Whitmore"
     ],
     "PF": [
       "Kyshawn George",
       "Will Riley",
-      "Julian Reese",
+      "__SPACER__",
       "__SEPARATOR__",
       "Anthony Davis"
     ],
     "C": [
-      "Tristan Vukcevic",
       "Anthony Gill",
+      "Julian Reese",
       "__SPACER__",
       "__SEPARATOR__",
+      "Tristan Vukcevic",
       "Alex Sarr"
     ]
   }
