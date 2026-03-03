@@ -263,13 +263,14 @@
       "Jamal Murray",
       "Bruce Brown",
       "KJ Simpson",
-      "Tyus Jones",
       "__SEPARATOR__",
+      "Tyus Jones",
       "Tamar Bates"
     ],
     "SG": [
       "Christian Braun",
       "Jalen Pickett",
+      "__SPACER__",
       "__SEPARATOR__",
       "Spencer Jones"
     ],
@@ -283,13 +284,13 @@
     "PF": [
       "Jonas Valanciunas",
       "Curtis Jones",
+      "Zeke Nnaji",
       "__SPACER__",
       "__SEPARATOR__",
       "Cameron Johnson"
     ],
     "C": [
       "Nikola Jokic",
-      "Zeke Nnaji",
       "DaRon Holmes",
       "__SEPARATOR__",
       "Peyton Watson"
