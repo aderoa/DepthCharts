@@ -263,7 +263,6 @@
       "Jamal Murray",
       "Tyus Jones",
       "KJ Simpson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tamar Bates"
     ],
@@ -282,6 +281,7 @@
       "Aaron Gordon"
     ],
     "PF": [
+      "Jonas Valanciunas",
       "Zeke Nnaji",
       "Tim Hardaway Jr",
       "__SPACER__",
@@ -290,7 +290,6 @@
     ],
     "C": [
       "Nikola Jokic",
-      "Jonas Valanciunas",
       "DaRon Holmes",
       "__SEPARATOR__",
       "Peyton Watson"
