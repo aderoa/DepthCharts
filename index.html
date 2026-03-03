@@ -359,38 +359,22 @@ const TEAM_ALIASES = {
 };
 
 // =====================================================
-// DATA URLs
+// DATA URLs — Google Sheets API (live, no cache)
 // =====================================================
-const TV_SHEET_ID = '2PACX-1vSg6im6IYB6HXMGzQbmmBnLw9SfQLzxCSo8OfChxlJLhsB6BBCO0wPF_TMch0YgAbtFqYkwDWrsxRe7';
-const TV_GID = '1310971167';
-const TV_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${TV_SHEET_ID}/pub?gid=${TV_GID}&single=true&output=csv`;
-const ROSTER_GID = '0';
-const ROSTER_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${TV_SHEET_ID}/pub?gid=${ROSTER_GID}&single=true&output=csv`;
+const SHEETS_ID = '11llk0icQqoi0JwJXat5KO8y2RQeBMN5rS9FhAY56Idc';
+const API_KEY = 'AIzaSyB9g7c6llswswuZQ2I5y2MwGk6BzYEtHsY';
+const SHEETS_API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEETS_ID}/values`;
+const TV_URL = `${SHEETS_API}/Sheet3?key=${API_KEY}`;
+const ROSTER_URL = `${SHEETS_API}/Sheet1?key=${API_KEY}`;
 const INJURIES_JSON_URL = 'https://aderoa.github.io/Injuries/injuries.json';
 
 let allPlayers = [], tradeValueMap = new Map(), draggedElement = null;
 
 // =====================================================
-// CSV PARSER
-// =====================================================
-function parseCSV(text) {
-  const rows = []; let cur = '', inQ = false, row = [];
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (inQ) { if (c === '"' && text[i+1] === '"') { cur += '"'; i++; } else if (c === '"') inQ = false; else cur += c; }
-    else { if (c === '"') inQ = true; else if (c === ',') { row.push(cur.trim()); cur = ''; }
-    else if (c === '\n' || c === '\r') { if (c === '\r' && text[i+1] === '\n') i++; row.push(cur.trim()); if (row.length > 1 || row[0] !== '') rows.push(row); row = []; cur = ''; }
-    else cur += c; }
-  }
-  if (cur || row.length > 0) { row.push(cur.trim()); if (row.length > 1 || row[0] !== '') rows.push(row); }
-  return rows;
-}
-
-// =====================================================
 // TRADE VALUE COMPUTATION
 // =====================================================
-function computeTradeValues(csvText) {
-  const rows = parseCSV(csvText); const roster = [], historical = []; let todayStr = null;
+function computeTradeValues(rows) {
+  const roster = [], historical = []; let todayStr = null;
   for (const row of rows.slice(1)) {
     while (row.length < 22) row.push('');
     if (row[18] && !todayStr) todayStr = row[18];
@@ -438,9 +422,9 @@ function computeTradeValues(csvText) {
 // =====================================================
 // ROSTER PARSER (salary, headshot, status, injury)
 // =====================================================
-function parseRosterCSV(csvText) {
-  const rows = parseCSV(csvText); if (rows.length < 2) return [];
-  const hdr = rows[0]; const col = n => hdr.findIndex(h => h.toUpperCase() === n.toUpperCase());
+function parseRosterRows(rows) {
+  if (rows.length < 2) return [];
+  const hdr = rows[0]; const col = n => hdr.findIndex(h => (h||'').trim().toUpperCase() === n.toUpperCase());
   const PI=col('PLAYER'), TI=col('TEAM'), SI=col('2026'), STI=col('ST 25-26'), OI=col('OUT?'), RI=col('REASON'), LI=col('LOGO'), HI=col('HEADSHOT'), POI=col('POSITION');
   if (PI<0||TI<0) return [];
   const players = [];
@@ -1001,14 +985,16 @@ async function renderExportView(exportParam, withHeadshots) {
   try {
     const orderURL = new URL('order.json', window.location.href.split('?')[0]).href;
     const [tvR, rR, oR] = await Promise.all([
-      fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL), fetch(orderURL)
+      fetch(TV_URL), fetch(ROSTER_URL), fetch(orderURL)
     ]);
     if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch player data');
     if (!oR.ok) throw new Error('order.json not found — save your order from admin mode first');
 
-    const [tvText, rText, orderData] = await Promise.all([tvR.text(), rR.text(), oR.json()]);
-    tradeValueMap = computeTradeValues(tvText);
-    allPlayers = parseRosterCSV(rText);
+    const tvRows = (await tvR.json()).values || [];
+    const rosterRows = (await rR.json()).values || [];
+    const orderData = await oR.json();
+    tradeValueMap = computeTradeValues(tvRows);
+    allPlayers = parseRosterRows(rosterRows);
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
 
     let startIdx, endIdx;
@@ -1108,11 +1094,12 @@ function closeExportModal() { document.getElementById('exportModal').classList.r
 // =====================================================
 async function autoRefreshData() {
   try {
-    const [tvR, rR] = await Promise.all([fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL)]);
+    const [tvR, rR] = await Promise.all([fetch(TV_URL), fetch(ROSTER_URL)]);
     if (!tvR.ok || !rR.ok) return;
-    const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
-    tradeValueMap = computeTradeValues(tvText);
-    allPlayers = parseRosterCSV(rText);
+    const tvRows = (await tvR.json()).values || [];
+    const rosterRows = (await rR.json()).values || [];
+    tradeValueMap = computeTradeValues(tvRows);
+    allPlayers = parseRosterRows(rosterRows);
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     // Full re-render to move players between healthy/injured sections
     renderAdminAllTeams();
@@ -1133,11 +1120,12 @@ async function manualRefresh(btn) {
   btn.textContent = '⏳ Refreshing...';
   btn.disabled = true;
   try {
-    const [tvR, rR] = await Promise.all([fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL)]);
+    const [tvR, rR] = await Promise.all([fetch(TV_URL), fetch(ROSTER_URL)]);
     if (!tvR.ok || !rR.ok) throw new Error('Fetch failed');
-    const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
-    tradeValueMap = computeTradeValues(tvText);
-    allPlayers = parseRosterCSV(rText);
+    const tvRows = (await tvR.json()).values || [];
+    const rosterRows = (await rR.json()).values || [];
+    tradeValueMap = computeTradeValues(tvRows);
+    allPlayers = parseRosterRows(rosterRows);
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     // Full re-render preserving saved orders
     renderAdminAllTeams();
@@ -1168,12 +1156,13 @@ async function init() {
 
   try {
     // Fetch player data + order.json from GitHub in parallel
-    const fetches = [fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL), fetchFromGitHub()];
+    const fetches = [fetch(TV_URL), fetch(ROSTER_URL), fetchFromGitHub()];
     const [tvR, rR, ghOrders] = await Promise.all(fetches);
     if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch data');
-    const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
-    tradeValueMap = computeTradeValues(tvText);
-    allPlayers = parseRosterCSV(rText);
+    const tvRows = (await tvR.json()).values || [];
+    const rosterRows = (await rR.json()).values || [];
+    tradeValueMap = computeTradeValues(tvRows);
+    allPlayers = parseRosterRows(rosterRows);
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) { console.warn('Injuries JSON unavailable:', e); }
     document.getElementById('loading').style.display = 'none';
     if (isAdmin && !teamParam) {
