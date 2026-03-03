@@ -118,7 +118,7 @@
   <div class="header-inner">
     <div class="header-brand">
       <h1>🛡️ Defensive Rankings</h1>
-      <span class="tag">v3 — Real Anchor</span>
+      <span class="tag">v3.5 — Real Anchor</span>
     </div>
     <div class="header-subtitle">Archetype-weighted composite score with team defense anchor bonus</div>
   </div>
@@ -241,27 +241,60 @@ function mapRow(headers, row) {
   return obj;
 }
 
+// ═══════════════════════════════════════════════════════
+// COLUMN AUTO-RESOLVER
+// Handles NBA API naming variants across different endpoints
+// ═══════════════════════════════════════════════════════
+function resolveCol(row, ...candidates) {
+  for (const c of candidates) {
+    if (row[c] !== undefined && row[c] !== '') return row[c];
+  }
+  return '';
+}
+
+function parseNum(v) {
+  if (v === undefined || v === null || v === '') return null;
+  const n = parseFloat(String(v).replace(/,/g, ''));
+  return isNaN(n) ? null : n;
+}
+
 function parseSheet(data) {
-  // The sheet can have two layouts:
-  // A) Row 0 = metadata ("Season: 2025-26 | Last Updated: ..."), Row 1 = headers, Row 2+ = data
-  // B) Row 0 = headers directly, Row 1+ = data
+  // Sheet layout from nba_season_stats.py:
+  //   A1 (index 0): "Season: 2025-26 | Last Updated: ..."
+  //   A2 (index 1): BLANK ROW
+  //   A3 (index 2): Column headers
+  //   A4+ (index 3+): Data rows
+  // But blank rows may or may not be returned by the API,
+  // so we scan for the header row dynamically.
   if (!data.values || data.values.length < 2) return { headers: [], rows: [], meta: '' };
   
-  const row0 = data.values[0].map(h => (h || '').trim());
-  const row0IsMetadata = row0[0] && row0[0].toLowerCase().startsWith('season');
+  let meta = '';
+  let headerIdx = -1;
   
-  let meta, headers, dataStart;
-  if (row0IsMetadata) {
-    meta = data.values[0][0] || '';
-    headers = data.values[1].map(h => (h || '').trim());
-    dataStart = 2;
-  } else {
-    meta = '';
-    headers = row0;
-    dataStart = 1;
+  // Find the header row: first row with 3+ non-empty cells that isn't metadata
+  for (let i = 0; i < Math.min(data.values.length, 5); i++) {
+    const row = data.values[i];
+    const firstCell = (row[0] || '').trim();
+    
+    // Metadata row
+    if (firstCell.toLowerCase().startsWith('season') || firstCell.includes('Updated')) {
+      meta = firstCell;
+      continue;
+    }
+    
+    // Skip empty/near-empty rows
+    const nonEmpty = row.filter(c => (c || '').trim() !== '').length;
+    if (nonEmpty < 3) continue;
+    
+    // This looks like headers
+    headerIdx = i;
+    break;
   }
   
-  const rows = data.values.slice(dataStart).map(r => mapRow(headers, r));
+  if (headerIdx < 0) return { headers: [], rows: [], meta };
+  
+  const headers = data.values[headerIdx].map(h => (h || '').trim());
+  const rows = data.values.slice(headerIdx + 1).map(r => mapRow(headers, r));
   return { headers, rows, meta };
 }
 
@@ -418,12 +451,35 @@ async function refreshData() {
   document.getElementById('error').style.display = 'none';
 
   try {
-    const [tradRes, advRes, hustleRes, defTrkRes, teamAdvRes] = await Promise.all(
-      Object.entries(TABS).map(([key, tab]) => fetch(makeURL(tab)).then(r => {
-        if (!r.ok) throw new Error(`HTTP ${r.status} for ${tab}: ${r.statusText}`);
-        return r.json();
-      }).catch(err => { throw new Error(`Failed to fetch '${tab}': ${err.message}`); }))
-    );
+    // Fetch tabs sequentially with delay to avoid 429 rate limits
+    async function fetchTab(tab, retries = 3) {
+      for (let attempt = 0; attempt < retries; attempt++) {
+        const res = await fetch(makeURL(tab));
+        if (res.ok) return res.json();
+        if (res.status === 429) {
+          const wait = (attempt + 1) * 2000; // 2s, 4s, 6s backoff
+          console.log(`Rate limited on '${tab}', retrying in ${wait}ms...`);
+          await new Promise(r => setTimeout(r, wait));
+          continue;
+        }
+        throw new Error(`HTTP ${res.status} for ${tab}`);
+      }
+      throw new Error(`Failed after ${retries} retries for '${tab}'`);
+    }
+
+    const tabKeys = Object.keys(TABS);
+    const tabResults = {};
+    const loadEl = document.getElementById('loading');
+    for (let i = 0; i < tabKeys.length; i++) {
+      const key = tabKeys[i];
+      loadEl.innerHTML = `<div class="spinner"></div><br>Fetching ${TABS[key]}… (${i+1}/${tabKeys.length})`;
+      tabResults[key] = await fetchTab(TABS[key]);
+      // Small delay between requests
+      if (i < tabKeys.length - 1) await new Promise(r => setTimeout(r, 500));
+    }
+
+    const [tradRes, advRes, hustleRes, defTrkRes, teamAdvRes] =
+      [tabResults.trad, tabResults.adv, tabResults.hustle, tabResults.defTrk, tabResults.teamAdv];
 
     const trad    = parseSheet(tradRes);
     const adv     = parseSheet(advRes);
@@ -444,81 +500,100 @@ async function refreshData() {
     const lastUpdated = metaMatch ? metaMatch[1].trim() : 'Unknown';
 
     // Build team defense lookup: team abbreviation → { drtg, rank }
+    // Team Advanced has TEAM_NAME ("Atlanta Hawks") but no abbreviation column.
+    // Players have abbreviations ("ATL"). Build a bridge from player data.
+    const teamNameToAbbr = {};
+    for (const r of trad.rows) {
+      const abbr = resolveCol(r, 'TEAM_ABBREVIATION', 'TEAM_ABB').trim();
+      const id   = resolveCol(r, 'TEAM_ID').trim();
+      if (abbr && id) teamNameToAbbr[id] = abbr;
+    }
+    console.log('Team ID→Abbr map:', teamNameToAbbr);
+
     const teamDefMap = {};
     const teamRows = teamAdv.rows
-      .map(r => ({ team: r.TEAM_ABBREVIATION || r.TEAM_ABB || '', drtg: parseFloat(r.DEF_RATING) || 999 }))
-      .filter(r => r.team && r.drtg < 999);
+      .map(r => {
+        const id   = resolveCol(r, 'TEAM_ID').trim();
+        const name = resolveCol(r, 'TEAM_NAME').trim();
+        const abbr = teamNameToAbbr[id] || '';
+        const drtg = parseNum(resolveCol(r, 'DEF_RATING', 'DRTG', 'DEF_RTG'));
+        return { team: abbr, name, drtg };
+      })
+      .filter(r => r.team && r.drtg !== null && r.drtg < 999);
     teamRows.sort((a, b) => a.drtg - b.drtg);
-    teamRows.forEach((t, i) => { teamDefMap[t.team] = { drtg: t.drtg, rank: i + 1 }; });
+    teamRows.forEach((t, i) => { teamDefMap[t.team] = { drtg: t.drtg, rank: i + 1, name: t.name }; });
 
-    // Build lookup maps for adv, hustle, defTrk by PLAYER_NAME + TEAM_ABBREVIATION
-    function buildLookup(rows, nameCol = 'PLAYER_NAME', teamCol = 'TEAM_ABBREVIATION') {
+    console.log('Team defense map:', Object.keys(teamDefMap).length, 'teams', teamDefMap);
+
+    // Build lookup maps for adv, hustle, defTrk by player name + team
+    function buildLookup(rows) {
       const map = {};
       for (const r of rows) {
-        const name = (r[nameCol] || '').trim();
-        // Try multiple possible team column names
-        const team = (r[teamCol] || r['TEAM_ABBREVIATION'] || r['TEAM_ABB'] || r['PLAYER_LAST_TEAM_ABBREVIATION'] || '').trim();
+        const name = resolveCol(r, 'PLAYER_NAME', 'PLAYER', 'Player').trim();
+        const team = resolveCol(r, 'TEAM_ABBREVIATION', 'TEAM_ABB', 'PLAYER_LAST_TEAM_ABBREVIATION', 'ABBREVIATION').trim();
         if (name) {
           map[name + '|' + team] = r;
-          // Also store name-only key as fallback for cross-tab joins
-          if (!map[name + '|']) map[name + '|'] = r;
+          if (!map[name]) map[name] = r; // name-only fallback
         }
       }
       return map;
     }
 
     function lookupPlayer(lookupMap, name, team) {
-      return lookupMap[name + '|' + team] || lookupMap[name + '|'] || {};
+      return lookupMap[name + '|' + team] || lookupMap[name] || {};
     }
 
     const advMap     = buildLookup(adv.rows);
     const hustleMap  = buildLookup(hustle.rows);
-    // Def tracking uses PLAYER_LAST_TEAM_ABBREVIATION instead of TEAM_ABBREVIATION
-    const defTrkMap  = buildLookup(defTrk.rows, 'PLAYER_NAME', 'PLAYER_LAST_TEAM_ABBREVIATION');
+    const defTrkMap  = buildLookup(defTrk.rows);
 
     // Process traditional stats → base player records
     const MIN_GP  = 20;
     const MIN_MPG = 20;
     const players = [];
+    let skippedNoName = 0, skippedGP = 0, skippedMPG = 0, skippedNoDefData = 0;
 
     for (const r of trad.rows) {
-      const name = (r.PLAYER_NAME || '').trim();
-      const team = (r.TEAM_ABBREVIATION || r.TEAM_ABB || '').trim();
-      if (!name || !team) continue;
+      const name = resolveCol(r, 'PLAYER_NAME', 'PLAYER', 'Player').trim();
+      const team = resolveCol(r, 'TEAM_ABBREVIATION', 'TEAM_ABB', 'ABBREVIATION').trim();
+      if (!name || !team) { skippedNoName++; continue; }
 
-      const gp  = parseInt(r.GP) || 0;
-      const min = parseFloat(r.MIN) || 0;
+      const gp  = parseNum(resolveCol(r, 'GP', 'G', 'Games')) || 0;
+      const min = parseNum(resolveCol(r, 'MIN', 'Minutes')) || 0;
       const mpg = gp > 0 ? min / gp : 0;
-      if (gp < MIN_GP || mpg < MIN_MPG) continue;
+      if (gp < MIN_GP) { skippedGP++; continue; }
+      if (mpg < MIN_MPG) { skippedMPG++; continue; }
 
-      const key = name + '|' + team;
       const advR     = lookupPlayer(advMap, name, team);
       const hustleR  = lookupPlayer(hustleMap, name, team);
       const defTrkR  = lookupPlayer(defTrkMap, name, team);
       const teamDef  = teamDefMap[team] || {};
+
+      // Hustle GP might differ — use it for hustle per-game calcs
+      const hustleGP = parseNum(resolveCol(hustleR, 'G', 'GP')) || gp;
 
       const p = {
         PLAYER: name,
         TEAM: team,
         GP: gp,
         MPG: mpg,
-        // Per-game counting stats
-        STL_PG: gp > 0 ? (parseFloat(r.STL) || 0) / gp : 0,
-        BLK_PG: gp > 0 ? (parseFloat(r.BLK) || 0) / gp : 0,
-        REB_PG: gp > 0 ? (parseFloat(r.REB) || 0) / gp : 0,
-        PF_PG:  gp > 0 ? (parseFloat(r.PF)  || 0) / gp : 0,
-        W: parseFloat(r.W) || 0,
+        // Per-game counting stats from Traditional Totals
+        STL_PG: gp > 0 ? (parseNum(resolveCol(r, 'STL')) || 0) / gp : 0,
+        BLK_PG: gp > 0 ? (parseNum(resolveCol(r, 'BLK')) || 0) / gp : 0,
+        REB_PG: gp > 0 ? (parseNum(resolveCol(r, 'REB')) || 0) / gp : 0,
+        PF_PG:  gp > 0 ? (parseNum(resolveCol(r, 'PF'))  || 0) / gp : 0,
+        W: parseNum(resolveCol(r, 'W', 'WIN', 'WINS')) || 0,
         // Advanced
-        DEF_RATING: parseFloat(advR.DEF_RATING) || null,
-        NET_RATING: parseFloat(advR.NET_RATING) || null,
-        // Hustle per-game
-        DEFLECTIONS_PG:    gp > 0 ? (parseFloat(hustleR.DEFLECTIONS)           || 0) / gp : 0,
-        CONTESTED_SHOTS_PG:gp > 0 ? (parseFloat(hustleR.CONTESTED_SHOTS)      || 0) / gp : 0,
-        CHARGES_DRAWN_PG:  gp > 0 ? (parseFloat(hustleR.CHARGES_DRAWN)        || 0) / gp : 0,
-        LOOSE_BALLS_RECOVERED_PG: gp > 0 ? (parseFloat(hustleR.LOOSE_BALLS_RECOVERED) || 0) / gp : 0,
+        DEF_RATING: parseNum(resolveCol(advR, 'DEF_RATING', 'DRTG', 'DEF_RTG')),
+        NET_RATING: parseNum(resolveCol(advR, 'NET_RATING', 'NRTG', 'NET_RTG')),
+        // Hustle per-game (using hustle GP)
+        DEFLECTIONS_PG:    hustleGP > 0 ? (parseNum(resolveCol(hustleR, 'DEFLECTIONS', 'DEFL'))           || 0) / hustleGP : 0,
+        CONTESTED_SHOTS_PG:hustleGP > 0 ? (parseNum(resolveCol(hustleR, 'CONTESTED_SHOTS', 'CONT_SHOTS')) || 0) / hustleGP : 0,
+        CHARGES_DRAWN_PG:  hustleGP > 0 ? (parseNum(resolveCol(hustleR, 'CHARGES_DRAWN'))                 || 0) / hustleGP : 0,
+        LOOSE_BALLS_RECOVERED_PG: hustleGP > 0 ? (parseNum(resolveCol(hustleR, 'LOOSE_BALLS_RECOVERED', 'LOOSE_BALLS')) || 0) / hustleGP : 0,
         // Def tracking
-        D_FG_PCT:       parseFloat(defTrkR.D_FG_PCT) || null,
-        PCT_PLUSMINUS:   parseFloat(defTrkR.PCT_PLUSMINUS) || null,
+        D_FG_PCT:       parseNum(resolveCol(defTrkR, 'D_FG_PCT', 'DFG_PCT')),
+        PCT_PLUSMINUS:   parseNum(resolveCol(defTrkR, 'PCT_PLUSMINUS', 'PLUSMINUS_PCT', 'PLUS_MINUS')),
         // Team defense
         TEAM_DEF_RATING: teamDef.drtg || null,
         TEAM_DEF_RANK:   teamDef.rank || null,
@@ -527,23 +602,45 @@ async function refreshData() {
       // Archetype
       p.PERIM_W = perimeterWeight(p.BLK_PG);
 
-      // Validate: need at least the core features
-      if (p.DEF_RATING === null && p.D_FG_PCT === null) continue;
+      // Validate: need at least some defensive data to score
+      if (p.DEF_RATING === null && p.D_FG_PCT === null) { skippedNoDefData++; continue; }
 
       players.push(p);
+    }
+
+    console.log(`Player processing: ${players.length} passed, ${skippedNoName} no name, ${skippedGP} low GP, ${skippedMPG} low MPG, ${skippedNoDefData} no def data`);
+    
+    // Debug: check team matching
+    if (players.length > 0) {
+      const playerTeams = [...new Set(players.map(p => p.TEAM))].sort();
+      const mapTeams = Object.keys(teamDefMap).sort();
+      const matched = playerTeams.filter(t => teamDefMap[t]);
+      const unmatched = playerTeams.filter(t => !teamDefMap[t]);
+      console.log(`Team matching: ${matched.length} matched, ${unmatched.length} unmatched`);
+      if (unmatched.length > 0) console.log('Unmatched player teams:', unmatched);
+      if (mapTeams.length > 0) console.log('Map teams sample:', mapTeams.slice(0, 5));
+      // Check anchor-eligible players
+      const withRank = players.filter(p => p.TEAM_DEF_RANK && p.TEAM_DEF_RANK <= 15);
+      console.log(`Anchor-eligible players (top-15 team): ${withRank.length}`);
     }
 
     if (players.length === 0) {
       // Diagnostic: show what columns we actually received
       const diag = [];
-      diag.push('TRAD headers: ' + trad.headers.join(', '));
-      diag.push('TRAD row 0: ' + JSON.stringify(trad.rows[0] || {}));
-      diag.push('ADV headers: ' + adv.headers.join(', '));
-      diag.push('HUSTLE headers: ' + hustle.headers.join(', '));
-      diag.push('DEF_TRK headers: ' + defTrk.headers.join(', '));
-      diag.push('TEAM_ADV headers: ' + teamAdv.headers.join(', '));
-      diag.push('Trad rows: ' + trad.rows.length + ', Adv rows: ' + adv.rows.length);
-      throw new Error('No players found. Column diagnostics:\n' + diag.join('\n'));
+      diag.push('=== COLUMN DIAGNOSTICS ===');
+      diag.push(`Trad: ${trad.rows.length} rows, headers: [${trad.headers.join(', ')}]`);
+      diag.push(`Adv: ${adv.rows.length} rows, headers: [${adv.headers.join(', ')}]`);
+      diag.push(`Hustle: ${hustle.rows.length} rows, headers: [${hustle.headers.join(', ')}]`);
+      diag.push(`DefTrk: ${defTrk.rows.length} rows, headers: [${defTrk.headers.join(', ')}]`);
+      diag.push(`TeamAdv: ${teamAdv.rows.length} rows, headers: [${teamAdv.headers.join(', ')}]`);
+      diag.push(`Skipped: ${skippedNoName} no-name, ${skippedGP} low-GP, ${skippedMPG} low-MPG, ${skippedNoDefData} no-def-data`);
+      if (trad.rows[0]) diag.push(`Sample trad row keys: [${Object.keys(trad.rows[0]).join(', ')}]`);
+      if (trad.rows[0]) diag.push(`Sample trad row vals: PLAYER_NAME=${trad.rows[0].PLAYER_NAME}, GP=${trad.rows[0].GP}, MIN=${trad.rows[0].MIN}`);
+      if (adv.rows[0]) diag.push(`Sample adv row: DEF_RATING=${adv.rows[0].DEF_RATING}`);
+      if (defTrk.rows[0]) diag.push(`Sample defTrk keys: [${Object.keys(defTrk.rows[0]).join(', ')}]`);
+      const msg = diag.join('\n');
+      console.error(msg);
+      throw new Error(msg);
     }
 
     // Compute scores
