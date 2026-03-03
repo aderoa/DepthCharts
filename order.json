@@ -783,16 +783,15 @@
   },
   "ORL": {
     "PG": [
-      "Anthony Black",
       "Jalen Suggs",
       "Jevon Carter",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Alex Morales",
+      "__SEPARATOR__",
+      "Anthony Black"
     ],
     "SG": [
       "Desmond Bane",
       "Jase Richardson",
-      "Alex Morales",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -800,7 +799,6 @@
       "Tristan Da Silva",
       "Jett Howard",
       "Jamal Cain",
-      "__SPACER__",
       "__SEPARATOR__",
       "Franz Wagner"
     ],
@@ -808,7 +806,6 @@
       "Paolo Banchero",
       "Jonathan Isaac",
       "Noah Penda",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
