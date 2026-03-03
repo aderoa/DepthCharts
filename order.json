@@ -835,7 +835,6 @@
     ],
     "SF": [
       "Jabari Walker",
-      "__SPACER__",
       "Trendon Watford",
       "Tyrese Martin",
       "__SEPARATOR__",
@@ -843,14 +842,15 @@
     ],
     "PF": [
       "Dominick Barlow",
-      "MarJon Beauchamp",
       "Justin Edwards",
+      "MarJon Beauchamp",
       "__SEPARATOR__",
       "Johni Broome"
     ],
     "C": [
       "Andre Drummond",
       "Adem Bona",
+      "__SPACER__",
       "__SEPARATOR__",
       "Joel Embiid"
     ]
