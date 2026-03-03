@@ -237,23 +237,22 @@
     ],
     "SF": [
       "Khris Middleton",
-      "Caleb Martin",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Klay Thompson"
     ],
     "PF": [
       "PJ Washington",
-      "Moussa Cisse",
+      "Caleb Martin",
       "Tyler Smith",
-      "__SPACER__",
       "__SEPARATOR__",
       "Naji Marshall"
     ],
     "C": [
       "Daniel Gafford",
       "Dwight Powell",
-      "__SPACER__",
+      "Moussa Cisse",
       "__SEPARATOR__",
       "Marvin Bagley",
       "Dereck Lively"
