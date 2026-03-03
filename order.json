@@ -968,23 +968,21 @@
       "De'Aaron Fox",
       "Dylan Harper",
       "Jordan McLaughlin",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Stephon Castle",
-      "Harrison Barnes",
       "Lindy Waters III",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "David Jones"
     ],
     "SF": [
       "Devin Vassell",
       "Keldon Johnson",
       "Harrison Ingram",
-      "__SPACER__",
       "__SEPARATOR__",
-      "David Jones"
+      "Harrison Barnes"
     ],
     "PF": [
       "Julian Champagnie",
@@ -997,7 +995,6 @@
       "Victor Wembanyama",
       "Luke Kornet",
       "Bismack Biyombo",
-      "__SPACER__",
       "__SEPARATOR__",
       "Mason Plumlee"
     ]
