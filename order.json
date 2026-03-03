@@ -859,6 +859,7 @@
       "Collin Gillespie",
       "Jamaree Bouyea",
       "Koby Brea",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jordan Goodwin"
     ],
@@ -866,10 +867,10 @@
       "Jalen Green",
       "Grayson Allen",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Devin Booker"
+      "__SEPARATOR__"
     ],
     "SF": [
+      "Devin Booker",
       "Ryan Dunn",
       "Amir Coffey",
       "Isaiah Livers",
@@ -881,13 +882,14 @@
       "Royce O'Neale",
       "Rasheer Fleming",
       "CJ Huntley",
-      "__SEPARATOR__",
-      "Haywood Highsmith"
+      "Haywood Highsmith",
+      "__SEPARATOR__"
     ],
     "C": [
       "Mark Williams",
       "Oso Ighodaro",
       "Khaman Maluach",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
