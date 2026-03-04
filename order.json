@@ -271,14 +271,15 @@
     "SG": [
       "Christian Braun",
       "Jalen Pickett",
-      "__SPACER__",
+      "Curtis Jones",
       "__SEPARATOR__",
       "Spencer Jones"
     ],
     "SF": [
       "Julian Strawther",
       "Tim Hardaway Jr",
-      "Curtis Jones",
+      "__SPACER__",
+      "David Roddy",
       "__SEPARATOR__",
       "Aaron Gordon"
     ],
@@ -286,13 +287,13 @@
       "Jonas Valanciunas",
       "Zeke Nnaji",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Cameron Johnson"
     ],
     "C": [
       "Nikola Jokic",
       "DaRon Holmes",
+      "__SPACER__",
       "__SEPARATOR__",
       "Peyton Watson"
     ]
