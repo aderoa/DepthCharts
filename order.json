@@ -113,9 +113,8 @@
       "LaMelo Ball",
       "Tre Mann",
       "Antonio Reeves",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Coby White"
+      "Coby White",
+      "__SEPARATOR__"
     ],
     "SG": [
       "Brandon Miller",
@@ -129,14 +128,16 @@
       "Josh Green",
       "Pat Connaughton",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Tidjane Salaun"
     ],
     "PF": [
       "Miles Bridges",
-      "Grant Williams",
-      "Tidjane Salaun",
       "PJ Hall",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Grant Williams"
     ],
     "C": [
       "Moussa Diabate",
