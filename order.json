@@ -635,22 +635,23 @@
   "MIN": {
     "PG": [
       "Donte DiVincenzo",
-      "Mike Conley",
+      "Ayo Dosunmu",
+      "__SPACER__",
       "Terrence Shannon",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Anthony Edwards",
-      "Ayo Dosunmu",
-      "Joe Ingles",
-      "Jules Bernard",
+      "Bones Hyland",
+      "Mike Conley",
       "__SEPARATOR__"
     ],
     "SF": [
       "Jaden McDaniels",
-      "Bones Hyland",
       "Kyle Anderson",
+      "Joe Ingles",
+      "Zyon Pullin",
       "__SEPARATOR__"
     ],
     "PF": [
@@ -658,7 +659,6 @@
       "Jaylen Clark",
       "Julian Phillips",
       "Rocco Zikarsky",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
