@@ -746,16 +746,16 @@
   },
   "OKC": {
     "PG": [
+      "Shai Gilgeous-Alexander",
       "Isaiah Joe",
-      "Alex Caruso",
+      "__SPACER__",
       "Nikola Topic",
-      "__SEPARATOR__",
-      "Shai Gilgeous-Alexander"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Cason Wallace",
+      "Alex Caruso",
       "Brooks Barnhizer",
-      "__SPACER__",
       "__SEPARATOR__",
       "Ajay Mitchell"
     ],
@@ -776,9 +776,8 @@
     "C": [
       "Jaylin Williams",
       "Kenrich Williams",
-      "__SPACER__",
-      "__SEPARATOR__",
       "Isaiah Hartenstein",
+      "__SEPARATOR__",
       "Thomas Sorber"
     ]
   },
