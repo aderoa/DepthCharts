@@ -533,18 +533,20 @@
       "Cedric Coward",
       "Scotty Pippen Jr",
       "Cam Spencer",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Kentavious Caldwell-Pope",
-      "Jaylen Wells"
+      "Kentavious Caldwell-Pope"
     ],
     "SF": [
+      "Jaylen Wells",
       "Rayan Rupert",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Santiago Aldama",
       "Jahmai Mashack",
+      "__SPACER__",
       "__SEPARATOR__",
       "Taj Gibson"
     ],
@@ -552,7 +554,6 @@
       "GG Jackson",
       "Olivier-Maxence Prosper",
       "Taylor Hendricks",
-      "__SPACER__",
       "__SEPARATOR__",
       "Zach Edey",
       "Brandon Clarke"
