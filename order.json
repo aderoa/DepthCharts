@@ -755,30 +755,31 @@
     ],
     "SG": [
       "Cason Wallace",
-      "Jared McCain",
+      "__SPACER__",
       "Brooks Barnhizer",
       "__SEPARATOR__",
       "Ajay Mitchell"
     ],
     "SF": [
       "Luguentz Dort",
-      "Aaron Wiggins",
-      "__SPACER__",
+      "Jared McCain",
       "Payton Sandfort",
       "__SEPARATOR__",
       "Jalen Williams"
     ],
     "PF": [
       "Chet Holmgren",
-      "Kenrich Williams",
+      "Aaron Wiggins",
+      "__SPACER__",
       "__SEPARATOR__",
       "Branden Carlson"
     ],
     "C": [
-      "Isaiah Hartenstein",
       "Jaylin Williams",
+      "Kenrich Williams",
       "__SPACER__",
       "__SEPARATOR__",
+      "Isaiah Hartenstein",
       "Thomas Sorber"
     ]
   },
