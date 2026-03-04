@@ -572,13 +572,14 @@
     ],
     "SF": [
       "Andrew Wiggins",
-      "Jaime Jaquez",
       "Myron Gardner",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Simone Fontecchio"
     ],
     "PF": [
       "Pelle Larsson",
-      "Simone Fontecchio",
+      "Jaime Jaquez",
       "Keshad Johnson",
       "__SEPARATOR__",
       "Nikola Jovic"
