@@ -232,29 +232,28 @@
     "SG": [
       "Khris Middleton",
       "Max Christie",
-      "__SPACER__",
       "John Poulakidas",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Cooper Flagg"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Naji Marshall",
       "Klay Thompson",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Cooper Flagg"
     ],
     "PF": [
       "PJ Washington",
       "Caleb Martin",
       "Tyler Smith",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Marvin Bagley"
     ],
     "C": [
       "Daniel Gafford",
       "Dwight Powell",
       "Moussa Cisse",
       "__SEPARATOR__",
-      "Marvin Bagley",
       "Dereck Lively"
     ]
   },
