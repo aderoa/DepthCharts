@@ -668,14 +668,15 @@
   },
   "NOP": {
     "PG": [
-      "Dejounte Murray",
+      "Herb Jones",
       "Jeremiah Fears",
       "Jordan Poole",
       "Trey Alexander",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Dejounte Murray"
     ],
     "SG": [
-      "Herb Jones",
       "Bryce McGowens",
       "Jordan Hawkins",
       "__SPACER__",
