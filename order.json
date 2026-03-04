@@ -230,6 +230,7 @@
       "Kyrie Irving"
     ],
     "SG": [
+      "Khris Middleton",
       "Max Christie",
       "John Poulakidas",
       "__SPACER__",
@@ -237,18 +238,16 @@
       "Cooper Flagg"
     ],
     "SF": [
-      "Khris Middleton",
+      "Naji Marshall",
       "AJ Johnson",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Klay Thompson"
+      "Klay Thompson",
+      "__SEPARATOR__"
     ],
     "PF": [
       "PJ Washington",
       "Caleb Martin",
       "Tyler Smith",
-      "__SEPARATOR__",
-      "Naji Marshall"
+      "__SEPARATOR__"
     ],
     "C": [
       "Daniel Gafford",
