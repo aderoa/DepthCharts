@@ -906,9 +906,9 @@
       "Shaedon Sharpe"
     ],
     "SF": [
-      "Kris Murray",
       "Matisse Thybulle",
       "Jayson Kent",
+      "__SPACER__",
       "__SEPARATOR__",
       "Deni Avdija"
     ],
@@ -916,8 +916,8 @@
       "Jerami Grant",
       "Vit Krejci",
       "Sidy Cissoko",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Kris Murray"
     ],
     "C": [
       "Donovan Clingan",
