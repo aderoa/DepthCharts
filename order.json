@@ -114,35 +114,35 @@
       "Coby White",
       "Antonio Reeves",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Brandon Miller",
       "Sion James",
       "Tre Mann",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Kon Knueppel",
       "Josh Green",
+      "Liam McNeeley",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Tidjane Salaun",
-      "Liam McNeeley"
+      "Tidjane Salaun"
     ],
     "PF": [
       "Miles Bridges",
+      "Grant Williams",
       "Pat Connaughton",
-      "Tosan Evbuomwan",
       "PJ Hall",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Grant Williams"
+      "__SEPARATOR__"
     ],
     "C": [
       "Moussa Diabate",
       "Ryan Kalkbrenner",
       "Xavier Tillman",
+      "Tosan Evbuomwan",
       "__SPACER__",
       "__SEPARATOR__"
     ]
