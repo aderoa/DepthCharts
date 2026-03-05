@@ -899,14 +899,15 @@
       "Damian Lillard"
     ],
     "SG": [
-      "Toumani Camara",
       "Scoot Henderson",
+      "Matisse Thybulle",
       "Chris Youngblood",
       "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
     "SF": [
-      "Matisse Thybulle",
+      "Toumani Camara",
+      "Vit Krejci",
       "Jayson Kent",
       "__SPACER__",
       "__SEPARATOR__",
@@ -914,7 +915,6 @@
     ],
     "PF": [
       "Jerami Grant",
-      "Vit Krejci",
       "Sidy Cissoko",
       "__SEPARATOR__",
       "Kris Murray"
