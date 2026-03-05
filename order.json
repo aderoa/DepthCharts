@@ -414,9 +414,8 @@
     "SG": [
       "Ben Sheppard",
       "TJ McConnell",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Aaron Nesmith"
+      "Aaron Nesmith",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Jarace Walker",
@@ -426,12 +425,11 @@
       "Johnny Furphy"
     ],
     "PF": [
+      "Pascal Siakam",
       "Obi Toppin",
       "Kobe Brown",
       "Jalen Slawson",
-      "__SEPARATOR__",
-      "__SPACER__",
-      "Pascal Siakam"
+      "__SEPARATOR__"
     ],
     "C": [
       "Jay Huff",
