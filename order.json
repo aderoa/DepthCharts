@@ -848,7 +848,6 @@
       "Collin Gillespie",
       "Jamaree Bouyea",
       "Koby Brea",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jordan Goodwin"
     ],
@@ -862,8 +861,6 @@
       "Devin Booker",
       "Ryan Dunn",
       "Haywood Highsmith",
-      "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Dillon Brooks"
     ],
@@ -871,15 +868,15 @@
       "Royce O'Neale",
       "Rasheer Fleming",
       "Isaiah Livers",
-      "CJ Huntley",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
-      "Mark Williams",
       "Oso Ighodaro",
       "Khaman Maluach",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "CJ Huntley",
+      "__SEPARATOR__",
+      "Mark Williams"
     ]
   },
   "POR": {
