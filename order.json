@@ -223,10 +223,12 @@
   },
   "DAL": {
     "PG": [
-      "Brandon Williams",
+      "Cooper Flagg",
       "Ryan Nembhard",
       "AJ Johnson",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Brandon Williams",
       "Kyrie Irving"
     ],
     "SG": [
@@ -238,9 +240,7 @@
     "SF": [
       "Naji Marshall",
       "Klay Thompson",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Cooper Flagg"
+      "__SEPARATOR__"
     ],
     "PF": [
       "PJ Washington",
