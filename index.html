@@ -100,6 +100,10 @@
     .admin-player-card.injured .admin-player-name { color: white; }
     .admin-player-card.injured .admin-trade-value { color: #ffcdd2 !important; }
     .admin-player-card.questionable { background: #ef9a9a; }
+    .admin-player-card.doubtful { background: #ff8a65; color: white; }
+    .admin-player-card.doubtful .admin-player-name { color: white; }
+    .admin-player-card.doubtful .admin-trade-value { color: #ffe0b2 !important; }
+    .admin-player-card.probable { background: #a5d6a7; }
     .admin-separator { height: 2px; background: #ef5350; margin: 4px 0; border-radius: 1px; opacity: 0.6; pointer-events: none; }
     .injury-separator { height: 2px; background: #ef5350; margin: 4px 0; border-radius: 1px; opacity: 0.6; }
     .admin-trade-value { font-size: 0.65rem; font-weight: 600; pointer-events: none; margin-top: 1px; }
@@ -359,22 +363,38 @@ const TEAM_ALIASES = {
 };
 
 // =====================================================
-// DATA URLs — Google Sheets API (live, no cache)
+// DATA URLs
 // =====================================================
-const SHEETS_ID = '11llk0icQqoi0JwJXat5KO8y2RQeBMN5rS9FhAY56Idc';
-const API_KEY = 'AIzaSyB9g7c6llswswuZQ2I5y2MwGk6BzYEtHsY';
-const SHEETS_API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEETS_ID}/values`;
-const TV_URL = `${SHEETS_API}/Sheet3?key=${API_KEY}`;
-const ROSTER_URL = `${SHEETS_API}/Sheet1?key=${API_KEY}`;
+const TV_SHEET_ID = '2PACX-1vSg6im6IYB6HXMGzQbmmBnLw9SfQLzxCSo8OfChxlJLhsB6BBCO0wPF_TMch0YgAbtFqYkwDWrsxRe7';
+const TV_GID = '1310971167';
+const TV_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${TV_SHEET_ID}/pub?gid=${TV_GID}&single=true&output=csv`;
+const ROSTER_GID = '0';
+const ROSTER_CSV_URL = `https://docs.google.com/spreadsheets/d/e/${TV_SHEET_ID}/pub?gid=${ROSTER_GID}&single=true&output=csv`;
 const INJURIES_JSON_URL = 'https://aderoa.github.io/Injuries/injuries.json';
 
 let allPlayers = [], tradeValueMap = new Map(), draggedElement = null;
 
 // =====================================================
+// CSV PARSER
+// =====================================================
+function parseCSV(text) {
+  const rows = []; let cur = '', inQ = false, row = [];
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inQ) { if (c === '"' && text[i+1] === '"') { cur += '"'; i++; } else if (c === '"') inQ = false; else cur += c; }
+    else { if (c === '"') inQ = true; else if (c === ',') { row.push(cur.trim()); cur = ''; }
+    else if (c === '\n' || c === '\r') { if (c === '\r' && text[i+1] === '\n') i++; row.push(cur.trim()); if (row.length > 1 || row[0] !== '') rows.push(row); row = []; cur = ''; }
+    else cur += c; }
+  }
+  if (cur || row.length > 0) { row.push(cur.trim()); if (row.length > 1 || row[0] !== '') rows.push(row); }
+  return rows;
+}
+
+// =====================================================
 // TRADE VALUE COMPUTATION
 // =====================================================
-function computeTradeValues(rows) {
-  const roster = [], historical = []; let todayStr = null;
+function computeTradeValues(csvText) {
+  const rows = parseCSV(csvText); const roster = [], historical = []; let todayStr = null;
   for (const row of rows.slice(1)) {
     while (row.length < 22) row.push('');
     if (row[18] && !todayStr) todayStr = row[18];
@@ -422,9 +442,9 @@ function computeTradeValues(rows) {
 // =====================================================
 // ROSTER PARSER (salary, headshot, status, injury)
 // =====================================================
-function parseRosterRows(rows) {
-  if (rows.length < 2) return [];
-  const hdr = rows[0]; const col = n => hdr.findIndex(h => (h||'').trim().toUpperCase() === n.toUpperCase());
+function parseRosterCSV(csvText) {
+  const rows = parseCSV(csvText); if (rows.length < 2) return [];
+  const hdr = rows[0]; const col = n => hdr.findIndex(h => h.toUpperCase() === n.toUpperCase());
   const PI=col('PLAYER'), TI=col('TEAM'), SI=col('2026'), STI=col('ST 25-26'), OI=col('OUT?'), RI=col('REASON'), LI=col('LOGO'), HI=col('HEADSHOT'), POI=col('POSITION');
   if (PI<0||TI<0) return [];
   const players = [];
@@ -442,8 +462,10 @@ function parseRosterRows(rows) {
     const logo = LI>=0 ? (r[LI]?.trim()||'') : '';
     let color = 'normal';
     if (status==='TWO-WAY'||status==='10-DAY') color = 'twoway';
-    if (injury==='Out'||injury==='Doubtful') color = 'injured';
+    if (injury==='Out') color = 'injured';
+    else if (injury==='Doubtful') color = 'doubtful';
     else if (injury==='Questionable') color = 'questionable';
+    else if (injury==='Probable') color = 'probable';
     players.push({name, team:abbrev, position:pos, tradeValue:tv, headshot, salary, contractStatus:status, injuryStatus:injury, injuryReason:reason, colorCode:color, teamLogo:logo});
   }
   return players;
@@ -493,8 +515,10 @@ function applyInjuriesJSON(injuries) {
     p.injuryStatus = entry.status;
     p.injuryReason = entry.injury || '';
     const base = (p.contractStatus === 'TWO-WAY' || p.contractStatus === '10-DAY') ? 'twoway' : 'normal';
-    if (entry.status === 'Out' || entry.status === 'Doubtful') p.colorCode = 'injured';
+    if (entry.status === 'Out') p.colorCode = 'injured';
+    else if (entry.status === 'Doubtful') p.colorCode = 'doubtful';
     else if (entry.status === 'Questionable') p.colorCode = 'questionable';
+    else if (entry.status === 'Probable') p.colorCode = 'probable';
     else p.colorCode = base;
   }
 }
@@ -565,7 +589,7 @@ function renderDepthChart(teamAbbrev) {
     injuredByPos[pos] = [];
     byPos[pos].forEach(p => {
       if (p === '__SPACER__') return;
-      if (p.colorCode === 'injured' || p.colorCode === 'questionable') injuredByPos[pos].push(p);
+      if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable') injuredByPos[pos].push(p);
       else healthyByPos[pos].push(p);
     });
   });
@@ -651,7 +675,7 @@ function renderAdminAllTeams() {
           if (n === '__SPACER__' || globalPlaced.has(n)) return;
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
-          if (p.colorCode === 'injured') { injuredByPos[pos].push(p); }
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful') { injuredByPos[pos].push(p); }
           else { healthyByPos[pos].push(p); }
           globalPlaced.add(n);
         });
@@ -661,7 +685,7 @@ function renderAdminAllTeams() {
           if (n === '__SPACER__' || globalPlaced.has(n)) return;
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
-          if (p.colorCode === 'injured' || p.colorCode === 'questionable') { injuredByPos[pos].push(p); }
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable') { injuredByPos[pos].push(p); }
           else { healthyByPos[pos].push(p); }
           globalPlaced.add(n);
         });
@@ -669,7 +693,7 @@ function renderAdminAllTeams() {
         // No saved order — default sort by trade value
         const posTp = tp.filter(p => p.position === pos && !globalPlaced.has(p.name)).sort((a,b) => b.tradeValue - a.tradeValue);
         posTp.forEach(p => {
-          if (p.colorCode === 'injured') injuredByPos[pos].push(p);
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful') injuredByPos[pos].push(p);
           else healthyByPos[pos].push(p);
           globalPlaced.add(p.name);
         });
@@ -679,7 +703,7 @@ function renderAdminAllTeams() {
     // Handle unplaced players (new additions or position mismatches)
     tp.filter(p => !globalPlaced.has(p.name)).forEach(p => {
       const pos = positions.includes(p.position) ? p.position : 'SF';
-      if (p.colorCode === 'injured') injuredByPos[pos].push(p);
+      if (p.colorCode === 'injured' || p.colorCode === 'doubtful') injuredByPos[pos].push(p);
       else healthyByPos[pos].push(p);
     });
 
@@ -696,7 +720,7 @@ function renderAdminAllTeams() {
       // Healthy players
       let firstReal = true;
       healthyByPos[pos].forEach(p => {
-        const sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='twoway'?'two-way':p.colorCode==='questionable'?'questionable':'';
+        const sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='twoway'?'two-way':p.colorCode==='questionable'?'questionable':p.colorCode==='probable'?'probable':'';
         html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
         firstReal = false;
       });
@@ -711,7 +735,7 @@ function renderAdminAllTeams() {
 
       // Injured players
       injuredByPos[pos].forEach(p => {
-        const sc = p.colorCode==='injured'?'injured':'questionable';
+        const sc = p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':'questionable';
         html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
       });
 
@@ -897,7 +921,7 @@ function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
         if (!p) return '';
         if (p.contractStatus === '10-DAY') return 'background-color:yellow;';
         if (p.colorCode === 'twoway') return 'background-color:#e1bee7;';
-        if (p.colorCode === 'injured') return 'background-color:lightcoral;';
+        if (p.colorCode === 'injured' || p.colorCode === 'doubtful') return 'background-color:lightcoral;';
         if (p.colorCode === 'questionable') return 'background-color:#f5b7b1;';
         return '';
       });
@@ -985,16 +1009,14 @@ async function renderExportView(exportParam, withHeadshots) {
   try {
     const orderURL = new URL('order.json', window.location.href.split('?')[0]).href;
     const [tvR, rR, oR] = await Promise.all([
-      fetch(TV_URL), fetch(ROSTER_URL), fetch(orderURL)
+      fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL), fetch(orderURL)
     ]);
     if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch player data');
     if (!oR.ok) throw new Error('order.json not found — save your order from admin mode first');
 
-    const tvRows = (await tvR.json()).values || [];
-    const rosterRows = (await rR.json()).values || [];
-    const orderData = await oR.json();
-    tradeValueMap = computeTradeValues(tvRows);
-    allPlayers = parseRosterRows(rosterRows);
+    const [tvText, rText, orderData] = await Promise.all([tvR.text(), rR.text(), oR.json()]);
+    tradeValueMap = computeTradeValues(tvText);
+    allPlayers = parseRosterCSV(rText);
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
 
     let startIdx, endIdx;
@@ -1094,12 +1116,11 @@ function closeExportModal() { document.getElementById('exportModal').classList.r
 // =====================================================
 async function autoRefreshData() {
   try {
-    const [tvR, rR] = await Promise.all([fetch(TV_URL), fetch(ROSTER_URL)]);
+    const [tvR, rR] = await Promise.all([fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL)]);
     if (!tvR.ok || !rR.ok) return;
-    const tvRows = (await tvR.json()).values || [];
-    const rosterRows = (await rR.json()).values || [];
-    tradeValueMap = computeTradeValues(tvRows);
-    allPlayers = parseRosterRows(rosterRows);
+    const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
+    tradeValueMap = computeTradeValues(tvText);
+    allPlayers = parseRosterCSV(rText);
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     // Full re-render to move players between healthy/injured sections
     renderAdminAllTeams();
@@ -1120,12 +1141,11 @@ async function manualRefresh(btn) {
   btn.textContent = '⏳ Refreshing...';
   btn.disabled = true;
   try {
-    const [tvR, rR] = await Promise.all([fetch(TV_URL), fetch(ROSTER_URL)]);
+    const [tvR, rR] = await Promise.all([fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL)]);
     if (!tvR.ok || !rR.ok) throw new Error('Fetch failed');
-    const tvRows = (await tvR.json()).values || [];
-    const rosterRows = (await rR.json()).values || [];
-    tradeValueMap = computeTradeValues(tvRows);
-    allPlayers = parseRosterRows(rosterRows);
+    const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
+    tradeValueMap = computeTradeValues(tvText);
+    allPlayers = parseRosterCSV(rText);
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     // Full re-render preserving saved orders
     renderAdminAllTeams();
@@ -1156,13 +1176,12 @@ async function init() {
 
   try {
     // Fetch player data + order.json from GitHub in parallel
-    const fetches = [fetch(TV_URL), fetch(ROSTER_URL), fetchFromGitHub()];
+    const fetches = [fetch(TV_CSV_URL), fetch(ROSTER_CSV_URL), fetchFromGitHub()];
     const [tvR, rR, ghOrders] = await Promise.all(fetches);
     if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch data');
-    const tvRows = (await tvR.json()).values || [];
-    const rosterRows = (await rR.json()).values || [];
-    tradeValueMap = computeTradeValues(tvRows);
-    allPlayers = parseRosterRows(rosterRows);
+    const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
+    tradeValueMap = computeTradeValues(tvText);
+    allPlayers = parseRosterCSV(rText);
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) { console.warn('Injuries JSON unavailable:', e); }
     document.getElementById('loading').style.display = 'none';
     if (isAdmin && !teamParam) {
