@@ -777,16 +777,15 @@
       "Anthony Black",
       "Jalen Suggs",
       "Alex Morales",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
-      "Desmond Bane",
       "Jevon Carter",
       "Jett Howard",
       "__SEPARATOR__"
     ],
     "SF": [
+      "Desmond Bane",
       "Tristan Da Silva",
       "Jase Richardson",
       "Jamal Cain",
@@ -804,7 +803,6 @@
       "Wendell Carter Jr",
       "Moritz Wagner",
       "Goga Bitadze",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
