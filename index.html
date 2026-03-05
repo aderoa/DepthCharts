@@ -511,7 +511,7 @@ function applyInjuriesJSON(injuries) {
   for (const p of allPlayers) {
     const entry = latest[p.name];
     if (!entry) continue;
-    if (entry.status === 'Available' || entry.status === 'Probable') continue;
+    if (entry.status === 'Available') continue;
     p.injuryStatus = entry.status;
     p.injuryReason = entry.injury || '';
     const base = (p.contractStatus === 'TWO-WAY' || p.contractStatus === '10-DAY') ? 'twoway' : 'normal';
