@@ -5,7 +5,6 @@
       "Gabe Vincent",
       "Keaton Wallace",
       "RayJ Dennis",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -24,16 +23,17 @@
     ],
     "PF": [
       "Jalen Johnson",
-      "Jonathan Kuminga",
       "Asa Newell",
+      "Mouhamed Gueye",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jonathan Kuminga"
     ],
     "C": [
       "Onyeka Okongwu",
       "Jock Landale",
-      "Mouhamed Gueye",
       "Christian Koloko",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
