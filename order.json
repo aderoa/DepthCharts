@@ -480,14 +480,14 @@
     "SG": [
       "Marcus Smart",
       "Jake LaRavia",
-      "Kobe Bufkin",
       "Nick Smith",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Austin Reaves",
       "Rui Hachimura",
-      "Dalton Knecht",
+      "Kobe Bufkin",
       "Chris Manon",
       "LeBron James",
       "__SEPARATOR__"
@@ -495,7 +495,7 @@
     "PF": [
       "Jarred Vanderbilt",
       "Adou Thiero",
-      "__SPACER__",
+      "Dalton Knecht",
       "__SEPARATOR__",
       "Maxi Kleber"
     ],
