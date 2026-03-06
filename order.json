@@ -487,13 +487,13 @@
       "Austin Reaves",
       "Adou Thiero",
       "Kobe Bufkin",
-      "Chris Manon",
       "__SEPARATOR__",
       "LeBron James"
     ],
     "PF": [
       "Rui Hachimura",
       "Jarred Vanderbilt",
+      "__SPACER__",
       "Dalton Knecht",
       "__SEPARATOR__",
       "Maxi Kleber"
@@ -501,7 +501,7 @@
     "C": [
       "Jaxson Hayes",
       "Drew Timme",
-      "__SPACER__",
+      "Chris Manon",
       "__SEPARATOR__",
       "Deandre Ayton"
     ]
