@@ -475,7 +475,6 @@
       "Luka Doncic",
       "Luke Kennard",
       "Bronny James",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -490,10 +489,10 @@
       "Rui Hachimura",
       "Dalton Knecht",
       "Chris Manon",
+      "LeBron James",
       "__SEPARATOR__"
     ],
     "PF": [
-      "LeBron James",
       "Jarred Vanderbilt",
       "Adou Thiero",
       "__SPACER__",
@@ -501,11 +500,11 @@
       "Maxi Kleber"
     ],
     "C": [
-      "Deandre Ayton",
       "Jaxson Hayes",
       "Drew Timme",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Deandre Ayton"
     ]
   },
   "MEM": {
