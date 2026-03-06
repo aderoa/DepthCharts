@@ -916,14 +916,14 @@
     "PG": [
       "Russell Westbrook",
       "Devin Carter",
-      "Killian Hayes",
+      "__SPACER__",
       "Isaiah Stevens",
       "__SEPARATOR__",
       "Zach LaVine"
     ],
     "SG": [
       "DeMar DeRozan",
-      "__SPACER__",
+      "Killian Hayes",
       "__SEPARATOR__",
       "De'Andre Hunter"
     ],
