@@ -231,26 +231,27 @@
       "Max Christie",
       "Klay Thompson",
       "John Poulakidas",
-      "__SEPARATOR__",
-      "Brandon Williams"
+      "Brandon Williams",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Khris Middleton",
       "Naji Marshall",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Marvin Bagley"
     ],
     "PF": [
       "PJ Washington",
       "Caleb Martin",
       "Tyler Smith",
       "__SEPARATOR__",
-      "Marvin Bagley"
+      "Daniel Gafford"
     ],
     "C": [
-      "Daniel Gafford",
       "Dwight Powell",
       "Moussa Cisse",
+      "__SPACER__",
       "__SEPARATOR__",
       "Dereck Lively"
     ]
