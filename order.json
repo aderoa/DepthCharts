@@ -740,16 +740,16 @@
     "PG": [
       "Shai Gilgeous-Alexander",
       "Isaiah Joe",
-      "__SPACER__",
       "Nikola Topic",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Ajay Mitchell"
     ],
     "SG": [
       "Cason Wallace",
-      "Alex Caruso",
       "Brooks Barnhizer",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Ajay Mitchell"
+      "Alex Caruso"
     ],
     "SF": [
       "Luguentz Dort",
@@ -766,10 +766,11 @@
       "Branden Carlson"
     ],
     "C": [
-      "Isaiah Hartenstein",
-      "__SPACER__",
       "Jaylin Williams",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Isaiah Hartenstein",
       "Thomas Sorber"
     ]
   },
