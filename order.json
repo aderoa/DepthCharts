@@ -739,13 +739,13 @@
   "OKC": {
     "PG": [
       "Shai Gilgeous-Alexander",
-      "Isaiah Joe",
       "Nikola Topic",
       "__SEPARATOR__",
       "Ajay Mitchell"
     ],
     "SG": [
       "Cason Wallace",
+      "Isaiah Joe",
       "Brooks Barnhizer",
       "__SPACER__",
       "__SEPARATOR__",
@@ -761,13 +761,13 @@
     "PF": [
       "Chet Holmgren",
       "Aaron Wiggins",
-      "Kenrich Williams",
+      "__SPACER__",
       "__SEPARATOR__",
       "Branden Carlson"
     ],
     "C": [
       "Jaylin Williams",
-      "__SPACER__",
+      "Kenrich Williams",
       "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Hartenstein",
