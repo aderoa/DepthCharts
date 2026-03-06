@@ -475,6 +475,7 @@
       "Luka Doncic",
       "Luke Kennard",
       "Bronny James",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -482,7 +483,6 @@
       "Jake LaRavia",
       "Kobe Bufkin",
       "Nick Smith",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -494,16 +494,17 @@
     ],
     "PF": [
       "LeBron James",
-      "Maxi Kleber",
       "Adou Thiero",
+      "Jarred Vanderbilt",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Maxi Kleber"
     ],
     "C": [
       "Deandre Ayton",
       "Jaxson Hayes",
-      "Jarred Vanderbilt",
       "Drew Timme",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
