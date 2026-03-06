@@ -222,22 +222,22 @@
   "DAL": {
     "PG": [
       "Cooper Flagg",
+      "Brandon Williams",
+      "__SPACER__",
       "Ryan Nembhard",
-      "AJ Johnson",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
     "SG": [
       "Max Christie",
       "Klay Thompson",
-      "John Poulakidas",
-      "Brandon Williams",
+      "AJ Johnson",
       "__SEPARATOR__"
     ],
     "SF": [
       "Khris Middleton",
       "Naji Marshall",
-      "__SPACER__",
+      "John Poulakidas",
       "__SEPARATOR__",
       "Marvin Bagley"
     ],
