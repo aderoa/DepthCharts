@@ -51,22 +51,22 @@
       "__SEPARATOR__"
     ],
     "SF": [
+      "Sam Hauser",
       "Baylor Scheierman",
       "Jordan Walsh",
       "John Tonje",
-      "__SEPARATOR__",
-      "Jayson Tatum"
+      "__SEPARATOR__"
     ],
     "PF": [
-      "Sam Hauser",
+      "Jayson Tatum",
       "Nikola Vucevic",
       "Amari Williams",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Neemias Queta",
       "Luka Garza",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
