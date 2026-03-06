@@ -560,24 +560,25 @@
       "Norman Powell"
     ],
     "SF": [
-      "Andrew Wiggins",
+      "Pelle Larsson",
       "Myron Gardner",
       "__SPACER__",
       "__SEPARATOR__",
-      "Simone Fontecchio"
+      "Andrew Wiggins"
     ],
     "PF": [
-      "Pelle Larsson",
       "Jaime Jaquez",
       "Keshad Johnson",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Nikola Jovic"
+      "Simone Fontecchio"
     ],
     "C": [
       "Bam Adebayo",
       "Kel'el Ware",
       "Vladislav Goldin",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Nikola Jovic"
     ]
   },
   "MIL": {
