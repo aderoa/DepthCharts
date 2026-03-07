@@ -666,7 +666,6 @@
   "NOP": {
     "PG": [
       "Dejounte Murray",
-      "__SPACER__",
       "Jeremiah Fears",
       "Jordan Poole",
       "Trey Alexander",
@@ -696,9 +695,9 @@
     "C": [
       "Zion Williamson",
       "Yves Missi",
-      "DeAndre Jordan",
       "Hunter Dickinson",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "DeAndre Jordan"
     ]
   },
   "NYK": {
