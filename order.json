@@ -295,9 +295,8 @@
   },
   "DET": {
     "PG": [
-      "Daniss Jenkins",
-      "Caris LeVert",
       "Marcus Sasser",
+      "Caris LeVert",
       "__SPACER__",
       "__SEPARATOR__",
       "Cade Cunningham"
@@ -308,7 +307,8 @@
       "Chaz Lanier",
       "__SPACER__",
       "__SEPARATOR__",
-      "Ausar Thompson"
+      "Ausar Thompson",
+      "Daniss Jenkins"
     ],
     "SF": [
       "Javonte Green",
