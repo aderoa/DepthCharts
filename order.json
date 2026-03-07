@@ -224,7 +224,6 @@
     "PG": [
       "Cooper Flagg",
       "Brandon Williams",
-      "__SPACER__",
       "Ryan Nembhard",
       "__SEPARATOR__",
       "Kyrie Irving"
@@ -246,10 +245,10 @@
       "PJ Washington",
       "Caleb Martin",
       "Tyler Smith",
-      "__SEPARATOR__",
-      "Daniel Gafford"
+      "__SEPARATOR__"
     ],
     "C": [
+      "Daniel Gafford",
       "Dwight Powell",
       "Moussa Cisse",
       "__SPACER__",
