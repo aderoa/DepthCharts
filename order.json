@@ -58,16 +58,16 @@
     ],
     "PF": [
       "Jayson Tatum",
-      "Nikola Vucevic",
-      "__SPACER__",
       "Amari Williams",
-      "__SEPARATOR__",
-      "Jordan Walsh"
+      "Jordan Walsh",
+      "__SEPARATOR__"
     ],
     "C": [
       "Neemias Queta",
       "Luka Garza",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Nikola Vucevic"
     ]
   },
   "BKN": {
