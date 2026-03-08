@@ -593,7 +593,6 @@
       "Ryan Rollins",
       "AJ Green",
       "Andre Jackson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Kevin Porter"
     ],
@@ -606,24 +605,22 @@
     ],
     "SF": [
       "Ousmane Dieng",
-      "Pete Nance",
       "Gary Trent Jr",
-      "__SPACER__",
       "__SEPARATOR__",
       "Taurean Prince"
     ],
     "PF": [
-      "Giannis Antetokounmpo",
       "Bobby Portis",
+      "Pete Nance",
       "Alex Antetokounmpo",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Giannis Antetokounmpo"
     ],
     "C": [
       "Myles Turner",
       "Jericho Sims",
       "Thanasis Antetokounmpo",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
