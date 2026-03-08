@@ -595,20 +595,20 @@
     "PG": [
       "Ryan Rollins",
       "Cam Thomas",
-      "__SPACER__",
+      "Andre Jackson",
       "__SEPARATOR__",
       "Kevin Porter"
     ],
     "SG": [
       "AJ Green",
-      "Andre Jackson",
+      "Gary Harris",
       "Cormac Ryan",
       "__SEPARATOR__",
       "Kyle Kuzma"
     ],
     "SF": [
       "Gary Trent Jr",
-      "Gary Harris",
+      "Pete Nance",
       "Alex Antetokounmpo",
       "__SEPARATOR__",
       "Taurean Prince"
@@ -616,14 +616,14 @@
     "PF": [
       "Ousmane Dieng",
       "Bobby Portis",
-      "Pete Nance",
+      "Thanasis Antetokounmpo",
       "__SEPARATOR__",
       "Giannis Antetokounmpo"
     ],
     "C": [
       "Myles Turner",
       "Jericho Sims",
-      "Thanasis Antetokounmpo",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
