@@ -150,10 +150,10 @@
   },
   "CHI": {
     "PG": [
+      "Josh Giddey",
       "Tre Jones",
       "Yuki Kawamura",
       "__SEPARATOR__",
-      "Josh Giddey",
       "Jaden Ivey"
     ],
     "SG": [
@@ -164,23 +164,23 @@
       "Anfernee Simons"
     ],
     "SF": [
+      "Matas Buzelis",
       "Isaac Okoro",
       "Mac McClung",
       "__SEPARATOR__",
-      "Matas Buzelis",
       "Noa Essengue"
     ],
     "PF": [
       "Leonard Miller",
       "Lachlan Olbrich",
-      "__SEPARATOR__",
-      "Patrick Williams"
+      "Patrick Williams",
+      "__SEPARATOR__"
     ],
     "C": [
       "Guerschon Yabusele",
       "Nick Richards",
-      "__SEPARATOR__",
       "Jalen Smith",
+      "__SEPARATOR__",
       "Zach Collins"
     ]
   },
