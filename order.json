@@ -478,21 +478,21 @@
     "PG": [
       "Luka Doncic",
       "Luke Kennard",
+      "Nick Smith",
       "Bronny James",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Marcus Smart",
       "Dalton Knecht",
-      "Nick Smith",
+      "Kobe Bufkin",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Austin Reaves",
       "Jake LaRavia",
-      "Kobe Bufkin",
+      "Chris Manon",
       "Adou Thiero",
       "__SEPARATOR__",
       "LeBron James"
@@ -500,15 +500,15 @@
     "PF": [
       "Rui Hachimura",
       "Jarred Vanderbilt",
-      "Chris Manon",
+      "Maxi Kleber",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Deandre Ayton",
       "Jaxson Hayes",
-      "Maxi Kleber",
       "Drew Timme",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
