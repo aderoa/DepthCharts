@@ -519,40 +519,39 @@
   },
   "MEM": {
     "PG": [
-      "Ty Jerome",
       "Walter Clayton",
       "Javon Small",
       "__SEPARATOR__",
+      "Ty Jerome",
       "Ja Morant"
     ],
     "SG": [
-      "Scotty Pippen Jr",
       "Cam Spencer",
       "__SPACER__",
       "__SEPARATOR__",
+      "Scotty Pippen Jr",
       "Kentavious Caldwell-Pope"
     ],
     "SF": [
       "Jaylen Wells",
-      "Cedric Coward",
       "Rayan Rupert",
       "__SEPARATOR__",
+      "Cedric Coward",
       "Santiago Aldama"
     ],
     "PF": [
       "GG Jackson",
       "Jahmai Mashack",
-      "__SPACER__",
       "__SEPARATOR__",
+      "Taylor Hendricks",
       "Taj Gibson"
     ],
     "C": [
       "Olivier-Maxence Prosper",
-      "Taylor Hendricks",
       "__SPACER__",
       "__SEPARATOR__",
-      "Zach Edey",
-      "Brandon Clarke"
+      "Brandon Clarke",
+      "Zach Edey"
     ]
   },
   "MIA": {
