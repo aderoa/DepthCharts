@@ -223,6 +223,7 @@
       "Cooper Flagg",
       "Brandon Williams",
       "Ryan Nembhard",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
@@ -230,25 +231,28 @@
       "Max Christie",
       "Klay Thompson",
       "AJ Johnson",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Khris Middleton",
       "Naji Marshall",
       "John Poulakidas",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "PJ Washington",
       "Caleb Martin",
       "Tyler Smith",
-      "__SEPARATOR__",
-      "Marvin Bagley"
+      "__SEPARATOR__"
     ],
     "C": [
       "Daniel Gafford",
+      "Marvin Bagley",
       "Dwight Powell",
       "Moussa Cisse",
+      "__SPACER__",
       "__SEPARATOR__",
       "Dereck Lively"
     ]
