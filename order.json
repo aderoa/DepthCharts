@@ -1008,20 +1008,21 @@
     ],
     "SF": [
       "Scottie Barnes",
-      "Jamison Battle",
       "Gradey Dick",
       "__SEPARATOR__"
     ],
     "PF": [
       "Brandon Ingram",
-      "Jonathan Mogbo",
+      "Jamison Battle",
+      "__SPACER__",
       "Alijah Martin",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Trayce Jackson-Davis"
     ],
     "C": [
       "Jakob Poeltl",
       "Sandro Mamukelashvili",
-      "Trayce Jackson-Davis",
+      "Jonathan Mogbo",
       "__SEPARATOR__",
       "Collin Murray-Boyles"
     ]
