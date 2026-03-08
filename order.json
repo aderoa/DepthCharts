@@ -743,14 +743,14 @@
   "OKC": {
     "PG": [
       "Shai Gilgeous-Alexander",
+      "Ajay Mitchell",
       "Nikola Topic",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Ajay Mitchell"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Cason Wallace",
       "Brooks Barnhizer",
+      "__SPACER__",
       "__SEPARATOR__",
       "Alex Caruso"
     ],
@@ -764,7 +764,6 @@
     "PF": [
       "Luguentz Dort",
       "Aaron Wiggins",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Chet Holmgren",
