@@ -609,21 +609,21 @@
     "SF": [
       "Ousmane Dieng",
       "Gary Trent Jr",
-      "Pete Nance",
       "Alex Antetokounmpo",
       "__SEPARATOR__",
       "Taurean Prince"
     ],
     "PF": [
-      "Bobby Portis",
+      "Jericho Sims",
+      "Pete Nance",
+      "__SPACER__",
       "Thanasis Antetokounmpo",
       "__SEPARATOR__",
       "Giannis Antetokounmpo"
     ],
     "C": [
       "Myles Turner",
-      "Jericho Sims",
-      "__SPACER__",
+      "Bobby Portis",
       "__SEPARATOR__"
     ]
   },
