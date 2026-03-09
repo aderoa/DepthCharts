@@ -927,22 +927,22 @@
   "SAC": {
     "PG": [
       "Russell Westbrook",
-      "Devin Carter",
+      "Killian Hayes",
       "Isaiah Stevens",
       "__SEPARATOR__",
       "Zach LaVine"
     ],
     "SG": [
       "Nique Clifford",
-      "Malik Monk",
-      "Killian Hayes",
+      "__SPACER__",
+      "Devin Carter",
       "__SEPARATOR__",
       "DeMar DeRozan"
     ],
     "SF": [
       "Daeqwon Plowden",
+      "Malik Monk",
       "Doug McDermott",
-      "__SPACER__",
       "__SEPARATOR__",
       "De'Andre Hunter"
     ],
