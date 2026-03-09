@@ -860,14 +860,15 @@
     ],
     "SG": [
       "Jalen Green",
-      "Grayson Allen",
+      "Haywood Highsmith",
       "Jamaree Bouyea",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Grayson Allen"
     ],
     "SF": [
       "Devin Booker",
       "Ryan Dunn",
-      "Haywood Highsmith",
+      "__SPACER__",
       "__SEPARATOR__",
       "Dillon Brooks"
     ],
