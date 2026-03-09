@@ -519,8 +519,8 @@
   },
   "MEM": {
     "PG": [
-      "Walter Clayton",
       "Javon Small",
+      "Walter Clayton",
       "__SEPARATOR__",
       "Ty Jerome",
       "Ja Morant"
@@ -534,7 +534,6 @@
     ],
     "SF": [
       "Jaylen Wells",
-      "__SPACER__",
       "Rayan Rupert",
       "__SEPARATOR__",
       "Cedric Coward",
@@ -542,6 +541,7 @@
     ],
     "PF": [
       "GG Jackson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Taylor Hendricks",
       "Taj Gibson"
