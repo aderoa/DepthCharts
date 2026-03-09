@@ -595,6 +595,7 @@
       "Ryan Rollins",
       "Cam Thomas",
       "Andre Jackson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kevin Porter"
     ],
@@ -602,27 +603,29 @@
       "AJ Green",
       "Gary Harris",
       "Cormac Ryan",
-      "__SEPARATOR__",
-      "Kyle Kuzma"
+      "Kyle Kuzma",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Ousmane Dieng",
       "Gary Trent Jr",
       "Alex Antetokounmpo",
+      "__SPACER__",
       "__SEPARATOR__",
       "Taurean Prince"
     ],
     "PF": [
-      "Jericho Sims",
-      "Pete Nance",
+      "Giannis Antetokounmpo",
+      "Bobby Portis",
       "__SPACER__",
+      "Pete Nance",
       "Thanasis Antetokounmpo",
-      "__SEPARATOR__",
-      "Giannis Antetokounmpo"
+      "__SEPARATOR__"
     ],
     "C": [
       "Myles Turner",
-      "Bobby Portis",
+      "Jericho Sims",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
