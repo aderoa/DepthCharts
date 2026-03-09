@@ -889,8 +889,8 @@
     "PG": [
       "Jrue Holiday",
       "Scoot Henderson",
-      "Blake Wesley",
       "Caleb Love",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Damian Lillard"
@@ -898,7 +898,7 @@
     "SG": [
       "Toumani Camara",
       "Matisse Thybulle",
-      "__SPACER__",
+      "Blake Wesley",
       "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
