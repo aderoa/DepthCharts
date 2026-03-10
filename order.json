@@ -669,16 +669,17 @@
     "PG": [
       "Dejounte Murray",
       "Jeremiah Fears",
-      "Jordan Poole",
       "Trey Alexander",
       "__SEPARATOR__"
     ],
     "SG": [
       "Herb Jones",
-      "Bryce McGowens",
+      "Jordan Poole",
       "Jordan Hawkins",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Bryce McGowens"
     ],
     "SF": [
       "Trey Murphy",
