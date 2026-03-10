@@ -80,16 +80,17 @@
     ],
     "SG": [
       "Drake Powell",
-      "Ziaire Williams",
       "Terance Mann",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Ziaire Williams"
     ],
     "SF": [
+      "Michael Porter",
       "Danny Wolf",
       "Jalen Wilson",
       "Chaney Johnson",
-      "__SEPARATOR__",
-      "Michael Porter"
+      "__SEPARATOR__"
     ],
     "PF": [
       "Noah Clowney",
@@ -99,9 +100,10 @@
     ],
     "C": [
       "Nicolas Claxton",
-      "Day'Ron Sharpe",
       "EJ Liddell",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Day'Ron Sharpe"
     ]
   },
   "CHA": {
