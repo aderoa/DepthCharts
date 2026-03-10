@@ -823,23 +823,23 @@
       "Tyrese Maxey"
     ],
     "SG": [
+      "VJ Edgecombe",
       "Quentin Grimes",
       "Trendon Watford",
       "Dalen Terry",
-      "__SEPARATOR__",
-      "VJ Edgecombe"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Kelly Oubre",
       "Jabari Walker",
-      "MarJon Beauchamp",
+      "__SPACER__",
       "__SEPARATOR__",
       "Paul George"
     ],
     "PF": [
       "Dominick Barlow",
       "Justin Edwards",
-      "__SPACER__",
+      "MarJon Beauchamp",
       "__SEPARATOR__",
       "Johni Broome"
     ],
