@@ -813,10 +813,12 @@
   },
   "PHI": {
     "PG": [
-      "Tyrese Maxey",
       "Cameron Payne",
+      "Tyrese Martin",
       "Kyle Lowry",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Tyrese Maxey"
     ],
     "SG": [
       "Quentin Grimes",
@@ -828,7 +830,6 @@
     "SF": [
       "Kelly Oubre",
       "Jabari Walker",
-      "Tyrese Martin",
       "__SEPARATOR__",
       "Paul George"
     ],
