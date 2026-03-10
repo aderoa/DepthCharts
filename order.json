@@ -1015,22 +1015,23 @@
     "SF": [
       "Scottie Barnes",
       "Gradey Dick",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Trayce Jackson-Davis"
     ],
     "PF": [
       "Brandon Ingram",
       "Jamison Battle",
-      "__SPACER__",
       "Alijah Martin",
       "__SEPARATOR__",
-      "Trayce Jackson-Davis"
+      "Collin Murray-Boyles"
     ],
     "C": [
-      "Jakob Poeltl",
       "Sandro Mamukelashvili",
       "Jonathan Mogbo",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Collin Murray-Boyles"
+      "Jakob Poeltl"
     ]
   },
   "UTA": {
