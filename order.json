@@ -339,6 +339,7 @@
       "Stephen Curry"
     ],
     "SG": [
+      "Brandin Podziemski",
       "Gary Payton II",
       "Seth Curry",
       "__SPACER__",
@@ -346,24 +347,23 @@
       "Will Richard"
     ],
     "SF": [
-      "Brandin Podziemski",
+      "Gui Santos",
       "Jeenathan Williams",
       "__SPACER__",
       "__SEPARATOR__",
       "Jimmy Butler"
     ],
     "PF": [
-      "Gui Santos",
-      "Malevy Leons",
+      "Draymond Green",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Kristaps Porzingis",
       "Moses Moody"
     ],
     "C": [
-      "Draymond Green",
       "Quinten Post",
-      "__SPACER__",
+      "Malevy Leons",
       "__SEPARATOR__",
       "Al Horford"
     ]
