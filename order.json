@@ -858,14 +858,14 @@
   "PHX": {
     "PG": [
       "Collin Gillespie",
-      "Amir Coffey",
+      "__SPACER__",
       "Koby Brea",
       "__SEPARATOR__",
       "Jordan Goodwin"
     ],
     "SG": [
       "Jalen Green",
-      "Haywood Highsmith",
+      "Amir Coffey",
       "Jamaree Bouyea",
       "__SEPARATOR__",
       "Grayson Allen"
@@ -873,7 +873,7 @@
     "SF": [
       "Devin Booker",
       "Ryan Dunn",
-      "__SPACER__",
+      "Haywood Highsmith",
       "__SEPARATOR__",
       "Dillon Brooks"
     ],
