@@ -816,7 +816,6 @@
       "Cameron Payne",
       "Tyrese Martin",
       "Kyle Lowry",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tyrese Maxey"
     ],
@@ -830,13 +829,14 @@
     "SF": [
       "Kelly Oubre",
       "Jabari Walker",
+      "MarJon Beauchamp",
       "__SEPARATOR__",
       "Paul George"
     ],
     "PF": [
       "Dominick Barlow",
       "Justin Edwards",
-      "MarJon Beauchamp",
+      "__SPACER__",
       "__SEPARATOR__",
       "Johni Broome"
     ],
