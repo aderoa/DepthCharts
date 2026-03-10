@@ -109,23 +109,21 @@
   "CHA": {
     "PG": [
       "LaMelo Ball",
-      "Coby White",
+      "Tre Mann",
       "Antonio Reeves",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Coby White"
     ],
     "SG": [
       "Brandon Miller",
       "Sion James",
-      "Tre Mann",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Kon Knueppel",
       "Josh Green",
       "Pat Connaughton",
-      "__SPACER__",
       "__SEPARATOR__",
       "Liam McNeeley"
     ],
@@ -141,7 +139,6 @@
       "Moussa Diabate",
       "Ryan Kalkbrenner",
       "Xavier Tillman",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
