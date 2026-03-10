@@ -342,7 +342,6 @@
       "Brandin Podziemski",
       "Gary Payton II",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Will Richard"
     ],
@@ -351,6 +350,7 @@
       "Seth Curry",
       "__SPACER__",
       "__SEPARATOR__",
+      "Moses Moody",
       "Jimmy Butler"
     ],
     "PF": [
@@ -358,12 +358,12 @@
       "Jeenathan Williams",
       "__SPACER__",
       "__SEPARATOR__",
-      "Kristaps Porzingis",
-      "Moses Moody"
+      "Kristaps Porzingis"
     ],
     "C": [
       "Quinten Post",
       "Malevy Leons",
+      "__SPACER__",
       "__SEPARATOR__",
       "Al Horford"
     ]
