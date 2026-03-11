@@ -724,14 +724,15 @@
       "__SEPARATOR__"
     ],
     "PF": [
-      "Josh Hart",
+      "Karl-Anthony Towns",
       "Mohamed Diawara",
       "Jeremy Sochan",
       "Dillon Jones",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Josh Hart"
     ],
     "C": [
-      "Karl-Anthony Towns",
       "Mitchell Robinson",
       "Ariel Hukporti",
       "Trey Jemison",
