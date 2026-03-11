@@ -145,9 +145,10 @@
   "CHI": {
     "PG": [
       "Josh Giddey",
-      "Collin Sexton",
       "Yuki Kawamura",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Collin Sexton",
       "Jaden Ivey"
     ],
     "SG": [
@@ -159,8 +160,8 @@
     ],
     "SF": [
       "Matas Buzelis",
-      "Patrick Williams",
       "Mac McClung",
+      "__SPACER__",
       "__SEPARATOR__",
       "Noa Essengue"
     ],
@@ -168,7 +169,8 @@
       "Isaac Okoro",
       "Jalen Smith",
       "Leonard Miller",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Patrick Williams"
     ],
     "C": [
       "Guerschon Yabusele",
