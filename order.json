@@ -216,28 +216,28 @@
   "DAL": {
     "PG": [
       "Cooper Flagg",
-      "Brandon Williams",
       "Ryan Nembhard",
-      "__SPACER__",
+      "AJ Johnson",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
     "SG": [
       "Max Christie",
-      "Klay Thompson",
-      "AJ Johnson",
+      "Brandon Williams",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Naji Marshall",
-      "Khris Middleton",
+      "Klay Thompson",
       "John Poulakidas",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "PJ Washington",
+      "Khris Middleton",
       "Caleb Martin",
       "Tyler Smith",
       "Moussa Cisse",
