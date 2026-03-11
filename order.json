@@ -1038,37 +1038,35 @@
     "PG": [
       "Keyonte George",
       "Elijah Harkless",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Isaiah Collier"
+      "Isaiah Collier",
+      "__SEPARATOR__"
     ],
     "SG": [
       "Brice Sensabaugh",
       "Blake Hinson",
-      "__SPACER__",
+      "Ace Bailey",
       "__SEPARATOR__",
-      "Ace Bailey"
+      "Lauri Markkanen"
     ],
     "SF": [
       "John Konchar",
       "Sviatoslav Mykhailiuk",
       "__SPACER__",
       "__SEPARATOR__",
-      "Lauri Markkanen"
+      "Jaren Jackson Jr"
     ],
     "PF": [
       "Cody Williams",
       "Kevin Love",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Jaren Jackson Jr"
+      "Jusuf Nurkic"
     ],
     "C": [
       "Kyle Filipowski",
       "Oscar Tshiebwe",
-      "__SPACER__",
       "Mo Bamba",
       "__SEPARATOR__",
-      "Jusuf Nurkic",
       "Walker Kessler"
     ]
   },
