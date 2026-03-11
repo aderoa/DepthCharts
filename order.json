@@ -781,34 +781,33 @@
       "Jalen Suggs",
       "Jevon Carter",
       "Alex Morales",
-      "__SPACER__",
       "__SEPARATOR__",
       "Anthony Black"
     ],
     "SG": [
       "Desmond Bane",
+      "Jase Richardson",
       "Jett Howard",
-      "__SEPARATOR__",
-      "Jase Richardson"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Tristan Da Silva",
+      "Noah Penda",
       "Jamal Cain",
-      "__SPACER__",
       "__SEPARATOR__",
       "Franz Wagner"
     ],
     "PF": [
       "Paolo Banchero",
-      "Noah Penda",
-      "Colin Castleton",
-      "__SEPARATOR__",
-      "Jonathan Isaac"
+      "Jonathan Isaac",
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "C": [
       "Wendell Carter Jr",
       "Moritz Wagner",
       "Goga Bitadze",
+      "Colin Castleton",
       "__SEPARATOR__"
     ]
   },
