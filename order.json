@@ -514,15 +514,15 @@
   "MEM": {
     "PG": [
       "Javon Small",
-      "Cam Spencer",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Cam Spencer",
       "Walter Clayton",
       "Ja Morant"
     ],
     "SG": [
       "Jaylen Wells",
       "Jahmai Mashack",
-      "__SPACER__",
       "__SEPARATOR__",
       "Ty Jerome",
       "Scotty Pippen Jr"
@@ -535,8 +535,8 @@
       "Kentavious Caldwell-Pope"
     ],
     "PF": [
-      "Taylor Hendricks",
       "GG Jackson",
+      "Taylor Hendricks",
       "__SEPARATOR__",
       "Taj Gibson",
       "Santiago Aldama"
