@@ -883,14 +883,35 @@ function attachCardDrag(card, container, teamAbbrev) {
 // =====================================================
 // EXPORT HTML — shared generator
 // =====================================================
+const DC_PRESTO_CSS = '<style>\n'
++ '.dc-wrap{font-family:sans-serif;max-width:800px;margin:0 auto;overflow-x:auto;font-size:16px;text-align:center}\n'
++ '.dc-wrap .dc-team{text-align:center;font-size:1.2em;margin-bottom:.5em}\n'
++ '.dc-tbl{width:100%;text-align:center;border-collapse:collapse;font-size:12px}\n'
++ '.dc-tbl th,.dc-tbl td{border:none;padding:4px;text-align:center}\n'
++ '.dc-tbl tr.dc-hdr{background-color:#f2f2f2}\n'
++ '.dc-tbl tr.dc-hs-row{background-color:#fff}\n'
++ '.dc-tbl tr.dc-data{background-color:#f2f2f2}\n'
++ '.dc-tbl .dc-hs-img{display:block;width:80px;height:80px;object-fit:cover;margin:0 auto}\n'
++ '.dc-tbl .c-10day{background-color:yellow}\n'
++ '.dc-tbl .c-2way{background-color:#e1bee7}\n'
++ '.dc-tbl .c-inj{background-color:lightcoral}\n'
++ '.dc-tbl .c-quest{background-color:#f5b7b1}\n'
++ '<' + '/style>';
+
 function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
   const positions = ['PG','SG','SF','PF','C'];
   const playerMap = {}; allPlayers.forEach(p => playerMap[p.name] = p);
-  const S = 'border:none;padding:4px;text-align:center;';
-  const iS = 'display:block;width:80px;height:80px;object-fit:cover;margin:0 auto;';
 
-  let out = '<div style="font-family:sans-serif;max-width:800px;margin:0 auto;overflow-x:auto;font-size:16px;text-align:center;">';
+  function cCls(p) {
+    if (!p) return '';
+    if (p.contractStatus === '10-DAY') return ' class="c-10day"';
+    if (p.colorCode === 'twoway') return ' class="c-2way"';
+    if (p.colorCode === 'injured' || p.colorCode === 'doubtful') return ' class="c-inj"';
+    if (p.colorCode === 'questionable') return ' class="c-quest"';
+    return '';
+  }
 
+  let out = '<div class="dc-wrap">';
   const teamsSlice = NBA_TEAMS.slice(startIdx, endIdx);
   for (const team of teamsSlice) {
     const order = teamOrders[team.abbrev];
@@ -908,35 +929,27 @@ function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
     }
     if (maxRows < 1) maxRows = 1;
 
-    out += `<div style="text-align:center;font-size:1.2em;margin-bottom:.5em;"><strong>${team.name.toUpperCase()}</strong></div>`;
-    out += `<table style="width:100%;text-align:center;border-collapse:collapse;font-size:12px;"><tbody>`;
-    out += `<tr style="background-color:#f2f2f2;">`;
-    positions.forEach(pos => { out += `<th style="${S}">${pos}</th>`; });
+    out += `<div class="dc-team"><strong>${team.name.toUpperCase()}</strong></div>`;
+    out += `<table class="dc-tbl"><tbody>`;
+    out += `<tr class="dc-hdr">`;
+    positions.forEach(pos => { out += `<th>${pos}</th>`; });
     out += `</tr>`;
 
     for (let r = 0; r < maxRows; r++) {
       const rp = positions.map(pos => posCols[pos][r] || null);
       if (!rp.some(p => p !== null)) continue;
-      const cc = rp.map(p => {
-        if (!p) return '';
-        if (p.contractStatus === '10-DAY') return 'background-color:yellow;';
-        if (p.colorCode === 'twoway') return 'background-color:#e1bee7;';
-        if (p.colorCode === 'injured' || p.colorCode === 'doubtful') return 'background-color:lightcoral;';
-        if (p.colorCode === 'questionable') return 'background-color:#f5b7b1;';
-        return '';
-      });
       if (withHeadshots) {
-        out += `<tr style="background-color:#fff;">`;
-        rp.forEach((p,i) => {
-          out += p && p.headshot ? `<td style="${S}"><img src="${p.headshot}" style="${iS}"/></td>` : `<td style="${S}"></td>`;
+        out += `<tr class="dc-hs-row">`;
+        rp.forEach(p => {
+          out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`;
         });
         out += `</tr>`;
       }
-      out += `<tr style="background-color:#f2f2f2;">`;
-      rp.forEach((p,i) => { out += `<td style="${S}${cc[i]}">${p ? `<strong>${p.name}</strong>` : ''}</td>`; });
+      out += `<tr class="dc-data">`;
+      rp.forEach(p => { out += `<td${cCls(p)}>${p ? `<strong>${p.name}</strong>` : ''}</td>`; });
       out += `</tr>`;
-      out += `<tr style="background-color:#f2f2f2;">`;
-      rp.forEach((p,i) => { out += `<td style="${S}${cc[i]}">${p ? fmtSalFull(p.salary) : ''}</td>`; });
+      out += `<tr class="dc-data">`;
+      rp.forEach(p => { out += `<td${cCls(p)}>${p ? fmtSalFull(p.salary) : ''}</td>`; });
       out += `</tr>`;
     }
     out += `</tbody></table><br>`;
@@ -960,7 +973,7 @@ function exportHTML(withHeadshots, startIdx, endIdx) {
     teamOrders[ta] = order;
   });
 
-  const out = generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx);
+  const out = DC_PRESTO_CSS + '\n\n' + generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx);
   const teamsSlice = NBA_TEAMS.slice(startIdx, endIdx);
   const firstTeam = teamsSlice[0]?.abbrev || '?';
   const lastTeam = teamsSlice[teamsSlice.length-1]?.abbrev || '?';
@@ -1027,6 +1040,10 @@ async function renderExportView(exportParam, withHeadshots) {
     const html = generateExportHTML(orderData, withHeadshots, startIdx, endIdx);
 
     statusEl.style.display = 'none';
+    // Inject the DC export CSS into page
+    const cssEl = document.createElement('style');
+    cssEl.textContent = DC_PRESTO_CSS.replace(/<\/?style>/g, '');
+    document.head.appendChild(cssEl);
     const wrapper = document.createElement('div');
     wrapper.innerHTML = html;
     document.body.appendChild(wrapper);
@@ -1068,7 +1085,7 @@ function copyExportDirect(withHeadshots, startIdx, endIdx) {
     });
     teamOrders[ta] = order;
   });
-  const out = generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx);
+  const out = DC_PRESTO_CSS + '\n\n' + generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx);
   const btn = event.target.closest('.export-btn');
   const orig = btn.textContent;
   const blob = new Blob([out], {type: 'text/plain'});
