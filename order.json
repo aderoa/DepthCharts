@@ -148,7 +148,6 @@
     "PG": [
       "Josh Giddey",
       "Yuki Kawamura",
-      "__SPACER__",
       "__SEPARATOR__",
       "Collin Sexton",
       "Jaden Ivey"
@@ -156,7 +155,6 @@
     "SG": [
       "Matas Buzelis",
       "Tre Jones",
-      "Mac McClung",
       "__SEPARATOR__",
       "Anfernee Simons"
     ],
@@ -170,16 +168,15 @@
     ],
     "PF": [
       "Jalen Smith",
-      "Lachlan Olbrich",
-      "__SPACER__",
+      "Mac McClung",
       "__SEPARATOR__",
       "Patrick Williams"
     ],
     "C": [
-      "Guerschon Yabusele",
       "Nick Richards",
-      "__SPACER__",
+      "Lachlan Olbrich",
       "__SEPARATOR__",
+      "Guerschon Yabusele",
       "Zach Collins"
     ]
   },
