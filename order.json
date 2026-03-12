@@ -45,23 +45,23 @@
       "__SEPARATOR__"
     ],
     "SG": [
-      "Jaylen Brown",
+      "Baylor Scheierman",
       "Hugo Gonzalez",
       "Ron Harper Jr",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
-      "Sam Hauser",
-      "Baylor Scheierman",
+      "Jaylen Brown",
       "John Tonje",
       "__SEPARATOR__"
     ],
     "PF": [
-      "Jayson Tatum",
+      "Sam Hauser",
       "Jordan Walsh",
       "Amari Williams",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jayson Tatum"
     ],
     "C": [
       "Neemias Queta",
