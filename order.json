@@ -9,17 +9,16 @@
     ],
     "SG": [
       "Nickeil Alexander-Walker",
-      "Corey Kispert",
       "Buddy Hield",
       "Keshon Gilbert",
       "__SEPARATOR__",
-      "Dyson Daniels"
+      "Dyson Daniels",
+      "Zaccharie Risacher"
     ],
     "SF": [
+      "Corey Kispert",
       "Jonathan Kuminga",
-      "Zaccharie Risacher",
       "Caleb Houstan",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -27,6 +26,7 @@
       "Jalen Johnson",
       "Mouhamed Gueye",
       "Asa Newell",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
