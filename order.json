@@ -499,16 +499,17 @@
     ],
     "PF": [
       "Rui Hachimura",
-      "Drew Timme",
+      "__SPACER__",
       "Chris Manon",
       "__SEPARATOR__",
       "Maxi Kleber"
     ],
     "C": [
       "Deandre Ayton",
-      "Jaxson Hayes",
+      "Drew Timme",
       "Adou Thiero",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jaxson Hayes"
     ]
   },
   "MEM": {
