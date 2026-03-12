@@ -627,36 +627,37 @@
   "MIN": {
     "PG": [
       "Donte DiVincenzo",
-      "Ayo Dosunmu",
       "Mike Conley",
+      "Joe Ingles",
       "Zyon Pullin",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Ayo Dosunmu"
     ],
     "SG": [
       "Anthony Edwards",
       "Bones Hyland",
-      "Joe Ingles",
+      "Julian Phillips",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Jaden McDaniels",
       "Terrence Shannon",
-      "Julian Phillips",
+      "Jaylen Clark",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Julius Randle",
       "Kyle Anderson",
-      "Jaylen Clark",
       "Rocco Zikarsky",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Rudy Gobert",
       "Naz Reid",
       "Joan Beringer",
+      "__SPACER__",
       "Enrique Freeman",
       "__SEPARATOR__"
     ]
