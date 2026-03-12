@@ -831,17 +831,19 @@
       "Paul George"
     ],
     "PF": [
-      "Dominick Barlow",
       "Justin Edwards",
+      "__SPACER__",
       "MarJon Beauchamp",
       "__SEPARATOR__",
-      "Johni Broome"
+      "Johni Broome",
+      "Adem Bona"
     ],
     "C": [
-      "Adem Bona",
-      "Andre Drummond",
+      "Dominick Barlow",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
+      "Andre Drummond",
       "Joel Embiid"
     ]
   },
