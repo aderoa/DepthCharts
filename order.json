@@ -484,29 +484,27 @@
       "Luka Doncic",
       "Luke Kennard",
       "Bronny James",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
-      "Marcus Smart",
       "Jake LaRavia",
       "Nick Smith",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Kobe Bufkin",
+      "__SEPARATOR__",
+      "Marcus Smart"
     ],
     "SF": [
       "Austin Reaves",
       "Jarred Vanderbilt",
-      "Kobe Bufkin",
-      "Chris Manon",
+      "Dalton Knecht",
+      "__SPACER__",
       "__SEPARATOR__",
       "LeBron James"
     ],
     "PF": [
       "Rui Hachimura",
       "Drew Timme",
-      "Dalton Knecht",
-      "__SPACER__",
+      "Chris Manon",
       "__SEPARATOR__",
       "Maxi Kleber"
     ],
@@ -514,7 +512,6 @@
       "Deandre Ayton",
       "Jaxson Hayes",
       "Adou Thiero",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
