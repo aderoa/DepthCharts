@@ -823,7 +823,6 @@
     "SF": [
       "Trendon Watford",
       "Dalen Terry",
-      "__SPACER__",
       "Tyrese Martin",
       "__SEPARATOR__",
       "Paul George"
@@ -831,9 +830,10 @@
     "PF": [
       "Justin Edwards",
       "MarJon Beauchamp",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Johni Broome",
-      "Adem Bona"
+      "Adem Bona",
+      "Johni Broome"
     ],
     "C": [
       "Dominick Barlow",
