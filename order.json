@@ -154,21 +154,23 @@
       "Jaden Ivey"
     ],
     "SG": [
-      "__SEPARATOR__",
       "Josh Giddey",
+      "Rob Dillingham",
+      "Josh Giddey",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Anfernee Simons"
     ],
     "SF": [
       "Matas Buzelis",
-      "Leonard Miller",
-      "Rob Dillingham",
+      "Mac McClung",
       "__SEPARATOR__",
       "Isaac Okoro",
       "Noa Essengue"
     ],
     "PF": [
+      "Leonard Miller",
       "Jalen Smith",
-      "Mac McClung",
       "__SEPARATOR__",
       "Patrick Williams"
     ],
