@@ -263,22 +263,23 @@
       "Christian Braun",
       "Julian Strawther",
       "Jalen Pickett",
-      "Curtis Jones",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Cameron Johnson",
       "Tim Hardaway Jr",
-      "David Roddy",
+      "Curtis Jones",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
-      "Aaron Gordon",
       "Spencer Jones",
       "Zeke Nnaji",
+      "David Roddy",
       "__SPACER__",
       "__SEPARATOR__",
+      "Aaron Gordon",
       "Peyton Watson"
     ],
     "C": [
