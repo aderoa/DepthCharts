@@ -442,13 +442,14 @@
   "LAC": {
     "PG": [
       "Kobe Sanders",
-      "Jordan Miller",
+      "Bogdan Bogdanovic",
       "Sean Pedulla",
       "__SEPARATOR__",
       "Darius Garland"
     ],
     "SG": [
       "Kris Dunn",
+      "Jordan Miller",
       "__SPACER__",
       "TyTy Washington",
       "__SEPARATOR__",
@@ -463,7 +464,6 @@
     "PF": [
       "Derrick Jones",
       "Nicolas Batum",
-      "Bogdan Bogdanovic",
       "__SEPARATOR__",
       "John Collins"
     ],
