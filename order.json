@@ -450,7 +450,6 @@
     "SG": [
       "Kris Dunn",
       "Jordan Miller",
-      "__SPACER__",
       "TyTy Washington",
       "__SEPARATOR__",
       "Bradley Beal"
@@ -464,13 +463,14 @@
     "PF": [
       "Derrick Jones",
       "Nicolas Batum",
+      "Norchad Omier",
       "__SEPARATOR__",
       "John Collins"
     ],
     "C": [
       "Brook Lopez",
       "Isaiah Jackson",
-      "Norchad Omier",
+      "__SPACER__",
       "__SEPARATOR__",
       "Yanic Konan Niederhauser"
     ]
