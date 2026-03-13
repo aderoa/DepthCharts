@@ -486,7 +486,6 @@
     "SG": [
       "Austin Reaves",
       "Dalton Knecht",
-      "Kobe Bufkin",
       "Nick Smith",
       "__SEPARATOR__",
       "Marcus Smart"
@@ -494,12 +493,13 @@
     "SF": [
       "LeBron James",
       "Jake LaRavia",
-      "__SPACER__",
+      "Kobe Bufkin",
       "__SEPARATOR__"
     ],
     "PF": [
       "Rui Hachimura",
       "Jarred Vanderbilt",
+      "__SPACER__",
       "Chris Manon",
       "__SEPARATOR__",
       "Maxi Kleber"
