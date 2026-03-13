@@ -511,8 +511,9 @@
   },
   "MEM": {
     "PG": [
+      "Ty Jerome",
+      "__SPACER__",
       "Javon Small",
-      "Cam Spencer",
       "__SPACER__",
       "__SEPARATOR__",
       "Walter Clayton",
@@ -520,21 +521,20 @@
     ],
     "SG": [
       "Jaylen Wells",
-      "Jahmai Mashack",
-      "Ty Jerome",
+      "Cam Spencer",
       "__SEPARATOR__",
       "Scotty Pippen Jr"
     ],
     "SF": [
-      "Rayan Rupert",
-      "Tyler Burton",
       "Cedric Coward",
+      "Jahmai Mashack",
+      "Tyler Burton",
       "__SEPARATOR__",
       "Kentavious Caldwell-Pope"
     ],
     "PF": [
       "GG Jackson",
-      "__SPACER__",
+      "Rayan Rupert",
       "__SPACER__",
       "__SEPARATOR__",
       "Taj Gibson",
