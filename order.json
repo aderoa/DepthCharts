@@ -227,7 +227,8 @@
       "Max Christie",
       "Brandon Williams",
       "John Poulakidas",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "PJ Washington"
     ],
     "SF": [
       "Naji Marshall",
@@ -237,17 +238,19 @@
       "__SEPARATOR__"
     ],
     "PF": [
-      "PJ Washington",
       "Khris Middleton",
       "Moussa Cisse",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Dereck Lively"
     ],
     "C": [
       "Marvin Bagley",
       "Dwight Powell",
       "__SPACER__",
       "__SEPARATOR__",
-      "Daniel Gafford"
+      "Daniel Gafford",
+      "Dereck Lively"
     ]
   },
   "DEN": {
