@@ -592,7 +592,6 @@
       "Ryan Rollins",
       "Gary Harris",
       "Andre Jackson",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -604,8 +603,8 @@
     ],
     "SF": [
       "Ousmane Dieng",
-      "Cam Thomas",
       "Taurean Prince",
+      "Cam Thomas",
       "Alex Antetokounmpo",
       "__SEPARATOR__"
     ],
@@ -613,6 +612,7 @@
       "Giannis Antetokounmpo",
       "Bobby Portis",
       "Pete Nance",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
