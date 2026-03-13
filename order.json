@@ -40,7 +40,6 @@
   "BOS": {
     "PG": [
       "Derrick White",
-      "__SPACER__",
       "Payton Pritchard",
       "Max Shulga",
       "__SEPARATOR__"
@@ -60,12 +59,12 @@
     "PF": [
       "Jayson Tatum",
       "Jordan Walsh",
+      "Amari Williams",
       "__SEPARATOR__"
     ],
     "C": [
       "Neemias Queta",
       "Luka Garza",
-      "Amari Williams",
       "__SPACER__",
       "__SEPARATOR__",
       "Nikola Vucevic"
