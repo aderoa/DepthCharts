@@ -39,25 +39,26 @@
   },
   "BOS": {
     "PG": [
-      "Derrick White",
       "Payton Pritchard",
+      "Ron Harper Jr",
       "Max Shulga",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Derrick White"
     ],
     "SG": [
       "Baylor Scheierman",
-      "Ron Harper Jr",
+      "Hugo Gonzalez",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Jaylen Brown",
-      "Hugo Gonzalez",
+      "Jordan Walsh",
       "John Tonje",
       "__SEPARATOR__"
     ],
     "PF": [
       "Sam Hauser",
-      "Jordan Walsh",
       "Amari Williams",
       "__SPACER__",
       "__SEPARATOR__",
