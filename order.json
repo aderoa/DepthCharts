@@ -701,26 +701,27 @@
     "PG": [
       "Jalen Brunson",
       "Tyler Kolek",
-      "Kevin McCullar",
+      "__SPACER__",
       "__SEPARATOR__",
       "Miles McBride"
     ],
     "SG": [
       "Landry Shamet",
       "Jose Alvarado",
-      "Pacome Dadiet",
+      "Kevin McCullar",
       "__SEPARATOR__"
     ],
     "SF": [
       "OG Anunoby",
       "Jordan Clarkson",
-      "Dillon Jones",
+      "Pacome Dadiet",
       "__SEPARATOR__",
       "Josh Hart"
     ],
     "PF": [
       "Mikal Bridges",
       "Mohamed Diawara",
+      "Dillon Jones",
       "__SEPARATOR__",
       "Jeremy Sochan"
     ],
@@ -728,7 +729,6 @@
       "Mitchell Robinson",
       "Ariel Hukporti",
       "Trey Jemison",
-      "__SPACER__",
       "__SEPARATOR__",
       "Karl-Anthony Towns"
     ]
