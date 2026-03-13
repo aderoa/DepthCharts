@@ -76,37 +76,38 @@
     "PG": [
       "Ben Saraf",
       "Tyson Etienne",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Nolan Traore"
-    ],
-    "SG": [
-      "Drake Powell",
-      "Terance Mann",
+      "Nolan Traore",
       "__SEPARATOR__",
       "Egor Demin"
+    ],
+    "SG": [
+      "Terance Mann",
+      "Malachi Smith",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Drake Powell"
     ],
     "SF": [
       "Danny Wolf",
       "Chaney Johnson",
       "Ochai Agbaji",
-      "__SPACER__",
+      "Ziaire Williams",
       "__SEPARATOR__",
-      "Ziaire Williams"
+      "Michael Porter"
     ],
     "PF": [
       "Noah Clowney",
       "Jalen Wilson",
       "EJ Liddell",
       "__SEPARATOR__",
-      "Michael Porter"
+      "Day'Ron Sharpe"
     ],
     "C": [
-      "Nicolas Claxton",
       "Josh Minott",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Day'Ron Sharpe"
+      "Nicolas Claxton"
     ]
   },
   "CHA": {
