@@ -512,7 +512,6 @@
   "MEM": {
     "PG": [
       "Ty Jerome",
-      "__SPACER__",
       "Javon Small",
       "__SPACER__",
       "__SEPARATOR__",
@@ -522,6 +521,7 @@
     "SG": [
       "Jaylen Wells",
       "Cam Spencer",
+      "__SPACER__",
       "__SEPARATOR__",
       "Scotty Pippen Jr"
     ],
@@ -533,7 +533,7 @@
       "Kentavious Caldwell-Pope"
     ],
     "PF": [
-      "GG Jackson",
+      "Taylor Hendricks",
       "Rayan Rupert",
       "__SPACER__",
       "__SEPARATOR__",
@@ -542,7 +542,7 @@
     ],
     "C": [
       "Olivier-Maxence Prosper",
-      "Taylor Hendricks",
+      "GG Jackson",
       "__SPACER__",
       "__SEPARATOR__",
       "Brandon Clarke",
