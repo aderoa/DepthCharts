@@ -441,16 +441,16 @@
   },
   "LAC": {
     "PG": [
-      "Darius Garland",
       "Kobe Sanders",
+      "Jordan Miller",
       "Sean Pedulla",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Darius Garland"
     ],
     "SG": [
       "Kris Dunn",
-      "Jordan Miller",
-      "TyTy Washington",
       "__SPACER__",
+      "TyTy Washington",
       "__SEPARATOR__",
       "Bradley Beal"
     ],
