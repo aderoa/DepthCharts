@@ -233,22 +233,21 @@
       "Naji Marshall",
       "Caleb Martin",
       "Tyler Smith",
-      "__SEPARATOR__",
-      "Klay Thompson"
+      "Klay Thompson",
+      "__SEPARATOR__"
     ],
     "PF": [
       "PJ Washington",
       "Khris Middleton",
       "Moussa Cisse",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
-      "Daniel Gafford",
       "Marvin Bagley",
       "Dwight Powell",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Dereck Lively"
+      "Daniel Gafford"
     ]
   },
   "DEN": {
