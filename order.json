@@ -971,14 +971,14 @@
     ],
     "SG": [
       "Stephon Castle",
-      "Lindy Waters III",
       "Keldon Johnson",
+      "Lindy Waters III",
       "Emanuel Miller",
       "__SEPARATOR__"
     ],
     "SF": [
       "Devin Vassell",
-      "Carter Bryant",
+      "Harrison Barnes",
       "Harrison Ingram",
       "__SPACER__",
       "__SEPARATOR__",
@@ -986,17 +986,18 @@
     ],
     "PF": [
       "Julian Champagnie",
-      "Kelly Olynyk",
+      "Carter Bryant",
       "Mason Plumlee",
-      "Harrison Barnes",
       "__SEPARATOR__"
     ],
     "C": [
-      "Victor Wembanyama",
       "Luke Kornet",
+      "Kelly Olynyk",
       "Bismack Biyombo",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Victor Wembanyama"
     ]
   },
   "TOR": {
