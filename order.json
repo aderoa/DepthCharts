@@ -419,7 +419,6 @@
       "Jarace Walker",
       "Kobe Brown",
       "Ethan Thompson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Johnny Furphy"
     ],
@@ -427,14 +426,14 @@
       "Obi Toppin",
       "Jalen Slawson",
       "Micah Potter",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Pascal Siakam"
     ],
     "C": [
       "Ivica Zubac",
       "Jay Huff",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Pascal Siakam"
+      "__SEPARATOR__"
     ]
   },
   "LAC": {
