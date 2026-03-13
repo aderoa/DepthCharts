@@ -846,21 +846,22 @@
     "PG": [
       "Collin Gillespie",
       "Jordan Goodwin",
+      "Jamaree Bouyea",
       "Koby Brea",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Jalen Green",
+      "Grayson Allen",
       "Amir Coffey",
-      "Jamaree Bouyea",
-      "__SEPARATOR__",
-      "Grayson Allen"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Devin Booker",
       "Ryan Dunn",
       "Haywood Highsmith",
+      "__SPACER__",
       "__SEPARATOR__",
       "Dillon Brooks"
     ],
@@ -868,12 +869,14 @@
       "Royce O'Neale",
       "Rasheer Fleming",
       "Isaiah Livers",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Oso Ighodaro",
       "Khaman Maluach",
       "CJ Huntley",
+      "__SPACER__",
       "__SEPARATOR__",
       "Mark Williams"
     ]
