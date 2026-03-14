@@ -602,25 +602,27 @@
       "__SEPARATOR__"
     ],
     "SG": [
-      "Kyle Kuzma",
       "AJ Green",
       "Gary Trent Jr",
       "Andre Jackson",
       "__SEPARATOR__"
     ],
     "SF": [
-      "Ousmane Dieng",
+      "Kyle Kuzma",
       "Taurean Prince",
       "Cam Thomas",
       "Cormac Ryan",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Ousmane Dieng"
     ],
     "PF": [
-      "Giannis Antetokounmpo",
       "Bobby Portis",
       "Pete Nance",
       "Alex Antetokounmpo",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Giannis Antetokounmpo"
     ],
     "C": [
       "Myles Turner",
