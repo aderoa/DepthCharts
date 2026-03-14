@@ -629,11 +629,11 @@
   "MIN": {
     "PG": [
       "Donte DiVincenzo",
+      "Ayo Dosunmu",
       "Mike Conley",
       "Joe Ingles",
       "Zyon Pullin",
-      "__SEPARATOR__",
-      "Ayo Dosunmu"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Anthony Edwards",
@@ -653,13 +653,13 @@
       "Julius Randle",
       "Kyle Anderson",
       "Rocco Zikarsky",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Rudy Gobert",
       "Naz Reid",
       "Joan Beringer",
-      "__SPACER__",
       "Enrique Freeman",
       "__SEPARATOR__"
     ]
