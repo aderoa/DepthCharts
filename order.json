@@ -391,15 +391,16 @@
     "PF": [
       "Jabari Smith",
       "Dorian Finney-Smith",
-      "Jeff Green",
-      "__SEPARATOR__"
-    ],
-    "C": [
-      "Alperen Sengun",
-      "Clint Capela",
       "__SPACER__",
       "__SEPARATOR__",
       "Steven Adams"
+    ],
+    "C": [
+      "Clint Capela",
+      "Jeff Green",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Alperen Sengun"
     ]
   },
   "IND": {
