@@ -447,8 +447,8 @@
       "Kobe Sanders",
       "Bogdan Bogdanovic",
       "Sean Pedulla",
-      "__SEPARATOR__",
-      "Darius Garland"
+      "Darius Garland",
+      "__SEPARATOR__"
     ],
     "SG": [
       "Kris Dunn",
@@ -464,11 +464,11 @@
       "__SEPARATOR__"
     ],
     "PF": [
+      "John Collins",
       "Derrick Jones",
-      "Nicolas Batum",
       "Norchad Omier",
       "__SEPARATOR__",
-      "John Collins"
+      "Nicolas Batum"
     ],
     "C": [
       "Brook Lopez",
