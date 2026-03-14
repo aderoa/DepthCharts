@@ -148,6 +148,7 @@
     "PG": [
       "Tre Jones",
       "Yuki Kawamura",
+      "__SPACER__",
       "__SEPARATOR__",
       "Collin Sexton",
       "Jaden Ivey"
@@ -155,27 +156,29 @@
     "SG": [
       "Josh Giddey",
       "Rob Dillingham",
+      "__SPACER__",
       "__SEPARATOR__",
       "Anfernee Simons"
     ],
     "SF": [
       "Matas Buzelis",
       "Mac McClung",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Isaac Okoro",
-      "Noa Essengue"
+      "Isaac Okoro"
     ],
     "PF": [
       "Leonard Miller",
       "Lachlan Olbrich",
+      "Patrick Williams",
       "__SEPARATOR__",
-      "Patrick Williams"
+      "Noa Essengue"
     ],
     "C": [
       "Jalen Smith",
       "Nick Richards",
-      "__SEPARATOR__",
       "Guerschon Yabusele",
+      "__SEPARATOR__",
       "Zach Collins"
     ]
   },
