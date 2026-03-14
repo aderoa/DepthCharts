@@ -342,28 +342,28 @@
       "Brandin Podziemski",
       "Will Richard",
       "Seth Curry",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jimmy Butler"
     ],
     "SF": [
       "Gui Santos",
       "Gary Payton II",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jimmy Butler"
+      "Moses Moody"
     ],
     "PF": [
       "Jeenathan Williams",
-      "__SPACER__",
+      "Kristaps Porzingis",
       "__SPACER__",
       "__SEPARATOR__",
-      "Draymond Green",
-      "Moses Moody"
+      "Draymond Green"
     ],
     "C": [
       "Al Horford",
-      "Kristaps Porzingis",
-      "Malevy Leons",
       "Quinten Post",
+      "Malevy Leons",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
