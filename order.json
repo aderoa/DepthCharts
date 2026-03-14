@@ -889,8 +889,6 @@
       "Jrue Holiday",
       "Scoot Henderson",
       "Caleb Love",
-      "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Damian Lillard"
     ],
@@ -910,17 +908,16 @@
     ],
     "PF": [
       "Jerami Grant",
-      "Kris Murray",
       "Sidy Cissoko",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Donovan Clingan",
-      "Robert Williams",
+      "Kris Murray",
       "Yang Hansen",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Robert Williams"
     ]
   },
   "SAC": {
