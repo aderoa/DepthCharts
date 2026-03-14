@@ -112,35 +112,38 @@
     "PG": [
       "LaMelo Ball",
       "Coby White",
-      "__SPACER__",
       "Antonio Reeves",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Brandon Miller",
       "Sion James",
       "Tre Mann",
-      "__SEPARATOR__",
-      "Liam McNeeley"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Kon Knueppel",
       "Josh Green",
       "PJ Hall",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Tidjane Salaun"
+      "Liam McNeeley"
     ],
     "PF": [
       "Miles Bridges",
       "Pat Connaughton",
       "Tosan Evbuomwan",
+      "Grant Williams",
       "__SEPARATOR__",
-      "Grant Williams"
+      "Tidjane Salaun"
     ],
     "C": [
       "Moussa Diabate",
       "Ryan Kalkbrenner",
       "Xavier Tillman",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
