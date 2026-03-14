@@ -230,19 +230,20 @@
     ],
     "SG": [
       "Max Christie",
-      "Klay Thompson",
+      "__SPACER__",
       "John Poulakidas",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Klay Thompson"
     ],
     "SF": [
       "Cooper Flagg",
       "Khris Middleton",
+      "__SPACER__",
       "__SEPARATOR__",
       "PJ Washington"
     ],
     "PF": [
       "Naji Marshall",
-      "__SPACER__",
       "Caleb Martin",
       "Tyler Smith",
       "__SEPARATOR__",
