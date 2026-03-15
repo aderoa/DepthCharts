@@ -517,15 +517,16 @@
   },
   "MEM": {
     "PG": [
-      "Ty Jerome",
       "Javon Small",
+      "Cam Spencer",
       "__SPACER__",
       "__SEPARATOR__",
+      "Ty Jerome",
       "Walter Clayton",
       "Ja Morant"
     ],
     "SG": [
-      "Cam Spencer",
+      "Jaylen Wells",
       "DeJon Jarreau",
       "__SPACER__",
       "__SEPARATOR__",
@@ -536,8 +537,8 @@
       "Cedric Coward",
       "Jahmai Mashack",
       "Rayan Rupert",
-      "__SEPARATOR__",
-      "Jaylen Wells"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Taylor Hendricks",
