@@ -592,17 +592,16 @@
   },
   "MIL": {
     "PG": [
-      "Kevin Porter",
       "AJ Green",
-      "Andre Jackson",
       "__SPACER__",
-      "__SEPARATOR__"
+      "Andre Jackson",
+      "__SEPARATOR__",
+      "Kevin Porter"
     ],
     "SG": [
       "Ryan Rollins",
       "Cam Thomas",
       "Cormac Ryan",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -617,7 +616,6 @@
       "Jericho Sims",
       "Taurean Prince",
       "Gary Trent Jr",
-      "__SPACER__",
       "__SEPARATOR__",
       "Giannis Antetokounmpo"
     ],
@@ -625,7 +623,6 @@
       "Myles Turner",
       "Bobby Portis",
       "Thanasis Antetokounmpo",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
