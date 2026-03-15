@@ -270,6 +270,7 @@
       "Christian Braun",
       "Bruce Brown",
       "Curtis Jones",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -280,10 +281,10 @@
       "__SEPARATOR__"
     ],
     "PF": [
+      "Aaron Gordon",
       "Spencer Jones",
       "Tim Hardaway Jr",
       "Zeke Nnaji",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Peyton Watson"
@@ -292,9 +293,7 @@
       "Nikola Jokic",
       "Jonas Valanciunas",
       "DaRon Holmes",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Aaron Gordon"
+      "__SEPARATOR__"
     ]
   },
   "DET": {
