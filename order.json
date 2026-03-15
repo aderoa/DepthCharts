@@ -407,8 +407,9 @@
   },
   "IND": {
     "PG": [
+      "Kam Jones",
       "TJ McConnell",
-      "Taelon Peter",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Andrew Nembhard",
@@ -416,8 +417,7 @@
     ],
     "SG": [
       "Aaron Nesmith",
-      "Kam Jones",
-      "__SPACER__",
+      "Taelon Peter",
       "__SEPARATOR__",
       "Quenton Jackson"
     ],
