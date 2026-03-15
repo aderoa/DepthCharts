@@ -225,6 +225,7 @@
     "PG": [
       "Ryan Nembhard",
       "AJ Johnson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
@@ -238,13 +239,13 @@
     "SF": [
       "Cooper Flagg",
       "Khris Middleton",
-      "__SPACER__",
+      "Tyler Smith",
       "__SEPARATOR__"
     ],
     "PF": [
       "Naji Marshall",
       "Caleb Martin",
-      "Tyler Smith",
+      "Moussa Cisse",
       "__SEPARATOR__",
       "Dereck Lively"
     ],
@@ -252,7 +253,7 @@
       "PJ Washington",
       "Marvin Bagley",
       "Dwight Powell",
-      "Moussa Cisse",
+      "__SPACER__",
       "__SEPARATOR__",
       "Daniel Gafford"
     ]
