@@ -335,6 +335,7 @@
   },
   "GSW": {
     "PG": [
+      "Will Richard",
       "Pat Spencer",
       "LJ Cryer",
       "__SEPARATOR__",
@@ -342,28 +343,27 @@
       "Stephen Curry"
     ],
     "SG": [
-      "Will Richard",
+      "Brandin Podziemski",
       "Gary Payton II",
       "__SEPARATOR__",
       "Seth Curry"
     ],
     "SF": [
-      "Brandin Podziemski",
+      "Gui Santos",
       "Jeenathan Williams",
+      "__SPACER__",
       "__SEPARATOR__",
       "Moses Moody",
       "Jimmy Butler"
     ],
     "PF": [
-      "Gui Santos",
-      "Omer Yurtseven",
       "__SEPARATOR__",
+      "Malevy Leons",
       "Draymond Green"
     ],
     "C": [
       "Quinten Post",
-      "Malevy Leons",
-      "__SPACER__",
+      "Omer Yurtseven",
       "__SEPARATOR__",
       "Kristaps Porzingis",
       "Al Horford"
