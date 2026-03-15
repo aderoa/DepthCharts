@@ -787,22 +787,24 @@
     ],
     "SG": [
       "Desmond Bane",
-      "Jett Howard",
+      "Jamal Cain",
       "Jase Richardson",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jett Howard"
     ],
     "SF": [
       "Tristan Da Silva",
       "Noah Penda",
-      "Jamal Cain",
+      "__SPACER__",
       "__SEPARATOR__",
       "Franz Wagner"
     ],
     "PF": [
       "Paolo Banchero",
       "Moritz Wagner",
-      "Jonathan Isaac",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jonathan Isaac"
     ],
     "C": [
       "Wendell Carter Jr",
