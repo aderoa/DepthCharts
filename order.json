@@ -602,7 +602,7 @@
     "SG": [
       "AJ Green",
       "Taurean Prince",
-      "Gary Trent Jr",
+      "__SPACER__",
       "Cormac Ryan",
       "__SPACER__",
       "__SEPARATOR__"
@@ -618,7 +618,7 @@
     "PF": [
       "Giannis Antetokounmpo",
       "Bobby Portis",
-      "__SPACER__",
+      "Gary Trent Jr",
       "__SEPARATOR__"
     ],
     "C": [
