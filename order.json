@@ -1042,16 +1042,15 @@
     "PG": [
       "Isaiah Collier",
       "Elijah Harkless",
-      "__SPACER__",
       "__SEPARATOR__",
       "Keyonte George",
       "John Konchar"
     ],
     "SG": [
-      "Ace Bailey",
       "Bez Mbeng",
       "Sviatoslav Mykhailiuk",
       "__SEPARATOR__",
+      "Ace Bailey",
       "Lauri Markkanen"
     ],
     "SF": [
@@ -1063,16 +1062,15 @@
     ],
     "PF": [
       "Cody Williams",
-      "Kevin Love",
       "__SPACER__",
       "__SEPARATOR__",
       "Jusuf Nurkic"
     ],
     "C": [
-      "Kyle Filipowski",
       "Oscar Tshiebwe",
-      "__SPACER__",
+      "Kevin Love",
       "__SEPARATOR__",
+      "Kyle Filipowski",
       "Walker Kessler"
     ]
   },
