@@ -639,18 +639,19 @@
   },
   "MIN": {
     "PG": [
-      "Donte DiVincenzo",
       "Ayo Dosunmu",
       "Mike Conley",
       "Zyon Pullin",
       "__SEPARATOR__"
     ],
     "SG": [
-      "Anthony Edwards",
+      "Donte DiVincenzo",
       "Bones Hyland",
       "Joe Ingles",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Anthony Edwards"
     ],
     "SF": [
       "Jaden McDaniels",
