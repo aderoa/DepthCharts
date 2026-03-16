@@ -521,7 +521,7 @@
     "PG": [
       "Walter Clayton",
       "Cam Spencer",
-      "DeJon Jarreau",
+      "__SPACER__",
       "Javon Small",
       "__SEPARATOR__",
       "Ty Jerome",
@@ -530,6 +530,7 @@
     "SG": [
       "Jaylen Wells",
       "Jahmai Mashack",
+      "DeJon Jarreau",
       "__SEPARATOR__",
       "Scotty Pippen Jr"
     ],
