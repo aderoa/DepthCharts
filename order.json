@@ -521,13 +521,13 @@
     "PG": [
       "Javon Small",
       "Cam Spencer",
-      "Walter Clayton",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ja Morant"
     ],
     "SG": [
       "Jaylen Wells",
-      "DeJon Jarreau",
+      "Walter Clayton",
       "__SPACER__",
       "__SEPARATOR__",
       "Ty Jerome",
@@ -535,7 +535,7 @@
     ],
     "SF": [
       "Cedric Coward",
-      "__SPACER__",
+      "DeJon Jarreau",
       "Rayan Rupert",
       "__SEPARATOR__",
       "Kentavious Caldwell-Pope"
