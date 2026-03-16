@@ -915,7 +915,6 @@
       "Deni Avdija",
       "Sidy Cissoko",
       "Chris Youngblood",
-      "__SPACER__",
       "__SEPARATOR__",
       "Vit Krejci"
     ],
@@ -927,9 +926,9 @@
     ],
     "C": [
       "Donovan Clingan",
-      "Robert Williams",
       "Yang Hansen",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Robert Williams"
     ]
   },
   "SAC": {
