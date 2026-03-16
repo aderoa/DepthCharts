@@ -457,17 +457,18 @@
       "Bradley Beal"
     ],
     "SF": [
-      "Kawhi Leonard",
       "Bennedict Mathurin",
       "Cam Christie",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Nicolas Batum"
+      "Kawhi Leonard"
     ],
     "PF": [
       "Derrick Jones",
       "John Collins",
       "Bogdan Bogdanovic",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Nicolas Batum"
     ],
     "C": [
       "Brook Lopez",
