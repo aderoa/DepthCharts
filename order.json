@@ -607,15 +607,14 @@
     ],
     "SF": [
       "Kyle Kuzma",
-      "Pete Nance",
       "Gary Harris",
       "Alex Antetokounmpo",
-      "__SPACER__",
       "__SEPARATOR__",
       "Ousmane Dieng"
     ],
     "PF": [
       "Bobby Portis",
+      "__SPACER__",
       "Gary Trent Jr",
       "Cam Thomas",
       "__SEPARATOR__",
@@ -623,7 +622,7 @@
     ],
     "C": [
       "Jericho Sims",
-      "__SPACER__",
+      "Pete Nance",
       "Thanasis Antetokounmpo",
       "__SEPARATOR__",
       "Myles Turner"
