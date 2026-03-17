@@ -601,12 +601,12 @@
     ],
     "SG": [
       "AJ Green",
-      "Taurean Prince",
       "Cormac Ryan",
       "__SEPARATOR__"
     ],
     "SF": [
       "Kyle Kuzma",
+      "__SPACER__",
       "Gary Harris",
       "Alex Antetokounmpo",
       "__SEPARATOR__",
@@ -614,7 +614,7 @@
     ],
     "PF": [
       "Bobby Portis",
-      "__SPACER__",
+      "Taurean Prince",
       "Gary Trent Jr",
       "Cam Thomas",
       "__SEPARATOR__",
