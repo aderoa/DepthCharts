@@ -1077,30 +1077,29 @@
   },
   "WAS": {
     "PG": [
-      "Trae Young",
       "Sharife Cooper",
       "Jaden Hardy",
       "__SEPARATOR__",
+      "Trae Young",
       "D'Angelo Russell"
     ],
     "SG": [
       "Tre Johnson",
       "Carlton Carrington",
-      "__SPACER__",
       "__SEPARATOR__",
       "Kyshawn George"
     ],
     "SF": [
-      "Bilal Coulibaly",
       "Jamir Watkins",
-      "__SPACER__",
+      "Justin Champagnie",
       "__SEPARATOR__",
+      "Bilal Coulibaly",
       "Leaky Black"
     ],
     "PF": [
       "Will Riley",
       "Anthony Gill",
-      "Justin Champagnie",
+      "__SPACER__",
       "__SEPARATOR__",
       "Anthony Davis",
       "Cam Whitmore"
@@ -1108,7 +1107,6 @@
     "C": [
       "Julian Reese",
       "Tristan Vukcevic",
-      "__SPACER__",
       "__SEPARATOR__",
       "Alex Sarr"
     ]
