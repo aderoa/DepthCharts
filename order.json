@@ -655,15 +655,16 @@
       "Julius Randle",
       "Kyle Anderson",
       "Jaylen Clark",
-      "Enrique Freeman",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Rudy Gobert",
       "Joan Beringer",
-      "Naz Reid",
       "Rocco Zikarsky",
-      "__SEPARATOR__"
+      "Enrique Freeman",
+      "__SEPARATOR__",
+      "Naz Reid"
     ]
   },
   "NOP": {
