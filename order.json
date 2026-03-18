@@ -748,32 +748,34 @@
       "Shai Gilgeous-Alexander",
       "Cason Wallace",
       "Nikola Topic",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Luguentz Dort"
     ],
     "SG": [
       "Ajay Mitchell",
       "Alex Caruso",
       "Isaiah Joe",
-      "__SEPARATOR__"
-    ],
-    "SF": [
-      "Luguentz Dort",
-      "Jared McCain",
-      "Brooks Barnhizer",
       "__SEPARATOR__",
       "Jalen Williams"
+    ],
+    "SF": [
+      "Jared McCain",
+      "Brooks Barnhizer",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Branden Carlson"
     ],
     "PF": [
       "Chet Holmgren",
       "Aaron Wiggins",
       "Payton Sandfort",
       "__SEPARATOR__",
-      "Branden Carlson"
+      "Isaiah Hartenstein"
     ],
     "C": [
-      "Isaiah Hartenstein",
       "Jaylin Williams",
       "Kenrich Williams",
+      "__SPACER__",
       "__SEPARATOR__",
       "Thomas Sorber"
     ]
