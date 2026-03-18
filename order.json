@@ -965,14 +965,14 @@
   "SAS": {
     "PG": [
       "De'Aaron Fox",
-      "Dylan Harper",
       "Jordan McLaughlin",
-      "__SPACER__",
+      "Lindy Waters III",
       "__SEPARATOR__"
     ],
     "SG": [
       "Stephon Castle",
-      "Lindy Waters III",
+      "Dylan Harper",
+      "Emanuel Miller",
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
@@ -980,8 +980,8 @@
     ],
     "SF": [
       "Harrison Barnes",
-      "Emanuel Miller",
       "Keldon Johnson",
+      "Kelly Olynyk",
       "Harrison Ingram",
       "__SEPARATOR__",
       "David Jones"
@@ -989,13 +989,13 @@
     "PF": [
       "Julian Champagnie",
       "Carter Bryant",
-      "Kelly Olynyk",
+      "Mason Plumlee",
       "__SEPARATOR__"
     ],
     "C": [
       "Victor Wembanyama",
       "Luke Kornet",
-      "Mason Plumlee",
+      "__SPACER__",
       "Bismack Biyombo",
       "__SPACER__",
       "__SEPARATOR__"
