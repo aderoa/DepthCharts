@@ -456,22 +456,22 @@
     ],
     "SF": [
       "Kawhi Leonard",
+      "Nicolas Batum",
       "Bogdan Bogdanovic",
-      "Cam Christie",
       "__SEPARATOR__",
       "Bennedict Mathurin"
     ],
     "PF": [
       "Derrick Jones",
       "John Collins",
-      "Nicolas Batum",
-      "Norchad Omier",
+      "Cam Christie",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Brook Lopez",
       "Isaiah Jackson",
-      "__SPACER__",
+      "Norchad Omier",
       "__SEPARATOR__",
       "Yanic Konan Niederhauser"
     ]
