@@ -904,14 +904,15 @@
     ],
     "SG": [
       "Toumani Camara",
+      "Matisse Thybulle",
       "Blake Wesley",
-      "Chris Youngblood",
       "__SEPARATOR__",
+      "Chris Youngblood",
       "Shaedon Sharpe"
     ],
     "SF": [
       "Deni Avdija",
-      "Matisse Thybulle",
+      "Sidy Cissoko",
       "Jayson Kent",
       "__SEPARATOR__",
       "Vit Krejci"
@@ -919,14 +920,11 @@
     "PF": [
       "Jerami Grant",
       "Kris Murray",
-      "Sidy Cissoko",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Donovan Clingan",
       "Robert Williams",
-      "Kris Murray",
       "Yang Hansen",
       "__SEPARATOR__"
     ]
