@@ -536,16 +536,18 @@
     "SF": [
       "Cedric Coward",
       "Cam Spencer",
-      "Rayan Rupert",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jahmai Mashack",
       "Santiago Aldama"
     ],
     "PF": [
-      "GG Jackson",
       "Tyler Burton",
-      "Taj Gibson",
-      "__SEPARATOR__"
+      "Rayan Rupert",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "GG Jackson",
+      "Taj Gibson"
     ],
     "C": [
       "Olivier-Maxence Prosper",
