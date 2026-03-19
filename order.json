@@ -451,9 +451,9 @@
       "Darius Garland"
     ],
     "SG": [
-      "Kawhi Leonard",
       "Jordan Miller",
       "TyTy Washington",
+      "__SPACER__",
       "__SEPARATOR__",
       "Bradley Beal"
     ],
@@ -461,7 +461,6 @@
       "Derrick Jones",
       "Bogdan Bogdanovic",
       "Cam Christie",
-      "__SPACER__",
       "__SEPARATOR__",
       "Bennedict Mathurin"
     ],
@@ -469,7 +468,8 @@
       "John Collins",
       "Nicolas Batum",
       "Norchad Omier",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Kawhi Leonard"
     ],
     "C": [
       "Brook Lopez",
