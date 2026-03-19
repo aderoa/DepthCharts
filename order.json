@@ -72,16 +72,17 @@
   "BKN": {
     "PG": [
       "Nolan Traore",
+      "Terance Mann",
       "Tyson Etienne",
+      "__SPACER__",
       "__SEPARATOR__",
       "Egor Demin"
     ],
     "SG": [
       "Drake Powell",
-      "Terance Mann",
       "Malachi Smith",
-      "Ben Saraf",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Ben Saraf"
     ],
     "SF": [
       "Danny Wolf",
@@ -239,6 +240,7 @@
     ],
     "PF": [
       "Naji Marshall",
+      "Marvin Bagley",
       "Moussa Cisse",
       "__SEPARATOR__",
       "Dereck Lively"
@@ -246,7 +248,6 @@
     "C": [
       "PJ Washington",
       "Daniel Gafford",
-      "Marvin Bagley",
       "Dwight Powell",
       "__SEPARATOR__"
     ]
