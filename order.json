@@ -1044,10 +1044,10 @@
   },
   "UTA": {
     "PG": [
-      "Isaiah Collier",
       "Bez Mbeng",
       "__SPACER__",
       "__SEPARATOR__",
+      "Isaiah Collier",
       "Keyonte George"
     ],
     "SG": [
@@ -1055,28 +1055,28 @@
       "Elijah Harkless",
       "Blake Hinson",
       "__SEPARATOR__",
-      "Lauri Markkanen"
+      "Brice Sensabaugh"
     ],
     "SF": [
-      "Brice Sensabaugh",
-      "John Konchar",
       "Sviatoslav Mykhailiuk",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Jaren Jackson Jr"
+      "John Konchar",
+      "Lauri Markkanen"
     ],
     "PF": [
       "Cody Williams",
       "Andersson Garcia",
       "__SEPARATOR__",
-      "Jusuf Nurkic"
+      "Jaren Jackson Jr"
     ],
     "C": [
       "Kyle Filipowski",
       "Kevin Love",
       "Oscar Tshiebwe",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Walker Kessler"
+      "Walker Kessler",
+      "Jusuf Nurkic"
     ]
   },
   "WAS": {
