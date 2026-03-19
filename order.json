@@ -565,8 +565,8 @@
     ],
     "SG": [
       "Tyler Herro",
-      "Jaime Jaquez",
       "Dru Smith",
+      "Jaime Jaquez",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -575,7 +575,6 @@
       "Simone Fontecchio",
       "Myron Gardner",
       "Trevor Keels",
-      "__SPACER__",
       "__SEPARATOR__",
       "Andrew Wiggins"
     ],
@@ -590,6 +589,7 @@
       "Kel'el Ware",
       "Nikola Jovic",
       "Vladislav Goldin",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
