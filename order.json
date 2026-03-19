@@ -868,21 +868,21 @@
       "Collin Gillespie",
       "Jordan Goodwin",
       "Koby Brea",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Grayson Allen"
     ],
     "SG": [
       "Jalen Green",
       "Jamaree Bouyea",
-      "Amir Coffey",
-      "__SEPARATOR__",
-      "Grayson Allen"
-    ],
-    "SF": [
-      "Devin Booker",
-      "Haywood Highsmith",
       "__SPACER__",
       "__SEPARATOR__",
       "Dillon Brooks"
+    ],
+    "SF": [
+      "Devin Booker",
+      "Amir Coffey",
+      "__SEPARATOR__",
+      "Haywood Highsmith"
     ],
     "PF": [
       "Ryan Dunn",
