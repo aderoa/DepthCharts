@@ -1083,7 +1083,6 @@
   },
   "WAS": {
     "PG": [
-      "Carlton Carrington",
       "Sharife Cooper",
       "__SPACER__",
       "__SEPARATOR__",
@@ -1091,13 +1090,14 @@
       "D'Angelo Russell"
     ],
     "SG": [
-      "Tre Johnson",
       "Jaden Hardy",
+      "Carlton Carrington",
       "__SPACER__",
       "__SEPARATOR__",
       "Kyshawn George"
     ],
     "SF": [
+      "Tre Johnson",
       "Jamir Watkins",
       "Justin Champagnie",
       "Bilal Coulibaly",
