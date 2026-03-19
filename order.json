@@ -564,7 +564,6 @@
       "Davion Mitchell",
       "Kasparas Jakucionis",
       "Jahmir Young",
-      "__SPACER__",
       "__SEPARATOR__",
       "Terry Rozier"
     ],
@@ -572,29 +571,26 @@
       "Tyler Herro",
       "Dru Smith",
       "Myron Gardner",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
-      "Norman Powell",
       "Simone Fontecchio",
+      "Norman Powell",
       "Trevor Keels",
       "__SEPARATOR__",
       "Andrew Wiggins"
     ],
     "PF": [
-      "Bam Adebayo",
       "Pelle Larsson",
+      "Nikola Jovic",
       "Keshad Johnson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jaime Jaquez"
     ],
     "C": [
       "Kel'el Ware",
-      "Nikola Jovic",
+      "Bam Adebayo",
       "Vladislav Goldin",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
