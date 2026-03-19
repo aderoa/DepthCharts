@@ -983,16 +983,17 @@
     ],
     "SG": [
       "Devin Vassell",
-      "Stephon Castle",
-      "Keldon Johnson",
       "Lindy Waters III",
       "Emanuel Miller",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Keldon Johnson",
+      "Stephon Castle"
     ],
     "SF": [
       "Harrison Barnes",
       "Kelly Olynyk",
       "Harrison Ingram",
+      "__SPACER__",
       "__SEPARATOR__",
       "David Jones"
     ],
