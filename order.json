@@ -865,7 +865,6 @@
       "Collin Gillespie",
       "Jordan Goodwin",
       "Koby Brea",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -877,16 +876,17 @@
     ],
     "SF": [
       "Devin Booker",
-      "Ryan Dunn",
       "Amir Coffey",
       "__SEPARATOR__",
       "Dillon Brooks"
     ],
     "PF": [
-      "Royce O'Neale",
       "Rasheer Fleming",
+      "Ryan Dunn",
       "Isaiah Livers",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Royce O'Neale"
     ],
     "C": [
       "Oso Ighodaro",
