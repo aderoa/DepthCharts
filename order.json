@@ -810,15 +810,16 @@
     "PF": [
       "Paolo Banchero",
       "Noah Penda",
-      "Colin Castleton",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jonathan Isaac"
     ],
     "C": [
-      "Wendell Carter Jr",
       "Moritz Wagner",
       "Goga Bitadze",
-      "__SEPARATOR__"
+      "Colin Castleton",
+      "__SEPARATOR__",
+      "Wendell Carter Jr"
     ]
   },
   "PHI": {
