@@ -443,22 +443,22 @@
   },
   "LAC": {
     "PG": [
-      "Kris Dunn",
+      "Darius Garland",
       "Kobe Sanders",
       "Sean Pedulla",
-      "__SEPARATOR__",
-      "Darius Garland"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Jordan Miller",
-      "Bogdan Bogdanovic",
-      "__SPACER__",
+      "Kris Dunn",
       "TyTy Washington",
+      "__SPACER__",
       "__SEPARATOR__",
       "Bradley Beal"
     ],
     "SF": [
       "Derrick Jones",
+      "Bogdan Bogdanovic",
       "Cam Christie",
       "__SEPARATOR__",
       "Bennedict Mathurin"
