@@ -614,7 +614,7 @@
     "SF": [
       "Kyle Kuzma",
       "Taurean Prince",
-      "Pete Nance",
+      "__SPACER__",
       "Gary Harris",
       "Alex Antetokounmpo",
       "__SEPARATOR__"
@@ -622,7 +622,7 @@
     "PF": [
       "Ousmane Dieng",
       "Bobby Portis",
-      "__SPACER__",
+      "Pete Nance",
       "__SEPARATOR__",
       "Giannis Antetokounmpo"
     ],
