@@ -520,14 +520,14 @@
     "PG": [
       "Ty Jerome",
       "Javon Small",
-      "DeJon Jarreau",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ja Morant",
       "Scotty Pippen Jr"
     ],
     "SG": [
       "Jaylen Wells",
-      "Walter Clayton",
+      "DeJon Jarreau",
       "__SPACER__",
       "__SEPARATOR__",
       "Cedric Coward",
@@ -535,7 +535,7 @@
     ],
     "SF": [
       "Cam Spencer",
-      "__SPACER__",
+      "Walter Clayton",
       "__SEPARATOR__",
       "Jahmai Mashack",
       "Santiago Aldama"
