@@ -597,14 +597,16 @@
   "MIL": {
     "PG": [
       "Ryan Rollins",
-      "Gary Trent Jr",
+      "Cam Thomas",
       "Andre Jackson",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "AJ Green",
+      "Gary Trent Jr",
       "Cormac Ryan",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Kevin Porter"
@@ -620,7 +622,6 @@
     "PF": [
       "Ousmane Dieng",
       "Bobby Portis",
-      "Cam Thomas",
       "__SPACER__",
       "__SEPARATOR__",
       "Giannis Antetokounmpo"
