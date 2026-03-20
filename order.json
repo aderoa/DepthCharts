@@ -975,15 +975,16 @@
   "SAS": {
     "PG": [
       "De'Aaron Fox",
-      "Dylan Harper",
       "Jordan McLaughlin",
-      "__SPACER__",
+      "Lindy Waters III",
       "__SEPARATOR__"
     ],
     "SG": [
       "Devin Vassell",
-      "Lindy Waters III",
+      "Dylan Harper",
+      "__SPACER__",
       "Emanuel Miller",
+      "__SPACER__",
       "__SEPARATOR__",
       "Stephon Castle"
     ],
@@ -992,7 +993,6 @@
       "Keldon Johnson",
       "Kelly Olynyk",
       "Harrison Ingram",
-      "__SPACER__",
       "__SEPARATOR__",
       "David Jones"
     ],
