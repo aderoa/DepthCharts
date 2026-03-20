@@ -297,27 +297,27 @@
     "PG": [
       "Daniss Jenkins",
       "Caris LeVert",
-      "Chaz Lanier",
+      "__SPACER__",
       "__SEPARATOR__",
       "Cade Cunningham"
     ],
     "SG": [
       "Ausar Thompson",
       "Javonte Green",
-      "Wendell Moore",
+      "Chaz Lanier",
       "__SEPARATOR__",
       "Marcus Sasser"
     ],
     "SF": [
       "Duncan Robinson",
       "Ron Holland",
+      "Wendell Moore",
       "__SEPARATOR__",
       "Kevin Huerter"
     ],
     "PF": [
       "Tobias Harris",
       "Tolu Smith",
-      "__SPACER__",
       "Isaac Jones",
       "__SEPARATOR__"
     ],
