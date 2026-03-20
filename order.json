@@ -420,23 +420,24 @@
     "SF": [
       "Jarace Walker",
       "Ben Sheppard",
-      "Ethan Thompson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Johnny Furphy"
     ],
     "PF": [
       "Jalen Slawson",
-      "Kobe Brown",
+      "Ethan Thompson",
       "__SPACER__",
       "__SEPARATOR__",
       "Obi Toppin",
       "Pascal Siakam"
     ],
     "C": [
-      "Ivica Zubac",
       "Jay Huff",
+      "Kobe Brown",
       "__SPACER__",
       "__SEPARATOR__",
+      "Ivica Zubac",
       "Micah Potter"
     ]
   },
