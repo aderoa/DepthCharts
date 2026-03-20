@@ -520,7 +520,6 @@
     "PG": [
       "Ty Jerome",
       "Javon Small",
-      "__SPACER__",
       "__SEPARATOR__",
       "Ja Morant",
       "Scotty Pippen Jr"
@@ -528,7 +527,6 @@
     "SG": [
       "Jaylen Wells",
       "DeJon Jarreau",
-      "__SPACER__",
       "__SEPARATOR__",
       "Cedric Coward",
       "Kentavious Caldwell-Pope"
@@ -541,17 +539,15 @@
       "Santiago Aldama"
     ],
     "PF": [
+      "Olivier-Maxence Prosper",
       "Tyler Burton",
       "Rayan Rupert",
-      "__SPACER__",
       "__SEPARATOR__",
       "GG Jackson",
       "Taj Gibson"
     ],
     "C": [
-      "Olivier-Maxence Prosper",
       "Taylor Hendricks",
-      "__SPACER__",
       "__SEPARATOR__",
       "Brandon Clarke",
       "Zach Edey"
