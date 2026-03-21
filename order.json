@@ -192,6 +192,7 @@
       "Craig Porter"
     ],
     "SG": [
+      "Donovan Mitchell",
       "Sam Merrill",
       "Max Strus",
       "Tristan Enaruna",
@@ -201,7 +202,6 @@
     "SF": [
       "Keon Ellis",
       "Nae'Qwan Tomlin",
-      "Donovan Mitchell",
       "__SEPARATOR__",
       "Jaylon Tyson"
     ],
@@ -209,8 +209,7 @@
       "Dean Wade",
       "Larry Nance Jr",
       "Riley Minix",
-      "__SEPARATOR__",
-      "__SPACER__"
+      "__SEPARATOR__"
     ],
     "C": [
       "Evan Mobley",
