@@ -529,7 +529,6 @@
     "SG": [
       "Walter Clayton",
       "Cam Spencer",
-      "__SPACER__",
       "__SEPARATOR__",
       "Ty Jerome",
       "Cedric Coward",
@@ -537,20 +536,21 @@
     ],
     "SF": [
       "Jaylen Wells",
+      "Rayan Rupert",
       "__SEPARATOR__",
       "Jahmai Mashack",
       "Santiago Aldama"
     ],
     "PF": [
       "Olivier-Maxence Prosper",
-      "Rayan Rupert",
+      "Tyler Burton",
       "__SEPARATOR__",
       "GG Jackson",
       "Taj Gibson"
     ],
     "C": [
       "Taylor Hendricks",
-      "Tyler Burton",
+      "__SPACER__",
       "__SEPARATOR__",
       "Brandon Clarke",
       "Zach Edey"
