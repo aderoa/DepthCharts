@@ -261,21 +261,21 @@
       "Jamal Murray",
       "Bruce Brown",
       "Tyus Jones",
-      "Jalen Pickett",
+      "__SPACER__",
       "KJ Simpson",
       "__SEPARATOR__"
     ],
     "SG": [
       "Christian Braun",
       "Tim Hardaway Jr",
-      "Julian Strawther",
+      "Jalen Pickett",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Cameron Johnson",
       "Spencer Jones",
-      "David Roddy",
+      "Julian Strawther",
       "Curtis Jones",
       "__SEPARATOR__"
     ],
@@ -283,7 +283,7 @@
       "Aaron Gordon",
       "Peyton Watson",
       "Zeke Nnaji",
-      "__SPACER__",
+      "David Roddy",
       "__SEPARATOR__"
     ],
     "C": [
