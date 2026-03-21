@@ -565,13 +565,13 @@
     "SG": [
       "Tyler Herro",
       "Dru Smith",
-      "Myron Gardner",
+      "__SPACER__",
       "__SEPARATOR__",
       "Norman Powell"
     ],
     "SF": [
       "Simone Fontecchio",
-      "__SPACER__",
+      "Myron Gardner",
       "Trevor Keels",
       "__SEPARATOR__",
       "Andrew Wiggins"
