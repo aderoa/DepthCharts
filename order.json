@@ -710,14 +710,13 @@
   "NYK": {
     "PG": [
       "Jalen Brunson",
-      "Jose Alvarado",
       "Tyler Kolek",
       "__SEPARATOR__",
       "Miles McBride"
     ],
     "SG": [
       "OG Anunoby",
-      "Jordan Clarkson",
+      "Jose Alvarado",
       "Kevin McCullar",
       "__SPACER__",
       "__SEPARATOR__",
@@ -725,12 +724,13 @@
     ],
     "SF": [
       "Mikal Bridges",
-      "Jeremy Sochan",
+      "Jordan Clarkson",
       "Dillon Jones",
       "__SEPARATOR__"
     ],
     "PF": [
       "Mohamed Diawara",
+      "Jeremy Sochan",
       "Pacome Dadiet",
       "__SEPARATOR__",
       "Josh Hart"
