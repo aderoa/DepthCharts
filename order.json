@@ -334,8 +334,8 @@
   "GSW": {
     "PG": [
       "De'Anthony Melton",
-      "__SPACER__",
       "LJ Cryer",
+      "__SPACER__",
       "__SEPARATOR__",
       "Stephen Curry"
     ],
@@ -349,8 +349,8 @@
     "SF": [
       "Gui Santos",
       "Will Richard",
-      "__SEPARATOR__",
       "__SPACER__",
+      "__SEPARATOR__",
       "Jimmy Butler",
       "Moses Moody"
     ],
@@ -362,11 +362,12 @@
       "Al Horford"
     ],
     "C": [
-      "Kristaps Porzingis",
       "Omer Yurtseven",
       "Malevy Leons",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Quinten Post"
+      "Quinten Post",
+      "Kristaps Porzingis"
     ]
   },
   "HOU": {
