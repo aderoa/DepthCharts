@@ -966,16 +966,15 @@
       "De'Aaron Fox",
       "Jordan McLaughlin",
       "Lindy Waters III",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Stephon Castle"
     ],
     "SG": [
-      "Devin Vassell",
       "Dylan Harper",
-      "__SPACER__",
       "Emanuel Miller",
       "__SPACER__",
       "__SEPARATOR__",
-      "Stephon Castle"
+      "Devin Vassell"
     ],
     "SF": [
       "Harrison Barnes",
@@ -989,14 +988,12 @@
       "Julian Champagnie",
       "Carter Bryant",
       "Mason Plumlee",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Victor Wembanyama",
       "Luke Kornet",
       "Bismack Biyombo",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
