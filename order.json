@@ -726,20 +726,19 @@
       "Mikal Bridges",
       "Jordan Clarkson",
       "Pacome Dadiet",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Josh Hart"
     ],
     "PF": [
       "Mohamed Diawara",
       "Jeremy Sochan",
       "Ariel Hukporti",
-      "__SEPARATOR__",
-      "Josh Hart"
+      "__SEPARATOR__"
     ],
     "C": [
       "Karl-Anthony Towns",
       "Mitchell Robinson",
       "Trey Jemison",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
