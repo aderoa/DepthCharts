@@ -80,9 +80,10 @@
     ],
     "SG": [
       "Drake Powell",
-      "Terance Mann",
       "Malachi Smith",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Terance Mann"
     ],
     "SF": [
       "Ziaire Williams",
@@ -93,8 +94,8 @@
     ],
     "PF": [
       "Danny Wolf",
-      "EJ Liddell",
       "Josh Minott",
+      "EJ Liddell",
       "__SEPARATOR__",
       "Noah Clowney"
     ],
