@@ -408,7 +408,6 @@
       "Andrew Nembhard",
       "TJ McConnell",
       "Taelon Peter",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tyrese Haliburton"
     ],
@@ -419,20 +418,19 @@
       "__SEPARATOR__"
     ],
     "SF": [
-      "Jarace Walker",
       "Ben Sheppard",
       "Ethan Thompson",
       "__SEPARATOR__",
       "Johnny Furphy"
     ],
     "PF": [
-      "Pascal Siakam",
+      "Jarace Walker",
       "Obi Toppin",
       "Jalen Slawson",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
+      "Pascal Siakam",
       "Jay Huff",
       "Kobe Brown",
       "Micah Potter",
