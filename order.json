@@ -81,9 +81,8 @@
     "SG": [
       "Drake Powell",
       "Malachi Smith",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Terance Mann"
+      "Terance Mann",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Ziaire Williams",
@@ -93,17 +92,18 @@
       "Michael Porter"
     ],
     "PF": [
-      "Danny Wolf",
       "Josh Minott",
       "EJ Liddell",
       "__SEPARATOR__",
       "Noah Clowney"
     ],
     "C": [
-      "Nicolas Claxton",
+      "Danny Wolf",
       "Ochai Agbaji",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Nicolas Claxton",
       "Day'Ron Sharpe"
     ]
   },
