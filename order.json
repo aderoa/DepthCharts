@@ -341,15 +341,13 @@
     "SG": [
       "Brandin Podziemski",
       "Pat Spencer",
-      "__SPACER__",
+      "Gary Payton II",
       "__SEPARATOR__",
-      "Seth Curry",
-      "Gary Payton II"
+      "Seth Curry"
     ],
     "SF": [
       "Gui Santos",
       "Will Richard",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Moses Moody",
@@ -358,15 +356,16 @@
     "PF": [
       "Draymond Green",
       "Jeenathan Williams",
+      "__SPACER__",
       "__SEPARATOR__",
       "Al Horford"
     ],
     "C": [
-      "Quinten Post",
+      "Kristaps Porzingis",
       "Malevy Leons",
       "Omer Yurtseven",
       "__SEPARATOR__",
-      "Kristaps Porzingis"
+      "Quinten Post"
     ]
   },
   "HOU": {
