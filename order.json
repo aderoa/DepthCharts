@@ -388,7 +388,7 @@
     "SF": [
       "Kevin Durant",
       "Dorian Finney-Smith",
-      "Jae'Sean Tate",
+      "__SPACER__",
       "Isaiah Crawford",
       "__SPACER__",
       "__SEPARATOR__"
@@ -396,7 +396,7 @@
     "PF": [
       "Jabari Smith",
       "Tari Eason",
-      "__SPACER__",
+      "Jae'Sean Tate",
       "__SEPARATOR__"
     ],
     "C": [
