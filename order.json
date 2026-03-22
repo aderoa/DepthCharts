@@ -222,6 +222,7 @@
   },
   "DAL": {
     "PG": [
+      "Cooper Flagg",
       "Ryan Nembhard",
       "AJ Johnson",
       "John Poulakidas",
@@ -236,7 +237,6 @@
       "Brandon Williams"
     ],
     "SF": [
-      "Cooper Flagg",
       "Khris Middleton",
       "Tyler Smith",
       "__SEPARATOR__",
