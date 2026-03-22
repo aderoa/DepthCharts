@@ -714,6 +714,7 @@
       "Jalen Brunson",
       "Tyler Kolek",
       "Kevin McCullar",
+      "__SPACER__",
       "__SEPARATOR__",
       "Miles McBride"
     ],
@@ -721,6 +722,7 @@
       "OG Anunoby",
       "Jose Alvarado",
       "Dillon Jones",
+      "__SPACER__",
       "__SEPARATOR__",
       "Landry Shamet"
     ],
@@ -728,19 +730,21 @@
       "Mikal Bridges",
       "Jordan Clarkson",
       "Pacome Dadiet",
-      "__SEPARATOR__",
-      "Josh Hart"
+      "__SEPARATOR__"
     ],
     "PF": [
+      "Josh Hart",
       "Mohamed Diawara",
       "Jeremy Sochan",
       "Ariel Hukporti",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Karl-Anthony Towns",
       "Mitchell Robinson",
       "Trey Jemison",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
