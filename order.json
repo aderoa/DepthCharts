@@ -224,28 +224,28 @@
     "PG": [
       "Cooper Flagg",
       "Ryan Nembhard",
-      "AJ Johnson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
     "SG": [
       "Khris Middleton",
-      "Max Christie",
+      "AJ Johnson",
       "John Poulakidas",
       "__SEPARATOR__",
       "Brandon Williams"
     ],
     "SF": [
       "Naji Marshall",
-      "Klay Thompson",
-      "__SPACER__",
+      "Max Christie",
+      "Tyler Smith",
       "__SEPARATOR__",
       "Caleb Martin"
     ],
     "PF": [
       "PJ Washington",
+      "Klay Thompson",
       "Moussa Cisse",
-      "Tyler Smith",
       "__SEPARATOR__",
       "Dereck Lively"
     ],
