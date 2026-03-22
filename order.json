@@ -156,31 +156,32 @@
     ],
     "SG": [
       "Josh Giddey",
-      "Patrick Williams",
       "Mac McClung",
+      "__SPACER__",
       "__SEPARATOR__",
       "Anfernee Simons"
     ],
     "SF": [
       "Collin Sexton",
-      "Leonard Miller",
+      "Patrick Williams",
+      "__SPACER__",
       "__SEPARATOR__",
       "Isaac Okoro"
     ],
     "PF": [
       "Matas Buzelis",
-      "Lachlan Olbrich",
-      "__SPACER__",
+      "Leonard Miller",
       "__SPACER__",
       "__SEPARATOR__",
+      "Jalen Smith",
       "Noa Essengue"
     ],
     "C": [
       "Nick Richards",
-      "Guerschon Yabusele",
+      "Lachlan Olbrich",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jalen Smith",
+      "Guerschon Yabusele",
       "Zach Collins"
     ]
   },
