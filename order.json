@@ -225,7 +225,6 @@
       "Cooper Flagg",
       "Ryan Nembhard",
       "AJ Johnson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
@@ -239,13 +238,14 @@
     "SF": [
       "Naji Marshall",
       "Klay Thompson",
-      "Tyler Smith",
+      "__SPACER__",
       "__SEPARATOR__",
       "Caleb Martin"
     ],
     "PF": [
       "PJ Washington",
       "Moussa Cisse",
+      "Tyler Smith",
       "__SEPARATOR__",
       "Dereck Lively"
     ],
