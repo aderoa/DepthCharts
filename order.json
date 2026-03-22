@@ -736,15 +736,15 @@
       "Josh Hart",
       "Mohamed Diawara",
       "Jeremy Sochan",
-      "Ariel Hukporti",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Karl-Anthony Towns",
       "Mitchell Robinson",
+      "Ariel Hukporti",
       "Trey Jemison",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
