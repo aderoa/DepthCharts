@@ -79,32 +79,34 @@
       "Egor Demin"
     ],
     "SG": [
-      "Drake Powell",
       "Ben Saraf",
       "Jalen Wilson",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Drake Powell",
       "Michael Porter"
     ],
     "SF": [
-      "Terance Mann",
       "Malachi Smith",
       "Ochai Agbaji",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Noah Clowney"
+      "Terance Mann"
     ],
     "PF": [
       "Ziaire Williams",
       "Chaney Johnson",
       "Josh Minott",
       "__SEPARATOR__",
-      "Day'Ron Sharpe"
+      "Danny Wolf",
+      "Noah Clowney"
     ],
     "C": [
-      "Danny Wolf",
       "EJ Liddell",
+      "Nicolas Claxton",
       "__SPACER__",
       "__SEPARATOR__",
-      "Nicolas Claxton"
+      "Day'Ron Sharpe"
     ]
   },
   "CHA": {
