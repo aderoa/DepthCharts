@@ -753,7 +753,7 @@
     "PG": [
       "Shai Gilgeous-Alexander",
       "Alex Caruso",
-      "Isaiah Joe",
+      "__SPACER__",
       "Nikola Topic",
       "__SEPARATOR__",
       "Ajay Mitchell"
@@ -761,15 +761,15 @@
     "SG": [
       "Cason Wallace",
       "Jared McCain",
-      "Brooks Barnhizer",
+      "Isaiah Joe",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Luguentz Dort",
       "Jalen Williams",
+      "Brooks Barnhizer",
       "Payton Sandfort",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
