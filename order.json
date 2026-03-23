@@ -1020,6 +1020,7 @@
       "Jamal Shead",
       "Ja'Kobe Walter",
       "Garrett Temple",
+      "Markelle Fultz",
       "__SEPARATOR__",
       "Immanuel Quickley"
     ],
@@ -1033,13 +1034,13 @@
     "SF": [
       "Scottie Barnes",
       "Jamison Battle",
-      "Alijah Martin",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Brandon Ingram",
       "Jonathan Mogbo",
-      "__SPACER__",
+      "Alijah Martin",
       "__SEPARATOR__",
       "Collin Murray-Boyles"
     ],
