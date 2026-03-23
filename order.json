@@ -979,14 +979,14 @@
     "PG": [
       "De'Aaron Fox",
       "Jordan McLaughlin",
+      "Lindy Waters III",
       "Emanuel Miller",
       "__SEPARATOR__"
     ],
     "SG": [
       "Stephon Castle",
       "Dylan Harper",
-      "Lindy Waters III",
-      "Harrison Ingram",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Devin Vassell"
@@ -995,7 +995,7 @@
       "Harrison Barnes",
       "Keldon Johnson",
       "Kelly Olynyk",
-      "__SPACER__",
+      "Harrison Ingram",
       "__SEPARATOR__",
       "David Jones"
     ],
