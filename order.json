@@ -1016,17 +1016,18 @@
   },
   "TOR": {
     "PG": [
-      "Immanuel Quickley",
       "Jamal Shead",
       "Garrett Temple",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Chucky Hepburn"
+      "Immanuel Quickley"
     ],
     "SG": [
       "RJ Barrett",
       "Ja'Kobe Walter",
       "AJ Lawson",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Chucky Hepburn"
     ],
     "SF": [
       "Scottie Barnes",
@@ -1042,10 +1043,11 @@
       "Collin Murray-Boyles"
     ],
     "C": [
-      "Jakob Poeltl",
       "Sandro Mamukelashvili",
       "Trayce Jackson-Davis",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jakob Poeltl"
     ]
   },
   "UTA": {
