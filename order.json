@@ -1019,7 +1019,6 @@
     "PG": [
       "Jamal Shead",
       "Markelle Fultz",
-      "__SPACER__",
       "Garrett Temple",
       "__SEPARATOR__",
       "Immanuel Quickley"
@@ -1034,20 +1033,20 @@
     "SF": [
       "Scottie Barnes",
       "Gradey Dick",
-      "__SPACER__",
+      "Alijah Martin",
       "__SEPARATOR__"
     ],
     "PF": [
       "Brandon Ingram",
       "Jamison Battle",
-      "Alijah Martin",
+      "Trayce Jackson-Davis",
       "__SEPARATOR__",
       "Collin Murray-Boyles"
     ],
     "C": [
       "Sandro Mamukelashvili",
       "Jonathan Mogbo",
-      "Trayce Jackson-Davis",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jakob Poeltl"
     ]
