@@ -830,10 +830,11 @@
   },
   "PHI": {
     "PG": [
-      "Quentin Grimes",
       "Cameron Payne",
       "Kyle Lowry",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Quentin Grimes",
       "Tyrese Maxey"
     ],
     "SG": [
@@ -851,10 +852,10 @@
       "Paul George"
     ],
     "PF": [
+      "Dominick Barlow",
       "Jabari Walker",
       "Trendon Watford",
       "__SEPARATOR__",
-      "Dominick Barlow",
       "Johni Broome"
     ],
     "C": [
