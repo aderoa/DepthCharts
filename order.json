@@ -449,20 +449,20 @@
     "SG": [
       "Kawhi Leonard",
       "Kris Dunn",
-      "Cam Christie",
+      "__SPACER__",
       "TyTy Washington",
       "__SEPARATOR__",
       "Bennedict Mathurin"
     ],
     "SF": [
       "Nicolas Batum",
-      "Jordan Miller",
       "Bogdan Bogdanovic",
+      "Cam Christie",
       "__SEPARATOR__"
     ],
     "PF": [
       "Derrick Jones",
-      "Kawhi Leonard",
+      "Jordan Miller",
       "Norchad Omier",
       "__SEPARATOR__",
       "John Collins"
