@@ -454,14 +454,16 @@
       "Bennedict Mathurin"
     ],
     "SF": [
-      "Derrick Jones",
       "Jordan Miller",
+      "Bogdan Bogdanovic",
       "__SEPARATOR__",
+      "__SPACER__",
       "Kawhi Leonard"
     ],
     "PF": [
+      "Derrick Jones",
       "Nicolas Batum",
-      "Bogdan Bogdanovic",
+      "__SPACER__",
       "__SEPARATOR__",
       "John Collins"
     ],
