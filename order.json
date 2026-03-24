@@ -374,37 +374,33 @@
       "Amen Thompson",
       "Aaron Holiday",
       "JD Davison",
-      "__SPACER__",
       "__SEPARATOR__",
       "Fred VanVleet"
     ],
     "SG": [
       "Reed Sheppard",
+      "Jae'Sean Tate",
       "Josh Okogie",
       "Tristen Newton",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Kevin Durant",
       "Dorian Finney-Smith",
-      "__SPACER__",
       "Isaiah Crawford",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Jabari Smith",
       "Tari Eason",
-      "Jae'Sean Tate",
       "__SEPARATOR__"
     ],
     "C": [
       "Alperen Sengun",
       "Clint Capela",
       "Jeff Green",
-      "Steven Adams",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Steven Adams"
     ]
   },
   "IND": {
