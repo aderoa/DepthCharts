@@ -380,19 +380,19 @@
     "SG": [
       "Reed Sheppard",
       "Jae'Sean Tate",
-      "Josh Okogie",
       "Tristen Newton",
       "__SEPARATOR__"
     ],
     "SF": [
       "Kevin Durant",
       "Dorian Finney-Smith",
-      "Isaiah Crawford",
+      "Josh Okogie",
       "__SEPARATOR__"
     ],
     "PF": [
       "Jabari Smith",
       "Tari Eason",
+      "Isaiah Crawford",
       "__SEPARATOR__"
     ],
     "C": [
@@ -1046,8 +1046,8 @@
       "Isaiah Collier"
     ],
     "SG": [
-      "Brice Sensabaugh",
       "Elijah Harkless",
+      "Brice Sensabaugh",
       "Blake Hinson",
       "__SEPARATOR__",
       "Keyonte George"
@@ -1055,13 +1055,13 @@
     "SF": [
       "Ace Bailey",
       "Sviatoslav Mykhailiuk",
+      "__SPACER__",
       "__SEPARATOR__",
       "Lauri Markkanen"
     ],
     "PF": [
       "John Konchar",
       "Kevin Love",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Cody Williams",
