@@ -443,28 +443,27 @@
       "Darius Garland",
       "Kobe Sanders",
       "Sean Pedulla",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Bradley Beal"
     ],
     "SG": [
       "Kawhi Leonard",
       "Kris Dunn",
-      "__SPACER__",
       "TyTy Washington",
       "__SEPARATOR__",
-      "Bradley Beal"
+      "Bennedict Mathurin"
     ],
     "SF": [
       "Derrick Jones",
       "Jordan Miller",
       "Cam Christie",
-      "__SEPARATOR__",
-      "Bennedict Mathurin"
+      "__SEPARATOR__"
     ],
     "PF": [
-      "John Collins",
       "Nicolas Batum",
       "Bogdan Bogdanovic",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "John Collins"
     ],
     "C": [
       "Brook Lopez",
