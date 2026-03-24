@@ -447,7 +447,6 @@
       "Bradley Beal"
     ],
     "SG": [
-      "Kawhi Leonard",
       "Kris Dunn",
       "Cam Christie",
       "TyTy Washington",
@@ -455,12 +454,13 @@
       "Bennedict Mathurin"
     ],
     "SF": [
-      "Derrick Jones",
+      "Kawhi Leonard",
       "Jordan Miller",
       "Bogdan Bogdanovic",
       "__SEPARATOR__"
     ],
     "PF": [
+      "Derrick Jones",
       "Nicolas Batum",
       "__SPACER__",
       "__SEPARATOR__",
