@@ -519,14 +519,15 @@
     "SG": [
       "Cedric Coward",
       "Cam Spencer",
-      "DeJon Jarreau",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Scotty Pippen Jr",
       "Kentavious Caldwell-Pope"
     ],
     "SF": [
-      "Tyler Burton",
+      "Taylor Hendricks",
+      "DeJon Jarreau",
       "Rayan Rupert",
       "__SEPARATOR__",
       "Jahmai Mashack",
@@ -534,8 +535,7 @@
     ],
     "PF": [
       "GG Jackson",
-      "Taylor Hendricks",
-      "__SPACER__",
+      "Tyler Burton",
       "__SEPARATOR__",
       "Santiago Aldama"
     ],
