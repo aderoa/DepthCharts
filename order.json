@@ -1072,7 +1072,6 @@
     "PG": [
       "Carlton Carrington",
       "Sharife Cooper",
-      "__SPACER__",
       "__SEPARATOR__",
       "Trae Young",
       "D'Angelo Russell"
@@ -1080,7 +1079,6 @@
     "SG": [
       "Bilal Coulibaly",
       "Jaden Hardy",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tre Johnson"
     ],
@@ -1093,17 +1091,16 @@
     ],
     "PF": [
       "Will Riley",
-      "Anthony Gill",
       "__SPACER__",
       "__SEPARATOR__",
       "Anthony Davis",
       "Cam Whitmore"
     ],
     "C": [
-      "Tristan Vukcevic",
       "Julian Reese",
-      "__SPACER__",
+      "Anthony Gill",
       "__SEPARATOR__",
+      "Tristan Vukcevic",
       "Alex Sarr"
     ]
   }
