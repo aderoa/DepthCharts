@@ -550,24 +550,24 @@
       "Kasparas Jakucionis",
       "Dru Smith",
       "Jahmir Young",
-      "__SPACER__",
       "__SEPARATOR__",
       "Terry Rozier"
     ],
     "SG": [
       "Tyler Herro",
-      "Norman Powell",
       "Myron Gardner",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
-      "Andrew Wiggins",
       "Jaime Jaquez",
-      "__SPACER__",
       "Trevor Keels",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Norman Powell"
     ],
     "PF": [
+      "Andrew Wiggins",
       "Pelle Larsson",
       "Simone Fontecchio",
       "Keshad Johnson",
