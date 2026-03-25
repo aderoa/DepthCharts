@@ -821,10 +821,9 @@
     ],
     "SG": [
       "Paul George",
-      "MarJon Beauchamp",
       "Dalen Terry",
-      "__SEPARATOR__",
-      "Quentin Grimes"
+      "Quentin Grimes",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Justin Edwards",
@@ -836,6 +835,7 @@
     "PF": [
       "Dominick Barlow",
       "Jabari Walker",
+      "MarJon Beauchamp",
       "__SPACER__",
       "__SEPARATOR__",
       "Johni Broome"
