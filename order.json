@@ -186,13 +186,13 @@
     "PG": [
       "James Harden",
       "Dennis Schroeder",
+      "__SPACER__",
       "__SEPARATOR__",
       "Craig Porter"
     ],
     "SG": [
       "Donovan Mitchell",
       "Tyrese Proctor",
-      "__SPACER__",
       "Tristan Enaruna",
       "__SEPARATOR__",
       "Max Strus"
@@ -205,8 +205,8 @@
       "Jaylon Tyson"
     ],
     "PF": [
-      "Dean Wade",
       "Nae'Qwan Tomlin",
+      "Dean Wade",
       "Riley Minix",
       "__SEPARATOR__",
       "Larry Nance Jr"
