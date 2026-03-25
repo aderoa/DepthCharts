@@ -444,20 +444,19 @@
       "Kris Dunn",
       "Kobe Sanders",
       "Sean Pedulla",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Bradley Beal"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Kawhi Leonard",
       "Jordan Miller",
       "TyTy Washington",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Bradley Beal"
     ],
     "SF": [
       "Derrick Jones",
       "Bennedict Mathurin",
-      "__SPACER__",
       "Cam Christie",
       "__SPACER__",
       "__SEPARATOR__"
@@ -466,6 +465,7 @@
       "John Collins",
       "Nicolas Batum",
       "Bogdan Bogdanovic",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
