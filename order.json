@@ -165,14 +165,15 @@
       "Matas Buzelis",
       "Isaac Okoro",
       "__SPACER__",
-      "__SEPARATOR__"
-    ],
-    "PF": [
-      "Jalen Smith",
-      "Patrick Williams",
-      "Leonard Miller",
       "__SEPARATOR__",
       "Noa Essengue"
+    ],
+    "PF": [
+      "Patrick Williams",
+      "Leonard Miller",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jalen Smith"
     ],
     "C": [
       "Nick Richards",
