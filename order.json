@@ -620,14 +620,15 @@
   },
   "MIN": {
     "PG": [
-      "Ayo Dosunmu",
+      "Donte DiVincenzo",
       "Mike Conley",
       "Zyon Pullin",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Ayo Dosunmu"
     ],
     "SG": [
-      "Donte DiVincenzo",
       "Bones Hyland",
       "Joe Ingles",
       "__SPACER__",
@@ -653,7 +654,6 @@
       "Naz Reid",
       "Joan Beringer",
       "Rocco Zikarsky",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
