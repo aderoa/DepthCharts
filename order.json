@@ -451,29 +451,26 @@
       "Kawhi Leonard",
       "Bogdan Bogdanovic",
       "__SPACER__",
-      "TyTy Washington",
       "__SEPARATOR__",
       "Bradley Beal"
     ],
     "SF": [
       "Derrick Jones",
       "Bennedict Mathurin",
-      "Cam Christie",
-      "__SPACER__",
-      "Jordan Miller",
-      "__SEPARATOR__"
+      "TyTy Washington",
+      "__SEPARATOR__",
+      "Jordan Miller"
     ],
     "PF": [
       "John Collins",
       "Nicolas Batum",
-      "__SPACER__",
+      "Cam Christie",
       "__SEPARATOR__"
     ],
     "C": [
       "Brook Lopez",
       "Isaiah Jackson",
       "Norchad Omier",
-      "__SPACER__",
       "__SEPARATOR__",
       "Yanic Konan Niederhauser"
     ]
