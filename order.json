@@ -295,8 +295,8 @@
   "DET": {
     "PG": [
       "Daniss Jenkins",
-      "Caris LeVert",
       "Chaz Lanier",
+      "__SPACER__",
       "__SEPARATOR__",
       "Cade Cunningham"
     ],
@@ -311,12 +311,12 @@
       "Duncan Robinson",
       "Javonte Green",
       "Tolu Smith",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Caris LeVert"
     ],
     "PF": [
       "Tobias Harris",
       "Ron Holland",
-      "__SPACER__",
       "Isaac Jones",
       "__SEPARATOR__"
     ],
