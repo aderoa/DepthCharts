@@ -1001,6 +1001,7 @@
       "Jamal Shead",
       "Markelle Fultz",
       "Garrett Temple",
+      "__SPACER__",
       "__SEPARATOR__",
       "Immanuel Quickley"
     ],
@@ -1008,28 +1009,30 @@
       "RJ Barrett",
       "Gradey Dick",
       "AJ Lawson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Chucky Hepburn"
     ],
     "SF": [
+      "Brandon Ingram",
       "Ja'Kobe Walter",
-      "Jamison Battle",
       "Alijah Martin",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Scottie Barnes",
+      "Jamison Battle",
       "Jonathan Mogbo",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Brandon Ingram"
+      "__SEPARATOR__"
     ],
     "C": [
+      "Jakob Poeltl",
       "Sandro Mamukelashvili",
       "Collin Murray-Boyles",
       "Trayce Jackson-Davis",
-      "__SEPARATOR__",
-      "Jakob Poeltl"
+      "__SEPARATOR__"
     ]
   },
   "UTA": {
