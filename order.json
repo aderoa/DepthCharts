@@ -605,14 +605,14 @@
     ],
     "SF": [
       "Taurean Prince",
-      "Pete Nance",
+      "__SPACER__",
       "Alex Antetokounmpo",
       "__SEPARATOR__",
       "Kyle Kuzma"
     ],
     "PF": [
       "Ousmane Dieng",
-      "Thanasis Antetokounmpo",
+      "Pete Nance",
       "__SPACER__",
       "__SEPARATOR__",
       "Giannis Antetokounmpo",
@@ -620,6 +620,8 @@
     ],
     "C": [
       "Jericho Sims",
+      "Thanasis Antetokounmpo",
+      "__SPACER__",
       "__SEPARATOR__",
       "Myles Turner"
     ]
