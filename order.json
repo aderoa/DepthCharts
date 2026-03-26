@@ -338,7 +338,6 @@
     ],
     "SG": [
       "Brandin Podziemski",
-      "__SPACER__",
       "Pat Spencer",
       "Jeenathan Williams",
       "__SEPARATOR__",
@@ -355,13 +354,14 @@
     "PF": [
       "Draymond Green",
       "Gary Payton II",
+      "__SPACER__",
       "__SEPARATOR__",
       "Al Horford"
     ],
     "C": [
       "Kristaps Porzingis",
-      "Malevy Leons",
       "Omer Yurtseven",
+      "Malevy Leons",
       "__SEPARATOR__",
       "Quinten Post"
     ]
