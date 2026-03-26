@@ -482,7 +482,6 @@
       "Austin Reaves",
       "Luke Kennard",
       "Nick Smith",
-      "__SPACER__",
       "__SEPARATOR__",
       "Marcus Smart"
     ],
@@ -496,15 +495,16 @@
     "PF": [
       "LeBron James",
       "Jarred Vanderbilt",
+      "Maxi Kleber",
       "__SEPARATOR__",
       "Rui Hachimura"
     ],
     "C": [
+      "Deandre Ayton",
       "Jaxson Hayes",
-      "Maxi Kleber",
+      "__SPACER__",
       "Drew Timme",
-      "__SEPARATOR__",
-      "Deandre Ayton"
+      "__SEPARATOR__"
     ]
   },
   "MEM": {
