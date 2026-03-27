@@ -627,7 +627,6 @@
       "Mike Conley",
       "Bones Hyland",
       "Zyon Pullin",
-      "__SPACER__",
       "__SEPARATOR__",
       "Ayo Dosunmu"
     ],
@@ -635,22 +634,20 @@
       "Donte DiVincenzo",
       "Terrence Shannon",
       "Joe Ingles",
-      "__SPACER__",
       "__SEPARATOR__",
       "Anthony Edwards"
     ],
     "SF": [
+      "Jaylen Clark",
       "Kyle Anderson",
       "Julian Phillips",
       "__SPACER__",
-      "Jaden McDaniels",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jaden McDaniels"
     ],
     "PF": [
       "Julius Randle",
-      "Jaylen Clark",
       "Rocco Zikarsky",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
