@@ -752,18 +752,19 @@
       "__SEPARATOR__"
     ],
     "SF": [
-      "Jalen Williams",
       "Alex Caruso",
       "Aaron Wiggins",
       "Payton Sandfort",
       "__SEPARATOR__"
     ],
     "PF": [
-      "Chet Holmgren",
+      "Jalen Williams",
       "Jared McCain",
       "Kenrich Williams",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Chet Holmgren"
     ],
     "C": [
       "Isaiah Hartenstein",
