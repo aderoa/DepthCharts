@@ -1083,27 +1083,31 @@
     "SG": [
       "Bilal Coulibaly",
       "Jaden Hardy",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Leaky Black",
       "Jamir Watkins",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kyshawn George"
     ],
     "PF": [
       "Will Riley",
       "Justin Champagnie",
+      "Anthony Gill",
       "__SEPARATOR__",
       "Anthony Davis",
       "Cam Whitmore"
     ],
     "C": [
-      "Julian Reese",
-      "Anthony Gill",
-      "__SEPARATOR__",
+      "Alex Sarr",
       "Tristan Vukcevic",
-      "Alex Sarr"
+      "Julian Reese",
+      "__SPACER__",
+      "Alex Sarr",
+      "__SEPARATOR__"
     ]
   }
 }
