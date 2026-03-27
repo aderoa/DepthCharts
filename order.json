@@ -161,23 +161,25 @@
       "Anfernee Simons"
     ],
     "SF": [
-      "Matas Buzelis",
       "Isaac Okoro",
+      "__SPACER__",
       "__SEPARATOR__",
       "Noa Essengue"
     ],
     "PF": [
+      "Matas Buzelis",
       "Leonard Miller",
       "Patrick Williams",
-      "Jalen Smith",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jalen Smith"
     ],
     "C": [
-      "Nick Richards",
       "Guerschon Yabusele",
       "Lachlan Olbrich",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Nick Richards",
       "Zach Collins"
     ]
   },
