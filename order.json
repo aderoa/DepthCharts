@@ -71,13 +71,13 @@
   },
   "BKN": {
     "PG": [
+      "Nolan Traore",
       "Ben Saraf",
       "Tyson Etienne",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Nolan Traore"
+      "__SEPARATOR__"
     ],
     "SG": [
+      "Drake Powell",
       "Terance Mann",
       "Malachi Smith",
       "__SPACER__",
@@ -85,23 +85,23 @@
       "Egor Demin"
     ],
     "SF": [
-      "Drake Powell",
+      "Ziaire Williams",
       "Jalen Wilson",
       "Ochai Agbaji",
       "__SEPARATOR__",
       "Michael Porter"
     ],
     "PF": [
-      "Ziaire Williams",
+      "Noah Clowney",
       "Chaney Johnson",
-      "__SPACER__",
+      "EJ Liddell",
       "__SEPARATOR__",
-      "Danny Wolf",
-      "Noah Clowney"
+      "Danny Wolf"
     ],
     "C": [
       "Nicolas Claxton",
       "Josh Minott",
+      "__SPACER__",
       "__SEPARATOR__",
       "Day'Ron Sharpe"
     ]
