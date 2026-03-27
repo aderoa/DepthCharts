@@ -124,16 +124,16 @@
     "SF": [
       "Kon Knueppel",
       "Josh Green",
-      "Pat Connaughton",
-      "Liam McNeeley",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Liam McNeeley"
     ],
     "PF": [
       "Miles Bridges",
       "Grant Williams",
+      "Pat Connaughton",
       "PJ Hall",
-      "Tosan Evbuomwan",
       "__SEPARATOR__",
       "Tidjane Salaun"
     ],
@@ -141,7 +141,7 @@
       "Moussa Diabate",
       "Ryan Kalkbrenner",
       "Xavier Tillman",
-      "__SPACER__",
+      "Tosan Evbuomwan",
       "__SEPARATOR__"
     ]
   },
