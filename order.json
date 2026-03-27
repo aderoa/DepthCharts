@@ -663,17 +663,16 @@
   },
   "NOP": {
     "PG": [
-      "Dejounte Murray",
       "Jeremiah Fears",
+      "Jordan Poole",
       "Trey Alexander",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Dejounte Murray"
     ],
     "SG": [
       "Herb Jones",
-      "Jordan Poole",
-      "Jordan Hawkins",
       "__SPACER__",
+      "Jordan Hawkins",
       "__SEPARATOR__",
       "Bryce McGowens"
     ],
@@ -681,7 +680,6 @@
       "Saddiq Bey",
       "Karlo Matkovic",
       "Micah Peavy",
-      "__SPACER__",
       "__SEPARATOR__",
       "Trey Murphy"
     ],
@@ -696,7 +694,6 @@
       "DeAndre Jordan",
       "Yves Missi",
       "Hunter Dickinson",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
