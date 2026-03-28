@@ -332,9 +332,7 @@
   "GSW": {
     "PG": [
       "Will Richard",
-      "Pat Spencer",
       "LJ Cryer",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "De'Anthony Melton",
@@ -342,6 +340,7 @@
     ],
     "SG": [
       "Brandin Podziemski",
+      "Pat Spencer",
       "Jeenathan Williams",
       "__SEPARATOR__",
       "Seth Curry"
@@ -349,6 +348,7 @@
     "SF": [
       "Gui Santos",
       "Gary Payton II",
+      "__SPACER__",
       "__SEPARATOR__",
       "Moses Moody",
       "Jimmy Butler"
