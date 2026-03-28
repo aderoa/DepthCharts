@@ -995,18 +995,16 @@
   },
   "TOR": {
     "PG": [
+      "Ja'Kobe Walter",
       "Jamal Shead",
-      "Markelle Fultz",
       "Garrett Temple",
-      "__SPACER__",
       "__SEPARATOR__",
       "Immanuel Quickley"
     ],
     "SG": [
       "RJ Barrett",
-      "Ja'Kobe Walter",
+      "Markelle Fultz",
       "AJ Lawson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Chucky Hepburn"
     ],
@@ -1020,15 +1018,13 @@
       "Scottie Barnes",
       "Collin Murray-Boyles",
       "Alijah Martin",
-      "Trayce Jackson-Davis",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Trayce Jackson-Davis"
     ],
     "C": [
       "Jakob Poeltl",
       "Sandro Mamukelashvili",
       "Jonathan Mogbo",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
