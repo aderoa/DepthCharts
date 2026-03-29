@@ -72,21 +72,21 @@
       "Nolan Traore",
       "Ben Saraf",
       "Tyson Etienne",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Egor Demin"
     ],
     "SG": [
       "Drake Powell",
       "Terance Mann",
       "Malachi Smith",
       "__SEPARATOR__",
-      "Egor Demin"
+      "Michael Porter"
     ],
     "SF": [
       "Ziaire Williams",
       "Jalen Wilson",
       "Chaney Johnson",
-      "__SEPARATOR__",
-      "Michael Porter"
+      "__SEPARATOR__"
     ],
     "PF": [
       "Noah Clowney",
@@ -97,9 +97,10 @@
     ],
     "C": [
       "Nicolas Claxton",
-      "Josh Minott",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
+      "Josh Minott",
       "Day'Ron Sharpe"
     ]
   },
