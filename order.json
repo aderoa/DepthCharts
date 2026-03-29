@@ -999,31 +999,33 @@
   },
   "TOR": {
     "PG": [
-      "Ja'Kobe Walter",
       "Jamal Shead",
       "Markelle Fultz",
       "__SEPARATOR__",
       "Immanuel Quickley"
     ],
     "SG": [
-      "RJ Barrett",
+      "Ja'Kobe Walter",
       "AJ Lawson",
       "Garrett Temple",
       "__SEPARATOR__",
       "Chucky Hepburn"
     ],
     "SF": [
-      "Brandon Ingram",
+      "RJ Barrett",
       "Gradey Dick",
       "Alijah Martin",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Brandon Ingram",
       "Jamison Battle"
     ],
     "PF": [
       "Scottie Barnes",
       "Trayce Jackson-Davis",
-      "Collin Murray-Boyles",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Collin Murray-Boyles"
     ],
     "C": [
       "Jakob Poeltl",
