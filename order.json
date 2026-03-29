@@ -4,34 +4,36 @@
       "CJ McCollum",
       "Gabe Vincent",
       "RayJ Dennis",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
-      "Nickeil Alexander-Walker",
+      "Dyson Daniels",
+      "Corey Kispert",
       "Buddy Hield",
       "Keaton Wallace",
-      "__SEPARATOR__",
-      "Dyson Daniels"
+      "__SEPARATOR__"
     ],
     "SF": [
-      "Jalen Johnson",
-      "Corey Kispert",
+      "Nickeil Alexander-Walker",
       "Keshon Gilbert",
-      "__SEPARATOR__",
-      "Jonathan Kuminga"
+      "Jonathan Kuminga",
+      "__SEPARATOR__"
     ],
     "PF": [
+      "Jalen Johnson",
       "Mouhamed Gueye",
       "Zaccharie Risacher",
       "Caleb Houstan",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Jock Landale",
       "Christian Koloko",
       "Asa Newell",
-      "__SEPARATOR__",
-      "Onyeka Okongwu"
+      "Onyeka Okongwu",
+      "__SEPARATOR__"
     ]
   },
   "BOS": {
