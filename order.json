@@ -224,7 +224,6 @@
       "Cooper Flagg",
       "Brandon Williams",
       "Ryan Nembhard",
-      "__SPACER__",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
@@ -245,15 +244,14 @@
       "PJ Washington",
       "Marvin Bagley",
       "Tyler Smith",
-      "__SEPARATOR__",
-      "Dereck Lively"
+      "__SEPARATOR__"
     ],
     "C": [
       "Daniel Gafford",
       "Dwight Powell",
-      "__SPACER__",
       "Moussa Cisse",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Dereck Lively"
     ]
   },
   "DEN": {
