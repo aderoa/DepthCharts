@@ -419,22 +419,22 @@
     ],
     "SF": [
       "Ethan Thompson",
-      "Obi Toppin",
       "Kobe Brown",
+      "__SPACER__",
       "__SEPARATOR__",
       "Johnny Furphy"
     ],
     "PF": [
       "Jalen Slawson",
-      "Micah Potter",
+      "Obi Toppin",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jarace Walker"
     ],
     "C": [
       "Pascal Siakam",
+      "Micah Potter",
       "Jay Huff",
-      "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Ivica Zubac"
     ]
