@@ -592,11 +592,11 @@
   "MIL": {
     "PG": [
       "Andre Jackson",
-      "AJ Green",
       "__SEPARATOR__",
       "Ryan Rollins"
     ],
     "SG": [
+      "AJ Green",
       "Gary Trent Jr",
       "Cormac Ryan",
       "__SEPARATOR__",
@@ -605,7 +605,6 @@
     ],
     "SF": [
       "Ousmane Dieng",
-      "__SPACER__",
       "Alex Antetokounmpo",
       "__SEPARATOR__",
       "Kyle Kuzma"
