@@ -197,7 +197,6 @@
     "SG": [
       "Donovan Mitchell",
       "Max Strus",
-      "__SPACER__",
       "Tristan Enaruna",
       "__SEPARATOR__"
     ],
@@ -209,16 +208,16 @@
       "Jaylon Tyson"
     ],
     "PF": [
-      "Evan Mobley",
       "Nae'Qwan Tomlin",
       "Larry Nance Jr",
       "__SEPARATOR__",
       "Dean Wade"
     ],
     "C": [
-      "Jarrett Allen",
+      "Evan Mobley",
       "Thomas Bryant",
       "Olivier Sarr",
+      "Jarrett Allen",
       "__SEPARATOR__"
     ]
   },
