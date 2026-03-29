@@ -884,22 +884,22 @@
   },
   "POR": {
     "PG": [
-      "Jrue Holiday",
       "Scoot Henderson",
+      "Blake Wesley",
       "Caleb Love",
       "__SEPARATOR__",
       "Damian Lillard"
     ],
     "SG": [
-      "Toumani Camara",
-      "Blake Wesley",
-      "__SPACER__",
+      "Jrue Holiday",
+      "Matisse Thybulle",
       "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
     "SF": [
+      "Toumani Camara",
       "Sidy Cissoko",
-      "Matisse Thybulle",
+      "__SPACER__",
       "Chris Youngblood",
       "__SEPARATOR__",
       "Vit Krejci"
