@@ -1001,6 +1001,7 @@
     "PG": [
       "Jamal Shead",
       "Markelle Fultz",
+      "__SPACER__",
       "__SEPARATOR__",
       "Immanuel Quickley"
     ],
@@ -1015,9 +1016,7 @@
       "RJ Barrett",
       "Gradey Dick",
       "Alijah Martin",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Brandon Ingram",
       "Jamison Battle"
     ],
     "PF": [
@@ -1025,13 +1024,14 @@
       "Trayce Jackson-Davis",
       "__SPACER__",
       "__SEPARATOR__",
-      "Collin Murray-Boyles"
+      "Brandon Ingram"
     ],
     "C": [
       "Jakob Poeltl",
       "Sandro Mamukelashvili",
       "Jonathan Mogbo",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Collin Murray-Boyles"
     ]
   },
   "UTA": {
