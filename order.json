@@ -893,21 +893,21 @@
     "SG": [
       "Jrue Holiday",
       "Matisse Thybulle",
+      "Chris Youngblood",
       "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
     "SF": [
       "Toumani Camara",
       "Sidy Cissoko",
-      "__SPACER__",
-      "Chris Youngblood",
+      "Jayson Kent",
       "__SEPARATOR__",
       "Vit Krejci"
     ],
     "PF": [
       "Deni Avdija",
       "Kris Murray",
-      "Jayson Kent",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jerami Grant"
     ],
