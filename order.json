@@ -1070,16 +1070,17 @@
   },
   "WAS": {
     "PG": [
-      "Tre Johnson",
       "Sharife Cooper",
+      "Jaden Hardy",
       "__SPACER__",
       "__SEPARATOR__",
+      "Tre Johnson",
       "Trae Young"
     ],
     "SG": [
       "Carlton Carrington",
       "Jamir Watkins",
-      "Jaden Hardy",
+      "__SPACER__",
       "__SEPARATOR__",
       "D'Angelo Russell"
     ],
@@ -1098,10 +1099,11 @@
       "Cam Whitmore"
     ],
     "C": [
-      "Alex Sarr",
       "Anthony Gill",
       "Julian Reese",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Alex Sarr",
       "Anthony Davis"
     ]
   }
