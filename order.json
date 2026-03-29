@@ -413,24 +413,25 @@
     "SG": [
       "Quenton Jackson",
       "Kam Jones",
+      "__SPACER__",
       "__SEPARATOR__",
       "Aaron Nesmith"
     ],
     "SF": [
+      "Ethan Thompson",
       "Ben Sheppard",
       "Kobe Brown",
-      "Ethan Thompson",
       "__SEPARATOR__",
       "Johnny Furphy"
     ],
     "PF": [
-      "Pascal Siakam",
-      "Obi Toppin",
       "Jalen Slawson",
-      "Jarace Walker",
-      "__SEPARATOR__"
+      "Obi Toppin",
+      "__SEPARATOR__",
+      "Jarace Walker"
     ],
     "C": [
+      "Pascal Siakam",
       "Jay Huff",
       "Micah Potter",
       "__SPACER__",
