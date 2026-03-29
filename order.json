@@ -297,35 +297,35 @@
     "PG": [
       "Daniss Jenkins",
       "Marcus Sasser",
-      "Chaz Lanier",
+      "__SPACER__",
       "__SEPARATOR__",
       "Cade Cunningham"
     ],
     "SG": [
       "Ausar Thompson",
-      "Caris LeVert",
-      "Wendell Moore",
+      "Chaz Lanier",
+      "__SPACER__",
       "__SEPARATOR__",
       "Duncan Robinson"
     ],
     "SF": [
       "Kevin Huerter",
-      "Javonte Green",
-      "__SPACER__",
+      "Caris LeVert",
+      "Wendell Moore",
       "__SEPARATOR__",
       "Tobias Harris"
     ],
     "PF": [
       "Ron Holland",
+      "Javonte Green",
       "Tolu Smith",
-      "Isaac Jones",
       "__SEPARATOR__",
       "Isaiah Stewart"
     ],
     "C": [
       "Paul Reed",
       "Bobi Klintman",
-      "__SPACER__",
+      "Isaac Jones",
       "__SEPARATOR__",
       "Jalen Duren"
     ]
