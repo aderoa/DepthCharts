@@ -37,20 +37,20 @@
   "BOS": {
     "PG": [
       "Payton Pritchard",
-      "Ron Harper Jr",
       "Max Shulga",
+      "Ron Harper Jr",
       "__SEPARATOR__",
       "Derrick White"
     ],
     "SG": [
       "Sam Hauser",
+      "__SPACER__",
       "John Tonje",
       "__SEPARATOR__"
     ],
     "SF": [
       "Baylor Scheierman",
       "Hugo Gonzalez",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jaylen Brown"
     ],
