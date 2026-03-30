@@ -1084,18 +1084,18 @@
       "Carlton Carrington",
       "Sharife Cooper",
       "Jaden Hardy",
-      "__SEPARATOR__",
       "Tre Johnson",
+      "__SEPARATOR__",
       "Trae Young"
     ],
     "SG": [
-      "Bilal Coulibaly",
       "Jamir Watkins",
       "__SPACER__",
       "__SEPARATOR__",
       "D'Angelo Russell"
     ],
     "SF": [
+      "Bilal Coulibaly",
       "Leaky Black",
       "Justin Champagnie",
       "__SPACER__",
@@ -1112,9 +1112,8 @@
     "C": [
       "Tristan Vukcevic",
       "Anthony Gill",
-      "__SPACER__",
-      "__SEPARATOR__",
       "Alex Sarr",
+      "__SEPARATOR__",
       "Anthony Davis"
     ]
   }
