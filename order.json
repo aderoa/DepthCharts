@@ -630,6 +630,7 @@
       "Ayo Dosunmu",
       "Mike Conley",
       "Zyon Pullin",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -637,14 +638,13 @@
       "Bones Hyland",
       "Joe Ingles",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Anthony Edwards"
+      "__SEPARATOR__"
     ],
     "SF": [
+      "Anthony Edwards",
       "Terrence Shannon",
       "Jaylen Clark",
       "Julian Phillips",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Jaden McDaniels"
