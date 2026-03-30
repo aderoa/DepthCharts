@@ -41,19 +41,19 @@
       "Derrick White",
       "Payton Pritchard",
       "Max Shulga",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Ron Harper Jr"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Baylor Scheierman",
       "Hugo Gonzalez",
       "John Tonje",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Ron Harper Jr"
     ],
     "SF": [
       "Jaylen Brown",
       "Jordan Walsh",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jayson Tatum"
     ],
@@ -66,8 +66,8 @@
     ],
     "C": [
       "Luka Garza",
-      "__SPACER__",
       "Charles Bassey",
+      "__SPACER__",
       "__SEPARATOR__",
       "Neemias Queta"
     ]
