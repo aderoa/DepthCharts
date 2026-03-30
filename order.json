@@ -38,13 +38,14 @@
   },
   "BOS": {
     "PG": [
+      "Derrick White",
       "Payton Pritchard",
-      "Ron Harper Jr",
       "Max Shulga",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Ron Harper Jr"
     ],
     "SG": [
-      "Derrick White",
       "Baylor Scheierman",
       "John Tonje",
       "__SEPARATOR__"
@@ -67,7 +68,6 @@
       "Luka Garza",
       "Amari Williams",
       "Charles Bassey",
-      "__SPACER__",
       "__SEPARATOR__",
       "Neemias Queta"
     ]
