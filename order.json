@@ -39,6 +39,7 @@
   "BOS": {
     "PG": [
       "Derrick White",
+      "Payton Pritchard",
       "Max Shulga",
       "__SPACER__",
       "__SEPARATOR__",
@@ -46,27 +47,26 @@
     ],
     "SG": [
       "Baylor Scheierman",
-      "Payton Pritchard",
+      "Hugo Gonzalez",
       "John Tonje",
       "__SEPARATOR__"
     ],
     "SF": [
       "Jaylen Brown",
-      "Hugo Gonzalez",
-      "__SPACER__",
+      "Jordan Walsh",
       "__SEPARATOR__",
       "Jayson Tatum"
     ],
     "PF": [
       "Sam Hauser",
-      "Jordan Walsh",
+      "Amari Williams",
       "__SPACER__",
       "__SEPARATOR__",
       "Nikola Vucevic"
     ],
     "C": [
       "Luka Garza",
-      "Amari Williams",
+      "__SPACER__",
       "Charles Bassey",
       "__SEPARATOR__",
       "Neemias Queta"
