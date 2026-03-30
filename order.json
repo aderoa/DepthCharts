@@ -41,8 +41,8 @@
       "Payton Pritchard",
       "Ron Harper Jr",
       "Max Shulga",
-      "__SEPARATOR__",
-      "Derrick White"
+      "Derrick White",
+      "__SEPARATOR__"
     ],
     "SG": [
       "Sam Hauser",
@@ -51,11 +51,11 @@
       "__SEPARATOR__"
     ],
     "SF": [
-      "Jayson Tatum",
+      "Jaylen Brown",
       "Hugo Gonzalez",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jaylen Brown"
+      "Jayson Tatum"
     ],
     "PF": [
       "Jordan Walsh",
@@ -64,10 +64,11 @@
       "__SEPARATOR__"
     ],
     "C": [
-      "Neemias Queta",
       "Luka Garza",
       "Charles Bassey",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Neemias Queta",
       "Nikola Vucevic"
     ]
   },
