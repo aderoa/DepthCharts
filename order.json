@@ -343,22 +343,21 @@
     "SG": [
       "Brandin Podziemski",
       "Seth Curry",
-      "__SEPARATOR__",
-      "Moses Moody"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Gui Santos",
       "Jeenathan Williams",
       "Will Richard",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Jimmy Butler"
+      "__SEPARATOR__"
     ],
     "PF": [
       "Draymond Green",
       "Gary Payton II",
       "Malevy Leons",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jimmy Butler"
     ],
     "C": [
       "Kristaps Porzingis",
