@@ -233,20 +233,23 @@
       "Max Christie",
       "Klay Thompson",
       "AJ Johnson",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Naji Marshall"
     ],
     "SF": [
-      "Naji Marshall",
       "Khris Middleton",
       "John Poulakidas",
+      "__SPACER__",
       "__SEPARATOR__",
       "Caleb Martin"
     ],
     "PF": [
-      "PJ Washington",
-      "Marvin Bagley",
       "Tyler Smith",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "PJ Washington",
+      "Marvin Bagley"
     ],
     "C": [
       "Daniel Gafford",
