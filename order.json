@@ -518,8 +518,8 @@
   "MEM": {
     "PG": [
       "Cam Spencer",
-      "DeJon Jarreau",
       "Javon Small",
+      "DeJon Jarreau",
       "__SEPARATOR__",
       "Ty Jerome",
       "Ja Morant"
@@ -527,14 +527,14 @@
     "SG": [
       "Cedric Coward",
       "Walter Clayton",
-      "Adama Bal",
+      "__SPACER__",
       "__SEPARATOR__",
       "Scotty Pippen Jr",
       "Kentavious Caldwell-Pope"
     ],
     "SF": [
       "Jahmai Mashack",
-      "__SPACER__",
+      "Adama Bal",
       "__SEPARATOR__",
       "Jaylen Wells",
       "Santiago Aldama"
