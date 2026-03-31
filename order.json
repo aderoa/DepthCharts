@@ -1013,7 +1013,6 @@
     "PG": [
       "Scottie Barnes",
       "Jamal Shead",
-      "AJ Lawson",
       "Markelle Fultz",
       "__SEPARATOR__",
       "Immanuel Quickley"
@@ -1021,6 +1020,7 @@
     "SG": [
       "Ja'Kobe Walter",
       "Gradey Dick",
+      "__SPACER__",
       "Garrett Temple",
       "__SEPARATOR__",
       "Chucky Hepburn"
@@ -1028,7 +1028,7 @@
     "SF": [
       "RJ Barrett",
       "Alijah Martin",
-      "__SPACER__",
+      "AJ Lawson",
       "__SEPARATOR__",
       "Jamison Battle"
     ],
