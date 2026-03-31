@@ -301,37 +301,39 @@
     "PG": [
       "Daniss Jenkins",
       "Marcus Sasser",
+      "Chaz Lanier",
       "__SPACER__",
       "__SEPARATOR__",
       "Cade Cunningham"
     ],
     "SG": [
       "Ausar Thompson",
-      "Chaz Lanier",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Duncan Robinson"
-    ],
-    "SF": [
-      "Kevin Huerter",
       "Caris LeVert",
       "Wendell Moore",
-      "__SEPARATOR__",
-      "Tobias Harris"
+      "__SPACER__",
+      "__SEPARATOR__"
+    ],
+    "SF": [
+      "Duncan Robinson",
+      "Kevin Huerter",
+      "Javonte Green",
+      "__SEPARATOR__"
     ],
     "PF": [
-      "Javonte Green",
+      "Tobias Harris",
       "Ron Holland",
       "Tolu Smith",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Stewart"
     ],
     "C": [
+      "Jalen Duren",
       "Paul Reed",
       "Bobi Klintman",
       "Isaac Jones",
-      "__SEPARATOR__",
-      "Jalen Duren"
+      "__SEPARATOR__"
     ]
   },
   "GSW": {
@@ -860,34 +862,33 @@
       "Collin Gillespie",
       "Jordan Goodwin",
       "Koby Brea",
+      "__SEPARATOR__"
+    ],
+    "SG": [
+      "Devin Booker",
+      "Jalen Green",
+      "Jamaree Bouyea",
       "__SEPARATOR__",
       "Amir Coffey"
     ],
-    "SG": [
-      "Jalen Green",
-      "Jamaree Bouyea",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Dillon Brooks"
-    ],
     "SF": [
-      "Devin Booker",
+      "Dillon Brooks",
+      "Grayson Allen",
       "Ryan Dunn",
-      "Isaiah Livers",
-      "__SEPARATOR__",
-      "Grayson Allen"
+      "Haywood Highsmith",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Royce O'Neale",
       "Rasheer Fleming",
-      "CJ Huntley",
+      "Isaiah Livers",
       "__SEPARATOR__",
-      "Haywood Highsmith"
+      "__SPACER__"
     ],
     "C": [
       "Oso Ighodaro",
       "Khaman Maluach",
-      "__SPACER__",
+      "CJ Huntley",
       "__SEPARATOR__",
       "Mark Williams"
     ]
@@ -937,19 +938,17 @@
       "Russell Westbrook"
     ],
     "SG": [
-      "Nique Clifford",
-      "DaQuan Jeffries",
-      "__SPACER__",
-      "__SPACER__",
-      "__SEPARATOR__",
+      "DeMar DeRozan",
       "Malik Monk",
+      "DaQuan Jeffries",
+      "__SEPARATOR__",
       "Zach LaVine"
     ],
     "SF": [
+      "Nique Clifford",
       "Daeqwon Plowden",
       "Doug McDermott",
       "__SEPARATOR__",
-      "DeMar DeRozan",
       "De'Andre Hunter"
     ],
     "PF": [
