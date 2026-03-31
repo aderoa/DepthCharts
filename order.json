@@ -189,19 +189,19 @@
     "PG": [
       "James Harden",
       "Dennis Schroeder",
-      "Craig Porter",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Donovan Mitchell",
-      "Max Strus",
+      "Craig Porter",
       "Tyrese Proctor",
       "Tristan Enaruna",
       "__SEPARATOR__"
     ],
     "SF": [
       "Nae'Qwan Tomlin",
-      "Keon Ellis",
+      "Max Strus",
       "__SPACER__",
       "Riley Minix",
       "__SEPARATOR__",
@@ -209,7 +209,7 @@
     ],
     "PF": [
       "Larry Nance Jr",
-      "__SPACER__",
+      "Keon Ellis",
       "__SEPARATOR__",
       "Jaylon Tyson"
     ],
