@@ -480,11 +480,10 @@
   },
   "LAL": {
     "PG": [
-      "Austin Reaves",
       "Luka Doncic",
+      "Austin Reaves",
       "Bronny James",
       "Kobe Bufkin",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -499,6 +498,7 @@
       "LeBron James",
       "Dalton Knecht",
       "Chris Manon",
+      "__SPACER__",
       "__SEPARATOR__",
       "Adou Thiero"
     ],
