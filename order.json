@@ -406,10 +406,11 @@
   },
   "IND": {
     "PG": [
-      "Andrew Nembhard",
-      "TJ McConnell",
       "Taelon Peter",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Andrew Nembhard",
       "Tyrese Haliburton"
     ],
     "SG": [
@@ -417,7 +418,8 @@
       "Ben Sheppard",
       "Kam Jones",
       "__SEPARATOR__",
-      "Aaron Nesmith"
+      "Aaron Nesmith",
+      "TJ McConnell"
     ],
     "SF": [
       "Ethan Thompson",
