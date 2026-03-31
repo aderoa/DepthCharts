@@ -519,14 +519,15 @@
     "PG": [
       "Cam Spencer",
       "DeJon Jarreau",
-      "__SEPARATOR__",
       "Javon Small",
+      "__SEPARATOR__",
       "Ty Jerome",
       "Ja Morant"
     ],
     "SG": [
       "Jahmai Mashack",
       "Walter Clayton",
+      "__SPACER__",
       "__SEPARATOR__",
       "Scotty Pippen Jr",
       "Kentavious Caldwell-Pope"
@@ -534,6 +535,7 @@
     "SF": [
       "Cedric Coward",
       "Rayan Rupert",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jaylen Wells",
       "Santiago Aldama"
@@ -541,13 +543,15 @@
     "PF": [
       "Taylor Hendricks",
       "Adama Bal",
-      "__SEPARATOR__",
       "Olivier-Maxence Prosper",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Taj Gibson"
     ],
     "C": [
       "GG Jackson",
       "Tyler Burton",
+      "__SPACER__",
       "__SEPARATOR__",
       "Brandon Clarke",
       "Zach Edey"
