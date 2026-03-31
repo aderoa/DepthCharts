@@ -53,12 +53,11 @@
     "SF": [
       "Jaylen Brown",
       "Sam Hauser",
-      "__SEPARATOR__",
-      "Jayson Tatum"
+      "__SEPARATOR__"
     ],
     "PF": [
+      "Jayson Tatum",
       "Jordan Walsh",
-      "__SPACER__",
       "Amari Williams",
       "__SPACER__",
       "__SEPARATOR__",
@@ -67,9 +66,8 @@
     "C": [
       "Luka Garza",
       "Charles Bassey",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Neemias Queta"
+      "Neemias Queta",
+      "__SEPARATOR__"
     ]
   },
   "BKN": {
