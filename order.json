@@ -989,7 +989,7 @@
     "SF": [
       "Devin Vassell",
       "Harrison Barnes",
-      "Kelly Olynyk",
+      "__SPACER__",
       "Harrison Ingram",
       "__SEPARATOR__",
       "David Jones"
@@ -997,15 +997,15 @@
     "PF": [
       "Julian Champagnie",
       "Carter Bryant",
-      "Mason Plumlee",
-      "__SPACER__",
+      "Kelly Olynyk",
       "__SEPARATOR__"
     ],
     "C": [
       "Victor Wembanyama",
+      "Mason Plumlee",
       "Luke Kornet",
-      "__SPACER__",
       "Bismack Biyombo",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
