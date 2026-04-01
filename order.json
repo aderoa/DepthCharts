@@ -337,6 +337,7 @@
   },
   "GSW": {
     "PG": [
+      "Will Richard",
       "LJ Cryer",
       "__SPACER__",
       "__SPACER__",
@@ -347,7 +348,6 @@
       "Brandin Podziemski",
       "Pat Spencer",
       "Seth Curry",
-      "Will Richard",
       "__SEPARATOR__",
       "De'Anthony Melton"
     ],
@@ -356,14 +356,15 @@
       "Jeenathan Williams",
       "__SPACER__",
       "__SEPARATOR__",
-      "Moses Moody"
+      "Moses Moody",
+      "Jimmy Butler"
     ],
     "PF": [
       "Draymond Green",
       "Gary Payton II",
       "Malevy Leons",
       "__SEPARATOR__",
-      "Jimmy Butler"
+      "Al Horford"
     ],
     "C": [
       "Omer Yurtseven",
@@ -371,8 +372,7 @@
       "__SPACER__",
       "__SEPARATOR__",
       "Kristaps Porzingis",
-      "Quinten Post",
-      "Al Horford"
+      "Quinten Post"
     ]
   },
   "HOU": {
