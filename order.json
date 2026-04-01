@@ -414,14 +414,14 @@
       "Quenton Jackson",
       "Kam Jones",
       "Taelon Peter",
-      "__SPACER__",
       "__SEPARATOR__",
       "Andrew Nembhard",
       "Tyrese Haliburton"
     ],
     "SG": [
-      "Ben Sheppard",
       "Ethan Thompson",
+      "Ben Sheppard",
+      "__SPACER__",
       "__SEPARATOR__",
       "Aaron Nesmith",
       "TJ McConnell"
@@ -442,8 +442,8 @@
     ],
     "C": [
       "Pascal Siakam",
-      "__SPACER__",
       "Jay Huff",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ivica Zubac"
     ]
