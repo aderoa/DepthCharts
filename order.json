@@ -46,20 +46,20 @@
     "SG": [
       "Baylor Scheierman",
       "Sam Hauser",
-      "John Tonje",
-      "__SEPARATOR__",
-      "Ron Harper Jr"
+      "Ron Harper Jr",
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Jaylen Brown",
       "Hugo Gonzalez",
+      "John Tonje",
       "__SEPARATOR__"
     ],
     "PF": [
       "Jayson Tatum",
       "Jordan Walsh",
       "Amari Williams",
-      "__SPACER__",
       "__SEPARATOR__",
       "Nikola Vucevic"
     ],
