@@ -720,22 +720,22 @@
       "Jalen Brunson",
       "Jose Alvarado",
       "Tyler Kolek",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "OG Anunoby",
-      "Miles McBride",
+      "Jordan Clarkson",
       "Kevin McCullar",
       "__SPACER__",
       "__SEPARATOR__",
-      "Landry Shamet"
+      "Miles McBride"
     ],
     "SF": [
       "Mikal Bridges",
-      "Jordan Clarkson",
+      "Landry Shamet",
       "Jeremy Sochan",
       "Dillon Jones",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
@@ -747,10 +747,11 @@
     ],
     "C": [
       "Karl-Anthony Towns",
-      "Mitchell Robinson",
       "Ariel Hukporti",
       "Trey Jemison",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Mitchell Robinson"
     ]
   },
   "OKC": {
