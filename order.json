@@ -47,7 +47,6 @@
       "Baylor Scheierman",
       "Sam Hauser",
       "Ron Harper Jr",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -60,14 +59,14 @@
       "Jayson Tatum",
       "Jordan Walsh",
       "Amari Williams",
-      "__SEPARATOR__",
-      "Nikola Vucevic"
+      "__SEPARATOR__"
     ],
     "C": [
       "Luka Garza",
       "Charles Bassey",
       "Neemias Queta",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Nikola Vucevic"
     ]
   },
   "BKN": {
