@@ -346,12 +346,12 @@
     "SG": [
       "Gary Payton II",
       "Pat Spencer",
-      "Jeenathan Williams",
       "__SEPARATOR__",
       "De'Anthony Melton"
     ],
     "SF": [
       "Brandin Podziemski",
+      "__SPACER__",
       "Seth Curry",
       "__SPACER__",
       "__SEPARATOR__",
@@ -360,7 +360,7 @@
     ],
     "PF": [
       "Gui Santos",
-      "__SPACER__",
+      "Jeenathan Williams",
       "__SEPARATOR__",
       "Al Horford"
     ],
