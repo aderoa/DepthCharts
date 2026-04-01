@@ -339,7 +339,6 @@
     "PG": [
       "Will Richard",
       "LJ Cryer",
-      "__SPACER__",
       "__SEPARATOR__",
       "Stephen Curry"
     ],
@@ -351,24 +350,22 @@
     ],
     "SF": [
       "Brandin Podziemski",
-      "__SPACER__",
       "Seth Curry",
-      "__SPACER__",
       "__SEPARATOR__",
       "Moses Moody",
       "Jimmy Butler"
     ],
     "PF": [
-      "Gui Santos",
+      "Draymond Green",
       "Jeenathan Williams",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Gui Santos",
       "Al Horford"
     ],
     "C": [
-      "Draymond Green",
       "Omer Yurtseven",
       "Malevy Leons",
-      "__SPACER__",
       "__SEPARATOR__",
       "Kristaps Porzingis",
       "Quinten Post"
