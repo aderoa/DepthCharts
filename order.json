@@ -611,23 +611,23 @@
     "SG": [
       "Gary Trent Jr",
       "AJ Green",
-      "__SPACER__",
+      "Cormac Ryan",
       "__SEPARATOR__",
       "Gary Harris"
     ],
     "SF": [
       "Alex Antetokounmpo",
-      "Cormac Ryan",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kyle Kuzma",
-      "Taurean Prince",
-      "Thanasis Antetokounmpo"
+      "Taurean Prince"
     ],
     "PF": [
       "Jericho Sims",
       "Pete Nance",
       "__SEPARATOR__",
-      "Giannis Antetokounmpo"
+      "Giannis Antetokounmpo",
+      "Thanasis Antetokounmpo"
     ],
     "C": [
       "Ousmane Dieng",
