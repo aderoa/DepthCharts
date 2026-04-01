@@ -1014,7 +1014,6 @@
   },
   "TOR": {
     "PG": [
-      "Scottie Barnes",
       "Jamal Shead",
       "Markelle Fultz",
       "__SEPARATOR__",
@@ -1035,10 +1034,12 @@
       "Jamison Battle"
     ],
     "PF": [
+      "Scottie Barnes",
       "Collin Murray-Boyles",
       "Trayce Jackson-Davis",
-      "Brandon Ingram",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Brandon Ingram"
     ],
     "C": [
       "Jakob Poeltl",
