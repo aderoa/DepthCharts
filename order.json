@@ -151,35 +151,36 @@
       "Rob Dillingham",
       "Yuki Kawamura",
       "__SEPARATOR__",
-      "Anfernee Simons"
+      "Josh Giddey"
     ],
     "SG": [
-      "Josh Giddey",
       "Collin Sexton",
       "Mac McClung",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Noa Essengue"
+      "Anfernee Simons"
     ],
     "SF": [
       "Isaac Okoro",
       "Patrick Williams",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jalen Smith"
+      "Noa Essengue"
     ],
     "PF": [
       "Matas Buzelis",
       "Leonard Miller",
       "__SPACER__",
       "__SEPARATOR__",
-      "Zach Collins"
+      "Jalen Smith"
     ],
     "C": [
       "Guerschon Yabusele",
       "Lachlan Olbrich",
       "__SPACER__",
       "__SEPARATOR__",
-      "Nick Richards"
+      "Nick Richards",
+      "Zach Collins"
     ]
   },
   "CLE": {
