@@ -337,8 +337,8 @@
   },
   "GSW": {
     "PG": [
-      "De'Anthony Melton",
       "LJ Cryer",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Stephen Curry"
@@ -347,8 +347,9 @@
       "Brandin Podziemski",
       "Pat Spencer",
       "Seth Curry",
+      "Will Richard",
       "__SEPARATOR__",
-      "Will Richard"
+      "De'Anthony Melton"
     ],
     "SF": [
       "Gui Santos",
@@ -365,10 +366,12 @@
       "Jimmy Butler"
     ],
     "C": [
+      "Omer Yurtseven",
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Kristaps Porzingis",
       "Quinten Post",
-      "Omer Yurtseven",
-      "__SEPARATOR__",
       "Al Horford"
     ]
   },
