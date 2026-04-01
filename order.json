@@ -228,8 +228,6 @@
     ],
     "SG": [
       "Max Christie",
-      "John Poulakidas",
-      "__SPACER__",
       "AJ Johnson",
       "__SPACER__",
       "__SEPARATOR__",
@@ -237,22 +235,24 @@
     ],
     "SF": [
       "Khris Middleton",
-      "Tyler Smith",
+      "John Poulakidas",
+      "__SPACER__",
       "__SEPARATOR__",
       "Klay Thompson",
       "Caleb Martin"
     ],
     "PF": [
       "Cooper Flagg",
-      "Moussa Cisse",
+      "Tyler Smith",
+      "__SPACER__",
       "__SEPARATOR__",
       "PJ Washington",
       "Marvin Bagley"
     ],
     "C": [
       "Daniel Gafford",
+      "Moussa Cisse",
       "Dwight Powell",
-      "__SPACER__",
       "__SEPARATOR__",
       "Dereck Lively"
     ]
