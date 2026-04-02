@@ -993,8 +993,8 @@
     "SF": [
       "Devin Vassell",
       "Harrison Barnes",
-      "__SPACER__",
       "Harrison Ingram",
+      "__SPACER__",
       "__SEPARATOR__",
       "David Jones"
     ],
@@ -1002,15 +1002,16 @@
       "Julian Champagnie",
       "Carter Bryant",
       "Kelly Olynyk",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
-      "Victor Wembanyama",
-      "Mason Plumlee",
       "Luke Kornet",
+      "Mason Plumlee",
       "Bismack Biyombo",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Victor Wembanyama"
     ]
   },
   "TOR": {
