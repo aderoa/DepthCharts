@@ -224,6 +224,7 @@
   },
   "DAL": {
     "PG": [
+      "Cooper Flagg",
       "Ryan Nembhard",
       "Brandon Williams",
       "__SPACER__",
@@ -233,7 +234,6 @@
     "SG": [
       "Max Christie",
       "AJ Johnson",
-      "Naji Marshall",
       "__SEPARATOR__",
       "Caleb Martin"
     ],
@@ -245,7 +245,7 @@
       "PJ Washington"
     ],
     "PF": [
-      "Cooper Flagg",
+      "Naji Marshall",
       "Tyler Smith",
       "__SPACER__",
       "__SEPARATOR__",
