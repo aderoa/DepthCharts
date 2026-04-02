@@ -412,8 +412,8 @@
   "IND": {
     "PG": [
       "Quenton Jackson",
-      "__SPACER__",
       "Taelon Peter",
+      "__SPACER__",
       "__SEPARATOR__",
       "Andrew Nembhard",
       "Tyrese Haliburton"
@@ -436,6 +436,7 @@
     "PF": [
       "Pascal Siakam",
       "Obi Toppin",
+      "Micah Potter",
       "__SEPARATOR__",
       "Jarace Walker"
     ],
@@ -443,7 +444,6 @@
       "Jay Huff",
       "Jalen Slawson",
       "__SPACER__",
-      "Micah Potter",
       "__SEPARATOR__",
       "Ivica Zubac"
     ]
