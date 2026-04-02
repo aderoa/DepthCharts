@@ -358,7 +358,7 @@
     "SF": [
       "Brandin Podziemski",
       "Jeenathan Williams",
-      "Gary Payton II",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Moses Moody",
@@ -366,8 +366,7 @@
     ],
     "PF": [
       "Draymond Green",
-      "Malevy Leons",
-      "__SPACER__",
+      "Gary Payton II",
       "__SEPARATOR__",
       "Gui Santos",
       "Al Horford"
@@ -375,6 +374,7 @@
     "C": [
       "Kristaps Porzingis",
       "Omer Yurtseven",
+      "Malevy Leons",
       "__SEPARATOR__",
       "Quinten Post"
     ]
