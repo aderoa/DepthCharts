@@ -607,7 +607,6 @@
       "__SEPARATOR__"
     ],
     "SG": [
-      "Kyle Kuzma",
       "Gary Trent Jr",
       "Andre Jackson",
       "Gary Harris",
@@ -615,15 +614,15 @@
       "Kevin Porter"
     ],
     "SF": [
-      "Ousmane Dieng",
       "Pete Nance",
+      "Kyle Kuzma",
       "Cormac Ryan",
       "Taurean Prince",
       "__SEPARATOR__",
       "Thanasis Antetokounmpo"
     ],
     "PF": [
-      "Jericho Sims",
+      "Ousmane Dieng",
       "Alex Antetokounmpo",
       "__SPACER__",
       "__SEPARATOR__",
@@ -631,6 +630,7 @@
     ],
     "C": [
       "Myles Turner",
+      "Jericho Sims",
       "__SPACER__",
       "__SEPARATOR__",
       "Bobby Portis"
