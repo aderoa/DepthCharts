@@ -10,30 +10,31 @@
     "SG": [
       "Dyson Daniels",
       "Zaccharie Risacher",
-      "__SPACER__",
       "Buddy Hield",
       "Keshon Gilbert",
       "__SEPARATOR__"
     ],
     "SF": [
       "Nickeil Alexander-Walker",
-      "Jonathan Kuminga",
       "Corey Kispert",
-      "__SPACER__",
+      "Caleb Houstan",
       "__SEPARATOR__"
     ],
     "PF": [
       "Jalen Johnson",
-      "Mouhamed Gueye",
-      "Caleb Houstan",
+      "Jonathan Kuminga",
+      "Asa Newell",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Onyeka Okongwu",
-      "Jock Landale",
-      "Asa Newell",
+      "Mouhamed Gueye",
+      "__SPACER__",
       "Christian Koloko",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jock Landale"
     ]
   },
   "BOS": {
