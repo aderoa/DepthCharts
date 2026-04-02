@@ -716,38 +716,39 @@
   },
   "NYK": {
     "PG": [
+      "Jalen Brunson",
       "Jose Alvarado",
       "Tyler Kolek",
       "Kevin McCullar",
-      "__SEPARATOR__",
-      "Jalen Brunson"
+      "__SEPARATOR__"
     ],
     "SG": [
       "OG Anunoby",
       "Jordan Clarkson",
       "Dillon Jones",
-      "__SEPARATOR__",
-      "Miles McBride"
+      "Miles McBride",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Mikal Bridges",
       "Landry Shamet",
       "Pacome Dadiet",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Josh Hart",
       "Mohamed Diawara",
       "Jeremy Sochan",
-      "Pacome Dadiet",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Karl-Anthony Towns",
       "Ariel Hukporti",
       "Trey Jemison",
-      "__SEPARATOR__",
-      "Mitchell Robinson"
+      "Mitchell Robinson",
+      "__SEPARATOR__"
     ]
   },
   "OKC": {
