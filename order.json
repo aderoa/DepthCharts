@@ -480,14 +480,16 @@
   },
   "LAL": {
     "PG": [
-      "Luka Doncic",
+      "Austin Reaves",
       "Bronny James",
       "Kobe Bufkin",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Luka Doncic"
     ],
     "SG": [
-      "Austin Reaves",
+      "Jake LaRavia",
       "Luke Kennard",
       "Dalton Knecht",
       "Nick Smith",
@@ -495,14 +497,13 @@
       "Marcus Smart"
     ],
     "SF": [
-      "Jake LaRavia",
+      "LeBron James",
       "Jarred Vanderbilt",
       "Adou Thiero",
       "Chris Manon",
       "__SEPARATOR__"
     ],
     "PF": [
-      "LeBron James",
       "Rui Hachimura",
       "Maxi Kleber",
       "__SPACER__",
