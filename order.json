@@ -1015,7 +1015,7 @@
     "PG": [
       "Scottie Barnes",
       "Jamal Shead",
-      "Markelle Fultz",
+      "__SPACER__",
       "__SEPARATOR__",
       "Immanuel Quickley"
     ],
@@ -1028,11 +1028,10 @@
     ],
     "SF": [
       "RJ Barrett",
+      "Jamison Battle",
       "Gradey Dick",
       "Alijah Martin",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Jamison Battle"
+      "__SEPARATOR__"
     ],
     "PF": [
       "Brandon Ingram",
