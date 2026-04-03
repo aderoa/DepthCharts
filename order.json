@@ -685,15 +685,16 @@
     "SG": [
       "Herb Jones",
       "Jordan Poole",
-      "Micah Peavy",
-      "__SPACER__",
+      "Jordan Hawkins",
       "__SEPARATOR__",
       "Bryce McGowens"
     ],
     "SF": [
       "Trey Murphy",
-      "Jordan Hawkins",
+      "Micah Peavy",
+      "__SPACER__",
       "Kevon Looney",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
@@ -708,7 +709,6 @@
       "Yves Missi",
       "DeAndre Jordan",
       "Hunter Dickinson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Karlo Matkovic"
     ]
