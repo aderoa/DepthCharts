@@ -525,7 +525,7 @@
     "SG": [
       "Cedric Coward",
       "Dariq Whitehead",
-      "Lucas Williamson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Walter Clayton",
       "Cam Spencer",
@@ -534,7 +534,7 @@
     ],
     "SF": [
       "Jahmai Mashack",
-      "Rayan Rupert",
+      "Lucas Williamson",
       "__SPACER__",
       "__SEPARATOR__",
       "Jaylen Wells",
@@ -542,14 +542,14 @@
     ],
     "PF": [
       "Taylor Hendricks",
-      "Toby Okani",
+      "Rayan Rupert",
       "__SEPARATOR__",
       "Olivier-Maxence Prosper",
       "Taj Gibson"
     ],
     "C": [
       "GG Jackson",
-      "__SPACER__",
+      "Toby Okani",
       "__SEPARATOR__",
       "Brandon Clarke",
       "Zach Edey"
