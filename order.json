@@ -110,27 +110,27 @@
     "PG": [
       "LaMelo Ball",
       "Coby White",
-      "Tre Mann",
+      "__SPACER__",
       "Antonio Reeves",
       "__SEPARATOR__"
     ],
     "SG": [
       "Brandon Miller",
       "Sion James",
-      "Liam McNeeley",
+      "Tre Mann",
       "__SEPARATOR__"
     ],
     "SF": [
       "Kon Knueppel",
       "Josh Green",
-      "Pat Connaughton",
+      "Liam McNeeley",
       "__SEPARATOR__",
       "Grant Williams"
     ],
     "PF": [
       "Miles Bridges",
       "Tidjane Salaun",
-      "__SPACER__",
+      "Pat Connaughton",
       "__SEPARATOR__",
       "PJ Hall"
     ],
