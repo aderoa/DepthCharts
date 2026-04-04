@@ -82,12 +82,13 @@
       "Terance Mann",
       "Malachi Smith",
       "Tre Scott",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Ziaire Williams"
     ],
     "SF": [
       "Drake Powell",
-      "Ziaire Williams",
       "Jalen Wilson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Michael Porter"
     ],
@@ -99,10 +100,11 @@
       "Danny Wolf"
     ],
     "C": [
-      "Nicolas Claxton",
       "Josh Minott",
       "EJ Liddell",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Nicolas Claxton",
       "Day'Ron Sharpe"
     ]
   },
