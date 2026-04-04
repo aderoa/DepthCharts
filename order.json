@@ -602,22 +602,21 @@
     "SG": [
       "Kyle Kuzma",
       "Cormac Ryan",
-      "Alex Antetokounmpo",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kevin Porter"
     ],
     "SF": [
       "Pete Nance",
       "Gary Harris",
-      "Thanasis Antetokounmpo",
-      "__SPACER__",
+      "Alex Antetokounmpo",
       "__SEPARATOR__",
       "Gary Trent Jr"
     ],
     "PF": [
       "Ousmane Dieng",
       "Taurean Prince",
-      "__SPACER__",
+      "Thanasis Antetokounmpo",
       "__SEPARATOR__",
       "Giannis Antetokounmpo"
     ],
