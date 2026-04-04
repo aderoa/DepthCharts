@@ -830,21 +830,21 @@
     "SF": [
       "Paul George",
       "Kelly Oubre",
-      "Trendon Watford",
-      "Tyrese Martin",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Tyrese Martin"
     ],
     "PF": [
       "Dominick Barlow",
       "Justin Edwards",
-      "Jabari Walker",
-      "__SPACER__",
+      "Trendon Watford",
       "__SEPARATOR__",
       "Johni Broome"
     ],
     "C": [
       "Adem Bona",
       "Andre Drummond",
+      "Jabari Walker",
       "Joel Embiid",
       "__SPACER__",
       "__SEPARATOR__"
