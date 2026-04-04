@@ -221,6 +221,7 @@
     "PG": [
       "Ryan Nembhard",
       "Brandon Williams",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
@@ -233,16 +234,15 @@
     ],
     "SF": [
       "Cooper Flagg",
-      "Khris Middleton",
-      "__SPACER__",
       "John Poulakidas",
+      "__SPACER__",
       "__SEPARATOR__",
       "PJ Washington"
     ],
     "PF": [
       "Naji Marshall",
+      "Khris Middleton",
       "Tyler Smith",
-      "__SPACER__",
       "__SEPARATOR__",
       "Marvin Bagley"
     ],
