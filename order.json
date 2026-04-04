@@ -184,35 +184,35 @@
     "PG": [
       "James Harden",
       "Dennis Schroeder",
-      "Craig Porter",
+      "__SPACER__",
       "__SEPARATOR__",
       "Sam Merrill"
     ],
     "SG": [
       "Donovan Mitchell",
-      "Tyrese Proctor",
+      "Craig Porter",
       "Tristan Enaruna",
       "__SEPARATOR__",
       "Jaylon Tyson"
     ],
     "SF": [
       "Max Strus",
-      "Keon Ellis",
+      "Tyrese Proctor",
       "Riley Minix",
       "__SEPARATOR__",
       "Dean Wade"
     ],
     "PF": [
       "Nae'Qwan Tomlin",
-      "Larry Nance Jr",
+      "Keon Ellis",
       "__SPACER__",
       "__SEPARATOR__",
       "Evan Mobley"
     ],
     "C": [
       "Thomas Bryant",
+      "Larry Nance Jr",
       "Olivier Sarr",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jarrett Allen"
     ]
