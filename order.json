@@ -509,7 +509,6 @@
   "MEM": {
     "PG": [
       "Dariq Whitehead",
-      "__SPACER__",
       "Lucas Williamson",
       "__SEPARATOR__",
       "Javon Small",
@@ -519,6 +518,7 @@
     ],
     "SG": [
       "Adama Bal",
+      "__SPACER__",
       "__SEPARATOR__",
       "Walter Clayton",
       "Scotty Pippen Jr"
@@ -529,14 +529,14 @@
       "__SEPARATOR__",
       "Cedric Coward",
       "Jaylen Wells",
-      "Santiago Aldama",
       "Kentavious Caldwell-Pope"
     ],
     "PF": [
       "Taylor Hendricks",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jahmai Mashack"
+      "Jahmai Mashack",
+      "Santiago Aldama"
     ],
     "C": [
       "Olivier-Maxence Prosper",
