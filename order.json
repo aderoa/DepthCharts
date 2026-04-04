@@ -815,6 +815,7 @@
       "VJ Edgecombe",
       "Quentin Grimes",
       "Dalen Terry",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -822,7 +823,6 @@
       "Justin Edwards",
       "MarJon Beauchamp",
       "Tyrese Martin",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
@@ -834,8 +834,8 @@
       "Johni Broome"
     ],
     "C": [
-      "Adem Bona",
       "Andre Drummond",
+      "Adem Bona",
       "Jabari Walker",
       "__SPACER__",
       "__SEPARATOR__",
