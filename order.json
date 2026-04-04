@@ -219,6 +219,7 @@
   },
   "DAL": {
     "PG": [
+      "Cooper Flagg",
       "Ryan Nembhard",
       "Brandon Williams",
       "__SPACER__",
@@ -233,12 +234,11 @@
       "Caleb Martin"
     ],
     "SF": [
-      "Cooper Flagg",
       "John Poulakidas",
-      "PJ Washington",
       "__SEPARATOR__"
     ],
     "PF": [
+      "PJ Washington",
       "Naji Marshall",
       "Khris Middleton",
       "Tyler Smith",
