@@ -556,7 +556,7 @@
     "PG": [
       "Davion Mitchell",
       "Kasparas Jakucionis",
-      "Myron Gardner",
+      "__SPACER__",
       "Jahmir Young",
       "__SEPARATOR__",
       "Terry Rozier"
@@ -564,20 +564,20 @@
     "SG": [
       "Andrew Wiggins",
       "Dru Smith",
-      "Trevor Keels",
-      "__SPACER__",
+      "Myron Gardner",
       "__SEPARATOR__",
       "Tyler Herro"
     ],
     "SF": [
       "Simone Fontecchio",
       "Jaime Jaquez",
-      "Nikola Jovic",
+      "Trevor Keels",
       "__SEPARATOR__",
       "Norman Powell"
     ],
     "PF": [
       "Pelle Larsson",
+      "Nikola Jovic",
       "Keshad Johnson",
       "__SEPARATOR__"
     ],
