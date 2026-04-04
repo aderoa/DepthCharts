@@ -819,16 +819,17 @@
       "__SEPARATOR__"
     ],
     "SF": [
-      "Paul George",
       "Kelly Oubre",
+      "Tyrese Martin",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Tyrese Martin"
+      "__SEPARATOR__"
     ],
     "PF": [
+      "Paul George",
       "Dominick Barlow",
       "Justin Edwards",
       "Trendon Watford",
+      "__SPACER__",
       "__SEPARATOR__",
       "Johni Broome"
     ],
@@ -836,9 +837,9 @@
       "Adem Bona",
       "Andre Drummond",
       "Jabari Walker",
-      "Joel Embiid",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Joel Embiid"
     ]
   },
   "PHX": {
