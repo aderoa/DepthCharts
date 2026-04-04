@@ -730,17 +730,18 @@
     ],
     "PF": [
       "Josh Hart",
-      "Mohamed Diawara",
       "Jeremy Sochan",
+      "Mohamed Diawara",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
-      "Karl-Anthony Towns",
       "Mitchell Robinson",
       "Ariel Hukporti",
       "Trey Jemison",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Karl-Anthony Towns"
     ]
   },
   "OKC": {
