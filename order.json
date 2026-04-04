@@ -406,7 +406,6 @@
     "PG": [
       "Quenton Jackson",
       "Taelon Peter",
-      "__SPACER__",
       "__SEPARATOR__",
       "TJ McConnell",
       "Tyrese Haliburton"
@@ -414,7 +413,6 @@
     "SG": [
       "Ben Sheppard",
       "Kam Jones",
-      "__SPACER__",
       "__SEPARATOR__",
       "Andrew Nembhard",
       "Aaron Nesmith"
@@ -422,21 +420,19 @@
     "SF": [
       "Kobe Brown",
       "Ethan Thompson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Johnny Furphy"
     ],
     "PF": [
-      "Pascal Siakam",
       "Obi Toppin",
       "Jalen Slawson",
       "__SEPARATOR__",
-      "Jarace Walker"
+      "Jarace Walker",
+      "Pascal Siakam"
     ],
     "C": [
       "Jay Huff",
       "Micah Potter",
-      "__SPACER__",
       "__SEPARATOR__",
       "Ivica Zubac"
     ]
