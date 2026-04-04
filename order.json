@@ -1093,7 +1093,6 @@
     ],
     "SF": [
       "Bilal Coulibaly",
-      "__SPACER__",
       "Jamir Watkins",
       "Leaky Black",
       "__SEPARATOR__",
@@ -1104,15 +1103,16 @@
       "Justin Champagnie",
       "__SPACER__",
       "__SEPARATOR__",
+      "Anthony Davis",
       "Cam Whitmore"
     ],
     "C": [
-      "Tristan Vukcevic",
       "Anthony Gill",
       "Julian Reese",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Alex Sarr",
-      "Anthony Davis"
+      "Tristan Vukcevic",
+      "Alex Sarr"
     ]
   }
 }
