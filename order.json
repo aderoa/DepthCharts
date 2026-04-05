@@ -1066,7 +1066,6 @@
     "PG": [
       "Carlton Carrington",
       "Sharife Cooper",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tre Johnson",
       "Trae Young"
@@ -1080,23 +1079,24 @@
     ],
     "SF": [
       "Leaky Black",
+      "__SPACER__",
       "__SEPARATOR__",
       "Justin Champagnie",
       "Kyshawn George"
     ],
     "PF": [
       "Will Riley",
+      "__SPACER__",
       "__SEPARATOR__",
       "Anthony Davis",
       "Cam Whitmore"
     ],
     "C": [
+      "Anthony Gill",
       "Julian Reese",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tristan Vukcevic",
-      "Alex Sarr",
-      "Anthony Gill"
+      "Alex Sarr"
     ]
   }
 }
