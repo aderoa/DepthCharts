@@ -772,15 +772,16 @@
     "PG": [
       "Jalen Suggs",
       "Jevon Carter",
-      "Alex Morales",
+      "__SPACER__",
       "__SEPARATOR__",
       "Anthony Black"
     ],
     "SG": [
       "Desmond Bane",
-      "Jett Howard",
       "Jase Richardson",
-      "__SEPARATOR__"
+      "Alex Morales",
+      "__SEPARATOR__",
+      "Jett Howard"
     ],
     "SF": [
       "Franz Wagner",
