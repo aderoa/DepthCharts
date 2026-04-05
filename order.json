@@ -849,13 +849,13 @@
       "Grayson Allen",
       "Jamaree Bouyea",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Amir Coffey"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Devin Booker",
       "Ryan Dunn",
-      "Rasheer Fleming",
+      "Amir Coffey",
+      "__SPACER__",
       "Isaiah Livers",
       "__SEPARATOR__",
       "Haywood Highsmith"
@@ -863,8 +863,8 @@
     "PF": [
       "Dillon Brooks",
       "Royce O'Neale",
+      "Rasheer Fleming",
       "CJ Huntley",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
