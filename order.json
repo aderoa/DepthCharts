@@ -511,9 +511,8 @@
     ],
     "SG": [
       "Adama Bal",
-      "__SPACER__",
-      "__SEPARATOR__",
       "Walter Clayton",
+      "__SEPARATOR__",
       "Ty Jerome",
       "Scotty Pippen Jr"
     ],
@@ -527,7 +526,7 @@
     ],
     "PF": [
       "Taylor Hendricks",
-      "__SPACER__",
+      "Taj Gibson",
       "__SEPARATOR__",
       "Jahmai Mashack",
       "GG Jackson",
@@ -535,7 +534,7 @@
     ],
     "C": [
       "Olivier-Maxence Prosper",
-      "Taj Gibson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Brandon Clarke",
       "Zach Edey"
