@@ -289,7 +289,6 @@
       "Daniss Jenkins",
       "Caris LeVert",
       "Marcus Sasser",
-      "__SPACER__",
       "__SEPARATOR__",
       "Cade Cunningham"
     ],
@@ -297,28 +296,27 @@
       "Ausar Thompson",
       "Kevin Huerter",
       "Chaz Lanier",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
-      "Duncan Robinson",
       "Ron Holland",
       "Wendell Moore",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Duncan Robinson"
     ],
     "PF": [
-      "Tobias Harris",
       "Javonte Green",
       "Tolu Smith",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Isaac Jones",
+      "__SEPARATOR__",
+      "Tobias Harris"
     ],
     "C": [
       "Jalen Duren",
       "Paul Reed",
       "Bobi Klintman",
-      "Isaac Jones",
+      "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Stewart"
     ]
