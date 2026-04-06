@@ -240,14 +240,15 @@
       "PJ Washington",
       "Khris Middleton",
       "Moussa Cisse",
-      "__SEPARATOR__"
-    ],
-    "C": [
-      "Daniel Gafford",
-      "Marvin Bagley",
-      "Dwight Powell",
       "__SEPARATOR__",
       "Dereck Lively"
+    ],
+    "C": [
+      "Marvin Bagley",
+      "Dwight Powell",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Daniel Gafford"
     ]
   },
   "DEN": {
