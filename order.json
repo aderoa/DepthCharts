@@ -501,7 +501,6 @@
     "PG": [
       "Cam Spencer",
       "Walter Clayton",
-      "Adama Bal",
       "__SEPARATOR__",
       "Javon Small",
       "Ja Morant"
@@ -510,12 +509,13 @@
       "Toby Okani",
       "Dariq Whitehead",
       "__SEPARATOR__",
+      "__SPACER__",
       "Ty Jerome",
       "Scotty Pippen Jr"
     ],
     "SF": [
       "Cedric Coward",
-      "__SPACER__",
+      "Adama Bal",
       "__SPACER__",
       "__SEPARATOR__",
       "Jaylen Wells",
