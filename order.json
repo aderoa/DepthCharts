@@ -327,13 +327,14 @@
     "PG": [
       "Stephen Curry",
       "De'Anthony Melton",
-      "LJ Cryer",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Seth Curry"
+      "LJ Cryer"
     ],
     "SG": [
       "Brandin Podziemski",
       "Pat Spencer",
+      "Seth Curry",
       "Jeenathan Williams",
       "__SEPARATOR__",
       "Jimmy Butler"
@@ -341,7 +342,7 @@
     "SF": [
       "Gui Santos",
       "Will Richard",
-      "__SPACER__",
+      "Jeenathan Williams",
       "__SEPARATOR__",
       "Moses Moody"
     ],
