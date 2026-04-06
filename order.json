@@ -808,7 +808,6 @@
     "SG": [
       "VJ Edgecombe",
       "Jabari Walker",
-      "__SPACER__",
       "Dalen Terry",
       "__SPACER__",
       "__SEPARATOR__"
@@ -830,8 +829,9 @@
     ],
     "C": [
       "Joel Embiid",
-      "Andre Drummond",
       "Adem Bona",
+      "Andre Drummond",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
