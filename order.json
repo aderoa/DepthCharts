@@ -287,13 +287,13 @@
   "DET": {
     "PG": [
       "Daniss Jenkins",
-      "Caris LeVert",
       "Marcus Sasser",
       "__SEPARATOR__",
       "Cade Cunningham"
     ],
     "SG": [
       "Ausar Thompson",
+      "Caris LeVert",
       "Chaz Lanier",
       "__SPACER__",
       "__SEPARATOR__"
@@ -316,7 +316,6 @@
       "Jalen Duren",
       "Paul Reed",
       "Bobi Klintman",
-      "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Stewart"
     ]
