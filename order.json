@@ -180,13 +180,13 @@
   "CLE": {
     "PG": [
       "Dennis Schroeder",
-      "Sam Merrill",
-      "__SPACER__",
+      "Craig Porter",
       "__SEPARATOR__",
       "James Harden"
     ],
     "SG": [
-      "Craig Porter",
+      "Sam Merrill",
+      "__SPACER__",
       "Tyrese Proctor",
       "Tristan Enaruna",
       "__SEPARATOR__",
@@ -197,14 +197,13 @@
       "Keon Ellis",
       "Nae'Qwan Tomlin",
       "Riley Minix",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Max Strus",
-      "Jaylon Tyson"
+      "Max Strus"
     ],
     "PF": [
       "Evan Mobley",
       "Larry Nance Jr",
+      "__SPACER__",
       "__SEPARATOR__",
       "Dean Wade"
     ],
