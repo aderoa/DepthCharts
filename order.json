@@ -579,13 +579,13 @@
   },
   "MIL": {
     "PG": [
-      "Cormac Ryan",
+      "AJ Green",
       "Andre Jackson",
       "__SEPARATOR__",
       "Ryan Rollins"
     ],
     "SG": [
-      "AJ Green",
+      "Cormac Ryan",
       "Gary Harris",
       "__SEPARATOR__",
       "Kevin Porter"
@@ -600,7 +600,6 @@
     "PF": [
       "Ousmane Dieng",
       "Taurean Prince",
-      "__SPACER__",
       "__SEPARATOR__",
       "Giannis Antetokounmpo"
     ],
