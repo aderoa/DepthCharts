@@ -288,6 +288,7 @@
     "PG": [
       "Daniss Jenkins",
       "Marcus Sasser",
+      "__SPACER__",
       "__SEPARATOR__",
       "Cade Cunningham"
     ],
@@ -295,12 +296,11 @@
       "Ausar Thompson",
       "Caris LeVert",
       "Chaz Lanier",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
-      "Ron Holland",
       "Kevin Huerter",
+      "Ron Holland",
       "Wendell Moore",
       "__SEPARATOR__",
       "Duncan Robinson"
