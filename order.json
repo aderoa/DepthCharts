@@ -501,9 +501,9 @@
     "PG": [
       "Walter Clayton",
       "Adama Bal",
+      "Cam Spencer",
       "__SEPARATOR__",
       "Javon Small",
-      "Cam Spencer",
       "Ja Morant"
     ],
     "SG": [
@@ -514,19 +514,20 @@
       "Scotty Pippen Jr"
     ],
     "SF": [
-      "Rayan Rupert",
+      "Cedric Coward",
+      "__SPACER__",
       "Lucas Williamson",
       "__SEPARATOR__",
-      "Cedric Coward",
       "Jaylen Wells",
       "Kentavious Caldwell-Pope"
     ],
     "PF": [
+      "GG Jackson",
+      "Rayan Rupert",
+      "__SEPARATOR__",
       "Taylor Hendricks",
       "Taj Gibson",
-      "__SEPARATOR__",
       "Jahmai Mashack",
-      "GG Jackson",
       "Santiago Aldama"
     ],
     "C": [
