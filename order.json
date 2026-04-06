@@ -499,9 +499,9 @@
   },
   "MEM": {
     "PG": [
+      "Cam Spencer",
       "Walter Clayton",
       "Adama Bal",
-      "Cam Spencer",
       "__SEPARATOR__",
       "Javon Small",
       "Ja Morant"
@@ -516,14 +516,14 @@
     "SF": [
       "Cedric Coward",
       "__SPACER__",
-      "Lucas Williamson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jaylen Wells",
       "Kentavious Caldwell-Pope"
     ],
     "PF": [
       "GG Jackson",
-      "Rayan Rupert",
+      "Lucas Williamson",
       "__SEPARATOR__",
       "Taylor Hendricks",
       "Taj Gibson",
@@ -532,7 +532,7 @@
     ],
     "C": [
       "Olivier-Maxence Prosper",
-      "__SPACER__",
+      "Rayan Rupert",
       "__SEPARATOR__",
       "Brandon Clarke",
       "Zach Edey"
