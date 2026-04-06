@@ -300,9 +300,10 @@
     ],
     "SG": [
       "Ausar Thompson",
-      "Caris LeVert",
       "Chaz Lanier",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Caris LeVert"
     ],
     "SF": [
       "Kevin Huerter",
@@ -312,15 +313,15 @@
       "Duncan Robinson"
     ],
     "PF": [
+      "Paul Reed",
       "Javonte Green",
-      "Tolu Smith",
       "Isaac Jones",
       "__SEPARATOR__",
       "Tobias Harris"
     ],
     "C": [
       "Jalen Duren",
-      "Paul Reed",
+      "Tolu Smith",
       "Bobi Klintman",
       "__SEPARATOR__",
       "Isaiah Stewart"
