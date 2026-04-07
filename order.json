@@ -185,36 +185,36 @@
     "PG": [
       "Dennis Schroeder",
       "Craig Porter",
+      "__SPACER__",
       "__SEPARATOR__",
       "James Harden"
     ],
     "SG": [
       "Sam Merrill",
-      "__SPACER__",
       "Tyrese Proctor",
-      "Tristan Enaruna",
       "__SEPARATOR__",
       "Donovan Mitchell",
       "Jaylon Tyson"
     ],
     "SF": [
       "Keon Ellis",
-      "Nae'Qwan Tomlin",
-      "Riley Minix",
+      "Tristan Enaruna",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Max Strus"
     ],
     "PF": [
       "Evan Mobley",
-      "Larry Nance Jr",
-      "__SPACER__",
+      "Nae'Qwan Tomlin",
+      "Riley Minix",
       "__SEPARATOR__",
       "Dean Wade"
     ],
     "C": [
       "Jarrett Allen",
+      "Larry Nance Jr",
       "Olivier Sarr",
-      "__SPACER__",
       "__SEPARATOR__",
       "Thomas Bryant"
     ]
