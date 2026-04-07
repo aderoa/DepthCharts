@@ -297,15 +297,15 @@
   "DET": {
     "PG": [
       "Daniss Jenkins",
-      "__SPACER__",
       "Marcus Sasser",
+      "Chaz Lanier",
       "__SEPARATOR__",
       "Cade Cunningham"
     ],
     "SG": [
       "Ausar Thompson",
       "Caris LeVert",
-      "Chaz Lanier",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -318,7 +318,6 @@
     "PF": [
       "Tobias Harris",
       "Ron Holland",
-      "__SPACER__",
       "Isaac Jones",
       "__SEPARATOR__"
     ],
