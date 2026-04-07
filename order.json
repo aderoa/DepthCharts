@@ -183,26 +183,24 @@
   },
   "CLE": {
     "PG": [
+      "James Harden",
       "Dennis Schroeder",
       "Craig Porter",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "James Harden"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Sam Merrill",
       "Tyrese Proctor",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Donovan Mitchell",
-      "Jaylon Tyson"
+      "Donovan Mitchell"
     ],
     "SF": [
       "Keon Ellis",
       "Tristan Enaruna",
-      "__SPACER__",
-      "__SPACER__",
+      "Max Strus",
       "__SEPARATOR__",
-      "Max Strus"
+      "Jaylon Tyson"
     ],
     "PF": [
       "Evan Mobley",
