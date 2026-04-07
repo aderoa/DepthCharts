@@ -304,29 +304,28 @@
     ],
     "SG": [
       "Ausar Thompson",
+      "Caris LeVert",
       "Chaz Lanier",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Caris LeVert"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Kevin Huerter",
       "Ron Holland",
       "Wendell Moore",
-      "__SEPARATOR__",
-      "Duncan Robinson"
+      "Duncan Robinson",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Paul Reed",
       "Javonte Green",
       "Isaac Jones",
-      "__SEPARATOR__",
-      "Tobias Harris"
+      "Tobias Harris",
+      "__SEPARATOR__"
     ],
     "C": [
       "Jalen Duren",
       "Tolu Smith",
-      "Bobi Klintman",
+      "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Stewart"
     ]
