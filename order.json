@@ -222,8 +222,8 @@
   "DAL": {
     "PG": [
       "Cooper Flagg",
-      "Brandon Williams",
       "Ryan Nembhard",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
@@ -231,7 +231,8 @@
       "Max Christie",
       "John Poulakidas",
       "AJ Johnson",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Brandon Williams"
     ],
     "SF": [
       "Naji Marshall",
@@ -241,18 +242,19 @@
       "Caleb Martin"
     ],
     "PF": [
-      "PJ Washington",
       "Khris Middleton",
       "Moussa Cisse",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Dereck Lively"
+      "PJ Washington"
     ],
     "C": [
       "Marvin Bagley",
       "Dwight Powell",
       "__SPACER__",
       "__SEPARATOR__",
-      "Daniel Gafford"
+      "Daniel Gafford",
+      "Dereck Lively"
     ]
   },
   "DEN": {
