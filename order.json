@@ -977,24 +977,25 @@
     "SF": [
       "Devin Vassell",
       "Harrison Barnes",
-      "Kelly Olynyk",
       "Harrison Ingram",
+      "__SPACER__",
       "__SEPARATOR__",
       "David Jones"
     ],
     "PF": [
       "Julian Champagnie",
       "Carter Bryant",
-      "Bismack Biyombo",
+      "Kelly Olynyk",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Luke Kornet",
       "Mason Plumlee",
-      "Victor Wembanyama",
+      "Bismack Biyombo",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Victor Wembanyama"
     ]
   },
   "TOR": {
