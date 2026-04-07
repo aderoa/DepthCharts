@@ -260,18 +260,21 @@
       "Jamal Murray",
       "Tyus Jones",
       "KJ Simpson",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Christian Braun",
       "Bruce Brown",
       "Jalen Pickett",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Cameron Johnson",
       "Tim Hardaway Jr",
       "Curtis Jones",
+      "__SPACER__",
       "__SEPARATOR__",
       "Spencer Jones"
     ],
@@ -279,6 +282,7 @@
       "Aaron Gordon",
       "Julian Strawther",
       "David Roddy",
+      "__SPACER__",
       "__SEPARATOR__",
       "Peyton Watson"
     ],
@@ -286,8 +290,8 @@
       "Nikola Jokic",
       "Jonas Valanciunas",
       "DaRon Holmes",
-      "__SEPARATOR__",
-      "Zeke Nnaji"
+      "Zeke Nnaji",
+      "__SEPARATOR__"
     ]
   },
   "DET": {
