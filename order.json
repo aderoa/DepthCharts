@@ -297,8 +297,8 @@
   "DET": {
     "PG": [
       "Daniss Jenkins",
-      "Marcus Sasser",
       "__SPACER__",
+      "Marcus Sasser",
       "__SEPARATOR__",
       "Cade Cunningham"
     ],
@@ -309,23 +309,23 @@
       "__SEPARATOR__"
     ],
     "SF": [
+      "Duncan Robinson",
       "Kevin Huerter",
       "Ron Holland",
       "Wendell Moore",
-      "Duncan Robinson",
       "__SEPARATOR__"
     ],
     "PF": [
-      "Paul Reed",
+      "Tobias Harris",
+      "__SPACER__",
       "Javonte Green",
       "Isaac Jones",
-      "Tobias Harris",
       "__SEPARATOR__"
     ],
     "C": [
       "Jalen Duren",
+      "Paul Reed",
       "Tolu Smith",
-      "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Stewart"
     ]
