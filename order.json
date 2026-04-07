@@ -478,7 +478,7 @@
     "PG": [
       "Luke Kennard",
       "Bronny James",
-      "__SPACER__",
+      "Nick Smith",
       "__SEPARATOR__",
       "Luka Doncic"
     ],
@@ -490,9 +490,9 @@
       "Marcus Smart"
     ],
     "SF": [
-      "LeBron James",
       "Jarred Vanderbilt",
       "Chris Manon",
+      "__SPACER__",
       "__SEPARATOR__",
       "Austin Reaves"
     ],
@@ -500,7 +500,8 @@
       "Rui Hachimura",
       "Maxi Kleber",
       "Adou Thiero",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "LeBron James"
     ],
     "C": [
       "Deandre Ayton",
