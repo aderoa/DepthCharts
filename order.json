@@ -297,17 +297,16 @@
   },
   "DET": {
     "PG": [
+      "Cade Cunningham",
       "Daniss Jenkins",
       "Marcus Sasser",
       "Chaz Lanier",
-      "__SEPARATOR__",
-      "Cade Cunningham"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Ausar Thompson",
       "Caris LeVert",
       "Wendell Moore",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
