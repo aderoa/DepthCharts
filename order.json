@@ -640,14 +640,14 @@
     ],
     "SF": [
       "Donte DiVincenzo",
-      "Jaylen Clark",
+      "__SPACER__",
       "Julian Phillips",
       "__SEPARATOR__",
       "Jaden McDaniels"
     ],
     "PF": [
+      "Jaylen Clark",
       "Kyle Anderson",
-      "__SPACER__",
       "Enrique Freeman",
       "__SEPARATOR__",
       "Julius Randle"
