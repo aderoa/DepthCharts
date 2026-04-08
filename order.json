@@ -631,7 +631,6 @@
     "PG": [
       "Donte DiVincenzo",
       "Bones Hyland",
-      "__SPACER__",
       "Zyon Pullin",
       "__SEPARATOR__",
       "Mike Conley"
@@ -653,14 +652,14 @@
     "PF": [
       "Kyle Anderson",
       "Julian Phillips",
-      "__SPACER__",
+      "Enrique Freeman",
       "__SEPARATOR__"
     ],
     "C": [
       "Naz Reid",
       "Joan Beringer",
       "Rocco Zikarsky",
-      "Enrique Freeman",
+      "__SPACER__",
       "__SEPARATOR__",
       "Rudy Gobert",
       "Julius Randle"
