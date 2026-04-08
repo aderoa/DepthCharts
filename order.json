@@ -668,8 +668,9 @@
       "Dejounte Murray"
     ],
     "SG": [
-      "Herb Jones",
       "Jordan Poole",
+      "Herb Jones",
+      "__SPACER__",
       "__SEPARATOR__",
       "Bryce McGowens"
     ],
@@ -684,7 +685,6 @@
       "Zion Williamson",
       "Micah Peavy",
       "Josh Oduro",
-      "__SPACER__",
       "__SEPARATOR__",
       "Karlo Matkovic"
     ],
