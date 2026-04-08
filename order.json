@@ -220,27 +220,26 @@
   },
   "DAL": {
     "PG": [
-      "Cooper Flagg",
       "Ryan Nembhard",
-      "__SPACER__",
+      "AJ Johnson",
       "__SEPARATOR__",
       "Kyrie Irving"
     ],
     "SG": [
       "Max Christie",
-      "AJ Johnson",
+      "John Poulakidas",
       "__SEPARATOR__",
       "Brandon Williams"
     ],
     "SF": [
       "Khris Middleton",
-      "John Poulakidas",
+      "Tyler Smith",
       "__SEPARATOR__",
       "Klay Thompson",
       "Caleb Martin"
     ],
     "PF": [
-      "Tyler Smith",
+      "Cooper Flagg",
       "Moussa Cisse",
       "__SEPARATOR__",
       "Naji Marshall",
