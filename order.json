@@ -627,13 +627,13 @@
   "MIN": {
     "PG": [
       "Bones Hyland",
+      "Terrence Shannon",
       "Joe Ingles",
       "Zyon Pullin",
       "__SEPARATOR__",
       "Mike Conley"
     ],
     "SG": [
-      "Terrence Shannon",
       "Jaylen Clark",
       "__SPACER__",
       "__SEPARATOR__",
@@ -649,9 +649,8 @@
     "PF": [
       "Naz Reid",
       "Kyle Anderson",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Jaden McDaniels"
+      "Jaden McDaniels",
+      "__SEPARATOR__"
     ],
     "C": [
       "Joan Beringer",
