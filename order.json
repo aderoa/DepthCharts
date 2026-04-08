@@ -866,7 +866,6 @@
       "Devin Booker",
       "Ryan Dunn",
       "Amir Coffey",
-      "__SPACER__",
       "Isaiah Livers",
       "__SEPARATOR__",
       "Haywood Highsmith"
@@ -875,15 +874,16 @@
       "Dillon Brooks",
       "Royce O'Neale",
       "Rasheer Fleming",
-      "CJ Huntley",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
-      "Mark Williams",
       "Oso Ighodaro",
       "Khaman Maluach",
+      "CJ Huntley",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Mark Williams"
     ]
   },
   "POR": {
