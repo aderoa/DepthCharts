@@ -587,21 +587,21 @@
   },
   "MIL": {
     "PG": [
+      "Ryan Rollins",
       "AJ Green",
       "Andre Jackson",
-      "Ryan Rollins",
       "__SEPARATOR__",
       "Kevin Porter"
     ],
     "SG": [
       "Gary Trent Jr",
       "Cormac Ryan",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kyle Kuzma"
     ],
     "SF": [
       "Pete Nance",
-      "__SPACER__",
       "Gary Harris",
       "__SPACER__",
       "__SEPARATOR__",
@@ -616,9 +616,8 @@
     ],
     "C": [
       "Jericho Sims",
-      "Taurean Prince",
-      "__SPACER__",
       "Thanasis Antetokounmpo",
+      "__SPACER__",
       "__SEPARATOR__",
       "Myles Turner"
     ]
