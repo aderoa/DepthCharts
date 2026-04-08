@@ -631,14 +631,14 @@
     "PG": [
       "Donte DiVincenzo",
       "Bones Hyland",
-      "Terrence Shannon",
+      "__SPACER__",
       "Zyon Pullin",
       "__SEPARATOR__",
       "Mike Conley"
     ],
     "SG": [
       "Joe Ingles",
-      "__SPACER__",
+      "Terrence Shannon",
       "__SPACER__",
       "__SEPARATOR__",
       "Ayo Dosunmu"
@@ -646,12 +646,14 @@
     "SF": [
       "Jaden McDaniels",
       "Jaylen Clark",
+      "__SPACER__",
       "__SEPARATOR__",
       "Anthony Edwards"
     ],
     "PF": [
       "Kyle Anderson",
       "Julian Phillips",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
