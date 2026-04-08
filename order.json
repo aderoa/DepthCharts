@@ -629,15 +629,14 @@
   },
   "MIN": {
     "PG": [
+      "Donte DiVincenzo",
       "Bones Hyland",
       "Terrence Shannon",
-      "__SPACER__",
       "Zyon Pullin",
       "__SEPARATOR__",
       "Mike Conley"
     ],
     "SG": [
-      "Donte DiVincenzo",
       "Jaylen Clark",
       "__SPACER__",
       "__SEPARATOR__",
@@ -653,6 +652,7 @@
     "PF": [
       "Naz Reid",
       "Kyle Anderson",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
