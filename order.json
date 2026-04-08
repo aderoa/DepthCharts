@@ -628,35 +628,35 @@
       "Joe Ingles",
       "Zyon Pullin",
       "__SEPARATOR__",
-      "Mike Conley",
-      "Ayo Dosunmu"
+      "Mike Conley"
     ],
     "SG": [
       "Terrence Shannon",
       "Jaylen Clark",
       "__SPACER__",
       "__SEPARATOR__",
-      "Anthony Edwards"
+      "Ayo Dosunmu"
     ],
     "SF": [
       "Donte DiVincenzo",
       "Julian Phillips",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jaden McDaniels"
+      "Anthony Edwards"
     ],
     "PF": [
       "Naz Reid",
       "Kyle Anderson",
       "Enrique Freeman",
       "__SEPARATOR__",
-      "Julius Randle"
+      "Jaden McDaniels"
     ],
     "C": [
       "Rudy Gobert",
       "Joan Beringer",
       "Rocco Zikarsky",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Julius Randle"
     ]
   },
   "NOP": {
