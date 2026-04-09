@@ -855,20 +855,19 @@
       "Jordan Goodwin",
       "Collin Gillespie",
       "Koby Brea",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Jalen Green",
-      "Grayson Allen",
       "Jamaree Bouyea",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Amir Coffey",
+      "__SEPARATOR__",
+      "Grayson Allen"
     ],
     "SF": [
       "Devin Booker",
       "Ryan Dunn",
-      "Amir Coffey",
+      "__SPACER__",
       "Isaiah Livers",
       "__SEPARATOR__",
       "Haywood Highsmith"
@@ -877,14 +876,12 @@
       "Dillon Brooks",
       "Royce O'Neale",
       "Rasheer Fleming",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Oso Ighodaro",
       "Khaman Maluach",
       "CJ Huntley",
-      "__SPACER__",
       "__SEPARATOR__",
       "Mark Williams"
     ]
