@@ -818,7 +818,6 @@
       "Tyrese Maxey",
       "Quentin Grimes",
       "Kyle Lowry",
-      "__SPACER__",
       "__SEPARATOR__",
       "Cameron Payne"
     ],
@@ -826,30 +825,28 @@
       "VJ Edgecombe",
       "Jabari Walker",
       "Dalen Terry",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Kelly Oubre",
       "Justin Edwards",
       "MarJon Beauchamp",
-      "Tyrese Martin",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Paul George",
       "Dominick Barlow",
-      "Trendon Watford",
-      "__SPACER__",
+      "Tyrese Martin",
       "__SEPARATOR__",
       "Johni Broome"
     ],
     "C": [
-      "Joel Embiid",
       "Andre Drummond",
       "Adem Bona",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Trendon Watford",
+      "__SEPARATOR__",
+      "Joel Embiid"
     ]
   },
   "PHX": {
