@@ -556,22 +556,19 @@
       "Tyler Herro",
       "Norman Powell",
       "Myron Gardner",
-      "Dru Smith",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Dru Smith"
     ],
     "SF": [
       "Andrew Wiggins",
       "Jaime Jaquez",
       "Trevor Keels",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Pelle Larsson",
       "Simone Fontecchio",
       "Keshad Johnson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Nikola Jovic"
     ],
@@ -579,7 +576,6 @@
       "Bam Adebayo",
       "Kel'el Ware",
       "Vladislav Goldin",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
