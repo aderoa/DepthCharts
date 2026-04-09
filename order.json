@@ -597,7 +597,6 @@
       "Kyle Kuzma",
       "Taurean Prince",
       "Alex Antetokounmpo",
-      "__SPACER__",
       "__SEPARATOR__",
       "Gary Trent Jr",
       "Giannis Antetokounmpo"
@@ -605,14 +604,14 @@
     "PF": [
       "Jericho Sims",
       "Pete Nance",
-      "__SPACER__",
+      "Thanasis Antetokounmpo",
       "__SEPARATOR__",
       "Bobby Portis"
     ],
     "C": [
       "Myles Turner",
       "Ousmane Dieng",
-      "Thanasis Antetokounmpo",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
