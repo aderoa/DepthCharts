@@ -670,29 +670,30 @@
       "Dejounte Murray"
     ],
     "SG": [
+      "Herb Jones",
       "Jordan Poole",
       "Jordan Hawkins",
+      "__SPACER__",
       "__SEPARATOR__",
       "Bryce McGowens"
     ],
     "SF": [
-      "Micah Peavy",
-      "Herb Jones",
       "Saddiq Bey",
+      "Micah Peavy",
       "__SEPARATOR__",
       "Trey Murphy"
     ],
     "PF": [
       "Kevon Looney",
       "Josh Oduro",
-      "Zion Williamson",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Zion Williamson",
       "Karlo Matkovic"
     ],
     "C": [
       "Derik Queen",
       "Hunter Dickinson",
-      "DeAndre Jordan",
       "DeAndre Jordan",
       "__SEPARATOR__",
       "Yves Missi"
