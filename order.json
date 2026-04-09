@@ -490,6 +490,7 @@
       "Marcus Smart"
     ],
     "SF": [
+      "LeBron James",
       "Rui Hachimura",
       "Adou Thiero",
       "Dalton Knecht",
@@ -499,9 +500,7 @@
     "PF": [
       "Drew Timme",
       "Jarred Vanderbilt",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "LeBron James"
+      "__SEPARATOR__"
     ],
     "C": [
       "Deandre Ayton",
