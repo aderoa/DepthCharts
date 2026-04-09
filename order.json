@@ -185,11 +185,12 @@
       "James Harden",
       "Dennis Schroeder",
       "Craig Porter",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Donovan Mitchell"
     ],
     "SG": [
-      "Donovan Mitchell",
       "Tyrese Proctor",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Sam Merrill"
