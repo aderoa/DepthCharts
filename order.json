@@ -184,21 +184,21 @@
     "PG": [
       "James Harden",
       "Dennis Schroeder",
-      "Craig Porter",
+      "__SPACER__",
       "__SEPARATOR__",
       "Donovan Mitchell"
     ],
     "SG": [
       "Max Strus",
-      "Tyrese Proctor",
-      "__SPACER__",
+      "Craig Porter",
+      "Tristan Enaruna",
       "__SEPARATOR__",
       "Sam Merrill"
     ],
     "SF": [
       "Dean Wade",
+      "Tyrese Proctor",
       "__SPACER__",
-      "Tristan Enaruna",
       "__SEPARATOR__",
       "Jaylon Tyson"
     ],
