@@ -185,21 +185,19 @@
       "James Harden",
       "Dennis Schroeder",
       "Craig Porter",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Donovan Mitchell",
-      "Sam Merrill",
       "Tyrese Proctor",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Sam Merrill"
     ],
     "SF": [
       "Dean Wade",
       "Max Strus",
       "Tristan Enaruna",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jaylon Tyson"
     ],
@@ -207,16 +205,15 @@
       "Evan Mobley",
       "Keon Ellis",
       "Riley Minix",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Thomas Bryant"
     ],
     "C": [
-      "Jarrett Allen",
       "Nae'Qwan Tomlin",
       "Larry Nance Jr",
       "Olivier Sarr",
       "__SEPARATOR__",
-      "Thomas Bryant"
+      "Jarrett Allen"
     ]
   },
   "DAL": {
