@@ -1016,15 +1016,16 @@
       "Scottie Barnes",
       "Jamison Battle",
       "Gradey Dick",
-      "Alijah Martin",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Brandon Ingram",
       "Collin Murray-Boyles",
-      "Trayce Jackson-Davis",
+      "Alijah Martin",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Trayce Jackson-Davis"
     ],
     "C": [
       "Jakob Poeltl",
