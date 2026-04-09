@@ -1078,8 +1078,8 @@
       "Trae Young"
     ],
     "SG": [
-      "Bilal Coulibaly",
       "Jamir Watkins",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jaden Hardy",
       "D'Angelo Russell"
@@ -1088,18 +1088,19 @@
       "Leaky Black",
       "Justin Champagnie",
       "__SEPARATOR__",
+      "Bilal Coulibaly",
       "Kyshawn George"
     ],
     "PF": [
       "Anthony Gill",
       "Will Riley",
-      "__SPACER__",
       "__SEPARATOR__",
       "Anthony Davis",
       "Cam Whitmore"
     ],
     "C": [
       "Julian Reese",
+      "__SPACER__",
       "__SEPARATOR__",
       "Tristan Vukcevic",
       "Alex Sarr"
