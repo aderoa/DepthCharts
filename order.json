@@ -622,17 +622,18 @@
   "MIN": {
     "PG": [
       "Donte DiVincenzo",
-      "Bones Hyland",
+      "Mike Conley",
+      "__SPACER__",
       "Zyon Pullin",
       "__SEPARATOR__",
-      "Mike Conley"
+      "Ayo Dosunmu"
     ],
     "SG": [
-      "Joe Ingles",
       "Terrence Shannon",
+      "Bones Hyland",
       "__SPACER__",
       "__SEPARATOR__",
-      "Ayo Dosunmu"
+      "Joe Ingles"
     ],
     "SF": [
       "Jaden McDaniels",
@@ -652,7 +653,6 @@
       "Naz Reid",
       "Joan Beringer",
       "Rocco Zikarsky",
-      "__SPACER__",
       "__SEPARATOR__",
       "Rudy Gobert"
     ]
