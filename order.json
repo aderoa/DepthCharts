@@ -598,6 +598,7 @@
     "SG": [
       "Cormac Ryan",
       "Gary Harris",
+      "__SPACER__",
       "__SEPARATOR__",
       "Gary Trent Jr"
     ],
@@ -610,15 +611,15 @@
     ],
     "PF": [
       "Jericho Sims",
-      "Thanasis Antetokounmpo",
+      "Ousmane Dieng",
       "__SPACER__",
       "__SEPARATOR__",
-      "Giannis Antetokounmpo"
+      "Giannis Antetokounmpo",
+      "__SPACER__"
     ],
     "C": [
       "Myles Turner",
-      "Ousmane Dieng",
-      "__SPACER__",
+      "Thanasis Antetokounmpo",
       "__SEPARATOR__",
       "Bobby Portis"
     ]
