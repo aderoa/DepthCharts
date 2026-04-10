@@ -854,6 +854,7 @@
       "Jalen Green",
       "Grayson Allen",
       "Jamaree Bouyea",
+      "__SPACER__",
       "__SEPARATOR__",
       "Devin Booker"
     ],
@@ -862,7 +863,6 @@
       "Ryan Dunn",
       "Amir Coffey",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Haywood Highsmith"
     ],
@@ -870,14 +870,14 @@
       "Royce O'Neale",
       "Rasheer Fleming",
       "Isaiah Livers",
-      "__SPACER__",
+      "CJ Huntley",
       "__SEPARATOR__"
     ],
     "C": [
-      "Khaman Maluach",
-      "Oso Ighodaro",
-      "CJ Huntley",
       "Mark Williams",
+      "Oso Ighodaro",
+      "Khaman Maluach",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
