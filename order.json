@@ -994,14 +994,13 @@
   },
   "TOR": {
     "PG": [
-      "Immanuel Quickley",
       "Jamal Shead",
       "Garrett Temple",
-      "Tyrese Key",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Immanuel Quickley"
     ],
     "SG": [
-      "RJ Barrett",
       "Ja'Kobe Walter",
       "AJ Lawson",
       "__SPACER__",
@@ -1012,22 +1011,21 @@
       "Scottie Barnes",
       "Jamison Battle",
       "Gradey Dick",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "RJ Barrett"
     ],
     "PF": [
       "Brandon Ingram",
-      "Collin Murray-Boyles",
       "Alijah Martin",
       "__SPACER__",
       "__SEPARATOR__",
+      "Collin Murray-Boyles",
       "Trayce Jackson-Davis"
     ],
     "C": [
       "Jakob Poeltl",
       "Sandro Mamukelashvili",
       "Jonathan Mogbo",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
