@@ -481,6 +481,7 @@
   },
   "LAL": {
     "PG": [
+      "Marcus Smart",
       "Luke Kennard",
       "Bronny James",
       "Nick Smith",
@@ -491,8 +492,7 @@
       "Jake LaRavia",
       "Adou Thiero",
       "Kobe Bufkin",
-      "__SEPARATOR__",
-      "Marcus Smart"
+      "__SEPARATOR__"
     ],
     "SF": [
       "LeBron James",
