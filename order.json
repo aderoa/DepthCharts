@@ -512,17 +512,19 @@
   },
   "MEM": {
     "PG": [
-      "Walter Clayton",
+      "Javon Small",
+      "__SPACER__",
       "Adama Bal",
+      "Javon Small",
       "__SEPARATOR__",
       "Cam Spencer",
-      "Javon Small",
       "Ja Morant"
     ],
     "SG": [
-      "Cedric Coward",
+      "Walter Clayton",
       "Dariq Whitehead",
       "__SEPARATOR__",
+      "Cedric Coward",
       "Ty Jerome",
       "Scotty Pippen Jr"
     ],
@@ -542,9 +544,10 @@
       "Santiago Aldama"
     ],
     "C": [
-      "Taylor Hendricks",
       "Taj Gibson",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Taylor Hendricks",
       "Brandon Clarke",
       "Zach Edey"
     ]
