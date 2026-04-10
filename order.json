@@ -735,40 +735,39 @@
   },
   "OKC": {
     "PG": [
-      "Shai Gilgeous-Alexander",
-      "Ajay Mitchell",
       "Nikola Topic",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Shai Gilgeous-Alexander",
+      "Ajay Mitchell"
     ],
     "SG": [
-      "Luguentz Dort",
-      "Isaiah Joe",
       "Jared McCain",
-      "Brooks Barnhizer",
       "__SPACER__",
-      "__SEPARATOR__"
+      "Brooks Barnhizer",
+      "__SEPARATOR__",
+      "Isaiah Joe"
     ],
     "SF": [
-      "Jalen Williams",
-      "Cason Wallace",
-      "Aaron Wiggins",
+      "Luguentz Dort",
       "Payton Sandfort",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jalen Williams",
+      "Cason Wallace"
     ],
     "PF": [
-      "Chet Holmgren",
-      "Alex Caruso",
-      "Kenrich Williams",
-      "__SPACER__",
-      "__SEPARATOR__"
-    ],
-    "C": [
-      "Isaiah Hartenstein",
-      "Jaylin Williams",
-      "Branden Carlson",
+      "Aaron Wiggins",
       "__SPACER__",
       "__SEPARATOR__",
+      "Chet Holmgren",
+      "Alex Caruso"
+    ],
+    "C": [
+      "Kenrich Williams",
+      "Branden Carlson",
+      "__SEPARATOR__",
+      "Isaiah Hartenstein",
+      "Jaylin Williams",
       "Thomas Sorber"
     ]
   },
