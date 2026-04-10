@@ -347,13 +347,12 @@
       "Jeenathan Williams",
       "__SPACER__",
       "__SEPARATOR__",
-      "Seth Curry",
-      "Will Richard"
+      "Will Richard",
+      "Seth Curry"
     ],
     "SF": [
       "Brandin Podziemski",
       "Gary Payton II",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Moses Moody",
@@ -362,6 +361,7 @@
     "PF": [
       "Draymond Green",
       "Al Horford",
+      "__SPACER__",
       "__SEPARATOR__",
       "Gui Santos"
     ],
