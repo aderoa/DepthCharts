@@ -47,27 +47,27 @@
     "SG": [
       "Sam Hauser",
       "Ron Harper Jr",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jaylen Brown"
     ],
     "SF": [
       "Baylor Scheierman",
       "Hugo Gonzalez",
-      "__SPACER__",
       "John Tonje",
       "__SEPARATOR__",
       "Jayson Tatum"
     ],
     "PF": [
       "Jordan Walsh",
+      "Nikola Vucevic",
       "Amari Williams",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Neemias Queta",
-      "Nikola Vucevic",
       "Luka Garza",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
