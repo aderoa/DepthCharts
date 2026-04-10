@@ -551,24 +551,26 @@
   },
   "MIA": {
     "PG": [
-      "Davion Mitchell",
       "Kasparas Jakucionis",
       "Jahmir Young",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Terry Rozier"
+      "Davion Mitchell"
     ],
     "SG": [
-      "Tyler Herro",
-      "Norman Powell",
       "Myron Gardner",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Tyler Herro",
       "Dru Smith"
     ],
     "SF": [
       "Andrew Wiggins",
       "Jaime Jaquez",
       "Trevor Keels",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Norman Powell"
     ],
     "PF": [
       "Pelle Larsson",
