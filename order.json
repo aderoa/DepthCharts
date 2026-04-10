@@ -847,34 +847,38 @@
       "Jordan Goodwin",
       "Collin Gillespie",
       "Koby Brea",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Jalen Green",
-      "Ryan Dunn",
+      "Grayson Allen",
       "Jamaree Bouyea",
       "__SEPARATOR__",
-      "Grayson Allen"
+      "Devin Booker"
     ],
     "SF": [
-      "Devin Booker",
-      "Royce O'Neale",
+      "Dillon Brooks",
+      "Ryan Dunn",
       "Amir Coffey",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Haywood Highsmith"
     ],
     "PF": [
-      "Dillon Brooks",
+      "Royce O'Neale",
       "Rasheer Fleming",
       "Isaiah Livers",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Khaman Maluach",
       "Oso Ighodaro",
       "CJ Huntley",
-      "__SEPARATOR__",
-      "Mark Williams"
+      "Mark Williams",
+      "__SEPARATOR__"
     ]
   },
   "POR": {
