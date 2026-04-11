@@ -694,14 +694,13 @@
       "Jalen Brunson",
       "Jose Alvarado",
       "Kevin McCullar",
-      "__SEPARATOR__",
-      "Tyler Kolek"
+      "Tyler Kolek",
+      "__SEPARATOR__"
     ],
     "SG": [
       "OG Anunoby",
       "Jordan Clarkson",
       "Pacome Dadiet",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Miles McBride"
@@ -710,12 +709,12 @@
       "Mikal Bridges",
       "Landry Shamet",
       "Dillon Jones",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Josh Hart",
       "Mohamed Diawara",
-      "Jeremy Sochan",
       "__SPACER__",
       "__SEPARATOR__"
     ],
