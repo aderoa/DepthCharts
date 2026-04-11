@@ -39,30 +39,30 @@
   },
   "BOS": {
     "PG": [
-      "Derrick White",
-      "Payton Pritchard",
       "Max Shulga",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Payton Pritchard",
+      "Derrick White"
     ],
     "SG": [
-      "Sam Hauser",
       "Baylor Scheierman",
       "Dalano Banton",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Sam Hauser"
     ],
     "SF": [
-      "Jaylen Brown",
       "Hugo Gonzalez",
       "Ron Harper Jr",
       "__SEPARATOR__",
+      "Jaylen Brown",
       "Jayson Tatum"
     ],
     "PF": [
       "Jordan Walsh",
-      "Nikola Vucevic",
       "John Tonje",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Nikola Vucevic"
     ],
     "C": [
       "Neemias Queta",
