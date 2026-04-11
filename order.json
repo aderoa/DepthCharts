@@ -883,22 +883,22 @@
     ],
     "SG": [
       "Jrue Holiday",
+      "Shaedon Sharpe",
       "Blake Wesley",
-      "Chris Youngblood",
-      "__SEPARATOR__",
-      "Shaedon Sharpe"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Toumani Camara",
       "Matisse Thybulle",
-      "Jayson Kent",
+      "Chris Youngblood",
       "__SEPARATOR__",
       "Vit Krejci"
     ],
     "PF": [
       "Deni Avdija",
       "Kris Murray",
-      "__SPACER__",
+      "Jayson Kent",
       "__SEPARATOR__",
       "Jerami Grant"
     ],
