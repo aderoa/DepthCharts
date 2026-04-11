@@ -561,7 +561,6 @@
     ],
     "SF": [
       "Andrew Wiggins",
-      "Simone Fontecchio",
       "Jaime Jaquez",
       "Trevor Keels",
       "__SEPARATOR__",
@@ -569,12 +568,13 @@
     ],
     "PF": [
       "Pelle Larsson",
-      "Bam Adebayo",
+      "Simone Fontecchio",
       "__SPACER__",
       "__SEPARATOR__",
       "Norman Powell"
     ],
     "C": [
+      "Bam Adebayo",
       "Kel'el Ware",
       "Keshad Johnson",
       "Vladislav Goldin",
