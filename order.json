@@ -949,38 +949,35 @@
       "De'Aaron Fox",
       "Jordan McLaughlin",
       "Lindy Waters III",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Dylan Harper",
       "Keldon Johnson",
-      "Harrison Ingram",
-      "Emanuel Miller",
       "__SPACER__",
+      "Emanuel Miller",
       "__SEPARATOR__",
       "Stephon Castle"
     ],
     "SF": [
       "Devin Vassell",
       "Harrison Barnes",
-      "Kelly Olynyk",
+      "Harrison Ingram",
       "__SEPARATOR__",
       "David Jones"
     ],
     "PF": [
       "Julian Champagnie",
       "Carter Bryant",
-      "Bismack Biyombo",
-      "__SPACER__",
+      "Kelly Olynyk",
       "__SEPARATOR__"
     ],
     "C": [
       "Victor Wembanyama",
-      "Luke Kornet",
       "Mason Plumlee",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Bismack Biyombo",
+      "__SEPARATOR__",
+      "Luke Kornet"
     ]
   },
   "TOR": {
