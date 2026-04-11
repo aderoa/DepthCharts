@@ -258,36 +258,33 @@
     "PG": [
       "Tyus Jones",
       "KJ Simpson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jamal Murray"
     ],
     "SG": [
       "Bruce Brown",
       "Jalen Pickett",
-      "__SPACER__",
       "__SEPARATOR__",
       "Christian Braun"
     ],
     "SF": [
-      "Tim Hardaway Jr",
       "Curtis Jones",
-      "__SPACER__",
+      "David Roddy",
       "__SEPARATOR__",
+      "Tim Hardaway Jr",
       "Cameron Johnson",
       "Spencer Jones"
     ],
     "PF": [
       "Julian Strawther",
-      "__SPACER__",
-      "David Roddy",
+      "Zeke Nnaji",
       "__SEPARATOR__",
       "Aaron Gordon",
       "Peyton Watson"
     ],
     "C": [
       "Jonas Valanciunas",
-      "Zeke Nnaji",
+      "__SPACER__",
       "DaRon Holmes",
       "__SEPARATOR__",
       "Nikola Jokic"
