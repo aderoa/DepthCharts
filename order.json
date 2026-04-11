@@ -253,10 +253,11 @@
   },
   "DEN": {
     "PG": [
-      "Jamal Murray",
       "Tyus Jones",
       "KJ Simpson",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jamal Murray"
     ],
     "SG": [
       "Bruce Brown",
@@ -275,7 +276,7 @@
     ],
     "PF": [
       "Julian Strawther",
-      "Zeke Nnaji",
+      "__SPACER__",
       "David Roddy",
       "__SEPARATOR__",
       "Aaron Gordon",
@@ -283,8 +284,8 @@
     ],
     "C": [
       "Jonas Valanciunas",
+      "Zeke Nnaji",
       "DaRon Holmes",
-      "__SPACER__",
       "__SEPARATOR__",
       "Nikola Jokic"
     ]
