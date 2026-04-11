@@ -473,33 +473,33 @@
     "PG": [
       "Luke Kennard",
       "Bronny James",
-      "Nick Smith",
+      "__SPACER__",
       "__SEPARATOR__",
       "Luka Doncic"
     ],
     "SG": [
       "Jake LaRavia",
-      "Marcus Smart",
+      "Nick Smith",
       "Dalton Knecht",
       "__SEPARATOR__",
       "Austin Reaves"
     ],
     "SF": [
       "LeBron James",
-      "Jarred Vanderbilt",
+      "Marcus Smart",
       "Chris Manon",
       "__SEPARATOR__"
     ],
     "PF": [
       "Rui Hachimura",
-      "Maxi Kleber",
+      "Jarred Vanderbilt",
       "Adou Thiero",
       "__SEPARATOR__"
     ],
     "C": [
       "Deandre Ayton",
+      "Maxi Kleber",
       "Drew Timme",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jaxson Hayes"
     ]
