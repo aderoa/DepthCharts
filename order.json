@@ -322,11 +322,12 @@
       "__SEPARATOR__"
     ],
     "C": [
-      "Jalen Duren",
       "Isaiah Stewart",
       "Paul Reed",
       "Isaac Jones",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jalen Duren"
     ]
   },
   "GSW": {
