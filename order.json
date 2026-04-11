@@ -227,9 +227,9 @@
     "SG": [
       "Max Christie",
       "AJ Johnson",
+      "Klay Thompson",
       "__SEPARATOR__",
-      "Brandon Williams",
-      "Klay Thompson"
+      "Brandon Williams"
     ],
     "SF": [
       "Khris Middleton",
@@ -242,11 +242,12 @@
       "Cooper Flagg",
       "Moussa Cisse",
       "__SEPARATOR__",
+      "Marvin Bagley",
       "PJ Washington"
     ],
     "C": [
-      "Marvin Bagley",
       "Dwight Powell",
+      "__SPACER__",
       "__SEPARATOR__",
       "Daniel Gafford",
       "Dereck Lively"
