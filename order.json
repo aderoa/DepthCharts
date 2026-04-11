@@ -633,21 +633,21 @@
     ],
     "SF": [
       "Anthony Edwards",
-      "Julian Phillips",
       "Jaylen Clark",
+      "Julian Phillips",
       "__SEPARATOR__"
     ],
     "PF": [
       "Jaden McDaniels",
       "Kyle Anderson",
-      "Enrique Freeman",
+      "__SPACER__",
       "__SEPARATOR__",
       "Julius Randle"
     ],
     "C": [
       "Joan Beringer",
       "Rocco Zikarsky",
-      "__SPACER__",
+      "Enrique Freeman",
       "__SEPARATOR__",
       "Naz Reid",
       "Rudy Gobert"
