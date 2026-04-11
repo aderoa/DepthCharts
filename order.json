@@ -507,22 +507,23 @@
   },
   "MEM": {
     "PG": [
-      "Dariq Whitehead",
-      "Javon Small",
       "Adama Bal",
+      "Javon Small",
       "__SEPARATOR__",
       "Cam Spencer",
       "Ja Morant"
     ],
     "SG": [
       "Lucas Williamson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Walter Clayton",
       "Ty Jerome",
       "Scotty Pippen Jr"
     ],
     "SF": [
-      "Jahmai Mashack",
+      "Dariq Whitehead",
+      "__SPACER__",
       "Rayan Rupert",
       "__SEPARATOR__",
       "Cedric Coward",
@@ -530,14 +531,14 @@
       "Kentavious Caldwell-Pope"
     ],
     "PF": [
-      "Toby Okani",
-      "__SPACER__",
+      "Jahmai Mashack",
       "__SEPARATOR__",
       "Olivier-Maxence Prosper",
       "GG Jackson",
       "Santiago Aldama"
     ],
     "C": [
+      "Toby Okani",
       "Taj Gibson",
       "__SPACER__",
       "__SEPARATOR__",
