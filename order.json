@@ -627,29 +627,29 @@
     "SG": [
       "Ayo Dosunmu",
       "Terrence Shannon",
-      "__SEPARATOR__",
       "__SPACER__",
+      "__SEPARATOR__",
       "Joe Ingles"
     ],
     "SF": [
       "Anthony Edwards",
       "Jaylen Clark",
       "Julian Phillips",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Julius Randle"
     ],
     "PF": [
       "Jaden McDaniels",
       "Kyle Anderson",
       "__SPACER__",
       "__SEPARATOR__",
-      "Julius Randle"
+      "Naz Reid"
     ],
     "C": [
       "Joan Beringer",
       "Rocco Zikarsky",
       "Enrique Freeman",
       "__SEPARATOR__",
-      "Naz Reid",
       "Rudy Gobert"
     ]
   },
