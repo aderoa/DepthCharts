@@ -1,39 +1,40 @@
 {
   "ATL": {
     "PG": [
-      "CJ McCollum",
       "Gabe Vincent",
       "Keaton Wallace",
       "RayJ Dennis",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "CJ McCollum"
     ],
     "SG": [
-      "Dyson Daniels",
       "Corey Kispert",
-      "Buddy Hield",
       "Keshon Gilbert",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Dyson Daniels"
     ],
     "SF": [
-      "Nickeil Alexander-Walker",
       "Zaccharie Risacher",
-      "Asa Newell",
-      "__SEPARATOR__"
+      "Buddy Hield",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Nickeil Alexander-Walker"
     ],
     "PF": [
-      "Jalen Johnson",
-      "Jonathan Kuminga",
       "Christian Koloko",
+      "Asa Newell",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jalen Johnson",
+      "Jonathan Kuminga"
     ],
     "C": [
-      "Onyeka Okongwu",
       "Mouhamed Gueye",
       "Tony Bradley",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
+      "Onyeka Okongwu",
       "Jock Landale"
     ]
   },
