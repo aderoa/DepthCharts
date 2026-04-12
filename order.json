@@ -451,16 +451,15 @@
       "Bradley Beal"
     ],
     "SF": [
-      "Kawhi Leonard",
       "Bennedict Mathurin",
       "Cam Christie",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Kawhi Leonard"
     ],
     "PF": [
       "Derrick Jones",
       "Nicolas Batum",
       "Bogdan Bogdanovic",
-      "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Jackson"
     ],
