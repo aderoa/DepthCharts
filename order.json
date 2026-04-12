@@ -693,6 +693,7 @@
     "PG": [
       "Jose Alvarado",
       "Kevin McCullar",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jalen Brunson",
       "Tyler Kolek"
@@ -700,11 +701,12 @@
     "SG": [
       "Miles McBride",
       "Jordan Clarkson",
-      "Pacome Dadiet",
       "__SEPARATOR__"
     ],
     "SF": [
       "Mikal Bridges",
+      "Pacome Dadiet",
+      "__SPACER__",
       "Dillon Jones",
       "__SEPARATOR__",
       "Landry Shamet",
@@ -713,12 +715,14 @@
     "PF": [
       "Jeremy Sochan",
       "Mohamed Diawara",
+      "__SPACER__",
       "__SEPARATOR__",
       "Josh Hart"
     ],
     "C": [
       "Ariel Hukporti",
       "Trey Jemison",
+      "__SPACER__",
       "__SEPARATOR__",
       "Karl-Anthony Towns",
       "Mitchell Robinson"
