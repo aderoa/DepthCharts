@@ -694,7 +694,6 @@
       "Jose Alvarado",
       "Jordan Clarkson",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jalen Brunson",
       "Tyler Kolek"
@@ -702,14 +701,15 @@
     "SG": [
       "Miles McBride",
       "Kevin McCullar",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Landry Shamet"
     ],
     "SF": [
       "Mikal Bridges",
       "Pacome Dadiet",
       "Dillon Jones",
       "__SEPARATOR__",
-      "Landry Shamet",
       "OG Anunoby"
     ],
     "PF": [
