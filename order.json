@@ -557,21 +557,21 @@
     ],
     "SG": [
       "Tyler Herro",
-      "Norman Powell",
       "Myron Gardner",
       "__SEPARATOR__"
     ],
     "SF": [
       "Andrew Wiggins",
+      "Norman Powell",
       "Trevor Keels",
-      "Jaime Jaquez",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Simone Fontecchio"
     ],
     "PF": [
       "Bam Adebayo",
-      "__SPACER__",
+      "Jaime Jaquez",
       "__SEPARATOR__",
       "Pelle Larsson"
     ],
