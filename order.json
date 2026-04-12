@@ -972,10 +972,11 @@
       "Luke Kornet"
     ],
     "C": [
-      "Victor Wembanyama",
       "Mason Plumlee",
+      "__SPACER__",
       "Bismack Biyombo",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Victor Wembanyama"
     ]
   },
   "TOR": {
