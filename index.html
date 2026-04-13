@@ -753,7 +753,7 @@ function renderDepthChart(teamAbbrev) {
         html += `<div class="player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
           <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
           <div class="player-name">${p.name}</div>
-          <div class="trade-value" style="visibility:hidden">&nbsp;</div></div>`;
+          <div class="trade-value" style="color:#b45309;font-size:0.7rem">${p.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
       } else {
         const twBadge = p.colorCode === 'twoway' ? ' <span style="font-size:0.55rem;padding:1px 4px;border-radius:3px;background:rgba(139,92,246,0.12);color:#8b5cf6;font-weight:700">2W</span>' : '';
         html += `<div class="player-card${p.colorCode==='twoway'?' ':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
@@ -892,7 +892,7 @@ function renderAdminAllTeams() {
         // Show FAs below separator with RFA/UFA label
         injuredByPos[pos].forEach(p => {
           if (p.isFA) {
-            html += `<div class="admin-player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value" style="visibility:hidden">&nbsp;</div></div>`;
+            html += `<div class="admin-player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value" style="color:#b45309">${p.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
           } else {
             html += `<div class="admin-player-card" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary27 || p.salary)}</div></div>`;
           }
@@ -1424,7 +1424,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
         out += `<tr class="dc-data">`;
         rp.forEach(p => {
           if (p && isOffseason && p.isFA) {
-            out += `<td class="c-fa"></td>`;
+            out += `<td class="c-fa">${p.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</td>`;
           } else {
             out += `<td${cCls(p, isOffseason)}>${p ? fmtSalFull(p.salary) : ''}</td>`;
           }
