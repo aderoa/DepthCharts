@@ -366,39 +366,37 @@
   },
   "HOU": {
     "PG": [
+      "Amen Thompson",
       "Reed Sheppard",
       "JD Davison",
       "__SPACER__",
-      "Tristen Newton",
       "__SEPARATOR__",
+      "Tristen Newton",
       "Fred VanVleet"
     ],
     "SG": [
       "Josh Okogie",
       "Aaron Holiday",
-      "__SEPARATOR__",
-      "Amen Thompson"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Jae'Sean Tate",
-      "Isaiah Crawford",
+      "Kevin Durant",
       "__SPACER__",
       "__SEPARATOR__",
-      "Kevin Durant"
+      "Isaiah Crawford"
     ],
     "PF": [
       "Tari Eason",
       "Dorian Finney-Smith",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Jabari Smith"
+      "Jabari Smith",
+      "__SEPARATOR__"
     ],
     "C": [
       "Clint Capela",
       "Jeff Green",
-      "__SPACER__",
-      "__SEPARATOR__",
       "Alperen Sengun",
+      "__SEPARATOR__",
       "Steven Adams"
     ]
   },
