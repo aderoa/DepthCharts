@@ -337,8 +337,9 @@
     "SG": [
       "De'Anthony Melton",
       "Seth Curry",
-      "Jeenathan Williams",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Jeenathan Williams",
       "Jimmy Butler"
     ],
     "SF": [
@@ -349,17 +350,17 @@
       "Moses Moody"
     ],
     "PF": [
-      "Al Horford",
-      "Gui Santos",
+      "Draymond Green",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Draymond Green"
+      "Gui Santos",
+      "__SEPARATOR__"
     ],
     "C": [
       "Kristaps Porzingis",
+      "Al Horford",
       "Charles Bassey",
-      "Malevy Leons",
       "__SEPARATOR__",
+      "Malevy Leons",
       "Quinten Post"
     ]
   },
