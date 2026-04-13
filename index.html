@@ -77,6 +77,28 @@ tbody td { padding:0.55rem 0.5rem; vertical-align:middle; white-space:nowrap; }
 @media(max-width:600px) { .stats-bar{grid-template-columns:1fr 1fr;gap:0.5rem;} .stat-card{padding:0.75rem;} .stat-card .value{font-size:1.1rem;} .header{padding:1.25rem 1rem 1rem;} .header h1,.header-brand h1{font-size:1.25rem;} .table-container{padding:0 0.5rem;} td,th{padding:0.4rem 0.35rem;} }
 
 
+
+/* Eliminated / Offseason styles */
+.admin-player-card.free-agent { background:#fef3c7; border-left:3px solid #f59e0b; }
+.admin-player-card.team-option { border-left:3px solid #ef4444; }
+.admin-player-card.player-option { border-left:3px solid #06b6d4; }
+.admin-player-card.non-guaranteed { border-left:3px solid #eab308; }
+.fa-separator { height:2px; background:#f59e0b; margin:4px 0; border-radius:2px; opacity:0.6; }
+.contract-badge { font-size:0.5rem; padding:1px 4px; border-radius:3px; font-weight:700; margin-left:2px; }
+.badge-to { background:rgba(239,68,68,0.12); color:#ef4444; }
+.badge-po { background:rgba(6,182,212,0.12); color:#06b6d4; }
+.badge-ng { background:rgba(234,179,8,0.12); color:#b45309; }
+.badge-pg { background:rgba(234,179,8,0.12); color:#b45309; }
+.badge-rfa { background:rgba(245,158,11,0.12); color:#d97706; }
+.badge-ufa { background:rgba(107,114,128,0.15); color:#6b7280; }
+.admin-team-row.eliminated { opacity:0.7; }
+.admin-team-row.eliminated .admin-team-row-header { background:rgba(107,114,128,0.06); }
+.player-card.free-agent { background:#fef3c7; border:2px solid #f59e0b; }
+.player-card.team-option { border-left:4px solid #ef4444; }
+.player-card.player-option { border-left:4px solid #06b6d4; }
+.player-card.non-guaranteed { border-left:4px solid #eab308; }
+.eliminated-label { font-size:0.6rem; color:#6b7280; padding:2px 6px; background:rgba(107,114,128,0.1); border-radius:4px; margin-left:6px; }
+
 /* — Depth Charts specific — */
 .container { max-width:1400px; margin:0 auto; padding:2rem; }
 header { text-align:center; margin-bottom:2rem; }
@@ -422,6 +444,7 @@ const TEAM_ALIASES = {
   'San Antonio':'SAS','Spurs':'SAS','Toronto':'TOR','Raptors':'TOR','Utah':'UTA','Jazz':'UTA',
   'Washington':'WAS','Wizards':'WAS'
 };
+const ELIMINATED_ABBREVS = new Set(['MIL','CHI','BKN','IND','WAS','NOP','DAL','MEM','SAC','UTA']);
 
 // =====================================================
 // DATA URLs
@@ -516,6 +539,7 @@ function parseRosterCSV(csvText) {
   const rows = parseCSV(csvText); if (rows.length < 2) return [];
   const hdr = rows[0]; const col = n => hdr.findIndex(h => h.toUpperCase() === n.toUpperCase());
   const PI=col('PLAYER'), TI=col('TEAM'), SI=col('2026'), STI=col('ST 25-26'), OI=col('OUT?'), RI=col('REASON'), LI=col('LOGO'), HI=col('HEADSHOT'), POI=col('POSITION');
+  const S27I=col('2027'), ST27I=col('ST 26-27'), ENDI=col('END'), EXCI=col('EXCEPTION');
   if (PI<0||TI<0) return [];
   const players = [];
   for (let i = 1; i < rows.length; i++) {
@@ -536,7 +560,14 @@ function parseRosterCSV(csvText) {
     else if (injury==='Doubtful') color = 'doubtful';
     else if (injury==='Questionable') color = 'questionable';
     else if (injury==='Probable') color = 'probable';
-    players.push({name, team:abbrev, position:pos, tradeValue:tv, headshot, salary, contractStatus:status, injuryStatus:injury, injuryReason:reason, colorCode:color, teamLogo:logo});
+    const salary27 = S27I>=0 ? (parseInt((r[S27I]||'0').replace(/[$,]/g,''))||0) : 0;
+    const status27 = ST27I>=0 ? (r[ST27I]?.trim()||'') : '';
+    const contractEnd = ENDI>=0 ? (parseInt((r[ENDI]||'0'))||0) : 0;
+    const exception = EXCI>=0 ? (r[EXCI]?.trim()||'') : '';
+    const isFA = !salary27 && !status27 && contractEnd <= 2026;
+    const isRFA = isFA && (/rookie/i.test(exception) || status === 'TWO-WAY');
+    const faLabel = isFA ? (isRFA ? 'RFA' : 'UFA') : '';
+    players.push({name, team:abbrev, position:pos, tradeValue:tv, headshot, salary, contractStatus:status, injuryStatus:injury, injuryReason:reason, colorCode:color, teamLogo:logo, salary27, status27, contractEnd, exception, isFA, faLabel});
   }
   return players;
 }
@@ -577,8 +608,9 @@ function applyInjuriesJSON(injuries) {
     } catch(e) {}
   }
 
-  // Apply to all players
+  // Apply to all players (skip eliminated teams — they show offseason roster)
   for (const p of allPlayers) {
+    if (ELIMINATED_ABBREVS.has(p.team)) continue;
     const entry = latest[p.name];
     if (!entry) continue;
     if (entry.status === 'Available') continue;
@@ -652,15 +684,24 @@ function renderDepthChart(teamAbbrev) {
   const positions = ['PG','SG','SF','PF','C'];
   const byPos = buildPositionMap(tp, loadTeamOrder(teamAbbrev));
 
-  // Split each position into healthy and injured
+  const isEliminated = ELIMINATED_ABBREVS.has(teamAbbrev);
+  
+  // Split each position into healthy/contracted and injured/FAs
   const healthyByPos = {}, injuredByPos = {};
   positions.forEach(pos => {
     healthyByPos[pos] = [];
     injuredByPos[pos] = [];
     byPos[pos].forEach(p => {
       if (p === '__SPACER__') return;
-      if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable') injuredByPos[pos].push(p);
-      else healthyByPos[pos].push(p);
+      if (isEliminated) {
+        // Eliminated: FAs go below, everyone else above
+        if (p.isFA) injuredByPos[pos].push(p);
+        else healthyByPos[pos].push(p);
+      } else {
+        // Playoff teams: injured + two-way go below separator
+        if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable' || p.colorCode === 'twoway') injuredByPos[pos].push(p);
+        else healthyByPos[pos].push(p);
+      }
     });
   });
 
@@ -672,12 +713,20 @@ function renderDepthChart(teamAbbrev) {
     html += `<div class="position-column" data-position="${pos}"><div class="position-header">${pos}</div>`;
     let firstReal = true;
 
-    // Healthy players
+    // Healthy / contracted players
     healthyByPos[pos].forEach(p => {
-      html += `<div class="player-card ${firstReal?'starter':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
+      let badge = '', sc = '', salDisplay = fmtSal(p.salary);
+      if (isEliminated) {
+        salDisplay = fmtSal(p.salary27 || p.salary);
+        if (p.status27 === 'TEAM OPT') { sc = 'team-option'; badge = ' <span class="contract-badge badge-to">TO</span>'; }
+        else if (p.status27 === 'PLAYER OPT') { sc = 'player-option'; badge = ' <span class="contract-badge badge-po">PO</span>'; }
+        else if (p.status27 === 'NOT G') { sc = 'non-guaranteed'; badge = ' <span class="contract-badge badge-ng">NG</span>'; }
+        else if (p.status27 === 'PARTIAL G') { sc = 'non-guaranteed'; badge = ' <span class="contract-badge badge-pg">PG</span>'; }
+      }
+      html += `<div class="player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
         <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
-        <div class="player-name">${p.name}</div>
-        <div class="trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
+        <div class="player-name">${p.name}${badge}</div>
+        <div class="trade-value ${valClass(p.tradeValue)}">${salDisplay}</div></div>`;
       firstReal = false;
     });
 
@@ -694,12 +743,21 @@ function renderDepthChart(teamAbbrev) {
       html += `<div class="injury-separator"></div>`;
     }
 
-    // Injured players
+    // Injured players (or FAs for eliminated teams)
     injuredByPos[pos].forEach(p => {
-      html += `<div class="player-card" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
-        <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
-        <div class="player-name">${p.name}</div>
-        <div class="trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
+      if (isEliminated && p.isFA) {
+        const badge = p.faLabel === 'RFA' ? '<span class="contract-badge badge-rfa">RFA</span>' : '<span class="contract-badge badge-ufa">UFA</span>';
+        html += `<div class="player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
+          <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
+          <div class="player-name">${p.name}${badge}</div>
+          <div class="trade-value" style="color:#d97706">${p.faLabel}</div></div>`;
+      } else {
+        const twBadge = p.colorCode === 'twoway' ? ' <span style="font-size:0.55rem;padding:1px 4px;border-radius:3px;background:rgba(139,92,246,0.12);color:#8b5cf6;font-weight:700">2W</span>' : '';
+        html += `<div class="player-card${p.colorCode==='twoway'?' ':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
+          <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
+          <div class="player-name">${p.name}${twBadge}</div>
+          <div class="trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
+      }
     });
 
     html += '</div>';
@@ -723,7 +781,19 @@ function renderAdminAllTeams() {
   allPlayers.forEach(p => pMap[p.name] = p);
 
   let html = '';
-  for (const team of NBA_TEAMS) {
+  // Render playoff teams first, then eliminated
+  const sortedTeams = [...NBA_TEAMS].sort((a,b) => {
+    const aElim = ELIMINATED_ABBREVS.has(a.abbrev) ? 1 : 0;
+    const bElim = ELIMINATED_ABBREVS.has(b.abbrev) ? 1 : 0;
+    return aElim - bElim;
+  });
+  let eliminatedHeaderShown = false;
+  for (const team of sortedTeams) {
+    const isEliminated = ELIMINATED_ABBREVS.has(team.abbrev);
+    if (isEliminated && !eliminatedHeaderShown) {
+      html += `<div style="padding:1rem 0.5rem;margin-top:1.5rem;border-top:2px solid var(--border)"><h3 style="color:var(--text-muted);font-size:0.85rem">🏠 Eliminated Teams — 2026-27 Offseason Roster</h3></div>`;
+      eliminatedHeaderShown = true;
+    }
     const tp = allPlayers.filter(p=>p.team===team.abbrev);
     if (!tp.length) continue;
     const saved = savedOrders[team.abbrev] || null;
@@ -745,7 +815,7 @@ function renderAdminAllTeams() {
           if (n === '__SPACER__' || globalPlaced.has(n)) return;
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful') { injuredByPos[pos].push(p); }
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway')) { injuredByPos[pos].push(p); }
           else { healthyByPos[pos].push(p); }
           globalPlaced.add(n);
         });
@@ -755,7 +825,7 @@ function renderAdminAllTeams() {
           if (n === '__SPACER__' || globalPlaced.has(n)) return;
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable') { injuredByPos[pos].push(p); }
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable' || (!isEliminated && p.colorCode === 'twoway')) { injuredByPos[pos].push(p); }
           else { healthyByPos[pos].push(p); }
           globalPlaced.add(n);
         });
@@ -763,7 +833,7 @@ function renderAdminAllTeams() {
         // No saved order — default sort by trade value
         const posTp = tp.filter(p => p.position === pos && !globalPlaced.has(p.name)).sort((a,b) => b.tradeValue - a.tradeValue);
         posTp.forEach(p => {
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful') injuredByPos[pos].push(p);
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway')) injuredByPos[pos].push(p);
           else healthyByPos[pos].push(p);
           globalPlaced.add(p.name);
         });
@@ -773,7 +843,7 @@ function renderAdminAllTeams() {
     // Handle unplaced players (new additions or position mismatches)
     tp.filter(p => !globalPlaced.has(p.name)).forEach(p => {
       const pos = positions.includes(p.position) ? p.position : 'SF';
-      if (p.colorCode === 'injured' || p.colorCode === 'doubtful') injuredByPos[pos].push(p);
+      if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway')) injuredByPos[pos].push(p);
       else healthyByPos[pos].push(p);
     });
 
@@ -781,17 +851,33 @@ function renderAdminAllTeams() {
     const totalHealthy = positions.reduce((s, pos) => s + healthyByPos[pos].length, 0);
     const healthyRows = Math.max(1, Math.ceil(totalHealthy / 5));
 
-    html += `<div class="admin-team-row" data-team="${team.abbrev}">
-      <div class="admin-team-row-header"><img class="admin-team-row-logo" src="${team.logo}" alt="${team.name}" onerror="this.style.opacity='0.3'"><span class="admin-team-row-name">${team.name}</span><span class="admin-team-row-abbrev">${team.abbrev}</span></div>
+    html += `<div class="admin-team-row ${isEliminated?'eliminated':''}" data-team="${team.abbrev}">
+      <div class="admin-team-row-header"><img class="admin-team-row-logo" src="${team.logo}" alt="${team.name}" onerror="this.style.opacity='0.3'"><span class="admin-team-row-name">${team.name}</span><span class="admin-team-row-abbrev">${team.abbrev}</span>${isEliminated?'<span class="eliminated-label">Eliminated</span>':''}</div>
       <div class="admin-depth-chart" data-team="${team.abbrev}">`;
     positions.forEach(pos => {
       html += `<div class="admin-position-column" data-position="${pos}"><div class="admin-position-header">${pos}</div>`;
 
-      // Healthy players
+      // Healthy players (for eliminated: split into contracted and FAs)
       let firstReal = true;
-      healthyByPos[pos].forEach(p => {
-        const sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='twoway'?'two-way':p.colorCode==='questionable'?'questionable':p.colorCode==='probable'?'probable':'';
-        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
+      const healthyList = isEliminated 
+        ? healthyByPos[pos].filter(p => !p.isFA) 
+        : healthyByPos[pos];
+      const faList = isEliminated 
+        ? healthyByPos[pos].filter(p => p.isFA)
+        : [];
+      
+      healthyList.forEach(p => {
+        let sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='twoway'?'two-way':p.colorCode==='questionable'?'questionable':p.colorCode==='probable'?'probable':'';
+        let badge = '';
+        let salDisplay = fmtSal(isEliminated ? (p.salary27 || p.salary) : p.salary);
+        if (isEliminated) {
+          sc = ''; // No injury colors for eliminated teams
+          if (p.status27 === 'TEAM OPT') { sc = 'team-option'; badge = '<span class="contract-badge badge-to">TO</span>'; }
+          else if (p.status27 === 'PLAYER OPT') { sc = 'player-option'; badge = '<span class="contract-badge badge-po">PO</span>'; }
+          else if (p.status27 === 'NOT G') { sc = 'non-guaranteed'; badge = '<span class="contract-badge badge-ng">NG</span>'; }
+          else if (p.status27 === 'PARTIAL G') { sc = 'non-guaranteed'; badge = '<span class="contract-badge badge-pg">PG</span>'; }
+        }
+        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${badge}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${salDisplay}</div></div>`;
         firstReal = false;
       });
 
@@ -803,11 +889,19 @@ function renderAdminAllTeams() {
       // Separator
       html += `<div class="admin-separator"></div>`;
 
-      // Injured players
-      injuredByPos[pos].forEach(p => {
-        const sc = p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':'questionable';
-        html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
-      });
+      // Injured players (or FAs for eliminated teams)
+      if (isEliminated) {
+        // Show FAs below separator with RFA/UFA label
+        [...faList, ...injuredByPos[pos].filter(p => p.isFA)].forEach(p => {
+          const badge = p.faLabel === 'RFA' ? '<span class="contract-badge badge-rfa">RFA</span>' : '<span class="contract-badge badge-ufa">UFA</span>';
+          html += `<div class="admin-player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${badge}</div><div class="admin-trade-value" style="color:#d97706">${p.faLabel}</div></div>`;
+        });
+      } else {
+        injuredByPos[pos].forEach(p => {
+          const sc = p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':'questionable';
+          html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${p.colorCode==='twoway'?' <span style="font-size:0.5rem;color:#8b5cf6">2W</span>':''}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
+        });
+      }
 
       html += '</div>';
     });
