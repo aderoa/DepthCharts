@@ -226,7 +226,6 @@
     "SG": [
       "Naji Marshall",
       "Max Christie",
-      "__SPACER__",
       "John Poulakidas",
       "__SEPARATOR__",
       "Khris Middleton"
@@ -234,12 +233,13 @@
     "SF": [
       "Cooper Flagg",
       "Klay Thompson",
-      "Caleb Martin",
+      "__SPACER__",
       "__SEPARATOR__",
       "Moussa Cisse"
     ],
     "PF": [
       "PJ Washington",
+      "Caleb Martin",
       "Tyler Smith",
       "__SEPARATOR__",
       "Marvin Bagley"
