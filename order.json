@@ -253,30 +253,33 @@
   },
   "DEN": {
     "PG": [
+      "Jamal Murray",
       "Tyus Jones",
-      "KJ Simpson",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Jamal Murray"
+      "KJ Simpson"
     ],
     "SG": [
+      "Christian Braun",
       "Bruce Brown",
       "Jalen Pickett",
-      "__SEPARATOR__",
       "Tim Hardaway Jr",
-      "Christian Braun"
+      "__SEPARATOR__"
     ],
     "SF": [
-      "Julian Strawther",
-      "Curtis Jones",
-      "__SEPARATOR__",
       "Cameron Johnson",
+      "Julian Strawther",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Curtis Jones",
       "Spencer Jones"
     ],
     "PF": [
+      "Aaron Gordon",
       "Zeke Nnaji",
-      "David Roddy",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Aaron Gordon"
+      "David Roddy"
     ],
     "C": [
       "Nikola Jokic",
