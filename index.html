@@ -100,6 +100,7 @@ tbody td { padding:0.55rem 0.5rem; vertical-align:middle; white-space:nowrap; }
 
 .player-card.player-option { background:#33cccc; }
 .player-card.non-guaranteed { background:#e0e000; }
+.player-card.two-way { background:#e8d5f5; }
 .eliminated-label { font-size:0.6rem; color:#6b7280; padding:2px 6px; background:rgba(107,114,128,0.1); border-radius:4px; margin-left:6px; }
 
 /* — Depth Charts specific — */
@@ -722,6 +723,7 @@ function renderDepthChart(teamAbbrev) {
       let sc = '', salDisplay = fmtSal(p.salary);
       if (isEliminated) {
         salDisplay = fmtSal(p.salary27 || p.salary);
+        sc = p.colorCode === 'twoway' ? 'two-way' : '';
         if (p.status27 === 'TEAM OPT') { sc = 'team-option'; }
         else if (p.status27 === 'PLAYER OPT') { sc = 'player-option'; }
         else if (p.status27 === 'NOT G') { sc = 'non-guaranteed'; }
@@ -869,7 +871,7 @@ function renderAdminAllTeams() {
         let sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='twoway'?'two-way':p.colorCode==='questionable'?'questionable':p.colorCode==='probable'?'probable':'';
         let salDisplay = fmtSal(isEliminated ? (p.salary27 || p.salary) : p.salary);
         if (isEliminated) {
-          sc = '';
+          sc = p.colorCode === 'twoway' ? 'two-way' : '';
           if (p.status27 === 'TEAM OPT') { sc = 'team-option'; }
           else if (p.status27 === 'PLAYER OPT') { sc = 'player-option'; }
           else if (p.status27 === 'NOT G') { sc = 'non-guaranteed'; }
@@ -1330,6 +1332,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
       if (p.status27 === 'TEAM OPT') return ' class="c-to"';
       if (p.status27 === 'PLAYER OPT') return ' class="c-po"';
       if (p.status27 === 'NOT G' || p.status27 === 'PARTIAL G') return ' class="c-ng"';
+      if (p.colorCode === 'twoway') return ' class="c-2way"';
       return '';
     }
     if (p.contractStatus === '10-DAY') return ' class="c-10day"';
