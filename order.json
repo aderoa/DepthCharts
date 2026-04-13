@@ -451,14 +451,15 @@
     ],
     "SF": [
       "Derrick Jones",
-      "Bennedict Mathurin",
       "Cam Christie",
+      "Bogdan Bogdanovic",
       "__SEPARATOR__",
       "Kawhi Leonard"
     ],
     "PF": [
       "John Collins",
-      "Bogdan Bogdanovic",
+      "Bennedict Mathurin",
+      "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Jackson"
     ],
@@ -466,7 +467,6 @@
       "Brook Lopez",
       "Nicolas Batum",
       "Norchad Omier",
-      "__SPACER__",
       "__SEPARATOR__",
       "Yanic Konan Niederhauser"
     ]
