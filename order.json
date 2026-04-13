@@ -561,29 +561,30 @@
     "SG": [
       "Tyler Herro",
       "Myron Gardner",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Trevor Keels"
     ],
     "SF": [
       "Andrew Wiggins",
       "Norman Powell",
-      "Trevor Keels",
-      "__SPACER__",
-      "__SPACER__",
+      "Simone Fontecchio",
       "__SEPARATOR__",
-      "Simone Fontecchio"
+      "Pelle Larsson"
     ],
     "PF": [
       "Bam Adebayo",
       "Jaime Jaquez",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Pelle Larsson"
+      "Nikola Jovic"
     ],
     "C": [
       "Kel'el Ware",
       "Keshad Johnson",
-      "Vladislav Goldin",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Nikola Jovic"
+      "Vladislav Goldin"
     ]
   },
   "MIL": {
