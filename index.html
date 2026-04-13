@@ -218,8 +218,9 @@ footer a { color:var(--accent); text-decoration:none; }
     <span>🔧 ADMIN MODE — Drag to reorder, synced to GitHub</span>
     <span id="saveStatus" class="admin-save-status">✓ Saved</span>
     <div style="display:flex;gap:0.5rem;align-items:center;">
-      <button class="export-btn" onclick="copyExportDirect(true,0,15)">📷 Copy ATL-MEM</button>
-      <button class="export-btn" onclick="copyExportDirect(true,15,30)">📷 Copy MIA-WAS</button>
+      <button class="export-btn" onclick="copyExportByGroup('playoff1')">📷 Copy ATL-LAL</button>
+      <button class="export-btn" onclick="copyExportByGroup('playoff2')">📷 Copy MIA-TOR</button>
+      <button class="export-btn" onclick="copyExportByGroup('offseason')">📷 Copy 2026-27 Teams</button>
       <button class="export-btn" onclick="manualRefresh(this)">🔄 Refresh Data</button>
       <span id="refreshStatus" style="color:#1a1a2e;font-size:0.7rem;margin-left:8px;opacity:0.7;">Auto-refresh: 60s</span>
     </div>
@@ -815,7 +816,7 @@ function renderAdminAllTeams() {
           if (n === '__SPACER__' || globalPlaced.has(n)) return;
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway')) { injuredByPos[pos].push(p); }
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway') || (isEliminated && p.isFA)) { injuredByPos[pos].push(p); }
           else { healthyByPos[pos].push(p); }
           globalPlaced.add(n);
         });
@@ -825,7 +826,7 @@ function renderAdminAllTeams() {
           if (n === '__SPACER__' || globalPlaced.has(n)) return;
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable' || (!isEliminated && p.colorCode === 'twoway')) { injuredByPos[pos].push(p); }
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable' || (!isEliminated && p.colorCode === 'twoway') || (isEliminated && p.isFA)) { injuredByPos[pos].push(p); }
           else { healthyByPos[pos].push(p); }
           globalPlaced.add(n);
         });
@@ -833,7 +834,7 @@ function renderAdminAllTeams() {
         // No saved order — default sort by trade value
         const posTp = tp.filter(p => p.position === pos && !globalPlaced.has(p.name)).sort((a,b) => b.tradeValue - a.tradeValue);
         posTp.forEach(p => {
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway')) injuredByPos[pos].push(p);
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway') || (isEliminated && p.isFA)) injuredByPos[pos].push(p);
           else healthyByPos[pos].push(p);
           globalPlaced.add(p.name);
         });
@@ -843,7 +844,7 @@ function renderAdminAllTeams() {
     // Handle unplaced players (new additions or position mismatches)
     tp.filter(p => !globalPlaced.has(p.name)).forEach(p => {
       const pos = positions.includes(p.position) ? p.position : 'SF';
-      if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway')) injuredByPos[pos].push(p);
+      if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway') || (isEliminated && p.isFA)) injuredByPos[pos].push(p);
       else healthyByPos[pos].push(p);
     });
 
@@ -859,12 +860,8 @@ function renderAdminAllTeams() {
 
       // Healthy players (for eliminated: split into contracted and FAs)
       let firstReal = true;
-      const healthyList = isEliminated 
-        ? healthyByPos[pos].filter(p => !p.isFA) 
-        : healthyByPos[pos];
-      const faList = isEliminated 
-        ? healthyByPos[pos].filter(p => p.isFA)
-        : [];
+      const healthyList = healthyByPos[pos];
+      const faList = []; // FAs now in injuredByPos for eliminated teams
       
       healthyList.forEach(p => {
         let sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='twoway'?'two-way':p.colorCode==='questionable'?'questionable':p.colorCode==='probable'?'probable':'';
@@ -892,9 +889,13 @@ function renderAdminAllTeams() {
       // Injured players (or FAs for eliminated teams)
       if (isEliminated) {
         // Show FAs below separator with RFA/UFA label
-        [...faList, ...injuredByPos[pos].filter(p => p.isFA)].forEach(p => {
-          const badge = p.faLabel === 'RFA' ? '<span class="contract-badge badge-rfa">RFA</span>' : '<span class="contract-badge badge-ufa">UFA</span>';
-          html += `<div class="admin-player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${badge}</div><div class="admin-trade-value" style="color:#d97706">${p.faLabel}</div></div>`;
+        injuredByPos[pos].forEach(p => {
+          if (p.isFA) {
+            const badge = p.faLabel === 'RFA' ? '<span class="contract-badge badge-rfa">RFA</span>' : '<span class="contract-badge badge-ufa">UFA</span>';
+            html += `<div class="admin-player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${badge}</div><div class="admin-trade-value" style="color:#d97706">${p.faLabel}</div></div>`;
+          } else {
+            html += `<div class="admin-player-card" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary27 || p.salary)}</div></div>`;
+          }
         });
       } else {
         injuredByPos[pos].forEach(p => {
@@ -1060,6 +1061,10 @@ const DC_PRESTO_CSS = '<style>\n'
 + '.dc-tbl .c-2way{background-color:#e1bee7}\n'
 + '.dc-tbl .c-inj{background-color:lightcoral}\n'
 + '.dc-tbl .c-quest{background-color:#f5b7b1}\n'
++ '.dc-tbl .c-fa{background-color:#fef3c7}\n'
++ '.dc-tbl .c-to{border-left:3px solid #ef4444}\n'
++ '.dc-tbl .c-po{border-left:3px solid #06b6d4}\n'
++ '.dc-tbl .c-ng{border-left:3px solid #eab308}\n'
 + '<' + '/style>';
 
 function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
@@ -1264,6 +1269,182 @@ function copyExportDirect(withHeadshots, startIdx, endIdx) {
     btn.textContent = '✓ Copied!';
     setTimeout(() => btn.textContent = orig, 2000);
   });
+}
+
+function copyExportByGroup(group) {
+  const playoffTeams = NBA_TEAMS.filter(t => !ELIMINATED_ABBREVS.has(t.abbrev)).sort((a,b) => a.name.localeCompare(b.name));
+  const eliminatedTeams = NBA_TEAMS.filter(t => ELIMINATED_ABBREVS.has(t.abbrev)).sort((a,b) => a.name.localeCompare(b.name));
+  
+  let teamList, label;
+  if (group === 'playoff1') {
+    teamList = playoffTeams.slice(0, 10);
+    label = 'ATL–LAL';
+  } else if (group === 'playoff2') {
+    teamList = playoffTeams.slice(10);
+    label = 'MIA–TOR';
+  } else {
+    teamList = eliminatedTeams;
+    label = '2026-27';
+  }
+
+  // Read orders from DOM
+  const teamOrders = {};
+  document.querySelectorAll('.admin-depth-chart').forEach(chart => {
+    const ta = chart.dataset.team; const order = {};
+    chart.querySelectorAll('.admin-position-column').forEach(col => {
+      const pos = col.dataset.position; if (!pos) return; order[pos] = [];
+      col.querySelectorAll('.admin-player-card').forEach(card => {
+        if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
+        else if (card.dataset.player) order[pos].push(card.dataset.player);
+      });
+    });
+    teamOrders[ta] = order;
+  });
+
+  const isOffseason = group === 'offseason';
+  const out = DC_PRESTO_CSS + '\n\n' + generateExportHTMLByList(teamOrders, true, teamList, isOffseason);
+  
+  const btn = event.target.closest('.export-btn');
+  const orig = btn.textContent;
+  const blob = new Blob([out], {type: 'text/plain'});
+  navigator.clipboard.write([new ClipboardItem({'text/plain': blob})]).then(() => {
+    btn.textContent = '✓ Copied!';
+    btn.style.background = '#16a34a'; btn.style.color = 'white';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = out; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = orig, 2000);
+  });
+}
+
+function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseason) {
+  const positions = ['PG','SG','SF','PF','C'];
+  const playerMap = {}; allPlayers.forEach(p => playerMap[p.name] = p);
+
+  function cCls(p, offseason) {
+    if (!p) return '';
+    if (offseason) {
+      if (p.isFA) return ' class="c-fa"';
+      if (p.status27 === 'TEAM OPT') return ' class="c-to"';
+      if (p.status27 === 'PLAYER OPT') return ' class="c-po"';
+      if (p.status27 === 'NOT G' || p.status27 === 'PARTIAL G') return ' class="c-ng"';
+      return '';
+    }
+    if (p.contractStatus === '10-DAY') return ' class="c-10day"';
+    if (p.colorCode === 'twoway') return ' class="c-2way"';
+    if (p.colorCode === 'injured' || p.colorCode === 'doubtful') return ' class="c-inj"';
+    if (p.colorCode === 'questionable') return ' class="c-quest"';
+    return '';
+  }
+
+  let out = '<div class="dc-wrap">';
+  for (const team of teamList) {
+    const order = teamOrders[team.abbrev];
+    if (!order) continue;
+    
+    // Build columns: split into above-separator and below-separator
+    const aboveCols = {}, belowCols = {};
+    let maxAbove = 0, maxBelow = 0;
+    
+    positions.forEach(pos => {
+      aboveCols[pos] = [];
+      belowCols[pos] = [];
+      const names = order[pos] || [];
+      
+      names.forEach(n => {
+        if (n === '__SPACER__') return; // skip spacers, we'll re-add them
+        const p = playerMap[n];
+        if (!p || p.team !== team.abbrev) return;
+        
+        if (isOffseason) {
+          // Offseason: FAs go below
+          if (p.isFA) belowCols[pos].push(p);
+          else aboveCols[pos].push(p);
+        } else {
+          // Playoff: injured/doubtful/questionable/twoway go below
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable' || p.colorCode === 'twoway') belowCols[pos].push(p);
+          else aboveCols[pos].push(p);
+        }
+      });
+      
+      if (aboveCols[pos].length > maxAbove) maxAbove = aboveCols[pos].length;
+      if (belowCols[pos].length > maxBelow) maxBelow = belowCols[pos].length;
+    });
+    
+    if (maxAbove < 1) maxAbove = 1;
+    const hasBelow = maxBelow > 0;
+
+    out += `<div class="dc-team"><strong>${team.name.toUpperCase()}${isOffseason ? ' — 2026-27' : ''}</strong></div>`;
+    out += `<table class="dc-tbl"><tbody>`;
+    out += `<tr class="dc-hdr">`;
+    positions.forEach(pos => { out += `<th>${pos}</th>`; });
+    out += `</tr>`;
+
+    // Above rows (healthy/contracted)
+    for (let r = 0; r < maxAbove; r++) {
+      const rp = positions.map(pos => aboveCols[pos][r] || null);
+      if (!rp.some(p => p !== null)) continue;
+      if (withHeadshots) {
+        out += `<tr class="dc-hs-row">`;
+        rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+        out += `</tr>`;
+      }
+      out += `<tr class="dc-data">`;
+      rp.forEach(p => {
+        let badge = '';
+        if (p && isOffseason) {
+          if (p.status27 === 'TEAM OPT') badge = ' <span style="color:#ef4444;font-size:10px">TO</span>';
+          else if (p.status27 === 'PLAYER OPT') badge = ' <span style="color:#06b6d4;font-size:10px">PO</span>';
+          else if (p.status27 === 'NOT G') badge = ' <span style="color:#b45309;font-size:10px">NG</span>';
+          else if (p.status27 === 'PARTIAL G') badge = ' <span style="color:#b45309;font-size:10px">PG</span>';
+        }
+        out += `<td${cCls(p, isOffseason)}>${p ? `<strong>${p.name}</strong>${badge}` : ''}</td>`;
+      });
+      out += `</tr>`;
+      out += `<tr class="dc-data">`;
+      rp.forEach(p => { out += `<td${cCls(p, isOffseason)}>${p ? (isOffseason ? fmtSalFull(p.salary27 || p.salary) : fmtSalFull(p.salary)) : ''}</td>`; });
+      out += `</tr>`;
+    }
+    
+    // Separator + below rows (injured/FAs)
+    if (hasBelow) {
+      out += `<tr><td colspan="5" style="height:3px;background:${isOffseason ? '#f59e0b' : '#ef4444'};padding:0"></td></tr>`;
+      for (let r = 0; r < maxBelow; r++) {
+        const rp = positions.map(pos => belowCols[pos][r] || null);
+        if (!rp.some(p => p !== null)) continue;
+        if (withHeadshots) {
+          out += `<tr class="dc-hs-row">`;
+          rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+          out += `</tr>`;
+        }
+        out += `<tr class="dc-data">`;
+        rp.forEach(p => {
+          if (p && isOffseason && p.isFA) {
+            const badge = p.faLabel === 'RFA' ? '<span style="color:#d97706;font-size:10px">RFA</span>' : '<span style="color:#6b7280;font-size:10px">UFA</span>';
+            out += `<td class="c-fa"><strong>${p.name}</strong> ${badge}</td>`;
+          } else {
+            out += `<td${cCls(p, isOffseason)}>${p ? `<strong>${p.name}</strong>` : ''}</td>`;
+          }
+        });
+        out += `</tr>`;
+        out += `<tr class="dc-data">`;
+        rp.forEach(p => {
+          if (p && isOffseason && p.isFA) {
+            out += `<td class="c-fa">${p.faLabel}</td>`;
+          } else {
+            out += `<td${cCls(p, isOffseason)}>${p ? fmtSalFull(p.salary) : ''}</td>`;
+          }
+        });
+        out += `</tr>`;
+      }
+    }
+    
+    out += `</tbody></table><br>`;
+  }
+  out += '</div>';
+  return out;
 }
 
 function copyExportCode() {
