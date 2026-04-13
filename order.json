@@ -957,28 +957,29 @@
       "Stephon Castle",
       "Keldon Johnson",
       "Lindy Waters III",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "David Jones"
     ],
     "SF": [
       "Devin Vassell",
       "Harrison Barnes",
-      "Emanuel Miller",
+      "__SPACER__",
       "__SEPARATOR__",
-      "David Jones"
+      "Emanuel Miller"
     ],
     "PF": [
       "Julian Champagnie",
       "Carter Bryant",
-      "Harrison Ingram",
       "__SEPARATOR__",
-      "Luke Kornet"
+      "Harrison Ingram"
     ],
     "C": [
+      "Victor Wembanyama",
+      "Luke Kornet",
       "Mason Plumlee",
       "Bismack Biyombo",
       "Kelly Olynyk",
-      "__SEPARATOR__",
-      "Victor Wembanyama"
+      "__SEPARATOR__"
     ]
   },
   "TOR": {
