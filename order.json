@@ -418,8 +418,8 @@
     ],
     "SF": [
       "Aaron Nesmith",
+      "Jarace Walker",
       "Johnny Furphy",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Kobe Brown"
@@ -427,15 +427,15 @@
     "PF": [
       "Pascal Siakam",
       "Obi Toppin",
-      "Jarace Walker",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Jalen Slawson"
     ],
     "C": [
       "Ivica Zubac",
-      "Micah Potter",
       "Jay Huff",
+      "Micah Potter",
       "__SPACER__",
       "__SEPARATOR__"
     ]
