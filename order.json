@@ -182,38 +182,38 @@
   },
   "CLE": {
     "PG": [
+      "James Harden",
       "Craig Porter",
       "Tyrese Proctor",
-      "__SEPARATOR__",
-      "James Harden",
-      "Dennis Schroeder"
+      "Dennis Schroeder",
+      "__SEPARATOR__"
     ],
     "SG": [
-      "Max Strus",
-      "Tristan Enaruna",
-      "__SEPARATOR__",
-      "Donovan Mitchell"
-    ],
-    "SF": [
-      "Jaylon Tyson",
+      "Donovan Mitchell",
       "__SPACER__",
       "__SEPARATOR__",
+      "Tristan Enaruna"
+    ],
+    "SF": [
+      "Max Strus",
+      "Jaylon Tyson",
       "Keon Ellis",
-      "Sam Merrill"
+      "Sam Merrill",
+      "__SEPARATOR__"
     ],
     "PF": [
-      "Nae'Qwan Tomlin",
-      "Riley Minix",
-      "__SEPARATOR__",
       "Dean Wade",
-      "Thomas Bryant"
+      "Nae'Qwan Tomlin",
+      "Thomas Bryant",
+      "__SEPARATOR__",
+      "Riley Minix"
     ],
     "C": [
       "Larry Nance Jr",
-      "Olivier Sarr",
-      "__SEPARATOR__",
       "Evan Mobley",
-      "Jarrett Allen"
+      "Jarrett Allen",
+      "__SEPARATOR__",
+      "Olivier Sarr"
     ]
   },
   "DAL": {
