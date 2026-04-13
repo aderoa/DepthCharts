@@ -1021,35 +1021,39 @@
   },
   "UTA": {
     "PG": [
+      "Keyonte George",
       "Bez Mbeng",
       "Hayden Gray",
-      "__SEPARATOR__",
-      "Keyonte George",
-      "Isaiah Collier"
+      "Isaiah Collier",
+      "__SEPARATOR__"
     ],
     "SG": [
       "Ace Bailey",
       "John Konchar",
+      "__SPACER__",
       "__SEPARATOR__",
       "Elijah Harkless"
     ],
     "SF": [
       "Blake Hinson",
       "Brice Sensabaugh",
-      "__SEPARATOR__",
-      "Lauri Markkanen"
+      "Lauri Markkanen",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Cody Williams",
       "Sviatoslav Mykhailiuk",
-      "__SEPARATOR__",
       "Kyle Filipowski",
-      "Jaren Jackson Jr"
+      "Jaren Jackson Jr",
+      "__SEPARATOR__"
     ],
     "C": [
+      "__SPACER__",
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Oscar Tshiebwe",
       "Kevin Love",
-      "__SEPARATOR__",
       "Walker Kessler",
       "Jusuf Nurkic"
     ]
