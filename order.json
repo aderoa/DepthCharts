@@ -877,39 +877,37 @@
     "PG": [
       "Scoot Henderson",
       "Shaedon Sharpe",
-      "Caleb Love",
       "__SPACER__",
       "__SEPARATOR__",
-      "Damian Lillard"
+      "Caleb Love"
     ],
     "SG": [
       "Jrue Holiday",
       "Vit Krejci",
       "Blake Wesley",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Damian Lillard"
     ],
     "SF": [
       "Toumani Camara",
       "Matisse Thybulle",
       "Sidy Cissoko",
-      "Chris Youngblood",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Chris Youngblood"
     ],
     "PF": [
       "Deni Avdija",
       "Kris Murray",
-      "Jayson Kent",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jerami Grant"
+      "Jayson Kent"
     ],
     "C": [
       "Donovan Clingan",
       "Robert Williams",
       "Yang Hansen",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jerami Grant"
     ]
   },
   "SAC": {
