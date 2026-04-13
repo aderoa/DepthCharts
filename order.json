@@ -987,35 +987,31 @@
       "Immanuel Quickley",
       "Jamal Shead",
       "Garrett Temple",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Chucky Hepburn"
+      "__SEPARATOR__"
     ],
     "SG": [
       "RJ Barrett",
       "AJ Lawson",
       "Gradey Dick",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Chucky Hepburn"
     ],
     "SF": [
       "Scottie Barnes",
       "Ja'Kobe Walter",
       "Jamison Battle",
-      "Alijah Martin",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Alijah Martin"
     ],
     "PF": [
       "Brandon Ingram",
       "Collin Murray-Boyles",
       "Trayce Jackson-Davis",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Jakob Poeltl",
       "Sandro Mamukelashvili",
-      "__SPACER__",
       "Jonathan Mogbo",
       "__SEPARATOR__"
     ]
