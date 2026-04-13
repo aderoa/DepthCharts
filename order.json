@@ -634,10 +634,10 @@
     "SG": [
       "Donte DiVincenzo",
       "Joe Ingles",
-      "Anthony Edwards",
       "__SEPARATOR__"
     ],
     "SF": [
+      "Anthony Edwards",
       "Terrence Shannon",
       "Julian Phillips",
       "Jaden McDaniels",
@@ -645,15 +645,15 @@
       "__SEPARATOR__"
     ],
     "PF": [
-      "Jaylen Clark",
       "Julius Randle",
+      "Jaylen Clark",
       "__SPACER__",
       "__SEPARATOR__",
       "Rocco Zikarsky"
     ],
     "C": [
-      "Joan Beringer",
       "Rudy Gobert",
+      "Joan Beringer",
       "Naz Reid",
       "__SEPARATOR__",
       "Enrique Freeman"
