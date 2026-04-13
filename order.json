@@ -147,35 +147,36 @@
   "CHI": {
     "PG": [
       "Tre Jones",
-      "Yuki Kawamura",
-      "__SEPARATOR__",
       "Josh Giddey",
+      "__SEPARATOR__",
+      "Yuki Kawamura",
       "Anfernee Simons"
     ],
     "SG": [
-      "Collin Sexton",
       "Rob Dillingham",
+      "Isaac Okoro",
       "__SEPARATOR__",
-      "Isaac Okoro"
+      "Collin Sexton"
     ],
     "SF": [
       "Patrick Williams",
-      "Mac McClung",
-      "__SEPARATOR__",
       "Matas Buzelis",
-      "Noa Essengue"
+      "Noa Essengue",
+      "__SEPARATOR__",
+      "Mac McClung"
     ],
     "PF": [
       "Leonard Miller",
-      "Mouhamadou Gueye",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Jalen Smith",
+      "Mouhamadou Gueye",
       "Zach Collins"
     ],
     "C": [
-      "Lachlan Olbrich",
+      "Jalen Smith",
       "__SPACER__",
       "__SEPARATOR__",
+      "Lachlan Olbrich",
       "Guerschon Yabusele",
       "Nick Richards"
     ]
