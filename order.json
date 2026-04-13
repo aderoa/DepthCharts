@@ -412,14 +412,14 @@
     "SG": [
       "Andrew Nembhard",
       "Ben Sheppard",
-      "Ethan Thompson",
       "Kam Jones",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Aaron Nesmith",
       "Jarace Walker",
-      "Johnny Furphy",
+      "Ethan Thompson",
       "__SPACER__",
       "__SEPARATOR__",
       "Kobe Brown"
@@ -427,7 +427,7 @@
     "PF": [
       "Pascal Siakam",
       "Obi Toppin",
-      "__SPACER__",
+      "Johnny Furphy",
       "__SPACER__",
       "__SEPARATOR__",
       "Jalen Slawson"
