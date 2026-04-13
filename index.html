@@ -221,11 +221,17 @@ footer a { color:var(--accent); text-decoration:none; }
   <div id="adminBanner" class="admin-banner">
     <span>🔧 ADMIN MODE — Drag to reorder, synced to GitHub</span>
     <span id="saveStatus" class="admin-save-status">✓ Saved</span>
-    <div style="display:flex;gap:0.5rem;align-items:center;">
+    <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
       <button class="export-btn" onclick="copyExportByGroup('playoff1')">📷 Copy ATL-LAL</button>
       <button class="export-btn" onclick="copyExportByGroup('playoff2')">📷 Copy MIA-TOR</button>
       <button class="export-btn" onclick="copyExportByGroup('offseason')">📷 Copy 2026-27 Teams</button>
       <button class="export-btn" onclick="manualRefresh(this)">🔄 Refresh Data</button>
+      <span style="width:1px;height:20px;background:rgba(0,0,0,0.2);margin:0 4px"></span>
+      <button class="export-btn" id="yearBtn2627" onclick="showFutureYear('2026-27')" style="background:#6366f1;color:#fff;border-color:#6366f1">📅 26-27</button>
+      <button class="export-btn" id="yearBtn2728" onclick="showFutureYear('2027-28')">📅 27-28</button>
+      <button class="export-btn" id="yearBtn2829" onclick="showFutureYear('2028-29')">📅 28-29</button>
+      <button class="export-btn" id="yearBtn2930" onclick="showFutureYear('2029-30')">📅 29-30</button>
+      <button class="export-btn" id="yearBtnBack" onclick="showMainAdmin()" style="display:none">← Back to Main</button>
       <span id="refreshStatus" style="color:#1a1a2e;font-size:0.7rem;margin-left:8px;opacity:0.7;">Auto-refresh: 60s</span>
     </div>
   </div>
@@ -770,6 +776,157 @@ function renderDepthChart(teamAbbrev) {
   document.getElementById('depthChart').innerHTML = html;
   document.getElementById('depthChartContainer').classList.add('active');
   setupDragDrop(document.getElementById('depthChart'), teamAbbrev, false);
+}
+
+// =====================================================
+// FUTURE YEAR DEPTH CHARTS
+// =====================================================
+let _futureYear = null;
+
+function showFutureYear(year) {
+  _futureYear = year;
+  // Update button styles
+  ['2627','2728','2829','2930'].forEach(y => {
+    const btn = document.getElementById('yearBtn' + y);
+    if (btn) { btn.style.background = ''; btn.style.color = ''; btn.style.borderColor = ''; }
+  });
+  const activeBtn = document.getElementById('yearBtn' + year.replace('-',''));
+  if (activeBtn) { activeBtn.style.background = '#6366f1'; activeBtn.style.color = '#fff'; activeBtn.style.borderColor = '#6366f1'; }
+  document.getElementById('yearBtnBack').style.display = 'inline-block';
+  renderFutureYearAdmin(year);
+}
+
+function showMainAdmin() {
+  _futureYear = null;
+  document.getElementById('yearBtnBack').style.display = 'none';
+  ['2627','2728','2829','2930'].forEach(y => {
+    const btn = document.getElementById('yearBtn' + y);
+    if (btn) { btn.style.background = ''; btn.style.color = ''; btn.style.borderColor = ''; }
+  });
+  renderAdminAllTeams();
+}
+
+function getFutureYearEndThreshold(year) {
+  // "2026-27" → players with END >= 2027 are under contract
+  return parseInt(year.split('-')[1]) + 2000;
+}
+
+function getFuturePlayerStatus(p, endThreshold, year) {
+  const isUnderContract = p.contractEnd >= endThreshold;
+  const isLastYear = p.contractEnd === endThreshold;
+  const isTwoWay = p.colorCode === 'twoway';
+  
+  if (!isUnderContract) {
+    // Free agent
+    const isRFA = /rookie/i.test(p.exception) || isTwoWay;
+    return { status: 'fa', faLabel: isRFA ? 'RFA' : 'UFA', sc: 'free-agent' };
+  }
+  
+  // For 2026-27, use actual ST 26-27 data
+  if (year === '2026-27') {
+    if (p.status27 === 'TEAM OPT') return { status: 'to', sc: 'team-option' };
+    if (p.status27 === 'PLAYER OPT') return { status: 'po', sc: 'player-option' };
+    if (p.status27 === 'NOT G' || p.status27 === 'PARTIAL G') return { status: 'ng', sc: 'non-guaranteed' };
+  }
+  
+  if (isTwoWay) return { status: 'tw', sc: 'two-way' };
+  return { status: 'active', sc: '' };
+}
+
+function renderFutureYearAdmin(year) {
+  const container = document.getElementById('adminTeamsList');
+  const positions = ['PG','SG','SF','PF','C'];
+  const savedOrders = loadAllOrders();
+  const pMap = {}; allPlayers.forEach(p => pMap[p.name] = p);
+  const endThreshold = getFutureYearEndThreshold(year);
+  
+  let html = `<div style="padding:0.5rem;margin-bottom:1rem;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;text-align:center">
+    <span style="font-size:0.85rem;font-weight:700;color:#6366f1">📅 ${year} Season Depth Charts — All 30 Teams</span>
+    <div style="font-size:0.65rem;color:#6b7280;margin-top:0.2rem">Players under contract shown above separator · Free agents below in orange</div>
+  </div>`;
+  
+  for (const team of NBA_TEAMS) {
+    const tp = allPlayers.filter(p => p.team === team.abbrev);
+    if (!tp.length) continue;
+    const saved = savedOrders[team.abbrev] || null;
+    
+    // Split into contracted and FAs based on END year
+    const contractedByPos = {}, faByPos = {};
+    const globalPlaced = new Set();
+    positions.forEach(pos => {
+      contractedByPos[pos] = [];
+      faByPos[pos] = [];
+    });
+    
+    // Use saved order if available
+    if (saved) {
+      positions.forEach(pos => {
+        const names = saved[pos] || [];
+        names.forEach(n => {
+          if (n === '__SPACER__' || n === '__SEPARATOR__' || globalPlaced.has(n)) return;
+          const p = pMap[n];
+          if (!p || p.team !== team.abbrev) return;
+          const ps = getFuturePlayerStatus(p, endThreshold, year);
+          if (ps.status === 'fa') faByPos[pos].push({ ...p, _ps: ps });
+          else contractedByPos[pos].push({ ...p, _ps: ps });
+          globalPlaced.add(n);
+        });
+      });
+    }
+    
+    // Place unsorted players
+    tp.filter(p => !globalPlaced.has(p.name)).forEach(p => {
+      const pos = positions.includes(p.position) ? p.position : 'SF';
+      const ps = getFuturePlayerStatus(p, endThreshold, year);
+      if (ps.status === 'fa') faByPos[pos].push({ ...p, _ps: ps });
+      else contractedByPos[pos].push({ ...p, _ps: ps });
+    });
+    
+    // Sort by trade value within each group
+    positions.forEach(pos => {
+      contractedByPos[pos].sort((a,b) => b.tradeValue - a.tradeValue);
+      faByPos[pos].sort((a,b) => b.tradeValue - a.tradeValue);
+    });
+    
+    const maxContracted = Math.max(...positions.map(pos => contractedByPos[pos].length), 1);
+    const hasFAs = positions.some(pos => faByPos[pos].length > 0);
+    
+    html += `<div class="admin-team-row" data-team="${team.abbrev}">
+      <div class="admin-team-row-header"><img class="admin-team-row-logo" src="${team.logo}" alt="${team.name}" onerror="this.style.opacity='0.3'"><span class="admin-team-row-name">${team.name}</span><span class="admin-team-row-abbrev">${team.abbrev}</span><span class="eliminated-label">${year}</span></div>
+      <div class="admin-depth-chart" data-team="${team.abbrev}">`;
+    
+    positions.forEach(pos => {
+      html += `<div class="admin-position-column" data-position="${pos}"><div class="admin-position-header">${pos}</div>`;
+      
+      // Contracted players
+      let firstReal = true;
+      contractedByPos[pos].forEach(p => {
+        const sc = p._ps.sc;
+        const sal = year === '2026-27' ? (p.salary27 || p.salary) : p.salary27 || p.salary;
+        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(sal)}</div></div>`;
+        firstReal = false;
+      });
+      
+      // Pad with spacers
+      for (let i = contractedByPos[pos].length; i < maxContracted; i++) {
+        html += `<div class="admin-player-card spacer" draggable="true" data-player="__SPACER__"><div><div class="admin-player-name" style="color:#666;">— blank —</div><div class="admin-trade-value" style="visibility:hidden;">&nbsp;</div></div></div>`;
+      }
+      
+      // Separator
+      html += `<div class="admin-separator" style="background:#f59e0b"></div>`;
+      
+      // FAs
+      faByPos[pos].forEach(p => {
+        html += `<div class="admin-player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value" style="color:#b45309">${p._ps.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
+      });
+      
+      html += '</div>';
+    });
+    html += '</div></div>';
+  }
+  
+  container.innerHTML = html;
+  document.querySelectorAll('.admin-depth-chart').forEach(c => setupDragDrop(c, c.dataset.team, true));
 }
 
 // =====================================================
