@@ -592,6 +592,7 @@
     "PG": [
       "Ryan Rollins",
       "Kevin Porter",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -610,16 +611,16 @@
       "Alex Antetokounmpo"
     ],
     "PF": [
-      "Pete Nance",
       "Giannis Antetokounmpo",
+      "Pete Nance",
       "__SPACER__",
       "__SEPARATOR__",
       "Ousmane Dieng",
       "Thanasis Antetokounmpo"
     ],
     "C": [
-      "Jericho Sims",
       "Myles Turner",
+      "Jericho Sims",
       "Bobby Portis",
       "__SEPARATOR__"
     ]
