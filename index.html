@@ -843,6 +843,7 @@ function renderFutureYearAdmin(year) {
   let html = `<div style="padding:0.5rem;margin-bottom:1rem;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;text-align:center">
     <span style="font-size:0.85rem;font-weight:700;color:#6366f1">📅 ${year} Season Depth Charts — All 30 Teams</span>
     <div style="font-size:0.65rem;color:#6b7280;margin-top:0.2rem">Players under contract shown above separator · Free agents below in orange</div>
+    <button class="export-btn" onclick="copyFutureYearExport('${year}')" style="margin-top:0.4rem">📷 Copy ${year} Presto HTML</button>
   </div>`;
   
   for (const team of NBA_TEAMS) {
@@ -1589,6 +1590,124 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
             out += `<td${cCls(p, isOffseason)}>${p ? fmtSalFull(p.salary) : ''}</td>`;
           }
         });
+        out += `</tr>`;
+      }
+    }
+    
+    out += `</tbody></table><br>`;
+  }
+  out += '</div>';
+  return out;
+}
+
+function copyFutureYearExport(year) {
+  const teamOrders = {};
+  document.querySelectorAll('.admin-depth-chart').forEach(chart => {
+    const ta = chart.dataset.team; const order = {};
+    chart.querySelectorAll('.admin-position-column').forEach(col => {
+      const pos = col.dataset.position; if (!pos) return; order[pos] = [];
+      col.querySelectorAll('.admin-player-card').forEach(card => {
+        if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
+        else if (card.dataset.player) order[pos].push(card.dataset.player);
+      });
+    });
+    teamOrders[ta] = order;
+  });
+  
+  const endThreshold = getFutureYearEndThreshold(year);
+  const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, NBA_TEAMS, year, endThreshold);
+  
+  const btn = event.target.closest('.export-btn');
+  const orig = btn.textContent;
+  const blob = new Blob([out], {type: 'text/plain'});
+  navigator.clipboard.write([new ClipboardItem({'text/plain': blob})]).then(() => {
+    btn.textContent = '✓ Copied!';
+    btn.style.background = '#16a34a'; btn.style.color = 'white';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = out; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = orig, 2000);
+  });
+}
+
+function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) {
+  const positions = ['PG','SG','SF','PF','C'];
+  const playerMap = {}; allPlayers.forEach(p => playerMap[p.name] = p);
+
+  function cCls(p) {
+    if (!p) return '';
+    if (p._ps && p._ps.status === 'fa') return ' class="c-fa"';
+    if (year === '2026-27') {
+      if (p.status27 === 'TEAM OPT') return ' class="c-to"';
+      if (p.status27 === 'PLAYER OPT') return ' class="c-po"';
+      if (p.status27 === 'NOT G' || p.status27 === 'PARTIAL G') return ' class="c-ng"';
+    }
+    if (p.colorCode === 'twoway') return ' class="c-2way"';
+    return '';
+  }
+
+  let out = '<div class="dc-wrap">';
+  for (const team of teamList) {
+    const order = teamOrders[team.abbrev];
+    if (!order) continue;
+    
+    const aboveCols = {}, belowCols = {};
+    let maxAbove = 0, maxBelow = 0;
+    
+    positions.forEach(pos => {
+      aboveCols[pos] = [];
+      belowCols[pos] = [];
+      const names = order[pos] || [];
+      names.forEach(n => {
+        if (n === '__SPACER__') return;
+        const p = playerMap[n];
+        if (!p || p.team !== team.abbrev) return;
+        const ps = getFuturePlayerStatus(p, endThreshold, year);
+        const enriched = { ...p, _ps: ps };
+        if (ps.status === 'fa') belowCols[pos].push(enriched);
+        else aboveCols[pos].push(enriched);
+      });
+      if (aboveCols[pos].length > maxAbove) maxAbove = aboveCols[pos].length;
+      if (belowCols[pos].length > maxBelow) maxBelow = belowCols[pos].length;
+    });
+    
+    if (maxAbove < 1) maxAbove = 1;
+    
+    out += `<div class="dc-team"><strong>${team.name.toUpperCase()} - ${year}</strong></div>`;
+    out += `<table class="dc-tbl"><tbody>`;
+    out += `<tr class="dc-hdr">`;
+    positions.forEach(pos => { out += `<th>${pos}</th>`; });
+    out += `</tr>`;
+    
+    for (let r = 0; r < maxAbove; r++) {
+      const rp = positions.map(pos => aboveCols[pos][r] || null);
+      if (!rp.some(p => p !== null)) continue;
+      out += `<tr class="dc-hs-row">`;
+      rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+      out += `</tr>`;
+      out += `<tr class="dc-data">`;
+      rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? `<strong>${p.name}</strong>` : ''}</td>`; });
+      out += `</tr>`;
+      out += `<tr class="dc-data">`;
+      rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? fmtSalFull(p.salary27 || p.salary) : ''}</td>`; });
+      out += `</tr>`;
+    }
+    
+    if (maxBelow > 0) {
+      out += `<tr><td colspan="5" style="height:3px;background:#f59e0b;padding:0"></td></tr>`;
+      for (let r = 0; r < maxBelow; r++) {
+        const rp = positions.map(pos => belowCols[pos][r] || null);
+        if (!rp.some(p => p !== null)) continue;
+        out += `<tr class="dc-hs-row">`;
+        rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+        out += `</tr>`;
+        out += `<tr class="dc-data">`;
+        rp.forEach(p => { out += `<td${p ? ' class="c-fa"' : ''}>${p ? `<strong>${p.name}</strong>` : ''}</td>`; });
+        out += `</tr>`;
+        out += `<tr class="dc-data">`;
+        rp.forEach(p => { out += `<td${p ? ' class="c-fa"' : ''}>${p && p._ps ? (p._ps.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted') : ''}</td>`; });
         out += `</tr>`;
       }
     }
