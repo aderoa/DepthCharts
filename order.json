@@ -440,28 +440,31 @@
     "PG": [
       "Darius Garland",
       "Kobe Sanders",
-      "Sean Pedulla",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Sean Pedulla"
     ],
     "SG": [
       "Kris Dunn",
       "Bogdan Bogdanovic",
-      "TyTy Washington",
+      "__SPACER__",
       "__SEPARATOR__",
+      "TyTy Washington",
       "Bradley Beal"
     ],
     "SF": [
-      "Derrick Jones",
+      "Kawhi Leonard",
       "Cam Christie",
       "Jordan Miller",
-      "__SEPARATOR__",
-      "Kawhi Leonard"
+      "__SEPARATOR__"
     ],
     "PF": [
+      "Derrick Jones",
       "John Collins",
       "Bennedict Mathurin",
-      "Norchad Omier",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Norchad Omier",
       "Isaiah Jackson"
     ],
     "C": [
