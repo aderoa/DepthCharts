@@ -840,36 +840,37 @@
   "PHX": {
     "PG": [
       "Jamaree Bouyea",
-      "Koby Brea",
-      "__SEPARATOR__",
       "Collin Gillespie",
+      "__SEPARATOR__",
+      "Koby Brea",
       "Jordan Goodwin"
     ],
     "SG": [
+      "Jalen Green",
       "Amir Coffey",
       "Haywood Highsmith",
-      "__SEPARATOR__",
       "Grayson Allen",
-      "Jalen Green"
+      "__SEPARATOR__"
     ],
     "SF": [
+      "Devin Booker",
       "Ryan Dunn",
-      "Isaiah Livers",
-      "__SEPARATOR__",
       "Dillon Brooks",
-      "Devin Booker"
+      "__SEPARATOR__",
+      "Isaiah Livers"
     ],
     "PF": [
+      "Royce O'Neale",
       "Rasheer Fleming",
-      "CJ Huntley",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Royce O'Neale"
+      "CJ Huntley"
     ],
     "C": [
+      "Mark Williams",
       "Oso Ighodaro",
       "Khaman Maluach",
-      "__SEPARATOR__",
-      "Mark Williams"
+      "__SEPARATOR__"
     ]
   },
   "POR": {
