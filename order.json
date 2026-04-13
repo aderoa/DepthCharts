@@ -508,6 +508,7 @@
   },
   "MEM": {
     "PG": [
+      "Dariq Whitehead",
       "Javon Small",
       "__SPACER__",
       "__SEPARATOR__",
@@ -524,7 +525,6 @@
       "Scotty Pippen Jr"
     ],
     "SF": [
-      "Dariq Whitehead",
       "Toby Okani",
       "__SEPARATOR__",
       "Cedric Coward",
@@ -534,7 +534,6 @@
     "PF": [
       "Jahmai Mashack",
       "Taj Gibson",
-      "__SPACER__",
       "__SEPARATOR__",
       "Taylor Hendricks",
       "GG Jackson",
@@ -542,6 +541,7 @@
     ],
     "C": [
       "Olivier-Maxence Prosper",
+      "__SPACER__",
       "__SEPARATOR__",
       "Brandon Clarke",
       "Zach Edey"
