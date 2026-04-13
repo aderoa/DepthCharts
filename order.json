@@ -663,6 +663,7 @@
     "PG": [
       "Dejounte Murray",
       "Jeremiah Fears",
+      "__SPACER__",
       "__SEPARATOR__",
       "Trey Alexander"
     ],
@@ -670,8 +671,6 @@
       "Herb Jones",
       "Jordan Poole",
       "Jordan Hawkins",
-      "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -683,7 +682,7 @@
     ],
     "PF": [
       "Saddiq Bey",
-      "Karlo Matkovic",
+      "Derik Queen",
       "Kevon Looney",
       "__SEPARATOR__",
       "Hunter Dickinson"
@@ -691,8 +690,7 @@
     "C": [
       "Zion Williamson",
       "Yves Missi",
-      "Derik Queen",
-      "__SPACER__",
+      "Karlo Matkovic",
       "__SEPARATOR__",
       "DeAndre Jordan"
     ]
