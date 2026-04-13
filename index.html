@@ -813,13 +813,16 @@ function getFutureYearEndThreshold(year) {
 
 function getFuturePlayerStatus(p, endThreshold, year) {
   const isUnderContract = p.contractEnd >= endThreshold;
-  const isLastYear = p.contractEnd === endThreshold;
   const isTwoWay = p.colorCode === 'twoway';
   
   if (!isUnderContract) {
-    // Free agent
-    const isRFA = /rookie/i.test(p.exception) || isTwoWay;
-    return { status: 'fa', faLabel: isRFA ? 'RFA' : 'UFA', sc: 'free-agent' };
+    // Only show as FA in the first year after contract expires
+    // e.g. END=2027 → FA in 2027-28 (threshold 2028), gone in 2028-29+
+    if (p.contractEnd === endThreshold - 1) {
+      const isRFA = /rookie/i.test(p.exception) || isTwoWay;
+      return { status: 'fa', faLabel: isRFA ? 'RFA' : 'UFA', sc: 'free-agent' };
+    }
+    return { status: 'gone' }; // Already became FA in a prior year — skip
   }
   
   // For 2026-27, use actual ST 26-27 data
@@ -868,6 +871,7 @@ function renderFutureYearAdmin(year) {
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
           const ps = getFuturePlayerStatus(p, endThreshold, year);
+          if (ps.status === 'gone') { globalPlaced.add(n); return; }
           if (ps.status === 'fa') faByPos[pos].push({ ...p, _ps: ps });
           else contractedByPos[pos].push({ ...p, _ps: ps });
           globalPlaced.add(n);
@@ -879,6 +883,7 @@ function renderFutureYearAdmin(year) {
     tp.filter(p => !globalPlaced.has(p.name)).forEach(p => {
       const pos = positions.includes(p.position) ? p.position : 'SF';
       const ps = getFuturePlayerStatus(p, endThreshold, year);
+      if (ps.status === 'gone') return;
       if (ps.status === 'fa') faByPos[pos].push({ ...p, _ps: ps });
       else contractedByPos[pos].push({ ...p, _ps: ps });
     });
@@ -1665,6 +1670,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
         const p = playerMap[n];
         if (!p || p.team !== team.abbrev) return;
         const ps = getFuturePlayerStatus(p, endThreshold, year);
+        if (ps.status === 'gone') return;
         const enriched = { ...p, _ps: ps };
         if (ps.status === 'fa') belowCols[pos].push(enriched);
         else aboveCols[pos].push(enriched);
