@@ -1761,8 +1761,9 @@ async function autoRefreshData() {
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
-    // Full re-render to move players between healthy/injured sections
-    renderAdminAllTeams();
+    // Re-render current view (stay on future year if active)
+    if (_futureYear) renderFutureYearAdmin(_futureYear);
+    else renderAdminAllTeams();
     const el = document.getElementById('refreshStatus');
     if (el) {
       const t = new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
@@ -1786,8 +1787,9 @@ async function manualRefresh(btn) {
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
-    // Full re-render preserving saved orders
-    renderAdminAllTeams();
+    // Re-render current view (stay on future year if active)
+    if (_futureYear) renderFutureYearAdmin(_futureYear);
+    else renderAdminAllTeams();
     const el = document.getElementById('refreshStatus');
     const t = new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
     if (el) { el.textContent = `Updated ${t}`; el.style.opacity = '1'; setTimeout(() => el.style.opacity = '0.7', 2000); }
