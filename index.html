@@ -908,11 +908,13 @@ function renderFutureYearAdmin(year) {
       else contractedByPos[pos].push({ ...p, _ps: ps });
     });
     
-    // Sort by trade value within each group
-    positions.forEach(pos => {
-      contractedByPos[pos].sort((a,b) => b.tradeValue - a.tradeValue);
-      faByPos[pos].sort((a,b) => b.tradeValue - a.tradeValue);
-    });
+    // Sort by trade value only if no saved order (preserve user's drag-drop order otherwise)
+    if (!saved) {
+      positions.forEach(pos => {
+        contractedByPos[pos].sort((a,b) => b.tradeValue - a.tradeValue);
+        faByPos[pos].sort((a,b) => b.tradeValue - a.tradeValue);
+      });
+    }
     
     const maxContracted = Math.max(...positions.map(pos => contractedByPos[pos].length), 1);
     const hasFAs = positions.some(pos => faByPos[pos].length > 0);
