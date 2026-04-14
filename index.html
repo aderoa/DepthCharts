@@ -222,16 +222,20 @@ footer a { color:var(--accent); text-decoration:none; }
     <span>🔧 ADMIN MODE — Drag to reorder, synced to GitHub</span>
     <span id="saveStatus" class="admin-save-status">✓ Saved</span>
     <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
-      <button class="export-btn" onclick="copyExportByGroup('playoff1')">📷 Copy ATL-LAL</button>
-      <button class="export-btn" onclick="copyExportByGroup('playoff2')">📷 Copy MIA-TOR</button>
-      <button class="export-btn" onclick="copyExportByGroup('offseason')">📷 Copy 2026-27 Teams</button>
-      <button class="export-btn" onclick="manualRefresh(this)">🔄 Refresh Data</button>
+      <button class="export-btn" id="yearBtn2526" onclick="showYearView('2025-26')" style="background:#6366f1;color:#fff;border-color:#6366f1">📅 25-26</button>
+      <button class="export-btn" id="yearBtn2627" onclick="showYearView('2026-27')">📅 26-27</button>
+      <button class="export-btn" id="yearBtn2728" onclick="showYearView('2027-28')">📅 27-28</button>
+      <button class="export-btn" id="yearBtn2829" onclick="showYearView('2028-29')">📅 28-29</button>
+      <button class="export-btn" id="yearBtn2930" onclick="showYearView('2029-30')">📅 29-30</button>
       <span style="width:1px;height:20px;background:rgba(0,0,0,0.2);margin:0 4px"></span>
-      <button class="export-btn" id="yearBtn2627" onclick="showFutureYear('2026-27')" style="background:#6366f1;color:#fff;border-color:#6366f1">📅 26-27</button>
-      <button class="export-btn" id="yearBtn2728" onclick="showFutureYear('2027-28')">📅 27-28</button>
-      <button class="export-btn" id="yearBtn2829" onclick="showFutureYear('2028-29')">📅 28-29</button>
-      <button class="export-btn" id="yearBtn2930" onclick="showFutureYear('2029-30')">📅 29-30</button>
-      <button class="export-btn" id="yearBtnBack" onclick="showMainAdmin()" style="display:none">← Back to Main</button>
+      <span id="copyBtns2526">
+        <button class="export-btn" onclick="copyExportByGroup('playoff1')">📷 Copy ATL-LAL</button>
+        <button class="export-btn" onclick="copyExportByGroup('playoff2')">📷 Copy MIA-TOR</button>
+      </span>
+      <span id="copyBtnFuture" style="display:none">
+        <button class="export-btn" id="copyFutureBtn" onclick="copyFutureYearExport(_futureYear)">📷 Copy Presto HTML</button>
+      </span>
+      <button class="export-btn" onclick="manualRefresh(this)">🔄 Refresh Data</button>
       <span id="refreshStatus" style="color:#1a1a2e;font-size:0.7rem;margin-left:8px;opacity:0.7;">Auto-refresh: 60s</span>
     </div>
   </div>
@@ -783,27 +787,28 @@ function renderDepthChart(teamAbbrev) {
 // =====================================================
 let _futureYear = null;
 
-function showFutureYear(year) {
-  _futureYear = year;
-  // Update button styles
-  ['2627','2728','2829','2930'].forEach(y => {
+function showYearView(year) {
+  // Update active tab
+  ['2526','2627','2728','2829','2930'].forEach(y => {
     const btn = document.getElementById('yearBtn' + y);
     if (btn) { btn.style.background = ''; btn.style.color = ''; btn.style.borderColor = ''; }
   });
-  const activeBtn = document.getElementById('yearBtn' + year.replace('-',''));
+  const activeBtn = document.getElementById('yearBtn' + year.replace('-','').slice(-4));
   if (activeBtn) { activeBtn.style.background = '#6366f1'; activeBtn.style.color = '#fff'; activeBtn.style.borderColor = '#6366f1'; }
-  document.getElementById('yearBtnBack').style.display = 'inline-block';
-  renderFutureYearAdmin(year);
-}
-
-function showMainAdmin() {
-  _futureYear = null;
-  document.getElementById('yearBtnBack').style.display = 'none';
-  ['2627','2728','2829','2930'].forEach(y => {
-    const btn = document.getElementById('yearBtn' + y);
-    if (btn) { btn.style.background = ''; btn.style.color = ''; btn.style.borderColor = ''; }
-  });
-  renderAdminAllTeams();
+  
+  // Show/hide copy buttons
+  const is2526 = year === '2025-26';
+  document.getElementById('copyBtns2526').style.display = is2526 ? '' : 'none';
+  document.getElementById('copyBtnFuture').style.display = is2526 ? 'none' : '';
+  if (!is2526) document.getElementById('copyFutureBtn').textContent = `📷 Copy ${year} Presto HTML`;
+  
+  if (is2526) {
+    _futureYear = null;
+    renderAdminAllTeams();
+  } else {
+    _futureYear = year;
+    renderFutureYearAdmin(year);
+  }
 }
 
 function getFutureYearEndThreshold(year) {
@@ -846,7 +851,6 @@ function renderFutureYearAdmin(year) {
   let html = `<div style="padding:0.5rem;margin-bottom:1rem;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;text-align:center">
     <span style="font-size:0.85rem;font-weight:700;color:#6366f1">📅 ${year} Season Depth Charts — All 30 Teams</span>
     <div style="font-size:0.65rem;color:#6b7280;margin-top:0.2rem">Players under contract shown above separator · Free agents below in orange</div>
-    <button class="export-btn" onclick="copyFutureYearExport('${year}')" style="margin-top:0.4rem">📷 Copy ${year} Presto HTML</button>
   </div>`;
   
   for (const team of NBA_TEAMS) {
@@ -909,13 +913,13 @@ function renderFutureYearAdmin(year) {
       contractedByPos[pos].forEach(p => {
         const sc = p._ps.sc;
         const sal = year === '2026-27' ? (p.salary27 || p.salary) : p.salary27 || p.salary;
-        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(sal)}</div></div>`;
+        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" data-player="${p.name}" style="cursor:default"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(sal)}</div></div>`;
         firstReal = false;
       });
       
       // Pad with spacers
       for (let i = contractedByPos[pos].length; i < maxContracted; i++) {
-        html += `<div class="admin-player-card spacer" draggable="true" data-player="__SPACER__"><div><div class="admin-player-name" style="color:#666;">— blank —</div><div class="admin-trade-value" style="visibility:hidden;">&nbsp;</div></div></div>`;
+        html += `<div class="admin-player-card spacer" style="cursor:default"><div><div class="admin-player-name" style="color:#666;">— blank —</div><div class="admin-trade-value" style="visibility:hidden;">&nbsp;</div></div></div>`;
       }
       
       // Separator
@@ -923,7 +927,7 @@ function renderFutureYearAdmin(year) {
       
       // FAs
       faByPos[pos].forEach(p => {
-        html += `<div class="admin-player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value" style="color:#b45309">${p._ps.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
+        html += `<div class="admin-player-card free-agent" data-player="${p.name}" style="cursor:default"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value" style="color:#b45309">${p._ps.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
       });
       
       html += '</div>';
@@ -932,7 +936,7 @@ function renderFutureYearAdmin(year) {
   }
   
   container.innerHTML = html;
-  document.querySelectorAll('.admin-depth-chart').forEach(c => setupDragDrop(c, c.dataset.team, true));
+  // No drag-drop in future year views — keeps them independent from main admin order
 }
 
 // =====================================================
@@ -949,19 +953,9 @@ function renderAdminAllTeams() {
   allPlayers.forEach(p => pMap[p.name] = p);
 
   let html = '';
-  // Render playoff teams first, then eliminated
-  const sortedTeams = [...NBA_TEAMS].sort((a,b) => {
-    const aElim = ELIMINATED_ABBREVS.has(a.abbrev) ? 1 : 0;
-    const bElim = ELIMINATED_ABBREVS.has(b.abbrev) ? 1 : 0;
-    return aElim - bElim;
-  });
-  let eliminatedHeaderShown = false;
-  for (const team of sortedTeams) {
-    const isEliminated = ELIMINATED_ABBREVS.has(team.abbrev);
-    if (isEliminated && !eliminatedHeaderShown) {
-      html += `<div style="padding:1rem 0.5rem;margin-top:1.5rem;border-top:2px solid var(--border)"><h3 style="color:var(--text-muted);font-size:0.85rem">🏠 Eliminated Teams — 2026-27 Offseason Roster</h3></div>`;
-      eliminatedHeaderShown = true;
-    }
+  // 25-26 view: only playoff teams
+  const playoffTeams = NBA_TEAMS.filter(t => !ELIMINATED_ABBREVS.has(t.abbrev));
+  for (const team of playoffTeams) {
     const tp = allPlayers.filter(p=>p.team===team.abbrev);
     if (!tp.length) continue;
     const saved = savedOrders[team.abbrev] || null;
@@ -978,22 +972,22 @@ function renderAdminAllTeams() {
         const aboveNames = sepIdx >= 0 ? saved[pos].slice(0, sepIdx) : saved[pos];
         const belowNames = sepIdx >= 0 ? saved[pos].slice(sepIdx + 1) : [];
 
-        // Above separator: place saved players, but force Out/Doubtful down
+        // Above separator: place saved players, but force Out/Doubtful/TwoWay down
         aboveNames.forEach(n => {
           if (n === '__SPACER__' || globalPlaced.has(n)) return;
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway') || (isEliminated && p.isFA)) { injuredByPos[pos].push(p); }
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') { injuredByPos[pos].push(p); }
           else { healthyByPos[pos].push(p); }
           globalPlaced.add(n);
         });
 
-        // Below separator: place saved players, but force non-injured/non-questionable up
+        // Below separator: place saved players, but force non-injured up
         belowNames.forEach(n => {
           if (n === '__SPACER__' || globalPlaced.has(n)) return;
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable' || (!isEliminated && p.colorCode === 'twoway') || (isEliminated && p.isFA)) { injuredByPos[pos].push(p); }
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable' || p.colorCode === 'twoway') { injuredByPos[pos].push(p); }
           else { healthyByPos[pos].push(p); }
           globalPlaced.add(n);
         });
@@ -1001,73 +995,46 @@ function renderAdminAllTeams() {
         // No saved order — default sort by trade value
         const posTp = tp.filter(p => p.position === pos && !globalPlaced.has(p.name)).sort((a,b) => b.tradeValue - a.tradeValue);
         posTp.forEach(p => {
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway') || (isEliminated && p.isFA)) injuredByPos[pos].push(p);
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') injuredByPos[pos].push(p);
           else healthyByPos[pos].push(p);
           globalPlaced.add(p.name);
         });
       }
     });
 
-    // Handle unplaced players (new additions or position mismatches)
+    // Handle unplaced players
     tp.filter(p => !globalPlaced.has(p.name)).forEach(p => {
       const pos = positions.includes(p.position) ? p.position : 'SF';
-      if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || (!isEliminated && p.colorCode === 'twoway') || (isEliminated && p.isFA)) injuredByPos[pos].push(p);
+      if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') injuredByPos[pos].push(p);
       else healthyByPos[pos].push(p);
     });
 
-    // Count total healthy to determine row count
     const totalHealthy = positions.reduce((s, pos) => s + healthyByPos[pos].length, 0);
     const healthyRows = Math.max(1, Math.ceil(totalHealthy / 5));
 
-    html += `<div class="admin-team-row ${isEliminated?'eliminated':''}" data-team="${team.abbrev}">
-      <div class="admin-team-row-header"><img class="admin-team-row-logo" src="${team.logo}" alt="${team.name}" onerror="this.style.opacity='0.3'"><span class="admin-team-row-name">${team.name}</span><span class="admin-team-row-abbrev">${team.abbrev}</span>${isEliminated?'<span class="eliminated-label">Eliminated</span>':''}</div>
+    html += `<div class="admin-team-row" data-team="${team.abbrev}">
+      <div class="admin-team-row-header"><img class="admin-team-row-logo" src="${team.logo}" alt="${team.name}" onerror="this.style.opacity='0.3'"><span class="admin-team-row-name">${team.name}</span><span class="admin-team-row-abbrev">${team.abbrev}</span></div>
       <div class="admin-depth-chart" data-team="${team.abbrev}">`;
     positions.forEach(pos => {
       html += `<div class="admin-position-column" data-position="${pos}"><div class="admin-position-header">${pos}</div>`;
 
-      // Healthy players (for eliminated: split into contracted and FAs)
       let firstReal = true;
-      const healthyList = healthyByPos[pos];
-      const faList = []; // FAs now in injuredByPos for eliminated teams
-      
-      healthyList.forEach(p => {
-        let sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='twoway'?'two-way':p.colorCode==='questionable'?'questionable':p.colorCode==='probable'?'probable':'';
-        let salDisplay = fmtSal(isEliminated ? (p.salary27 || p.salary) : p.salary);
-        if (isEliminated) {
-          sc = p.colorCode === 'twoway' ? 'two-way' : '';
-          if (p.status27 === 'TEAM OPT') { sc = 'team-option'; }
-          else if (p.status27 === 'PLAYER OPT') { sc = 'player-option'; }
-          else if (p.status27 === 'NOT G') { sc = 'non-guaranteed'; }
-          else if (p.status27 === 'PARTIAL G') { sc = 'non-guaranteed'; }
-        }
-        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${salDisplay}</div></div>`;
+      healthyByPos[pos].forEach(p => {
+        const sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='questionable'?'questionable':p.colorCode==='probable'?'probable':'';
+        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
         firstReal = false;
       });
 
-      // Pad healthy section with spacers
       for (let i = healthyByPos[pos].length; i < healthyRows; i++) {
         html += `<div class="admin-player-card spacer" draggable="true" data-player="__SPACER__"><div><div class="admin-player-name" style="color:#666;">— blank —</div><div class="admin-trade-value" style="visibility:hidden;">&nbsp;</div></div></div>`;
       }
 
-      // Separator
       html += `<div class="admin-separator"></div>`;
 
-      // Injured players (or FAs for eliminated teams)
-      if (isEliminated) {
-        // Show FAs below separator with RFA/UFA label
-        injuredByPos[pos].forEach(p => {
-          if (p.isFA) {
-            html += `<div class="admin-player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value" style="color:#b45309">${p.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
-          } else {
-            html += `<div class="admin-player-card" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary27 || p.salary)}</div></div>`;
-          }
-        });
-      } else {
-        injuredByPos[pos].forEach(p => {
-          const sc = p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':'questionable';
-          html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${p.colorCode==='twoway'?' <span style="font-size:0.5rem;color:#8b5cf6">2W</span>':''}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
-        });
-      }
+      injuredByPos[pos].forEach(p => {
+        const sc = p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':'questionable';
+        html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${p.colorCode==='twoway'?' <span style="font-size:0.5rem;color:#8b5cf6">2W</span>':''}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
+      });
 
       html += '</div>';
     });
