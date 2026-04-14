@@ -43,19 +43,18 @@
       "Derrick White",
       "Payton Pritchard",
       "Max Shulga",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Sam Hauser",
-      "Baylor Scheierman",
       "Dalano Banton",
+      "Ron Harper Jr",
       "__SEPARATOR__"
     ],
     "SF": [
       "Jaylen Brown",
       "Hugo Gonzalez",
-      "Ron Harper Jr",
+      "Baylor Scheierman",
       "__SEPARATOR__",
       "John Tonje"
     ],
@@ -67,9 +66,10 @@
     ],
     "C": [
       "Neemias Queta",
-      "Nikola Vucevic",
       "Luka Garza",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Nikola Vucevic"
     ]
   },
   "BKN": {
