@@ -231,6 +231,11 @@ footer a { color:var(--accent); text-decoration:none; }
       <span id="copyBtns2526">
         <button class="export-btn" onclick="copyExportByGroup('playoff1')">📷 Copy ATL-LAL</button>
         <button class="export-btn" onclick="copyExportByGroup('playoff2')">📷 Copy MIA-TOR</button>
+        <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy 2026-27 Teams</button>
+      </span>
+      <span id="copyBtns2627" style="display:none">
+        <button class="export-btn" onclick="copyFutureYearExport('2026-27')">📷 Copy All 30 Teams</button>
+        <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy Eliminated Only</button>
       </span>
       <span id="copyBtnFuture" style="display:none">
         <button class="export-btn" id="copyFutureBtn" onclick="copyFutureYearExport(_futureYear)">📷 Copy Presto HTML</button>
@@ -803,11 +808,13 @@ function showYearView(year) {
   const activeBtn = document.getElementById('yearBtn' + year.replace('-','').slice(-4));
   if (activeBtn) { activeBtn.style.background = '#6366f1'; activeBtn.style.color = '#fff'; activeBtn.style.borderColor = '#6366f1'; }
   
-  // Show/hide copy buttons
+  // Show/hide copy buttons per year
   const is2526 = year === '2025-26';
+  const is2627 = year === '2026-27';
   document.getElementById('copyBtns2526').style.display = is2526 ? '' : 'none';
-  document.getElementById('copyBtnFuture').style.display = is2526 ? 'none' : '';
-  if (!is2526) document.getElementById('copyFutureBtn').textContent = `📷 Copy ${year} Presto HTML`;
+  document.getElementById('copyBtns2627').style.display = is2627 ? '' : 'none';
+  document.getElementById('copyBtnFuture').style.display = (!is2526 && !is2627) ? '' : 'none';
+  if (!is2526 && !is2627) document.getElementById('copyFutureBtn').textContent = `📷 Copy ${year} Presto HTML`;
   
   if (is2526) {
     _futureYear = null;
@@ -1579,6 +1586,52 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
   }
   out += '</div>';
   return out;
+}
+
+function copyEliminatedExport() {
+  // Load orders from 26-27 storage (independent from current DOM which shows 25-26)
+  const key2627 = storageKeyForYear('2026-27');
+  let savedOrders = {};
+  try { savedOrders = JSON.parse(localStorage.getItem(key2627)) || {}; } catch(e) {}
+  
+  // Build team orders: use saved 26-27 order, fall back to main order, fall back to default
+  const mainOrders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  const positions = ['PG','SG','SF','PF','C'];
+  const eliminatedTeams = NBA_TEAMS.filter(t => ELIMINATED_ABBREVS.has(t.abbrev));
+  const teamOrders = {};
+  
+  for (const team of eliminatedTeams) {
+    if (savedOrders[team.abbrev]) {
+      teamOrders[team.abbrev] = savedOrders[team.abbrev];
+    } else if (mainOrders[team.abbrev]) {
+      teamOrders[team.abbrev] = mainOrders[team.abbrev];
+    } else {
+      // Default: group by position sorted by trade value
+      const order = {};
+      const tp = allPlayers.filter(p => p.team === team.abbrev);
+      positions.forEach(pos => {
+        order[pos] = tp.filter(p => p.position === pos).sort((a,b) => b.tradeValue - a.tradeValue).map(p => p.name);
+      });
+      teamOrders[team.abbrev] = order;
+    }
+  }
+  
+  const endThreshold = getFutureYearEndThreshold('2026-27');
+  const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, eliminatedTeams, '2026-27', endThreshold);
+  
+  const btn = event.target.closest('.export-btn');
+  const orig = btn.textContent;
+  const blob = new Blob([out], {type: 'text/plain'});
+  navigator.clipboard.write([new ClipboardItem({'text/plain': blob})]).then(() => {
+    btn.textContent = '✓ Copied!';
+    btn.style.background = '#16a34a'; btn.style.color = 'white';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = out; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = orig, 2000);
+  });
 }
 
 function copyFutureYearExport(year) {
