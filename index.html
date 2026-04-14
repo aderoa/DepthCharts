@@ -142,6 +142,12 @@ h1 { font-size:1.5rem; font-weight:800; margin-bottom:0.5rem; color:var(--text);
 .player-card.spacer { background:transparent; box-shadow:none; border:2px solid transparent; opacity:1; cursor:default; pointer-events:none; }
 .player-card:hover { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.08); border-color:var(--accent); }
 .player-card.starter { background:linear-gradient(135deg, #fff 0%, #f0f4ff 100%); border:2px solid var(--accent); }
+/* Contract status colors — override .starter */
+.player-card.team-option { background:#fca5a5; }
+.player-card.player-option { background:#33cccc; }
+.player-card.non-guaranteed { background:#e0e000; }
+.player-card.free-agent { background:#ffd580; border:2px solid #f59e0b; }
+.player-card.two-way { background:#e8d5f5; }
 .player-card.dragging { opacity:0.5; cursor:grabbing; }
 .player-card.drag-over { border:2px dashed var(--accent); background:#f0f4ff; }
 .position-column.drag-over { background:rgba(59,130,246,0.06); border-radius:8px; }
@@ -182,6 +188,11 @@ footer a { color:var(--accent); text-decoration:none; }
 .admin-player-name { font-weight:600; font-size:0.75rem; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; pointer-events:none; }
 .admin-player-card.two-way { background:#e8d5f5; }
 .admin-player-card.ten-day { background:#fef3c7; }
+/* Contract status colors — must come after .starter to override it */
+.admin-player-card.team-option { background:#fca5a5; }
+.admin-player-card.player-option { background:#33cccc; }
+.admin-player-card.non-guaranteed { background:#e0e000; }
+.admin-player-card.free-agent { background:#ffd580; }
 .admin-player-card.spacer { background:var(--surface2); border:1px dashed #c0c4cc; display:flex; align-items:center; justify-content:center; opacity:0.6; cursor:grab; position:relative; padding:0.4rem 0.5rem; }
 .admin-player-card.spacer > * { pointer-events:none; }
 .admin-player-card.spacer .spacer-label { color:var(--text-muted); font-size:0.65rem; }
@@ -483,9 +494,29 @@ const SHEETS_ID = '11llk0icQqoi0JwJXat5KO8y2RQeBMN5rS9FhAY56Idc';
 const SHEETS_API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEETS_ID}/values`;
 const TV_CSV_URL = `${SHEETS_API}/Sheet3?key=${API_KEY}`;
 const ROSTER_CSV_URL = `${SHEETS_API}/Sheet1?key=${API_KEY}`;
+const CONTRACTS_CSV_URL = `${SHEETS_API}/Sheet6?key=${API_KEY}`;
 const INJURIES_JSON_URL = 'https://aderoa.github.io/Injuries/injuries.json';
 
 let allPlayers = [], tradeValueMap = new Map(), draggedElement = null;
+let futureStatusMap = {}; // playerName → { st2728, st2829, st2930 }
+
+function parseContractsCSV(csvText) {
+  const rows = parseCSV(csvText); if (rows.length < 2) return {};
+  const hdr = rows[0]; const col = n => hdr.findIndex(h => h.toUpperCase().trim() === n.toUpperCase().trim());
+  const PI = col('PLAYER'), ST2728 = col('ST 27-28'), ST2829 = col('ST 28-29'), ST2930 = col('ST 29-30');
+  if (PI < 0) return {};
+  const map = {};
+  for (let i = 1; i < rows.length; i++) {
+    const r = rows[i]; const name = (r[PI] || '').trim();
+    if (!name) continue;
+    map[name] = {
+      st2728: ST2728 >= 0 ? (r[ST2728] || '').trim() : '',
+      st2829: ST2829 >= 0 ? (r[ST2829] || '').trim() : '',
+      st2930: ST2930 >= 0 ? (r[ST2930] || '').trim() : ''
+    };
+  }
+  return map;
+}
 
 // =====================================================
 // CSV PARSER
@@ -847,11 +878,19 @@ function getFuturePlayerStatus(p, endThreshold, year) {
     return { status: 'gone' }; // Already became FA in a prior year — skip
   }
   
-  // For 2026-27, use actual ST 26-27 data
+  // Use contract status data per year
   if (year === '2026-27') {
     if (p.status27 === 'TEAM OPT') return { status: 'to', sc: 'team-option' };
     if (p.status27 === 'PLAYER OPT') return { status: 'po', sc: 'player-option' };
     if (p.status27 === 'NOT G' || p.status27 === 'PARTIAL G') return { status: 'ng', sc: 'non-guaranteed' };
+  } else {
+    const fs = futureStatusMap[p.name];
+    if (fs) {
+      const st = year === '2027-28' ? fs.st2728 : year === '2028-29' ? fs.st2829 : year === '2029-30' ? fs.st2930 : '';
+      if (st === 'TEAM OPT') return { status: 'to', sc: 'team-option' };
+      if (st === 'PLAYER OPT') return { status: 'po', sc: 'player-option' };
+      if (st === 'NOT G' || st === 'PARTIAL G' || st === 'NOT GUARANTEED') return { status: 'ng', sc: 'non-guaranteed' };
+    }
   }
   
   if (isTwoWay) return { status: 'tw', sc: 'two-way' };
@@ -1341,8 +1380,8 @@ async function renderExportView(exportParam, withHeadshots) {
 
   try {
     const orderURL = new URL('order.json', window.location.href.split('?')[0]).href;
-    const [tvR, rR, oR] = await Promise.all([
-      fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetch(orderURL)
+    const [tvR, rR, oR, cR] = await Promise.all([
+      fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetch(orderURL), fetchSheets(CONTRACTS_CSV_URL)
     ]);
     if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch player data');
     if (!oR.ok) throw new Error('order.json not found — save your order from admin mode first');
@@ -1350,6 +1389,7 @@ async function renderExportView(exportParam, withHeadshots) {
     const [tvText, rText, orderData] = await Promise.all([tvR.text(), rR.text(), oR.json()]);
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
+    if (cR && cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) {} }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
 
     let startIdx, endIdx;
@@ -1678,11 +1718,11 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
 
   function cCls(p) {
     if (!p) return '';
-    if (p._ps && p._ps.status === 'fa') return ' class="c-fa"';
-    if (year === '2026-27') {
-      if (p.status27 === 'TEAM OPT') return ' class="c-to"';
-      if (p.status27 === 'PLAYER OPT') return ' class="c-po"';
-      if (p.status27 === 'NOT G' || p.status27 === 'PARTIAL G') return ' class="c-ng"';
+    if (p._ps) {
+      if (p._ps.status === 'fa') return ' class="c-fa"';
+      if (p._ps.status === 'to') return ' class="c-to"';
+      if (p._ps.status === 'po') return ' class="c-po"';
+      if (p._ps.status === 'ng') return ' class="c-ng"';
     }
     if (p.colorCode === 'twoway') return ' class="c-2way"';
     return '';
@@ -1790,11 +1830,12 @@ function closeExportModal() { document.getElementById('exportModal').classList.r
 // =====================================================
 async function autoRefreshData() {
   try {
-    const [tvR, rR] = await Promise.all([fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL)]);
+    const [tvR, rR, cR] = await Promise.all([fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchSheets(CONTRACTS_CSV_URL)]);
     if (!tvR.ok || !rR.ok) return;
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
+    if (cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) {} }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     // Re-render current view (stay on future year if active)
     if (_futureYear) renderFutureYearAdmin(_futureYear);
@@ -1816,11 +1857,12 @@ async function manualRefresh(btn) {
   btn.textContent = '⏳ Refreshing...';
   btn.disabled = true;
   try {
-    const [tvR, rR] = await Promise.all([fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL)]);
+    const [tvR, rR, cR] = await Promise.all([fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchSheets(CONTRACTS_CSV_URL)]);
     if (!tvR.ok || !rR.ok) throw new Error('Fetch failed');
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
+    if (cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) {} }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     // Re-render current view (stay on future year if active)
     if (_futureYear) renderFutureYearAdmin(_futureYear);
@@ -1852,12 +1894,13 @@ async function init() {
 
   try {
     // Fetch player data + order.json from GitHub in parallel
-    const fetches = [fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchFromGitHub()];
-    const [tvR, rR, ghOrders] = await Promise.all(fetches);
+    const fetches = [fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchFromGitHub(), fetchSheets(CONTRACTS_CSV_URL)];
+    const [tvR, rR, ghOrders, cR] = await Promise.all(fetches);
     if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch data');
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
+    if (cR && cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) { console.warn('Contracts parse error:', e); } }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) { console.warn('Injuries JSON unavailable:', e); }
     document.getElementById('loading').style.display = 'none';
     if (isAdmin && !teamParam) {
