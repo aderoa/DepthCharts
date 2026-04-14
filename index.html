@@ -234,11 +234,13 @@ footer a { color:var(--accent); text-decoration:none; }
         <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy 2026-27 Teams</button>
       </span>
       <span id="copyBtns2627" style="display:none">
-        <button class="export-btn" onclick="copyFutureYearExport('2026-27')">📷 Copy All 30 Teams</button>
+        <button class="export-btn" onclick="copyFutureYearExport('2026-27',0,15)">📷 Copy ATL-MEM</button>
+        <button class="export-btn" onclick="copyFutureYearExport('2026-27',15,30)">📷 Copy MIA-WAS</button>
         <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy Eliminated Only</button>
       </span>
       <span id="copyBtnFuture" style="display:none">
-        <button class="export-btn" id="copyFutureBtn" onclick="copyFutureYearExport(_futureYear)">📷 Copy Presto HTML</button>
+        <button class="export-btn" id="copyFutureBtn1" onclick="copyFutureYearExport(_futureYear,0,15)">📷 Copy ATL-MEM</button>
+        <button class="export-btn" id="copyFutureBtn2" onclick="copyFutureYearExport(_futureYear,15,30)">📷 Copy MIA-WAS</button>
       </span>
       <button class="export-btn" onclick="manualRefresh(this)">🔄 Refresh Data</button>
       <span id="refreshStatus" style="color:#1a1a2e;font-size:0.7rem;margin-left:8px;opacity:0.7;">Auto-refresh: 60s</span>
@@ -814,7 +816,6 @@ function showYearView(year) {
   document.getElementById('copyBtns2526').style.display = is2526 ? '' : 'none';
   document.getElementById('copyBtns2627').style.display = is2627 ? '' : 'none';
   document.getElementById('copyBtnFuture').style.display = (!is2526 && !is2627) ? '' : 'none';
-  if (!is2526 && !is2627) document.getElementById('copyFutureBtn').textContent = `📷 Copy ${year} Presto HTML`;
   
   if (is2526) {
     _futureYear = null;
@@ -1636,7 +1637,9 @@ function copyEliminatedExport() {
   });
 }
 
-function copyFutureYearExport(year) {
+function copyFutureYearExport(year, startIdx, endIdx) {
+  if (startIdx == null) startIdx = 0;
+  if (endIdx == null) endIdx = 30;
   const teamOrders = {};
   document.querySelectorAll('.admin-depth-chart').forEach(chart => {
     const ta = chart.dataset.team; const order = {};
@@ -1651,7 +1654,8 @@ function copyFutureYearExport(year) {
   });
   
   const endThreshold = getFutureYearEndThreshold(year);
-  const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, NBA_TEAMS, year, endThreshold);
+  const teamSlice = NBA_TEAMS.slice(startIdx, endIdx);
+  const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, teamSlice, year, endThreshold);
   
   const btn = event.target.closest('.export-btn');
   const orig = btn.textContent;
