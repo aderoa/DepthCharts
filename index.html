@@ -276,6 +276,13 @@ footer a { color:var(--accent); text-decoration:none; }
 // HYBRID PERSISTENCE: localStorage (fast) + GitHub (durable)
 // =====================================================
 const STORAGE_KEY = 'depthcharts_orders';
+let _activeStorageKey = STORAGE_KEY; // Changes per year view
+
+function storageKeyForYear(year) {
+  if (!year || year === '2025-26') return STORAGE_KEY;
+  return STORAGE_KEY + '_' + year;
+}
+
 const ADMIN_KEY = 'hoopsmatic2025';
 const GH_TOKEN_KEY = 'depthcharts_gh_token';
 const GH_REPO = 'aderoa/DepthCharts';
@@ -287,15 +294,15 @@ let ghSaveTimer = null;   // debounce timer for GitHub pushes
 let ghOrdersCache = null; // in-memory cache of the full orders object
 
 function loadAllOrders() {
-  if (ghOrdersCache) return ghOrdersCache;
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  if (_activeStorageKey === STORAGE_KEY && ghOrdersCache) return ghOrdersCache;
+  try { return JSON.parse(localStorage.getItem(_activeStorageKey)) || {}; }
   catch(e) { return {}; }
 }
 function saveAllOrders(orders) {
-  ghOrdersCache = orders;
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(orders)); } catch(e) {}
-  // Debounce GitHub push (admin only)
-  if (isAdmin) {
+  if (_activeStorageKey === STORAGE_KEY) ghOrdersCache = orders;
+  try { localStorage.setItem(_activeStorageKey, JSON.stringify(orders)); } catch(e) {}
+  // Only push to GitHub for 25-26 (main season)
+  if (isAdmin && _activeStorageKey === STORAGE_KEY) {
     clearTimeout(ghSaveTimer);
     ghSaveTimer = setTimeout(() => pushToGitHub(orders), 2000);
   }
@@ -804,9 +811,11 @@ function showYearView(year) {
   
   if (is2526) {
     _futureYear = null;
+    _activeStorageKey = STORAGE_KEY;
     renderAdminAllTeams();
   } else {
     _futureYear = year;
+    _activeStorageKey = storageKeyForYear(year);
     renderFutureYearAdmin(year);
   }
 }
@@ -913,13 +922,13 @@ function renderFutureYearAdmin(year) {
       contractedByPos[pos].forEach(p => {
         const sc = p._ps.sc;
         const sal = year === '2026-27' ? (p.salary27 || p.salary) : p.salary27 || p.salary;
-        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" data-player="${p.name}" style="cursor:default"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(sal)}</div></div>`;
+        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(sal)}</div></div>`;
         firstReal = false;
       });
       
       // Pad with spacers
       for (let i = contractedByPos[pos].length; i < maxContracted; i++) {
-        html += `<div class="admin-player-card spacer" style="cursor:default"><div><div class="admin-player-name" style="color:#666;">— blank —</div><div class="admin-trade-value" style="visibility:hidden;">&nbsp;</div></div></div>`;
+        html += `<div class="admin-player-card spacer" draggable="true" data-player="__SPACER__"><div><div class="admin-player-name" style="color:#666;">— blank —</div><div class="admin-trade-value" style="visibility:hidden;">&nbsp;</div></div></div>`;
       }
       
       // Separator
@@ -927,7 +936,7 @@ function renderFutureYearAdmin(year) {
       
       // FAs
       faByPos[pos].forEach(p => {
-        html += `<div class="admin-player-card free-agent" data-player="${p.name}" style="cursor:default"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value" style="color:#b45309">${p._ps.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
+        html += `<div class="admin-player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value" style="color:#b45309">${p._ps.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
       });
       
       html += '</div>';
@@ -936,7 +945,7 @@ function renderFutureYearAdmin(year) {
   }
   
   container.innerHTML = html;
-  // No drag-drop in future year views — keeps them independent from main admin order
+  document.querySelectorAll('.admin-depth-chart').forEach(c => setupDragDrop(c, c.dataset.team, true));
 }
 
 // =====================================================
