@@ -114,7 +114,6 @@
       "LaMelo Ball",
       "Sion James",
       "Tre Mann",
-      "__SPACER__",
       "__SEPARATOR__",
       "Antonio Reeves"
     ],
@@ -123,30 +122,27 @@
       "Josh Green",
       "Liam McNeeley",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Coby White"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Kon Knueppel",
       "Tidjane Salaun",
-      "Pat Connaughton",
-      "__SPACER__",
+      "Coby White",
       "__SEPARATOR__"
     ],
     "PF": [
       "Miles Bridges",
-      "__SPACER__",
       "Grant Williams",
-      "PJ Hall",
-      "__SEPARATOR__"
+      "Pat Connaughton",
+      "__SEPARATOR__",
+      "PJ Hall"
     ],
     "C": [
       "Moussa Diabate",
       "Ryan Kalkbrenner",
-      "Tosan Evbuomwan",
-      "__SPACER__",
+      "Xavier Tillman",
       "__SEPARATOR__",
-      "Xavier Tillman"
+      "Tosan Evbuomwan"
     ]
   },
   "CHI": {
