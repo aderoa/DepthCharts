@@ -762,15 +762,16 @@
     "PG": [
       "Jalen Suggs",
       "Anthony Black",
-      "Alex Morales",
-      "__SEPARATOR__"
+      "Jett Howard",
+      "__SEPARATOR__",
+      "Alex Morales"
     ],
     "SG": [
       "Desmond Bane",
       "Jevon Carter",
       "Jase Richardson",
-      "__SEPARATOR__",
-      "Jett Howard"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Franz Wagner",
@@ -782,15 +783,15 @@
       "Paolo Banchero",
       "Tristan Da Silva",
       "Moritz Wagner",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jonathan Isaac"
     ],
     "C": [
       "Wendell Carter Jr",
       "Goga Bitadze",
-      "Colin Castleton",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Colin Castleton"
     ]
   },
   "PHI": {
