@@ -770,7 +770,6 @@
       "Desmond Bane",
       "Jevon Carter",
       "Jase Richardson",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -782,14 +781,14 @@
     "PF": [
       "Paolo Banchero",
       "Tristan Da Silva",
-      "Moritz Wagner",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jonathan Isaac"
     ],
     "C": [
       "Wendell Carter Jr",
       "Goga Bitadze",
-      "__SPACER__",
+      "Moritz Wagner",
       "__SEPARATOR__",
       "Colin Castleton"
     ]
