@@ -241,7 +241,7 @@ footer a { color:var(--accent); text-decoration:none; }
       <span style="width:1px;height:20px;background:rgba(0,0,0,0.2);margin:0 4px"></span>
       <span id="copyBtns2526">
         <button class="export-btn" onclick="copyExportByGroup('playoff1')">📷 Copy ATL-LAL</button>
-        <button class="export-btn" onclick="copyExportByGroup('playoff2')">📷 Copy MIN-TOR</button>
+        <button class="export-btn" onclick="copyExportByGroup('playoff2')">📷 Copy POR-TOR</button>
         <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy 2026-27 Teams</button>
       </span>
       <span id="copyBtns2627" style="display:none">
@@ -484,7 +484,7 @@ const TEAM_ALIASES = {
   'San Antonio':'SAS','Spurs':'SAS','Toronto':'TOR','Raptors':'TOR','Utah':'UTA','Jazz':'UTA',
   'Washington':'WAS','Wizards':'WAS'
 };
-const ELIMINATED_ABBREVS = new Set(['MIL','CHI','BKN','IND','WAS','NOP','DAL','MEM','SAC','UTA','MIA']);
+const ELIMINATED_ABBREVS = new Set(['MIL','CHI','BKN','IND','WAS','NOP','DAL','MEM','SAC','UTA','MIA','LAC']);
 
 // =====================================================
 // DATA URLs
@@ -1479,7 +1479,7 @@ function copyExportByGroup(group) {
     label = 'ATL–LAL';
   } else if (group === 'playoff2') {
     teamList = playoffTeams.slice(10);
-    label = 'MIN–TOR';
+    label = 'POR–TOR';
   } else {
     teamList = eliminatedTeams;
     label = '2026-27';
