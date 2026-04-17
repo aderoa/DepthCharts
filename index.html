@@ -758,8 +758,8 @@ function renderDepthChart(teamAbbrev) {
         if (p.isFA) injuredByPos[pos].push(p);
         else healthyByPos[pos].push(p);
       } else {
-        // Playoff teams: injured + two-way go below separator
-        if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable' || p.colorCode === 'twoway') injuredByPos[pos].push(p);
+        // Playoff teams: injured + two-way go below separator (Questionable stays with healthy)
+        if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') injuredByPos[pos].push(p);
         else healthyByPos[pos].push(p);
       }
     });
@@ -1045,7 +1045,7 @@ function renderAdminAllTeams() {
           if (n === '__SPACER__' || globalPlaced.has(n)) return;
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable' || p.colorCode === 'twoway') { injuredByPos[pos].push(p); }
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') { injuredByPos[pos].push(p); }
           else { healthyByPos[pos].push(p); }
           globalPlaced.add(n);
         });
@@ -1090,7 +1090,7 @@ function renderAdminAllTeams() {
       html += `<div class="admin-separator"></div>`;
 
       injuredByPos[pos].forEach(p => {
-        const sc = p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':'questionable';
+        const sc = p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':'';
         html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${p.colorCode==='twoway'?' <span style="font-size:0.5rem;color:#8b5cf6">2W</span>':''}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
       });
 
@@ -1562,8 +1562,8 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
           if (p.isFA) belowCols[pos].push(p);
           else aboveCols[pos].push(p);
         } else {
-          // Playoff: injured/doubtful/questionable/twoway go below
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'questionable' || p.colorCode === 'twoway') belowCols[pos].push(p);
+          // Playoff: injured/doubtful/twoway go below (Questionable stays with healthy)
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') belowCols[pos].push(p);
           else aboveCols[pos].push(p);
         }
       });
