@@ -691,13 +691,13 @@
       "Jalen Brunson",
       "Jordan Clarkson",
       "__SPACER__",
-      "Jose Alvarado",
-      "__SEPARATOR__",
-      "Tyler Kolek"
+      "Tyler Kolek",
+      "__SEPARATOR__"
     ],
     "SG": [
       "OG Anunoby",
       "Miles McBride",
+      "Jose Alvarado",
       "__SEPARATOR__",
       "Kevin McCullar"
     ],
@@ -717,8 +717,8 @@
     "C": [
       "Karl-Anthony Towns",
       "Mitchell Robinson",
-      "__SEPARATOR__",
       "Ariel Hukporti",
+      "__SEPARATOR__",
       "Trey Jemison"
     ]
   },
