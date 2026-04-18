@@ -1547,15 +1547,19 @@ function copyExportByGroup(group) {
     label = '2026-27';
   }
 
-  // Read orders from DOM
+  // Read orders from DOM (including separator positions)
   const teamOrders = {};
   document.querySelectorAll('.admin-depth-chart').forEach(chart => {
     const ta = chart.dataset.team; const order = {};
     chart.querySelectorAll('.admin-position-column').forEach(col => {
       const pos = col.dataset.position; if (!pos) return; order[pos] = [];
-      col.querySelectorAll('.admin-player-card').forEach(card => {
-        if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
-        else if (card.dataset.player) order[pos].push(card.dataset.player);
+      col.childNodes.forEach(node => {
+        if (node.classList && node.classList.contains('admin-separator')) {
+          order[pos].push('__SEPARATOR__');
+        } else if (node.classList && node.classList.contains('admin-player-card')) {
+          if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
+          else if (node.dataset.player) order[pos].push(node.dataset.player);
+        }
       });
     });
     teamOrders[ta] = order;
@@ -1762,9 +1766,13 @@ function copyFutureYearExport(year, startIdx, endIdx) {
     const ta = chart.dataset.team; const order = {};
     chart.querySelectorAll('.admin-position-column').forEach(col => {
       const pos = col.dataset.position; if (!pos) return; order[pos] = [];
-      col.querySelectorAll('.admin-player-card').forEach(card => {
-        if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
-        else if (card.dataset.player) order[pos].push(card.dataset.player);
+      col.childNodes.forEach(node => {
+        if (node.classList && node.classList.contains('admin-separator')) {
+          order[pos].push('__SEPARATOR__');
+        } else if (node.classList && node.classList.contains('admin-player-card')) {
+          if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
+          else if (node.dataset.player) order[pos].push(node.dataset.player);
+        }
       });
     });
     teamOrders[ta] = order;
