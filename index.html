@@ -713,7 +713,7 @@ function buildPositionMap(teamPlayers, savedOrder, minRows) {
     const pm = {}; teamPlayers.forEach(p => pm[p.name] = p);
     const placed = new Set();
     positions.forEach(pos => { if (savedOrder[pos]) savedOrder[pos].forEach(n => {
-      if (n === '__SPACER__') { byPos[pos].push('__SPACER__'); }
+      if (n === '__SPACER__' || n === '__SEPARATOR__') { byPos[pos].push(n); }
       else if (pm[n]&&!placed.has(n)) { byPos[pos].push(pm[n]); placed.add(n); }
     }); });
     teamPlayers.forEach(p => { if (!placed.has(p.name)) byPos[positions.includes(p.position)?p.position:'SF'].push(p); });
@@ -747,20 +747,29 @@ function renderDepthChart(teamAbbrev) {
   const isEliminated = ELIMINATED_ABBREVS.has(teamAbbrev);
   
   // Split each position into healthy/contracted and injured/FAs
+  // Respects admin's saved order: __SPACER__ marks the separator position.
+  // Out/Doubtful/TwoWay always go below. Questionable stays where admin placed them.
   const healthyByPos = {}, injuredByPos = {};
   positions.forEach(pos => {
     healthyByPos[pos] = [];
     injuredByPos[pos] = [];
+    let belowSeparator = false;
     byPos[pos].forEach(p => {
       if (p === '__SPACER__') return;
+      if (p === '__SEPARATOR__') { belowSeparator = true; return; }
       if (isEliminated) {
-        // Eliminated: FAs go below, everyone else above
         if (p.isFA) injuredByPos[pos].push(p);
         else healthyByPos[pos].push(p);
       } else {
-        // Playoff teams: injured + two-way go below separator (Questionable stays with healthy)
-        if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') injuredByPos[pos].push(p);
-        else healthyByPos[pos].push(p);
+        // Out/Doubtful/TwoWay always forced below
+        if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') {
+          injuredByPos[pos].push(p);
+        } else if (belowSeparator) {
+          // Admin placed this player below the separator — keep them there
+          injuredByPos[pos].push(p);
+        } else {
+          healthyByPos[pos].push(p);
+        }
       }
     });
   });
@@ -1036,17 +1045,20 @@ function renderAdminAllTeams() {
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
           if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') { injuredByPos[pos].push(p); }
-          else { healthyByPos[pos].push(p); }
+          else { healthyByPos[pos].push(p); } // Questionable stays above if admin placed them here
           globalPlaced.add(n);
         });
 
-        // Below separator: place saved players, but force non-injured up
+        // Below separator: place saved players, but force healthy/probable up (except Questionable)
         belowNames.forEach(n => {
           if (n === '__SPACER__' || globalPlaced.has(n)) return;
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') { injuredByPos[pos].push(p); }
-          else { healthyByPos[pos].push(p); }
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway' || p.colorCode === 'questionable') {
+            injuredByPos[pos].push(p); // Questionable stays below if admin placed them here
+          } else {
+            healthyByPos[pos].push(p);
+          }
           globalPlaced.add(n);
         });
       } else {
@@ -1551,9 +1563,11 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
       aboveCols[pos] = [];
       belowCols[pos] = [];
       const names = order[pos] || [];
+      let belowSep = false;
       
       names.forEach(n => {
-        if (n === '__SPACER__') return; // skip spacers, we'll re-add them
+        if (n === '__SPACER__') return;
+        if (n === '__SEPARATOR__') { belowSep = true; return; }
         const p = playerMap[n];
         if (!p || p.team !== team.abbrev) return;
         
@@ -1562,9 +1576,15 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
           if (p.isFA) belowCols[pos].push(p);
           else aboveCols[pos].push(p);
         } else {
-          // Playoff: injured/doubtful/twoway go below (Questionable stays with healthy)
-          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') belowCols[pos].push(p);
-          else aboveCols[pos].push(p);
+          // Out/Doubtful/TwoWay always forced below
+          if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') {
+            belowCols[pos].push(p);
+          } else if (belowSep) {
+            // Admin placed below separator — keep them there (e.g. Questionable)
+            belowCols[pos].push(p);
+          } else {
+            aboveCols[pos].push(p);
+          }
         }
       });
       
