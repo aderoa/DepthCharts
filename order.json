@@ -838,14 +838,14 @@
     ],
     "SG": [
       "Jalen Green",
-      "Grayson Allen",
+      "Haywood Highsmith",
       "Amir Coffey",
       "__SEPARATOR__"
     ],
     "SF": [
       "Devin Booker",
+      "Grayson Allen",
       "Ryan Dunn",
-      "Haywood Highsmith",
       "__SEPARATOR__",
       "Isaiah Livers"
     ],
@@ -853,15 +853,15 @@
       "Dillon Brooks",
       "Royce O'Neale",
       "Rasheer Fleming",
-      "__SPACER__",
       "__SEPARATOR__",
       "CJ Huntley"
     ],
     "C": [
-      "Mark Williams",
       "Oso Ighodaro",
       "Khaman Maluach",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Mark Williams"
     ]
   },
   "POR": {
