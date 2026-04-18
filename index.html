@@ -148,6 +148,9 @@ h1 { font-size:1.5rem; font-weight:800; margin-bottom:0.5rem; color:var(--text);
 .player-card.non-guaranteed { background:#e0e000; }
 .player-card.free-agent { background:#ffd580; border:2px solid #f59e0b; }
 .player-card.two-way { background:#e8d5f5; }
+.player-card.injured { background:lightcoral; }
+.player-card.doubtful { background:#f5b7b1; }
+.player-card.questionable { background:#fed7aa; }
 .player-card.dragging { opacity:0.5; cursor:grabbing; }
 .player-card.drag-over { border:2px dashed var(--accent); background:#f0f4ff; }
 .position-column.drag-over { background:rgba(59,130,246,0.06); border-radius:8px; }
@@ -792,6 +795,12 @@ function renderDepthChart(teamAbbrev) {
         else if (p.status27 === 'PLAYER OPT') { sc = 'player-option'; }
         else if (p.status27 === 'NOT G') { sc = 'non-guaranteed'; }
         else if (p.status27 === 'PARTIAL G') { sc = 'non-guaranteed'; }
+      } else {
+        // Apply injury/status color for playoff teams
+        if (p.colorCode === 'twoway') sc = 'two-way';
+        else if (p.colorCode === 'questionable') sc = 'questionable';
+        else if (p.colorCode === 'doubtful') sc = 'doubtful';
+        else if (p.colorCode === 'injured') sc = 'injured';
       }
       html += `<div class="player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
         <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
@@ -822,7 +831,8 @@ function renderDepthChart(teamAbbrev) {
           <div class="trade-value" style="color:#b45309;font-size:0.7rem">${p.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
       } else {
         const twBadge = p.colorCode === 'twoway' ? ' <span style="font-size:0.55rem;padding:1px 4px;border-radius:3px;background:rgba(139,92,246,0.12);color:#8b5cf6;font-weight:700">2W</span>' : '';
-        html += `<div class="player-card${p.colorCode==='twoway'?' ':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
+        const injSc = p.colorCode === 'twoway' ? 'two-way' : p.colorCode === 'injured' ? 'injured' : p.colorCode === 'doubtful' ? 'doubtful' : p.colorCode === 'questionable' ? 'questionable' : '';
+        html += `<div class="player-card ${injSc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
           <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
           <div class="player-name">${p.name}${twBadge}</div>
           <div class="trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
@@ -1102,7 +1112,7 @@ function renderAdminAllTeams() {
       html += `<div class="admin-separator"></div>`;
 
       injuredByPos[pos].forEach(p => {
-        const sc = p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':'';
+        const sc = p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':p.colorCode==='questionable'?'questionable':'';
         html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${p.colorCode==='twoway'?' <span style="font-size:0.5rem;color:#8b5cf6">2W</span>':''}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
       });
 
@@ -1287,18 +1297,33 @@ function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
   for (const team of teamsSlice) {
     const order = teamOrders[team.abbrev];
     if (!order) continue;
-    const posCols = {}; let maxRows = 0;
+
+    // Split into above/below separator
+    const aboveCols = {}, belowCols = {};
+    let maxAbove = 0, maxBelow = 0;
     positions.forEach(pos => {
-      const names = order[pos]||[];
-      posCols[pos] = names.map(n => n === '__SPACER__' ? null : (playerMap[n]||null));
-      if (posCols[pos].length > maxRows) maxRows = posCols[pos].length;
+      aboveCols[pos] = [];
+      belowCols[pos] = [];
+      const names = order[pos] || [];
+      let belowSep = false;
+      names.forEach(n => {
+        if (n === '__SPACER__') return;
+        if (n === '__SEPARATOR__') { belowSep = true; return; }
+        const p = playerMap[n] || null;
+        if (!p || p.team !== team.abbrev) return;
+        if (p.colorCode === 'injured' || p.colorCode === 'doubtful' || p.colorCode === 'twoway') {
+          belowCols[pos].push(p);
+        } else if (belowSep) {
+          belowCols[pos].push(p);
+        } else {
+          aboveCols[pos].push(p);
+        }
+      });
+      if (aboveCols[pos].length > maxAbove) maxAbove = aboveCols[pos].length;
+      if (belowCols[pos].length > maxBelow) maxBelow = belowCols[pos].length;
     });
-    while (maxRows > 0) {
-      const row = positions.map(pos => posCols[pos][maxRows-1] || null);
-      if (row.some(p => p !== null)) break;
-      maxRows--;
-    }
-    if (maxRows < 1) maxRows = 1;
+    if (maxAbove < 1) maxAbove = 1;
+    const hasBelow = maxBelow > 0;
 
     out += `<div class="dc-team"><strong>${team.name.toUpperCase()}</strong></div>`;
     out += `<table class="dc-tbl"><tbody>`;
@@ -1306,14 +1331,12 @@ function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
     positions.forEach(pos => { out += `<th>${pos}</th>`; });
     out += `</tr>`;
 
-    for (let r = 0; r < maxRows; r++) {
-      const rp = positions.map(pos => posCols[pos][r] || null);
+    for (let r = 0; r < maxAbove; r++) {
+      const rp = positions.map(pos => aboveCols[pos][r] || null);
       if (!rp.some(p => p !== null)) continue;
       if (withHeadshots) {
         out += `<tr class="dc-hs-row">`;
-        rp.forEach(p => {
-          out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`;
-        });
+        rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
         out += `</tr>`;
       }
       out += `<tr class="dc-data">`;
@@ -1323,6 +1346,25 @@ function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
       rp.forEach(p => { out += `<td${cCls(p)}>${p ? fmtSalFull(p.salary) : ''}</td>`; });
       out += `</tr>`;
     }
+
+    if (hasBelow) {
+      out += `<tr><td colspan="5" style="height:3px;background:#ef4444;padding:0"></td></tr>`;
+      for (let r = 0; r < maxBelow; r++) {
+        const rp = positions.map(pos => belowCols[pos][r] || null);
+        if (!rp.some(p => p !== null)) continue;
+        if (withHeadshots) {
+          out += `<tr class="dc-hs-row">`;
+          rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+          out += `</tr>`;
+        }
+        out += `<tr class="dc-data">`;
+        rp.forEach(p => { out += `<td${cCls(p)}>${p ? `<strong>${p.name}</strong>` : ''}</td>`; });
+        out += `</tr>`;
+        out += `<tr class="dc-data">`;
+        rp.forEach(p => { out += `<td${cCls(p)}>${p ? fmtSalFull(p.salary) : ''}</td>`; });
+        out += `</tr>`;
+      }
+    }
     out += `</tbody></table><br><br>`;
   }
   out += '</div>';
@@ -1330,15 +1372,19 @@ function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
 }
 
 function exportHTML(withHeadshots, startIdx, endIdx) {
-  // Read order from DOM
+  // Read order from DOM (including separator positions)
   const teamOrders = {};
   document.querySelectorAll('.admin-depth-chart').forEach(chart => {
     const ta = chart.dataset.team; const order = {};
     chart.querySelectorAll('.admin-position-column').forEach(col => {
       const pos = col.dataset.position; if (!pos) return; order[pos] = [];
-      col.querySelectorAll('.admin-player-card').forEach(card => {
-        if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
-        else if (card.dataset.player) order[pos].push(card.dataset.player);
+      col.childNodes.forEach(node => {
+        if (node.classList && node.classList.contains('admin-separator')) {
+          order[pos].push('__SEPARATOR__');
+        } else if (node.classList && node.classList.contains('admin-player-card')) {
+          if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
+          else if (node.dataset.player) order[pos].push(node.dataset.player);
+        }
       });
     });
     teamOrders[ta] = order;
@@ -1457,9 +1503,13 @@ function copyExportDirect(withHeadshots, startIdx, endIdx) {
     const ta = chart.dataset.team; const order = {};
     chart.querySelectorAll('.admin-position-column').forEach(col => {
       const pos = col.dataset.position; if (!pos) return; order[pos] = [];
-      col.querySelectorAll('.admin-player-card').forEach(card => {
-        if (card.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
-        else if (card.dataset.player) order[pos].push(card.dataset.player);
+      col.childNodes.forEach(node => {
+        if (node.classList && node.classList.contains('admin-separator')) {
+          order[pos].push('__SEPARATOR__');
+        } else if (node.classList && node.classList.contains('admin-player-card')) {
+          if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
+          else if (node.dataset.player) order[pos].push(node.dataset.player);
+        }
       });
     });
     teamOrders[ta] = order;
