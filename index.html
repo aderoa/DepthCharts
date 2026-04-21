@@ -262,7 +262,7 @@ footer a { color:var(--accent); text-decoration:none; }
   </div>
   <div class="container">
     <header><h1>🏀 NBA Depth Charts</h1><p class="subtitle">Ranked by Trade Value</p></header>
-    <div id="loading" class="loading"><div class="loading-spinner"></div><p>Loading NBA data...</p></div>
+    <div id="loading" class="loading"><div class="loading-spinner"></div><p>Loading depth charts…</p></div>
     <div id="teamGrid" class="team-grid" style="display:none;"></div>
     <div id="depthChartContainer" class="depth-chart-container">
       <a href="?" class="back-btn">← All Teams</a>
@@ -1995,9 +1995,9 @@ async function init() {
     else if (teamParam && NBA_TEAMS.some(t=>t.abbrev===teamParam)) renderDepthChart(teamParam);
     else renderTeamGrid();
   } catch (err) {
-    console.error('Error:', err);
+    console.error('[DepthCharts]', err);
     document.getElementById('loading').style.display = 'none';
-    document.getElementById('error').textContent = 'Error loading data. Please refresh.';
+    document.getElementById('error').textContent = "Couldn't load depth charts. Try refreshing — if this keeps happening, the data might be updating right now.";
     document.getElementById('error').style.display = 'block';
   }
 }
