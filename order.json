@@ -192,7 +192,6 @@
     "SF": [
       "Dean Wade",
       "Max Strus",
-      "__SPACER__",
       "Nae'Qwan Tomlin",
       "__SEPARATOR__",
       "Riley Minix"
@@ -207,8 +206,9 @@
     "C": [
       "Jarrett Allen",
       "Jaylon Tyson",
+      "Thomas Bryant",
       "__SEPARATOR__",
-      "Thomas Bryant"
+      "__SPACER__"
     ]
   },
   "DAL": {
