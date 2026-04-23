@@ -828,7 +828,6 @@
   },
   "PHX": {
     "PG": [
-      "Jordan Goodwin",
       "Collin Gillespie",
       "Jamaree Bouyea",
       "__SEPARATOR__",
@@ -838,7 +837,8 @@
       "Jalen Green",
       "Haywood Highsmith",
       "Amir Coffey",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Jordan Goodwin"
     ],
     "SF": [
       "Devin Booker",
