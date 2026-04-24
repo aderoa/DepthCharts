@@ -365,14 +365,13 @@
       "Fred VanVleet"
     ],
     "SG": [
-      "Josh Okogie",
       "Reed Sheppard",
+      "Josh Okogie",
       "__SPACER__",
       "__SEPARATOR__",
       "Tristen Newton"
     ],
     "SF": [
-      "Kevin Durant",
       "Jae'Sean Tate",
       "Dorian Finney-Smith",
       "__SEPARATOR__",
@@ -382,7 +381,8 @@
       "Jabari Smith",
       "Tari Eason",
       "Jeff Green",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Kevin Durant"
     ],
     "C": [
       "Alperen Sengun",
