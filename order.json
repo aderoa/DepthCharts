@@ -946,9 +946,8 @@
     "PG": [
       "De'Aaron Fox",
       "Dylan Harper",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Jordan McLaughlin"
+      "Jordan McLaughlin",
+      "__SEPARATOR__"
     ],
     "SG": [
       "Stephon Castle",
@@ -972,11 +971,11 @@
       "Harrison Ingram"
     ],
     "C": [
+      "Victor Wembanyama",
       "Luke Kornet",
       "Mason Plumlee",
       "Bismack Biyombo",
-      "__SEPARATOR__",
-      "Victor Wembanyama"
+      "__SEPARATOR__"
     ]
   },
   "TOR": {
