@@ -804,6 +804,7 @@
     ],
     "SG": [
       "VJ Edgecombe",
+      "Justin Edwards",
       "Jabari Walker",
       "Dalen Terry",
       "__SEPARATOR__",
@@ -811,22 +812,20 @@
     ],
     "SF": [
       "Kelly Oubre",
-      "Justin Edwards",
-      "Trendon Watford",
+      "Dominick Barlow",
       "__SEPARATOR__",
       "Tyrese Martin"
     ],
     "PF": [
       "Paul George",
-      "Dominick Barlow",
-      "Johni Broome",
+      "Adem Bona",
+      "Trendon Watford",
       "__SEPARATOR__"
     ],
     "C": [
-      "Andre Drummond",
       "Joel Embiid",
-      "__SPACER__",
-      "Adem Bona",
+      "Andre Drummond",
+      "Johni Broome",
       "__SEPARATOR__"
     ]
   },
