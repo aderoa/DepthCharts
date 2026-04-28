@@ -250,14 +250,14 @@
   "DEN": {
     "PG": [
       "Jamal Murray",
-      "Bruce Brown",
       "Tyus Jones",
+      "__SPACER__",
       "__SEPARATOR__",
       "KJ Simpson"
     ],
     "SG": [
       "Christian Braun",
-      "__SPACER__",
+      "Bruce Brown",
       "Jalen Pickett",
       "__SEPARATOR__",
       "Curtis Jones"
