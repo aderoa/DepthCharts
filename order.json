@@ -776,6 +776,7 @@
     ],
     "SF": [
       "Tristan Da Silva",
+      "__SPACER__",
       "Jamal Cain",
       "Noah Penda",
       "__SEPARATOR__",
@@ -783,14 +784,13 @@
     ],
     "PF": [
       "Paolo Banchero",
-      "__SPACER__",
+      "Moritz Wagner",
       "__SEPARATOR__",
       "Jonathan Isaac"
     ],
     "C": [
       "Wendell Carter Jr",
       "Goga Bitadze",
-      "Moritz Wagner",
       "__SEPARATOR__",
       "Colin Castleton"
     ]
