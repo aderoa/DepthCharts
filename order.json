@@ -979,15 +979,14 @@
   },
   "TOR": {
     "PG": [
-      "Scottie Barnes",
       "Jamal Shead",
-      "__SPACER__",
+      "AJ Lawson",
       "__SEPARATOR__",
       "Chucky Hepburn"
     ],
     "SG": [
       "Ja'Kobe Walter",
-      "AJ Lawson",
+      "__SPACER__",
       "Garrett Temple",
       "__SEPARATOR__",
       "Immanuel Quickley"
@@ -1000,10 +999,12 @@
       "Alijah Martin"
     ],
     "PF": [
-      "Brandon Ingram",
+      "Scottie Barnes",
       "Collin Murray-Boyles",
       "Trayce Jackson-Davis",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Brandon Ingram"
     ],
     "C": [
       "Jakob Poeltl",
