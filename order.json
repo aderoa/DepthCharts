@@ -50,14 +50,13 @@
     ],
     "SF": [
       "Jaylen Brown",
-      "Jordan Walsh",
       "Hugo Gonzalez",
       "__SEPARATOR__",
       "John Tonje"
     ],
     "PF": [
       "Baylor Scheierman",
-      "Nikola Vucevic",
+      "Jordan Walsh",
       "Amari Williams",
       "__SEPARATOR__",
       "Jayson Tatum"
@@ -65,6 +64,7 @@
     "C": [
       "Luka Garza",
       "Neemias Queta",
+      "Nikola Vucevic",
       "__SPACER__",
       "__SEPARATOR__"
     ]
