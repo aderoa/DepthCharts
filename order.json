@@ -46,26 +46,26 @@
       "Ron Harper Jr",
       "Sam Hauser",
       "Dalano Banton",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "John Tonje"
     ],
     "SF": [
       "Jaylen Brown",
       "Hugo Gonzalez",
+      "__SPACER__",
       "__SEPARATOR__",
-      "John Tonje"
+      "Jayson Tatum"
     ],
     "PF": [
       "Baylor Scheierman",
       "Jordan Walsh",
       "Amari Williams",
-      "__SEPARATOR__",
-      "Jayson Tatum"
+      "__SEPARATOR__"
     ],
     "C": [
       "Luka Garza",
       "Neemias Queta",
       "Nikola Vucevic",
-      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
