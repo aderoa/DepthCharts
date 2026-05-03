@@ -243,14 +243,13 @@ footer a { color:var(--accent); text-decoration:none; }
       <button class="export-btn" id="yearBtn2930" onclick="showYearView('2029-30')">📅 29-30</button>
       <span style="width:1px;height:20px;background:rgba(0,0,0,0.2);margin:0 4px"></span>
       <span id="copyBtns2526">
-        <button class="export-btn" onclick="copyExportByGroup('playoff1')">📷 Copy ATL-LAL</button>
-        <button class="export-btn" onclick="copyExportByGroup('playoff2')">📷 Copy POR-TOR</button>
+        <button class="export-btn" onclick="copyExportByGroup('aliveTeams')">📷 Copy Playoff Teams</button>
         <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy 2026-27 Teams</button>
       </span>
       <span id="copyBtns2627" style="display:none">
-        <button class="export-btn" onclick="copyFutureYearExport('2026-27',0,15)">📷 Copy ATL-MEM</button>
-        <button class="export-btn" onclick="copyFutureYearExport('2026-27',15,30)">📷 Copy MIA-WAS</button>
-        <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy Eliminated Only</button>
+        <button class="export-btn" id="copyElimBtn1" onclick="copyEliminatedHalf('first')">📷 Copy Eliminated A-K</button>
+        <button class="export-btn" id="copyElimBtn2" onclick="copyEliminatedHalf('second')">📷 Copy Eliminated L-Z</button>
+        <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy All Eliminated</button>
       </span>
       <span id="copyBtnFuture" style="display:none">
         <button class="export-btn" id="copyFutureBtn1" onclick="copyFutureYearExport(_futureYear,0,15)">📷 Copy ATL-MEM</button>
@@ -487,7 +486,7 @@ const TEAM_ALIASES = {
   'San Antonio':'SAS','Spurs':'SAS','Toronto':'TOR','Raptors':'TOR','Utah':'UTA','Jazz':'UTA',
   'Washington':'WAS','Wizards':'WAS'
 };
-const ELIMINATED_ABBREVS = new Set(['MIL','CHI','BKN','IND','WAS','NOP','DAL','MEM','SAC','UTA','MIA','LAC','CHA','GSW','PHX','POR','ATL','DEN','HOU']);
+const ELIMINATED_ABBREVS = new Set(['MIL','CHI','BKN','IND','WAS','NOP','DAL','MEM','SAC','UTA','MIA','LAC','CHA','GSW','PHX','POR','ATL','DEN','HOU','BOS']);
 
 // =====================================================
 // DATA URLs
@@ -866,6 +865,24 @@ function showYearView(year) {
   document.getElementById('copyBtns2526').style.display = is2526 ? '' : 'none';
   document.getElementById('copyBtns2627').style.display = is2627 ? '' : 'none';
   document.getElementById('copyBtnFuture').style.display = (!is2526 && !is2627) ? '' : 'none';
+
+  // Update the eliminated-halves button labels with the actual team abbrevs
+  // at the split boundary, so they reflect "ATL-IND" / "LAC-WAS" or whatever
+  // the current eliminated set works out to.
+  if (is2627) {
+    const elim = NBA_TEAMS
+      .filter(t => ELIMINATED_ABBREVS.has(t.abbrev))
+      .sort((a, b) => a.name.localeCompare(b.name));
+    if (elim.length) {
+      const mid = Math.ceil(elim.length / 2);
+      const first = elim.slice(0, mid);
+      const second = elim.slice(mid);
+      const b1 = document.getElementById('copyElimBtn1');
+      const b2 = document.getElementById('copyElimBtn2');
+      if (b1 && first.length) b1.textContent = `📷 Copy ${first[0].abbrev}-${first[first.length - 1].abbrev}`;
+      if (b2 && second.length) b2.textContent = `📷 Copy ${second[0].abbrev}-${second[second.length - 1].abbrev}`;
+    }
+  }
   
   if (is2526) {
     _futureYear = null;
@@ -1534,9 +1551,16 @@ function copyExportDirect(withHeadshots, startIdx, endIdx) {
 function copyExportByGroup(group) {
   const playoffTeams = NBA_TEAMS.filter(t => !ELIMINATED_ABBREVS.has(t.abbrev)).sort((a,b) => a.name.localeCompare(b.name));
   const eliminatedTeams = NBA_TEAMS.filter(t => ELIMINATED_ABBREVS.has(t.abbrev)).sort((a,b) => a.name.localeCompare(b.name));
-  
+
   let teamList, label;
-  if (group === 'playoff1') {
+  if (group === 'aliveTeams') {
+    // All teams still alive in the playoffs — single export, no split needed
+    // since the count is small (and shrinks as the playoffs progress).
+    teamList = playoffTeams;
+    label = 'Playoff Teams';
+  } else if (group === 'playoff1') {
+    // Legacy: split-into-halves. Kept for backwards-compat in case other
+    // code paths call it; not exposed via UI buttons anymore.
     teamList = playoffTeams.slice(0, 10);
     label = 'ATL–LAL';
   } else if (group === 'playoff2') {
@@ -1743,6 +1767,54 @@ function copyEliminatedExport() {
   const endThreshold = getFutureYearEndThreshold('2026-27');
   const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, eliminatedTeams, '2026-27', endThreshold);
   
+  const btn = event.target.closest('.export-btn');
+  const orig = btn.textContent;
+  const blob = new Blob([out], {type: 'text/plain'});
+  navigator.clipboard.write([new ClipboardItem({'text/plain': blob})]).then(() => {
+    btn.textContent = '✓ Copied!';
+    btn.style.background = '#16a34a'; btn.style.color = 'white';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = out; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = orig, 2000);
+  });
+}
+
+// Copy half of the eliminated-teams list as a 2026-27 future-year Presto
+// export. `half` is 'first' (alphabetical first half) or 'second'. The split
+// adapts to however many teams are eliminated — when 20 are out, it's 10/10;
+// when 24 are out, it's 12/12; etc.
+function copyEliminatedHalf(half) {
+  const eliminatedTeams = NBA_TEAMS
+    .filter(t => ELIMINATED_ABBREVS.has(t.abbrev))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const mid = Math.ceil(eliminatedTeams.length / 2);
+  const teamSlice = half === 'first' ? eliminatedTeams.slice(0, mid) : eliminatedTeams.slice(mid);
+
+  // Pull current depth-chart orders from the DOM so user re-orderings are
+  // reflected (matches copyFutureYearExport's read pattern).
+  const teamOrders = {};
+  document.querySelectorAll('.admin-depth-chart').forEach(chart => {
+    const ta = chart.dataset.team; const order = {};
+    chart.querySelectorAll('.admin-position-column').forEach(col => {
+      const pos = col.dataset.position; if (!pos) return; order[pos] = [];
+      col.childNodes.forEach(node => {
+        if (node.classList && node.classList.contains('admin-separator')) {
+          order[pos].push('__SEPARATOR__');
+        } else if (node.classList && node.classList.contains('admin-player-card')) {
+          if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
+          else if (node.dataset.player) order[pos].push(node.dataset.player);
+        }
+      });
+    });
+    teamOrders[ta] = order;
+  });
+
+  const endThreshold = getFutureYearEndThreshold('2026-27');
+  const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, teamSlice, '2026-27', endThreshold);
+
   const btn = event.target.closest('.export-btn');
   const orig = btn.textContent;
   const blob = new Blob([out], {type: 'text/plain'});
