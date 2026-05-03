@@ -1801,6 +1801,11 @@ function copyEliminatedExport() {
 // export. `half` is 'first' (alphabetical first half) or 'second'. The split
 // adapts to however many teams are eliminated — when 20 are out, it's 10/10;
 // when 24 are out, it's 12/12; etc.
+//
+// Mirrors copyEliminatedExport's data-loading pattern: reads orders from
+// the 2026-27 localStorage key (with fallback to main + default), NOT from
+// the live DOM. This is critical because the user can be on the 2025-26
+// view when triggering this — the DOM doesn't reflect 2026-27 ordering then.
 function copyEliminatedHalf(half) {
   const eliminatedTeams = NBA_TEAMS
     .filter(t => ELIMINATED_ABBREVS.has(t.abbrev))
@@ -1808,24 +1813,29 @@ function copyEliminatedHalf(half) {
   const mid = Math.ceil(eliminatedTeams.length / 2);
   const teamSlice = half === 'first' ? eliminatedTeams.slice(0, mid) : eliminatedTeams.slice(mid);
 
-  // Pull current depth-chart orders from the DOM so user re-orderings are
-  // reflected (matches copyFutureYearExport's read pattern).
+  // Load 2026-27 saved orders from localStorage, falling back to main
+  // (2025-26) order, then to a default position-grouped order.
+  const key2627 = storageKeyForYear('2026-27');
+  let savedOrders = {};
+  try { savedOrders = JSON.parse(localStorage.getItem(key2627)) || {}; } catch (e) {}
+  const mainOrders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  const positions = ['PG', 'SG', 'SF', 'PF', 'C'];
   const teamOrders = {};
-  document.querySelectorAll('.admin-depth-chart').forEach(chart => {
-    const ta = chart.dataset.team; const order = {};
-    chart.querySelectorAll('.admin-position-column').forEach(col => {
-      const pos = col.dataset.position; if (!pos) return; order[pos] = [];
-      col.childNodes.forEach(node => {
-        if (node.classList && node.classList.contains('admin-separator')) {
-          order[pos].push('__SEPARATOR__');
-        } else if (node.classList && node.classList.contains('admin-player-card')) {
-          if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
-          else if (node.dataset.player) order[pos].push(node.dataset.player);
-        }
+  for (const team of teamSlice) {
+    if (savedOrders[team.abbrev]) {
+      teamOrders[team.abbrev] = savedOrders[team.abbrev];
+    } else if (mainOrders[team.abbrev]) {
+      teamOrders[team.abbrev] = mainOrders[team.abbrev];
+    } else {
+      // Default: group by position sorted by trade value
+      const order = {};
+      const tp = allPlayers.filter(p => p.team === team.abbrev);
+      positions.forEach(pos => {
+        order[pos] = tp.filter(p => p.position === pos).sort((a, b) => b.tradeValue - a.tradeValue).map(p => p.name);
       });
-    });
-    teamOrders[ta] = order;
-  });
+      teamOrders[team.abbrev] = order;
+    }
+  }
 
   const endThreshold = getFutureYearEndThreshold('2026-27');
   const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, teamSlice, '2026-27', endThreshold);
