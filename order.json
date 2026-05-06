@@ -806,7 +806,6 @@
     "SG": [
       "VJ Edgecombe",
       "Jabari Walker",
-      "__SPACER__",
       "Dalen Terry",
       "__SEPARATOR__",
       "MarJon Beauchamp"
@@ -814,13 +813,14 @@
     "SF": [
       "Kelly Oubre",
       "Justin Edwards",
+      "Trendon Watford",
       "__SEPARATOR__",
       "Tyrese Martin"
     ],
     "PF": [
       "Paul George",
       "Dominick Barlow",
-      "Trendon Watford",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
