@@ -710,16 +710,17 @@
     ],
     "PF": [
       "Josh Hart",
-      "Ariel Hukporti",
       "Jeremy Sochan",
       "__SEPARATOR__",
       "Dillon Jones"
     ],
     "C": [
       "Karl-Anthony Towns",
-      "Mitchell Robinson",
+      "Ariel Hukporti",
       "Mohamed Diawara",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Mitchell Robinson",
       "Trey Jemison"
     ]
   },
