@@ -819,15 +819,16 @@
     ],
     "PF": [
       "Paul George",
-      "Adem Bona",
+      "__SPACER__",
       "Trendon Watford",
       "__SEPARATOR__"
     ],
     "C": [
-      "Joel Embiid",
       "Andre Drummond",
+      "Adem Bona",
       "Johni Broome",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Joel Embiid"
     ]
   },
   "PHX": {
