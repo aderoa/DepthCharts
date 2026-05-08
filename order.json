@@ -697,9 +697,9 @@
       "__SEPARATOR__"
     ],
     "SG": [
-      "OG Anunoby",
       "Jordan Clarkson",
       "Jose Alvarado",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kevin McCullar"
     ],
@@ -708,20 +708,21 @@
       "Landry Shamet",
       "Pacome Dadiet",
       "__SEPARATOR__",
-      "Dillon Jones"
+      "OG Anunoby"
     ],
     "PF": [
       "Josh Hart",
       "Ariel Hukporti",
       "Mohamed Diawara",
       "__SEPARATOR__",
-      "Trey Jemison"
+      "Dillon Jones"
     ],
     "C": [
       "Karl-Anthony Towns",
       "Mitchell Robinson",
       "Jeremy Sochan",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Trey Jemison"
     ]
   },
   "OKC": {
