@@ -488,22 +488,22 @@
     ],
     "SF": [
       "LeBron James",
-      "Jake LaRavia",
       "Adou Thiero",
+      "__SPACER__",
       "__SEPARATOR__",
       "Chris Manon"
     ],
     "PF": [
       "Rui Hachimura",
+      "Jake LaRavia",
       "__SPACER__",
-      "Maxi Kleber",
       "__SEPARATOR__",
       "Jarred Vanderbilt"
     ],
     "C": [
       "Deandre Ayton",
       "Jaxson Hayes",
-      "__SPACER__",
+      "Maxi Kleber",
       "__SEPARATOR__",
       "Drew Timme"
     ]
