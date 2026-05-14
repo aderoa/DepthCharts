@@ -289,27 +289,27 @@
   "DET": {
     "PG": [
       "Cade Cunningham",
-      "Caris LeVert",
       "Marcus Sasser",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Daniss Jenkins",
-      "Kevin Huerter",
+      "Caris LeVert",
       "Chaz Lanier",
       "__SEPARATOR__",
       "Duncan Robinson"
     ],
     "SF": [
       "Ausar Thompson",
-      "Javonte Green",
-      "__SPACER__",
+      "Kevin Huerter",
+      "Ron Holland",
       "__SEPARATOR__",
       "Wendell Moore"
     ],
     "PF": [
       "Tobias Harris",
-      "Ron Holland",
+      "Javonte Green",
       "Tolu Smith",
       "__SEPARATOR__"
     ],
