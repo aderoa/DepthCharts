@@ -697,28 +697,28 @@
     "SG": [
       "Miles McBride",
       "Jordan Clarkson",
-      "Pacome Dadiet",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Kevin McCullar"
+      "Kevin McCullar",
+      "OG Anunoby"
     ],
     "SF": [
       "Mikal Bridges",
       "Landry Shamet",
-      "Mohamed Diawara",
-      "__SEPARATOR__",
-      "OG Anunoby"
+      "Pacome Dadiet",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Josh Hart",
       "Ariel Hukporti",
-      "Jeremy Sochan",
+      "Mohamed Diawara",
       "__SEPARATOR__",
       "Dillon Jones"
     ],
     "C": [
       "Karl-Anthony Towns",
       "Mitchell Robinson",
-      "__SPACER__",
+      "Jeremy Sochan",
       "__SEPARATOR__",
       "Trey Jemison"
     ]
