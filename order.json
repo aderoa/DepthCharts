@@ -942,13 +942,13 @@
   },
   "SAS": {
     "PG": [
-      "De'Aaron Fox",
-      "Dylan Harper",
+      "Stephon Castle",
       "Jordan McLaughlin",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "De'Aaron Fox"
     ],
     "SG": [
-      "Stephon Castle",
+      "Dylan Harper",
       "Keldon Johnson",
       "Lindy Waters III",
       "__SEPARATOR__",
@@ -964,7 +964,6 @@
     "PF": [
       "Julian Champagnie",
       "Carter Bryant",
-      "__SPACER__",
       "Bismack Biyombo",
       "__SEPARATOR__",
       "Harrison Ingram"
