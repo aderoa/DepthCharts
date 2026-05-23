@@ -690,13 +690,138 @@ function applyInjuriesJSON(injuries) {
 }
 
 // =====================================================
-// FORMATTING UTILS
+// DRAFT PICKS (projected rookies per team)
 // =====================================================
+// draftPicksByTeam[abbrev] = [{name, headshot, pick, position}, ...]
+let draftPicksByTeam = {};
+
+function ordinalPick(n) {
+  const s = ['th','st','nd','rd'], v = n % 100;
+  return n + (s[(v-20)%10] || s[v] || s[0]) + ' pick';
+}
+
+// Fetch the live cascade (projected player per pick) + Sheet4 (pick ownership,
+// headshots, positions), then build each team's incoming draft picks.
+async function fetchDraftPicks() {
+  draftPicksByTeam = {};
+  try {
+    const SNAP_URL = 'https://hoopsmatic.com/api/draft-snapshot';
+    const CSV_URL = 'https://hoopsmatic.com/api/draft-csv';
+    const [snapR, csvR] = await Promise.all([
+      fetch(SNAP_URL).catch(()=>null),
+      fetch(CSV_URL).catch(()=>null)
+    ]);
+    if (!csvR || !csvR.ok) return;
+    const csvText = await csvR.text();
+    const rows = parseCSV(csvText);
+
+    // Sheet4 columns: 15 = pick number, 16 = owning team (abbrev),
+    // 26 = projected player (bio name), 36 = position, 45 = headshot URL.
+    const COL_PICK=15, COL_TEAM=16, COL_NAME=26, COL_POS=36, COL_HS=45;
+    // Pick → {team, name, position, headshot} straight from Sheet4.
+    const pickInfo = {};
+    for (let i = 1; i < rows.length; i++) {
+      const r = rows[i];
+      const pickN = parseInt((r[COL_PICK]||'').trim());
+      const team = (r[COL_TEAM]||'').trim().toUpperCase();
+      if (!pickN || !team) continue;
+      pickInfo[pickN] = {
+        team,
+        name: (r[COL_NAME]||'').trim(),
+        position: (r[COL_POS]||'').trim(),
+        headshot: (r[COL_HS]||'').trim()
+      };
+    }
+
+    // Live cascade order overrides the projected player name per pick.
+    let order = {};
+    if (snapR && snapR.ok) {
+      try {
+        const snap = await snapR.json();
+        order = snap.order || {};
+      } catch(e) {}
+    }
+    // Build a name → {headshot, position} lookup from Sheet4 so a cascade
+    // winner gets the right headshot even when the sheet's static projection
+    // differs from the live cascade.
+    const bioByName = {};
+    for (let i = 1; i < rows.length; i++) {
+      const r = rows[i];
+      const nm = (r[COL_NAME]||'').trim();
+      if (nm) bioByName[nm] = { position: (r[COL_POS]||'').trim(), headshot: (r[COL_HS]||'').trim() };
+    }
+
+    for (const pickStr in pickInfo) {
+      const pickN = parseInt(pickStr);
+      const info = pickInfo[pickN];
+      // Prefer the live cascade player if present for this pick.
+      let name = info.name, pos = info.position, hs = info.headshot;
+      const cascadePlayer = order[String(pickN)] || order[pickN];
+      if (cascadePlayer) {
+        const cn = (typeof cascadePlayer === 'object') ? cascadePlayer.player : cascadePlayer;
+        if (cn) {
+          name = cn;
+          const bio = bioByName[cn];
+          if (bio) { pos = bio.position || pos; hs = bio.headshot || hs; }
+        }
+      }
+      if (!name) continue;
+      if (!draftPicksByTeam[info.team]) draftPicksByTeam[info.team] = [];
+      draftPicksByTeam[info.team].push({ name, headshot: hs, pick: pickN, position: normalizeDraftPos(pos) });
+    }
+    // Sort each team's picks by pick number ascending.
+    for (const t in draftPicksByTeam) draftPicksByTeam[t].sort((a,b)=>a.pick-b.pick);
+  } catch(e) { /* draft picks optional — depth chart still renders without them */ }
+}
+
+// Normalize a Sheet4 position string to one of PG/SG/SF/PF/C.
+function normalizeDraftPos(pos) {
+  const p = (pos||'').toUpperCase();
+  if (p.includes('PG')) return 'PG';
+  if (p.includes('SG')) return 'SG';
+  if (p.includes('SF')) return 'SF';
+  if (p.includes('PF')) return 'PF';
+  if (p.includes('C')) return 'C';
+  if (p.includes('G')) return 'SG';
+  if (p.includes('F')) return 'SF';
+  return 'SF';
+}
+
+// Place draft picks into position columns, spilling collisions to the nearest
+// open position. Returns {pos: [pick,...]}.
+function placeDraftPicks(picks) {
+  const ORDER = ['PG','SG','SF','PF','C'];
+  const slots = { PG:[], SG:[], SF:[], PF:[], C:[] };
+  // Nearest-position search order from each base position.
+  const NEAREST = {
+    PG: ['PG','SG','SF','PF','C'],
+    SG: ['SG','PG','SF','PF','C'],
+    SF: ['SF','SG','PF','PG','C'],
+    PF: ['PF','C','SF','SG','PG'],
+    C:  ['C','PF','SF','SG','PG']
+  };
+  // Track how many picks each position already holds; prefer empty columns.
+  for (const pk of picks) {
+    const base = pk.position || 'SF';
+    const search = NEAREST[base] || ORDER;
+    // Find the position in the search order with the fewest picks (closest-first).
+    let best = search[0], bestCount = slots[search[0]].length;
+    for (const pos of search) {
+      if (slots[pos].length < bestCount) { best = pos; bestCount = slots[pos].length; }
+      if (bestCount === 0) break; // empty column found along nearest path
+    }
+    slots[best].push(pk);
+  }
+  return slots;
+}
+
+
 function fmtTV(tv) { if (tv>=1e6) return '$'+(tv/1e6).toFixed(1)+'M'; if (tv>=1e3) return '$'+Math.round(tv/1e3)+'K'; return '$'+tv.toLocaleString(); }
 function fmtSal(s) { if (s>=1e6) return '$'+(s/1e6).toFixed(1)+'M'; if (s>=1e3) return '$'+Math.round(s/1e3)+'K'; return '$'+s.toLocaleString(); }
 function fmtSalFull(s) { return '$'+s.toLocaleString('en-US'); }
 function valClass(tv) { return tv>=2e7?'high':tv>=5e6?'medium':'low'; }
 function initials(n) { return n.split(' ').map(w=>w[0]).join(''); }
+function escDC(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 // =====================================================
 // RENDER TEAM GRID
@@ -1309,6 +1434,7 @@ const DC_PRESTO_CSS = '<style>\n'
 + '.dc-tbl .c-to{background-color:#fca5a5}\n'
 + '.dc-tbl .c-po{background-color:#33cccc}\n'
 + '.dc-tbl .c-ng{background-color:#e0e000}\n'
++ '.dc-tbl .c-draft{background-color:#86efac}\n'
 + '<' + '/style>';
 
 function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
@@ -1481,6 +1607,8 @@ async function renderExportView(exportParam, withHeadshots) {
     allPlayers = parseRosterCSV(rText);
     if (cR && cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) {} }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
+    // Fetch projected draft picks (offseason export only needs them, but cheap).
+    await fetchDraftPicks();
 
     let html;
     if (exportParam === 'all') {
@@ -1745,6 +1873,35 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
       }
     }
     
+    // Draft picks section (offseason only): incoming projected rookies in
+    // green cells, headshot + name + "Nth pick" where salary would be.
+    if (isOffseason) {
+      const teamPicks = draftPicksByTeam[team.abbrev] || [];
+      if (teamPicks.length) {
+        const slots = placeDraftPicks(teamPicks);
+        const maxPicks = Math.max(...positions.map(pos => slots[pos].length), 0);
+        if (maxPicks > 0) {
+          // Green separator line above the draft section.
+          out += `<tr><td colspan="5" style="height:3px;background:#16a34a;padding:0"></td></tr>`;
+          for (let r = 0; r < maxPicks; r++) {
+            const rp = positions.map(pos => slots[pos][r] || null);
+            if (!rp.some(p => p !== null)) continue;
+            if (withHeadshots) {
+              out += `<tr class="dc-hs-row">`;
+              rp.forEach(p => { out += p && p.headshot ? `<td class="c-draft"><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td class="c-draft"></td>`; });
+              out += `</tr>`;
+            }
+            out += `<tr class="dc-data">`;
+            rp.forEach(p => { out += `<td class="c-draft">${p ? `<strong>${escDC(p.name)}</strong>` : ''}</td>`; });
+            out += `</tr>`;
+            out += `<tr class="dc-data">`;
+            rp.forEach(p => { out += `<td class="c-draft">${p ? ordinalPick(p.pick) : ''}</td>`; });
+            out += `</tr>`;
+          }
+        }
+      }
+    }
+
     out += `</tbody></table><br><br>`;
   }
   out += '</div>';
