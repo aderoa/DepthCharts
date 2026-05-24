@@ -2003,7 +2003,10 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
   return out;
 }
 
-function copyEliminatedExport() {
+async function copyEliminatedExport() {
+  const btn = event.target.closest('.export-btn');
+  // Ensure projected draft picks are loaded before building the export.
+  if (!Object.keys(draftPicksByTeam).length) { try { await fetchDraftPicks(); } catch(e) {} }
   // Load orders from 26-27 storage (independent from current DOM which shows 25-26)
   const key2627 = storageKeyForYear('2026-27');
   let savedOrders = {};
@@ -2034,7 +2037,6 @@ function copyEliminatedExport() {
   const endThreshold = getFutureYearEndThreshold('2026-27');
   const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, eliminatedTeams, '2026-27', endThreshold);
   
-  const btn = event.target.closest('.export-btn');
   const orig = btn.textContent;
   const blob = new Blob([out], {type: 'text/plain'});
   navigator.clipboard.write([new ClipboardItem({'text/plain': blob})]).then(() => {
@@ -2058,7 +2060,10 @@ function copyEliminatedExport() {
 // the 2026-27 localStorage key (with fallback to main + default), NOT from
 // the live DOM. This is critical because the user can be on the 2025-26
 // view when triggering this — the DOM doesn't reflect 2026-27 ordering then.
-function copyEliminatedHalf(half) {
+async function copyEliminatedHalf(half) {
+  const btn = event.target.closest('.export-btn');
+  // Ensure projected draft picks are loaded before building the export.
+  if (!Object.keys(draftPicksByTeam).length) { try { await fetchDraftPicks(); } catch(e) {} }
   const eliminatedTeams = NBA_TEAMS
     .filter(t => ELIMINATED_ABBREVS.has(t.abbrev))
     .sort((a, b) => a.name.localeCompare(b.name));
@@ -2092,7 +2097,6 @@ function copyEliminatedHalf(half) {
   const endThreshold = getFutureYearEndThreshold('2026-27');
   const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, teamSlice, '2026-27', endThreshold);
 
-  const btn = event.target.closest('.export-btn');
   const orig = btn.textContent;
   const blob = new Blob([out], {type: 'text/plain'});
   navigator.clipboard.write([new ClipboardItem({'text/plain': blob})]).then(() => {
@@ -2107,7 +2111,10 @@ function copyEliminatedHalf(half) {
   });
 }
 
-function copyFutureYearExport(year, startIdx, endIdx) {
+async function copyFutureYearExport(year, startIdx, endIdx) {
+  const btn = event.target.closest('.export-btn');
+  // Ensure projected draft picks are loaded before building the export.
+  if (!Object.keys(draftPicksByTeam).length) { try { await fetchDraftPicks(); } catch(e) {} }
   if (startIdx == null) startIdx = 0;
   if (endIdx == null) endIdx = 30;
   const teamOrders = {};
@@ -2132,7 +2139,6 @@ function copyFutureYearExport(year, startIdx, endIdx) {
   const teamSlice = NBA_TEAMS.slice(startIdx, endIdx);
   const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, teamSlice, year, endThreshold);
   
-  const btn = event.target.closest('.export-btn');
   const orig = btn.textContent;
   const blob = new Blob([out], {type: 'text/plain'});
   navigator.clipboard.write([new ClipboardItem({'text/plain': blob})]).then(() => {
@@ -2209,6 +2215,52 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
       out += `<tr class="dc-data">`;
       rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? fmtSalFull(p.salary27 || p.salary) : ''}</td>`; });
       out += `</tr>`;
+    }
+
+    // Draft picks section (green) — BETWEEN contracted players and FAs.
+    // Honors any saved __DRAFT__: ordering, falling back to default placement.
+    if (year === '2026-27') {
+      const draftByName = {};
+      (draftPicksByTeam[team.abbrev] || []).forEach(dp => { draftByName[dp.name] = dp; });
+      const draftSlots = { PG:[], SG:[], SF:[], PF:[], C:[] };
+      const placedD = new Set();
+      // Restore saved draft order from the team's stored order, if present.
+      positions.forEach(pos => {
+        (order[pos] || []).forEach(n => {
+          if (typeof n === 'string' && n.indexOf('__DRAFT__:') === 0) {
+            const dn = n.slice('__DRAFT__:'.length);
+            const dp = draftByName[dn];
+            if (dp && !placedD.has(dn)) { draftSlots[pos].push(dp); placedD.add(dn); }
+          }
+        });
+      });
+      // Any current picks not in the saved order → default nearest placement.
+      const leftover = (draftPicksByTeam[team.abbrev] || []).filter(dp => !placedD.has(dp.name));
+      if (leftover.length) {
+        const def = placeDraftPicks(leftover);
+        positions.forEach(pos => { def[pos].forEach(dp => draftSlots[pos].push(dp)); });
+      }
+      // If nothing was saved at all, use full default placement.
+      if (placedD.size === 0 && leftover.length === 0) {
+        const def = placeDraftPicks(draftPicksByTeam[team.abbrev] || []);
+        positions.forEach(pos => { draftSlots[pos] = def[pos].slice(); });
+      }
+      const maxDraft = Math.max(...positions.map(pos => draftSlots[pos].length), 0);
+      if (maxDraft > 0) {
+        out += `<tr><td colspan="5" style="height:3px;background:#16a34a;padding:0"></td></tr>`;
+        for (let r = 0; r < maxDraft; r++) {
+          const rp = positions.map(pos => draftSlots[pos][r] || null);
+          out += `<tr class="dc-hs-row">`;
+          rp.forEach(p => { out += p && p.headshot ? `<td class="c-draft"><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+          out += `</tr>`;
+          out += `<tr class="dc-data">`;
+          rp.forEach(p => { out += p ? `<td class="c-draft"><strong>${escDC(p.name)}</strong></td>` : `<td></td>`; });
+          out += `</tr>`;
+          out += `<tr class="dc-data">`;
+          rp.forEach(p => { out += p ? `<td class="c-draft">${ordinalPick(p.pick)}</td>` : `<td></td>`; });
+          out += `</tr>`;
+        }
+      }
     }
     
     if (maxBelow > 0) {
