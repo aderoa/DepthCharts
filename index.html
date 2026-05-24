@@ -196,6 +196,7 @@ footer a { color:var(--accent); text-decoration:none; }
 .admin-player-card.player-option { background:#33cccc; }
 .admin-player-card.non-guaranteed { background:#e0e000; }
 .admin-player-card.free-agent { background:#ffd580; }
+.admin-player-card.draft-pick { background:#86efac; cursor:default; }
 .admin-player-card.spacer { background:var(--surface2); border:1px dashed #c0c4cc; display:flex; align-items:center; justify-content:center; opacity:0.6; cursor:grab; position:relative; padding:0.4rem 0.5rem; }
 .admin-player-card.spacer > * { pointer-events:none; }
 .admin-player-card.spacer .spacer-label { color:var(--text-muted); font-size:0.65rem; }
@@ -209,6 +210,8 @@ footer a { color:var(--accent); text-decoration:none; }
 .admin-player-card.questionable { background:#fed7aa; }
 .admin-separator { height:2px; background:var(--red); margin:4px 0; border-radius:1px; opacity:0.6; pointer-events:none; }
 .injury-separator { height:2px; background:var(--red); margin:4px 0; border-radius:1px; opacity:0.6; }
+.draft-separator { height:2px; background:#16a34a; margin:4px 0; border-radius:1px; opacity:0.8; }
+.player-card.draft-pick { background:#86efac; border:2px solid #16a34a; cursor:default; }
 .admin-trade-value { font-size:0.65rem; font-weight:600; pointer-events:none; margin-top:1px; }
 .admin-trade-value.high { color:var(--green); }
 .admin-trade-value.medium { color:#ca8a04; }
@@ -340,6 +343,7 @@ function saveTeamOrder(teamAbbrev, container) {
       if (node.classList && node.classList.contains('admin-separator')) {
         order[pos].push('__SEPARATOR__');
       } else if (node.classList && (node.classList.contains('admin-player-card') || node.classList.contains('player-card'))) {
+        if (node.classList.contains('draft-pick')) return; // read-only projection — never saved to order
         if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
         else if (node.dataset.player) order[pos].push(node.dataset.player);
       }
@@ -909,6 +913,12 @@ function renderDepthChart(teamAbbrev) {
   // Find max healthy rows to align separator
   const maxHealthy = Math.max(...positions.map(pos => healthyByPos[pos].length), 1);
 
+  // Projected draft picks (eliminated/offseason teams only), placed into
+  // position columns with nearest-position spill.
+  const draftByPos = isEliminated
+    ? placeDraftPicks(draftPicksByTeam[teamAbbrev] || [])
+    : { PG:[], SG:[], SF:[], PF:[], C:[] };
+
   let html = '';
   positions.forEach(pos => {
     html += `<div class="position-column" data-position="${pos}"><div class="position-header">${pos}</div>`;
@@ -967,6 +977,18 @@ function renderDepthChart(teamAbbrev) {
           <div class="trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
       }
     });
+
+    // Draft picks (green) — incoming projected rookies for eliminated teams.
+    const dPicks = draftByPos[pos] || [];
+    if (dPicks.length) {
+      html += `<div class="draft-separator"></div>`;
+      dPicks.forEach(dp => {
+        html += `<div class="player-card draft-pick" data-player="${escDC(dp.name)}">
+          <div class="player-image">${dp.headshot?`<img src="${dp.headshot}" alt="${escDC(dp.name)}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(dp.name)}</span>'">`:`<span class="initials">${initials(dp.name)}</span>`}</div>
+          <div class="player-name">${escDC(dp.name)}</div>
+          <div class="trade-value" style="color:#15803d;font-weight:700">${ordinalPick(dp.pick)}</div></div>`;
+      });
+    }
 
     html += '</div>';
   });
@@ -1092,6 +1114,12 @@ function renderFutureYearAdmin(year) {
     const tp = allPlayers.filter(p => p.team === team.abbrev);
     if (!tp.length) continue;
     const saved = savedOrders[team.abbrev] || null;
+
+    // Projected draft picks for this team (offseason / 2026-27 only),
+    // placed into position columns with nearest-position spill.
+    const draftByPos = (year === '2026-27')
+      ? placeDraftPicks(draftPicksByTeam[team.abbrev] || [])
+      : { PG:[], SG:[], SF:[], PF:[], C:[] };
     
     // Split into contracted and FAs based on END year
     const contractedByPos = {}, faByPos = {};
@@ -1166,7 +1194,16 @@ function renderFutureYearAdmin(year) {
       faByPos[pos].forEach(p => {
         html += `<div class="admin-player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value" style="color:#b45309">${p._ps.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
       });
-      
+
+      // Draft picks (green) — projected incoming rookies, "Nth pick" as value.
+      const dPicks = draftByPos[pos] || [];
+      if (dPicks.length) {
+        html += `<div class="admin-separator" style="background:#16a34a"></div>`;
+        dPicks.forEach(dp => {
+          html += `<div class="admin-player-card draft-pick" data-player="${escDC(dp.name)}"><div class="admin-player-name">${escDC(dp.name)}</div><div class="admin-trade-value" style="color:#15803d">${ordinalPick(dp.pick)}</div></div>`;
+        });
+      }
+
       html += '</div>';
     });
     html += '</div></div>';
@@ -1293,6 +1330,8 @@ function setupDragDrop(container, teamAbbrev, isAdminView) {
   const colSel = isAdminView ? '.admin-position-column' : '.position-column';
 
   container.querySelectorAll(cardSel).forEach(card => {
+    // Draft-pick cards are read-only projections — not draggable/reorderable.
+    if (card.classList.contains('draft-pick')) return;
     makeDraggable(card, container, teamAbbrev, cardSel, colSel);
   });
 
@@ -1543,6 +1582,7 @@ function exportHTML(withHeadshots, startIdx, endIdx) {
         if (node.classList && node.classList.contains('admin-separator')) {
           order[pos].push('__SEPARATOR__');
         } else if (node.classList && node.classList.contains('admin-player-card')) {
+          if (node.classList.contains('draft-pick')) return; // read-only projection
           if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
           else if (node.dataset.player) order[pos].push(node.dataset.player);
         }
@@ -1670,6 +1710,7 @@ function copyExportDirect(withHeadshots, startIdx, endIdx) {
         if (node.classList && node.classList.contains('admin-separator')) {
           order[pos].push('__SEPARATOR__');
         } else if (node.classList && node.classList.contains('admin-player-card')) {
+          if (node.classList.contains('draft-pick')) return; // read-only projection
           if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
           else if (node.dataset.player) order[pos].push(node.dataset.player);
         }
@@ -1727,6 +1768,7 @@ function copyExportByGroup(group) {
         if (node.classList && node.classList.contains('admin-separator')) {
           order[pos].push('__SEPARATOR__');
         } else if (node.classList && node.classList.contains('admin-player-card')) {
+          if (node.classList.contains('draft-pick')) return; // read-only projection
           if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
           else if (node.dataset.player) order[pos].push(node.dataset.player);
         }
@@ -2027,6 +2069,7 @@ function copyFutureYearExport(year, startIdx, endIdx) {
         if (node.classList && node.classList.contains('admin-separator')) {
           order[pos].push('__SEPARATOR__');
         } else if (node.classList && node.classList.contains('admin-player-card')) {
+          if (node.classList.contains('draft-pick')) return; // read-only projection
           if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
           else if (node.dataset.player) order[pos].push(node.dataset.player);
         }
@@ -2244,6 +2287,7 @@ async function init() {
     allPlayers = parseRosterCSV(rText);
     if (cR && cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) { console.warn('Contracts parse error:', e); } }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) { console.warn('Injuries JSON unavailable:', e); }
+    await fetchDraftPicks();
     document.getElementById('loading').style.display = 'none';
     if (isAdmin && !teamParam) {
       renderAdminAllTeams();
