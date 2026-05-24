@@ -211,6 +211,7 @@ footer a { color:var(--accent); text-decoration:none; }
 .admin-separator { height:2px; background:var(--red); margin:4px 0; border-radius:1px; opacity:0.6; pointer-events:none; }
 .injury-separator { height:2px; background:var(--red); margin:4px 0; border-radius:1px; opacity:0.6; }
 .draft-separator { height:2px; background:#16a34a; margin:4px 0; border-radius:1px; opacity:0.8; }
+.fa-separator { height:2px; background:#f59e0b; margin:4px 0; border-radius:1px; opacity:0.7; }
 .player-card.draft-pick { background:#86efac; border:2px solid #16a34a; cursor:default; }
 .admin-trade-value { font-size:0.65rem; font-weight:600; pointer-events:none; margin-top:1px; }
 .admin-trade-value.high { color:var(--green); }
@@ -343,7 +344,8 @@ function saveTeamOrder(teamAbbrev, container) {
       if (node.classList && node.classList.contains('admin-separator')) {
         order[pos].push('__SEPARATOR__');
       } else if (node.classList && (node.classList.contains('admin-player-card') || node.classList.contains('player-card'))) {
-        if (node.classList.contains('draft-pick')) return; // read-only projection — never saved to order
+        // Draft-pick cards carry a "__DRAFT__:Name" data-player so they're
+        // saved/restored distinctly and re-validated against the live cascade.
         if (node.dataset.player === '__SPACER__') order[pos].push('__SPACER__');
         else if (node.dataset.player) order[pos].push(node.dataset.player);
       }
@@ -918,6 +920,8 @@ function renderDepthChart(teamAbbrev) {
   const draftByPos = isEliminated
     ? placeDraftPicks(draftPicksByTeam[teamAbbrev] || [])
     : { PG:[], SG:[], SF:[], PF:[], C:[] };
+  const maxDraft = Math.max(...positions.map(pos => draftByPos[pos].length), 0);
+  const hasDraft = maxDraft > 0;
 
   let html = '';
   positions.forEach(pos => {
@@ -956,9 +960,30 @@ function renderDepthChart(teamAbbrev) {
         <div class="trade-value" style="visibility:hidden;">&nbsp;</div></div>`;
     }
 
-    // Red separator line (only if there are injured players on this team)
+    // Draft picks section (green) — BETWEEN contracted players and FAs
+    // (eliminated/offseason teams only). Padded with spacers so the green and
+    // orange separators stay hard lines across all five columns.
+    const dPicks = draftByPos[pos] || [];
+    if (hasDraft) {
+      html += `<div class="draft-separator"></div>`;
+      dPicks.forEach(dp => {
+        html += `<div class="player-card draft-pick" data-player="__DRAFT__:${escDC(dp.name)}">
+          <div class="player-image">${dp.headshot?`<img src="${dp.headshot}" alt="${escDC(dp.name)}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(dp.name)}</span>'">`:`<span class="initials">${initials(dp.name)}</span>`}</div>
+          <div class="player-name">${escDC(dp.name)}</div>
+          <div class="trade-value" style="color:#15803d;font-weight:700">${ordinalPick(dp.pick)}</div></div>`;
+      });
+      // Pad draft section with spacers so the orange FA separator is a hard line
+      for (let i = dPicks.length; i < maxDraft; i++) {
+        html += `<div class="player-card spacer" data-player="__SPACER__">
+          <div class="player-image"><span class="initials" style="visibility:hidden;">&nbsp;</span></div>
+          <div class="player-name" style="visibility:hidden;">—</div>
+          <div class="trade-value" style="visibility:hidden;">&nbsp;</div></div>`;
+      }
+    }
+
+    // Separator line before injured players / FAs
     if (injuredByPos[pos].length || positions.some(p2 => injuredByPos[p2].length)) {
-      html += `<div class="injury-separator"></div>`;
+      html += `<div class="${isEliminated ? 'fa-separator' : 'injury-separator'}"></div>`;
     }
 
     // Injured players (or FAs for eliminated teams)
@@ -977,18 +1002,6 @@ function renderDepthChart(teamAbbrev) {
           <div class="trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
       }
     });
-
-    // Draft picks (green) — incoming projected rookies for eliminated teams.
-    const dPicks = draftByPos[pos] || [];
-    if (dPicks.length) {
-      html += `<div class="draft-separator"></div>`;
-      dPicks.forEach(dp => {
-        html += `<div class="player-card draft-pick" data-player="${escDC(dp.name)}">
-          <div class="player-image">${dp.headshot?`<img src="${dp.headshot}" alt="${escDC(dp.name)}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(dp.name)}</span>'">`:`<span class="initials">${initials(dp.name)}</span>`}</div>
-          <div class="player-name">${escDC(dp.name)}</div>
-          <div class="trade-value" style="color:#15803d;font-weight:700">${ordinalPick(dp.pick)}</div></div>`;
-      });
-    }
 
     html += '</div>';
   });
@@ -1115,12 +1128,6 @@ function renderFutureYearAdmin(year) {
     if (!tp.length) continue;
     const saved = savedOrders[team.abbrev] || null;
 
-    // Projected draft picks for this team (offseason / 2026-27 only),
-    // placed into position columns with nearest-position spill.
-    const draftByPos = (year === '2026-27')
-      ? placeDraftPicks(draftPicksByTeam[team.abbrev] || [])
-      : { PG:[], SG:[], SF:[], PF:[], C:[] };
-    
     // Split into contracted and FAs based on END year
     const contractedByPos = {}, faByPos = {};
     const globalPlaced = new Set();
@@ -1128,13 +1135,34 @@ function renderFutureYearAdmin(year) {
       contractedByPos[pos] = [];
       faByPos[pos] = [];
     });
+
+    // Default draft placement (cascade-driven). Used when there's no saved
+    // draft order, or to validate/fall back stale saved draft entries.
+    const defaultDraftByPos = (year === '2026-27')
+      ? placeDraftPicks(draftPicksByTeam[team.abbrev] || [])
+      : { PG:[], SG:[], SF:[], PF:[], C:[] };
+    // Lookup: player name → draft-pick object, for honoring saved positions.
+    const draftByName = {};
+    (draftPicksByTeam[team.abbrev] || []).forEach(dp => { draftByName[dp.name] = dp; });
+    // draftByPos will hold the FINAL placement (saved order if valid, else default).
+    const draftByPos = {}; positions.forEach(pos => draftByPos[pos] = []);
+    const draftPlaced = new Set();
     
     // Use saved order if available
     if (saved) {
       positions.forEach(pos => {
         const names = saved[pos] || [];
         names.forEach(n => {
-          if (n === '__SPACER__' || n === '__SEPARATOR__' || globalPlaced.has(n)) return;
+          if (n === '__SPACER__' || n === '__SEPARATOR__') return;
+          // Saved draft pick entry: "__DRAFT__:PlayerName"
+          if (n.indexOf('__DRAFT__:') === 0) {
+            const dn = n.slice('__DRAFT__:'.length);
+            const dp = draftByName[dn];
+            // Only honor if this player is still a current projected pick.
+            if (dp && !draftPlaced.has(dn)) { draftByPos[pos].push(dp); draftPlaced.add(dn); }
+            return;
+          }
+          if (globalPlaced.has(n)) return;
           const p = pMap[n];
           if (!p || p.team !== team.abbrev) return;
           const ps = getFuturePlayerStatus(p, endThreshold, year);
@@ -1154,6 +1182,22 @@ function renderFutureYearAdmin(year) {
       if (ps.status === 'fa') faByPos[pos].push({ ...p, _ps: ps });
       else contractedByPos[pos].push({ ...p, _ps: ps });
     });
+
+    // Any draft picks NOT restored from saved order fall back to default
+    // placement (e.g. simulator changed → new players use default columns).
+    const anyDraftSaved = draftPlaced.size > 0;
+    if (!anyDraftSaved) {
+      // No valid saved draft order at all → use full default placement.
+      positions.forEach(pos => { draftByPos[pos] = defaultDraftByPos[pos].slice(); });
+    } else {
+      // Some saved; append any current picks that weren't in the saved order.
+      (draftPicksByTeam[team.abbrev] || []).forEach(dp => {
+        if (draftPlaced.has(dp.name)) return;
+        const pos = dp.position || 'SF';
+        // place via nearest using the default map's column for this single pick
+        draftByPos[pos].push(dp); draftPlaced.add(dp.name);
+      });
+    }
     
     // Sort by trade value only if no saved order (preserve user's drag-drop order otherwise)
     if (!saved) {
@@ -1164,6 +1208,8 @@ function renderFutureYearAdmin(year) {
     }
     
     const maxContracted = Math.max(...positions.map(pos => contractedByPos[pos].length), 1);
+    const maxDraft = Math.max(...positions.map(pos => draftByPos[pos].length), 0);
+    const hasDraft = maxDraft > 0;
     const hasFAs = positions.some(pos => faByPos[pos].length > 0);
     
     html += `<div class="admin-team-row" data-team="${team.abbrev}">
@@ -1182,27 +1228,32 @@ function renderFutureYearAdmin(year) {
         firstReal = false;
       });
       
-      // Pad with spacers
+      // Pad with spacers (align the first separator across all columns)
       for (let i = contractedByPos[pos].length; i < maxContracted; i++) {
         html += `<div class="admin-player-card spacer" draggable="true" data-player="__SPACER__"><div><div class="admin-player-name" style="color:#666;">— blank —</div><div class="admin-trade-value" style="visibility:hidden;">&nbsp;</div></div></div>`;
       }
       
-      // Separator
+      // Draft picks section (green) — BETWEEN contracted players and FAs.
+      if (hasDraft) {
+        // Green separator
+        html += `<div class="admin-separator" style="background:#16a34a"></div>`;
+        // Draft cards (draggable in admin so order can be tweaked)
+        draftByPos[pos].forEach(dp => {
+          html += `<div class="admin-player-card draft-pick" draggable="true" data-player="__DRAFT__:${escDC(dp.name)}"><div class="admin-player-name">${escDC(dp.name)}</div><div class="admin-trade-value" style="color:#15803d">${ordinalPick(dp.pick)}</div></div>`;
+        });
+        // Pad draft section with spacers so the orange separator is a hard line
+        for (let i = draftByPos[pos].length; i < maxDraft; i++) {
+          html += `<div class="admin-player-card spacer" draggable="true" data-player="__SPACER__"><div><div class="admin-player-name" style="color:#666;">— blank —</div><div class="admin-trade-value" style="visibility:hidden;">&nbsp;</div></div></div>`;
+        }
+      }
+      
+      // Orange separator (before FAs)
       html += `<div class="admin-separator" style="background:#f59e0b"></div>`;
       
       // FAs
       faByPos[pos].forEach(p => {
         html += `<div class="admin-player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value" style="color:#b45309">${p._ps.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
       });
-
-      // Draft picks (green) — projected incoming rookies, "Nth pick" as value.
-      const dPicks = draftByPos[pos] || [];
-      if (dPicks.length) {
-        html += `<div class="admin-separator" style="background:#16a34a"></div>`;
-        dPicks.forEach(dp => {
-          html += `<div class="admin-player-card draft-pick" data-player="${escDC(dp.name)}"><div class="admin-player-name">${escDC(dp.name)}</div><div class="admin-trade-value" style="color:#15803d">${ordinalPick(dp.pick)}</div></div>`;
-        });
-      }
 
       html += '</div>';
     });
@@ -1330,8 +1381,8 @@ function setupDragDrop(container, teamAbbrev, isAdminView) {
   const colSel = isAdminView ? '.admin-position-column' : '.position-column';
 
   container.querySelectorAll(cardSel).forEach(card => {
-    // Draft-pick cards are read-only projections — not draggable/reorderable.
-    if (card.classList.contains('draft-pick')) return;
+    // Draft-pick cards: draggable in admin (reorderable), static in public view.
+    if (card.classList.contains('draft-pick') && !isAdminView) return;
     makeDraggable(card, container, teamAbbrev, cardSel, colSel);
   });
 
@@ -1885,7 +1936,35 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
       rp.forEach(p => { out += `<td${cCls(p, isOffseason)}>${p ? (isOffseason ? fmtSalFull(p.salary27 || p.salary) : fmtSalFull(p.salary)) : ''}</td>`; });
       out += `</tr>`;
     }
-    
+
+    // Draft picks section (offseason only) — BETWEEN contracted and FAs.
+    // Green cells: headshot + name + "Nth pick" where salary would be.
+    if (isOffseason) {
+      const teamPicks = draftPicksByTeam[team.abbrev] || [];
+      if (teamPicks.length) {
+        const slots = placeDraftPicks(teamPicks);
+        const maxPicks = Math.max(...positions.map(pos => slots[pos].length), 0);
+        if (maxPicks > 0) {
+          // Green separator line above the draft section.
+          out += `<tr><td colspan="5" style="height:3px;background:#16a34a;padding:0"></td></tr>`;
+          for (let r = 0; r < maxPicks; r++) {
+            const rp = positions.map(pos => slots[pos][r] || null);
+            if (withHeadshots) {
+              out += `<tr class="dc-hs-row">`;
+              rp.forEach(p => { out += p && p.headshot ? `<td class="c-draft"><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+              out += `</tr>`;
+            }
+            out += `<tr class="dc-data">`;
+            rp.forEach(p => { out += p ? `<td class="c-draft"><strong>${escDC(p.name)}</strong></td>` : `<td></td>`; });
+            out += `</tr>`;
+            out += `<tr class="dc-data">`;
+            rp.forEach(p => { out += p ? `<td class="c-draft">${ordinalPick(p.pick)}</td>` : `<td></td>`; });
+            out += `</tr>`;
+          }
+        }
+      }
+    }
+
     // Separator + below rows (injured/FAs)
     if (hasBelow) {
       out += `<tr><td colspan="5" style="height:3px;background:${isOffseason ? '#f59e0b' : '#ef4444'};padding:0"></td></tr>`;
@@ -1915,35 +1994,6 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
           }
         });
         out += `</tr>`;
-      }
-    }
-    
-    // Draft picks section (offseason only): incoming projected rookies in
-    // green cells, headshot + name + "Nth pick" where salary would be.
-    if (isOffseason) {
-      const teamPicks = draftPicksByTeam[team.abbrev] || [];
-      if (teamPicks.length) {
-        const slots = placeDraftPicks(teamPicks);
-        const maxPicks = Math.max(...positions.map(pos => slots[pos].length), 0);
-        if (maxPicks > 0) {
-          // Green separator line above the draft section.
-          out += `<tr><td colspan="5" style="height:3px;background:#16a34a;padding:0"></td></tr>`;
-          for (let r = 0; r < maxPicks; r++) {
-            const rp = positions.map(pos => slots[pos][r] || null);
-            if (!rp.some(p => p !== null)) continue;
-            if (withHeadshots) {
-              out += `<tr class="dc-hs-row">`;
-              rp.forEach(p => { out += p && p.headshot ? `<td class="c-draft"><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td class="c-draft"></td>`; });
-              out += `</tr>`;
-            }
-            out += `<tr class="dc-data">`;
-            rp.forEach(p => { out += `<td class="c-draft">${p ? `<strong>${escDC(p.name)}</strong>` : ''}</td>`; });
-            out += `</tr>`;
-            out += `<tr class="dc-data">`;
-            rp.forEach(p => { out += `<td class="c-draft">${p ? ordinalPick(p.pick) : ''}</td>`; });
-            out += `</tr>`;
-          }
-        }
       }
     }
 
