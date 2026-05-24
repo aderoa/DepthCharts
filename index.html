@@ -715,25 +715,35 @@ async function fetchDraftPicks() {
     const csvText = await csvR.text();
     const rows = parseCSV(csvText);
 
-    // Sheet4 columns: 15 = pick number, 16 = owning team (abbrev),
-    // 26 = projected player (bio name), 36 = position, 45 = headshot URL.
-    const COL_PICK=15, COL_TEAM=16, COL_NAME=26, COL_POS=36, COL_HS=45;
-    // Pick → {team, name, position, headshot} straight from Sheet4.
+    // Sheet4 has two parallel (non-row-aligned) sections:
+    //  Section A — cascade pick order: col 0 = projected player at that pick,
+    //              col 15 = pick number, col 16 = owning team (abbrev).
+    //  Section B — prospect bio table: col 26 = player name, col 36 = position,
+    //              col 45 = headshot URL.
+    const COL_A_PLAYER=0, COL_A_PICK=15, COL_A_TEAM=16;
+    const COL_B_NAME=26, COL_B_POS=36, COL_B_HS=45;
+
+    // Build name → {position, headshot} from Section B.
+    const bioByName = {};
+    for (let i = 1; i < rows.length; i++) {
+      const r = rows[i];
+      const nm = (r[COL_B_NAME]||'').trim();
+      if (nm) bioByName[nm] = { position: (r[COL_B_POS]||'').trim(), headshot: (r[COL_B_HS]||'').trim() };
+    }
+
+    // Build pick → {team, player} from Section A.
     const pickInfo = {};
     for (let i = 1; i < rows.length; i++) {
       const r = rows[i];
-      const pickN = parseInt((r[COL_PICK]||'').trim());
-      const team = (r[COL_TEAM]||'').trim().toUpperCase();
-      if (!pickN || !team) continue;
-      pickInfo[pickN] = {
-        team,
-        name: (r[COL_NAME]||'').trim(),
-        position: (r[COL_POS]||'').trim(),
-        headshot: (r[COL_HS]||'').trim()
-      };
+      const pickN = parseInt((r[COL_A_PICK]||'').trim());
+      const team = (r[COL_A_TEAM]||'').trim().toUpperCase();
+      const player = (r[COL_A_PLAYER]||'').trim();
+      if (!pickN || !team || !player) continue;
+      pickInfo[pickN] = { team, name: player };
     }
 
-    // Live cascade order overrides the projected player name per pick.
+    // Live cascade order (from the snapshot) overrides the sheet's static
+    // projected player per pick, when available.
     let order = {};
     if (snapR && snapR.ok) {
       try {
@@ -741,33 +751,26 @@ async function fetchDraftPicks() {
         order = snap.order || {};
       } catch(e) {}
     }
-    // Build a name → {headshot, position} lookup from Sheet4 so a cascade
-    // winner gets the right headshot even when the sheet's static projection
-    // differs from the live cascade.
-    const bioByName = {};
-    for (let i = 1; i < rows.length; i++) {
-      const r = rows[i];
-      const nm = (r[COL_NAME]||'').trim();
-      if (nm) bioByName[nm] = { position: (r[COL_POS]||'').trim(), headshot: (r[COL_HS]||'').trim() };
-    }
 
     for (const pickStr in pickInfo) {
       const pickN = parseInt(pickStr);
       const info = pickInfo[pickN];
+      let name = info.name;
       // Prefer the live cascade player if present for this pick.
-      let name = info.name, pos = info.position, hs = info.headshot;
       const cascadePlayer = order[String(pickN)] || order[pickN];
       if (cascadePlayer) {
         const cn = (typeof cascadePlayer === 'object') ? cascadePlayer.player : cascadePlayer;
-        if (cn) {
-          name = cn;
-          const bio = bioByName[cn];
-          if (bio) { pos = bio.position || pos; hs = bio.headshot || hs; }
-        }
+        if (cn) name = cn;
       }
       if (!name) continue;
+      const bio = bioByName[name] || {};
       if (!draftPicksByTeam[info.team]) draftPicksByTeam[info.team] = [];
-      draftPicksByTeam[info.team].push({ name, headshot: hs, pick: pickN, position: normalizeDraftPos(pos) });
+      draftPicksByTeam[info.team].push({
+        name,
+        headshot: bio.headshot || '',
+        pick: pickN,
+        position: normalizeDraftPos(bio.position || '')
+      });
     }
     // Sort each team's picks by pick number ascending.
     for (const t in draftPicksByTeam) draftPicksByTeam[t].sort((a,b)=>a.pick-b.pick);
