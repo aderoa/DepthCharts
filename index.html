@@ -1951,7 +1951,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
             const rp = positions.map(pos => slots[pos][r] || null);
             if (withHeadshots) {
               out += `<tr class="dc-hs-row">`;
-              rp.forEach(p => { out += p && p.headshot ? `<td class="c-draft"><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+              rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
               out += `</tr>`;
             }
             out += `<tr class="dc-data">`;
@@ -2251,7 +2251,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
         for (let r = 0; r < maxDraft; r++) {
           const rp = positions.map(pos => draftSlots[pos][r] || null);
           out += `<tr class="dc-hs-row">`;
-          rp.forEach(p => { out += p && p.headshot ? `<td class="c-draft"><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+          rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
           out += `</tr>`;
           out += `<tr class="dc-data">`;
           rp.forEach(p => { out += p ? `<td class="c-draft"><strong>${escDC(p.name)}</strong></td>` : `<td></td>`; });
