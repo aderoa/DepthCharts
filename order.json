@@ -179,12 +179,14 @@
   "CLE": {
     "PG": [
       "James Harden",
+      "Sam Merrill",
       "Craig Porter",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Dennis Schroeder"
     ],
     "SG": [
       "Donovan Mitchell",
-      "Sam Merrill",
+      "Keon Ellis",
       "Tyrese Proctor",
       "__SEPARATOR__",
       "Tristan Enaruna"
@@ -192,7 +194,7 @@
     "SF": [
       "Max Strus",
       "Dean Wade",
-      "Keon Ellis",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
