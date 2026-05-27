@@ -796,6 +796,31 @@ function normalizeDraftPos(pos) {
   return 'SF';
 }
 
+// Place a single pick into already-populated slots using the nearest-open
+// rule. Used by the export and admin renders when restoring some picks from
+// a saved order and then placing the remaining "leftover" picks alongside
+// them — those leftovers must spill if their raw position is already taken,
+// not stack on top of it. Returns the position chosen.
+function placeIntoSlots(slots, pk) {
+  const ORDER = ['PG','SG','SF','PF','C'];
+  const NEAREST = {
+    PG: ['PG','SG','SF','PF','C'],
+    SG: ['SG','PG','SF','PF','C'],
+    SF: ['SF','SG','PF','PG','C'],
+    PF: ['PF','C','SF','SG','PG'],
+    C:  ['C','PF','SF','SG','PG']
+  };
+  const base = pk.position || 'SF';
+  const search = NEAREST[base] || ORDER;
+  let best = search[0], bestCount = slots[search[0]].length;
+  for (const pos of search) {
+    if (slots[pos].length < bestCount) { best = pos; bestCount = slots[pos].length; }
+    if (bestCount === 0) break;
+  }
+  slots[best].push(pk);
+  return best;
+}
+
 // Place draft picks into position columns, spilling collisions to the nearest
 // open position. Returns {pos: [pick,...]}.
 function placeDraftPicks(picks) {
@@ -1191,11 +1216,13 @@ function renderFutureYearAdmin(year) {
       positions.forEach(pos => { draftByPos[pos] = defaultDraftByPos[pos].slice(); });
     } else {
       // Some saved; append any current picks that weren't in the saved order.
+      // Use spill-aware placement so a leftover pick whose raw position is
+      // already occupied by a saved-order pick spills to the nearest open
+      // column (e.g. a second PG spills to SG) instead of stacking.
       (draftPicksByTeam[team.abbrev] || []).forEach(dp => {
         if (draftPlaced.has(dp.name)) return;
-        const pos = dp.position || 'SF';
-        // place via nearest using the default map's column for this single pick
-        draftByPos[pos].push(dp); draftPlaced.add(dp.name);
+        placeIntoSlots(draftByPos, dp);
+        draftPlaced.add(dp.name);
       });
     }
     
@@ -2234,11 +2261,13 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
           }
         });
       });
-      // Any current picks not in the saved order → default nearest placement.
+      // Any current picks not in the saved order → place into the existing
+      // draftSlots using spill-aware nearest-open logic, so leftovers that
+      // collide with saved-order picks land in adjacent columns rather than
+      // stacking onto a second row.
       const leftover = (draftPicksByTeam[team.abbrev] || []).filter(dp => !placedD.has(dp.name));
       if (leftover.length) {
-        const def = placeDraftPicks(leftover);
-        positions.forEach(pos => { def[pos].forEach(dp => draftSlots[pos].push(dp)); });
+        leftover.forEach(dp => { placeIntoSlots(draftSlots, dp); placedD.add(dp.name); });
       }
       // If nothing was saved at all, use full default placement.
       if (placedD.size === 0 && leftover.length === 0) {
