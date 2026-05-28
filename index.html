@@ -1045,25 +1045,29 @@ let _futureYear = null;
 // the year view changes AND on initial page load (so the 2025-26 split
 // buttons get the right labels even before any tab click).
 function updateEliminatedSplitLabels() {
+  // 2025-26 split buttons: restricted to ELIMINATED teams (alive teams are
+  // still playing the current season, so they're excluded there).
   const elim = NBA_TEAMS
     .filter(t => ELIMINATED_ABBREVS.has(t.abbrev))
     .sort((a, b) => a.name.localeCompare(b.name));
-  if (!elim.length) return;
-  const mid = Math.ceil(elim.length / 2);
-  const first = elim.slice(0, mid);
-  const second = elim.slice(mid);
-  const firstRange = first.length ? `${first[0].abbrev}-${first[first.length - 1].abbrev}` : '';
-  const secondRange = second.length ? `${second[0].abbrev}-${second[second.length - 1].abbrev}` : '';
-  const updates = [
-    ['copyElimBtn1', `📷 Copy ${firstRange}`],
-    ['copyElimBtn2', `📷 Copy ${secondRange}`],
-    ['copyElim2526Btn1', `📷 Copy 2026-27 ${firstRange}`],
-    ['copyElim2526Btn2', `📷 Copy 2026-27 ${secondRange}`],
-  ];
-  for (const [id, label] of updates) {
-    const btn = document.getElementById(id);
-    if (btn) btn.textContent = label;
+  if (elim.length) {
+    const mid = Math.ceil(elim.length / 2);
+    const first = elim.slice(0, mid), second = elim.slice(mid);
+    const r1 = first.length ? `${first[0].abbrev}-${first[first.length - 1].abbrev}` : '';
+    const r2 = second.length ? `${second[0].abbrev}-${second[second.length - 1].abbrev}` : '';
+    const b1 = document.getElementById('copyElimBtn1'); if (b1) b1.textContent = `📷 Copy ${r1}`;
+    const b2 = document.getElementById('copyElimBtn2'); if (b2) b2.textContent = `📷 Copy ${r2}`;
   }
+
+  // 2026-27 split buttons: ALL 30 teams (next season, everyone in offseason,
+  // including NYK/OKC/SAS still alive in the 2025 playoffs).
+  const all = NBA_TEAMS.slice().sort((a, b) => a.name.localeCompare(b.name));
+  const amid = Math.ceil(all.length / 2);
+  const af = all.slice(0, amid), as = all.slice(amid);
+  const ar1 = af.length ? `${af[0].abbrev}-${af[af.length - 1].abbrev}` : '';
+  const ar2 = as.length ? `${as[0].abbrev}-${as[as.length - 1].abbrev}` : '';
+  const fb1 = document.getElementById('copyElim2526Btn1'); if (fb1) fb1.textContent = `📷 Copy 2026-27 ${ar1}`;
+  const fb2 = document.getElementById('copyElim2526Btn2'); if (fb2) fb2.textContent = `📷 Copy 2026-27 ${ar2}`;
 }
 
 function showYearView(year) {
@@ -2042,7 +2046,10 @@ async function copyEliminatedExport() {
   // Build team orders: use saved 26-27 order, fall back to main order, fall back to default
   const mainOrders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
   const positions = ['PG','SG','SF','PF','C'];
-  const eliminatedTeams = NBA_TEAMS.filter(t => ELIMINATED_ABBREVS.has(t.abbrev));
+  // 2026-27 is next season — EVERY team is in offseason mode, including the
+  // three still alive in the 2025 playoffs (NYK/OKC/SAS). The elimination
+  // restriction only applies to the 2025-26 page; here we export all 30 teams.
+  const eliminatedTeams = NBA_TEAMS.slice().sort((a,b) => a.name.localeCompare(b.name));
   const teamOrders = {};
   
   for (const team of eliminatedTeams) {
@@ -2091,8 +2098,11 @@ async function copyEliminatedHalf(half) {
   const btn = event.target.closest('.export-btn');
   // Ensure projected draft picks are loaded before building the export.
   if (!Object.keys(draftPicksByTeam).length) { try { await fetchDraftPicks(); } catch(e) {} }
+  // 2026-27 = next season, all 30 teams in offseason mode (incl. NYK/OKC/SAS
+  // still alive in the 2025 playoffs). The split is alphabetical across the
+  // full league, not just eliminated teams.
   const eliminatedTeams = NBA_TEAMS
-    .filter(t => ELIMINATED_ABBREVS.has(t.abbrev))
+    .slice()
     .sort((a, b) => a.name.localeCompare(b.name));
   const mid = Math.ceil(eliminatedTeams.length / 2);
   const teamSlice = half === 'first' ? eliminatedTeams.slice(0, mid) : eliminatedTeams.slice(mid);
