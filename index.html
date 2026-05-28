@@ -2172,6 +2172,16 @@ async function copyFutureYearExport(year, startIdx, endIdx) {
     teamOrders[ta] = order;
   });
   
+  // Merge in saved 2026-27 orders for any team NOT present in the live DOM
+  // (e.g. NYK/OKC/SAS, still alive in the 2025 playoffs, so their 2025-26
+  // admin charts aren't rendered). Without this they'd fall to default order
+  // only; with it, any drag-drop the user did on the 2026-27 view is honored.
+  try {
+    const k = storageKeyForYear(year);
+    const saved = JSON.parse(localStorage.getItem(k) || '{}');
+    for (const ab in saved) { if (!teamOrders[ab]) teamOrders[ab] = saved[ab]; }
+  } catch(e) {}
+  
   const endThreshold = getFutureYearEndThreshold(year);
   const teamSlice = NBA_TEAMS.slice(startIdx, endIdx);
   const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, teamSlice, year, endThreshold);
@@ -2208,8 +2218,28 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
 
   let out = '<div class="dc-wrap">';
   for (const team of teamList) {
-    const order = teamOrders[team.abbrev];
-    if (!order) continue;
+    let order = teamOrders[team.abbrev];
+    // If this team wasn't in the live DOM (e.g. NYK/OKC/SAS — still alive in
+    // the 2025 playoffs, so their 2025-26 admin chart isn't rendered), fall
+    // back to saved 2026-27 order if present, else a default position-grouped
+    // order by trade value. Without this the team was silently skipped, which
+    // is why the alive teams never appeared in the 2026-27 export.
+    if (!order) {
+      let savedOrder = null;
+      try {
+        const k = (typeof storageKeyForYear === 'function') ? storageKeyForYear(year) : null;
+        if (k) { const s = JSON.parse(localStorage.getItem(k) || '{}'); savedOrder = s[team.abbrev] || null; }
+      } catch(e) {}
+      if (savedOrder) {
+        order = savedOrder;
+      } else {
+        order = {};
+        const tp = allPlayers.filter(p => p.team === team.abbrev);
+        positions.forEach(pos => {
+          order[pos] = tp.filter(p => p.position === pos).sort((a,b) => b.tradeValue - a.tradeValue).map(p => p.name);
+        });
+      }
+    }
     
     const aboveCols = {}, belowCols = {};
     let maxAbove = 0, maxBelow = 0;
