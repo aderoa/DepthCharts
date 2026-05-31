@@ -494,7 +494,7 @@ const TEAM_ALIASES = {
   'San Antonio':'SAS','Spurs':'SAS','Toronto':'TOR','Raptors':'TOR','Utah':'UTA','Jazz':'UTA',
   'Washington':'WAS','Wizards':'WAS'
 };
-const ELIMINATED_ABBREVS = new Set(['MIL','CHI','BKN','IND','WAS','NOP','DAL','MEM','SAC','UTA','MIA','LAC','CHA','GSW','PHX','POR','ATL','DEN','HOU','BOS','ORL','TOR','PHI','LAL','MIN','DET','CLE']);
+const ELIMINATED_ABBREVS = new Set(['MIL','CHI','BKN','IND','WAS','NOP','DAL','MEM','SAC','UTA','MIA','LAC','CHA','GSW','PHX','POR','ATL','DEN','HOU','BOS','ORL','TOR','PHI','LAL','MIN','DET','CLE','OKC']);
 
 // =====================================================
 // DATA URLs
@@ -1060,7 +1060,7 @@ function updateEliminatedSplitLabels() {
   }
 
   // 2026-27 split buttons: ALL 30 teams (next season, everyone in offseason,
-  // including NYK/OKC/SAS still alive in the 2025 playoffs).
+  // including NYK/SAS still alive in the 2025 playoffs).
   const all = NBA_TEAMS.slice().sort((a, b) => a.name.localeCompare(b.name));
   const amid = Math.ceil(all.length / 2);
   const af = all.slice(0, amid), as = all.slice(amid);
@@ -2047,7 +2047,7 @@ async function copyEliminatedExport() {
   const mainOrders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
   const positions = ['PG','SG','SF','PF','C'];
   // 2026-27 is next season — EVERY team is in offseason mode, including the
-  // three still alive in the 2025 playoffs (NYK/OKC/SAS). The elimination
+  // three still alive in the 2025 playoffs (NYK/SAS). The elimination
   // restriction only applies to the 2025-26 page; here we export all 30 teams.
   const eliminatedTeams = NBA_TEAMS.slice().sort((a,b) => a.name.localeCompare(b.name));
   const teamOrders = {};
@@ -2098,7 +2098,7 @@ async function copyEliminatedHalf(half) {
   const btn = event.target.closest('.export-btn');
   // Ensure projected draft picks are loaded before building the export.
   if (!Object.keys(draftPicksByTeam).length) { try { await fetchDraftPicks(); } catch(e) {} }
-  // 2026-27 = next season, all 30 teams in offseason mode (incl. NYK/OKC/SAS
+  // 2026-27 = next season, all 30 teams in offseason mode (incl. NYK/SAS
   // still alive in the 2025 playoffs). The split is alphabetical across the
   // full league, not just eliminated teams.
   const eliminatedTeams = NBA_TEAMS
@@ -2173,7 +2173,7 @@ async function copyFutureYearExport(year, startIdx, endIdx) {
   });
   
   // Merge in saved 2026-27 orders for any team NOT present in the live DOM
-  // (e.g. NYK/OKC/SAS, still alive in the 2025 playoffs, so their 2025-26
+  // (e.g. NYK/SAS, still alive in the 2025 playoffs, so their 2025-26
   // admin charts aren't rendered). Without this they'd fall to default order
   // only; with it, any drag-drop the user did on the 2026-27 view is honored.
   try {
@@ -2219,7 +2219,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
   let out = '<div class="dc-wrap">';
   for (const team of teamList) {
     let order = teamOrders[team.abbrev];
-    // If this team wasn't in the live DOM (e.g. NYK/OKC/SAS — still alive in
+    // If this team wasn't in the live DOM (e.g. NYK/SAS — still alive in
     // the 2025 playoffs, so their 2025-26 admin chart isn't rendered), fall
     // back to saved 2026-27 order if present, else a default position-grouped
     // order by trade value. Without this the team was silently skipped, which
