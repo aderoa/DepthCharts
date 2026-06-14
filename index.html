@@ -1323,6 +1323,7 @@ function renderFutureYearAdmin(year) {
 // =====================================================
 function renderAdminAllTeams() {
   document.getElementById('adminBanner').classList.add('active');
+  document.getElementById('adminAllTeams').classList.add('active');  // make the container visible (the old body below did this; delegation must too)
   document.title = 'NBA Depth Charts — ADMIN';
   // Season is over: default to the 2026-27 offseason view (all 30 teams).
   // The old 25-26 body below only showed non-eliminated playoff teams, which
