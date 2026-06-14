@@ -2467,7 +2467,9 @@ async function init() {
     // Fetch player data + order.json from GitHub in parallel
     const fetches = [fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchFromGitHub(), fetchSheets(CONTRACTS_CSV_URL)];
     const [tvR, rR, ghOrders, cR] = await Promise.all(fetches);
-    if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch data');
+    if (!tvR.ok || !rR.ok) {
+      throw new Error('Failed to fetch data — Sheet3(tv) status=' + (tvR && tvR.status) + ', Sheet1(roster) status=' + (rR && rR.status));
+    }
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
@@ -2488,8 +2490,25 @@ async function init() {
   } catch (err) {
     console.error('[DepthCharts]', err);
     document.getElementById('loading').style.display = 'none';
-    document.getElementById('error').textContent = "Couldn't load depth charts. Try refreshing — if this keeps happening, the data might be updating right now.";
-    document.getElementById('error').style.display = 'block';
+    // DEBUG: surface the real error so we can see exactly what's failing.
+    var dbg = '';
+    try {
+      dbg = '<div style="text-align:left;max-width:760px;margin:1rem auto;padding:1rem;'
+          + 'background:#fff5f5;border:1px solid #fecaca;border-radius:8px;'
+          + 'font-family:monospace;font-size:0.72rem;color:#7f1d1d;white-space:pre-wrap;word-break:break-word">'
+          + '<strong>DEBUG — load failed</strong>\n\n'
+          + 'message: ' + (err && err.message ? err.message : String(err)) + '\n\n'
+          + 'stack:\n' + (err && err.stack ? String(err.stack).split('\n').slice(0,6).join('\n') : '(none)') + '\n\n'
+          + 'state: allPlayers=' + (typeof allPlayers!=='undefined' && allPlayers ? allPlayers.length : 'undefined')
+          + ', tradeValueMap=' + (typeof tradeValueMap!=='undefined' && tradeValueMap ? tradeValueMap.size : 'undefined')
+          + ', futureStatusMap keys=' + (typeof futureStatusMap!=='undefined' && futureStatusMap ? Object.keys(futureStatusMap).length : 'undefined')
+          + ', draftPicksByTeam keys=' + (typeof draftPicksByTeam!=='undefined' && draftPicksByTeam ? Object.keys(draftPicksByTeam).length : 'undefined')
+          + ', isAdmin=' + (typeof isAdmin!=='undefined' ? isAdmin : '?')
+          + '</div>';
+    } catch(e2) { dbg = '<div>debug build failed: ' + e2 + '</div>'; }
+    var el = document.getElementById('error');
+    el.innerHTML = "Couldn't load depth charts. Try refreshing — if this keeps happening, the data might be updating right now." + dbg;
+    el.style.display = 'block';
   }
 }
 init();
