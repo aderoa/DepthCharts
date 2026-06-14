@@ -2387,6 +2387,7 @@ function closeExportModal() { document.getElementById('exportModal').classList.r
 // AUTO-REFRESH DATA (updates cards in-place, preserves order)
 // =====================================================
 async function autoRefreshData() {
+  if (document.hidden) return;   // don't burn API quota refreshing a backgrounded tab
   try {
     const [tvR, rR, cR] = await Promise.all([fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchSheets(CONTRACTS_CSV_URL)]);
     if (!tvR.ok || !rR.ok) return;
@@ -2452,8 +2453,17 @@ async function init() {
 
   try {
     // Fetch player data + order.json from GitHub in parallel
-    const fetches = [fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchFromGitHub(), fetchSheets(CONTRACTS_CSV_URL)];
-    const [tvR, rR, ghOrders, cR] = await Promise.all(fetches);
+    let [tvR, rR, ghOrders, cR] = await Promise.all([fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchFromGitHub(), fetchSheets(CONTRACTS_CSV_URL)]);
+    // If the Sheets API throttled us (403/429), wait out the per-minute window
+    // once and retry before surfacing an error — avoids a blank page on a
+    // transient quota blip.
+    if (!tvR.ok || !rR.ok) {
+      const code1 = (!tvR.ok ? tvR.status : rR.status) || 0;
+      if (code1 === 403 || code1 === 429) {
+        await new Promise(r => setTimeout(r, 3000));
+        [tvR, rR, cR] = await Promise.all([fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchSheets(CONTRACTS_CSV_URL)]);
+      }
+    }
     if (!tvR.ok || !rR.ok) {
       const code = (!tvR.ok ? tvR.status : rR.status) || 0;
       const which = !tvR.ok ? 'trade-value (Sheet3)' : 'roster (Sheet1)';
@@ -2470,7 +2480,7 @@ async function init() {
     document.getElementById('loading').style.display = 'none';
     if (isAdmin && !teamParam) {
       showYearView('2026-27');           // default current season is now 2026-27 (offseason; all 30 teams)
-      setInterval(autoRefreshData, 60000);
+      setInterval(autoRefreshData, 300000);   // 5 min (was 60s — 3 concurrent Sheets calls/min was tripping the API quota)
     }
     else if (teamParam && NBA_TEAMS.some(t=>t.abbrev===teamParam)) renderDepthChart(teamParam);
     else renderTeamGrid();
