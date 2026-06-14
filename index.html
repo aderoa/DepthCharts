@@ -240,11 +240,11 @@ footer a { color:var(--accent); text-decoration:none; }
     <span>🔧 ADMIN MODE — Drag to reorder, synced to GitHub</span>
     <span id="saveStatus" class="admin-save-status">✓ Saved</span>
     <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
-      <button class="export-btn" id="yearBtn2526" onclick="showYearView('2025-26')" style="background:#6366f1;color:#fff;border-color:#6366f1">📅 25-26</button>
-      <button class="export-btn" id="yearBtn2627" onclick="showYearView('2026-27')">📅 26-27</button>
+      <button class="export-btn" id="yearBtn2627" onclick="showYearView('2026-27')" style="background:#6366f1;color:#fff;border-color:#6366f1">📅 26-27</button>
       <button class="export-btn" id="yearBtn2728" onclick="showYearView('2027-28')">📅 27-28</button>
       <button class="export-btn" id="yearBtn2829" onclick="showYearView('2028-29')">📅 28-29</button>
       <button class="export-btn" id="yearBtn2930" onclick="showYearView('2029-30')">📅 29-30</button>
+      <button class="export-btn" id="yearBtn3031" onclick="showYearView('2030-31')">📅 30-31</button>
       <span style="width:1px;height:20px;background:rgba(0,0,0,0.2);margin:0 4px"></span>
       <span id="copyBtns2526">
         <button class="export-btn" onclick="copyExportByGroup('aliveTeams')">📷 Copy Playoff Teams</button>
@@ -508,12 +508,12 @@ const CONTRACTS_CSV_URL = `${SHEETS_API}/Sheet6?key=${API_KEY}`;
 const INJURIES_JSON_URL = 'https://aderoa.github.io/Injuries/injuries.json';
 
 let allPlayers = [], tradeValueMap = new Map(), draggedElement = null;
-let futureStatusMap = {}; // playerName → { st2728, st2829, st2930 }
+let futureStatusMap = {}; // playerName → { st2728, st2829, st2930, st3031 }
 
 function parseContractsCSV(csvText) {
   const rows = parseCSV(csvText); if (rows.length < 2) return {};
   const hdr = rows[0]; const col = n => hdr.findIndex(h => h.toUpperCase().trim() === n.toUpperCase().trim());
-  const PI = col('PLAYER'), ST2728 = col('ST 27-28'), ST2829 = col('ST 28-29'), ST2930 = col('ST 29-30');
+  const PI = col('PLAYER'), ST2728 = col('ST 27-28'), ST2829 = col('ST 28-29'), ST2930 = col('ST 29-30'), ST3031 = col('ST 30-31');
   if (PI < 0) return {};
   const map = {};
   for (let i = 1; i < rows.length; i++) {
@@ -522,7 +522,8 @@ function parseContractsCSV(csvText) {
     map[name] = {
       st2728: ST2728 >= 0 ? (r[ST2728] || '').trim() : '',
       st2829: ST2829 >= 0 ? (r[ST2829] || '').trim() : '',
-      st2930: ST2930 >= 0 ? (r[ST2930] || '').trim() : ''
+      st2930: ST2930 >= 0 ? (r[ST2930] || '').trim() : '',
+      st3031: ST3031 >= 0 ? (r[ST3031] || '').trim() : ''
     };
   }
   return map;
@@ -1072,7 +1073,7 @@ function updateEliminatedSplitLabels() {
 
 function showYearView(year) {
   // Update active tab
-  ['2526','2627','2728','2829','2930'].forEach(y => {
+  ['2627','2728','2829','2930','3031'].forEach(y => {
     const btn = document.getElementById('yearBtn' + y);
     if (btn) { btn.style.background = ''; btn.style.color = ''; btn.style.borderColor = ''; }
   });
@@ -1129,7 +1130,7 @@ function getFuturePlayerStatus(p, endThreshold, year) {
   } else {
     const fs = futureStatusMap[p.name];
     if (fs) {
-      const st = year === '2027-28' ? fs.st2728 : year === '2028-29' ? fs.st2829 : year === '2029-30' ? fs.st2930 : '';
+      const st = year === '2027-28' ? fs.st2728 : year === '2028-29' ? fs.st2829 : year === '2029-30' ? fs.st2930 : year === '2030-31' ? fs.st3031 : '';
       if (st === 'TEAM OPT') return { status: 'to', sc: 'team-option' };
       if (st === 'PLAYER OPT') return { status: 'po', sc: 'player-option' };
       if (st === 'NOT G' || st === 'PARTIAL G' || st === 'NOT GUARANTEED') return { status: 'ng', sc: 'non-guaranteed' };
@@ -1301,6 +1302,9 @@ function renderFutureYearAdmin(year) {
 function renderAdminAllTeams() {
   document.getElementById('adminBanner').classList.add('active');
   document.title = 'NBA Depth Charts — ADMIN';
+  // Season is over: the default current season is now 2026-27 (all 30 teams in
+  // offseason). Delegate to the future-year view instead of the old 25-26 live view.
+  return showYearView('2026-27');
   const container = document.getElementById('adminTeamsList');
   const positions = ['PG','SG','SF','PF','C'];
   const savedOrders = loadAllOrders();
