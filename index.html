@@ -533,8 +533,21 @@ function parseContractsCSV(csvText) {
 // CSV PARSER
 // =====================================================
 async function fetchSheets(url) {
-  const r = await fetch(url);
-  if (!r.ok) return r;
+  // Retry on rate-limit (429) or transient 403/5xx with exponential backoff.
+  // The Sheets API per-minute/per-second quota can throttle bursts of the 3
+  // parallel sheet calls; a short wait clears it.
+  const RETRY_STATUSES = [429, 403, 500, 503];
+  const DELAYS = [600, 1500, 3000]; // ms, up to 3 retries
+  let r;
+  for (let attempt = 0; ; attempt++) {
+    r = await fetch(url);
+    if (r.ok) break;
+    if (attempt < DELAYS.length && RETRY_STATUSES.includes(r.status)) {
+      await new Promise(res => setTimeout(res, DELAYS[attempt]));
+      continue;
+    }
+    return r; // give up — caller sees the status
+  }
   const json = await r.json();
   const vals = json.values || [];
   const csv = vals.map(row => row.map(c => c != null && (c.includes(',') || c.includes('"') || c.includes('\n')) ? '"' + c.replace(/"/g,'""') + '"' : (c || '')).join(',')).join('\n');
