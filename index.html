@@ -1972,7 +1972,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
     if (maxAbove < 1) maxAbove = 1;
     const hasBelow = maxBelow > 0;
 
-    out += `<div class="dc-team"><strong>${team.name.toUpperCase()}${isOffseason ? ' - 2026-27' : ''}</strong></div>`;
+    out += `<div class="dc-team"><strong>${team.name.toUpperCase()}</strong></div>`;
     out += `<table class="dc-tbl"><tbody>`;
     out += `<tr class="dc-hdr">`;
     positions.forEach(pos => { out += `<th>${pos}</th>`; });
@@ -2293,7 +2293,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
     
     if (maxAbove < 1) maxAbove = 1;
     
-    out += `<div class="dc-team"><strong>${team.name.toUpperCase()} - ${year}</strong></div>`;
+    out += `<div class="dc-team"><strong>${team.name.toUpperCase()}</strong></div>`;
     out += `<table class="dc-tbl"><tbody>`;
     out += `<tr class="dc-hdr">`;
     positions.forEach(pos => { out += `<th>${pos}</th>`; });
