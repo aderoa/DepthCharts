@@ -502,9 +502,13 @@ const ELIMINATED_ABBREVS = new Set(['MIL','CHI','BKN','IND','WAS','NOP','DAL','M
 const API_KEY = 'AIzaSyB9g7c6llswswuZQ2I5y2MwGk6BzYEtHsY';
 const SHEETS_ID = '11llk0icQqoi0JwJXat5KO8y2RQeBMN5rS9FhAY56Idc';
 const SHEETS_API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEETS_ID}/values`;
-const TV_CSV_URL = `${SHEETS_API}/Sheet3?key=${API_KEY}`;
-const ROSTER_CSV_URL = `${SHEETS_API}/Sheet1?key=${API_KEY}`;
-const CONTRACTS_CSV_URL = `${SHEETS_API}/Sheet6?key=${API_KEY}`;
+// Route sheet reads through the HoopsMatic Worker proxy. Direct browser calls to
+// the Google Sheets API are blocked (403) by the key's HTTP-referrer restriction;
+// the Worker fetches server-side (no referrer) with caching. Same {values:[...]} shape.
+const SHEET_PROXY = 'https://hoopsmatic.com/api/sheet?tab=';
+const TV_CSV_URL = `${SHEET_PROXY}Sheet3`;
+const ROSTER_CSV_URL = `${SHEET_PROXY}Sheet1`;
+const CONTRACTS_CSV_URL = `${SHEET_PROXY}Sheet6`;
 const INJURIES_JSON_URL = 'https://aderoa.github.io/Injuries/injuries.json';
 
 let allPlayers = [], tradeValueMap = new Map(), draggedElement = null;
