@@ -2454,7 +2454,13 @@ async function init() {
     // Fetch player data + order.json from GitHub in parallel
     const fetches = [fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchFromGitHub(), fetchSheets(CONTRACTS_CSV_URL)];
     const [tvR, rR, ghOrders, cR] = await Promise.all(fetches);
-    if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch data');
+    if (!tvR.ok || !rR.ok) {
+      const code = (!tvR.ok ? tvR.status : rR.status) || 0;
+      const which = !tvR.ok ? 'trade-value (Sheet3)' : 'roster (Sheet1)';
+      const e = new Error('Sheets API returned ' + code + ' on the ' + which + ' fetch');
+      e.httpStatus = code;
+      throw e;
+    }
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
@@ -2474,9 +2480,30 @@ async function init() {
     updateEliminatedSplitLabels();
   } catch (err) {
     console.error('[DepthCharts]', err);
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('error').textContent = "Couldn't load depth charts. Try refreshing — if this keeps happening, the data might be updating right now.";
-    document.getElementById('error').style.display = 'block';
+    const loadingEl = document.getElementById('loading');
+    if (loadingEl) loadingEl.style.display = 'none';
+    const code = err && err.httpStatus;
+    let msg;
+    if (code === 403) {
+      msg = "Couldn't load the data: the Google Sheets API returned 403 (Forbidden). " +
+            "This is usually a hit on the shared API key's daily quota — it typically clears " +
+            "on its own after the quota resets, or after the key is refreshed. The page code is fine; " +
+            "the data source is temporarily unavailable.";
+    } else if (code === 429) {
+      msg = "Couldn't load the data: the Google Sheets API returned 429 (too many requests). " +
+            "Give it a minute and retry — the shared key is rate-limited right now.";
+    } else if (code) {
+      msg = "Couldn't load the data: the Google Sheets API returned " + code + ". Try again shortly.";
+    } else {
+      msg = "Couldn't load depth charts. Try refreshing — if this keeps happening, the data source may be updating right now.";
+    }
+    const errEl = document.getElementById('error');
+    if (errEl) {
+      errEl.innerHTML = '<div class="error-msg" style="font-size:0.95rem;line-height:1.5">' +
+        msg + '</div>' +
+        '<button class="export-btn" style="margin-top:1rem" onclick="location.reload()">↻ Retry</button>';
+      errEl.style.display = 'block';
+    }
   }
 }
 init();
