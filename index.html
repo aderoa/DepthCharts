@@ -240,11 +240,11 @@ footer a { color:var(--accent); text-decoration:none; }
     <span>🔧 ADMIN MODE — Drag to reorder, synced to GitHub</span>
     <span id="saveStatus" class="admin-save-status">✓ Saved</span>
     <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
-      <button class="export-btn" id="yearBtn2627" onclick="showYearView('2026-27')" style="background:#6366f1;color:#fff;border-color:#6366f1">📅 26-27</button>
+      <button class="export-btn" id="yearBtn2526" onclick="showYearView('2025-26')" style="background:#6366f1;color:#fff;border-color:#6366f1">📅 25-26</button>
+      <button class="export-btn" id="yearBtn2627" onclick="showYearView('2026-27')">📅 26-27</button>
       <button class="export-btn" id="yearBtn2728" onclick="showYearView('2027-28')">📅 27-28</button>
       <button class="export-btn" id="yearBtn2829" onclick="showYearView('2028-29')">📅 28-29</button>
       <button class="export-btn" id="yearBtn2930" onclick="showYearView('2029-30')">📅 29-30</button>
-      <button class="export-btn" id="yearBtn3031" onclick="showYearView('2030-31')">📅 30-31</button>
       <span style="width:1px;height:20px;background:rgba(0,0,0,0.2);margin:0 4px"></span>
       <span id="copyBtns2526">
         <button class="export-btn" onclick="copyExportByGroup('aliveTeams')">📷 Copy Playoff Teams</button>
@@ -502,22 +502,18 @@ const ELIMINATED_ABBREVS = new Set(['MIL','CHI','BKN','IND','WAS','NOP','DAL','M
 const API_KEY = 'AIzaSyB9g7c6llswswuZQ2I5y2MwGk6BzYEtHsY';
 const SHEETS_ID = '11llk0icQqoi0JwJXat5KO8y2RQeBMN5rS9FhAY56Idc';
 const SHEETS_API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEETS_ID}/values`;
-// Route sheet reads through the HoopsMatic Worker proxy. Direct browser calls to
-// the Google Sheets API are blocked (403) by the key's HTTP-referrer restriction;
-// the Worker fetches server-side (no referrer) with caching. Same {values:[...]} shape.
-const SHEET_PROXY = 'https://hoopsmatic.com/api/sheet?tab=';
-const TV_CSV_URL = `${SHEET_PROXY}Sheet3`;
-const ROSTER_CSV_URL = `${SHEET_PROXY}Sheet1`;
-const CONTRACTS_CSV_URL = `${SHEET_PROXY}Sheet6`;
+const TV_CSV_URL = `${SHEETS_API}/Sheet3?key=${API_KEY}`;
+const ROSTER_CSV_URL = `${SHEETS_API}/Sheet1?key=${API_KEY}`;
+const CONTRACTS_CSV_URL = `${SHEETS_API}/Sheet6?key=${API_KEY}`;
 const INJURIES_JSON_URL = 'https://aderoa.github.io/Injuries/injuries.json';
 
 let allPlayers = [], tradeValueMap = new Map(), draggedElement = null;
-let futureStatusMap = {}; // playerName → { st2728, st2829, st2930, st3031 }
+let futureStatusMap = {}; // playerName → { st2728, st2829, st2930 }
 
 function parseContractsCSV(csvText) {
   const rows = parseCSV(csvText); if (rows.length < 2) return {};
   const hdr = rows[0]; const col = n => hdr.findIndex(h => h.toUpperCase().trim() === n.toUpperCase().trim());
-  const PI = col('PLAYER'), ST2728 = col('ST 27-28'), ST2829 = col('ST 28-29'), ST2930 = col('ST 29-30'), ST3031 = col('ST 30-31');
+  const PI = col('PLAYER'), ST2728 = col('ST 27-28'), ST2829 = col('ST 28-29'), ST2930 = col('ST 29-30');
   if (PI < 0) return {};
   const map = {};
   for (let i = 1; i < rows.length; i++) {
@@ -526,8 +522,7 @@ function parseContractsCSV(csvText) {
     map[name] = {
       st2728: ST2728 >= 0 ? (r[ST2728] || '').trim() : '',
       st2829: ST2829 >= 0 ? (r[ST2829] || '').trim() : '',
-      st2930: ST2930 >= 0 ? (r[ST2930] || '').trim() : '',
-      st3031: ST3031 >= 0 ? (r[ST3031] || '').trim() : ''
+      st2930: ST2930 >= 0 ? (r[ST2930] || '').trim() : ''
     };
   }
   return map;
@@ -570,16 +565,15 @@ function computeTradeValues(csvText) {
     if (row[6] && row[7]) { const g = parseInt(row[9])||0; if (g > 0) historical.push({ year: row[6], player: row[7].trim(), totalRat: parseFloat(row[8].replace(/,/g,''))||0, games: g }); }
   }
   const playerHist = {}; for (const h of historical) { const k = h.player.toLowerCase(); if (!playerHist[k]) playerHist[k] = []; playerHist[k].push(h); }
-  const WEIGHTS = {'2025-26':1.0,'2024-25':0.6,'2023-24':0.36,'2022-23':0.216,'2021-22':0.1296};  // 2025-26 now a completed season = most-recent full year
-  const EXPECTED = {'2021-22':82,'2022-23':82,'2023-24':82,'2024-25':82,'2025-26':82};  // 2025-26 completed full season
+  const WEIGHTS = {'2025-26':1.0,'2024-25':0.6,'2023-24':0.36,'2022-23':0.216,'2021-22':0.1296};
+  const EXPECTED = {'2021-22':82,'2022-23':82,'2023-24':82,'2024-25':82,'2025-26':48};
   const EXP=1.8, BETA=0.8, MAX_MULT=1.4, MIN_PCT=0.40, WM_W=0.85, RAT_W=0.15, AGE_BONUS=1.0, OLD_TH=35, OLD_PEN=0.03;
   for (const p of roster) {
     const hist = playerHist[p.player.toLowerCase()]||[]; let num=0, den=0;
     for (const h of hist) { const w = WEIGHTS[h.year]||0; if (w<=0||h.games<=0) continue; let pg = h.totalRat/h.games; const exp = EXPECTED[h.year]||82; if (h.games/exp >= MIN_PCT) pg *= Math.min(MAX_MULT, Math.pow(exp/h.games, BETA)); num += pg*w*h.games; den += w*h.games; }
     p.watermark = den > 0 ? num/den : 0;
-    // No in-progress current season yet (offseason before 2026-27); use the live
-    // 365-day rating as-is, without partial-season inflation.
-    p.rat365adj = p.rat365;
+    const cur = hist.filter(h => h.year==='2025-26'); const cg = cur.reduce((s,h) => s+h.games, 0);
+    p.rat365adj = (cg > 0 && cg/48 >= MIN_PCT) ? p.rat365 * Math.min(MAX_MULT, Math.pow(48/cg, BETA)) : p.rat365;
   }
   const pd = s => { if (!s) return null; const p = s.split('/'); return p.length===3 ? new Date(+p[2],+p[0]-1,+p[1]) : null; };
   const today = pd(todayStr)||new Date(); const ages = [];
@@ -1078,7 +1072,7 @@ function updateEliminatedSplitLabels() {
 
 function showYearView(year) {
   // Update active tab
-  ['2627','2728','2829','2930','3031'].forEach(y => {
+  ['2526','2627','2728','2829','2930'].forEach(y => {
     const btn = document.getElementById('yearBtn' + y);
     if (btn) { btn.style.background = ''; btn.style.color = ''; btn.style.borderColor = ''; }
   });
@@ -1135,7 +1129,7 @@ function getFuturePlayerStatus(p, endThreshold, year) {
   } else {
     const fs = futureStatusMap[p.name];
     if (fs) {
-      const st = year === '2027-28' ? fs.st2728 : year === '2028-29' ? fs.st2829 : year === '2029-30' ? fs.st2930 : year === '2030-31' ? fs.st3031 : '';
+      const st = year === '2027-28' ? fs.st2728 : year === '2028-29' ? fs.st2829 : year === '2029-30' ? fs.st2930 : '';
       if (st === 'TEAM OPT') return { status: 'to', sc: 'team-option' };
       if (st === 'PLAYER OPT') return { status: 'po', sc: 'player-option' };
       if (st === 'NOT G' || st === 'PARTIAL G' || st === 'NOT GUARANTEED') return { status: 'ng', sc: 'non-guaranteed' };
@@ -2391,7 +2385,6 @@ function closeExportModal() { document.getElementById('exportModal').classList.r
 // AUTO-REFRESH DATA (updates cards in-place, preserves order)
 // =====================================================
 async function autoRefreshData() {
-  if (document.hidden) return;   // don't burn API quota refreshing a backgrounded tab
   try {
     const [tvR, rR, cR] = await Promise.all([fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchSheets(CONTRACTS_CSV_URL)]);
     if (!tvR.ok || !rR.ok) return;
@@ -2457,24 +2450,9 @@ async function init() {
 
   try {
     // Fetch player data + order.json from GitHub in parallel
-    let [tvR, rR, ghOrders, cR] = await Promise.all([fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchFromGitHub(), fetchSheets(CONTRACTS_CSV_URL)]);
-    // If the Sheets API throttled us (403/429), wait out the per-minute window
-    // once and retry before surfacing an error — avoids a blank page on a
-    // transient quota blip.
-    if (!tvR.ok || !rR.ok) {
-      const code1 = (!tvR.ok ? tvR.status : rR.status) || 0;
-      if (code1 === 403 || code1 === 429) {
-        await new Promise(r => setTimeout(r, 3000));
-        [tvR, rR, cR] = await Promise.all([fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchSheets(CONTRACTS_CSV_URL)]);
-      }
-    }
-    if (!tvR.ok || !rR.ok) {
-      const code = (!tvR.ok ? tvR.status : rR.status) || 0;
-      const which = !tvR.ok ? 'trade-value (Sheet3)' : 'roster (Sheet1)';
-      const e = new Error('Sheets API returned ' + code + ' on the ' + which + ' fetch');
-      e.httpStatus = code;
-      throw e;
-    }
+    const fetches = [fetchSheets(TV_CSV_URL), fetchSheets(ROSTER_CSV_URL), fetchFromGitHub(), fetchSheets(CONTRACTS_CSV_URL)];
+    const [tvR, rR, ghOrders, cR] = await Promise.all(fetches);
+    if (!tvR.ok || !rR.ok) throw new Error('Failed to fetch data');
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
     allPlayers = parseRosterCSV(rText);
@@ -2483,8 +2461,8 @@ async function init() {
     await fetchDraftPicks();
     document.getElementById('loading').style.display = 'none';
     if (isAdmin && !teamParam) {
-      showYearView('2026-27');           // default current season is now 2026-27 (offseason; all 30 teams)
-      setInterval(autoRefreshData, 300000);   // 5 min (was 60s — 3 concurrent Sheets calls/min was tripping the API quota)
+      renderAdminAllTeams();
+      setInterval(autoRefreshData, 60000);
     }
     else if (teamParam && NBA_TEAMS.some(t=>t.abbrev===teamParam)) renderDepthChart(teamParam);
     else renderTeamGrid();
@@ -2494,30 +2472,9 @@ async function init() {
     updateEliminatedSplitLabels();
   } catch (err) {
     console.error('[DepthCharts]', err);
-    const loadingEl = document.getElementById('loading');
-    if (loadingEl) loadingEl.style.display = 'none';
-    const code = err && err.httpStatus;
-    let msg;
-    if (code === 403) {
-      msg = "Couldn't load the data: the Google Sheets API returned 403 (Forbidden). " +
-            "This is usually a hit on the shared API key's daily quota — it typically clears " +
-            "on its own after the quota resets, or after the key is refreshed. The page code is fine; " +
-            "the data source is temporarily unavailable.";
-    } else if (code === 429) {
-      msg = "Couldn't load the data: the Google Sheets API returned 429 (too many requests). " +
-            "Give it a minute and retry — the shared key is rate-limited right now.";
-    } else if (code) {
-      msg = "Couldn't load the data: the Google Sheets API returned " + code + ". Try again shortly.";
-    } else {
-      msg = "Couldn't load depth charts. Try refreshing — if this keeps happening, the data source may be updating right now.";
-    }
-    const errEl = document.getElementById('error');
-    if (errEl) {
-      errEl.innerHTML = '<div class="error-msg" style="font-size:0.95rem;line-height:1.5">' +
-        msg + '</div>' +
-        '<button class="export-btn" style="margin-top:1rem" onclick="location.reload()">↻ Retry</button>';
-      errEl.style.display = 'block';
-    }
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error').textContent = "Couldn't load depth charts. Try refreshing — if this keeps happening, the data might be updating right now.";
+    document.getElementById('error').style.display = 'block';
   }
 }
 init();
