@@ -1143,6 +1143,11 @@ function getFuturePlayerStatus(p, endThreshold, year) {
 
 function renderFutureYearAdmin(year) {
   const container = document.getElementById('adminTeamsList');
+  try {
+  if (!allPlayers || !allPlayers.length) {
+    container.innerHTML = '<div style="padding:2rem;text-align:center;color:#b91c1c">No player data loaded (Sheet1 roster fetch returned empty). Check the data source.</div>';
+    return;
+  }
   const positions = ['PG','SG','SF','PF','C'];
   const savedOrders = loadAllOrders();
   const pMap = {}; allPlayers.forEach(p => pMap[p.name] = p);
@@ -1294,6 +1299,10 @@ function renderFutureYearAdmin(year) {
   
   container.innerHTML = html;
   document.querySelectorAll('.admin-depth-chart').forEach(c => setupDragDrop(c, c.dataset.team, true));
+  } catch(e) {
+    console.error('[DepthCharts] renderFutureYearAdmin failed:', e);
+    container.innerHTML = '<div style="padding:2rem;text-align:center;color:#b91c1c">Render error: ' + (e && e.message ? e.message : e) + ' <span style="font-size:0.7rem;color:#6b7280">(' + ((allPlayers&&allPlayers.length)||0) + ' players)</span></div>';
+  }
 }
 
 // =====================================================
@@ -1302,9 +1311,11 @@ function renderFutureYearAdmin(year) {
 function renderAdminAllTeams() {
   document.getElementById('adminBanner').classList.add('active');
   document.title = 'NBA Depth Charts — ADMIN';
-  // Season is over: the default current season is now 2026-27 (all 30 teams in
-  // offseason). Delegate to the future-year view instead of the old 25-26 live view.
+  // Season is over: default to the 2026-27 offseason view (all 30 teams).
+  // The old 25-26 body below only showed non-eliminated playoff teams, which
+  // is now empty, so we delegate to the future-year view instead.
   return showYearView('2026-27');
+  // eslint-disable-next-line no-unreachable
   const container = document.getElementById('adminTeamsList');
   const positions = ['PG','SG','SF','PF','C'];
   const savedOrders = loadAllOrders();
