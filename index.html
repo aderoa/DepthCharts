@@ -508,6 +508,15 @@ const CONTRACTS_CSV_URL = `${SHEETS_API}/Sheet6?key=${API_KEY}`;
 const INJURIES_JSON_URL = 'https://aderoa.github.io/Injuries/injuries.json';
 
 let allPlayers = [], tradeValueMap = new Map(), draggedElement = null;
+let OFFSEASON_MOVES = [], _movesLoaded = false;
+async function loadOffseasonMoves() {
+  if (_movesLoaded) return;
+  _movesLoaded = true;
+  try {
+    const r = await fetch('https://hoopsmatic.com/api/offseason-moves');
+    if (r.ok) { const j = await r.json(); if (Array.isArray(j)) OFFSEASON_MOVES = j; }
+  } catch (e) { /* no moves -> no removals (safe fallback) */ }
+}
 let futureStatusMap = {}; // playerName → { st2728, st2829, st2930, st3031 }
 
 function parseContractsCSV(csvText) {
@@ -653,7 +662,43 @@ function parseRosterCSV(csvText) {
     const faLabel = isFA ? (isRFA ? 'RFA' : 'UFA') : '';
     players.push({name, team:abbrev, position:pos, tradeValue:tv, headshot, salary, contractStatus:status, injuryStatus:injury, injuryReason:reason, colorCode:color, teamLogo:logo, salary27, status27, contractEnd, exception, isFA, faLabel});
   }
-  return players;
+  return removeDepartedPlayers(players, OFFSEASON_MOVES);
+}
+
+// Remove players who LEFT their team per the Offseason Moves board and aren't on
+// any other NBA team. A 'left' move means the player departed; if the roster shows
+// him on a team OTHER than the one(s) he left, he simply changed NBA teams — keep him.
+// Otherwise (only on the team he left, or gone entirely) he's out of the league
+// (overseas/retired) and is dropped from Depth Charts.
+function removeDepartedPlayers(players, moves) {
+  if (!Array.isArray(moves) || !moves.length) return players;
+  const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase().replace(/[.'’`]/g, '').replace(/[-,]/g, ' ')
+    .replace(/\b(jr|sr|ii|iii|iv)\b/g, '').replace(/\s+/g, ' ').trim();
+  // Teams (abbrev) each player currently appears on in the roster
+  const teamsByName = {};
+  for (const p of players) {
+    const k = norm(p.name);
+    (teamsByName[k] = teamsByName[k] || new Set()).add(p.team);
+  }
+  // 'left' moves: player -> set of team abbrevs they left
+  const leftByName = {};
+  for (const m of moves) {
+    if (!m || m.bucket !== 'left' || !m.name) continue;
+    const k = norm(m.name);
+    const abbrev = TEAM_ALIASES[m.team] || m.team;
+    (leftByName[k] = leftByName[k] || new Set()).add(abbrev);
+  }
+  // Drop a left player only if he's on NO team outside his left-set
+  const removeNames = new Set();
+  for (const k in leftByName) {
+    const current = teamsByName[k] || new Set();
+    let onOtherTeam = false;
+    for (const t of current) { if (!leftByName[k].has(t)) { onOtherTeam = true; break; } }
+    if (!onOtherTeam) removeNames.add(k);
+  }
+  if (!removeNames.size) return players;
+  return players.filter(p => !removeNames.has(norm(p.name)));
 }
 
 // Overlay injury status from GitHub injuries.json onto allPlayers
@@ -1758,7 +1803,7 @@ async function renderExportView(exportParam, withHeadshots) {
 
     const [tvText, rText, orderData] = await Promise.all([tvR.text(), rR.text(), oR.json()]);
     tradeValueMap = computeTradeValues(tvText);
-    allPlayers = parseRosterCSV(rText);
+    await loadOffseasonMoves(); allPlayers = parseRosterCSV(rText);
     if (cR && cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) {} }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     // Fetch projected draft picks (offseason export only needs them, but cheap).
@@ -2419,7 +2464,7 @@ async function autoRefreshData() {
     if (!tvR.ok || !rR.ok) return;
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
-    allPlayers = parseRosterCSV(rText);
+    await loadOffseasonMoves(); allPlayers = parseRosterCSV(rText);
     if (cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) {} }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     // Re-render current view (stay on future year if active)
@@ -2446,7 +2491,7 @@ async function manualRefresh(btn) {
     if (!tvR.ok || !rR.ok) throw new Error('Fetch failed');
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
-    allPlayers = parseRosterCSV(rText);
+    await loadOffseasonMoves(); allPlayers = parseRosterCSV(rText);
     if (cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) {} }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     // Re-render current view (stay on future year if active)
@@ -2486,7 +2531,7 @@ async function init() {
     }
     const [tvText, rText] = await Promise.all([tvR.text(), rR.text()]);
     tradeValueMap = computeTradeValues(tvText);
-    allPlayers = parseRosterCSV(rText);
+    await loadOffseasonMoves(); allPlayers = parseRosterCSV(rText);
     if (cR && cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) { console.warn('Contracts parse error:', e); } }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) { console.warn('Injuries JSON unavailable:', e); }
     await fetchDraftPicks();
