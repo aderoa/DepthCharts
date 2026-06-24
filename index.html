@@ -197,6 +197,7 @@ footer a { color:var(--accent); text-decoration:none; }
 .admin-player-card.non-guaranteed { background:#e0e000; }
 .admin-player-card.free-agent { background:#ffd580; }
 .admin-player-card.draft-pick { background:#86efac; cursor:default; }
+.admin-player-card.draftee { background:#86efac; }
 .admin-player-card.spacer { background:var(--surface2); border:1px dashed #c0c4cc; display:flex; align-items:center; justify-content:center; opacity:0.6; cursor:grab; position:relative; padding:0.4rem 0.5rem; }
 .admin-player-card.spacer > * { pointer-events:none; }
 .admin-player-card.spacer .spacer-label { color:var(--text-muted); font-size:0.65rem; }
@@ -213,6 +214,7 @@ footer a { color:var(--accent); text-decoration:none; }
 .draft-separator { height:2px; background:#16a34a; margin:4px 0; border-radius:1px; opacity:0.8; }
 .fa-separator { height:2px; background:#f59e0b; margin:4px 0; border-radius:1px; opacity:0.7; }
 .player-card.draft-pick { background:#86efac; border:2px solid #16a34a; cursor:default; }
+.player-card.draftee { background:#86efac; border:2px solid #16a34a; }
 .admin-trade-value { font-size:0.65rem; font-weight:600; pointer-events:none; margin-top:1px; }
 .admin-trade-value.high { color:var(--green); }
 .admin-trade-value.medium { color:#ca8a04; }
@@ -1058,7 +1060,7 @@ function renderDepthChart(teamAbbrev) {
         else if (p.colorCode === 'injured') sc = 'injured';
       }
       if (p.isDraftee) salDisplay = '<span style="color:#15803d;font-weight:700">'+ordinalPick(p.pick)+'</span>';
-      html += `<div class="player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
+      html += `<div class="player-card ${firstReal?'starter':''} ${sc} ${p.isDraftee?'draftee':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
         <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
         <div class="player-name">${p.name}</div>
         <div class="trade-value ${valClass(p.tradeValue)}">${salDisplay}</div></div>`;
@@ -1348,7 +1350,7 @@ function renderFutureYearAdmin(year) {
       contractedByPos[pos].forEach(p => {
         const sc = p._ps.sc;
         const sal = year === '2026-27' ? (p.salary27 || p.salary) : p.salary27 || p.salary;
-        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? '<span style="color:#15803d">'+ordinalPick(p.pick)+'</span>' : fmtSal(sal)}</div></div>`;
+        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc} ${p.isDraftee?'draftee':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? '<span style="color:#15803d">'+ordinalPick(p.pick)+'</span>' : fmtSal(sal)}</div></div>`;
         firstReal = false;
       });
       
@@ -1483,7 +1485,7 @@ function renderAdminAllTeams() {
       let firstReal = true;
       healthyByPos[pos].forEach(p => {
         const sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='questionable'?'questionable':p.colorCode==='probable'?'probable':'';
-        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? ordinalPick(p.pick) : fmtSal(p.salary)}</div></div>`;
+        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc} ${p.isDraftee?'draftee':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? ordinalPick(p.pick) : fmtSal(p.salary)}</div></div>`;
         firstReal = false;
       });
 
@@ -1670,6 +1672,7 @@ function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
 
   function cCls(p) {
     if (!p) return '';
+    if (p.isDraftee) return ' class="c-draft"';
     if (p.contractStatus === '10-DAY') return ' class="c-10day"';
     if (p.colorCode === 'twoway') return ' class="c-2way"';
     if (p.colorCode === 'injured' || p.colorCode === 'doubtful') return ' class="c-inj"';
@@ -1986,6 +1989,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
 
   function cCls(p, offseason) {
     if (!p) return '';
+    if (p.isDraftee) return ' class="c-draft"';
     if (offseason) {
       if (p.isFA) return ' class="c-fa"';
       if (p.status27 === 'TEAM OPT') return ' class="c-to"';
@@ -2309,6 +2313,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
 
   function cCls(p) {
     if (!p) return '';
+    if (p.isDraftee) return ' class="c-draft"';
     if (p._ps) {
       if (p._ps.status === 'fa') return ' class="c-fa"';
       if (p._ps.status === 'to') return ' class="c-to"';
