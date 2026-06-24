@@ -2535,7 +2535,8 @@ async function manualRefresh(btn) {
     else renderAdminAllTeams();
     const el = document.getElementById('refreshStatus');
     const t = new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
-    if (el) { el.textContent = `Updated ${t}`; el.style.opacity = '1'; setTimeout(() => el.style.opacity = '0.7', 2000); }
+    const dCount = allPlayers.filter(p => p.isDraftee).length;
+    if (el) { el.textContent = dCount ? `Updated ${t} \u00b7 ${dCount} draft pick${dCount===1?'':'s'}` : `Updated ${t}`; el.style.opacity = '1'; setTimeout(() => el.style.opacity = '0.7', 2000); }
   } catch(e) { console.warn('Refresh failed:', e); }
   btn.textContent = '✓ Updated!';
   btn.style.background = '#16a34a'; btn.style.color = 'white';
