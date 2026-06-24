@@ -775,8 +775,8 @@ async function fetchDraftPicks() {
     const SNAP_URL = 'https://hoopsmatic.com/api/draft-snapshot';
     const CSV_URL = 'https://hoopsmatic.com/api/draft-csv';
     const [snapR, csvR] = await Promise.all([
-      fetch(SNAP_URL).catch(()=>null),
-      fetch(CSV_URL).catch(()=>null)
+      fetch(SNAP_URL + '?t=' + Date.now()).catch(()=>null),
+      fetch(CSV_URL + '?t=' + Date.now()).catch(()=>null)
     ]);
     if (!csvR || !csvR.ok) return;
     const csvText = await csvR.text();
@@ -2501,6 +2501,7 @@ async function autoRefreshData() {
     await loadOffseasonMoves(); allPlayers = parseRosterCSV(rText);
     if (cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) {} }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
+    await fetchDraftPicks();   // re-inject drafted players (roster parse wiped them) + pick up new picks
     // Re-render current view (stay on future year if active)
     if (_futureYear) renderFutureYearAdmin(_futureYear);
     else renderAdminAllTeams();
@@ -2528,6 +2529,7 @@ async function manualRefresh(btn) {
     await loadOffseasonMoves(); allPlayers = parseRosterCSV(rText);
     if (cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) {} }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
+    await fetchDraftPicks();   // re-inject drafted players (roster parse wiped them) + pick up new picks
     // Re-render current view (stay on future year if active)
     if (_futureYear) renderFutureYearAdmin(_futureYear);
     else renderAdminAllTeams();
