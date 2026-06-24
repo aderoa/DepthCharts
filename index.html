@@ -507,7 +507,7 @@ const ROSTER_CSV_URL = `${SHEETS_API}/Sheet1?key=${API_KEY}`;
 const CONTRACTS_CSV_URL = `${SHEETS_API}/Sheet6?key=${API_KEY}`;
 const INJURIES_JSON_URL = 'https://aderoa.github.io/Injuries/injuries.json';
 
-let allPlayers = [], tradeValueMap = new Map(), draggedElement = null;
+let allPlayers = [], tradeValueMap = new Map(), draggedElement = null, draftLoaded = false;
 let OFFSEASON_MOVES = [], _movesLoaded = false;
 async function loadOffseasonMoves() {
   if (_movesLoaded) return;
@@ -787,7 +787,7 @@ async function fetchDraftPicks() {
     //              during the draft, with col 16 updated for draft-night trades).
     //  Section B — prospect bio table: col 26 = player name, col 36 = position,
     //              col 45 = headshot URL.
-    const COL_A_PLAYER=0, COL_A_PICK=15, COL_A_TEAM=16, COL_A_DRAFTEE=17;
+    const COL_A_PLAYER=0, COL_A_PICK=15, COL_A_TEAM=16, COL_A_DRAFTEE=17, COL_A_CAPHOLD=20;
     const COL_B_NAME=26, COL_B_POS=36, COL_B_HS=45;
 
     // Build name → {position, headshot} from Section B.
@@ -806,8 +806,9 @@ async function fetchDraftPicks() {
       const team = (r[COL_A_TEAM]||'').trim().toUpperCase();
       const player = (r[COL_A_PLAYER]||'').trim();
       const draftee = (r[COL_A_DRAFTEE]||'').trim();
+      const capHold = parseInt(((r[COL_A_CAPHOLD]||'')+'').replace(/[$,]/g,'')) || 0;
       if (!pickN || !team || (!player && !draftee)) continue;
-      pickInfo[pickN] = { team, name: player, draftee };
+      pickInfo[pickN] = { team, name: player, draftee, capHold };
     }
 
     // Live cascade order (from the snapshot) overrides the sheet's static
@@ -821,35 +822,51 @@ async function fetchDraftPicks() {
     }
 
     // Has the draft started? The moment ANY pick has a DRAFTEE entered, the
-    // Draft Predictor projection switches OFF entirely — from then on only
-    // officially drafted players (DRAFTEE filled) appear; un-made picks show nothing.
+    // Draft Predictor projection switches OFF entirely. From then on the
+    // officially drafted players become REGULAR roster members (injected into
+    // allPlayers — draggable, positionable, saved by name), and the green
+    // projection track stays empty so nothing is duplicated.
     const draftStarted = Object.keys(pickInfo).some(function(k){ return pickInfo[k].draftee; });
 
-    for (const pickStr in pickInfo) {
-      const pickN = parseInt(pickStr);
-      const info = pickInfo[pickN];
-      let name;
-      if (draftStarted) {
-        if (!info.draftee) continue;            // pick not made yet -> show nothing
-        name = info.draftee.trim();
-      } else {
-        // Pre-draft: live cascade snapshot, else the static col-0 projection.
+    if (draftStarted) {
+      if (Array.isArray(allPlayers)) {
+        allPlayers = allPlayers.filter(function(p){ return !p.isDraftee; }); // idempotent
+        for (const pickStr in pickInfo) {
+          const pickN = parseInt(pickStr);
+          const info = pickInfo[pickN];
+          const name = (info.draftee || '').trim();
+          if (!name) continue;
+          const bio = bioByName[name] || {};
+          const teamObj = (typeof NBA_TEAMS !== 'undefined') ? NBA_TEAMS.find(function(t){ return t.abbrev === info.team; }) : null;
+          allPlayers.push({
+            name: name, team: info.team,
+            position: normalizeDraftPos(bio.position || ''),
+            tradeValue: 0, headshot: bio.headshot || '',
+            salary: info.capHold || 0, salary27: info.capHold || 0,
+            contractStatus: '', injuryStatus: '', injuryReason: '', colorCode: '',
+            teamLogo: teamObj ? teamObj.logo : '', status27: '', contractEnd: 2030,
+            exception: '', isFA: false, faLabel: '', isDraftee: true, pick: pickN
+          });
+        }
+      }
+    } else {
+      for (const pickStr in pickInfo) {
+        const pickN = parseInt(pickStr);
+        const info = pickInfo[pickN];
         const cascadePlayer = order[String(pickN)] || order[pickN];
         const cascadeName = cascadePlayer ? ((typeof cascadePlayer === 'object') ? cascadePlayer.player : cascadePlayer) : '';
-        name = (cascadeName || info.name || '').trim();
+        const name = (cascadeName || info.name || '').trim();
+        if (!name) continue;
+        const bio = bioByName[name] || {};
+        if (!draftPicksByTeam[info.team]) draftPicksByTeam[info.team] = [];
+        draftPicksByTeam[info.team].push({
+          name: name, headshot: bio.headshot || '', pick: pickN,
+          position: normalizeDraftPos(bio.position || '')
+        });
       }
-      if (!name) continue;
-      const bio = bioByName[name] || {};
-      if (!draftPicksByTeam[info.team]) draftPicksByTeam[info.team] = [];
-      draftPicksByTeam[info.team].push({
-        name,
-        headshot: bio.headshot || '',
-        pick: pickN,
-        position: normalizeDraftPos(bio.position || '')
-      });
+      for (const t in draftPicksByTeam) draftPicksByTeam[t].sort(function(a,b){ return a.pick - b.pick; });
     }
-    // Sort each team's picks by pick number ascending.
-    for (const t in draftPicksByTeam) draftPicksByTeam[t].sort((a,b)=>a.pick-b.pick);
+    draftLoaded = true;
   } catch(e) { /* draft picks optional — depth chart still renders without them */ }
 }
 
@@ -1040,6 +1057,7 @@ function renderDepthChart(teamAbbrev) {
         else if (p.colorCode === 'doubtful') sc = 'doubtful';
         else if (p.colorCode === 'injured') sc = 'injured';
       }
+      if (p.isDraftee) salDisplay = '<span style="color:#15803d;font-weight:700">'+ordinalPick(p.pick)+'</span>';
       html += `<div class="player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
         <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
         <div class="player-name">${p.name}</div>
@@ -1330,7 +1348,7 @@ function renderFutureYearAdmin(year) {
       contractedByPos[pos].forEach(p => {
         const sc = p._ps.sc;
         const sal = year === '2026-27' ? (p.salary27 || p.salary) : p.salary27 || p.salary;
-        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(sal)}</div></div>`;
+        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? '<span style="color:#15803d">'+ordinalPick(p.pick)+'</span>' : fmtSal(sal)}</div></div>`;
         firstReal = false;
       });
       
@@ -1465,7 +1483,7 @@ function renderAdminAllTeams() {
       let firstReal = true;
       healthyByPos[pos].forEach(p => {
         const sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='questionable'?'questionable':p.colorCode==='probable'?'probable':'';
-        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
+        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? ordinalPick(p.pick) : fmtSal(p.salary)}</div></div>`;
         firstReal = false;
       });
 
@@ -1477,7 +1495,7 @@ function renderAdminAllTeams() {
 
       injuredByPos[pos].forEach(p => {
         const sc = p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':p.colorCode==='questionable'?'questionable':'';
-        html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${p.colorCode==='twoway'?' <span style="font-size:0.5rem;color:#8b5cf6">2W</span>':''}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${fmtSal(p.salary)}</div></div>`;
+        html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${p.colorCode==='twoway'?' <span style="font-size:0.5rem;color:#8b5cf6">2W</span>':''}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? ordinalPick(p.pick) : fmtSal(p.salary)}</div></div>`;
       });
 
       html += '</div>';
@@ -2049,7 +2067,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
       });
       out += `</tr>`;
       out += `<tr class="dc-data">`;
-      rp.forEach(p => { out += `<td${cCls(p, isOffseason)}>${p ? (isOffseason ? fmtSalFull(p.salary27 || p.salary) : fmtSalFull(p.salary)) : ''}</td>`; });
+      rp.forEach(p => { out += `<td${cCls(p, isOffseason)}>${p ? (p.isDraftee ? ordinalPick(p.pick) : (isOffseason ? fmtSalFull(p.salary27 || p.salary) : fmtSalFull(p.salary))) : ''}</td>`; });
       out += `</tr>`;
     }
 
@@ -2106,7 +2124,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
           if (p && isOffseason && p.isFA) {
             out += `<td class="c-fa">${p.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</td>`;
           } else {
-            out += `<td${cCls(p, isOffseason)}>${p ? fmtSalFull(p.salary) : ''}</td>`;
+            out += `<td${cCls(p, isOffseason)}>${p ? (p.isDraftee ? ordinalPick(p.pick) : fmtSalFull(p.salary)) : ''}</td>`;
           }
         });
         out += `</tr>`;
@@ -2122,7 +2140,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
 async function copyEliminatedExport() {
   const btn = event.target.closest('.export-btn');
   // Ensure projected draft picks are loaded before building the export.
-  if (!Object.keys(draftPicksByTeam).length) { try { await fetchDraftPicks(); } catch(e) {} }
+  if (!draftLoaded) { try { await fetchDraftPicks(); } catch(e) {} }
   // Load orders from 26-27 storage (independent from current DOM which shows 25-26)
   const key2627 = storageKeyForYear('2026-27');
   let savedOrders = {};
@@ -2182,7 +2200,7 @@ async function copyEliminatedExport() {
 async function copyEliminatedHalf(half) {
   const btn = event.target.closest('.export-btn');
   // Ensure projected draft picks are loaded before building the export.
-  if (!Object.keys(draftPicksByTeam).length) { try { await fetchDraftPicks(); } catch(e) {} }
+  if (!draftLoaded) { try { await fetchDraftPicks(); } catch(e) {} }
   // 2026-27 = next season, all 30 teams in offseason mode (incl. NYK/SAS
   // still alive in the 2025 playoffs). The split is alphabetical across the
   // full league, not just eliminated teams.
@@ -2236,7 +2254,7 @@ async function copyEliminatedHalf(half) {
 async function copyFutureYearExport(year, startIdx, endIdx) {
   const btn = event.target.closest('.export-btn');
   // Ensure projected draft picks are loaded before building the export.
-  if (!Object.keys(draftPicksByTeam).length) { try { await fetchDraftPicks(); } catch(e) {} }
+  if (!draftLoaded) { try { await fetchDraftPicks(); } catch(e) {} }
   if (startIdx == null) startIdx = 0;
   if (endIdx == null) endIdx = 30;
   const teamOrders = {};
