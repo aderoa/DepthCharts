@@ -1201,6 +1201,9 @@ function getFutureYearEndThreshold(year) {
 }
 
 function getFuturePlayerStatus(p, endThreshold, year) {
+  // Drafted players only count toward 2026-27 (their rookie season). They do NOT
+  // appear in later future years until they officially sign their first contract.
+  if (p.isDraftee) return year === '2026-27' ? { status: 'active', sc: '' } : { status: 'gone' };
   const isUnderContract = p.contractEnd >= endThreshold;
   const isTwoWay = p.colorCode === 'twoway';
   
