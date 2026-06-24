@@ -782,10 +782,12 @@ async function fetchDraftPicks() {
 
     // Sheet4 has two parallel (non-row-aligned) sections:
     //  Section A — cascade pick order: col 0 = projected player at that pick,
-    //              col 15 = pick number, col 16 = owning team (abbrev).
+    //              col 15 = pick number, col 16 = owning team (abbrev),
+    //              col 17 = DRAFTEE (actual player once the pick is made; edited live
+    //              during the draft, with col 16 updated for draft-night trades).
     //  Section B — prospect bio table: col 26 = player name, col 36 = position,
     //              col 45 = headshot URL.
-    const COL_A_PLAYER=0, COL_A_PICK=15, COL_A_TEAM=16;
+    const COL_A_PLAYER=0, COL_A_PICK=15, COL_A_TEAM=16, COL_A_DRAFTEE=17;
     const COL_B_NAME=26, COL_B_POS=36, COL_B_HS=45;
 
     // Build name → {position, headshot} from Section B.
@@ -803,8 +805,9 @@ async function fetchDraftPicks() {
       const pickN = parseInt((r[COL_A_PICK]||'').trim());
       const team = (r[COL_A_TEAM]||'').trim().toUpperCase();
       const player = (r[COL_A_PLAYER]||'').trim();
-      if (!pickN || !team || !player) continue;
-      pickInfo[pickN] = { team, name: player };
+      const draftee = (r[COL_A_DRAFTEE]||'').trim();
+      if (!pickN || !team || (!player && !draftee)) continue;
+      pickInfo[pickN] = { team, name: player, draftee };
     }
 
     // Live cascade order (from the snapshot) overrides the sheet's static
@@ -817,15 +820,23 @@ async function fetchDraftPicks() {
       } catch(e) {}
     }
 
+    // Has the draft started? The moment ANY pick has a DRAFTEE entered, the
+    // Draft Predictor projection switches OFF entirely — from then on only
+    // officially drafted players (DRAFTEE filled) appear; un-made picks show nothing.
+    const draftStarted = Object.keys(pickInfo).some(function(k){ return pickInfo[k].draftee; });
+
     for (const pickStr in pickInfo) {
       const pickN = parseInt(pickStr);
       const info = pickInfo[pickN];
-      let name = info.name;
-      // Prefer the live cascade player if present for this pick.
-      const cascadePlayer = order[String(pickN)] || order[pickN];
-      if (cascadePlayer) {
-        const cn = (typeof cascadePlayer === 'object') ? cascadePlayer.player : cascadePlayer;
-        if (cn) name = cn;
+      let name;
+      if (draftStarted) {
+        if (!info.draftee) continue;            // pick not made yet -> show nothing
+        name = info.draftee.trim();
+      } else {
+        // Pre-draft: live cascade snapshot, else the static col-0 projection.
+        const cascadePlayer = order[String(pickN)] || order[pickN];
+        const cascadeName = cascadePlayer ? ((typeof cascadePlayer === 'object') ? cascadePlayer.player : cascadePlayer) : '';
+        name = (cascadeName || info.name || '').trim();
       }
       if (!name) continue;
       const bio = bioByName[name] || {};
