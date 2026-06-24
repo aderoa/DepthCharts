@@ -1086,7 +1086,7 @@ function renderDepthChart(teamAbbrev) {
       html += `<div class="draft-separator"></div>`;
       dPicks.forEach(dp => {
         html += `<div class="player-card draft-pick" data-player="__DRAFT__:${escDC(dp.name)}">
-          <div class="player-image">${dp.headshot?`<img src="${dp.headshot}" alt="${escDC(dp.name)}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(dp.name)}</span>'">`:`<span class="initials">${initials(dp.name)}</span>`}</div>
+          <div class="player-image">${dp.headshot?`<img src="${escDC(dp.headshot)}" alt="${escDC(dp.name)}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(dp.name)}</span>'">`:`<span class="initials">${initials(dp.name)}</span>`}</div>
           <div class="player-name">${escDC(dp.name)}</div>
           <div class="trade-value" style="color:#15803d;font-weight:700">${ordinalPick(dp.pick)}</div></div>`;
       });
@@ -1727,7 +1727,7 @@ function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
       if (!rp.some(p => p !== null)) continue;
       if (withHeadshots) {
         out += `<tr class="dc-hs-row">`;
-        rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+        rp.forEach(p => { out += p && p.headshot ? `<td><img src="${escDC(p.headshot)}" class="dc-hs-img"/></td>` : `<td></td>`; });
         out += `</tr>`;
       }
       out += `<tr class="dc-data">`;
@@ -1745,7 +1745,7 @@ function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
         if (!rp.some(p => p !== null)) continue;
         if (withHeadshots) {
           out += `<tr class="dc-hs-row">`;
-          rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+          rp.forEach(p => { out += p && p.headshot ? `<td><img src="${escDC(p.headshot)}" class="dc-hs-img"/></td>` : `<td></td>`; });
           out += `</tr>`;
         }
         out += `<tr class="dc-data">`;
@@ -1849,6 +1849,7 @@ async function renderExportView(exportParam, withHeadshots) {
       // Split: alive teams get 2025-26 (playoff), eliminated get 2026-27 (offseason)
       const playoffTeams = NBA_TEAMS.filter(t => !ELIMINATED_ABBREVS.has(t.abbrev)).sort((a,b) => a.name.localeCompare(b.name));
       const eliminatedTeams = NBA_TEAMS.filter(t => ELIMINATED_ABBREVS.has(t.abbrev)).sort((a,b) => a.name.localeCompare(b.name));
+      appendDrafteesToOrder(orderData);
       html = generateExportHTMLByList(orderData, withHeadshots, playoffTeams, false)
            + generateExportHTMLByList(orderData, withHeadshots, eliminatedTeams, true);
     } else {
@@ -1969,6 +1970,7 @@ function copyExportByGroup(group) {
   });
 
   const isOffseason = group === 'offseason';
+  appendDrafteesToOrder(teamOrders);
   const out = DC_PRESTO_CSS + '\n\n' + generateExportHTMLByList(teamOrders, true, teamList, isOffseason);
   
   const btn = event.target.closest('.export-btn');
@@ -1984,6 +1986,21 @@ function copyExportByGroup(group) {
     btn.textContent = '✓ Copied!';
     setTimeout(() => btn.textContent = orig, 2000);
   });
+}
+
+// Freshly drafted players are injected into allPlayers but may not yet be in the
+// saved team order, which would drop them from the export. Append any such draftee
+// (not already present) to its position column so the export matches the board.
+function appendDrafteesToOrder(teamOrders) {
+  if (!teamOrders) return;
+  const positions = ['PG','SG','SF','PF','C'];
+  for (const ab in teamOrders) {
+    const ord = teamOrders[ab]; if (!ord) continue;
+    const present = new Set();
+    positions.forEach(pos => (ord[pos] || []).forEach(n => present.add(n)));
+    allPlayers.filter(p => p.team === ab && p.isDraftee && !present.has(p.name))
+      .forEach(p => { const pos = positions.includes(p.position) ? p.position : 'SF'; (ord[pos] = ord[pos] || []).push(p.name); });
+  }
 }
 
 function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseason) {
@@ -2065,7 +2082,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
       if (!rp.some(p => p !== null)) continue;
       if (withHeadshots) {
         out += `<tr class="dc-hs-row">`;
-        rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+        rp.forEach(p => { out += p && p.headshot ? `<td><img src="${escDC(p.headshot)}" class="dc-hs-img"/></td>` : `<td></td>`; });
         out += `</tr>`;
       }
       out += `<tr class="dc-data">`;
@@ -2092,7 +2109,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
             const rp = positions.map(pos => slots[pos][r] || null);
             if (withHeadshots) {
               out += `<tr class="dc-hs-row">`;
-              rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+              rp.forEach(p => { out += p && p.headshot ? `<td><img src="${escDC(p.headshot)}" class="dc-hs-img"/></td>` : `<td></td>`; });
               out += `</tr>`;
             }
             out += `<tr class="dc-data">`;
@@ -2114,7 +2131,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
         if (!rp.some(p => p !== null)) continue;
         if (withHeadshots) {
           out += `<tr class="dc-hs-row">`;
-          rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+          rp.forEach(p => { out += p && p.headshot ? `<td><img src="${escDC(p.headshot)}" class="dc-hs-img"/></td>` : `<td></td>`; });
           out += `</tr>`;
         }
         out += `<tr class="dc-data">`;
@@ -2179,6 +2196,7 @@ async function copyEliminatedExport() {
   }
   
   const endThreshold = getFutureYearEndThreshold('2026-27');
+  appendDrafteesToOrder(teamOrders);
   const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, eliminatedTeams, '2026-27', endThreshold);
   
   const orig = btn.textContent;
@@ -2242,6 +2260,7 @@ async function copyEliminatedHalf(half) {
   }
 
   const endThreshold = getFutureYearEndThreshold('2026-27');
+  appendDrafteesToOrder(teamOrders);
   const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, teamSlice, '2026-27', endThreshold);
 
   const orig = btn.textContent;
@@ -2294,6 +2313,7 @@ async function copyFutureYearExport(year, startIdx, endIdx) {
   
   const endThreshold = getFutureYearEndThreshold(year);
   const teamSlice = NBA_TEAMS.slice(startIdx, endIdx);
+  appendDrafteesToOrder(teamOrders);
   const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, teamSlice, year, endThreshold);
   
   const orig = btn.textContent;
@@ -2385,7 +2405,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
       const rp = positions.map(pos => aboveCols[pos][r] || null);
       if (!rp.some(p => p !== null)) continue;
       out += `<tr class="dc-hs-row">`;
-      rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+      rp.forEach(p => { out += p && p.headshot ? `<td><img src="${escDC(p.headshot)}" class="dc-hs-img"/></td>` : `<td></td>`; });
       out += `</tr>`;
       out += `<tr class="dc-data">`;
       rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? `<strong>${p.name}</strong>` : ''}</td>`; });
@@ -2431,7 +2451,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
         for (let r = 0; r < maxDraft; r++) {
           const rp = positions.map(pos => draftSlots[pos][r] || null);
           out += `<tr class="dc-hs-row">`;
-          rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+          rp.forEach(p => { out += p && p.headshot ? `<td><img src="${escDC(p.headshot)}" class="dc-hs-img"/></td>` : `<td></td>`; });
           out += `</tr>`;
           out += `<tr class="dc-data">`;
           rp.forEach(p => { out += p ? `<td class="c-draft"><strong>${escDC(p.name)}</strong></td>` : `<td></td>`; });
@@ -2449,7 +2469,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
         const rp = positions.map(pos => belowCols[pos][r] || null);
         if (!rp.some(p => p !== null)) continue;
         out += `<tr class="dc-hs-row">`;
-        rp.forEach(p => { out += p && p.headshot ? `<td><img src="${p.headshot}" class="dc-hs-img"/></td>` : `<td></td>`; });
+        rp.forEach(p => { out += p && p.headshot ? `<td><img src="${escDC(p.headshot)}" class="dc-hs-img"/></td>` : `<td></td>`; });
         out += `</tr>`;
         out += `<tr class="dc-data">`;
         rp.forEach(p => { out += `<td${p ? ' class="c-fa"' : ''}>${p ? `<strong>${p.name}</strong>` : ''}</td>`; });
