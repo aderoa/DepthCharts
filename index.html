@@ -766,6 +766,13 @@ function ordinalPick(n) {
   const s = ['th','st','nd','rd'], v = n % 100;
   return n + (s[(v-20)%10] || s[v] || s[0]) + ' pick';
 }
+// Second-round picks (31-60) have no rookie scale, so we identify them by pick +
+// draft year (e.g. "2026 47th pick") instead of a salary. First-rounders keep the
+// bare ordinal ("8th pick") and their rookie-scale figure where salaries are shown.
+function pickLabel(p) {
+  const n = p.pick;
+  return (n >= 31 ? '2026 ' : '') + ordinalPick(n);
+}
 
 // Fetch the live cascade (projected player per pick) + Sheet4 (pick ownership,
 // headshots, positions), then build each team's incoming draft picks.
@@ -1062,7 +1069,7 @@ function renderDepthChart(teamAbbrev) {
         else if (p.colorCode === 'doubtful') sc = 'doubtful';
         else if (p.colorCode === 'injured') sc = 'injured';
       }
-      if (p.isDraftee) salDisplay = '<span style="color:#15803d;font-weight:700">'+ordinalPick(p.pick)+'</span>';
+      if (p.isDraftee) salDisplay = '<span style="color:#15803d;font-weight:700">'+pickLabel(p)+'</span>';
       html += `<div class="player-card ${firstReal?'starter':''} ${sc} ${p.isDraftee?'draftee':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
         <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
         <div class="player-name">${p.name}</div>
@@ -1088,7 +1095,7 @@ function renderDepthChart(teamAbbrev) {
         html += `<div class="player-card draft-pick" data-player="__DRAFT__:${escDC(dp.name)}">
           <div class="player-image">${dp.headshot?`<img src="${escDC(dp.headshot)}" alt="${escDC(dp.name)}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(dp.name)}</span>'">`:`<span class="initials">${initials(dp.name)}</span>`}</div>
           <div class="player-name">${escDC(dp.name)}</div>
-          <div class="trade-value" style="color:#15803d;font-weight:700">${ordinalPick(dp.pick)}</div></div>`;
+          <div class="trade-value" style="color:#15803d;font-weight:700">${pickLabel(dp)}</div></div>`;
       });
       // Pad draft section with spacers so the orange FA separator is a hard line
       for (let i = dPicks.length; i < maxDraft; i++) {
@@ -1286,6 +1293,7 @@ function renderFutureYearAdmin(year) {
           if (n === '__SPACER__' || n === '__SEPARATOR__') return;
           // Saved draft pick entry: "__DRAFT__:PlayerName"
           if (n.indexOf('__DRAFT__:') === 0) {
+            if (year !== '2026-27') return;  // draft picks only count for 2026-27
             const dn = n.slice('__DRAFT__:'.length);
             const dp = draftByName[dn];
             // Only honor if this player is still a current projected pick.
@@ -1356,7 +1364,7 @@ function renderFutureYearAdmin(year) {
       contractedByPos[pos].forEach(p => {
         const sc = p._ps.sc;
         const sal = year === '2026-27' ? (p.salary27 || p.salary) : p.salary27 || p.salary;
-        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc} ${p.isDraftee?'draftee':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? '<span style="color:#15803d">'+ordinalPick(p.pick)+'</span>' : fmtSal(sal)}</div></div>`;
+        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc} ${p.isDraftee?'draftee':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? '<span style="color:#15803d">'+pickLabel(p)+'</span>' : fmtSal(sal)}</div></div>`;
         firstReal = false;
       });
       
@@ -1371,7 +1379,7 @@ function renderFutureYearAdmin(year) {
         html += `<div class="admin-separator" style="background:#16a34a"></div>`;
         // Draft cards (draggable in admin so order can be tweaked)
         draftByPos[pos].forEach(dp => {
-          html += `<div class="admin-player-card draft-pick" draggable="true" data-player="__DRAFT__:${escDC(dp.name)}"><div class="admin-player-name">${escDC(dp.name)}</div><div class="admin-trade-value" style="color:#15803d">${ordinalPick(dp.pick)}</div></div>`;
+          html += `<div class="admin-player-card draft-pick" draggable="true" data-player="__DRAFT__:${escDC(dp.name)}"><div class="admin-player-name">${escDC(dp.name)}</div><div class="admin-trade-value" style="color:#15803d">${pickLabel(dp)}</div></div>`;
         });
         // Pad draft section with spacers so the orange separator is a hard line
         for (let i = draftByPos[pos].length; i < maxDraft; i++) {
@@ -1491,7 +1499,7 @@ function renderAdminAllTeams() {
       let firstReal = true;
       healthyByPos[pos].forEach(p => {
         const sc = p.contractStatus==='10-DAY'?'ten-day':p.colorCode==='questionable'?'questionable':p.colorCode==='probable'?'probable':'';
-        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc} ${p.isDraftee?'draftee':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? ordinalPick(p.pick) : fmtSal(p.salary)}</div></div>`;
+        html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc} ${p.isDraftee?'draftee':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? pickLabel(p) : fmtSal(p.salary)}</div></div>`;
         firstReal = false;
       });
 
@@ -1503,7 +1511,7 @@ function renderAdminAllTeams() {
 
       injuredByPos[pos].forEach(p => {
         const sc = p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':p.colorCode==='questionable'?'questionable':'';
-        html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${p.colorCode==='twoway'?' <span style="font-size:0.5rem;color:#8b5cf6">2W</span>':''}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? ordinalPick(p.pick) : fmtSal(p.salary)}</div></div>`;
+        html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${p.colorCode==='twoway'?' <span style="font-size:0.5rem;color:#8b5cf6">2W</span>':''}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? pickLabel(p) : fmtSal(p.salary)}</div></div>`;
       });
 
       html += '</div>';
@@ -2094,7 +2102,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
       });
       out += `</tr>`;
       out += `<tr class="dc-data">`;
-      rp.forEach(p => { out += `<td${cCls(p, isOffseason)}>${p ? (p.isDraftee ? ordinalPick(p.pick) : (isOffseason ? fmtSalFull(p.salary27 || p.salary) : fmtSalFull(p.salary))) : ''}</td>`; });
+      rp.forEach(p => { out += `<td${cCls(p, isOffseason)}>${p ? (p.isDraftee ? pickLabel(p) : (isOffseason ? fmtSalFull(p.salary27 || p.salary) : fmtSalFull(p.salary))) : ''}</td>`; });
       out += `</tr>`;
     }
 
@@ -2119,7 +2127,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
             rp.forEach(p => { out += p ? `<td class="c-draft"><strong>${escDC(p.name)}</strong></td>` : `<td></td>`; });
             out += `</tr>`;
             out += `<tr class="dc-data">`;
-            rp.forEach(p => { out += p ? `<td class="c-draft">${ordinalPick(p.pick)}</td>` : `<td></td>`; });
+            rp.forEach(p => { out += p ? `<td class="c-draft">${pickLabel(p)}</td>` : `<td></td>`; });
             out += `</tr>`;
           }
         }
@@ -2151,7 +2159,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
           if (p && isOffseason && p.isFA) {
             out += `<td class="c-fa">${p.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</td>`;
           } else {
-            out += `<td${cCls(p, isOffseason)}>${p ? (p.isDraftee ? ordinalPick(p.pick) : fmtSalFull(p.salary)) : ''}</td>`;
+            out += `<td${cCls(p, isOffseason)}>${p ? (p.isDraftee ? pickLabel(p) : fmtSalFull(p.salary)) : ''}</td>`;
           }
         });
         out += `</tr>`;
@@ -2414,7 +2422,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
       rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? `<strong>${p.name}</strong>` : ''}</td>`; });
       out += `</tr>`;
       out += `<tr class="dc-data">`;
-      rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? fmtSalFull(p.salary27 || p.salary) : ''}</td>`; });
+      rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? (p.isDraftee && p.pick >= 31 ? pickLabel(p) : fmtSalFull(p.salary27 || p.salary)) : ''}</td>`; });
       out += `</tr>`;
     }
 
@@ -2460,7 +2468,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
           rp.forEach(p => { out += p ? `<td class="c-draft"><strong>${escDC(p.name)}</strong></td>` : `<td></td>`; });
           out += `</tr>`;
           out += `<tr class="dc-data">`;
-          rp.forEach(p => { out += p ? `<td class="c-draft">${ordinalPick(p.pick)}</td>` : `<td></td>`; });
+          rp.forEach(p => { out += p ? `<td class="c-draft">${pickLabel(p)}</td>` : `<td></td>`; });
           out += `</tr>`;
         }
       }
