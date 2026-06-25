@@ -1561,16 +1561,41 @@ function makeDraggable(card, container, teamAbbrev, cardSel, colSel) {
     this.classList.remove('dragging');
     document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
     draggedElement = null;
-    // Update starter highlights
-    container.querySelectorAll(colSel).forEach(col => {
-      let firstReal = true;
-      col.querySelectorAll(cardSel).forEach(c => {
-        if (c.classList.contains('spacer')) { c.classList.remove('starter'); return; }
-        c.classList.toggle('starter', firstReal);
-        firstReal = false;
+
+    // Where did the card actually land? A cross-team drop means the card now
+    // lives in a different team's chart than where it started.
+    const destChart = this.closest('.admin-depth-chart') || container;
+    const destTeam = (destChart && destChart.dataset) ? destChart.dataset.team : teamAbbrev;
+    const crossTeam = !!destTeam && destTeam !== teamAbbrev;
+    if (crossTeam) {
+      // Reassign the player's team in allPlayers. Exports filter by p.team, so
+      // without this the moved player shows in the admin DOM but is dropped from
+      // the Presto export (it never matches the destination team).
+      const nm = (this.dataset.player || '').replace(/^__DRAFT__:/, '');
+      if (typeof allPlayers !== 'undefined' && Array.isArray(allPlayers)) {
+        const pl = allPlayers.find(function(x){ return x.name === nm; });
+        if (pl) pl.team = destTeam;
+      }
+    }
+
+    // Refresh starter highlights on the source and (if different) destination.
+    [container, crossTeam ? destChart : null].forEach(function(chart){
+      if (!chart) return;
+      chart.querySelectorAll(colSel).forEach(col => {
+        let firstReal = true;
+        col.querySelectorAll(cardSel).forEach(c => {
+          if (c.classList.contains('spacer')) { c.classList.remove('starter'); return; }
+          c.classList.toggle('starter', firstReal);
+          firstReal = false;
+        });
       });
     });
+
+    // Persist BOTH orders: the source (card removed) and, on a cross-team move,
+    // the destination (card added). The old code saved only the source, so the
+    // destination team's saved order never picked up the incoming player.
     saveTeamOrder(teamAbbrev, container);
+    if (crossTeam) saveTeamOrder(destTeam, destChart);
   });
 
   card.addEventListener('dragover', function(e) {
