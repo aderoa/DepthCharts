@@ -766,12 +766,11 @@ function ordinalPick(n) {
   const s = ['th','st','nd','rd'], v = n % 100;
   return n + (s[(v-20)%10] || s[v] || s[0]) + ' pick';
 }
-// Second-round picks (31-60) have no rookie scale, so we identify them by pick +
-// draft year (e.g. "2026 47th pick") instead of a salary. First-rounders keep the
-// bare ordinal ("8th pick") and their rookie-scale figure where salaries are shown.
+// Draftees are labelled by pick (e.g. "31st pick"). Second-rounders (no rookie
+// scale) show this in place of a salary; first-rounders keep their cap-hold figure
+// where salaries are shown.
 function pickLabel(p) {
-  const n = p.pick;
-  return (n >= 31 ? '2026 ' : '') + ordinalPick(n);
+  return ordinalPick(p.pick);
 }
 
 // Fetch the live cascade (projected player per pick) + Sheet4 (pick ownership,
