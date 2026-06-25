@@ -2422,7 +2422,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
       rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? `<strong>${p.name}</strong>` : ''}</td>`; });
       out += `</tr>`;
       out += `<tr class="dc-data">`;
-      rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? (p.isDraftee && p.pick >= 31 ? pickLabel(p) : fmtSalFull(p.salary27 || p.salary)) : ''}</td>`; });
+      rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? (p.isDraftee && (p.pick >= 31 || !(p.salary27 || p.salary)) ? pickLabel(p) : fmtSalFull(p.salary27 || p.salary)) : ''}</td>`; });
       out += `</tr>`;
     }
 
