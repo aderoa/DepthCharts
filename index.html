@@ -630,6 +630,18 @@ function computeTradeValues(csvText) {
 // =====================================================
 // ROSTER PARSER (salary, headshot, status, injury)
 // =====================================================
+// Route third-party headshot URLs through the hoopsmatic.com image proxy so the
+// published HTML never exposes the origin (e.g. proballers.com / espncdn.com) and
+// to dodge hotlink/referer blocks. Source URL is base64url-encoded in ?u=.
+function maskImg(u) {
+  if (!u) return u;
+  if (u.indexOf('data:') === 0 || u.indexOf('/img?u=') !== -1) return u; // already masked/inline
+  try {
+    const b64 = btoa(u).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+    return 'https://hoopsmatic.com/img?u=' + b64;
+  } catch(e) { return u; }
+}
+
 function parseRosterCSV(csvText) {
   const rows = parseCSV(csvText); if (rows.length < 2) return [];
   const hdr = rows[0]; const col = n => hdr.findIndex(h => h.toUpperCase() === n.toUpperCase());
@@ -642,7 +654,7 @@ function parseRosterCSV(csvText) {
     if (!name||!team) continue;
     const abbrev = TEAM_ALIASES[team]||team;
     const pos = POI>=0 ? (r[POI]?.trim()||'SF') : 'SF';
-    const headshot = HI>=0 ? (r[HI]?.trim()||'') : '';
+    const headshot = maskImg(HI>=0 ? (r[HI]?.trim()||'') : '');
     const tv = tradeValueMap.get(name.toLowerCase())||0;
     const salary = SI>=0 ? (parseInt((r[SI]||'0').replace(/[$,]/g,''))||0) : 0;
     const status = STI>=0 ? (r[STI]?.trim()||'GUARANTEED') : 'GUARANTEED';
@@ -806,7 +818,7 @@ async function fetchDraftPicks(fresh) {
     for (let i = 1; i < rows.length; i++) {
       const r = rows[i];
       const nm = (r[COL_B_NAME]||'').trim();
-      if (nm) bioByName[nm] = { position: (r[COL_B_POS]||'').trim(), headshot: (r[COL_B_HS]||'').trim() };
+      if (nm) bioByName[nm] = { position: (r[COL_B_POS]||'').trim(), headshot: maskImg((r[COL_B_HS]||'').trim()) };
     }
 
     // Build pick → {team, player} from Section A.
