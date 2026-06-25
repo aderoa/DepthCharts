@@ -2409,6 +2409,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
     
     const aboveCols = {}, belowCols = {};
     let maxAbove = 0, maxBelow = 0;
+    const placedNames = new Set();
     
     positions.forEach(pos => {
       aboveCols[pos] = [];
@@ -2418,12 +2419,30 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
         if (n === '__SPACER__') return;
         const p = playerMap[n];
         if (!p || p.team !== team.abbrev) return;
+        placedNames.add(p.name);
         const ps = getFuturePlayerStatus(p, endThreshold, year);
         if (ps.status === 'gone') return;
         const enriched = { ...p, _ps: ps };
         if (ps.status === 'fa') belowCols[pos].push(enriched);
         else aboveCols[pos].push(enriched);
       });
+    });
+
+    // Unsorted fallback: players now on this team but absent from the saved order
+    // (e.g. someone traded in via a cross-team move). Without this they're silently
+    // dropped from the export even though the admin view shows them. Draftees are
+    // skipped here — they're placed by appendDrafteesToOrder + the draft section.
+    allPlayers.filter(p => p.team === team.abbrev && !p.isDraftee && !placedNames.has(p.name)).forEach(p => {
+      const ps = getFuturePlayerStatus(p, endThreshold, year);
+      if (ps.status === 'gone') return;
+      const pos = positions.includes(p.position) ? p.position : 'SF';
+      const enriched = { ...p, _ps: ps };
+      if (ps.status === 'fa') belowCols[pos].push(enriched);
+      else aboveCols[pos].push(enriched);
+      placedNames.add(p.name);
+    });
+
+    positions.forEach(pos => {
       if (aboveCols[pos].length > maxAbove) maxAbove = aboveCols[pos].length;
       if (belowCols[pos].length > maxBelow) maxBelow = belowCols[pos].length;
     });
