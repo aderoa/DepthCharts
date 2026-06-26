@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-06-26b · 2026-27 status is data-driven (salary27 or ST 26-27 = signed; type from ST 26-27; no 2026-27 data = unsigned FA). Effective contract-end derived from data carries this into 2027-28+: a 2026-27 signing with a blank END expires correctly (FA next season, gone after). -->
+<!-- BUILD 2026-06-26c · 2026-27 status data-driven; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -526,16 +526,24 @@ function parseContractsCSV(csvText) {
   const rows = parseCSV(csvText); if (rows.length < 2) return {};
   const hdr = rows[0]; const col = n => hdr.findIndex(h => h.toUpperCase().trim() === n.toUpperCase().trim());
   const PI = col('PLAYER'), ST2728 = col('ST 27-28'), ST2829 = col('ST 28-29'), ST2930 = col('ST 29-30'), ST3031 = col('ST 30-31');
+  const YOSI = col('YOS'), EXCI = col('EXCEPTION'), ST2526I = col('ST 25-26');
   if (PI < 0) return {};
   const map = {};
   for (let i = 1; i < rows.length; i++) {
     const r = rows[i]; const name = (r[PI] || '').trim();
     if (!name) continue;
+    const yos = YOSI >= 0 ? (parseInt((r[YOSI] || '').trim()) || 0) : 0;
+    const exc = EXCI >= 0 ? (r[EXCI] || '') : '';
+    const st2526 = ST2526I >= 0 ? (r[ST2526I] || '').trim().toUpperCase() : '';
+    // Restricted-FA eligibility: rookie-scale (guarded vs stale tags) OR two-way
+    // OR <=3 years of service (short-tenured vets get a QO → RFA).
+    const rfaElig = (/rookie/i.test(exc) && yos <= 4) || st2526 === 'TWO-WAY' || (yos >= 0 && yos <= 3);
     map[name] = {
       st2728: ST2728 >= 0 ? (r[ST2728] || '').trim() : '',
       st2829: ST2829 >= 0 ? (r[ST2829] || '').trim() : '',
       st2930: ST2930 >= 0 ? (r[ST2930] || '').trim() : '',
-      st3031: ST3031 >= 0 ? (r[ST3031] || '').trim() : ''
+      st3031: ST3031 >= 0 ? (r[ST3031] || '').trim() : '',
+      yos: yos, rfaElig: rfaElig
     };
   }
   return map;
@@ -1129,7 +1137,7 @@ function renderDepthChart(teamAbbrev) {
         html += `<div class="player-card free-agent" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
           <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
           <div class="player-name">${p.name}</div>
-          <div class="trade-value" style="color:#b45309;font-size:0.7rem">${p.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</div></div>`;
+          <div class="trade-value" style="color:#b45309;font-size:0.7rem">${isRfaEligible(p) ? 'Restricted' : 'Unrestricted'}</div></div>`;
       } else {
         const twBadge = p.colorCode === 'twoway' ? ' <span style="font-size:0.55rem;padding:1px 4px;border-radius:3px;background:rgba(139,92,246,0.12);color:#8b5cf6;font-weight:700">2W</span>' : '';
         const injSc = p.colorCode === 'twoway' ? 'two-way' : p.colorCode === 'injured' ? 'injured' : p.colorCode === 'doubtful' ? 'doubtful' : p.colorCode === 'questionable' ? 'questionable' : '';
@@ -1219,6 +1227,15 @@ function getFutureYearEndThreshold(year) {
   return parseInt(year.split('-')[1]) + 2000;
 }
 
+// Restricted vs unrestricted free agency. Uses the contracts sheet (via
+// futureStatusMap) for the rookie-scale + YOS signal; falls back to the player's
+// own exception/two-way fields for roster-only signings not in that sheet.
+function isRfaEligible(p) {
+  const m = futureStatusMap[p.name];
+  if (m && m.rfaElig !== undefined) return m.rfaElig;
+  return /rookie/i.test(p.exception || '') || p.colorCode === 'twoway' || p.status27 === 'TWO-WAY' || p.status27 === '10-DAY';
+}
+
 function getFuturePlayerStatus(p, endThreshold, year) {
   // Drafted players only count toward 2026-27 (their rookie season). They do NOT
   // appear in later future years until they officially sign their first contract.
@@ -1233,7 +1250,7 @@ function getFuturePlayerStatus(p, endThreshold, year) {
     const s27 = (p.status27 || '').trim();
     const has2627 = (p.salary27 > 0) || s27 !== '';
     if (!has2627) {
-      const isRFA = /rookie/i.test(p.exception) || p.colorCode === 'twoway';
+      const isRFA = isRfaEligible(p);
       return { status: 'fa', faLabel: isRFA ? 'RFA' : 'UFA', sc: 'free-agent' };
     }
     if (s27 === 'TEAM OPT')   return { status: 'to', sc: 'team-option' };
@@ -1266,7 +1283,7 @@ function getFuturePlayerStatus(p, endThreshold, year) {
     // Only show as FA in the first year after the contract expires
     // e.g. ends 2027 → FA in 2027-28 (threshold 2028), gone in 2028-29+
     if (effEnd === endThreshold - 1) {
-      const isRFA = /rookie/i.test(p.exception) || isTwoWay;
+      const isRFA = isRfaEligible(p);
       return { status: 'fa', faLabel: isRFA ? 'RFA' : 'UFA', sc: 'free-agent' };
     }
     return { status: 'gone' }; // Already became FA in a prior year — skip
@@ -2224,7 +2241,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
         out += `<tr class="dc-data">`;
         rp.forEach(p => {
           if (p && isOffseason && p.isFA) {
-            out += `<td class="c-fa">${p.faLabel === 'RFA' ? 'Restricted' : 'Unrestricted'}</td>`;
+            out += `<td class="c-fa">${isRfaEligible(p) ? 'Restricted' : 'Unrestricted'}</td>`;
           } else {
             out += `<td${cCls(p, isOffseason)}>${p ? (p.isDraftee ? pickLabel(p) : fmtSalFull(p.salary)) : ''}</td>`;
           }
