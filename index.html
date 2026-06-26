@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- BUILD 2026-06-26 · 2026-27 status is data-driven: presence of 2026-27 data (salary27 or ST 26-27) = signed (type from ST 26-27); on a team with no 2026-27 data = unsigned FA -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -671,7 +672,7 @@ function parseRosterCSV(csvText) {
     const status27 = ST27I>=0 ? (r[ST27I]?.trim()||'') : '';
     const contractEnd = ENDI>=0 ? (parseInt((r[ENDI]||'0'))||0) : 0;
     const exception = EXCI>=0 ? (r[EXCI]?.trim()||'') : '';
-    const isFA = !salary27 && !status27 && contractEnd <= 2026;
+    const isFA = !salary27 && !status27;  // on a team but no 2026-27 data → unsigned FA
     const isRFA = isFA && (/rookie/i.test(exception) || status === 'TWO-WAY');
     const faLabel = isFA ? (isRFA ? 'RFA' : 'UFA') : '';
     players.push({name, team:abbrev, position:pos, tradeValue:tv, headshot, salary, contractStatus:status, injuryStatus:injury, injuryReason:reason, colorCode:color, teamLogo:logo, salary27, status27, contractEnd, exception, isFA, faLabel});
@@ -1068,7 +1069,7 @@ function renderDepthChart(teamAbbrev) {
       let sc = '', salDisplay = fmtSal(p.salary);
       if (isEliminated) {
         salDisplay = fmtSal(p.salary27 || p.salary);
-        sc = p.colorCode === 'twoway' ? 'two-way' : '';
+        sc = (p.status27 === 'TWO-WAY' || p.status27 === '10-DAY' || p.colorCode === 'twoway') ? 'two-way' : '';
         if (p.status27 === 'TEAM OPT') { sc = 'team-option'; }
         else if (p.status27 === 'PLAYER OPT') { sc = 'player-option'; }
         else if (p.status27 === 'NOT G') { sc = 'non-guaranteed'; }
@@ -1222,6 +1223,26 @@ function getFuturePlayerStatus(p, endThreshold, year) {
   // Drafted players only count toward 2026-27 (their rookie season). They do NOT
   // appear in later future years until they officially sign their first contract.
   if (p.isDraftee) return year === '2026-27' ? { status: 'active', sc: '' } : { status: 'gone' };
+
+  // 2026-27 is the offseason signing year: what counts is the PRESENCE of
+  // 2026-27 data, not the END year. Any player with 2026-27 data (a 2026-27
+  // salary OR an ST 26-27 status) is under contract for 2026-27, and his
+  // contract TYPE comes from ST 26-27. A player still listed on a team but with
+  // NO 2026-27 data is an unsigned free agent.
+  if (year === '2026-27') {
+    const s27 = (p.status27 || '').trim();
+    const has2627 = (p.salary27 > 0) || s27 !== '';
+    if (!has2627) {
+      const isRFA = /rookie/i.test(p.exception) || p.colorCode === 'twoway';
+      return { status: 'fa', faLabel: isRFA ? 'RFA' : 'UFA', sc: 'free-agent' };
+    }
+    if (s27 === 'TEAM OPT')   return { status: 'to', sc: 'team-option' };
+    if (s27 === 'PLAYER OPT')  return { status: 'po', sc: 'player-option' };
+    if (s27 === 'NOT G' || s27 === 'PARTIAL G') return { status: 'ng', sc: 'non-guaranteed' };
+    if (s27 === 'TWO-WAY' || s27 === '10-DAY' || p.colorCode === 'twoway') return { status: 'tw', sc: 'two-way' };
+    return { status: 'active', sc: '' };
+  }
+
   const isUnderContract = p.contractEnd >= endThreshold;
   const isTwoWay = p.colorCode === 'twoway';
   
@@ -1235,19 +1256,13 @@ function getFuturePlayerStatus(p, endThreshold, year) {
     return { status: 'gone' }; // Already became FA in a prior year — skip
   }
   
-  // Use contract status data per year
-  if (year === '2026-27') {
-    if (p.status27 === 'TEAM OPT') return { status: 'to', sc: 'team-option' };
-    if (p.status27 === 'PLAYER OPT') return { status: 'po', sc: 'player-option' };
-    if (p.status27 === 'NOT G' || p.status27 === 'PARTIAL G') return { status: 'ng', sc: 'non-guaranteed' };
-  } else {
-    const fs = futureStatusMap[p.name];
-    if (fs) {
-      const st = year === '2027-28' ? fs.st2728 : year === '2028-29' ? fs.st2829 : year === '2029-30' ? fs.st2930 : year === '2030-31' ? fs.st3031 : '';
-      if (st === 'TEAM OPT') return { status: 'to', sc: 'team-option' };
-      if (st === 'PLAYER OPT') return { status: 'po', sc: 'player-option' };
-      if (st === 'NOT G' || st === 'PARTIAL G' || st === 'NOT GUARANTEED') return { status: 'ng', sc: 'non-guaranteed' };
-    }
+  // Later years (2027-28+) use the per-year future status map.
+  const fs = futureStatusMap[p.name];
+  if (fs) {
+    const st = year === '2027-28' ? fs.st2728 : year === '2028-29' ? fs.st2829 : year === '2029-30' ? fs.st2930 : year === '2030-31' ? fs.st3031 : '';
+    if (st === 'TEAM OPT') return { status: 'to', sc: 'team-option' };
+    if (st === 'PLAYER OPT') return { status: 'po', sc: 'player-option' };
+    if (st === 'NOT G' || st === 'PARTIAL G' || st === 'NOT GUARANTEED') return { status: 'ng', sc: 'non-guaranteed' };
   }
   
   if (isTwoWay) return { status: 'tw', sc: 'two-way' };
@@ -2062,7 +2077,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
       if (p.status27 === 'TEAM OPT') return ' class="c-to"';
       if (p.status27 === 'PLAYER OPT') return ' class="c-po"';
       if (p.status27 === 'NOT G' || p.status27 === 'PARTIAL G') return ' class="c-ng"';
-      if (p.colorCode === 'twoway') return ' class="c-2way"';
+      if (p.status27 === 'TWO-WAY' || p.status27 === '10-DAY' || p.colorCode === 'twoway') return ' class="c-2way"';
       return '';
     }
     if (p.contractStatus === '10-DAY') return ' class="c-10day"';
@@ -2389,6 +2404,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
       if (p._ps.status === 'to') return ' class="c-to"';
       if (p._ps.status === 'po') return ' class="c-po"';
       if (p._ps.status === 'ng') return ' class="c-ng"';
+      if (p._ps.status === 'tw') return ' class="c-2way"';
     }
     if (p.colorCode === 'twoway') return ' class="c-2way"';
     return '';
