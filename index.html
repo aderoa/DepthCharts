@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-06-26 · 2026-27 status is data-driven: presence of 2026-27 data (salary27 or ST 26-27) = signed (type from ST 26-27); on a team with no 2026-27 data = unsigned FA -->
+<!-- BUILD 2026-06-26b · 2026-27 status is data-driven (salary27 or ST 26-27 = signed; type from ST 26-27; no 2026-27 data = unsigned FA). Effective contract-end derived from data carries this into 2027-28+: a 2026-27 signing with a blank END expires correctly (FA next season, gone after). -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -1243,13 +1243,29 @@ function getFuturePlayerStatus(p, endThreshold, year) {
     return { status: 'active', sc: '' };
   }
 
-  const isUnderContract = p.contractEnd >= endThreshold;
-  const isTwoWay = p.colorCode === 'twoway';
+  // Effective contract-end derived from the DATA, so the same data-driven logic
+  // that fixes 2026-27 carries into later years. A 2026-27 signing (two-way,
+  // minimum, etc.) entered without an END value is under contract at least
+  // through 2026-27 (ends 2027) → FA in 2027-28, gone after — instead of
+  // vanishing. Any later-year option in the contracts map extends the end.
+  let effEnd = p.contractEnd || 0;
+  if (((p.salary27 > 0) || (p.status27 && String(p.status27).trim() !== '')) && effEnd < 2027) effEnd = 2027;
+  const fsm = futureStatusMap[p.name];
+  if (fsm) {
+    if (String(fsm.st3031 || '').trim()) effEnd = Math.max(effEnd, 2031);
+    else if (String(fsm.st2930 || '').trim()) effEnd = Math.max(effEnd, 2030);
+    else if (String(fsm.st2829 || '').trim()) effEnd = Math.max(effEnd, 2029);
+    else if (String(fsm.st2728 || '').trim()) effEnd = Math.max(effEnd, 2028);
+  }
+  const isUnderContract = effEnd >= endThreshold;
+  // Two-way for FA-label purposes also reads the 2026-27 status, since a signing's
+  // two-way nature lives in ST 26-27 (not the blank 2025-26 status).
+  const isTwoWay = p.colorCode === 'twoway' || p.status27 === 'TWO-WAY' || p.status27 === '10-DAY';
   
   if (!isUnderContract) {
-    // Only show as FA in the first year after contract expires
-    // e.g. END=2027 → FA in 2027-28 (threshold 2028), gone in 2028-29+
-    if (p.contractEnd === endThreshold - 1) {
+    // Only show as FA in the first year after the contract expires
+    // e.g. ends 2027 → FA in 2027-28 (threshold 2028), gone in 2028-29+
+    if (effEnd === endThreshold - 1) {
       const isRFA = /rookie/i.test(p.exception) || isTwoWay;
       return { status: 'fa', faLabel: isRFA ? 'RFA' : 'UFA', sc: 'free-agent' };
     }
