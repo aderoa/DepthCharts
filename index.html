@@ -681,7 +681,7 @@ function parseRosterCSV(csvText) {
     const contractEnd = ENDI>=0 ? (parseInt((r[ENDI]||'0'))||0) : 0;
     const exception = EXCI>=0 ? (r[EXCI]?.trim()||'') : '';
     const isFA = !salary27 && !status27;  // on a team but no 2026-27 data → unsigned FA
-    const isRFA = isFA && (/rookie/i.test(exception) || status === 'TWO-WAY');
+    const isRFA = isFA && (/rookie/i.test(exception) || status === 'TWO-WAY') && !_isUFAOverride(name);
     const faLabel = isFA ? (isRFA ? 'RFA' : 'UFA') : '';
     players.push({name, team:abbrev, position:pos, tradeValue:tv, headshot, salary, contractStatus:status, injuryStatus:injury, injuryReason:reason, colorCode:color, teamLogo:logo, salary27, status27, contractEnd, exception, isFA, faLabel});
   }
@@ -1230,7 +1230,9 @@ function getFutureYearEndThreshold(year) {
 // Restricted vs unrestricted free agency. Uses the contracts sheet (via
 // futureStatusMap) for the rookie-scale + YOS signal; falls back to the player's
 // own exception/two-way fields for roster-only signings not in that sheet.
+function _isUFAOverride(nm){if(!_isUFAOverride._s){_isUFAOverride._s=new Set("tosan evbuomwan|keaton wallace|max shulga|jordan walsh|amari williams|john tonje|ochai agbaji|jalen wilson|tyson etienne|ej liddell|antonio reeves|mac mcclung|yuki kawamura|lachlan olbrich|olivier sarr|jalen pickett|curtis jones|pat spencer|jeenathan williams|norchad omier|drew timme|rayan rupert|keshad johnson|trevor keels|jahmir young|ousmane dieng|andre jackson|alex antetokounmpo|julian phillips|trey alexander|josh oduro|ariel hukporti|kevin mccullar|trey jemison|branden carlson|tyrese martin|isaiah livers|caleb love|jonathan mogbo|elijah harkless|oscar tshiebwe|sharife cooper|nick smith|jamir watkins".split("|"));}var n=(nm||'').toLowerCase().replace(/[.'`]/g,'').replace(/\b(jr|sr|ii|iii|iv)\b/g,'').replace(/\s+/g,' ').trim();return _isUFAOverride._s.has(n);}
 function isRfaEligible(p) {
+  if (_isUFAOverride(p.name)) return false;
   const m = futureStatusMap[p.name];
   if (m && m.rfaElig !== undefined) return m.rfaElig;
   return /rookie/i.test(p.exception || '') || p.colorCode === 'twoway' || p.status27 === 'TWO-WAY' || p.status27 === '10-DAY';
