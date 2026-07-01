@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-07-01a · 2026-27 two-way reads ST 26-27 only (colorCode fallback for roster-only); effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-07-01b · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -863,11 +863,20 @@ async function fetchDraftPicks(fresh) {
     if (draftStarted) {
       if (Array.isArray(allPlayers)) {
         allPlayers = allPlayers.filter(function(p){ return !p.isDraftee; }); // idempotent
+        // A drafted rookie who has since SIGNED (their contract numbers are now in the sheet,
+        // so they already exist as a real player with 2026-27 data) takes PRIORITY over the
+        // draft pick — skip the draftee placeholder so they aren't duplicated and instead show
+        // their signed deal.
+        const _normDN = function(x){ return (x||'').toLowerCase().replace(/[.'`]/g,'').replace(/-/g,' ').replace(/\s+/g,' ').trim(); };
+        const _signedNames = new Set(allPlayers
+          .filter(function(p){ return (p.salary27 > 0) || (p.status27 && String(p.status27).trim() !== ''); })
+          .map(function(p){ return _normDN(p.name); }));
         for (const pickStr in pickInfo) {
           const pickN = parseInt(pickStr);
           const info = pickInfo[pickN];
           const name = (info.draftee || '').trim();
           if (!name) continue;
+          if (_signedNames.has(_normDN(name))) continue;   // signed contract already present → it wins
           const bio = bioByName[name] || {};
           const teamObj = (typeof NBA_TEAMS !== 'undefined') ? NBA_TEAMS.find(function(t){ return t.abbrev === info.team; }) : null;
           allPlayers.push({
