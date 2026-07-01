@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -526,6 +526,7 @@ function parseContractsCSV(csvText) {
   const rows = parseCSV(csvText); if (rows.length < 2) return {};
   const hdr = rows[0]; const col = n => hdr.findIndex(h => h.toUpperCase().trim() === n.toUpperCase().trim());
   const PI = col('PLAYER'), ST2728 = col('ST 27-28'), ST2829 = col('ST 28-29'), ST2930 = col('ST 29-30'), ST3031 = col('ST 30-31');
+  const SAL2728 = col('2028'), SAL2829 = col('2029'), SAL2930 = col('2030'), SAL3031 = col('2031');
   const YOSI = col('YOS'), EXCI = col('EXCEPTION'), ST2526I = col('ST 25-26');
   if (PI < 0) return {};
   const map = {};
@@ -543,6 +544,10 @@ function parseContractsCSV(csvText) {
       st2829: ST2829 >= 0 ? (r[ST2829] || '').trim() : '',
       st2930: ST2930 >= 0 ? (r[ST2930] || '').trim() : '',
       st3031: ST3031 >= 0 ? (r[ST3031] || '').trim() : '',
+      sal2728: SAL2728 >= 0 ? (parseInt((r[SAL2728]||'0').replace(/[$,]/g,''))||0) : 0,
+      sal2829: SAL2829 >= 0 ? (parseInt((r[SAL2829]||'0').replace(/[$,]/g,''))||0) : 0,
+      sal2930: SAL2930 >= 0 ? (parseInt((r[SAL2930]||'0').replace(/[$,]/g,''))||0) : 0,
+      sal3031: SAL3031 >= 0 ? (parseInt((r[SAL3031]||'0').replace(/[$,]/g,''))||0) : 0,
       yos: yos, rfaElig: rfaElig
     };
   }
@@ -991,6 +996,21 @@ function placeDraftPicks(picks) {
 function fmtTV(tv) { if (tv>=1e6) return '$'+(tv/1e6).toFixed(1)+'M'; if (tv>=1e3) return '$'+Math.round(tv/1e3)+'K'; return '$'+tv.toLocaleString(); }
 function fmtSal(s) { if (s>=1e6) return '$'+(s/1e6).toFixed(1)+'M'; if (s>=1e3) return '$'+Math.round(s/1e3)+'K'; return '$'+s.toLocaleString(); }
 function fmtSalFull(s) { return '$'+s.toLocaleString('en-US'); }
+// Salary for a specific season. Signed players read the per-year columns from the contracts
+// sheet (2027-28 … 2030-31) so future years no longer just repeat the 2026-27 figure;
+// anyone without a per-year value falls back to their 2026-27 salary.
+function salForYear(p, year){
+  const fsm = (typeof futureStatusMap!=='undefined' && futureStatusMap) ? futureStatusMap[p.name] : null;
+  switch(year){
+    case '2025-26': return p.salary || 0;
+    case '2026-27': return p.salary27 || p.salary || 0;
+    case '2027-28': return (fsm && fsm.sal2728) || p.salary27 || p.salary || 0;
+    case '2028-29': return (fsm && fsm.sal2829) || p.salary27 || p.salary || 0;
+    case '2029-30': return (fsm && fsm.sal2930) || p.salary27 || p.salary || 0;
+    case '2030-31': return (fsm && fsm.sal3031) || p.salary27 || p.salary || 0;
+    default: return p.salary27 || p.salary || 0;
+  }
+}
 function valClass(tv) { return tv>=2e7?'high':tv>=5e6?'medium':'low'; }
 function initials(n) { return n.split(' ').map(w=>w[0]).join(''); }
 function escDC(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
@@ -1450,7 +1470,7 @@ function renderFutureYearAdmin(year) {
       let firstReal = true;
       contractedByPos[pos].forEach(p => {
         const sc = p._ps.sc;
-        const sal = year === '2026-27' ? (p.salary27 || p.salary) : p.salary27 || p.salary;
+        const sal = salForYear(p, year);
         html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc} ${p.isDraftee?'draftee':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? '<span style="color:#15803d">'+pickLabel(p)+'</span>' : fmtSal(sal)}</div></div>`;
         firstReal = false;
       });
@@ -2554,7 +2574,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
       rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? `<strong>${p.name}</strong>` : ''}</td>`; });
       out += `</tr>`;
       out += `<tr class="dc-data">`;
-      rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? (p.isDraftee && (p.pick >= 31 || !(p.salary27 || p.salary)) ? pickLabel(p) : fmtSalFull(p.salary27 || p.salary)) : ''}</td>`; });
+      rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? (p.isDraftee && (p.pick >= 31 || !(p.salary27 || p.salary)) ? pickLabel(p) : fmtSalFull(salForYear(p, year))) : ''}</td>`; });
       out += `</tr>`;
     }
 
