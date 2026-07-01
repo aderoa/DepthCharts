@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-07-01b · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -829,6 +829,16 @@ async function fetchDraftPicks(fresh) {
       const nm = (r[COL_B_NAME]||'').trim();
       if (nm) bioByName[nm] = { position: (r[COL_B_POS]||'').trim(), headshot: maskImg((r[COL_B_HS]||'').trim()) };
     }
+
+    // Backfill headshots from the draft/prospect database (Section B) for any player whose
+    // roster row has none — e.g. a rookie who just signed: their contract is in the sheet
+    // but no headshot yet, while the draft database still has their photo.
+    const _hsNorm = function(x){ return (x||'').toLowerCase().replace(/[.'`]/g,'').replace(/-/g,' ').replace(/\s+/g,' ').trim(); };
+    const _bioHS = {};
+    Object.keys(bioByName).forEach(function(k){ if(bioByName[k] && bioByName[k].headshot) _bioHS[_hsNorm(k)] = bioByName[k].headshot; });
+    if (Array.isArray(allPlayers)) allPlayers.forEach(function(p){
+      if(!p.headshot){ const h=_bioHS[_hsNorm(p.name)]; if(h) p.headshot=h; }
+    });
 
     // Build pick → {team, player} from Section A.
     const pickInfo = {};
