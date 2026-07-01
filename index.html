@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-06-26c · 2026-27 status data-driven; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-07-01a · 2026-27 two-way reads ST 26-27 only (colorCode fallback for roster-only); effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -1077,7 +1077,7 @@ function renderDepthChart(teamAbbrev) {
       let sc = '', salDisplay = fmtSal(p.salary);
       if (isEliminated) {
         salDisplay = fmtSal(p.salary27 || p.salary);
-        sc = (p.status27 === 'TWO-WAY' || p.status27 === '10-DAY' || p.colorCode === 'twoway') ? 'two-way' : '';
+        sc = isTwoWay2627(p) ? 'two-way' : '';
         if (p.status27 === 'TEAM OPT') { sc = 'team-option'; }
         else if (p.status27 === 'PLAYER OPT') { sc = 'player-option'; }
         else if (p.status27 === 'NOT G') { sc = 'non-guaranteed'; }
@@ -1235,6 +1235,16 @@ function isRfaEligible(p) {
   return _isRFAList(p.name);
 }
 
+// True only if the player is two-way for the 2026-27 season. Explicit ST 26-27 is
+// authoritative; the 2025-26 colorCode is a fallback ONLY for roster-only players with no
+// 26-27 contract data (so a 2025-26 two-way like Alijah Martin who is GUARANTEED in 26-27
+// no longer shows as two-way next season).
+function isTwoWay2627(p){
+  const s=(p.status27||'').trim();
+  if(s==='TWO-WAY'||s==='10-DAY') return true;
+  if(s==='') return p.colorCode==='twoway';
+  return false;
+}
 function getFuturePlayerStatus(p, endThreshold, year) {
   // Drafted players only count toward 2026-27 (their rookie season). They do NOT
   // appear in later future years until they officially sign their first contract.
@@ -1255,7 +1265,7 @@ function getFuturePlayerStatus(p, endThreshold, year) {
     if (s27 === 'TEAM OPT')   return { status: 'to', sc: 'team-option' };
     if (s27 === 'PLAYER OPT')  return { status: 'po', sc: 'player-option' };
     if (s27 === 'NOT G' || s27 === 'PARTIAL G') return { status: 'ng', sc: 'non-guaranteed' };
-    if (s27 === 'TWO-WAY' || s27 === '10-DAY' || p.colorCode === 'twoway') return { status: 'tw', sc: 'two-way' };
+    if (isTwoWay2627(p)) return { status: 'tw', sc: 'two-way' };
     return { status: 'active', sc: '' };
   }
 
@@ -1276,7 +1286,7 @@ function getFuturePlayerStatus(p, endThreshold, year) {
   const isUnderContract = effEnd >= endThreshold;
   // Two-way for FA-label purposes also reads the 2026-27 status, since a signing's
   // two-way nature lives in ST 26-27 (not the blank 2025-26 status).
-  const isTwoWay = p.colorCode === 'twoway' || p.status27 === 'TWO-WAY' || p.status27 === '10-DAY';
+  const isTwoWay = isTwoWay2627(p);
   
   if (!isUnderContract) {
     // Only show as FA in the first year after the contract expires
@@ -2109,7 +2119,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
       if (p.status27 === 'TEAM OPT') return ' class="c-to"';
       if (p.status27 === 'PLAYER OPT') return ' class="c-po"';
       if (p.status27 === 'NOT G' || p.status27 === 'PARTIAL G') return ' class="c-ng"';
-      if (p.status27 === 'TWO-WAY' || p.status27 === '10-DAY' || p.colorCode === 'twoway') return ' class="c-2way"';
+      if (isTwoWay2627(p)) return ' class="c-2way"';
       return '';
     }
     if (p.contractStatus === '10-DAY') return ' class="c-10day"';
