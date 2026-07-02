@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN combiner headshots rewritten to direct CDN; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -647,8 +647,22 @@ function computeTradeValues(csvText) {
 // Route third-party headshot URLs through the hoopsmatic.com image proxy so the
 // published HTML never exposes the origin (e.g. proballers.com / espncdn.com) and
 // to dodge hotlink/referer blocks. Source URL is base64url-encoded in ?u=.
+function espnDirect(u) {
+  // ESPN's /combiner/ URLs stop resolving once a college player turns pro (returns the
+  // silhouette). The raw file at /i/headshots/... still works, so rewrite combiner -> direct.
+  if (typeof u !== 'string' || u.indexOf('espncdn.com/combiner') === -1) return u;
+  try {
+    const params = new URLSearchParams(u.split('?')[1] || '');
+    let img = params.get('img');
+    if (!img) return u;
+    img = decodeURIComponent(img);
+    if (img.charAt(0) !== '/') img = '/' + img;
+    return 'https://a.espncdn.com' + img;
+  } catch (e) { return u; }
+}
 function maskImg(u) {
   if (!u) return u;
+  u = espnDirect(u);   // fix retired-college ESPN combiner URLs before proxying
   if (u.indexOf('data:') === 0 || u.indexOf('/img?u=') !== -1) return u; // already masked/inline
   try {
     const b64 = btoa(u).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
