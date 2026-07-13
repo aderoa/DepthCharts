@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-07-13a · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -254,6 +254,11 @@ footer a { color:var(--accent); text-decoration:none; }
         <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy 2026-27 Teams</button>
         <button class="export-btn" id="copyElim2526Btn1" onclick="copyEliminatedHalf('first')">📷 Copy 2026-27 A-K</button>
         <button class="export-btn" id="copyElim2526Btn2" onclick="copyEliminatedHalf('second')">📷 Copy 2026-27 L-Z</button>
+      </span>
+      <span id="copyBtns2627" style="display:none">
+        <button class="export-btn" id="copyElimBtn1" onclick="copyEliminatedHalf('first')">📷 Copy Eliminated A-K</button>
+        <button class="export-btn" id="copyElimBtn2" onclick="copyEliminatedHalf('second')">📷 Copy Eliminated L-Z</button>
+        <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy All Eliminated</button>
         <span style="width:1px;height:20px;background:rgba(0,0,0,0.2);margin:0 4px;display:inline-block"></span>
         <button class="export-btn" onclick="copyFutureYearHalf('2027-28','first')">📷 27-28 ATL-MEM</button>
         <button class="export-btn" onclick="copyFutureYearHalf('2027-28','second')">📷 27-28 MIA-WAS</button>
@@ -263,11 +268,6 @@ footer a { color:var(--accent); text-decoration:none; }
         <button class="export-btn" onclick="copyFutureYearHalf('2029-30','second')">📷 29-30 MIA-WAS</button>
         <button class="export-btn" onclick="copyFutureYearHalf('2030-31','first')">📷 30-31 ATL-MEM</button>
         <button class="export-btn" onclick="copyFutureYearHalf('2030-31','second')">📷 30-31 MIA-WAS</button>
-      </span>
-      <span id="copyBtns2627" style="display:none">
-        <button class="export-btn" id="copyElimBtn1" onclick="copyEliminatedHalf('first')">📷 Copy Eliminated A-K</button>
-        <button class="export-btn" id="copyElimBtn2" onclick="copyEliminatedHalf('second')">📷 Copy Eliminated L-Z</button>
-        <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy All Eliminated</button>
       </span>
       <span id="copyBtnFuture" style="display:none">
         <button class="export-btn" id="copyFutureBtn1" onclick="copyFutureYearExport(_futureYear,0,15)">📷 Copy ATL-MEM</button>
