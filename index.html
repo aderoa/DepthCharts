@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-07-13a · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -254,6 +254,15 @@ footer a { color:var(--accent); text-decoration:none; }
         <button class="export-btn" onclick="copyEliminatedExport()">📷 Copy 2026-27 Teams</button>
         <button class="export-btn" id="copyElim2526Btn1" onclick="copyEliminatedHalf('first')">📷 Copy 2026-27 A-K</button>
         <button class="export-btn" id="copyElim2526Btn2" onclick="copyEliminatedHalf('second')">📷 Copy 2026-27 L-Z</button>
+        <span style="width:1px;height:20px;background:rgba(0,0,0,0.2);margin:0 4px;display:inline-block"></span>
+        <button class="export-btn" onclick="copyFutureYearHalf('2027-28','first')">📷 27-28 ATL-MEM</button>
+        <button class="export-btn" onclick="copyFutureYearHalf('2027-28','second')">📷 27-28 MIA-WAS</button>
+        <button class="export-btn" onclick="copyFutureYearHalf('2028-29','first')">📷 28-29 ATL-MEM</button>
+        <button class="export-btn" onclick="copyFutureYearHalf('2028-29','second')">📷 28-29 MIA-WAS</button>
+        <button class="export-btn" onclick="copyFutureYearHalf('2029-30','first')">📷 29-30 ATL-MEM</button>
+        <button class="export-btn" onclick="copyFutureYearHalf('2029-30','second')">📷 29-30 MIA-WAS</button>
+        <button class="export-btn" onclick="copyFutureYearHalf('2030-31','first')">📷 30-31 ATL-MEM</button>
+        <button class="export-btn" onclick="copyFutureYearHalf('2030-31','second')">📷 30-31 MIA-WAS</button>
       </span>
       <span id="copyBtns2627" style="display:none">
         <button class="export-btn" id="copyElimBtn1" onclick="copyEliminatedHalf('first')">📷 Copy Eliminated A-K</button>
@@ -2476,6 +2485,61 @@ async function copyFutureYearExport(year, startIdx, endIdx) {
   appendDrafteesToOrder(teamOrders);
   const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, teamSlice, year, endThreshold);
   
+  const orig = btn.textContent;
+  const blob = new Blob([out], {type: 'text/plain'});
+  navigator.clipboard.write([new ClipboardItem({'text/plain': blob})]).then(() => {
+    btn.textContent = '✓ Copied!';
+    btn.style.background = '#16a34a'; btn.style.color = 'white';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = out; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = orig, 2000);
+  });
+}
+
+// Copy one half of a FUTURE season's Presto export (2027-28..2030-31) directly
+// from the base 2026-27 page, WITHOUT switching to that season's tab first.
+// `half` is 'first' (ATL-MEM) or 'second' (MIA-WAS) — same NBA_TEAMS 0-15 / 15-30
+// split as copyFutureYearExport's on-tab buttons.
+//
+// CRITICAL: ordering is read from the TARGET year's localStorage key (fallback:
+// main order, then default position-grouped by trade value) — NOT the live DOM.
+// The DOM only reflects whichever season is currently rendered, so reading it
+// here would emit the on-screen season's order for every target year. Mirrors
+// copyEliminatedHalf's saved-key data-loading for exactly this reason.
+async function copyFutureYearHalf(year, half) {
+  const btn = event.target.closest('.export-btn');
+  // Ensure projected draft picks are loaded before building the export.
+  if (!draftLoaded) { try { await fetchDraftPicks(); } catch(e) {} }
+  const teamSlice = half === 'first' ? NBA_TEAMS.slice(0, 15) : NBA_TEAMS.slice(15, 30);
+
+  let savedOrders = {};
+  try { savedOrders = JSON.parse(localStorage.getItem(storageKeyForYear(year))) || {}; } catch (e) {}
+  const mainOrders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  const positions = ['PG', 'SG', 'SF', 'PF', 'C'];
+  const teamOrders = {};
+  for (const team of teamSlice) {
+    if (savedOrders[team.abbrev]) {
+      teamOrders[team.abbrev] = savedOrders[team.abbrev];
+    } else if (mainOrders[team.abbrev]) {
+      teamOrders[team.abbrev] = mainOrders[team.abbrev];
+    } else {
+      // Default: group by position sorted by trade value
+      const order = {};
+      const tp = allPlayers.filter(p => p.team === team.abbrev);
+      positions.forEach(pos => {
+        order[pos] = tp.filter(p => p.position === pos).sort((a, b) => b.tradeValue - a.tradeValue).map(p => p.name);
+      });
+      teamOrders[team.abbrev] = order;
+    }
+  }
+
+  const endThreshold = getFutureYearEndThreshold(year);
+  appendDrafteesToOrder(teamOrders);
+  const out = DC_PRESTO_CSS + '\n\n' + generateFutureYearExportHTML(teamOrders, teamSlice, year, endThreshold);
+
   const orig = btn.textContent;
   const blob = new Blob([out], {type: 'text/plain'});
   navigator.clipboard.write([new ClipboardItem({'text/plain': blob})]).then(() => {
