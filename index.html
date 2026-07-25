@@ -115,6 +115,12 @@ h1 { font-size:1.5rem; font-weight:800; margin-bottom:0.5rem; color:var(--text);
 /* Admin banner */
 .admin-banner { display:none; background:linear-gradient(135deg, var(--orange) 0%, #d97706 100%); color:var(--text); text-align:center; padding:0.5rem 1rem; font-weight:700; font-size:0.85rem; position:sticky; top:0; z-index:100; }
 .admin-banner.active { display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; }
+.stale-warning-banner { display:none; background:var(--red); color:#fff; padding:0.75rem 1.5rem; font-size:0.85rem; position:sticky; top:0; z-index:101; }
+.stale-warning-banner.active { display:block; }
+.stale-warning-banner .swb-title { font-weight:700; margin-bottom:0.3rem; }
+.stale-warning-banner .swb-item { display:inline-block; margin:0.15rem 0.6rem 0.15rem 0; }
+.stale-warning-banner .swb-dismiss { float:right; cursor:pointer; opacity:0.8; font-weight:700; }
+.stale-warning-banner .swb-dismiss:hover { opacity:1; }
 .admin-save-status { display:inline-block; font-weight:500; opacity:0; transition:opacity 0.3s; }
 .admin-save-status.visible { opacity:1; }
 .export-btn { padding:0.4rem 1rem; background:var(--text); color:var(--orange); border:1px solid var(--text); border-radius:8px; font-family:inherit; font-weight:600; font-size:0.8rem; cursor:pointer; transition:all 0.2s; }
@@ -239,6 +245,7 @@ footer a { color:var(--accent); text-decoration:none; }
   </style>
 </head>
 <body>
+  <div id="staleWarningBanner" class="stale-warning-banner"></div>
   <div id="adminBanner" class="admin-banner">
     <span>🔧 ADMIN MODE — Drag to reorder, synced to GitHub</span>
     <span id="saveStatus" class="admin-save-status">✓ Saved</span>
@@ -527,6 +534,54 @@ async function pushPredictionsJSON(orders) {
     console.warn('predictions.json push failed (order.json save is unaffected):', e);
   }
 }
+
+// =====================================================
+// STALE DEPTH CHART DETECTION — flags players who are on a team's live
+// roster (per the RealValue-backed roster sheet, already loaded for the
+// admin view) but completely absent from that team's depth chart (any
+// position, any rank, bench included). This is exactly the signal that
+// would have caught PHI's depth chart still showing Paul George / Kelly
+// Oubre after the LeBron James / Jaylen Brown trade -- a player who is
+// genuinely on the roster but nowhere in the depth chart at all is a
+// strong, mechanical sign the depth chart predates their arrival.
+// =====================================================
+const STALE_MIN_FLAG_SALARY = 2000000;  // filters out irrelevant two-way/fringe noise
+
+function detectStaleDepthChartEntries(players, orders) {
+  const inDepthChart = new Set();
+  for (const abbr of Object.keys(orders || {})) {
+    const teamOrder = orders[abbr] || {};
+    for (const pos of POSITIONS_ORDER) {
+      for (const raw of (teamOrder[pos] || [])) {
+        const name = cleanPlayerName(raw);
+        if (name) inDepthChart.add(`${abbr}::${name}`);
+      }
+    }
+  }
+  const flagged = [];
+  for (const p of (players || [])) {
+    if (!p.team || !p.name) continue;
+    const key = `${p.team}::${p.name}`;
+    if (!inDepthChart.has(key) && (p.salary >= STALE_MIN_FLAG_SALARY || p.tradeValue >= STALE_MIN_FLAG_SALARY)) {
+      flagged.push({ team: p.team, name: p.name, salary: p.salary, tradeValue: p.tradeValue });
+    }
+  }
+  return flagged;
+}
+
+function renderStaleWarningBanner(flagged) {
+  const el = document.getElementById('staleWarningBanner');
+  if (!el) return;
+  if (!flagged || !flagged.length) { el.classList.remove('active'); el.innerHTML = ''; return; }
+  const items = flagged
+    .sort((a, b) => a.team.localeCompare(b.team))
+    .map(f => `<span class="swb-item">${f.team}: ${escDC(f.name)}</span>`).join('');
+  el.innerHTML = `<span class="swb-dismiss" onclick="document.getElementById('staleWarningBanner').classList.remove('active')">✕ dismiss</span>`
+    + `<div class="swb-title">⚠️ ${flagged.length} player${flagged.length === 1 ? '' : 's'} on a live roster but missing from the depth chart entirely — may need manual placement:</div>`
+    + items;
+  el.classList.add('active');
+}
+
 
 
 // =====================================================
@@ -2840,6 +2895,7 @@ async function autoRefreshData() {
     if (cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) {} }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     await fetchDraftPicks(true);   // re-inject drafted players (roster parse wiped them) + pick up new picks
+    renderStaleWarningBanner(detectStaleDepthChartEntries(allPlayers, loadAllOrders()));
     // Re-render current view (stay on future year if active)
     if (_futureYear) renderFutureYearAdmin(_futureYear);
     else renderAdminAllTeams();
@@ -2868,6 +2924,7 @@ async function manualRefresh(btn) {
     if (cR.ok) { try { futureStatusMap = parseContractsCSV(await cR.text()); } catch(e) {} }
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) {}
     await fetchDraftPicks(true);   // re-inject drafted players (roster parse wiped them) + pick up new picks
+    renderStaleWarningBanner(detectStaleDepthChartEntries(allPlayers, loadAllOrders()));
     // Re-render current view (stay on future year if active)
     if (_futureYear) renderFutureYearAdmin(_futureYear);
     else renderAdminAllTeams();
@@ -2911,6 +2968,9 @@ async function init() {
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) { console.warn('Injuries JSON unavailable:', e); }
     await fetchDraftPicks(isAdmin);
     document.getElementById('loading').style.display = 'none';
+    if (isAdmin) {
+      renderStaleWarningBanner(detectStaleDepthChartEntries(allPlayers, ghOrders));
+    }
     if (isAdmin && !teamParam) {
       renderAdminAllTeams();
       setInterval(autoRefreshData, 60000);
