@@ -324,6 +324,9 @@ const ADMIN_KEY = 'hoopsmatic2025';
 const GH_TOKEN_KEY = 'depthcharts_gh_token';
 const GH_REPO = 'aderoa/DepthCharts';
 const GH_FILE = 'order.json';
+const GH_FILE_PREDICTIONS = 'predictions.json';
+const GH_API_PREDICTIONS = `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE_PREDICTIONS}`;
+let ghSHA_predictions = null;   // current SHA of predictions.json on GitHub (fetched lazily, cached after each push)
 const GH_API = `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`;
 let isAdmin = false;
 let ghSHA = null;         // current SHA of order.json on GitHub
@@ -341,7 +344,7 @@ function saveAllOrders(orders) {
   // Only push to GitHub for 25-26 (main season)
   if (isAdmin && _activeStorageKey === STORAGE_KEY) {
     clearTimeout(ghSaveTimer);
-    ghSaveTimer = setTimeout(() => pushToGitHub(orders), 2000);
+    ghSaveTimer = setTimeout(() => { pushToGitHub(orders); pushPredictionsJSON(orders); }, 2000);
   }
 }
 function saveTeamOrder(teamAbbrev, container) {
@@ -457,7 +460,75 @@ async function pushToGitHub(orders) {
 }
 
 // =====================================================
-// TEAMS & ALIASES
+// PREDICTIONS.JSON — a second, derived output alongside order.json,
+// pushed to GitHub in the same save cycle. Resolves starters/bench
+// directly (strips __SEPARATOR__/__SPACER__/__DRAFT__: bookkeeping that
+// the depth chart UI needs but a downstream consumer shouldn't have to
+// know about), so the prediction tool gets a clean, stable contract
+// that won't break if the depth chart's internal save format changes.
+// =====================================================
+const POSITIONS_ORDER = ['PG', 'SG', 'SF', 'PF', 'C'];
+
+function cleanPlayerName(raw) {
+  if (typeof raw !== 'string') return null;
+  if (raw === '__SEPARATOR__' || raw === '__SPACER__') return null;
+  return raw.indexOf('__DRAFT__:') === 0 ? raw.slice('__DRAFT__:'.length) : raw;
+}
+
+function buildPredictionsJSON(orders) {
+  const teams = {};
+  for (const abbr of Object.keys(orders)) {
+    const teamOrder = orders[abbr] || {};
+    const starters = {};
+    const bench = {};
+    for (const pos of POSITIONS_ORDER) {
+      const names = (teamOrder[pos] || []).map(cleanPlayerName).filter(Boolean);
+      starters[pos] = names[0] || null;
+      bench[pos] = names.slice(1);
+    }
+    teams[abbr] = { starters, bench };
+  }
+  return { generated_at: new Date().toISOString(), teams };
+}
+
+async function pushPredictionsJSON(orders) {
+  const token = getGHToken();
+  if (!token) return;   // predictions.json only pushes alongside an authenticated order.json save
+  try {
+    const predictions = buildPredictionsJSON(orders);
+    // Need the current SHA to update an existing file; fetch it lazily on
+    // first push per session (a GitHub PUT with no sha creates the file
+    // fresh, which is exactly right the very first time this ever runs).
+    if (ghSHA_predictions === null) {
+      try {
+        const getResp = await fetch(GH_API_PREDICTIONS, { headers: { 'Authorization': `token ${token}` } });
+        if (getResp.ok) { const d = await getResp.json(); ghSHA_predictions = d.sha; }
+      } catch (e) { /* leave null -> treated as create-new below */ }
+    }
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(predictions, null, 2))));
+    const body = {
+      message: `Update predictions.json — ${new Date().toLocaleString()}`,
+      content: content,
+      branch: 'main'
+    };
+    if (ghSHA_predictions) body.sha = ghSHA_predictions;
+    const resp = await fetch(GH_API_PREDICTIONS, {
+      method: 'PUT',
+      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (!resp.ok) throw new Error(`GitHub PUT ${resp.status}`);
+    const data = await resp.json();
+    ghSHA_predictions = data.content.sha;
+    console.log('Pushed predictions.json to GitHub (SHA: ' + ghSHA_predictions.slice(0,7) + ')');
+  } catch (e) {
+    // Non-fatal: predictions.json is a derived convenience file, never
+    // let a failure here interfere with the real order.json save.
+    console.warn('predictions.json push failed (order.json save is unaffected):', e);
+  }
+}
+
+
 // =====================================================
 const NBA_TEAMS = [
   {abbrev:'ATL',name:'Atlanta Hawks',logo:'https://cdn.nba.com/logos/nba/1610612737/global/L/logo.svg'},
@@ -1973,6 +2044,7 @@ function downloadOrderJSON() {
   btn.textContent = '⏳ Pushing...';
   btn.disabled = true;
   pushToGitHub(orders).then(() => {
+    pushPredictionsJSON(orders);
     btn.textContent = '✓ Pushed!';
     btn.style.background = '#16a34a'; btn.style.color = 'white';
     setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 2000);
