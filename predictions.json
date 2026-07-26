@@ -1,0 +1,1088 @@
+{
+  "generated_at": "2026-07-26T16:48:21.721Z",
+  "teams": {
+    "ATL": {
+      "starters": {
+        "PG": "CJ McCollum",
+        "SG": "Dyson Daniels",
+        "SF": "Luguentz Dort",
+        "PF": "Jalen Johnson",
+        "C": "Onyeka Okongwu"
+      },
+      "bench": {
+        "PG": [
+          "Kingston Flemings",
+          "Ryan Nembhard",
+          "RayJ Dennis",
+          "Keaton Wallace"
+        ],
+        "SG": [
+          "Nickeil Alexander-Walker",
+          "Buddy Hield",
+          "Devin Carter",
+          "Gabe Vincent"
+        ],
+        "SF": [
+          "Aaron Wiggins",
+          "Corey Kispert",
+          "Keshon Gilbert",
+          "Jonathan Kuminga"
+        ],
+        "PF": [
+          "Mouhamed Gueye",
+          "Asa Newell",
+          "Jalen Wilson",
+          "Christian Koloko"
+        ],
+        "C": [
+          "Jock Landale",
+          "Zuby Ejiofor",
+          "Henri Veesaar",
+          "Tony Bradley"
+        ]
+      }
+    },
+    "BOS": {
+      "starters": {
+        "PG": "Derrick White",
+        "SG": "Sam Hauser",
+        "SF": "Paul George",
+        "PF": "Jayson Tatum",
+        "C": "Neemias Queta"
+      },
+      "bench": {
+        "PG": [
+          "Mike Conley",
+          "Ron Harper Jr",
+          "Max Shulga"
+        ],
+        "SG": [
+          "Payton Pritchard",
+          "Baylor Scheierman",
+          "Dalano Banton"
+        ],
+        "SF": [
+          "Hugo Gonzalez",
+          "Dillon Mitchell",
+          "John Tonje"
+        ],
+        "PF": [
+          "Jordan Walsh",
+          "Chris Cenac",
+          "Amari Williams"
+        ],
+        "C": [
+          "Mitchell Robinson",
+          "Luka Garza"
+        ]
+      }
+    },
+    "BKN": {
+      "starters": {
+        "PG": "Egor Demin",
+        "SG": "Terance Mann",
+        "SF": "Michael Porter",
+        "PF": "Julius Randle",
+        "C": "Day'Ron Sharpe"
+      },
+      "bench": {
+        "PG": [
+          "Mikel Brown",
+          "Nolan Traore"
+        ],
+        "SG": [
+          "Ben Saraf",
+          "Drake Powell"
+        ],
+        "SF": [
+          "Keon Ellis",
+          "Josh Minott",
+          "Chaney Johnson",
+          "Malachi Smith"
+        ],
+        "PF": [
+          "Moritz Wagner",
+          "Joshua Jefferson",
+          "Tyler Bilodeau",
+          "Ochai Agbaji"
+        ],
+        "C": [
+          "Noah Clowney",
+          "Danny Wolf"
+        ]
+      }
+    },
+    "CHA": {
+      "starters": {
+        "PG": "Coby White",
+        "SG": "Kon Knueppel",
+        "SF": "Brandon Miller",
+        "PF": "Naz Reid",
+        "C": "Moussa Diabate"
+      },
+      "bench": {
+        "PG": [
+          "Christian Anderson",
+          "Tre Mann",
+          "Kylan Boswell",
+          "Antonio Reeves"
+        ],
+        "SG": [
+          "Grayson Allen",
+          "Sion James",
+          "Pat Connaughton"
+        ],
+        "SF": [
+          "Royce O'Neale",
+          "Liam McNeeley",
+          "Dorian Finney-Smith"
+        ],
+        "PF": [
+          "Grant Williams",
+          "Tidjane Salaun",
+          "Mouhamadou Gueye",
+          "Michael Ajayi",
+          "Tosan Evbuomwan"
+        ],
+        "C": [
+          "Ryan Kalkbrenner",
+          "Hannes Steinbach",
+          "PJ Hall"
+        ]
+      }
+    },
+    "CHI": {
+      "starters": {
+        "PG": "Josh Giddey",
+        "SG": "Norman Powell",
+        "SF": "Matas Buzelis",
+        "PF": "Caleb Wilson",
+        "C": "Nicolas Claxton"
+      },
+      "bench": {
+        "PG": [
+          "Rob Dillingham",
+          "Tre Jones",
+          "Yuki Kawamura"
+        ],
+        "SG": [
+          "Isaac Okoro",
+          "Dailyn Swain",
+          "Mac McClung"
+        ],
+        "SF": [
+          "Patrick Williams",
+          "Noa Essengue",
+          "Guerschon Yabusele"
+        ],
+        "PF": [
+          "Jalen Smith",
+          "Leonard Miller",
+          "Nick Richards"
+        ],
+        "C": [
+          "Zach Collins",
+          "Tobe Awaka",
+          "Lachlan Olbrich"
+        ]
+      }
+    },
+    "CLE": {
+      "starters": {
+        "PG": "Dennis Schroeder",
+        "SG": "Donovan Mitchell",
+        "SF": "Max Strus",
+        "PF": "Evan Mobley",
+        "C": "Jarrett Allen"
+      },
+      "bench": {
+        "PG": [
+          "Craig Porter",
+          "Tyrese Proctor",
+          "James Harden"
+        ],
+        "SG": [
+          "Sam Merrill",
+          "Meleek Thomas"
+        ],
+        "SF": [
+          "Jaylon Tyson",
+          "Tristan Enaruna"
+        ],
+        "PF": [
+          "Nae'Qwan Tomlin",
+          "Riley Minix",
+          "Larry Nance Jr"
+        ],
+        "C": [
+          "Thomas Bryant",
+          "Ernest Udeh",
+          "Olivier Sarr"
+        ]
+      }
+    },
+    "DAL": {
+      "starters": {
+        "PG": "Kyrie Irving",
+        "SG": "Klay Thompson",
+        "SF": "Cooper Flagg",
+        "PF": "PJ Washington",
+        "C": "Dereck Lively"
+      },
+      "bench": {
+        "PG": [
+          "Marcus Sasser",
+          "Sergio De Larrea",
+          "John Poulakidas",
+          "Brandon Williams"
+        ],
+        "SG": [
+          "Zaccharie Risacher",
+          "Max Christie",
+          "Jett Howard"
+        ],
+        "SF": [
+          "Santiago Aldama",
+          "Caleb Martin",
+          "Vsevolod Ishchenko"
+        ],
+        "PF": [
+          "Morez Johnson",
+          "Naji Marshall",
+          "Tarik Biberovic",
+          "Tyler Smith"
+        ],
+        "C": [
+          "Daniel Gafford",
+          "Moussa Cisse",
+          "Tobi Lawal",
+          "Dwight Powell"
+        ]
+      }
+    },
+    "DEN": {
+      "starters": {
+        "PG": "Jamal Murray",
+        "SG": "Christian Braun",
+        "SF": "Cameron Johnson",
+        "PF": "Aaron Gordon",
+        "C": "Nikola Jokic"
+      },
+      "bench": {
+        "PG": [
+          "KJ Simpson",
+          "Tyus Jones",
+          "Bruce Brown"
+        ],
+        "SG": [
+          "Julian Strawther",
+          "Alpha Diallo",
+          "Jalen Pickett"
+        ],
+        "SF": [
+          "Zeke Nnaji",
+          "Bryce Hopkins",
+          "Curtis Jones"
+        ],
+        "PF": [
+          "Marvin Bagley",
+          "Trevon Brazile",
+          "David Roddy",
+          "Spencer Jones"
+        ],
+        "C": [
+          "DaRon Holmes",
+          "Peyton Watson"
+        ]
+      }
+    },
+    "DET": {
+      "starters": {
+        "PG": "Cade Cunningham",
+        "SG": "Ausar Thompson",
+        "SF": "Duncan Robinson",
+        "PF": "John Collins",
+        "C": "Paul Reed"
+      },
+      "bench": {
+        "PG": [
+          "Daniss Jenkins",
+          "Ebuka Okorie"
+        ],
+        "SG": [
+          "Kevin Huerter",
+          "Isaiah Joe",
+          "Elijah Harkless"
+        ],
+        "SF": [
+          "Ron Holland",
+          "Gary Harris",
+          "Chaz Lanier",
+          "Wendell Moore"
+        ],
+        "PF": [
+          "Javonte Green",
+          "Taurean Prince",
+          "Isaac Jones"
+        ],
+        "C": [
+          "Tolu Smith",
+          "Ugonna Onyenso",
+          "Jalen Duren"
+        ]
+      }
+    },
+    "GSW": {
+      "starters": {
+        "PG": "Stephen Curry",
+        "SG": "Brandin Podziemski",
+        "SF": "Jimmy Butler",
+        "PF": "Yaxel Lendeborg",
+        "C": "Kristaps Porzingis"
+      },
+      "bench": {
+        "PG": [
+          "De'Anthony Melton",
+          "LJ Cryer",
+          "Jeenathan Williams"
+        ],
+        "SG": [
+          "Will Richard",
+          "Seth Curry"
+        ],
+        "SF": [
+          "Moses Moody",
+          "Lajae Jones",
+          "Gary Payton II"
+        ],
+        "PF": [
+          "Gui Santos",
+          "Malevy Leons",
+          "Draymond Green"
+        ],
+        "C": [
+          "Al Horford",
+          "Charles Bassey"
+        ]
+      }
+    },
+    "HOU": {
+      "starters": {
+        "PG": "Fred VanVleet",
+        "SG": "Amen Thompson",
+        "SF": "Kevin Durant",
+        "PF": "Jabari Smith",
+        "C": "Alperen Sengun"
+      },
+      "bench": {
+        "PG": [
+          "Marcus Smart",
+          "Bruce Thornton",
+          "Tristen Newton",
+          "Aaron Holiday"
+        ],
+        "SG": [
+          "Reed Sheppard",
+          "JD Davison"
+        ],
+        "SF": [
+          "Bogdan Bogdanovic",
+          "Jae'Sean Tate",
+          "Isaiah Crawford"
+        ],
+        "PF": [
+          "Tari Eason",
+          "Julian Phillips",
+          "Quadir Copeland",
+          "Jeff Green"
+        ],
+        "C": [
+          "Clint Capela",
+          "Steven Adams",
+          "Oscar Tshiebwe"
+        ]
+      }
+    },
+    "IND": {
+      "starters": {
+        "PG": "Tyrese Haliburton",
+        "SG": "Andrew Nembhard",
+        "SF": "Aaron Nesmith",
+        "PF": "Pascal Siakam",
+        "C": "Ivica Zubac"
+      },
+      "bench": {
+        "PG": [
+          "TJ McConnell",
+          "Braden Smith",
+          "Taelon Peter"
+        ],
+        "SG": [
+          "Ben Sheppard",
+          "Quenton Jackson",
+          "Ethan Thompson"
+        ],
+        "SF": [
+          "Kelly Oubre",
+          "Johnny Furphy",
+          "Kobe Brown"
+        ],
+        "PF": [
+          "Obi Toppin",
+          "Jarace Walker",
+          "Jalen Slawson"
+        ],
+        "C": [
+          "Jay Huff",
+          "Larry Nance Jr",
+          "Micah Potter"
+        ]
+      }
+    },
+    "LAC": {
+      "starters": {
+        "PG": "Darius Garland",
+        "SG": "Kris Dunn",
+        "SF": "Brandon Ingram",
+        "PF": "Rui Hachimura",
+        "C": "Brook Lopez"
+      },
+      "bench": {
+        "PG": [
+          "Keaton Wagler",
+          "Sean Pedulla",
+          "TyTy Washington"
+        ],
+        "SG": [
+          "Kobe Sanders",
+          "Cam Christie",
+          "Bradley Beal"
+        ],
+        "SF": [
+          "Jordan Miller",
+          "Gradey Dick",
+          "Nick Martinelli",
+          "Bennedict Mathurin"
+        ],
+        "PF": [
+          "Derrick Jones",
+          "Baba Miller",
+          "Nicolas Batum"
+        ],
+        "C": [
+          "Isaiah Jackson",
+          "Yanic Konan Niederhauser",
+          "Norchad Omier"
+        ]
+      }
+    },
+    "LAL": {
+      "starters": {
+        "PG": "Luka Doncic",
+        "SG": "Austin Reaves",
+        "SF": "Quentin Grimes",
+        "PF": "Jarred Vanderbilt",
+        "C": "Walker Kessler"
+      },
+      "bench": {
+        "PG": [
+          "Jaden Hardy",
+          "Bronny James",
+          "Peter Suder"
+        ],
+        "SG": [
+          "Collin Sexton",
+          "Ziaire Williams",
+          "Chris Manon",
+          "Nick Smith"
+        ],
+        "SF": [
+          "Matisse Thybulle",
+          "Cameron Carr",
+          "Adou Thiero",
+          "LeBron James"
+        ],
+        "PF": [
+          "Jake LaRavia",
+          "Dalton Knecht",
+          "AK Okereke",
+          "Maxi Kleber"
+        ],
+        "C": [
+          "Sandro Mamukelashvili",
+          "Kevon Looney",
+          "Arthur Kaluma",
+          "Drew Timme"
+        ]
+      }
+    },
+    "MEM": {
+      "starters": {
+        "PG": "Ty Jerome",
+        "SG": "Jaylen Wells",
+        "SF": "Cedric Coward",
+        "PF": "Cameron Boozer",
+        "C": "Zach Edey"
+      },
+      "bench": {
+        "PG": [
+          "Cam Spencer",
+          "Walter Clayton",
+          "Javon Small"
+        ],
+        "SG": [
+          "Scotty Pippen Jr",
+          "AJ Johnson",
+          "D'Angelo Russell"
+        ],
+        "SF": [
+          "Karim Lopez",
+          "Kris Murray",
+          "Richie Saunders",
+          "Jahmai Mashack"
+        ],
+        "PF": [
+          "Jerami Grant",
+          "Taylor Hendricks",
+          "Olivier-Maxence Prosper"
+        ],
+        "C": [
+          "Isaiah Stewart",
+          "Quinten Post",
+          "GG Jackson",
+          "Taj Gibson"
+        ]
+      }
+    },
+    "MIA": {
+      "starters": {
+        "PG": "Davion Mitchell",
+        "SG": "Andrew Wiggins",
+        "SF": "Pelle Larsson",
+        "PF": "Giannis Antetokounmpo",
+        "C": "Bam Adebayo"
+      },
+      "bench": {
+        "PG": [
+          "Dru Smith",
+          "Jahmir Young"
+        ],
+        "SG": [
+          "Tim Hardaway Jr",
+          "Ryan Conwell"
+        ],
+        "SF": [
+          "Simone Fontecchio",
+          "Myron Gardner",
+          "Trevor Keels"
+        ],
+        "PF": [
+          "Nikola Jovic",
+          "Keshad Johnson"
+        ],
+        "C": [
+          "Bobby Portis",
+          "Vladislav Goldin"
+        ]
+      }
+    },
+    "MIL": {
+      "starters": {
+        "PG": "Ryan Rollins",
+        "SG": "Tyler Herro",
+        "SF": "Jaime Jaquez",
+        "PF": "Kyle Kuzma",
+        "C": "Myles Turner"
+      },
+      "bench": {
+        "PG": [
+          "Brayden Burries",
+          "Kasparas Jakucionis",
+          "Kam Jones"
+        ],
+        "SG": [
+          "Kevin Porter",
+          "Caris LeVert",
+          "Cormac Ryan",
+          "Andre Jackson"
+        ],
+        "SF": [
+          "AJ Green",
+          "Gary Trent Jr",
+          "Pete Nance"
+        ],
+        "PF": [
+          "Nate Ament",
+          "Ousmane Dieng",
+          "Malique Lewis"
+        ],
+        "C": [
+          "Kel'el Ware",
+          "Jericho Sims",
+          "Bogoljub Markovic",
+          "Thanasis Antetokounmpo"
+        ]
+      }
+    },
+    "MIN": {
+      "starters": {
+        "PG": "LaMelo Ball",
+        "SG": "Ayo Dosunmu",
+        "SF": "Anthony Edwards",
+        "PF": "Jaden McDaniels",
+        "C": "Rudy Gobert"
+      },
+      "bench": {
+        "PG": [
+          "Bones Hyland",
+          "Zyon Pullin"
+        ],
+        "SG": [
+          "Terrence Shannon",
+          "Donte DiVincenzo"
+        ],
+        "SF": [
+          "Jaylen Clark",
+          "Josh Green"
+        ],
+        "PF": [
+          "Trey Lyles",
+          "Isaiah Evans",
+          "Trey Kaufman-Renn",
+          "Julian Phillips"
+        ],
+        "C": [
+          "Joan Beringer",
+          "Rocco Zikarsky",
+          "Enrique Freeman"
+        ]
+      }
+    },
+    "NOP": {
+      "starters": {
+        "PG": "Dejounte Murray",
+        "SG": "Herb Jones",
+        "SF": "Trey Murphy",
+        "PF": "Saddiq Bey",
+        "C": "Zion Williamson"
+      },
+      "bench": {
+        "PG": [
+          "Jeremiah Fears",
+          "Jordan Poole"
+        ],
+        "SG": [
+          "Bryce McGowens",
+          "Jaron Pierre"
+        ],
+        "SF": [
+          "Micah Peavy",
+          "Jordan Hawkins"
+        ],
+        "PF": [
+          "Derik Queen",
+          "Karlo Matkovic",
+          "Kevon Looney"
+        ],
+        "C": [
+          "Yves Missi",
+          "DeAndre Jordan",
+          "Hunter Dickinson",
+          "Josh Oduro"
+        ]
+      }
+    },
+    "NYK": {
+      "starters": {
+        "PG": "Jalen Brunson",
+        "SG": "OG Anunoby",
+        "SF": "Mikal Bridges",
+        "PF": "Josh Hart",
+        "C": "Karl-Anthony Towns"
+      },
+      "bench": {
+        "PG": [
+          "Jose Alvarado",
+          "Jack Kayil"
+        ],
+        "SG": [
+          "Miles McBride",
+          "Tyler Kolek",
+          "Kevin McCullar"
+        ],
+        "SF": [
+          "Jordan Clarkson",
+          "Tyler Nickel",
+          "Dillon Jones"
+        ],
+        "PF": [
+          "Landry Shamet",
+          "Pacome Dadiet",
+          "Jeremy Sochan"
+        ],
+        "C": [
+          "Andre Drummond",
+          "Mohamed Diawara",
+          "Trey Jemison"
+        ]
+      }
+    },
+    "OKC": {
+      "starters": {
+        "PG": "Shai Gilgeous-Alexander",
+        "SG": "Cason Wallace",
+        "SF": "Jalen Williams",
+        "PF": "Chet Holmgren",
+        "C": "Isaiah Hartenstein"
+      },
+      "bench": {
+        "PG": [
+          "Ajay Mitchell",
+          "Nikola Topic"
+        ],
+        "SG": [
+          "Alex Caruso",
+          "Bennett Stirtz",
+          "Otega Oweh"
+        ],
+        "SF": [
+          "Jared McCain",
+          "Brooks Barnhizer",
+          "Josh Dix",
+          "Payton Sandfort"
+        ],
+        "PF": [
+          "Jaylin Williams",
+          "Kenrich Williams"
+        ],
+        "C": [
+          "Aday Mara",
+          "Thomas Sorber"
+        ]
+      }
+    },
+    "ORL": {
+      "starters": {
+        "PG": "Jalen Suggs",
+        "SG": "Desmond Bane",
+        "SF": "Franz Wagner",
+        "PF": "Paolo Banchero",
+        "C": "Wendell Carter Jr"
+      },
+      "bench": {
+        "PG": [
+          "Anthony Black",
+          "Jevon Carter",
+          "Alex Morales"
+        ],
+        "SG": [
+          "Jamal Cain",
+          "Jase Richardson",
+          "Jett Howard"
+        ],
+        "SF": [
+          "Tristan Da Silva",
+          "Noah Penda"
+        ],
+        "PF": [
+          "Nikola Vucevic",
+          "Jonathan Isaac",
+          "Izaiyah Nelson"
+        ],
+        "C": [
+          "Goga Bitadze",
+          "Colin Castleton"
+        ]
+      }
+    },
+    "PHI": {
+      "starters": {
+        "PG": "Tyrese Maxey",
+        "SG": "VJ Edgecombe",
+        "SF": "Jaylen Brown",
+        "PF": "LeBron James",
+        "C": "Joel Embiid"
+      },
+      "bench": {
+        "PG": [
+          "Labaron Philon",
+          "Caleb Love",
+          "Dalen Terry"
+        ],
+        "SG": [
+          "Anfernee Simons",
+          "Kentavious Caldwell-Pope",
+          "Duke Miles",
+          "MarJon Beauchamp"
+        ],
+        "SF": [
+          "Dean Wade",
+          "Jabari Walker",
+          "Rayan Rupert"
+        ],
+        "PF": [
+          "Dominick Barlow",
+          "Justin Edwards",
+          "Johni Broome",
+          "Trendon Watford"
+        ],
+        "C": [
+          "Ariel Hukporti",
+          "Adem Bona"
+        ]
+      }
+    },
+    "PHX": {
+      "starters": {
+        "PG": "Jalen Green",
+        "SG": "Devin Booker",
+        "SF": "Dillon Brooks",
+        "PF": "Miles Bridges",
+        "C": "Mark Williams"
+      },
+      "bench": {
+        "PG": [
+          "Collin Gillespie",
+          "Jamaree Bouyea",
+          "Pat Spencer"
+        ],
+        "SG": [
+          "Jordan Goodwin",
+          "Haywood Highsmith",
+          "Koby Brea",
+          "Amir Coffey"
+        ],
+        "SF": [
+          "Luke Kennard",
+          "Rasheer Fleming",
+          "Isaiah Livers"
+        ],
+        "PF": [
+          "Ryan Dunn",
+          "Koa Peat",
+          "CJ Huntley"
+        ],
+        "C": [
+          "Oso Ighodaro",
+          "Khaman Maluach"
+        ]
+      }
+    },
+    "POR": {
+      "starters": {
+        "PG": "Ja Morant",
+        "SG": "Damian Lillard",
+        "SF": "Toumani Camara",
+        "PF": "Deni Avdija",
+        "C": "Donovan Clingan"
+      },
+      "bench": {
+        "PG": [
+          "Jrue Holiday",
+          "Vit Krejci"
+        ],
+        "SG": [
+          "Scoot Henderson",
+          "Chris Youngblood",
+          "Blake Wesley"
+        ],
+        "SF": [
+          "Shaedon Sharpe",
+          "Micah Potter",
+          "John Tonje"
+        ],
+        "PF": [
+          "Sidy Cissoko",
+          "Yang Hansen",
+          "Jayson Kent"
+        ],
+        "C": [
+          "Robert Williams",
+          "Branden Carlson"
+        ]
+      }
+    },
+    "SAC": {
+      "starters": {
+        "PG": "Darius Acuff",
+        "SG": "Zach LaVine",
+        "SF": "De'Andre Hunter",
+        "PF": "Keegan Murray",
+        "C": "Domantas Sabonis"
+      },
+      "bench": {
+        "PG": [
+          "Malik Monk",
+          "Isaiah Stevens",
+          "Russell Westbrook"
+        ],
+        "SG": [
+          "Nique Clifford",
+          "Emanuel Sharp",
+          "Adam Flagler",
+          "Killian Hayes"
+        ],
+        "SF": [
+          "Alex Karaban",
+          "Daeqwon Plowden",
+          "DeMar DeRozan"
+        ],
+        "PF": [
+          "Precious Achiuwa",
+          "Dylan Cardwell",
+          "Doug McDermott"
+        ],
+        "C": [
+          "Maxime Raynaud",
+          "Jonathan Mogbo",
+          "Drew Eubanks"
+        ]
+      }
+    },
+    "SAS": {
+      "starters": {
+        "PG": "De'Aaron Fox",
+        "SG": "Stephon Castle",
+        "SF": "Devin Vassell",
+        "PF": "Julian Champagnie",
+        "C": "Victor Wembanyama"
+      },
+      "bench": {
+        "PG": [
+          "Dylan Harper",
+          "Jordan McLaughlin",
+          "Ja'Kobi Gillespie"
+        ],
+        "SG": [
+          "Keldon Johnson",
+          "David Jones",
+          "Lindy Waters III"
+        ],
+        "SF": [
+          "Harrison Barnes",
+          "Carter Bryant",
+          "Emanuel Miller",
+          "Kelly Olynyk"
+        ],
+        "PF": [
+          "Tobias Harris",
+          "Jayden Quaintance",
+          "Maliq Brown",
+          "Mason Plumlee"
+        ],
+        "C": [
+          "Luke Kornet",
+          "Tarris Reed",
+          "Bismack Biyombo"
+        ]
+      }
+    },
+    "TOR": {
+      "starters": {
+        "PG": "Immanuel Quickley",
+        "SG": "RJ Barrett",
+        "SF": "Kawhi Leonard",
+        "PF": "Scottie Barnes",
+        "C": "Jakob Poeltl"
+      },
+      "bench": {
+        "PG": [
+          "Jamal Shead",
+          "Chucky Hepburn",
+          "Garrett Temple"
+        ],
+        "SG": [
+          "Ja'Kobe Walter",
+          "Jaden Bradley",
+          "AJ Lawson"
+        ],
+        "SF": [
+          "Allen Graves",
+          "Alijah Martin"
+        ],
+        "PF": [
+          "Kyle Anderson",
+          "Jamison Battle"
+        ],
+        "C": [
+          "Trayce Jackson-Davis",
+          "Collin Murray-Boyles"
+        ]
+      }
+    },
+    "UTA": {
+      "starters": {
+        "PG": "Keyonte George",
+        "SG": "Darryn Peterson",
+        "SF": "Lauri Markkanen",
+        "PF": "Jaren Jackson Jr",
+        "C": "Jusuf Nurkic"
+      },
+      "bench": {
+        "PG": [
+          "Isaiah Collier",
+          "Josh Okogie",
+          "Tamar Bates",
+          "Bez Mbeng"
+        ],
+        "SG": [
+          "Ace Bailey",
+          "Brice Sensabaugh",
+          "Trey Alexander",
+          "Hayden Gray"
+        ],
+        "SF": [
+          "Cody Williams",
+          "Sviatoslav Mykhailiuk",
+          "Blake Hinson"
+        ],
+        "PF": [
+          "Kyle Filipowski",
+          "John Konchar",
+          "Harrison Ingram",
+          "Kevin Love"
+        ],
+        "C": [
+          "Jaxson Hayes",
+          "Mo Bamba"
+        ]
+      }
+    },
+    "WAS": {
+      "starters": {
+        "PG": "Trae Young",
+        "SG": "Tre Johnson",
+        "SF": "AJ Dybantsa",
+        "PF": "Anthony Davis",
+        "C": "Alex Sarr"
+      },
+      "bench": {
+        "PG": [
+          "Carlton Carrington",
+          "Jamir Watkins",
+          "Sharife Cooper"
+        ],
+        "SG": [
+          "Khris Middleton",
+          "Kyshawn George"
+        ],
+        "SF": [
+          "Bilal Coulibaly",
+          "Will Riley",
+          "Leaky Black"
+        ],
+        "PF": [
+          "Cam Whitmore",
+          "Justin Champagnie",
+          "Julian Reese",
+          "Anthony Gill"
+        ],
+        "C": [
+          "Deandre Ayton",
+          "Tristan Vukcevic",
+          "Felix Okpara"
+        ]
+      }
+    }
+  }
+}
