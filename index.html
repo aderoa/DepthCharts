@@ -345,11 +345,23 @@ function loadAllOrders() {
   try { return JSON.parse(localStorage.getItem(_activeStorageKey)) || {}; }
   catch(e) { return {}; }
 }
+function loadOrdersForYear(year) {
+  // Like loadAllOrders(), but for a specific year regardless of which
+  // view is currently active -- used where a check needs a fixed season
+  // (e.g. 2026-27) independent of navigation state.
+  const key = storageKeyForYear(year);
+  if (key === STORAGE_KEY && ghOrdersCache) return ghOrdersCache;
+  try { return JSON.parse(localStorage.getItem(key)) || {}; }
+  catch(e) { return {}; }
+}
 function saveAllOrders(orders) {
   if (_activeStorageKey === STORAGE_KEY) ghOrdersCache = orders;
   try { localStorage.setItem(_activeStorageKey, JSON.stringify(orders)); } catch(e) {}
-  // Only push to GitHub for 25-26 (main season)
-  if (isAdmin && _activeStorageKey === STORAGE_KEY) {
+  // Push to GitHub for whichever season is the actively-maintained one.
+  // As of the 2026 offseason that's 2026-27, not the closed-out 2025-26
+  // season -- order.json/predictions.json should always represent the
+  // current operative depth chart, not a frozen historical one.
+  if (isAdmin && _activeStorageKey === storageKeyForYear('2026-27')) {
     clearTimeout(ghSaveTimer);
     ghSaveTimer = setTimeout(() => { pushToGitHub(orders); pushPredictionsJSON(orders); }, 2000);
   }
@@ -1405,10 +1417,17 @@ function showYearView(year) {
     _futureYear = null;
     _activeStorageKey = STORAGE_KEY;
     renderAdminAllTeams();
+    if (isAdmin) renderStaleWarningBanner(detectStaleDepthChartEntries(allPlayers, loadAllOrders()));
   } else {
     _futureYear = year;
     _activeStorageKey = storageKeyForYear(year);
     renderFutureYearAdmin(year);
+    // 2026-27 is the real, actively-maintained season right now (2026
+    // offseason) -- the staleness check is meaningful there. Genuinely
+    // further-future years (2027-28+) are speculative projections where
+    // "missing from the depth chart" isn't a real signal, so hide it.
+    if (isAdmin && is2627) renderStaleWarningBanner(detectStaleDepthChartEntries(allPlayers, loadAllOrders()));
+    else renderStaleWarningBanner([]);
   }
 }
 
@@ -2968,8 +2987,11 @@ async function init() {
     try { const ijR = await fetch(INJURIES_JSON_URL + '?t=' + Date.now()); if (ijR.ok) applyInjuriesJSON(await ijR.json()); } catch(e) { console.warn('Injuries JSON unavailable:', e); }
     await fetchDraftPicks(isAdmin);
     document.getElementById('loading').style.display = 'none';
-    if (isAdmin) {
-      renderStaleWarningBanner(detectStaleDepthChartEntries(allPlayers, ghOrders));
+    if (isAdmin && teamParam) {
+      // Single-team view never goes through showYearView, so it needs its
+      // own check here -- against 2026-27 specifically, the actively-
+      // maintained season now that 2025-26 is closed out.
+      renderStaleWarningBanner(detectStaleDepthChartEntries(allPlayers, loadOrdersForYear('2026-27')));
     }
     if (isAdmin && !teamParam) {
       renderAdminAllTeams();
