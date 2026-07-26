@@ -363,7 +363,16 @@ function saveAllOrders(orders) {
   // current operative depth chart, not a frozen historical one.
   if (isAdmin && _activeStorageKey === storageKeyForYear('2026-27')) {
     clearTimeout(ghSaveTimer);
-    ghSaveTimer = setTimeout(() => { pushToGitHub(orders); pushPredictionsJSON(orders); }, 2000);
+    ghSaveTimer = setTimeout(async () => {
+      await pushToGitHub(orders);
+      // Sequential, not concurrent: two PUTs hitting the same repo at
+      // nearly the same instant can race each other for the branch HEAD
+      // (each PUT creates a new commit) and GitHub rejects the second one
+      // with a 409 conflict -- confirmed directly from a real console log
+      // showing order.json's push landing fine and predictions.json's
+      // failing immediately after. Awaiting the first avoids the race.
+      await pushPredictionsJSON(orders);
+    }, 2000);
   }
 }
 function saveTeamOrder(teamAbbrev, container) {
