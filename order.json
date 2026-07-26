@@ -2,212 +2,251 @@
   "ATL": {
     "PG": [
       "CJ McCollum",
-      "Gabe Vincent",
-      "Keaton Wallace",
+      "Kingston Flemings",
+      "Ryan Nembhard",
+      "RayJ Dennis",
+      "__SPACER__",
       "__SEPARATOR__",
-      "RayJ Dennis"
+      "Keaton Wallace"
     ],
     "SG": [
+      "Dyson Daniels",
       "Nickeil Alexander-Walker",
-      "Corey Kispert",
       "Buddy Hield",
+      "Devin Carter",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Keshon Gilbert"
+      "Gabe Vincent"
     ],
     "SF": [
-      "Dyson Daniels",
-      "Jonathan Kuminga",
-      "Zaccharie Risacher",
-      "__SEPARATOR__"
+      "Luguentz Dort",
+      "Aaron Wiggins",
+      "Corey Kispert",
+      "Keshon Gilbert",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jonathan Kuminga"
     ],
     "PF": [
       "Jalen Johnson",
       "Mouhamed Gueye",
       "Asa Newell",
+      "Jalen Wilson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Christian Koloko"
     ],
     "C": [
       "Onyeka Okongwu",
-      "Tony Bradley",
+      "Jock Landale",
+      "Zuby Ejiofor",
+      "Henri Veesaar",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jock Landale"
+      "Tony Bradley"
     ]
   },
   "BOS": {
     "PG": [
       "Derrick White",
-      "Payton Pritchard",
-      "Max Shulga",
-      "__SEPARATOR__"
+      "Mike Conley",
+      "Ron Harper Jr",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Max Shulga"
     ],
     "SG": [
-      "Ron Harper Jr",
       "Sam Hauser",
-      "Dalano Banton",
+      "Payton Pritchard",
+      "Baylor Scheierman",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Dalano Banton"
+    ],
+    "SF": [
+      "Paul George",
+      "Hugo Gonzalez",
+      "Dillon Mitchell",
+      "__SPACER__",
       "__SEPARATOR__",
       "John Tonje"
     ],
-    "SF": [
-      "Jaylen Brown",
-      "Hugo Gonzalez",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Jayson Tatum"
-    ],
     "PF": [
-      "Baylor Scheierman",
+      "Jayson Tatum",
       "Jordan Walsh",
+      "Chris Cenac",
       "Amari Williams",
       "__SEPARATOR__"
     ],
     "C": [
-      "Luka Garza",
       "Neemias Queta",
-      "Nikola Vucevic",
+      "Mitchell Robinson",
+      "Luka Garza",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
   "BKN": {
     "PG": [
       "Egor Demin",
-      "Ben Saraf",
+      "Mikel Brown",
       "Nolan Traore",
-      "__SEPARATOR__",
-      "Tyson Etienne"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SG": [
-      "Drake Powell",
       "Terance Mann",
-      "Ziaire Williams",
-      "__SEPARATOR__",
-      "Jalen Wilson"
+      "Ben Saraf",
+      "Drake Powell",
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Michael Porter",
+      "Keon Ellis",
       "Josh Minott",
-      "Malachi Smith",
+      "Chaney Johnson",
       "__SEPARATOR__",
-      "Chaney Johnson"
+      "Malachi Smith"
     ],
     "PF": [
-      "Noah Clowney",
-      "Danny Wolf",
-      "__SPACER__",
+      "Julius Randle",
+      "Moritz Wagner",
+      "Joshua Jefferson",
+      "Tyler Bilodeau",
       "__SEPARATOR__",
       "Ochai Agbaji"
     ],
     "C": [
-      "Nicolas Claxton",
       "Day'Ron Sharpe",
+      "Noah Clowney",
+      "Danny Wolf",
       "__SPACER__",
-      "__SEPARATOR__",
-      "EJ Liddell"
+      "__SEPARATOR__"
     ]
   },
   "CHA": {
     "PG": [
-      "LaMelo Ball",
       "Coby White",
+      "Christian Anderson",
       "Tre Mann",
+      "Kylan Boswell",
+      "__SPACER__",
       "__SEPARATOR__",
       "Antonio Reeves"
     ],
     "SG": [
-      "Brandon Miller",
+      "Kon Knueppel",
+      "Grayson Allen",
       "Sion James",
-      "Liam McNeeley",
+      "Pat Connaughton",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
-      "Kon Knueppel",
-      "Josh Green",
-      "Pat Connaughton",
+      "Brandon Miller",
+      "Royce O'Neale",
+      "Liam McNeeley",
+      "Dorian Finney-Smith",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
-      "Miles Bridges",
+      "Naz Reid",
       "Grant Williams",
       "Tidjane Salaun",
+      "Mouhamadou Gueye",
+      "Michael Ajayi",
       "__SEPARATOR__",
-      "PJ Hall"
+      "Tosan Evbuomwan"
     ],
     "C": [
       "Moussa Diabate",
       "Ryan Kalkbrenner",
-      "Xavier Tillman",
-      "__SEPARATOR__",
-      "Tosan Evbuomwan"
+      "Hannes Steinbach",
+      "PJ Hall",
+      "__SPACER__",
+      "__SEPARATOR__"
     ]
   },
   "CHI": {
     "PG": [
-      "Tre Jones",
+      "Josh Giddey",
       "Rob Dillingham",
+      "Tre Jones",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Anfernee Simons",
       "Yuki Kawamura"
     ],
     "SG": [
-      "Josh Giddey",
-      "Patrick Williams",
+      "Norman Powell",
+      "Isaac Okoro",
+      "Dailyn Swain",
+      "__SPACER__",
       "__SEPARATOR__",
       "Mac McClung"
     ],
     "SF": [
-      "Isaac Okoro",
+      "Matas Buzelis",
+      "Patrick Williams",
       "Noa Essengue",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Collin Sexton"
+      "Guerschon Yabusele"
     ],
     "PF": [
-      "Matas Buzelis",
-      "Mouhamadou Gueye",
-      "__SEPARATOR__",
-      "Guerschon Yabusele",
-      "Lachlan Olbrich"
-    ],
-    "C": [
+      "Caleb Wilson",
       "Jalen Smith",
       "Leonard Miller",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Zach Collins",
       "Nick Richards"
+    ],
+    "C": [
+      "Nicolas Claxton",
+      "Zach Collins",
+      "Tobe Awaka",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Lachlan Olbrich"
     ]
   },
   "CLE": {
     "PG": [
-      "James Harden",
-      "Sam Merrill",
+      "Dennis Schroeder",
       "Craig Porter",
+      "Tyrese Proctor",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Dennis Schroeder"
+      "James Harden"
     ],
     "SG": [
       "Donovan Mitchell",
-      "Keon Ellis",
-      "Tyrese Proctor",
-      "__SEPARATOR__",
-      "Tristan Enaruna"
+      "Sam Merrill",
+      "Meleek Thomas",
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Max Strus",
-      "Dean Wade",
+      "Jaylon Tyson",
+      "Tristan Enaruna",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Evan Mobley",
-      "Jaylon Tyson",
       "Nae'Qwan Tomlin",
+      "Riley Minix",
       "__SEPARATOR__",
-      "Riley Minix"
+      "Larry Nance Jr"
     ],
     "C": [
       "Jarrett Allen",
       "Thomas Bryant",
-      "Larry Nance Jr",
+      "__SPACER__",
+      "Ernest Udeh",
       "__SEPARATOR__",
       "Olivier Sarr"
     ]
@@ -215,36 +254,39 @@
   "DAL": {
     "PG": [
       "Kyrie Irving",
-      "Ryan Nembhard",
-      "AJ Johnson",
+      "Marcus Sasser",
+      "Sergio De Larrea",
+      "John Poulakidas",
       "__SEPARATOR__",
       "Brandon Williams"
     ],
     "SG": [
-      "Cooper Flagg",
+      "Klay Thompson",
+      "Zaccharie Risacher",
       "Max Christie",
-      "John Poulakidas",
-      "__SEPARATOR__",
-      "Khris Middleton"
+      "Jett Howard",
+      "__SEPARATOR__"
     ],
     "SF": [
-      "Naji Marshall",
-      "Klay Thompson",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Moussa Cisse"
+      "Cooper Flagg",
+      "Santiago Aldama",
+      "Caleb Martin",
+      "Vsevolod Ishchenko",
+      "__SEPARATOR__"
     ],
     "PF": [
       "PJ Washington",
-      "Caleb Martin",
-      "Tyler Smith",
+      "Morez Johnson",
+      "Naji Marshall",
+      "Tarik Biberovic",
       "__SEPARATOR__",
-      "Marvin Bagley"
+      "Tyler Smith"
     ],
     "C": [
       "Dereck Lively",
       "Daniel Gafford",
-      "__SPACER__",
+      "Moussa Cisse",
+      "Tobi Lawal",
       "__SEPARATOR__",
       "Dwight Powell"
     ]
@@ -252,36 +294,37 @@
   "DEN": {
     "PG": [
       "Jamal Murray",
+      "KJ Simpson",
       "Tyus Jones",
-      "__SPACER__",
       "__SEPARATOR__",
-      "KJ Simpson"
+      "Bruce Brown"
     ],
     "SG": [
       "Christian Braun",
-      "Bruce Brown",
-      "Jalen Pickett",
+      "Julian Strawther",
+      "Alpha Diallo",
       "__SEPARATOR__",
-      "Curtis Jones"
+      "Jalen Pickett"
     ],
     "SF": [
       "Cameron Johnson",
-      "Tim Hardaway Jr",
+      "Zeke Nnaji",
+      "Bryce Hopkins",
       "__SEPARATOR__",
-      "David Roddy"
+      "Curtis Jones"
     ],
     "PF": [
-      "Spencer Jones",
-      "Julian Strawther",
-      "__SPACER__",
-      "Zeke Nnaji",
+      "Aaron Gordon",
+      "Marvin Bagley",
+      "Trevon Brazile",
       "__SEPARATOR__",
-      "Aaron Gordon"
+      "David Roddy",
+      "Spencer Jones"
     ],
     "C": [
       "Nikola Jokic",
-      "Jonas Valanciunas",
       "DaRon Holmes",
+      "__SPACER__",
       "__SEPARATOR__",
       "Peyton Watson"
     ]
@@ -289,139 +332,153 @@
   "DET": {
     "PG": [
       "Cade Cunningham",
-      "Marcus Sasser",
-      "Chaz Lanier",
+      "Daniss Jenkins",
+      "Ebuka Okorie",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
-      "Daniss Jenkins",
-      "Caris LeVert",
+      "Ausar Thompson",
       "Kevin Huerter",
+      "Isaiah Joe",
+      "__SPACER__",
+      "Elijah Harkless",
       "__SEPARATOR__"
     ],
     "SF": [
-      "Ausar Thompson",
       "Duncan Robinson",
       "Ron Holland",
+      "Gary Harris",
+      "Chaz Lanier",
+      "__SPACER__",
       "__SEPARATOR__",
       "Wendell Moore"
     ],
     "PF": [
-      "Tobias Harris",
-      "Isaiah Stewart",
+      "John Collins",
       "Javonte Green",
+      "Taurean Prince",
+      "Isaac Jones",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
-      "Jalen Duren",
       "Paul Reed",
       "Tolu Smith",
+      "Ugonna Onyenso",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Isaac Jones"
+      "Jalen Duren"
     ]
   },
   "GSW": {
     "PG": [
       "Stephen Curry",
-      "Pat Spencer",
+      "De'Anthony Melton",
+      "LJ Cryer",
       "__SPACER__",
       "__SEPARATOR__",
-      "LJ Cryer"
+      "Jeenathan Williams"
     ],
     "SG": [
       "Brandin Podziemski",
       "Will Richard",
-      "Seth Curry",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jimmy Butler",
-      "Jeenathan Williams"
+      "Seth Curry"
     ],
     "SF": [
-      "Gui Santos",
-      "De'Anthony Melton",
+      "Jimmy Butler",
+      "Moses Moody",
+      "Lajae Jones",
       "__SPACER__",
       "__SEPARATOR__",
-      "Moses Moody"
+      "Gary Payton II"
     ],
     "PF": [
-      "Draymond Green",
-      "Gary Payton II",
+      "Yaxel Lendeborg",
+      "Gui Santos",
+      "Malevy Leons",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Malevy Leons"
+      "Draymond Green"
     ],
     "C": [
       "Kristaps Porzingis",
       "Al Horford",
+      "__SPACER__",
       "Charles Bassey",
-      "__SEPARATOR__",
-      "Quinten Post"
+      "__SEPARATOR__"
     ]
   },
   "HOU": {
     "PG": [
-      "Amen Thompson",
-      "Aaron Holiday",
-      "JD Davison",
+      "Fred VanVleet",
+      "Marcus Smart",
+      "Bruce Thornton",
+      "Tristen Newton",
       "__SEPARATOR__",
-      "Fred VanVleet"
+      "Aaron Holiday"
     ],
     "SG": [
+      "Amen Thompson",
       "Reed Sheppard",
-      "Josh Okogie",
+      "JD Davison",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Tristen Newton"
+      "__SEPARATOR__"
     ],
     "SF": [
-      "Tari Eason",
+      "Kevin Durant",
+      "Bogdan Bogdanovic",
       "Jae'Sean Tate",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Isaiah Crawford"
+      "Isaiah Crawford",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Jabari Smith",
-      "Dorian Finney-Smith",
-      "Jeff Green",
+      "Tari Eason",
+      "Julian Phillips",
+      "Quadir Copeland",
       "__SEPARATOR__",
-      "Kevin Durant"
+      "Jeff Green"
     ],
     "C": [
       "Alperen Sengun",
       "Clint Capela",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Steven Adams"
+      "Steven Adams",
+      "Oscar Tshiebwe",
+      "__SEPARATOR__"
     ]
   },
   "IND": {
     "PG": [
       "Tyrese Haliburton",
       "TJ McConnell",
-      "Quenton Jackson",
+      "Braden Smith",
       "Taelon Peter",
       "__SEPARATOR__"
     ],
     "SG": [
       "Andrew Nembhard",
       "Ben Sheppard",
-      "Kam Jones",
-      "__SPACER__",
+      "Quenton Jackson",
+      "Ethan Thompson",
       "__SEPARATOR__"
     ],
     "SF": [
       "Aaron Nesmith",
-      "Jarace Walker",
-      "Ethan Thompson",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Kobe Brown"
+      "Kelly Oubre",
+      "Johnny Furphy",
+      "Kobe Brown",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Pascal Siakam",
       "Obi Toppin",
-      "Johnny Furphy",
+      "Jarace Walker",
       "__SPACER__",
       "__SEPARATOR__",
       "Jalen Slawson"
@@ -429,117 +486,133 @@
     "C": [
       "Ivica Zubac",
       "Jay Huff",
-      "Micah Potter",
+      "Larry Nance Jr",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Micah Potter"
     ]
   },
   "LAC": {
     "PG": [
       "Darius Garland",
-      "Kobe Sanders",
+      "Keaton Wagler",
+      "Sean Pedulla",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Sean Pedulla"
-    ],
-    "SG": [
-      "Kris Dunn",
-      "Bennedict Mathurin",
-      "Cam Christie",
       "__SEPARATOR__",
       "TyTy Washington"
     ],
-    "SF": [
-      "Kawhi Leonard",
-      "Jordan Miller",
-      "Bogdan Bogdanovic",
+    "SG": [
+      "Kris Dunn",
+      "Kobe Sanders",
+      "Cam Christie",
+      "__SPACER__",
       "__SEPARATOR__",
       "Bradley Beal"
     ],
-    "PF": [
-      "Derrick Jones",
-      "John Collins",
-      "Nicolas Batum",
+    "SF": [
+      "Brandon Ingram",
+      "Jordan Miller",
+      "Gradey Dick",
+      "Nick Martinelli",
       "__SEPARATOR__",
-      "Norchad Omier"
+      "Bennedict Mathurin"
+    ],
+    "PF": [
+      "Rui Hachimura",
+      "Derrick Jones",
+      "Baba Miller",
+      "__SEPARATOR__",
+      "Nicolas Batum"
     ],
     "C": [
       "Brook Lopez",
       "Isaiah Jackson",
       "__SPACER__",
+      "Yanic Konan Niederhauser",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Yanic Konan Niederhauser"
+      "Norchad Omier"
     ]
   },
   "LAL": {
     "PG": [
-      "Marcus Smart",
-      "Luke Kennard",
+      "Luka Doncic",
+      "Jaden Hardy",
       "Bronny James",
-      "__SEPARATOR__",
-      "Luka Doncic"
+      "Peter Suder",
+      "__SEPARATOR__"
     ],
     "SG": [
       "Austin Reaves",
-      "Adou Thiero",
-      "Nick Smith",
-      "__SEPARATOR__"
+      "Collin Sexton",
+      "Ziaire Williams",
+      "Chris Manon",
+      "__SEPARATOR__",
+      "Nick Smith"
     ],
     "SF": [
-      "LeBron James",
-      "Jarred Vanderbilt",
-      "Dalton Knecht",
+      "Quentin Grimes",
+      "Matisse Thybulle",
+      "Cameron Carr",
+      "Adou Thiero",
       "__SEPARATOR__",
-      "Chris Manon"
+      "LeBron James"
     ],
     "PF": [
-      "Rui Hachimura",
-      "Maxi Kleber",
+      "Jarred Vanderbilt",
       "Jake LaRavia",
-      "__SEPARATOR__"
+      "Dalton Knecht",
+      "AK Okereke",
+      "__SEPARATOR__",
+      "Maxi Kleber"
     ],
     "C": [
-      "Deandre Ayton",
-      "Jaxson Hayes",
-      "__SPACER__",
+      "Walker Kessler",
+      "Sandro Mamukelashvili",
+      "Kevon Looney",
+      "Arthur Kaluma",
       "__SEPARATOR__",
       "Drew Timme"
     ]
   },
   "MEM": {
     "PG": [
-      "Ja Morant",
       "Ty Jerome",
       "Cam Spencer",
+      "Walter Clayton",
       "Javon Small",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Jaylen Wells",
       "Scotty Pippen Jr",
-      "Walter Clayton",
+      "AJ Johnson",
+      "D'Angelo Russell",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Cedric Coward",
-      "Kentavious Caldwell-Pope",
+      "Karim Lopez",
+      "Kris Murray",
+      "Richie Saunders",
       "Jahmai Mashack",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Rayan Rupert"
+      "__SEPARATOR__"
     ],
     "PF": [
-      "Santiago Aldama",
-      "GG Jackson",
+      "Cameron Boozer",
+      "Jerami Grant",
       "Taylor Hendricks",
+      "Olivier-Maxence Prosper",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Zach Edey",
-      "Brandon Clarke",
-      "Olivier-Maxence Prosper",
+      "Isaiah Stewart",
+      "Quinten Post",
+      "GG Jackson",
       "Taj Gibson",
       "__SEPARATOR__"
     ]
@@ -547,35 +620,35 @@
   "MIA": {
     "PG": [
       "Davion Mitchell",
-      "Kasparas Jakucionis",
-      "Jahmir Young",
+      "Dru Smith",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Dru Smith"
+      "Jahmir Young"
     ],
     "SG": [
-      "Tyler Herro",
-      "Norman Powell",
+      "Andrew Wiggins",
+      "Tim Hardaway Jr",
+      "Ryan Conwell",
+      "__SEPARATOR__"
+    ],
+    "SF": [
+      "Pelle Larsson",
+      "Simone Fontecchio",
       "Myron Gardner",
       "__SEPARATOR__",
       "Trevor Keels"
     ],
-    "SF": [
-      "Andrew Wiggins",
-      "Jaime Jaquez",
-      "__SPACER__",
-      "__SEPARATOR__"
-    ],
     "PF": [
-      "Bam Adebayo",
+      "Giannis Antetokounmpo",
+      "Nikola Jovic",
       "__SPACER__",
-      "Simone Fontecchio",
-      "Keshad Johnson",
       "__SEPARATOR__",
-      "Nikola Jovic"
+      "Keshad Johnson"
     ],
     "C": [
-      "Kel'el Ware",
-      "Pelle Larsson",
+      "Bam Adebayo",
+      "Bobby Portis",
+      "__SPACER__",
       "__SEPARATOR__",
       "Vladislav Goldin"
     ]
@@ -583,141 +656,161 @@
   "MIL": {
     "PG": [
       "Ryan Rollins",
-      "AJ Green",
-      "Andre Jackson",
+      "Brayden Burries",
+      "Kasparas Jakucionis",
+      "Kam Jones",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
+      "Tyler Herro",
       "Kevin Porter",
-      "Gary Trent Jr",
+      "Caris LeVert",
       "Cormac Ryan",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Alex Antetokounmpo"
+      "Andre Jackson"
     ],
     "SF": [
-      "Kyle Kuzma",
-      "Taurean Prince",
-      "Gary Harris",
-      "__SEPARATOR__",
-      "Ousmane Dieng"
+      "Jaime Jaquez",
+      "AJ Green",
+      "Gary Trent Jr",
+      "__SPACER__",
+      "Pete Nance",
+      "__SEPARATOR__"
     ],
     "PF": [
-      "Giannis Antetokounmpo",
-      "Bobby Portis",
-      "Pete Nance",
-      "__SEPARATOR__",
-      "Thanasis Antetokounmpo"
+      "Kyle Kuzma",
+      "Nate Ament",
+      "Ousmane Dieng",
+      "Malique Lewis",
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "C": [
       "Myles Turner",
+      "Kel'el Ware",
       "Jericho Sims",
+      "Bogoljub Markovic",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Thanasis Antetokounmpo"
     ]
   },
   "MIN": {
     "PG": [
-      "Ayo Dosunmu",
-      "Mike Conley",
+      "LaMelo Ball",
+      "Bones Hyland",
+      "Zyon Pullin",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Zyon Pullin"
+      "__SEPARATOR__"
     ],
     "SG": [
-      "Anthony Edwards",
-      "Bones Hyland",
-      "Joe Ingles",
-      "__SEPARATOR__",
-      "Donte DiVincenzo"
+      "Ayo Dosunmu",
+      "Terrence Shannon",
+      "Donte DiVincenzo",
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SF": [
-      "Jaden McDaniels",
-      "Terrence Shannon",
+      "Anthony Edwards",
       "Jaylen Clark",
+      "Josh Green",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
-      "Julius Randle",
-      "Kyle Anderson",
-      "Julian Phillips",
+      "Jaden McDaniels",
+      "Trey Lyles",
+      "Isaiah Evans",
+      "Trey Kaufman-Renn",
       "__SEPARATOR__",
-      "Rocco Zikarsky"
+      "Julian Phillips"
     ],
     "C": [
       "Rudy Gobert",
-      "Naz Reid",
       "Joan Beringer",
-      "__SEPARATOR__",
-      "Enrique Freeman"
+      "Rocco Zikarsky",
+      "Enrique Freeman",
+      "__SEPARATOR__"
     ]
   },
   "NOP": {
     "PG": [
       "Dejounte Murray",
       "Jeremiah Fears",
+      "Jordan Poole",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Trey Alexander"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Herb Jones",
-      "Jordan Poole",
-      "Jordan Hawkins",
+      "Bryce McGowens",
+      "Jaron Pierre",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Trey Murphy",
       "Micah Peavy",
-      "Bryce McGowens",
-      "__SEPARATOR__",
-      "Josh Oduro"
+      "Jordan Hawkins",
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Saddiq Bey",
       "Derik Queen",
-      "Kevon Looney",
+      "Karlo Matkovic",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Hunter Dickinson"
+      "Kevon Looney"
     ],
     "C": [
       "Zion Williamson",
       "Yves Missi",
-      "Karlo Matkovic",
+      "DeAndre Jordan",
+      "Hunter Dickinson",
       "__SEPARATOR__",
-      "DeAndre Jordan"
+      "Josh Oduro"
     ]
   },
   "NYK": {
     "PG": [
       "Jalen Brunson",
       "Jose Alvarado",
-      "Tyler Kolek",
+      "Jack Kayil",
       "__SEPARATOR__"
     ],
     "SG": [
       "OG Anunoby",
       "Miles McBride",
-      "Pacome Dadiet",
-      "__SEPARATOR__"
+      "Tyler Kolek",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Kevin McCullar"
     ],
     "SF": [
       "Mikal Bridges",
       "Jordan Clarkson",
-      "Mohamed Diawara",
+      "Tyler Nickel",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Kevin McCullar"
+      "Dillon Jones"
     ],
     "PF": [
       "Josh Hart",
       "Landry Shamet",
-      "Jeremy Sochan",
+      "Pacome Dadiet",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Dillon Jones"
+      "Jeremy Sochan"
     ],
     "C": [
       "Karl-Anthony Towns",
-      "Mitchell Robinson",
-      "Ariel Hukporti",
+      "Andre Drummond",
+      "Mohamed Diawara",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Trey Jemison"
     ]
@@ -725,218 +818,242 @@
   "OKC": {
     "PG": [
       "Shai Gilgeous-Alexander",
-      "Isaiah Joe",
+      "Ajay Mitchell",
       "Nikola Topic",
-      "__SEPARATOR__",
-      "Ajay Mitchell"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SG": [
       "Cason Wallace",
-      "Jared McCain",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Brooks Barnhizer"
+      "Alex Caruso",
+      "Bennett Stirtz",
+      "Otega Oweh",
+      "__SEPARATOR__"
     ],
     "SF": [
-      "Luguentz Dort",
-      "Alex Caruso",
-      "Aaron Wiggins",
-      "__SEPARATOR__",
-      "Jalen Williams"
-    ],
-    "PF": [
-      "Chet Holmgren",
-      "Kenrich Williams",
-      "__SPACER__",
+      "Jalen Williams",
+      "Jared McCain",
+      "Brooks Barnhizer",
+      "Josh Dix",
       "__SEPARATOR__",
       "Payton Sandfort"
     ],
+    "PF": [
+      "Chet Holmgren",
+      "Jaylin Williams",
+      "Kenrich Williams",
+      "__SPACER__",
+      "__SEPARATOR__"
+    ],
     "C": [
       "Isaiah Hartenstein",
-      "Jaylin Williams",
-      "__SPACER__",
-      "__SEPARATOR__",
+      "Aday Mara",
       "Thomas Sorber",
-      "Branden Carlson"
+      "__SPACER__",
+      "__SEPARATOR__"
     ]
   },
   "ORL": {
     "PG": [
       "Jalen Suggs",
       "Anthony Black",
-      "Jett Howard",
-      "__SEPARATOR__",
-      "Alex Morales"
+      "Jevon Carter",
+      "Alex Morales",
+      "__SEPARATOR__"
     ],
     "SG": [
       "Desmond Bane",
-      "Jevon Carter",
+      "Jamal Cain",
       "Jase Richardson",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jett Howard"
     ],
     "SF": [
-      "Jamal Cain",
+      "Franz Wagner",
       "Tristan Da Silva",
       "Noah Penda",
-      "__SEPARATOR__",
-      "Franz Wagner"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Paolo Banchero",
-      "Moritz Wagner",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Jonathan Isaac"
+      "Nikola Vucevic",
+      "Jonathan Isaac",
+      "Izaiyah Nelson",
+      "__SEPARATOR__"
     ],
     "C": [
       "Wendell Carter Jr",
       "Goga Bitadze",
+      "Colin Castleton",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Colin Castleton"
+      "__SEPARATOR__"
     ]
   },
   "PHI": {
     "PG": [
       "Tyrese Maxey",
-      "Quentin Grimes",
-      "Kyle Lowry",
+      "Labaron Philon",
+      "Caleb Love",
+      "Dalen Terry",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "VJ Edgecombe",
-      "Jabari Walker",
-      "Dalen Terry",
+      "Anfernee Simons",
+      "Kentavious Caldwell-Pope",
+      "__SPACER__",
+      "Duke Miles",
       "__SEPARATOR__",
       "MarJon Beauchamp"
     ],
     "SF": [
-      "Kelly Oubre",
-      "Justin Edwards",
-      "Trendon Watford",
-      "__SEPARATOR__",
-      "Tyrese Martin"
+      "Jaylen Brown",
+      "Dean Wade",
+      "Jabari Walker",
+      "Rayan Rupert",
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "PF": [
-      "Paul George",
+      "LeBron James",
       "Dominick Barlow",
+      "Justin Edwards",
       "Johni Broome",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Trendon Watford"
     ],
     "C": [
       "Joel Embiid",
-      "Andre Drummond",
+      "Ariel Hukporti",
       "Adem Bona",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ]
   },
   "PHX": {
     "PG": [
+      "Jalen Green",
       "Collin Gillespie",
-      "Grayson Allen",
-      "__SPACER__",
       "Jamaree Bouyea",
-      "__SEPARATOR__",
-      "Koby Brea"
+      "__SPACER__",
+      "Pat Spencer",
+      "__SEPARATOR__"
     ],
     "SG": [
-      "Jalen Green",
+      "Devin Booker",
+      "Jordan Goodwin",
       "Haywood Highsmith",
-      "Amir Coffey",
+      "Koby Brea",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Jordan Goodwin"
+      "Amir Coffey"
     ],
     "SF": [
-      "Devin Booker",
-      "Ryan Dunn",
+      "Dillon Brooks",
+      "Luke Kennard",
+      "Rasheer Fleming",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Livers"
     ],
     "PF": [
-      "Dillon Brooks",
-      "Royce O'Neale",
-      "Rasheer Fleming",
-      "__SEPARATOR__",
-      "CJ Huntley"
+      "Miles Bridges",
+      "Ryan Dunn",
+      "Koa Peat",
+      "CJ Huntley",
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "C": [
+      "Mark Williams",
       "Oso Ighodaro",
       "Khaman Maluach",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Mark Williams"
+      "__SPACER__",
+      "__SEPARATOR__"
     ]
   },
   "POR": {
     "PG": [
-      "Scoot Henderson",
-      "Shaedon Sharpe",
-      "Blake Wesley",
-      "__SEPARATOR__",
-      "Caleb Love"
+      "Ja Morant",
+      "Jrue Holiday",
+      "Vit Krejci",
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SG": [
-      "Jrue Holiday",
-      "Sidy Cissoko",
-      "Matisse Thybulle",
+      "Damian Lillard",
+      "Scoot Henderson",
+      "Chris Youngblood",
       "__SPACER__",
       "__SEPARATOR__",
-      "Damian Lillard"
+      "Blake Wesley"
     ],
     "SF": [
       "Toumani Camara",
-      "Kris Murray",
-      "Vit Krejci",
-      "__SEPARATOR__",
-      "Chris Youngblood"
+      "Shaedon Sharpe",
+      "Micah Potter",
+      "John Tonje",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Deni Avdija",
-      "Jerami Grant",
-      "__SEPARATOR__",
-      "Jayson Kent"
+      "Sidy Cissoko",
+      "Yang Hansen",
+      "Jayson Kent",
+      "__SEPARATOR__"
     ],
     "C": [
       "Donovan Clingan",
       "Robert Williams",
-      "Yang Hansen",
+      "Branden Carlson",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
   "SAC": {
     "PG": [
-      "Zach LaVine",
-      "Devin Carter",
+      "Darius Acuff",
+      "Malik Monk",
       "Isaiah Stevens",
+      "__SPACER__",
       "__SEPARATOR__",
       "Russell Westbrook"
     ],
     "SG": [
-      "DeMar DeRozan",
-      "Malik Monk",
-      "Killian Hayes",
+      "Zach LaVine",
+      "Nique Clifford",
+      "Emanuel Sharp",
+      "Adam Flagler",
       "__SEPARATOR__",
-      "Doug McDermott"
+      "Killian Hayes"
     ],
     "SF": [
       "De'Andre Hunter",
-      "Nique Clifford",
+      "Alex Karaban",
+      "Daeqwon Plowden",
       "__SPACER__",
       "__SEPARATOR__",
-      "Daeqwon Plowden"
+      "DeMar DeRozan"
     ],
     "PF": [
       "Keegan Murray",
+      "Precious Achiuwa",
       "Dylan Cardwell",
       "__SPACER__",
       "__SEPARATOR__",
-      "Precious Achiuwa",
-      "Patrick Baldwin"
+      "Doug McDermott"
     ],
     "C": [
       "Domantas Sabonis",
       "Maxime Raynaud",
+      "Jonathan Mogbo",
       "__SPACER__",
       "__SEPARATOR__",
       "Drew Eubanks"
@@ -947,69 +1064,78 @@
       "De'Aaron Fox",
       "Dylan Harper",
       "Jordan McLaughlin",
+      "Ja'Kobi Gillespie",
       "__SEPARATOR__"
     ],
     "SG": [
       "Stephon Castle",
       "Keldon Johnson",
-      "Lindy Waters III",
+      "David Jones",
+      "__SPACER__",
       "__SEPARATOR__",
-      "David Jones"
+      "Lindy Waters III"
     ],
     "SF": [
       "Devin Vassell",
       "Harrison Barnes",
-      "Kelly Olynyk",
+      "Carter Bryant",
+      "Emanuel Miller",
       "__SEPARATOR__",
-      "Emanuel Miller"
+      "Kelly Olynyk"
     ],
     "PF": [
       "Julian Champagnie",
-      "Carter Bryant",
-      "Bismack Biyombo",
+      "Tobias Harris",
+      "Jayden Quaintance",
+      "Maliq Brown",
       "__SEPARATOR__",
-      "Harrison Ingram"
+      "Mason Plumlee"
     ],
     "C": [
       "Victor Wembanyama",
       "Luke Kornet",
-      "Mason Plumlee",
-      "__SEPARATOR__"
+      "Tarris Reed",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Bismack Biyombo"
     ]
   },
   "TOR": {
     "PG": [
+      "Immanuel Quickley",
       "Jamal Shead",
-      "AJ Lawson",
-      "__SEPARATOR__",
-      "Chucky Hepburn"
-    ],
-    "SG": [
-      "Ja'Kobe Walter",
-      "Gradey Dick",
-      "Garrett Temple",
-      "__SEPARATOR__",
-      "Immanuel Quickley"
-    ],
-    "SF": [
-      "RJ Barrett",
-      "Jamison Battle",
+      "Chucky Hepburn",
       "__SPACER__",
       "__SEPARATOR__",
-      "Alijah Martin"
+      "Garrett Temple"
+    ],
+    "SG": [
+      "RJ Barrett",
+      "Ja'Kobe Walter",
+      "Jaden Bradley",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "AJ Lawson"
+    ],
+    "SF": [
+      "Kawhi Leonard",
+      "Allen Graves",
+      "Alijah Martin",
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Scottie Barnes",
-      "Collin Murray-Boyles",
-      "Trayce Jackson-Davis",
+      "Kyle Anderson",
+      "Jamison Battle",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Brandon Ingram"
+      "__SEPARATOR__"
     ],
     "C": [
       "Jakob Poeltl",
-      "Sandro Mamukelashvili",
-      "Jonathan Mogbo",
+      "Trayce Jackson-Davis",
+      "Collin Murray-Boyles",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
@@ -1017,75 +1143,84 @@
     "PG": [
       "Keyonte George",
       "Isaiah Collier",
-      "Bez Mbeng",
+      "Josh Okogie",
+      "Tamar Bates",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Elijah Harkless"
+      "Bez Mbeng"
     ],
     "SG": [
+      "Darryn Peterson",
       "Ace Bailey",
       "Brice Sensabaugh",
-      "Hayden Gray",
+      "Trey Alexander",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Kevin Love"
+      "Hayden Gray"
     ],
     "SF": [
       "Lauri Markkanen",
+      "Cody Williams",
       "Sviatoslav Mykhailiuk",
       "Blake Hinson",
-      "__SEPARATOR__",
-      "Jusuf Nurkic"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Jaren Jackson Jr",
+      "Kyle Filipowski",
       "John Konchar",
+      "Harrison Ingram",
       "__SPACER__",
       "__SEPARATOR__",
-      "Oscar Tshiebwe"
+      "Kevin Love"
     ],
     "C": [
-      "Kyle Filipowski",
-      "Cody Williams",
+      "Jusuf Nurkic",
+      "Jaxson Hayes",
+      "Mo Bamba",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Walker Kessler"
+      "__SPACER__",
+      "__SEPARATOR__"
     ]
   },
   "WAS": {
     "PG": [
       "Trae Young",
-      "Tre Johnson",
-      "Jaden Hardy",
-      "D'Angelo Russell",
+      "Carlton Carrington",
+      "Jamir Watkins",
+      "__SPACER__",
       "__SEPARATOR__",
       "Sharife Cooper"
     ],
     "SG": [
-      "Bilal Coulibaly",
-      "Carlton Carrington",
-      "Jamir Watkins",
+      "Tre Johnson",
+      "Khris Middleton",
+      "Kyshawn George",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
-      "Kyshawn George",
-      "Justin Champagnie",
-      "Leaky Black",
+      "AJ Dybantsa",
+      "Bilal Coulibaly",
+      "Will Riley",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Leaky Black"
     ],
     "PF": [
       "Anthony Davis",
-      "Will Riley",
       "Cam Whitmore",
-      "__SPACER__",
+      "Justin Champagnie",
+      "Julian Reese",
       "__SEPARATOR__",
       "Anthony Gill"
     ],
     "C": [
       "Alex Sarr",
+      "Deandre Ayton",
       "Tristan Vukcevic",
-      "Julian Reese",
-      "__SPACER__",
+      "Felix Okpara",
       "__SEPARATOR__"
     ]
   }
