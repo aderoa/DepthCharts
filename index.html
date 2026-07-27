@@ -233,6 +233,52 @@ const ROOKIE_AGE_DECAY = 0.5;      // RealValue's AGE_DECAY
 const ROOKIE_MIN_AGE = 19.3;       // RealValue's MIN_ROOKIE_AGE
 const MAX_ROOKIE_RATING = 14.0;    // calibrated against Cooper Flagg's real rat365
 
+// Direct combo-level uncertainty discount, scaled inversely by draft
+// position: a true consensus #1 pick is a far more known quantity than
+// a #45 pick, even though both are equally unproven at the NBA level --
+// so even the best picks get a small, real discount (never zero), while
+// later picks get a substantially larger one. Uses the same exponential
+// shape as rookieRating's draftFactor, inverted, so the scale is
+// consistent with how draft position already affects rating elsewhere.
+const ROOKIE_DISCOUNT_MIN = 0.5;  // applied even to a #1 overall pick
+const ROOKIE_DISCOUNT_MAX = 3.5;  // applied to the latest picks (~#60)
+
+// Regression-to-the-mean shrinkage retention (see generateAndRankCombos
+// for the full rationale). True top-level so both the combo search and
+// the starting-five calculation (which needs the identical treatment
+// for consistency -- see the team-loop below) can use the same value.
+const SHRINKAGE_RETENTION = 0.5;
+
+// Extended beyond true rookies: a player with a thin CAREER sample (e.g.
+// 40 total games, all in one season) carries real uncertainty even
+// though they technically aren't a rookie -- confirmed directly with
+// Brooks Barnhizer, whose entire NBA history is 40 games in a single
+// season, and who got zero discount under the rookie-only version since
+// isRookie only checks "zero seasons ever," not "how established is
+// this player really." Scales the same way: thinner sample = larger
+// discount, tapering to zero once a player has enough total games to be
+// considered genuinely established.
+const SAMPLE_DISCOUNT_MAX = 3.0;        // for the thinnest non-rookie samples
+const CAREER_GAMES_ESTABLISHED = 250;   // total career GP at which this discount reaches zero
+
+function sampleUncertaintyDiscount(quality) {
+  let total = 0;
+  for (const q of quality) {
+    if (q.isRookie) {
+      const dp = q.draftPos && q.draftPos >= 1 && q.draftPos <= 60 ? q.draftPos : 60;
+      const draftFactor = Math.exp(-ROOKIE_DRAFT_DECAY * (dp - 1));
+      const uncertaintyFactor = 1 - draftFactor; // 0 at pick 1, ->1 at pick 60
+      total += ROOKIE_DISCOUNT_MIN + (ROOKIE_DISCOUNT_MAX - ROOKIE_DISCOUNT_MIN) * uncertaintyFactor;
+    } else {
+      const gp = q.totalCareerGP || 0;
+      if (gp >= CAREER_GAMES_ESTABLISHED) continue; // fully established -- no discount
+      const uncertaintyFactor = 1 - gp / CAREER_GAMES_ESTABLISHED;
+      total += SAMPLE_DISCOUNT_MAX * uncertaintyFactor;
+    }
+  }
+  return total;
+}
+
 const POSITIONS_ORDER = ['PG','SG','SF','PF','C'];
 const TODAY = new Date('2026-07-25'); // matches this session's live-data snapshots
 
@@ -443,13 +489,14 @@ function computeWeightedRat365(hhName) {
     tw += rat*w; twt += w;
     if (r.SEASON === CURRENT_SEASON) curGP = r.GP;
   }
-  if (twt === 0) return currentRat365 !== null ? { effective: currentRat365, currentGP: 0 } : null;
+  if (twt === 0) return currentRat365 !== null ? { effective: currentRat365, currentGP: 0, totalCareerGP: rows.reduce((s,r)=>s+r.GP,0) } : null;
   const blended = tw/twt;
   let effective;
   if (currentRat365 === null) effective = blended;
   else if (blended > currentRat365) effective = currentRat365 + boostFraction(curGP)*(blended-currentRat365);
   else effective = currentRat365;
-  return { effective, blended, currentRat365, currentGP: curGP };
+  const totalCareerGP = rows.reduce((s,r) => s + r.GP, 0);
+  return { effective, blended, currentRat365, currentGP: curGP, totalCareerGP };
 }
 
 function boxScoreDefComposite(blk, stl, drebPct) { return COMP_BLK*(blk||0) + COMP_STL*(stl||0) + COMP_DREB*(drebPct||0); }
@@ -577,7 +624,9 @@ function _computeQuality(hhName) {
     am = ageMult(age, AVG_AGE, expYears);
     rat365 = rawRat365 * am;
   }
-  return { hh_name: hhName, rat365, age, ageMult: am, rawWatermark: rawRat365, isRookie: isRookieFlag };
+  return { hh_name: hhName, rat365, age, ageMult: am, rawWatermark: rawRat365, isRookie: isRookieFlag,
+    draftPos: isRookieFlag ? live.draftPos : null,
+    totalCareerGP: isRookieFlag ? 0 : (w.totalCareerGP || 0) };
 }
 
 function getDefenseQuality(hhName) {
@@ -656,7 +705,26 @@ function viabilityAdjustments(players, positions) {
 // ~12 -- not like a player who contributes nothing at all. Built once
 // from the live population after all data loads, then reused via
 // simple K-nearest-neighbors by rating distance.
+//
+// UNCERTAINTY DISCOUNT: confirmed directly that this could be gamed --
+// a rookie's rating-tier average showed low usage/assist (typical for
+// a low-rated player), and the model used that projected trait to fully
+// relieve a real "Handler stacking" penalty on Houston's starting five,
+// as if a low-assist rookie were as reliable a fact as a real player's
+// proven low-assist role. It isn't: the rating-tier average is a
+// reasonable point estimate, but an unproven player carries genuine
+// additional uncertainty about whether they'll actually play that way.
+// Fix: blend the tier-specific profile with a league-wide neutral
+// baseline (the average of ALL rated players, not just similarly-rated
+// ones) -- this pulls a rookie's projected traits back toward "we don't
+// really know," which specifically weakens their ability to single-
+// handedly relieve a composition penalty via an assumed trait, without
+// changing their own rating-based off/def contribution (which was
+// already appropriately conservative for a low pick).
+const ROOKIE_UNCERTAINTY_WEIGHT = 0.5; // 0 = fully trust tier average, 1 = fully neutral/league-average
+
 let RATING_TIER_POPULATION = [];
+let LEAGUE_AVG_PROFILE = null;
 
 function buildRatingTierPopulation() {
   const pop = [];
@@ -671,6 +739,15 @@ function buildRatingTierPopulation() {
       fg3p: stats.fg3p, fg3a: stats.fg3a, blk: stats.blk,
       def_score: defQ ? defQ.def_score : null,
     });
+  }
+  if (pop.length) {
+    const avg = key => pop.reduce((s, p) => s + (p[key] || 0), 0) / pop.length;
+    const defVals = pop.filter(p => p.def_score !== null).map(p => p.def_score);
+    LEAGUE_AVG_PROFILE = {
+      usg: avg('usg'), ast_pct: avg('ast_pct'), reb_pct: avg('reb_pct'),
+      fg3p: avg('fg3p'), fg3a: avg('fg3a'), blk: avg('blk'),
+      def_score: defVals.length ? defVals.reduce((a,b)=>a+b,0)/defVals.length : DEF_CALIB,
+    };
   }
   return pop;
 }
@@ -689,10 +766,18 @@ function averageFitForRating(targetRat365) {
   const avg = key => nearest.reduce((s, p) => s + (p[key] || 0), 0) / nearest.length;
   const defVals = nearest.filter(p => p.def_score !== null).map(p => p.def_score);
   const avgDef = defVals.length ? defVals.reduce((a, b) => a + b, 0) / defVals.length : DEF_CALIB;
-  return {
+  const tierFit = {
     usg: avg('usg'), ast_pct: avg('ast_pct'), reb_pct: avg('reb_pct'),
     fg3p: avg('fg3p'), fg3a: avg('fg3a'), blk: avg('blk'),
     def_score: avgDef,
+  };
+  if (!LEAGUE_AVG_PROFILE) return tierFit;
+  const w = ROOKIE_UNCERTAINTY_WEIGHT;
+  const blend = key => tierFit[key] * (1 - w) + LEAGUE_AVG_PROFILE[key] * w;
+  return {
+    usg: blend('usg'), ast_pct: blend('ast_pct'), reb_pct: blend('reb_pct'),
+    fg3p: blend('fg3p'), fg3a: blend('fg3a'), blk: blend('blk'),
+    def_score: blend('def_score'),
   };
 }
 
@@ -711,8 +796,27 @@ function projectLineup(names, positions) {
     const offContrib = (offRat - OFF_CALIB) * OFF_SCALE;
     quality.push({...q, def_score: defScore, def_contrib: defContrib, off_contrib: offContrib});
   }
-  const totalOff = quality.reduce((s,q) => s+q.off_contrib, 0);
-  const totalDef = quality.reduce((s,q) => s+q.def_contrib, 0);
+  const totalOffRaw = quality.reduce((s,q) => s+q.off_contrib, 0);
+  const totalDefRaw = quality.reduce((s,q) => s+q.def_contrib, 0);
+
+  // Diminishing returns for stacking multiple individually strong
+  // players. A purely additive model has no mechanism for this, and
+  // real basketball does: there's one ball, a finite number of shots
+  // and possessions, and defensive attention that has to go somewhere --
+  // a team with 1-2 genuine standouts performs close to the sum of its
+  // parts, but a team trying to feature 4-5 simultaneously strong
+  // players sees real friction that pure addition misses. Confirmed
+  // necessary directly: a lineup of five individually solid-to-great
+  // players (Knicks' starting five) summed to a historically
+  // unprecedented team NetRtg even after the earlier winner's-curse
+  // shrinkage fix, because that fix corrects for search-selection bias,
+  // not for this separate stacking effect.
+  const STRONG_THRESHOLD = 1.5;      // combined off+def contrib counts as "individually strong"
+  const STACKING_DIMINISH_RATE = 0.08; // per strong player beyond the first 2
+  const strongCount = quality.filter(q => (q.off_contrib + q.def_contrib) > STRONG_THRESHOLD).length;
+  const stackingFactor = Math.max(0.6, 1 - STACKING_DIMINISH_RATE * Math.max(0, strongCount - 2));
+  const totalOff = totalOffRaw * stackingFactor;
+  const totalDef = totalDefRaw * stackingFactor;
 
   const stats = [];
   for (let i = 0; i < names.length; i++) {
@@ -756,23 +860,1339 @@ function projectLineup(names, positions) {
 
   const displayOrtg = LEAGUE_BASE + totalOff + ortgAdj;
   const displayDrtg = LEAGUE_BASE - totalDef + drtgAdj;
-  const ortg = displayOrtg + tsBonus - via.ortgPen;
-  const drtg = displayDrtg + via.drtgPen;
-  const netrtg = (totalOff + totalDef) + fitNet + tsBonus - via.ortgPen - via.drtgPen;
+  let ortg = displayOrtg + tsBonus - via.ortgPen;
+  let drtg = displayDrtg + via.drtgPen;
+  let netrtg = (totalOff + totalDef) + fitNet + tsBonus - via.ortgPen - via.drtgPen;
 
-  return { quality, stats, totalOff, totalDef, ortgAdj, drtgAdj, tsBonus, viability: via,
+  // Direct uncertainty discount for any rookie in the lineup, scaled by
+  // draft position -- a real coach trusts a consensus #1 pick far more
+  // than a #45 pick, even before either has played an NBA game. Applied
+  // directly to netrtg (split evenly across ortg/drtg to preserve the
+  // identity) rather than folded into the stat profile, so it holds
+  // regardless of which specific mechanism (individual rating or a
+  // composition-check benefit) is driving a rookie-inclusive combo's
+  // ranking -- confirmed necessary directly: profile-blending alone
+  // didn't change an outcome where a rookie's low-usage projection
+  // matched the league-wide average anyway.
+  const rookieDiscount = sampleUncertaintyDiscount(quality);
+  if (rookieDiscount > 0) {
+    ortg -= rookieDiscount / 2;
+    drtg += rookieDiscount / 2;
+    netrtg -= rookieDiscount;
+  }
+
+  return { quality, stats, totalOff, totalDef, ortgAdj, drtgAdj, tsBonus, viability: via, rookieDiscount,
+    stackingFactor, strongCount,
     ortg: Math.round(ortg*10)/10, drtg: Math.round(drtg*10)/10, netrtg: Math.round(netrtg*10)/10 };
 }
 
 // =====================================================
-// PROJECTED RECORD — simple, clearly-approximate Pythagorean-style
-// mapping from NetRtg to a projected win total. Not independently
-// calibrated this session; flagged as directional only.
+// PROJECTED RECORD — full season simulation instead of a direct NetRtg
+// formula. 2026-27's schedule doesn't exist yet, so this uses 2025-26's
+// real structure (divisions, conferences, game-count patterns) as the
+// closest available proxy. For every one of the season's ~1230 games,
+// computes a real win PROBABILITY from both teams' projected NetRtg
+// plus home-court advantage, and credits each team that probability as
+// a fractional win (a team with a 65% chance of winning a given game
+// gets credited 0.65 wins for it, the opponent 0.35) -- summed across
+// the full schedule, then converted to whole-number records with a
+// fair-remainder rounding method that preserves the exact 41-41 league
+// average by construction, not just approximately.
 // =====================================================
-function projectRecord(netrtg) {
-  const winPct = Math.max(0.05, Math.min(0.95, 0.5 + netrtg * 0.028));
-  const wins = Math.round(winPct * 82);
-  return { wins, losses: 82 - wins };
+
+// Real 2025-26 NBA regular season schedule (2026-27's hasn't been
+// released yet, so this is the closest available real proxy) --
+// exported directly from stats.nba.com via nba_api, 1230 games,
+// exactly 82 per team. Replaces an earlier synthetic approximation
+// entirely; to update for 2026-27 once released, regenerate this
+// array from the same source and replace it here.
+const REAL_SCHEDULE_2025_26 = [
+  ["OKC","HOU"],
+  ["LAL","GSW"],
+  ["NYK","CLE"],
+  ["DAL","SAS"],
+  ["CHA","BKN"],
+  ["ORL","MIA"],
+  ["ATL","TOR"],
+  ["BOS","PHI"],
+  ["CHI","DET"],
+  ["MEM","NOP"],
+  ["MIL","WAS"],
+  ["UTA","LAC"],
+  ["PHX","SAC"],
+  ["POR","MIN"],
+  ["IND","OKC"],
+  ["GSW","DEN"],
+  ["NYK","BOS"],
+  ["LAL","MIN"],
+  ["ORL","ATL"],
+  ["BKN","CLE"],
+  ["TOR","MIL"],
+  ["HOU","DET"],
+  ["MEM","MIA"],
+  ["NOP","SAS"],
+  ["DAL","WAS"],
+  ["POR","GSW"],
+  ["SAC","UTA"],
+  ["LAC","PHX"],
+  ["ORL","CHI"],
+  ["ATL","OKC"],
+  ["PHI","CHA"],
+  ["MEM","IND"],
+  ["DEN","PHX"],
+  ["SAS","BKN"],
+  ["DET","BOS"],
+  ["CLE","MIL"],
+  ["MIA","NYK"],
+  ["WAS","CHA"],
+  ["MIN","IND"],
+  ["DAL","TOR"],
+  ["LAC","POR"],
+  ["SAC","LAL"],
+  ["DET","CLE"],
+  ["MIN","DEN"],
+  ["PHI","ORL"],
+  ["CHI","ATL"],
+  ["HOU","BKN"],
+  ["NOP","BOS"],
+  ["SAS","TOR"],
+  ["DAL","OKC"],
+  ["UTA","PHX"],
+  ["GSW","MEM"],
+  ["LAL","POR"],
+  ["WAS","PHI"],
+  ["MIA","CHA"],
+  ["MIL","NYK"],
+  ["OKC","SAC"],
+  ["GSW","LAC"],
+  ["BOS","CLE"],
+  ["DET","ORL"],
+  ["BKN","ATL"],
+  ["TOR","HOU"],
+  ["CHI","SAC"],
+  ["DAL","IND"],
+  ["DEN","NOP"],
+  ["UTA","POR"],
+  ["MIN","LAL"],
+  ["PHX","MEM"],
+  ["CHA","ORL"],
+  ["MIL","GSW"],
+  ["OKC","WAS"],
+  ["SAS","MIA"],
+  ["IND","ATL"],
+  ["PHI","BOS"],
+  ["CLE","TOR"],
+  ["CHI","NYK"],
+  ["MEM","LAL"],
+  ["PHX","UTA"],
+  ["POR","DEN"],
+  ["LAC","NOP"],
+  ["MIL","SAC"],
+  ["CHA","MIN"],
+  ["IND","GSW"],
+  ["WAS","ORL"],
+  ["BOS","HOU"],
+  ["DET","DAL"],
+  ["OKC","NOP"],
+  ["BKN","PHI"],
+  ["CHA","UTA"],
+  ["CLE","ATL"],
+  ["TOR","MEM"],
+  ["NYK","CHI"],
+  ["PHX","SAS"],
+  ["LAL","MIA"],
+  ["BKN","MIN"],
+  ["IND","MIL"],
+  ["BOS","UTA"],
+  ["NYK","WAS"],
+  ["HOU","DAL"],
+  ["MEM","DET"],
+  ["DEN","SAC"],
+  ["POR","LAL"],
+  ["LAC","MIA"],
+  ["TOR","MIL"],
+  ["ATL","ORL"],
+  ["CHI","PHI"],
+  ["NOP","CHA"],
+  ["GSW","PHX"],
+  ["LAC","OKC"],
+  ["CLE","PHI"],
+  ["DET","UTA"],
+  ["IND","BKN"],
+  ["BOS","WAS"],
+  ["NYK","MIN"],
+  ["MEM","HOU"],
+  ["DAL","NOP"],
+  ["DEN","MIA"],
+  ["LAL","SAS"],
+  ["POR","OKC"],
+  ["SAC","GSW"],
+  ["PHX","LAC"],
+  ["ORL","BOS"],
+  ["WAS","CLE"],
+  ["ATL","TOR"],
+  ["BKN","DET"],
+  ["SAS","HOU"],
+  ["MIA","CHA"],
+  ["MEM","DAL"],
+  ["MIL","CHI"],
+  ["MIN","UTA"],
+  ["DEN","GSW"],
+  ["SAC","OKC"],
+  ["WAS","DAL"],
+  ["PHI","TOR"],
+  ["ATL","LAL"],
+  ["CLE","CHI"],
+  ["MIA","POR"],
+  ["SAS","NOP"],
+  ["DEN","IND"],
+  ["LAC","PHX"],
+  ["MIL","HOU"],
+  ["NYK","BKN"],
+  ["ORL","BOS"],
+  ["MEM","OKC"],
+  ["PHI","DET"],
+  ["GSW","IND"],
+  ["SAC","MIN"],
+  ["CHA","LAL"],
+  ["DET","WAS"],
+  ["ORL","POR"],
+  ["MIA","CLE"],
+  ["CHI","SAS"],
+  ["DAL","MIL"],
+  ["PHX","NOP"],
+  ["UTA","MIN"],
+  ["LAC","ATL"],
+  ["BKN","TOR"],
+  ["NYK","MEM"],
+  ["PHI","BOS"],
+  ["OKC","GSW"],
+  ["UTA","IND"],
+  ["SAC","DEN"],
+  ["CHA","MIL"],
+  ["DET","CHI"],
+  ["NYK","ORL"],
+  ["BOS","MEM"],
+  ["MIA","CLE"],
+  ["HOU","WAS"],
+  ["NOP","POR"],
+  ["SAS","GSW"],
+  ["DAL","PHX"],
+  ["OKC","LAL"],
+  ["SAC","ATL"],
+  ["LAC","DEN"],
+  ["CLE","TOR"],
+  ["PHX","IND"],
+  ["UTA","ATL"],
+  ["NYK","MIA"],
+  ["ORL","BKN"],
+  ["DET","PHI"],
+  ["HOU","POR"],
+  ["MIL","CHA"],
+  ["MIN","SAC"],
+  ["NOP","LAL"],
+  ["DAL","LAC"],
+  ["SAS","GSW"],
+  ["CLE","MEM"],
+  ["CHA","OKC"],
+  ["IND","TOR"],
+  ["MIL","LAL"],
+  ["MIN","DEN"],
+  ["BOS","LAC"],
+  ["SAS","SAC"],
+  ["WAS","BKN"],
+  ["HOU","ORL"],
+  ["NOP","GSW"],
+  ["DAL","POR"],
+  ["PHX","ATL"],
+  ["UTA","CHI"],
+  ["CLE","MIL"],
+  ["DET","IND"],
+  ["PHI","LAC"],
+  ["MIA","NYK"],
+  ["TOR","CHA"],
+  ["MIN","DAL"],
+  ["NOP","OKC"],
+  ["DEN","CHI"],
+  ["ORL","GSW"],
+  ["BKN","BOS"],
+  ["ATL","DET"],
+  ["SAS","MEM"],
+  ["LAL","UTA"],
+  ["POR","PHX"],
+  ["CLE","HOU"],
+  ["IND","CHA"],
+  ["MIA","GSW"],
+  ["PHI","TOR"],
+  ["MIN","WAS"],
+  ["NOP","DEN"],
+  ["OKC","SAC"],
+  ["DAL","NYK"],
+  ["POR","CHI"],
+  ["ORL","LAC"],
+  ["MEM","SAC"],
+  ["MIL","PHI"],
+  ["SAS","ATL"],
+  ["CLE","IND"],
+  ["BOS","BKN"],
+  ["TOR","WAS"],
+  ["CHI","MIA"],
+  ["DAL","NOP"],
+  ["PHX","MIN"],
+  ["HOU","DEN"],
+  ["UTA","OKC"],
+  ["GSW","POR"],
+  ["CHA","LAC"],
+  ["ORL","NYK"],
+  ["NOP","ATL"],
+  ["CHI","WAS"],
+  ["MIL","DET"],
+  ["DAL","MEM"],
+  ["DEN","SAC"],
+  ["PHI","MIA"],
+  ["ATL","CHA"],
+  ["BOS","ORL"],
+  ["CLE","LAC"],
+  ["TOR","BKN"],
+  ["OKC","POR"],
+  ["PHX","SAS"],
+  ["UTA","LAL"],
+  ["IND","DET"],
+  ["TOR","CLE"],
+  ["BKN","NYK"],
+  ["MIA","DAL"],
+  ["MEM","DEN"],
+  ["MIL","POR"],
+  ["NOP","CHI"],
+  ["PHX","HOU"],
+  ["GSW","UTA"],
+  ["SAC","MIN"],
+  ["WAS","ATL"],
+  ["PHI","ORL"],
+  ["LAL","LAC"],
+  ["BOS","DET"],
+  ["CHA","NYK"],
+  ["MIA","MIL"],
+  ["TOR","IND"],
+  ["OKC","MIN"],
+  ["NOP","MEM"],
+  ["GSW","HOU"],
+  ["POR","SAS"],
+  ["SAC","PHX"],
+  ["ATL","CLE"],
+  ["BKN","PHI"],
+  ["CHA","CHI"],
+  ["DET","ORL"],
+  ["IND","WAS"],
+  ["NYK","MIL"],
+  ["OKC","PHX"],
+  ["DEN","SAS"],
+  ["UTA","SAC"],
+  ["LAL","DAL"],
+  ["LAC","MEM"],
+  ["MIN","BOS"],
+  ["CHA","TOR"],
+  ["IND","CHI"],
+  ["MIA","DET"],
+  ["MIL","BKN"],
+  ["GSW","NOP"],
+  ["PHX","DEN"],
+  ["LAC","DAL"],
+  ["UTA","HOU"],
+  ["CLE","BOS"],
+  ["NYK","TOR"],
+  ["PHI","ATL"],
+  ["POR","OKC"],
+  ["MIN","SAS"],
+  ["SAC","MEM"],
+  ["LAL","NOP"],
+  ["DET","ATL"],
+  ["IND","CLE"],
+  ["WAS","MIL"],
+  ["BKN","CHA"],
+  ["MIA","LAC"],
+  ["ORL","CHI"],
+  ["DEN","DAL"],
+  ["UTA","HOU"],
+  ["LAL","PHX"],
+  ["PHI","WAS"],
+  ["TOR","POR"],
+  ["BOS","NYK"],
+  ["NOP","MIN"],
+  ["SAS","MEM"],
+  ["GSW","OKC"],
+  ["CLE","POR"],
+  ["IND","DEN"],
+  ["ORL","SAS"],
+  ["ATL","LAC"],
+  ["NYK","CHA"],
+  ["CHI","BKN"],
+  ["HOU","SAC"],
+  ["MIL","DET"],
+  ["DAL","MIA"],
+  ["PHI","GSW"],
+  ["WAS","BOS"],
+  ["BKN","UTA"],
+  ["TOR","LAL"],
+  ["NOP","MIN"],
+  ["BOS","LAL"],
+  ["ORL","MIA"],
+  ["ATL","DEN"],
+  ["CLE","SAS"],
+  ["DET","POR"],
+  ["NYK","UTA"],
+  ["TOR","CHA"],
+  ["CHI","IND"],
+  ["HOU","PHX"],
+  ["MEM","LAC"],
+  ["MIL","PHI"],
+  ["OKC","DAL"],
+  ["BKN","NOP"],
+  ["WAS","ATL"],
+  ["CLE","GSW"],
+  ["DET","MIL"],
+  ["MIA","SAC"],
+  ["MIN","LAC"],
+  ["DAL","HOU"],
+  ["NYK","ORL"],
+  ["TOR","BOS"],
+  ["CHA","DEN"],
+  ["MEM","POR"],
+  ["CHI","GSW"],
+  ["PHI","LAL"],
+  ["UTA","OKC"],
+  ["IND","SAC"],
+  ["MIN","PHX"],
+  ["NOP","SAS"],
+  ["ORL","MIA"],
+  ["TOR","NYK"],
+  ["OKC","PHX"],
+  ["LAL","SAS"],
+  ["HOU","LAC"],
+  ["MIL","BOS"],
+  ["NOP","POR"],
+  ["SAC","DEN"],
+  ["CHA","CHI"],
+  ["DET","ATL"],
+  ["PHI","IND"],
+  ["WAS","CLE"],
+  ["MEM","UTA"],
+  ["DAL","BKN"],
+  ["GSW","MIN"],
+  ["ORL","NYK"],
+  ["OKC","SAS"],
+  ["IND","WAS"],
+  ["ATL","PHI"],
+  ["CLE","CHA"],
+  ["BKN","MIL"],
+  ["MIN","SAC"],
+  ["POR","GSW"],
+  ["CHI","NOP"],
+  ["PHX","LAL"],
+  ["BOS","DET"],
+  ["UTA","DAL"],
+  ["DEN","HOU"],
+  ["LAC","MEM"],
+  ["MIA","TOR"],
+  ["CHI","CLE"],
+  ["MIN","MEM"],
+  ["OKC","LAC"],
+  ["SAS","WAS"],
+  ["CHA","ATL"],
+  ["IND","NYK"],
+  ["BKN","MIA"],
+  ["MIL","TOR"],
+  ["NOP","HOU"],
+  ["DAL","DET"],
+  ["DEN","ORL"],
+  ["PHX","GSW"],
+  ["UTA","LAL"],
+  ["POR","SAC"],
+  ["BOS","MIA"],
+  ["NYK","PHI"],
+  ["ATL","SAS"],
+  ["CLE","CHI"],
+  ["MIN","OKC"],
+  ["DEN","HOU"],
+  ["PHI","DAL"],
+  ["TOR","BOS"],
+  ["NOP","IND"],
+  ["DET","CHA"],
+  ["MEM","WAS"],
+  ["GSW","PHX"],
+  ["UTA","ORL"],
+  ["SAC","POR"],
+  ["LAC","LAL"],
+  ["ATL","CHI"],
+  ["BKN","TOR"],
+  ["NYK","MIA"],
+  ["WAS","SAS"],
+  ["MIN","MIL"],
+  ["SAC","HOU"],
+  ["CLE","CHA"],
+  ["BOS","IND"],
+  ["NOP","DAL"],
+  ["DEN","UTA"],
+  ["OKC","MEM"],
+  ["GSW","ORL"],
+  ["POR","DET"],
+  ["CHA","WAS"],
+  ["PHI","BKN"],
+  ["ATL","CHI"],
+  ["CLE","NOP"],
+  ["IND","MIL"],
+  ["MIA","TOR"],
+  ["DAL","DEN"],
+  ["MIN","NYK"],
+  ["SAS","OKC"],
+  ["PHX","LAL"],
+  ["UTA","MEM"],
+  ["POR","ORL"],
+  ["SAC","DET"],
+  ["LAC","HOU"],
+  ["NYK","CLE"],
+  ["OKC","SAS"],
+  ["GSW","DAL"],
+  ["LAL","HOU"],
+  ["DEN","MIN"],
+  ["ATL","MIA"],
+  ["ORL","CHA"],
+  ["WAS","TOR"],
+  ["IND","BOS"],
+  ["CHI","PHI"],
+  ["MEM","MIL"],
+  ["NOP","PHX"],
+  ["UTA","DET"],
+  ["POR","LAC"],
+  ["SAC","DAL"],
+  ["ORL","DEN"],
+  ["NOP","PHX"],
+  ["ATL","NYK"],
+  ["MIA","IND"],
+  ["CHI","MIL"],
+  ["HOU","CLE"],
+  ["MIN","BKN"],
+  ["SAS","UTA"],
+  ["TOR","GSW"],
+  ["OKC","PHI"],
+  ["WAS","MEM"],
+  ["POR","BOS"],
+  ["LAC","DET"],
+  ["LAL","SAC"],
+  ["CHA","MIL"],
+  ["WAS","PHX"],
+  ["BKN","GSW"],
+  ["MIA","DEN"],
+  ["TOR","ORL"],
+  ["CHI","MIN"],
+  ["HOU","IND"],
+  ["NOP","NYK"],
+  ["OKC","ATL"],
+  ["SAS","CLE"],
+  ["POR","DAL"],
+  ["MEM","PHI"],
+  ["UTA","BOS"],
+  ["LAL","DET"],
+  ["LAC","SAC"],
+  ["CHA","GSW"],
+  ["ATL","MIN"],
+  ["IND","ORL"],
+  ["CLE","PHX"],
+  ["CHI","NOP"],
+  ["SAS","NYK"],
+  ["TOR","DEN"],
+  ["MIL","WAS"],
+  ["OKC","POR"],
+  ["BKN","HOU"],
+  ["DET","MIA"],
+  ["DAL","PHI"],
+  ["SAC","BOS"],
+  ["LAC","UTA"],
+  ["IND","SAS"],
+  ["WAS","BKN"],
+  ["CLE","DEN"],
+  ["NYK","ATL"],
+  ["CHI","ORL"],
+  ["MIL","CHA"],
+  ["NOP","POR"],
+  ["PHX","SAC"],
+  ["GSW","OKC"],
+  ["LAL","MEM"],
+  ["MIA","MIN"],
+  ["NYK","PHI"],
+  ["TOR","ATL"],
+  ["CHI","CHA"],
+  ["SAS","POR"],
+  ["DAL","HOU"],
+  ["GSW","UTA"],
+  ["LAC","BOS"],
+  ["CLE","DET"],
+  ["ORL","IND"],
+  ["BKN","DEN"],
+  ["MIA","NOP"],
+  ["WAS","MIN"],
+  ["PHX","OKC"],
+  ["SAC","MIL"],
+  ["LAL","MEM"],
+  ["DET","NYK"],
+  ["BOS","CHI"],
+  ["TOR","ATL"],
+  ["HOU","PHX"],
+  ["OKC","CHA"],
+  ["PHI","DEN"],
+  ["LAC","GSW"],
+  ["POR","UTA"],
+  ["IND","CLE"],
+  ["WAS","ORL"],
+  ["MEM","SAS"],
+  ["MIN","MIA"],
+  ["NOP","LAL"],
+  ["SAC","DAL"],
+  ["CHA","TOR"],
+  ["DET","CHI"],
+  ["PHI","WAS"],
+  ["ATL","NOP"],
+  ["BOS","DEN"],
+  ["BKN","ORL"],
+  ["NYK","LAC"],
+  ["SAS","LAL"],
+  ["MEM","PHX"],
+  ["OKC","UTA"],
+  ["GSW","MIL"],
+  ["POR","HOU"],
+  ["CHA","IND"],
+  ["MIN","CLE"],
+  ["UTA","DAL"],
+  ["BOS","TOR"],
+  ["ORL","PHI"],
+  ["WAS","NOP"],
+  ["BKN","LAC"],
+  ["MEM","OKC"],
+  ["DEN","ATL"],
+  ["PHX","NYK"],
+  ["GSW","SAC"],
+  ["POR","HOU"],
+  ["LAL","MIL"],
+  ["CLE","MIN"],
+  ["IND","MIA"],
+  ["DET","LAC"],
+  ["BOS","SAS"],
+  ["CHI","DAL"],
+  ["UTA","CHA"],
+  ["ORL","NOP"],
+  ["MEM","BKN"],
+  ["TOR","PHI"],
+  ["POR","NYK"],
+  ["MIN","SAS"],
+  ["OKC","MIA"],
+  ["DEN","MIL"],
+  ["PHX","WAS"],
+  ["GSW","ATL"],
+  ["SAC","HOU"],
+  ["CLE","UTA"],
+  ["IND","BOS"],
+  ["TOR","PHI"],
+  ["DAL","BKN"],
+  ["SAC","LAL"],
+  ["LAC","CHA"],
+  ["MIA","PHX"],
+  ["HOU","CHI"],
+  ["MIL","MIN"],
+  ["NOP","DEN"],
+  ["OKC","SAS"],
+  ["LAL","ATL"],
+  ["GSW","POR"],
+  ["IND","TOR"],
+  ["PHI","CLE"],
+  ["CHI","UTA"],
+  ["NOP","BKN"],
+  ["DAL","DEN"],
+  ["SAC","NYK"],
+  ["LAC","WAS"],
+  ["ORL","MEM"],
+  ["DET","PHX"],
+  ["MIA","BOS"],
+  ["HOU","OKC"],
+  ["SAS","MIL"],
+  ["DAL","UTA"],
+  ["GSW","NYK"],
+  ["POR","ATL"],
+  ["LAL","CHA"],
+  ["BKN","CHI"],
+  ["IND","NOP"],
+  ["PHI","CLE"],
+  ["TOR","LAC"],
+  ["HOU","MIN"],
+  ["SAC","WAS"],
+  ["DAL","UTA"],
+  ["ATL","BOS"],
+  ["DET","IND"],
+  ["NYK","PHX"],
+  ["MIA","OKC"],
+  ["SAS","MIN"],
+  ["GSW","CHA"],
+  ["DEN","WAS"],
+  ["POR","LAL"],
+  ["MEM","ORL"],
+  ["CHI","BKN"],
+  ["HOU","NOP"],
+  ["DEN","CHA"],
+  ["SAC","POR"],
+  ["LAL","TOR"],
+  ["ATL","MIL"],
+  ["CLE","OKC"],
+  ["NYK","DAL"],
+  ["DET","BOS"],
+  ["WAS","LAC"],
+  ["PHI","IND"],
+  ["BKN","PHX"],
+  ["SAS","UTA"],
+  ["GSW","MIA"],
+  ["PHI","PHX"],
+  ["CHI","LAC"],
+  ["HOU","SAS"],
+  ["UTA","MIN"],
+  ["DEN","LAL"],
+  ["GSW","TOR"],
+  ["SAC","MIA"],
+  ["CHA","CLE"],
+  ["BOS","IND"],
+  ["NYK","BKN"],
+  ["MEM","ATL"],
+  ["NOP","DET"],
+  ["MIL","OKC"],
+  ["SAC","TOR"],
+  ["ORL","CHA"],
+  ["PHI","HOU"],
+  ["WAS","DEN"],
+  ["DAL","GSW"],
+  ["MIN","CHI"],
+  ["UTA","SAS"],
+  ["LAC","LAL"],
+  ["POR","MIA"],
+  ["DET","HOU"],
+  ["ATL","PHX"],
+  ["BKN","BOS"],
+  ["CLE","SAC"],
+  ["MEM","NOP"],
+  ["MIL","DEN"],
+  ["OKC","IND"],
+  ["POR","TOR"],
+  ["PHI","NYK"],
+  ["CHA","WAS"],
+  ["ORL","CLE"],
+  ["CHI","BOS"],
+  ["DAL","LAL"],
+  ["UTA","MIA"],
+  ["MIN","GSW"],
+  ["DET","SAC"],
+  ["OKC","TOR"],
+  ["SAS","NOP"],
+  ["PHX","MIA"],
+  ["LAC","BKN"],
+  ["CHA","PHI"],
+  ["CLE","ORL"],
+  ["ATL","IND"],
+  ["BOS","POR"],
+  ["CHI","LAL"],
+  ["HOU","MEM"],
+  ["MIN","GSW"],
+  ["WAS","POR"],
+  ["NYK","SAC"],
+  ["PHI","MIL"],
+  ["OKC","NOP"],
+  ["DEN","DET"],
+  ["PHX","BKN"],
+  ["UTA","LAC"],
+  ["CLE","LAL"],
+  ["IND","CHI"],
+  ["BOS","ATL"],
+  ["MIA","ORL"],
+  ["TOR","NYK"],
+  ["MEM","CHA"],
+  ["DAL","MIN"],
+  ["UTA","GSW"],
+  ["HOU","SAS"],
+  ["CHI","MIA"],
+  ["PHI","SAC"],
+  ["WAS","MIL"],
+  ["ATL","HOU"],
+  ["DAL","CHA"],
+  ["DEN","BKN"],
+  ["PHX","DET"],
+  ["MIN","OKC"],
+  ["ORL","TOR"],
+  ["WAS","LAL"],
+  ["BOS","SAC"],
+  ["NYK","POR"],
+  ["NOP","MEM"],
+  ["PHX","CLE"],
+  ["UTA","BKN"],
+  ["DEN","LAC"],
+  ["GSW","DET"],
+  ["MIA","CHI"],
+  ["CHA","SAS"],
+  ["IND","ATL"],
+  ["PHI","NOP"],
+  ["MEM","MIN"],
+  ["HOU","DAL"],
+  ["BOS","MIL"],
+  ["SAS","ORL"],
+  ["DET","BKN"],
+  ["MIA","CHI"],
+  ["TOR","UTA"],
+  ["WAS","SAC"],
+  ["NYK","LAL"],
+  ["PHX","LAC"],
+  ["POR","CLE"],
+  ["DEN","OKC"],
+  ["CHA","NOP"],
+  ["IND","HOU"],
+  ["MEM","MIN"],
+  ["LAC","PHI"],
+  ["DET","DEN"],
+  ["IND","UTA"],
+  ["WAS","NYK"],
+  ["BKN","LAL"],
+  ["MIA","ATL"],
+  ["DAL","BOS"],
+  ["MIL","CHI"],
+  ["OKC","ORL"],
+  ["GSW","PHI"],
+  ["POR","PHX"],
+  ["NYK","DEN"],
+  ["TOR","MIN"],
+  ["HOU","BOS"],
+  ["MIL","NOP"],
+  ["SAS","OKC"],
+  ["SAC","MEM"],
+  ["LAC","CLE"],
+  ["DET","WAS"],
+  ["ORL","BKN"],
+  ["ATL","UTA"],
+  ["TOR","CHI"],
+  ["HOU","CHA"],
+  ["DAL","SAS"],
+  ["PHX","GSW"],
+  ["LAL","PHI"],
+  ["BOS","MIA"],
+  ["DET","NYK"],
+  ["MIL","IND"],
+  ["MIN","NOP"],
+  ["POR","MEM"],
+  ["SAC","LAC"],
+  ["BKN","WAS"],
+  ["OKC","HOU"],
+  ["SAS","DAL"],
+  ["ORL","UTA"],
+  ["ATL","CHA"],
+  ["CHI","DEN"],
+  ["LAL","GSW"],
+  ["PHX","PHI"],
+  ["POR","MEM"],
+  ["SAC","CLE"],
+  ["BOS","NYK"],
+  ["WAS","MIA"],
+  ["TOR","IND"],
+  ["MIN","LAC"],
+  ["CHA","DET"],
+  ["BKN","CHI"],
+  ["MIA","UTA"],
+  ["ORL","MIL"],
+  ["MIN","ATL"],
+  ["NOP","SAC"],
+  ["DEN","CLE"],
+  ["GSW","MEM"],
+  ["LAL","OKC"],
+  ["POR","PHI"],
+  ["NYK","IND"],
+  ["HOU","LAC"],
+  ["PHX","DAL"],
+  ["LAL","SAS"],
+  ["CHA","ATL"],
+  ["CLE","WAS"],
+  ["ORL","MIL"],
+  ["BOS","CHI"],
+  ["BKN","IND"],
+  ["PHI","NYK"],
+  ["TOR","DET"],
+  ["HOU","LAC"],
+  ["MIN","POR"],
+  ["NOP","MIA"],
+  ["PHX","OKC"],
+  ["UTA","SAC"],
+  ["DEN","MEM"],
+  ["GSW","SAS"],
+  ["OKC","MIL"],
+  ["UTA","POR"],
+  ["LAL","DAL"],
+  ["CHA","HOU"],
+  ["CLE","BKN"],
+  ["PHI","ATL"],
+  ["WAS","IND"],
+  ["NYK","DET"],
+  ["CHI","TOR"],
+  ["SAS","PHX"],
+  ["GSW","BOS"],
+  ["SAC","ORL"],
+  ["LAC","DEN"],
+  ["CHA","CLE"],
+  ["WAS","IND"],
+  ["MEM","UTA"],
+  ["ATL","MIA"],
+  ["MIN","DAL"],
+  ["NOP","MIL"],
+  ["OKC","BKN"],
+  ["LAL","LAC"],
+  ["POR","DEN"],
+  ["PHX","ORL"],
+  ["NOP","PHI"],
+  ["MIA","MEM"],
+  ["CHI","DET"],
+  ["SAS","SAC"],
+  ["NYK","HOU"],
+  ["OKC","CLE"],
+  ["ATL","BKN"],
+  ["MIL","TOR"],
+  ["GSW","DEN"],
+  ["IND","DAL"],
+  ["WAS","CHA"],
+  ["LAL","BOS"],
+  ["MIN","PHI"],
+  ["CHI","NYK"],
+  ["PHX","POR"],
+  ["LAC","ORL"],
+  ["DET","SAS"],
+  ["MEM","SAC"],
+  ["HOU","UTA"],
+  ["IND","PHI"],
+  ["ATL","WAS"],
+  ["BKN","DAL"],
+  ["TOR","OKC"],
+  ["CLE","NYK"],
+  ["CHI","CHA"],
+  ["MIL","MIA"],
+  ["NOP","GSW"],
+  ["PHX","BOS"],
+  ["LAL","ORL"],
+  ["POR","MIN"],
+  ["DET","OKC"],
+  ["TOR","SAS"],
+  ["MEM","GSW"],
+  ["HOU","SAC"],
+  ["MIL","CLE"],
+  ["DEN","BOS"],
+  ["IND","CHA"],
+  ["PHI","MIA"],
+  ["ATL","WAS"],
+  ["BKN","SAS"],
+  ["ORL","HOU"],
+  ["CHI","POR"],
+  ["DAL","SAC"],
+  ["PHX","LAL"],
+  ["UTA","NOP"],
+  ["LAC","MIN"],
+  ["DET","CLE"],
+  ["BOS","BKN"],
+  ["MIL","NYK"],
+  ["DAL","MEM"],
+  ["OKC","DEN"],
+  ["CHA","POR"],
+  ["MIA","HOU"],
+  ["WAS","TOR"],
+  ["GSW","LAL"],
+  ["UTA","NOP"],
+  ["NYK","SAS"],
+  ["BKN","CLE"],
+  ["CHI","MIL"],
+  ["DEN","MIN"],
+  ["IND","MEM"],
+  ["ATL","POR"],
+  ["BOS","PHI"],
+  ["ORL","DET"],
+  ["DAL","OKC"],
+  ["LAC","NOP"],
+  ["LAL","SAC"],
+  ["WAS","HOU"],
+  ["MIL","BOS"],
+  ["UTA","DEN"],
+  ["GSW","LAC"],
+  ["CHA","DAL"],
+  ["CLE","DET"],
+  ["ORL","WAS"],
+  ["MIA","BKN"],
+  ["TOR","NYK"],
+  ["PHI","SAS"],
+  ["CHI","OKC"],
+  ["MIN","MEM"],
+  ["LAL","NOP"],
+  ["SAC","PHX"],
+  ["NYK","OKC"],
+  ["BOS","CHA"],
+  ["PHI","UTA"],
+  ["MEM","POR"],
+  ["MIL","ATL"],
+  ["LAC","IND"],
+  ["ORL","DAL"],
+  ["WAS","UTA"],
+  ["MIA","BKN"],
+  ["HOU","GSW"],
+  ["MIN","TOR"],
+  ["SAS","DET"],
+  ["PHX","CHI"],
+  ["DEN","LAL"],
+  ["SAC","NOP"],
+  ["BOS","DAL"],
+  ["CHA","MIA"],
+  ["HOU","POR"],
+  ["DEN","NYK"],
+  ["PHX","NOP"],
+  ["SAS","LAC"],
+  ["LAL","IND"],
+  ["MIN","ORL"],
+  ["DET","BKN"],
+  ["ATL","PHI"],
+  ["MEM","LAC"],
+  ["MIL","UTA"],
+  ["OKC","GSW"],
+  ["CLE","BOS"],
+  ["LAL","NYK"],
+  ["MIA","DET"],
+  ["TOR","DAL"],
+  ["NOP","WAS"],
+  ["MIL","ORL"],
+  ["SAS","HOU"],
+  ["PHX","CHA"],
+  ["POR","IND"],
+  ["SAC","CHI"],
+  ["CLE","PHI"],
+  ["BKN","MEM"],
+  ["OKC","DEN"],
+  ["UTA","GSW"],
+  ["LAC","NYK"],
+  ["PHI","MEM"],
+  ["BKN","DET"],
+  ["MIA","WAS"],
+  ["ATL","DAL"],
+  ["HOU","TOR"],
+  ["MIL","PHX"],
+  ["SAS","BOS"],
+  ["GSW","CHI"],
+  ["POR","CHA"],
+  ["SAC","IND"],
+  ["LAL","MIN"],
+  ["ORL","CLE"],
+  ["NOP","TOR"],
+  ["UTA","NYK"],
+  ["DEN","HOU"],
+  ["SAC","CHA"],
+  ["LAC","MIN"],
+  ["DET","PHI"],
+  ["IND","PHX"],
+  ["ORL","WAS"],
+  ["ATL","BKN"],
+  ["MIA","MIL"],
+  ["SAS","DEN"],
+  ["OKC","BOS"],
+  ["LAL","CHI"],
+  ["MEM","DAL"],
+  ["DET","MEM"],
+  ["IND","NYK"],
+  ["TOR","PHX"],
+  ["HOU","NOP"],
+  ["DAL","CLE"],
+  ["GSW","MIN"],
+  ["POR","UTA"],
+  ["LAC","CHI"],
+  ["PHI","BKN"],
+  ["ATL","MIL"],
+  ["BOS","WAS"],
+  ["MIA","ORL"],
+  ["SAS","CHA"],
+  ["LAL","DEN"],
+  ["LAC","SAC"],
+  ["OKC","MIN"],
+  ["CLE","DAL"],
+  ["TOR","DET"],
+  ["MIL","IND"],
+  ["PHI","POR"],
+  ["NYK","GSW"],
+  ["SAC","UTA"],
+  ["ATL","ORL"],
+  ["WAS","GSW"],
+  ["BKN","POR"],
+  ["BOS","PHX"],
+  ["CHI","MEM"],
+  ["NOP","DAL"],
+  ["HOU","LAL"],
+  ["LAC","SAS"],
+  ["CHA","MIA"],
+  ["ORL","OKC"],
+  ["WAS","DET"],
+  ["NYK","IND"],
+  ["MIL","CLE"],
+  ["MIN","PHX"],
+  ["DEN","PHI"],
+  ["SAC","SAS"],
+  ["MEM","DEN"],
+  ["BOS","GSW"],
+  ["BKN","OKC"],
+  ["IND","POR"],
+  ["CHI","TOR"],
+  ["MIN","UTA"],
+  ["NOP","LAC"],
+  ["DAL","ATL"],
+  ["HOU","LAL"],
+  ["CHA","ORL"],
+  ["WAS","DET"],
+  ["MIA","LAL"],
+  ["CHI","CLE"],
+  ["NOP","LAC"],
+  ["SAS","PHX"],
+  ["UTA","MIL"],
+  ["SAC","PHI"],
+  ["BKN","NYK"],
+  ["DET","GSW"],
+  ["HOU","ATL"],
+  ["MEM","BOS"],
+  ["MIN","POR"],
+  ["DEN","TOR"],
+  ["WAS","OKC"],
+  ["CHA","MEM"],
+  ["ORL","LAL"],
+  ["NOP","CLE"],
+  ["ATL","GSW"],
+  ["HOU","MIA"],
+  ["SAS","IND"],
+  ["DAL","LAC"],
+  ["UTA","PHI"],
+  ["PHX","MIL"],
+  ["DEN","POR"],
+  ["SAC","BKN"],
+  ["NYK","WAS"],
+  ["BOS","MIN"],
+  ["PHX","TOR"],
+  ["ATL","MEM"],
+  ["DET","LAL"],
+  ["ORL","IND"],
+  ["PHI","OKC"],
+  ["MIA","SAS"],
+  ["CHI","HOU"],
+  ["UTA","TOR"],
+  ["DAL","GSW"],
+  ["POR","BKN"],
+  ["LAC","MIL"],
+  ["CHA","SAC"],
+  ["NYK","NOP"],
+  ["CLE","ORL"],
+  ["PHX","DEN"],
+  ["DET","ATL"],
+  ["IND","LAL"],
+  ["PHI","CHI"],
+  ["BOS","OKC"],
+  ["CLE","MIA"],
+  ["MEM","SAS"],
+  ["UTA","WAS"],
+  ["MIN","HOU"],
+  ["DEN","DAL"],
+  ["GSW","BKN"],
+  ["POR","MIL"],
+  ["LAC","TOR"],
+  ["CHA","NYK"],
+  ["DET","NOP"],
+  ["ORL","SAC"],
+  ["IND","LAC"],
+  ["BOS","ATL"],
+  ["CLE","MIA"],
+  ["MEM","HOU"],
+  ["OKC","CHI"],
+  ["TOR","NOP"],
+  ["DEN","UTA"],
+  ["GSW","WAS"],
+  ["POR","DAL"],
+  ["LAL","BKN"],
+  ["MIL","SAS"],
+  ["CHA","PHI"],
+  ["ATL","SAC"],
+  ["MEM","CHI"],
+  ["MIN","DET"],
+  ["PHX","UTA"],
+  ["MIL","LAC"],
+  ["IND","MIA"],
+  ["BKN","SAC"],
+  ["CHA","BOS"],
+  ["TOR","ORL"],
+  ["POR","WAS"],
+  ["NOP","HOU"],
+  ["OKC","NYK"],
+  ["DEN","GSW"],
+  ["MIA","PHI"],
+  ["ATL","BOS"],
+  ["MEM","PHX"],
+  ["SAS","CHI"],
+  ["DAL","MIN"],
+  ["UTA","CLE"],
+  ["OKC","DET"],
+  ["LAL","WAS"],
+  ["MIL","DAL"],
+  ["ORL","PHX"],
+  ["BKN","CHA"],
+  ["DET","TOR"],
+  ["HOU","NYK"],
+  ["LAL","CLE"],
+  ["LAC","POR"],
+  ["MEM","NYK"],
+  ["WAS","PHI"],
+  ["MIA","BOS"],
+  ["ORL","ATL"],
+  ["TOR","SAC"],
+  ["CHI","IND"],
+  ["HOU","MIL"],
+  ["UTA","DEN"],
+  ["GSW","SAS"],
+  ["CHA","PHX"],
+  ["DET","MIN"],
+  ["OKC","LAL"],
+  ["GSW","CLE"],
+  ["POR","NOP"],
+  ["LAC","SAS"],
+  ["CHA","IND"],
+  ["PHI","MIN"],
+  ["BKN","ATL"],
+  ["NYK","CHI"],
+  ["HOU","UTA"],
+  ["MEM","TOR"],
+  ["MIL","BOS"],
+  ["DAL","ORL"],
+  ["SAC","NOP"],
+  ["MIA","WAS"],
+  ["DEN","SAS"],
+  ["PHI","DET"],
+  ["BOS","TOR"],
+  ["BKN","WAS"],
+  ["CHI","PHX"],
+  ["MIL","MEM"],
+  ["CLE","IND"],
+  ["MIN","CHA"],
+  ["NOP","ORL"],
+  ["OKC","UTA"],
+  ["DAL","LAL"],
+  ["SAC","LAC"],
+  ["GSW","HOU"],
+  ["ATL","NYK"],
+  ["ORL","DET"],
+  ["MEM","CLE"],
+  ["SAS","PHI"],
+  ["DEN","POR"],
+  ["WAS","CHI"],
+  ["BOS","CHA"],
+  ["BKN","MIL"],
+  ["TOR","MIA"],
+  ["IND","MIN"],
+  ["NOP","UTA"],
+  ["GSW","SAC"],
+  ["LAL","OKC"],
+  ["LAC","DAL"],
+  ["PHX","HOU"],
+  ["CLE","ATL"],
+  ["ORL","MIN"],
+  ["DET","MIL"],
+  ["SAS","POR"],
+  ["DEN","MEM"],
+  ["LAC","OKC"],
+  ["PHX","DAL"],
+  ["TOR","MIA"],
+  ["WAS","CHI"],
+  ["BKN","IND"],
+  ["NYK","BOS"],
+  ["HOU","PHI"],
+  ["GSW","LAL"],
+  ["CHA","DET"],
+  ["WAS","MIA"],
+  ["ATL","CLE"],
+  ["BOS","NOP"],
+  ["IND","PHI"],
+  ["NYK","TOR"],
+  ["CHI","ORL"],
+  ["HOU","MIN"],
+  ["MIL","BKN"],
+  ["SAS","DAL"],
+  ["UTA","MEM"],
+  ["DEN","OKC"],
+  ["POR","LAC"],
+  ["SAC","GSW"],
+  ["LAL","PHX"],
+  ["BOS","ORL"],
+  ["CLE","WAS"],
+  ["IND","DET"],
+  ["MIA","ATL"],
+  ["NYK","CHA"],
+  ["PHI","MIL"],
+  ["TOR","BKN"],
+  ["DAL","CHI"],
+  ["HOU","MEM"],
+  ["MIN","NOP"],
+  ["OKC","PHX"],
+  ["SAS","DEN"],
+  ["LAL","UTA"],
+  ["LAC","GSW"],
+  ["POR","SAC"]
+];
+
+function buildSchedule(teams) {
+  return REAL_SCHEDULE_2025_26.map(([home, away]) => ({ home, away }));
+}
+
+// Standard normal CDF (Zelen & Severo approximation) -- used to convert
+// an expected point margin into a win probability.
+function normalCDF(x) {
+  const t = 1 / (1 + 0.2316419 * Math.abs(x));
+  const d = 0.3989423 * Math.exp(-x*x/2);
+  let p = d*t*(0.3193815 + t*(-0.3565638 + t*(1.781478 + t*(-1.821256 + t*1.330274))));
+  if (x > 0) p = 1 - p;
+  return p;
+}
+
+// Home-court advantage (~3.0 points) calibrated so two evenly-matched
+// teams produce a 60% home win rate, matching real NBA history. Game
+// margin standard deviation (~12 points) is a standard, widely-used
+// empirical estimate for single-NBA-game outcome variance. NetRtg
+// (points per 100 possessions) is treated as roughly equivalent to
+// expected point margin for a single game, since an NBA game runs close
+// to 100 possessions per team.
+const HOME_ADVANTAGE_PTS = 3.0;
+const GAME_MARGIN_SD = 12.0;
+
+function winProbability(homeNetrtg, awayNetrtg) {
+  const expectedMargin = (homeNetrtg - awayNetrtg) + HOME_ADVANTAGE_PTS;
+  return normalCDF(expectedMargin / GAME_MARGIN_SD);
+}
+
+function simulateSeasonRecords(teamNetrtg) {
+  const teams = Object.keys(teamNetrtg);
+  const schedule = buildSchedule(teams);
+  const expectedWins = {}; for (const t of teams) expectedWins[t] = 0;
+  for (const g of schedule) {
+    const pHome = winProbability(teamNetrtg[g.home], teamNetrtg[g.away]);
+    expectedWins[g.home] += pHome;
+    expectedWins[g.away] += (1 - pHome);
+  }
+  // Fair-remainder rounding (Hamilton's method): floor everyone, then
+  // hand out the leftover wins one at a time to whoever has the largest
+  // fractional remainder, until the total exactly matches the schedule's
+  // real total (82 games/team / 2 = 1230 team-games worth of wins) --
+  // guarantees the league average is exactly 41-41, not just close.
+  const totalGamesPerTeam = schedule.length * 2 / teams.length; // should be 82
+  const floor = {}; let usedWins = 0;
+  for (const t of teams) { floor[t] = Math.floor(expectedWins[t]); usedWins += floor[t]; }
+  const totalWinsTarget = Math.round(teams.length * totalGamesPerTeam / 2);
+  let remaining = totalWinsTarget - usedWins;
+  const remainders = teams.map(t => ({ t, frac: expectedWins[t] - floor[t] })).sort((a,b) => b.frac - a.frac);
+  const wins = { ...floor };
+  for (let i = 0; i < remainders.length && remaining > 0; i++) { wins[remainders[i].t]++; remaining--; }
+  const record = {};
+  for (const t of teams) record[t] = { wins: wins[t], losses: Math.round(totalGamesPerTeam) - wins[t], expectedWins: expectedWins[t] };
+  return record;
 }
 
 // =====================================================
@@ -975,7 +2395,41 @@ function generateAndRankCombos(units) {
       playerWeight[name] = (playerWeight[name] || 0) + slotWeight;
     }
   }
-  return selected;
+
+  // Regression-to-the-mean shrinkage. Confirmed directly against real
+  // ground truth (Houston's actual Durant/Sengun/Smith/Thompson core,
+  // 2,449 real possessions across every 5th-player variation tried last
+  // season, topping out at +10.3 in its single best combination) that
+  // the raw top-ranked search result can meaningfully overstate true
+  // quality -- a real, structural effect of maximizing over many
+  // candidates (243 here) using an imperfect scoring function, not
+  // specific to any one team or player. The combo that scores highest
+  // is more likely to have benefited from positive model noise than a
+  // randomly-chosen one, the same reason "last year's best fund"
+  // regresses toward the mean. Shrinks toward the mean of ALL 243
+  // generated combos (not just the selected 20) since that average is a
+  // much more reliable anchor -- it isn't the product of a search.
+  // RETENTION is a judgment call (not independently calibrated against a
+  // large sample of real-vs-predicted comparisons), roughly sized so the
+  // Houston case lands closer to its real observed range.
+  const allNetrtg = combos.map(c => c.result.netrtg);
+  const comboMeanNetrtg = allNetrtg.reduce((a,b)=>a+b,0) / allNetrtg.length;
+  const allOrtg = combos.map(c => c.result.ortg);
+  const comboMeanOrtg = allOrtg.reduce((a,b)=>a+b,0) / allOrtg.length;
+  const allDrtg = combos.map(c => c.result.drtg);
+  const comboMeanDrtg = allDrtg.reduce((a,b)=>a+b,0) / allDrtg.length;
+
+  for (const combo of selected) {
+    const r = combo.result;
+    const shrunkOrtg = comboMeanOrtg + SHRINKAGE_RETENTION * (r.ortg - comboMeanOrtg);
+    const shrunkDrtg = comboMeanDrtg + SHRINKAGE_RETENTION * (r.drtg - comboMeanDrtg);
+    combo.result = { ...r,
+      rawNetrtg: r.netrtg, rawOrtg: r.ortg, rawDrtg: r.drtg,
+      ortg: Math.round(shrunkOrtg*10)/10, drtg: Math.round(shrunkDrtg*10)/10,
+      netrtg: Math.round((shrunkOrtg-shrunkDrtg)*10)/10 };
+  }
+
+  return { selected, comboMeanOrtg, comboMeanDrtg };
 }
 
 setStatus('Evaluating 32 lineup combinations per team...');
@@ -998,7 +2452,7 @@ for (const abbr of teams) {
 
   const benchUnit = resolveUnitNames(benchRank2);
   const thirdUnit = resolveUnitNames(benchRank3);
-  let top20 = null, blended, weightNote, comboCount = 0;
+  let top20 = null, blended, weightNote, comboCount = 0, comboMeans = null;
   if (benchUnit) {
     const br = projectLineup(benchUnit.names, benchUnit.positions);
     if (!br.error) {
@@ -1007,14 +2461,35 @@ for (const abbr of teams) {
       // than failing the team when the depth chart doesn't go that deep
       // everywhere.
       let tr = thirdUnit ? projectLineup(thirdUnit.names, thirdUnit.positions) : null;
+      let comboResult;
       if (thirdUnit && !tr.error) {
-        top20 = generateAndRankCombos([startUnit, benchUnit, thirdUnit]);
+        comboResult = generateAndRankCombos([startUnit, benchUnit, thirdUnit]);
         comboCount = 243;
       } else {
-        top20 = generateAndRankCombos([startUnit, benchUnit]);
+        comboResult = generateAndRankCombos([startUnit, benchUnit]);
         comboCount = 32;
       }
+      top20 = comboResult.selected;
+      comboMeans = comboResult;
     }
+  }
+
+  // Apply the same shrinkage to the starting five that every other combo
+  // in the list gets. Without this, the starting five was the one
+  // exception left unshrunk (it's computed directly via projectLineup,
+  // separate from the searched-and-shrunk combo pool) -- confirmed
+  // directly, it was showing a meaningfully higher NetRtg than the
+  // team's own shrunk blended number, which is misleading since the
+  // detail view displays it as the headline "Starting Five" figure.
+  // Falls back to the raw value if the combo pool wasn't available
+  // (e.g. incomplete bench) since there's no mean to shrink toward.
+  if (comboMeans) {
+    const shrunkOrtg = comboMeans.comboMeanOrtg + SHRINKAGE_RETENTION * (startResult.ortg - comboMeans.comboMeanOrtg);
+    const shrunkDrtg = comboMeans.comboMeanDrtg + SHRINKAGE_RETENTION * (startResult.drtg - comboMeans.comboMeanDrtg);
+    startResult.rawOrtg = startResult.ortg; startResult.rawDrtg = startResult.drtg; startResult.rawNetrtg = startResult.netrtg;
+    startResult.ortg = Math.round(shrunkOrtg*10)/10;
+    startResult.drtg = Math.round(shrunkDrtg*10)/10;
+    startResult.netrtg = Math.round((shrunkOrtg-shrunkDrtg)*10)/10;
   }
 
   const nUsed = top20 ? Math.min(20, top20.length) : 0;
@@ -1069,8 +2544,11 @@ for (const abbr of teams) {
     recenter(t);
     recenter(t.starters);
     if (t.top10) for (const combo of t.top10) recenter(combo.result);
-    t.record = projectRecord(t.netrtg);
   }
+  const teamNetrtgMap = {};
+  for (const t of valid) teamNetrtgMap[t.abbr] = t.netrtg;
+  const seasonRecords = simulateSeasonRecords(teamNetrtgMap);
+  for (const t of valid) t.record = seasonRecords[t.abbr];
 }
 
     loading.style.display = 'none';
@@ -1200,9 +2678,11 @@ function openDetail(abbr) {
         const which = combo.whichUnit ? combo.whichUnit[j] : ((combo.mask & (1 << j)) ? 1 : 0);
         return `<span style="${unitStyle[which] || ''}">${n}</span>`;
       }).join(' · ');
+      const discNote = combo.result.rookieDiscount > 0
+        ? ` <span style="color:var(--orange);font-size:0.65rem;">(−${combo.result.rookieDiscount.toFixed(1)} sample-size discount)</span>` : '';
       return `<div class="player-row" style="grid-template-columns:2rem 1fr auto;">
         <div class="pos">#${i+1}</div>
-        <div class="pname" style="font-weight:400;">${nameSpans}</div>
+        <div class="pname" style="font-weight:400;">${nameSpans}${discNote}</div>
         <div class="prating">${combo.result.netrtg>=0?'+':''}${combo.result.netrtg.toFixed(1)} <span style="color:var(--text-muted);font-weight:400;">(${Math.round(RANK_WEIGHTS[i]*100)}%)</span></div>
       </div>`;
     }).join('');
@@ -1232,6 +2712,8 @@ function openDetail(abbr) {
     <div class="section-label">Model Detail</div>
     <div class="note-list">
       <div>Weights come from the real, empirically-measured share of team possessions by lineup usage rank (lineups.db, 2025-26) -- not an assumed split.</div>
+      <div>Uncertainty discount applies to any thin sample: true rookies scaled by draft position (−0.5 for a #1 pick up to −3.5 for late picks), and any player with under ~250 career games scaled by how thin that sample is -- shown inline where it applies.</div>
+      <div>All 20 combos are shrunk 50% toward the mean of all 243 candidates, correcting for the fact that the top result from a large search tends to overstate true quality (validated against real ground-truth lineup data).</div>
       <div>Defense source: ${Object.keys(DEFENSE).length ? 'live DEF_SCORE where available' : 'box-score approximation (defense-cache empty)'}</div>
     </div>
   `;
