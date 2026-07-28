@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T03:49:01.478Z",
+  "generated_at": "2026-07-28T18:34:10.786Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -336,7 +336,7 @@
         "PG": "Stephen Curry",
         "SG": "Brandin Podziemski",
         "SF": "Jimmy Butler",
-        "PF": "Yaxel Lendeborg",
+        "PF": "Draymond Green",
         "C": "Kristaps Porzingis"
       },
       "bench": {
@@ -347,17 +347,17 @@
         ],
         "SG": [
           "Will Richard",
+          "Lajae Jones",
           "Seth Curry"
         ],
         "SF": [
           "Moses Moody",
-          "Lajae Jones",
+          "Gui Santos",
           "Gary Payton II"
         ],
         "PF": [
-          "Gui Santos",
-          "Malevy Leons",
-          "Draymond Green"
+          "Yaxel Lendeborg",
+          "Malevy Leons"
         ],
         "C": [
           "Al Horford",
