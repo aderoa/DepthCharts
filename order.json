@@ -737,12 +737,14 @@
       "Jeremiah Fears",
       "Jordan Poole",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Herb Jones",
       "Bryce McGowens",
       "Jaron Pierre",
+      "Kobe Bufkin",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -751,23 +753,24 @@
       "Micah Peavy",
       "Jordan Hawkins",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Saddiq Bey",
       "Derik Queen",
       "Karlo Matkovic",
+      "Christian Koloko",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Kevon Looney"
+      "__SEPARATOR__"
     ],
     "C": [
       "Zion Williamson",
       "Yves Missi",
       "DeAndre Jordan",
       "Hunter Dickinson",
-      "__SEPARATOR__",
-      "Josh Oduro"
+      "__SPACER__",
+      "__SEPARATOR__"
     ]
   },
   "NYK": {
