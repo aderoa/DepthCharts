@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T18:34:10.786Z",
+  "generated_at": "2026-07-28T22:50:20.511Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -672,7 +672,8 @@
         ],
         "SG": [
           "Bryce McGowens",
-          "Jaron Pierre"
+          "Jaron Pierre",
+          "Kobe Bufkin"
         ],
         "SF": [
           "Micah Peavy",
@@ -681,13 +682,12 @@
         "PF": [
           "Derik Queen",
           "Karlo Matkovic",
-          "Kevon Looney"
+          "Christian Koloko"
         ],
         "C": [
           "Yves Missi",
           "DeAndre Jordan",
-          "Hunter Dickinson",
-          "Josh Oduro"
+          "Hunter Dickinson"
         ]
       }
     },
