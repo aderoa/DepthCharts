@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T20:40:44.569Z",
+  "generated_at": "2026-08-01T20:40:50.873Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -887,17 +887,17 @@
         ],
         "SF": [
           "Shaedon Sharpe",
-          "Jeremy Sochan",
-          "Micah Potter"
+          "Jeremy Sochan"
         ],
         "PF": [
           "Sidy Cissoko",
-          "Yang Hansen",
-          "Jayson Kent"
+          "Jayson Kent",
+          "Yang Hansen"
         ],
         "C": [
           "Robert Williams",
-          "Branden Carlson"
+          "Branden Carlson",
+          "Micah Potter"
         ]
       }
     },
