@@ -973,7 +973,6 @@
       "Jrue Holiday",
       "Vit Krejci",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -988,16 +987,13 @@
       "Toumani Camara",
       "Shaedon Sharpe",
       "Jeremy Sochan",
-      "__SPACER__",
-      "Micah Potter",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Deni Avdija",
       "Sidy Cissoko",
-      "Yang Hansen",
       "Jayson Kent",
+      "Yang Hansen",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -1005,8 +1001,7 @@
       "Donovan Clingan",
       "Robert Williams",
       "Branden Carlson",
-      "__SPACER__",
-      "__SPACER__",
+      "Micah Potter",
       "__SEPARATOR__"
     ]
   },
