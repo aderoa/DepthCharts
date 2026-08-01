@@ -381,9 +381,10 @@
     ],
     "SG": [
       "Brandin Podziemski",
+      "Gary Payton II",
+      "__SPACER__",
       "Will Richard",
       "Lajae Jones",
-      "__SPACER__",
       "__SEPARATOR__",
       "Seth Curry"
     ],
@@ -391,15 +392,13 @@
       "Jimmy Butler",
       "Moses Moody",
       "Gui Santos",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Gary Payton II"
+      "__SEPARATOR__"
     ],
     "PF": [
       "Draymond Green",
       "Yaxel Lendeborg",
-      "__SPACER__",
       "Malevy Leons",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
