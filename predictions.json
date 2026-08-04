@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T15:45:11.459Z",
+  "generated_at": "2026-08-04T15:45:30.757Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -987,24 +987,24 @@
       "bench": {
         "PG": [
           "Jamal Shead",
-          "Chucky Hepburn"
+          "Chucky Hepburn",
+          "Jaden Bradley"
         ],
         "SG": [
           "Ja'Kobe Walter",
-          "Jaden Bradley"
+          "Alijah Martin"
         ],
         "SF": [
           "Allen Graves",
-          "Alijah Martin"
+          "Jamison Battle"
         ],
         "PF": [
           "Kyle Anderson",
-          "Jamison Battle",
-          "Trey Jemison"
+          "Collin Murray-Boyles"
         ],
         "C": [
           "Trayce Jackson-Davis",
-          "Collin Murray-Boyles",
+          "Trey Jemison",
           "Nate Bittle"
         ]
       }
