@@ -1090,21 +1090,22 @@
       "Jamal Shead",
       "Chucky Hepburn",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Garrett Temple"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SG": [
       "RJ Barrett",
       "Ja'Kobe Walter",
       "Jaden Bradley",
       "__SPACER__",
-      "__SEPARATOR__",
-      "AJ Lawson"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "SF": [
       "Kawhi Leonard",
       "Allen Graves",
       "Alijah Martin",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -1112,6 +1113,7 @@
       "Scottie Barnes",
       "Kyle Anderson",
       "Jamison Battle",
+      "Trey Jemison",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -1120,6 +1122,7 @@
       "Trayce Jackson-Davis",
       "Collin Murray-Boyles",
       "__SPACER__",
+      "Nate Bittle",
       "__SEPARATOR__"
     ]
   },
