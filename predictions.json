@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T15:38:54.479Z",
+  "generated_at": "2026-08-05T15:39:02.802Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -455,6 +455,7 @@
         "SG": [
           "Kobe Sanders",
           "Cam Christie",
+          "Jalen Pickett",
           "Bradley Beal"
         ],
         "SF": [
@@ -466,11 +467,13 @@
         "PF": [
           "Derrick Jones",
           "Baba Miller",
+          "Johni Broome",
           "Nicolas Batum"
         ],
         "C": [
           "Isaiah Jackson",
           "Yanic Konan Niederhauser",
+          "Jamarion Sharp",
           "Norchad Omier"
         ]
       }
