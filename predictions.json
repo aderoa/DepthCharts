@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T15:39:02.802Z",
+  "generated_at": "2026-08-05T15:39:11.839Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -271,13 +271,12 @@
       "bench": {
         "PG": [
           "KJ Simpson",
-          "Tyus Jones",
-          "Bruce Brown"
+          "Tyus Jones"
         ],
         "SG": [
           "Julian Strawther",
           "Alpha Diallo",
-          "Jalen Pickett"
+          "Bruce Brown"
         ],
         "SF": [
           "Spencer Jones",
