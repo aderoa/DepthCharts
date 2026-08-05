@@ -654,7 +654,6 @@
       "Brayden Burries",
       "Kasparas Jakucionis",
       "Kam Jones",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -662,15 +661,12 @@
       "Kevin Porter",
       "Caris LeVert",
       "Cormac Ryan",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Andre Jackson"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Jaime Jaquez",
       "AJ Green",
       "Gary Trent Jr",
-      "__SPACER__",
       "Pete Nance",
       "__SEPARATOR__"
     ],
@@ -679,17 +675,15 @@
       "Nate Ament",
       "Ousmane Dieng",
       "Malique Lewis",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Thanasis Antetokounmpo"
     ],
     "C": [
       "Myles Turner",
       "Kel'el Ware",
       "Jericho Sims",
       "Bogoljub Markovic",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Thanasis Antetokounmpo"
+      "__SEPARATOR__"
     ]
   },
   "MIN": {
