@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T15:45:30.757Z",
+  "generated_at": "2026-08-05T00:57:54.482Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -602,8 +602,7 @@
         "SG": [
           "Kevin Porter",
           "Caris LeVert",
-          "Cormac Ryan",
-          "Andre Jackson"
+          "Cormac Ryan"
         ],
         "SF": [
           "AJ Green",
@@ -613,13 +612,13 @@
         "PF": [
           "Nate Ament",
           "Ousmane Dieng",
-          "Malique Lewis"
+          "Malique Lewis",
+          "Thanasis Antetokounmpo"
         ],
         "C": [
           "Kel'el Ware",
           "Jericho Sims",
-          "Bogoljub Markovic",
-          "Thanasis Antetokounmpo"
+          "Bogoljub Markovic"
         ]
       }
     },
