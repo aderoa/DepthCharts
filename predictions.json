@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T02:24:26.722Z",
+  "generated_at": "2026-08-06T22:57:47.116Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -1029,23 +1029,24 @@
         "SG": [
           "Ace Bailey",
           "Sviatoslav Mykhailiuk",
-          "Trey Alexander",
+          "Terrell Brown",
           "Hayden Gray"
         ],
         "SF": [
           "Brice Sensabaugh",
           "Cody Williams",
-          "Blake Hinson"
+          "Trey Alexander"
         ],
         "PF": [
           "Kyle Filipowski",
           "John Konchar",
-          "Harrison Ingram",
+          "Blake Hinson",
           "Kevin Love"
         ],
         "C": [
           "Jaxson Hayes",
-          "Mo Bamba"
+          "Mo Bamba",
+          "Harrison Ingram"
         ]
       }
     },
