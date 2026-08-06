@@ -295,18 +295,21 @@
       "Jamal Murray",
       "KJ Simpson",
       "Tyus Jones",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Christian Braun",
       "Julian Strawther",
-      "Alpha Diallo",
+      "__SPACER__",
+      "Lonnie Walker",
       "__SEPARATOR__",
       "Bruce Brown"
     ],
     "SF": [
       "Cameron Johnson",
       "Spencer Jones",
+      "Alpha Diallo",
       "Bryce Hopkins",
       "__SEPARATOR__",
       "Curtis Jones"
@@ -315,6 +318,7 @@
       "Aaron Gordon",
       "Zeke Nnaji",
       "Trevon Brazile",
+      "__SPACER__",
       "__SEPARATOR__",
       "Peyton Watson"
     ],
@@ -322,6 +326,7 @@
       "Nikola Jokic",
       "Marvin Bagley",
       "DaRon Holmes",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
