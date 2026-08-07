@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T22:57:47.116Z",
+  "generated_at": "2026-08-07T15:08:49.207Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -704,26 +704,24 @@
       "bench": {
         "PG": [
           "Jose Alvarado",
-          "Jack Kayil"
+          "Tyler Kolek"
         ],
         "SG": [
           "Miles McBride",
-          "Tyler Kolek"
+          "Tyler Nickel"
         ],
         "SF": [
           "Jordan Clarkson",
-          "Tyler Nickel",
+          "Pacome Dadiet",
           "Kevin McCullar"
         ],
         "PF": [
           "Landry Shamet",
-          "Pacome Dadiet",
           "Dillon Jones"
         ],
         "C": [
           "Andre Drummond",
-          "Mohamed Diawara",
-          "Trey Jemison"
+          "Mohamed Diawara"
         ]
       }
     },
