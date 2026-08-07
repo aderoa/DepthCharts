@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T15:08:49.207Z",
+  "generated_at": "2026-08-07T15:08:53.565Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -717,11 +717,11 @@
         ],
         "PF": [
           "Landry Shamet",
+          "Mohamed Diawara",
           "Dillon Jones"
         ],
         "C": [
-          "Andre Drummond",
-          "Mohamed Diawara"
+          "Andre Drummond"
         ]
       }
     },
