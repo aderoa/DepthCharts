@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T16:44:21.361Z",
+  "generated_at": "2026-08-10T06:15:51.370Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -160,28 +160,25 @@
       "bench": {
         "PG": [
           "Rob Dillingham",
-          "Tre Jones",
-          "Yuki Kawamura"
+          "Tre Jones"
         ],
         "SG": [
           "Isaac Okoro",
           "Dailyn Swain",
-          "Mac McClung"
+          "Jaylin Sellers"
         ],
         "SF": [
           "Patrick Williams",
-          "Noa Essengue",
-          "Guerschon Yabusele"
+          "Noa Essengue"
         ],
         "PF": [
           "Jalen Smith",
-          "Leonard Miller",
-          "Nick Richards"
+          "Leonard Miller"
         ],
         "C": [
           "Zach Collins",
           "Tobe Awaka",
-          "Lachlan Olbrich"
+          "Nick Richards"
         ]
       }
     },
