@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T21:03:10.095Z",
+  "generated_at": "2026-08-14T21:03:16.307Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -183,7 +183,7 @@
     },
     "CLE": {
       "starters": {
-        "PG": "Dennis Schroeder",
+        "PG": "Craig Porter",
         "SG": "Donovan Mitchell",
         "SF": "Max Strus",
         "PF": "Evan Mobley",
@@ -191,7 +191,7 @@
       },
       "bench": {
         "PG": [
-          "Craig Porter",
+          "Tre Mann",
           "Tyrese Proctor",
           "James Harden"
         ],
