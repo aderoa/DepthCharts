@@ -913,22 +913,24 @@
     "PG": [
       "Jalen Green",
       "Collin Gillespie",
-      "__SPACER__",
       "Pat Spencer",
+      "Koby Brea",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Devin Booker",
       "Jordan Goodwin",
+      "Haywood Highsmith",
+      "__SPACER__",
       "Jamaree Bouyea",
-      "Koby Brea",
-      "__SEPARATOR__",
-      "Haywood Highsmith"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Dillon Brooks",
       "Luke Kennard",
       "Rasheer Fleming",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Livers"
@@ -938,12 +940,14 @@
       "Ryan Dunn",
       "Koa Peat",
       "CJ Huntley",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Mark Williams",
       "Oso Ighodaro",
       "Khaman Maluach",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ]
@@ -1080,14 +1084,14 @@
       "Ja'Kobe Walter",
       "Alijah Martin",
       "__SPACER__",
-      "__SPACER__",
+      "Andre Jackson",
       "__SEPARATOR__"
     ],
     "SF": [
       "Kawhi Leonard",
       "Allen Graves",
       "Jamison Battle",
-      "__SPACER__",
+      "Malachi Smith",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -1103,8 +1107,8 @@
       "Jakob Poeltl",
       "Trayce Jackson-Davis",
       "Trey Jemison",
-      "__SPACER__",
       "Nate Bittle",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
