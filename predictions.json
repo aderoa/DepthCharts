@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T21:03:16.307Z",
+  "generated_at": "2026-08-17T15:13:04.497Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -665,16 +665,18 @@
       "bench": {
         "PG": [
           "Jeremiah Fears",
-          "Jordan Poole"
+          "Jordan Poole",
+          "Kobe Bufkin"
         ],
         "SG": [
           "Bryce McGowens",
           "Jaron Pierre",
-          "Kobe Bufkin"
+          "Caleb Houstan"
         ],
         "SF": [
           "Micah Peavy",
-          "Jordan Hawkins"
+          "Jordan Hawkins",
+          "Trendon Watford"
         ],
         "PF": [
           "Derik Queen",
@@ -836,13 +838,13 @@
       "bench": {
         "PG": [
           "Collin Gillespie",
-          "Pat Spencer"
+          "Pat Spencer",
+          "Koby Brea"
         ],
         "SG": [
           "Jordan Goodwin",
-          "Jamaree Bouyea",
-          "Koby Brea",
-          "Haywood Highsmith"
+          "Haywood Highsmith",
+          "Jamaree Bouyea"
         ],
         "SF": [
           "Luke Kennard",
