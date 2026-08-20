@@ -485,8 +485,8 @@
       "Keaton Wagler",
       "Kobe Sanders",
       "Yuki Kawamura",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Sean Pedulla",
       "TyTy Washington"
     ],
     "SG": [
@@ -501,14 +501,17 @@
       "Jordan Miller",
       "Gradey Dick",
       "Nick Martinelli",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Bennedict Mathurin"
+      "Bennedict Mathurin",
+      "Max Strus"
     ],
     "PF": [
       "Rui Hachimura",
       "Derrick Jones",
       "Baba Miller",
       "Johni Broome",
+      "__SPACER__",
       "__SEPARATOR__",
       "Nicolas Batum"
     ],
@@ -517,6 +520,7 @@
       "Isaiah Jackson",
       "Yanic Konan Niederhauser",
       "Jamarion Sharp",
+      "__SPACER__",
       "__SEPARATOR__",
       "Norchad Omier"
     ]
