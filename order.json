@@ -201,9 +201,9 @@
   },
   "CLE": {
     "PG": [
-      "Tre Mann",
       "Craig Porter",
       "Tyrese Proctor",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "James Harden"
@@ -217,16 +217,16 @@
     ],
     "SF": [
       "Peyton Watson",
+      "Jaylon Tyson",
       "Mario Hezonja",
-      "Nae'Qwan Tomlin",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Evan Mobley",
-      "Jaylon Tyson",
+      "Cam Whitmore",
+      "Nae'Qwan Tomlin",
       "Riley Minix",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
