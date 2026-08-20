@@ -1187,7 +1187,7 @@
       "Anthony Davis",
       "Justin Champagnie",
       "Felix Okpara",
-      "Julian Reese",
+      "__SPACER__",
       "__SEPARATOR__",
       "Anthony Gill"
     ],
@@ -1196,7 +1196,8 @@
       "Deandre Ayton",
       "Tristan Vukcevic",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Julian Reese"
     ]
   }
 }
