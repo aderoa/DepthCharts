@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T00:07:05.279Z",
+  "generated_at": "2026-08-20T00:25:26.714Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -263,8 +263,8 @@
       },
       "bench": {
         "PG": [
-          "KJ Simpson",
-          "Tyus Jones"
+          "Tyus Jones",
+          "KJ Simpson"
         ],
         "SG": [
           "Julian Strawther",
@@ -279,8 +279,7 @@
         ],
         "PF": [
           "Zeke Nnaji",
-          "Trevon Brazile",
-          "Peyton Watson"
+          "Trevon Brazile"
         ],
         "C": [
           "Marvin Bagley",
