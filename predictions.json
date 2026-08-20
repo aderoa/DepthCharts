@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T00:25:26.714Z",
+  "generated_at": "2026-08-20T00:52:03.190Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -183,7 +183,7 @@
     },
     "CLE": {
       "starters": {
-        "PG": "Tre Mann",
+        "PG": "Craig Porter",
         "SG": "Donovan Mitchell",
         "SF": "Peyton Watson",
         "PF": "Evan Mobley",
@@ -191,7 +191,6 @@
       },
       "bench": {
         "PG": [
-          "Craig Porter",
           "Tyrese Proctor",
           "James Harden"
         ],
@@ -201,11 +200,12 @@
           "Tristan Enaruna"
         ],
         "SF": [
-          "Mario Hezonja",
-          "Nae'Qwan Tomlin"
+          "Jaylon Tyson",
+          "Mario Hezonja"
         ],
         "PF": [
-          "Jaylon Tyson",
+          "Cam Whitmore",
+          "Nae'Qwan Tomlin",
           "Riley Minix"
         ],
         "C": [
