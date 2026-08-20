@@ -201,18 +201,17 @@
   },
   "CLE": {
     "PG": [
+      "James Harden",
       "Craig Porter",
       "Tyrese Proctor",
       "Meleek Thomas",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "James Harden"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Donovan Mitchell",
       "Sam Merrill",
-      "__SPACER__",
       "Tristan Enaruna",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
