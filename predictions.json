@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T19:45:46.865Z",
+  "generated_at": "2026-08-20T00:06:31.009Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -185,7 +185,7 @@
       "starters": {
         "PG": "Craig Porter",
         "SG": "Donovan Mitchell",
-        "SF": "Max Strus",
+        "SF": "Peyton Watson",
         "PF": "Evan Mobley",
         "C": "Jarrett Allen"
       },
@@ -210,8 +210,7 @@
         ],
         "C": [
           "Thomas Bryant",
-          "Ernest Udeh",
-          "Olivier Sarr"
+          "Ernest Udeh"
         ]
       }
     },
