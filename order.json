@@ -280,16 +280,16 @@
   "DEN": {
     "PG": [
       "Jamal Murray",
-      "KJ Simpson",
       "Tyus Jones",
+      "KJ Simpson",
       "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Christian Braun",
       "Julian Strawther",
-      "__SPACER__",
       "Lonnie Walker",
+      "__SPACER__",
       "__SEPARATOR__",
       "Bruce Brown"
     ],
@@ -306,8 +306,7 @@
       "Zeke Nnaji",
       "Trevon Brazile",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Peyton Watson"
+      "__SEPARATOR__"
     ],
     "C": [
       "Nikola Jokic",
