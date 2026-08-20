@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T00:52:38.822Z",
+  "generated_at": "2026-08-20T00:52:53.887Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -1056,13 +1056,14 @@
       "bench": {
         "PG": [
           "Carlton Carrington",
+          "Tre Mann",
           "Alondes Williams",
-          "Jamir Watkins",
           "Sharife Cooper"
         ],
         "SG": [
           "Khris Middleton",
-          "Kyshawn George"
+          "Kyshawn George",
+          "Jamir Watkins"
         ],
         "SF": [
           "Bilal Coulibaly",
@@ -1070,7 +1071,6 @@
           "Leaky Black"
         ],
         "PF": [
-          "Cam Whitmore",
           "Justin Champagnie",
           "Julian Reese",
           "Anthony Gill"
