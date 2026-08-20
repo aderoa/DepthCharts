@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T00:57:45.942Z",
+  "generated_at": "2026-08-20T17:03:07.466Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -183,7 +183,7 @@
     },
     "CLE": {
       "starters": {
-        "PG": "Craig Porter",
+        "PG": "James Harden",
         "SG": "Donovan Mitchell",
         "SF": "Peyton Watson",
         "PF": "Evan Mobley",
@@ -191,9 +191,9 @@
       },
       "bench": {
         "PG": [
+          "Craig Porter",
           "Tyrese Proctor",
-          "Meleek Thomas",
-          "James Harden"
+          "Meleek Thomas"
         ],
         "SG": [
           "Sam Merrill",
