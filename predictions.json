@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T19:23:23.027Z",
+  "generated_at": "2026-08-21T19:23:37.659Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -559,18 +559,20 @@
       "bench": {
         "PG": [
           "Dru Smith",
+          "Tre Donaldson",
           "Jahmir Young"
         ],
         "SG": [
-          "Tim Hardaway Jr",
+          "Klay Thompson",
           "Ryan Conwell"
         ],
         "SF": [
-          "Simone Fontecchio",
+          "Tim Hardaway Jr",
           "Myron Gardner",
           "Trevor Keels"
         ],
         "PF": [
+          "Simone Fontecchio",
           "Nikola Jovic",
           "Keshad Johnson"
         ],
