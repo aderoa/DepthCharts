@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T19:23:17.579Z",
+  "generated_at": "2026-08-21T19:23:23.027Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -231,23 +231,23 @@
         ],
         "SG": [
           "Zaccharie Risacher",
-          "Jett Howard"
+          "Jett Howard",
+          "Vsevolod Ishchenko"
         ],
         "SF": [
           "Santiago Aldama",
           "Caleb Martin",
-          "Vsevolod Ishchenko"
+          "Tarik Biberovic"
         ],
         "PF": [
           "Morez Johnson",
           "Naji Marshall",
-          "Tarik Biberovic",
+          "Tobi Lawal",
           "Tyler Smith"
         ],
         "C": [
           "Daniel Gafford",
           "Moussa Cisse",
-          "Tobi Lawal",
           "Dwight Powell"
         ]
       }
