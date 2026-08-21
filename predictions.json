@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T19:23:13.450Z",
+  "generated_at": "2026-08-21T19:23:17.579Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -217,8 +217,8 @@
     "DAL": {
       "starters": {
         "PG": "Kyrie Irving",
-        "SG": "Max Christie",
-        "SF": "Cooper Flagg",
+        "SG": "Cooper Flagg",
+        "SF": "Max Christie",
         "PF": "PJ Washington",
         "C": "Dereck Lively"
       },
