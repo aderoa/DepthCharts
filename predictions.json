@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T19:26:59.335Z",
+  "generated_at": "2026-08-21T19:27:01.922Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -232,12 +232,12 @@
         "SG": [
           "Zaccharie Risacher",
           "Tarik Biberovic",
-          "Jett Howard",
           "Vsevolod Ishchenko"
         ],
         "SF": [
           "Santiago Aldama",
-          "Caleb Martin"
+          "Caleb Martin",
+          "Jett Howard"
         ],
         "PF": [
           "Morez Johnson",
