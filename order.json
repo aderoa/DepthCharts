@@ -368,15 +368,13 @@
     "PG": [
       "Stephen Curry",
       "De'Anthony Melton",
+      "Brandon Williams",
       "LJ Cryer",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Jeenathan Williams"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Brandin Podziemski",
       "Gary Payton II",
-      "__SPACER__",
       "Will Richard",
       "Lajae Jones",
       "__SEPARATOR__",
@@ -386,6 +384,7 @@
       "Jimmy Butler",
       "Moses Moody",
       "Gui Santos",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
