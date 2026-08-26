@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T22:50:47.773Z",
+  "generated_at": "2026-08-26T22:50:53.816Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -640,12 +640,12 @@
         ],
         "SF": [
           "Jaylen Clark",
-          "Josh Green"
+          "Josh Green",
+          "Isaiah Evans"
         ],
         "PF": [
           "Jonathan Kuminga",
           "Trey Lyles",
-          "Isaiah Evans",
           "Trey Kaufman-Renn"
         ],
         "C": [
