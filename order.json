@@ -407,29 +407,33 @@
       "Fred VanVleet",
       "Marcus Smart",
       "Bruce Thornton",
+      "Sean Pedulla",
+      "__SPACER__",
       "__SEPARATOR__",
       "JD Davison"
     ],
     "SG": [
       "Amen Thompson",
       "Reed Sheppard",
-      "Tristen Newton",
-      "__SPACER__",
+      "Jae'Sean Tate",
       "Isaiah Crawford",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Aaron Holiday"
+      "Tristen Newton"
     ],
     "SF": [
       "Kevin Durant",
       "Bogdan Bogdanovic",
-      "Jae'Sean Tate",
+      "__SPACER__",
       "Julian Phillips",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
       "Jabari Smith",
       "Tari Eason",
       "Quadir Copeland",
+      "Rafael Castro",
       "__SPACER__",
       "__SEPARATOR__",
       "Jeff Green"
@@ -439,6 +443,7 @@
       "Clint Capela",
       "Steven Adams",
       "Oscar Tshiebwe",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
