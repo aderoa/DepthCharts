@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T17:39:47.515Z",
+  "generated_at": "2026-08-26T17:39:56.326Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -669,6 +669,7 @@
           "Kobe Bufkin"
         ],
         "SG": [
+          "Bennedict Mathurin",
           "Bryce McGowens",
           "Jaron Pierre",
           "Caleb Houstan"
@@ -686,8 +687,8 @@
         "C": [
           "Yves Missi",
           "DeAndre Jordan",
-          "Hunter Dickinson",
-          "Christian Koloko"
+          "Christian Koloko",
+          "Hunter Dickinson"
         ]
       }
     },
