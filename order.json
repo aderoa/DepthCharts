@@ -488,8 +488,7 @@
       "Kobe Sanders",
       "Jalen Pickett",
       "Yuki Kawamura",
-      "__SEPARATOR__",
-      "TyTy Washington"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Kris Dunn",
@@ -503,9 +502,10 @@
       "Brandon Ingram",
       "Max Strus",
       "Jordan Miller",
-      "__SPACER__",
       "Nick Martinelli",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Nicolas Batum",
       "Bennedict Mathurin"
     ],
     "PF": [
@@ -515,7 +515,7 @@
       "Johni Broome",
       "__SPACER__",
       "__SEPARATOR__",
-      "Nicolas Batum"
+      "Norchad Omier"
     ],
     "C": [
       "Brook Lopez",
@@ -523,8 +523,7 @@
       "Yanic Konan Niederhauser",
       "Jamarion Sharp",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Norchad Omier"
+      "__SEPARATOR__"
     ]
   },
   "LAL": {
