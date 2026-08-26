@@ -731,6 +731,7 @@
     ],
     "SG": [
       "Herb Jones",
+      "Bennedict Mathurin",
       "Bryce McGowens",
       "Jaron Pierre",
       "Caleb Houstan",
@@ -742,7 +743,6 @@
       "Micah Peavy",
       "Jordan Hawkins",
       "Trendon Watford",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "PF": [
@@ -750,16 +750,17 @@
       "Derik Queen",
       "Karlo Matkovic",
       "Malik Dia",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Zion Williamson",
       "Yves Missi",
       "DeAndre Jordan",
-      "Hunter Dickinson",
-      "__SPACER__",
       "Christian Koloko",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Hunter Dickinson"
     ]
   },
   "NYK": {
