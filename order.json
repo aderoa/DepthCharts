@@ -619,6 +619,7 @@
       "Davion Mitchell",
       "Dru Smith",
       "Tre Donaldson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jahmir Young"
     ],
@@ -626,12 +627,14 @@
       "Andrew Wiggins",
       "Klay Thompson",
       "Ryan Conwell",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
       "Tim Hardaway Jr",
       "Pelle Larsson",
       "Myron Gardner",
+      "__SPACER__",
       "__SEPARATOR__",
       "Trevor Keels"
     ],
@@ -639,12 +642,13 @@
       "Giannis Antetokounmpo",
       "Simone Fontecchio",
       "Nikola Jovic",
-      "__SEPARATOR__",
-      "Keshad Johnson"
+      "Keshad Johnson",
+      "__SEPARATOR__"
     ],
     "C": [
       "Bam Adebayo",
       "Bobby Portis",
+      "Nick Richards",
       "Vladislav Goldin",
       "__SEPARATOR__"
     ]
