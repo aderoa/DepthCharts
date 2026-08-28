@@ -370,13 +370,14 @@
       "De'Anthony Melton",
       "Brandon Williams",
       "LJ Cryer",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Brandin Podziemski",
       "Gary Payton II",
       "Will Richard",
-      "Lajae Jones",
+      "Dalen Terry",
       "__SEPARATOR__",
       "Seth Curry"
     ],
@@ -384,6 +385,8 @@
       "Jimmy Butler",
       "Moses Moody",
       "Gui Santos",
+      "Lajae Jones",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -392,6 +395,7 @@
       "Yaxel Lendeborg",
       "Georges Niang",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
@@ -399,6 +403,7 @@
       "Al Horford",
       "Charles Bassey",
       "Malevy Leons",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
