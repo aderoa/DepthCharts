@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T02:18:39.224Z",
+  "generated_at": "2026-09-01T16:41:38.824Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -807,29 +807,28 @@
       "bench": {
         "PG": [
           "Labaron Philon",
-          "Caleb Love"
+          "Caleb Love",
+          "Jameer Nelson Jr"
         ],
         "SG": [
           "Anfernee Simons",
           "Kentavious Caldwell-Pope",
-          "Duke Miles",
-          "Dalen Terry"
+          "Duke Miles"
         ],
         "SF": [
           "Dean Wade",
           "Jabari Walker",
-          "Rayan Rupert",
-          "MarJon Beauchamp"
+          "Rayan Rupert"
         ],
         "PF": [
           "Dominick Barlow",
           "Justin Edwards",
-          "Johni Broome",
-          "Trendon Watford"
+          "Saint Thomas"
         ],
         "C": [
           "Ariel Hukporti",
-          "Adem Bona"
+          "Adem Bona",
+          "Tacko Fall"
         ]
       }
     },
