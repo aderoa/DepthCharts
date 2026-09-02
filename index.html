@@ -279,6 +279,7 @@ footer a { color:var(--accent); text-decoration:none; }
         <button class="export-btn" id="copyFutureBtn1" onclick="copyFutureYearExport(_futureYear,0,15)">📷 Copy ATL-MEM</button>
         <button class="export-btn" id="copyFutureBtn2" onclick="copyFutureYearExport(_futureYear,15,30)">📷 Copy MIA-WAS</button>
       </span>
+      <button class="export-btn" onclick="openHeadshotAudit()">🖼️ Photos</button>
       <button class="export-btn" onclick="manualRefresh(this)">🔄 Refresh Data</button>
       <span id="refreshStatus" style="color:#1a1a2e;font-size:0.7rem;margin-left:8px;opacity:0.7;">Auto-refresh: 60s</span>
     </div>
@@ -2979,6 +2980,18 @@ async function manualRefresh(btn) {
 // =====================================================
 // INIT
 // =====================================================
+// Opens the headshot check in a new tab, keeping admin mode and any ?team= that
+// is already on the url. The page shows every team at once, so there is no
+// "current" team to carry over -- ?team=GSW narrows it if you want one.
+function openHeadshotAudit() {
+  const params = new URLSearchParams(window.location.search);
+  const q = new URLSearchParams();
+  q.set('photos', '1');
+  if (params.get('admin')) q.set('admin', params.get('admin'));
+  if (params.get('team')) q.set('team', params.get('team').toUpperCase());
+  window.open(window.location.pathname + '?' + q.toString(), '_blank', 'noopener');
+}
+
 async function renderHeadshotAudit(teamFilter) {
   document.body.innerHTML =
     '<div style="font:14px/1.4 system-ui,sans-serif;padding:14px 18px">'
