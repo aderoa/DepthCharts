@@ -188,6 +188,10 @@ footer a { color:var(--accent); text-decoration:none; }
 .admin-position-column { display:flex; flex-direction:column; gap:0.35rem; min-height:80px; }
 .admin-position-header { text-align:center; font-weight:700; font-size:0.85rem; color:var(--text); padding:0.3rem; border-bottom:2px solid var(--accent); margin-bottom:0.2rem; }
 .admin-player-card { background:var(--surface); border-radius:8px; padding:0.4rem 0.5rem; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.04); transition:transform 0.1s, box-shadow 0.1s; border:2px solid transparent; cursor:grab; user-select:none; font-size:0.75rem; }
+.photo-link { font-size:0.58rem; line-height:1.1; margin-top:2px; pointer-events:auto; }
+.photo-link a { color:#3b82f6; text-decoration:none; pointer-events:auto; }
+.photo-link a:hover { text-decoration:underline; }
+.photo-link .no-photo { color:#c0392b; }
 .admin-player-card:hover { transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,0.08); border-color:var(--accent); }
 .admin-player-card.starter { background:linear-gradient(135deg, #fff 0%, #f0f4ff 100%); border:2px solid var(--accent); }
 .admin-player-card.dragging { opacity:0.5; cursor:grabbing; }
@@ -589,6 +593,42 @@ function detectStaleDepthChartEntries(players, orders) {
     }
   }
   return flagged;
+}
+
+// A "Photo" link under every card, in admin mode.
+//
+// THE URL IS THE ONE THAT GOES TO PRESTO. p.headshot has already been through
+// maskImg -- ESPN combiner rewritten to the direct file, everything else proxied
+// through hoopsmatic.com/img -- so what this opens is exactly what the exported
+// HTML will ask a reader's browser for. A link to the original source would prove
+// nothing about whether the export works.
+//
+// Added after render rather than inside the fourteen card templates: one pass over
+// the finished chart cannot fall out of step with them, and there is nothing to
+// remember the next time a template is edited.
+function addPhotoLinks() {
+  if (!isAdmin) return;
+  const chart = document.getElementById('depthChart');
+  if (!chart) return;
+  const shot = new Map();
+  for (const p of (allPlayers || [])) {
+    if (p && p.name) shot.set(p.name, p.headshot || '');
+  }
+  for (const card of chart.querySelectorAll('[data-player]')) {
+    if (card.querySelector('.photo-link')) continue;
+    const url = shot.get(card.getAttribute('data-player'));
+    const d = document.createElement('div');
+    d.className = 'photo-link';
+    if (url) {
+      // draggable="true" on the card swallows clicks, so the link needs its own
+      // pointer events and a draggable=false of its own.
+      d.innerHTML = '<a href="' + url.replace(/"/g, '&quot;') + '" target="_blank"'
+        + ' rel="noopener" draggable="false">Photo</a>';
+    } else {
+      d.innerHTML = '<span class="no-photo">no photo</span>';
+    }
+    card.appendChild(d);
+  }
 }
 
 // Whether the "missing from the depth chart" banner is shown at all.
@@ -1373,6 +1413,7 @@ function renderDepthChart(teamAbbrev) {
     html += '</div>';
   });
   document.getElementById('depthChart').innerHTML = html;
+  addPhotoLinks();
   document.getElementById('depthChartContainer').classList.add('active');
   setupDragDrop(document.getElementById('depthChart'), teamAbbrev, false);
 }
