@@ -590,9 +590,19 @@ function detectStaleDepthChartEntries(players, orders) {
   return flagged;
 }
 
+// Whether the "missing from the depth chart" banner is shown at all.
+let SHOW_STALE_BANNER = false;
+
 function renderStaleWarningBanner(flagged) {
   const el = document.getElementById('staleWarningBanner');
   if (!el) return;
+  // TURNED OFF. The banner listed a hundred and fifty names on every season and
+  // was dismissed every time, which makes it noise rather than a warning. The
+  // detection below still runs and is still callable from the console --
+  //     renderStaleWarningBanner(detectStaleDepthChartEntries(allPlayers, loadAllOrders()))
+  // after setting SHOW_STALE_BANNER = true -- so nothing is lost, it just does not
+  // greet you any more.
+  if (!SHOW_STALE_BANNER) { el.classList.remove('active'); el.innerHTML = ''; return; }
   if (!flagged || !flagged.length) { el.classList.remove('active'); el.innerHTML = ''; return; }
   const items = flagged
     .sort((a, b) => a.team.localeCompare(b.team))
@@ -2969,6 +2979,57 @@ async function manualRefresh(btn) {
 // =====================================================
 // INIT
 // =====================================================
+async function renderHeadshotAudit(teamFilter) {
+  document.body.innerHTML =
+    '<div style="font:14px/1.4 system-ui,sans-serif;padding:14px 18px">'
+    + '<h2 style="margin:0 0 2px">Headshot check</h2>'
+    + '<p id="hsNote" style="margin:0 0 12px;color:#666">Loading the roster…</p>'
+    + '<div id="hsGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px"></div>'
+    + '</div>';
+  const note = document.getElementById('hsNote');
+  const grid = document.getElementById('hsGrid');
+  try {
+    const rR = await fetchSheets(ROSTER_CSV_URL);
+    if (!rR.ok) { note.textContent = 'Could not load the roster sheet.'; return; }
+    await loadOffseasonMoves();
+    let players = parseRosterCSV(await rR.text());
+    if (teamFilter) players = players.filter(p => p.team === teamFilter);
+    players.sort((a, b) => a.team.localeCompare(b.team) || a.name.localeCompare(b.name));
+
+    let missing = 0, broken = 0;
+    grid.innerHTML = players.map((p, i) => {
+      if (!p.headshot) missing++;
+      const img = p.headshot
+        ? '<img id="hs' + i + '" src="' + p.headshot + '" alt="" loading="lazy"'
+          + ' style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;background:#eee"'
+          + ' onerror="this.style.outline=\'3px solid #d33\';this.dataset.bad=1;hsTally()">'
+        : '<div style="width:100%;aspect-ratio:1;border-radius:8px;background:#f4f4f8;'
+          + 'display:flex;align-items:center;justify-content:center;color:#b00;font-size:11px">no url</div>';
+      // The resolved URL is a link, so a suspect picture can be opened on its own
+      // and checked at the source rather than guessed at from a thumbnail.
+      const link = p.headshot
+        ? '<a href="' + p.headshot + '" target="_blank" rel="noopener" style="color:#36c;font-size:10px">open</a>'
+        : '<span style="color:#b00;font-size:10px">—</span>';
+      return '<figure style="margin:0">' + img
+        + '<figcaption style="font-size:11px;margin-top:3px;line-height:1.25">'
+        + '<b>' + escDC(p.team) + '</b> ' + escDC(p.name) + '<br>' + link
+        + '</figcaption></figure>';
+    }).join('');
+
+    window.hsTally = () => {
+      broken = document.querySelectorAll('#hsGrid img[data-bad]').length;
+      note.innerHTML = players.length + ' player' + (players.length === 1 ? '' : 's')
+        + (teamFilter ? ' on ' + escDC(teamFilter) : '')
+        + ' · <b>' + missing + '</b> with no url'
+        + ' · <b>' + broken + '</b> that failed to load'
+        + ' · a red outline marks one that did not load';
+    };
+    window.hsTally();
+  } catch (e) {
+    note.textContent = 'Failed: ' + e.message;
+  }
+}
+
 async function init() {
   const params = new URLSearchParams(window.location.search);
   const exportParam = params.get('export');
@@ -2981,6 +3042,14 @@ async function init() {
     const withHeadshots = params.get('headshots') !== '0';
     return renderExportView(exportParam, withHeadshots);
   }
+
+  // HEADSHOT AUDIT — ?photos=1
+  //
+  // Every player's picture as the page will actually render it, so a missing or
+  // wrong one can be spotted without hunting through thirty depth charts. It is
+  // its own view rather than its own file: the sheet endpoint and its key live
+  // here, and a second page would mean a second copy of both.
+  if (params.get('photos')) return renderHeadshotAudit(params.get('team')?.toUpperCase());
 
   try {
     // Fetch player data + order.json from GitHub in parallel
