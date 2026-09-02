@@ -606,9 +606,13 @@ function detectStaleDepthChartEntries(players, orders) {
 // Added after render rather than inside the fourteen card templates: one pass over
 // the finished chart cannot fall out of step with them, and there is nothing to
 // remember the next time a template is edited.
-function addPhotoLinks() {
+function addPhotoLinks(root) {
   if (!isAdmin) return;
-  const chart = document.getElementById('depthChart');
+  // THREE RENDERERS DRAW THESE CARDS, not one: the current season chart, the
+  // future-year admin view, and the all-teams admin view. Hooking only the first
+  // put links on a page nobody edits and none on the 2026-27 view, which is the
+  // one actually being worked on.
+  const chart = root || document.getElementById('depthChart');
   if (!chart) return;
   const shot = new Map();
   for (const p of (allPlayers || [])) {
@@ -1739,6 +1743,7 @@ function renderFutureYearAdmin(year) {
   }
   
   container.innerHTML = html;
+  addPhotoLinks(container);
   document.querySelectorAll('.admin-depth-chart').forEach(c => setupDragDrop(c, c.dataset.team, true));
   } catch(e) {
     console.error('[DepthCharts] renderFutureYearAdmin failed:', e);
@@ -1857,6 +1862,7 @@ function renderAdminAllTeams() {
     html += '</div></div>';
   }
   container.innerHTML = html;
+  addPhotoLinks(container);
   document.getElementById('adminAllTeams').classList.add('active');
   document.querySelectorAll('.admin-depth-chart').forEach(c => setupDragDrop(c, c.dataset.team, true));
 }
