@@ -204,6 +204,7 @@
       "James Harden",
       "Craig Porter",
       "Tyrese Proctor",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
@@ -211,7 +212,6 @@
       "Sam Merrill",
       "Meleek Thomas",
       "Tristan Enaruna",
-      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SF": [
@@ -223,16 +223,16 @@
     ],
     "PF": [
       "Evan Mobley",
-      "Cam Whitmore",
       "Nae'Qwan Tomlin",
       "Riley Minix",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Jarrett Allen",
       "Thomas Bryant",
       "Ernest Udeh",
-      "__SPACER__",
+      "Khalifa Diop",
       "__SEPARATOR__"
     ]
   },
