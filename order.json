@@ -853,21 +853,23 @@
       "Jalen Suggs",
       "Anthony Black",
       "Jevon Carter",
-      "Alex Morales",
+      "__SPACER__",
+      "JD Davison",
       "__SEPARATOR__"
     ],
     "SG": [
       "Desmond Bane",
       "Jamal Cain",
       "Jase Richardson",
+      "Alex Morales",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Jett Howard"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Franz Wagner",
       "Tristan Da Silva",
       "Noah Penda",
+      "Malaki Branham",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -876,12 +878,14 @@
       "Nikola Vucevic",
       "Jonathan Isaac",
       "Izaiyah Nelson",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Wendell Carter Jr",
       "Goga Bitadze",
       "Colin Castleton",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ]
