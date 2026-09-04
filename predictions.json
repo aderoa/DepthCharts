@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T23:33:50.854Z",
+  "generated_at": "2026-09-04T17:09:14.682Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -914,18 +914,19 @@
       },
       "bench": {
         "PG": [
-          "Malik Monk",
           "Emanuel Sharp",
+          "Ben Simmons",
           "Isaiah Stevens"
         ],
         "SG": [
-          "Nique Clifford",
+          "Malik Monk",
+          "Daeqwon Plowden",
           "Adam Flagler",
           "Killian Hayes"
         ],
         "SF": [
+          "Nique Clifford",
           "Alex Karaban",
-          "Daeqwon Plowden",
           "Doug McDermott"
         ],
         "PF": [
