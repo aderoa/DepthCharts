@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T17:09:16.905Z",
+  "generated_at": "2026-09-04T17:12:16.135Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -95,8 +95,7 @@
         "SF": [
           "Keon Ellis",
           "Josh Minott",
-          "Chaney Johnson",
-          "Malachi Smith"
+          "Chaney Johnson"
         ],
         "PF": [
           "Moritz Wagner",
@@ -106,7 +105,8 @@
         ],
         "C": [
           "Noah Clowney",
-          "Danny Wolf"
+          "Danny Wolf",
+          "Grant Nelson"
         ]
       }
     },
