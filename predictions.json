@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T17:09:14.682Z",
+  "generated_at": "2026-09-04T17:09:16.905Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -914,8 +914,8 @@
       },
       "bench": {
         "PG": [
-          "Emanuel Sharp",
           "Ben Simmons",
+          "Emanuel Sharp",
           "Isaiah Stevens"
         ],
         "SG": [
