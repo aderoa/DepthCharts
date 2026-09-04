@@ -85,12 +85,14 @@
       "Mikel Brown",
       "Nolan Traore",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Terance Mann",
       "Ben Saraf",
       "Drake Powell",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -99,14 +101,15 @@
       "Keon Ellis",
       "Josh Minott",
       "Chaney Johnson",
-      "__SEPARATOR__",
-      "Malachi Smith"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Julius Randle",
       "Moritz Wagner",
       "Joshua Jefferson",
       "Tyler Bilodeau",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ochai Agbaji"
     ],
@@ -114,6 +117,7 @@
       "Day'Ron Sharpe",
       "Noah Clowney",
       "Danny Wolf",
+      "Grant Nelson",
       "__SPACER__",
       "__SEPARATOR__"
     ]
