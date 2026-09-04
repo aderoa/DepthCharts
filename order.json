@@ -1016,22 +1016,25 @@
   "SAC": {
     "PG": [
       "Darius Acuff",
-      "Malik Monk",
+      "__SPACER__",
       "Emanuel Sharp",
+      "Ben Simmons",
       "__SEPARATOR__",
       "Isaiah Stevens"
     ],
     "SG": [
       "Zach LaVine",
-      "Nique Clifford",
+      "Malik Monk",
+      "Daeqwon Plowden",
       "Adam Flagler",
       "__SEPARATOR__",
       "Killian Hayes"
     ],
     "SF": [
       "De'Andre Hunter",
+      "Nique Clifford",
       "Alex Karaban",
-      "Daeqwon Plowden",
+      "__SPACER__",
       "__SEPARATOR__",
       "Doug McDermott"
     ],
@@ -1039,12 +1042,14 @@
       "Keegan Murray",
       "Precious Achiuwa",
       "Dylan Cardwell",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
       "Domantas Sabonis",
       "Maxime Raynaud",
       "Jonathan Mogbo",
+      "__SPACER__",
       "__SEPARATOR__",
       "Drew Eubanks"
     ]
