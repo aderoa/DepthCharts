@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T15:11:21.566Z",
+  "generated_at": "2026-09-08T15:11:24.271Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -669,13 +669,13 @@
       "bench": {
         "PG": [
           "Jeremiah Fears",
+          "AJ Johnson",
           "Kobe Bufkin"
         ],
         "SG": [
           "Jordan Poole",
           "Bryce McGowens",
-          "Jaron Pierre",
-          "AJ Johnson"
+          "Jaron Pierre"
         ],
         "SF": [
           "Bennedict Mathurin",
