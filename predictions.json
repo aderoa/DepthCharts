@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T15:11:00.414Z",
+  "generated_at": "2026-09-08T15:11:21.566Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -669,24 +669,24 @@
       "bench": {
         "PG": [
           "Jeremiah Fears",
-          "Jordan Poole",
           "Kobe Bufkin"
         ],
         "SG": [
-          "Bennedict Mathurin",
+          "Jordan Poole",
           "Bryce McGowens",
-          "Jaron Pierre"
+          "Jaron Pierre",
+          "AJ Johnson"
         ],
         "SF": [
-          "Micah Peavy",
-          "Jordan Hawkins",
+          "Bennedict Mathurin",
           "Trendon Watford",
           "Caleb Houstan"
         ],
         "PF": [
           "Derik Queen",
           "Karlo Matkovic",
-          "Malik Dia"
+          "Malik Dia",
+          "Taj Gibson"
         ],
         "C": [
           "Yves Missi",
