@@ -588,13 +588,15 @@
       "Walter Clayton",
       "Javon Small",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "SG": [
       "Jaylen Wells",
       "Scotty Pippen Jr",
-      "AJ Johnson",
+      "Micah Peavy",
       "D'Angelo Russell",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__"
     ],
@@ -604,6 +606,7 @@
       "Kris Murray",
       "Richie Saunders",
       "Jahmai Mashack",
+      "Jordan Hawkins",
       "__SEPARATOR__"
     ],
     "PF": [
@@ -612,6 +615,7 @@
       "Taylor Hendricks",
       "Olivier-Maxence Prosper",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__"
     ],
     "C": [
@@ -619,7 +623,8 @@
       "Isaiah Stewart",
       "Quinten Post",
       "GG Jackson",
-      "Taj Gibson",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__"
     ]
   },
