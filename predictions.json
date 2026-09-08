@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T00:13:27.448Z",
+  "generated_at": "2026-09-08T15:10:40.161Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -530,14 +530,15 @@
         ],
         "SG": [
           "Scotty Pippen Jr",
-          "AJ Johnson",
+          "Micah Peavy",
           "D'Angelo Russell"
         ],
         "SF": [
           "Karim Lopez",
           "Kris Murray",
           "Richie Saunders",
-          "Jahmai Mashack"
+          "Jahmai Mashack",
+          "Jordan Hawkins"
         ],
         "PF": [
           "Jerami Grant",
@@ -547,8 +548,7 @@
         "C": [
           "Isaiah Stewart",
           "Quinten Post",
-          "GG Jackson",
-          "Taj Gibson"
+          "GG Jackson"
         ]
       }
     },
