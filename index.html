@@ -635,6 +635,10 @@ function addPhotoLinks(root) {
   }
 }
 
+// Whether unsigned free agents appear on the 2026-27 depth chart. Off: they are
+// not on anybody's chart until they sign. Turn it on to see them again.
+let SHOW_FA_2627 = false;
+
 // Whether the "missing from the depth chart" banner is shown at all.
 let SHOW_STALE_BANNER = false;
 
@@ -1533,6 +1537,17 @@ function getFuturePlayerStatus(p, endThreshold, year) {
     const s27 = (p.status27 || '').trim();
     const has2627 = (p.salary27 > 0) || s27 !== '';
     if (!has2627) {
+      // UNSIGNED FREE AGENTS ARE NOT ON THE 2026-27 DEPTH CHART.
+      //
+      // A depth chart says who plays where. A player with no 2026-27 deal is not
+      // in anyone's rotation yet, so listing him under his old club states
+      // something the data does not support -- and in the offseason that is most
+      // of the league, which buried the players who are actually signed.
+      //
+      // 'gone' rather than 'fa' is the whole change: every renderer already skips
+      // 'gone', so this takes them out of the admin board and the Presto export
+      // together, and the later years are untouched.
+      if (!SHOW_FA_2627) return { status: 'gone' };
       const isRFA = isRfaEligible(p);
       return { status: 'fa', faLabel: isRFA ? 'RFA' : 'UFA', sc: 'free-agent' };
     }
@@ -1729,8 +1744,11 @@ function renderFutureYearAdmin(year) {
         }
       }
       
-      // Orange separator (before FAs)
-      html += `<div class="admin-separator" style="background:#f59e0b"></div>`;
+      // Orange separator (before FAs) -- only where there are any. Without the
+      // test it drew a line under an empty section once free agents were hidden.
+      if (faByPos[pos].length) {
+        html += `<div class="admin-separator" style="background:#f59e0b"></div>`;
+      }
       
       // FAs
       faByPos[pos].forEach(p => {
