@@ -371,41 +371,35 @@
       "De'Anthony Melton",
       "Brandon Williams",
       "LJ Cryer",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "SG": [
       "Brandin Podziemski",
       "Gary Payton II",
       "Will Richard",
       "Dalen Terry",
-      "__SEPARATOR__",
-      "Seth Curry"
+      "__SPACER__"
     ],
     "SF": [
       "Jimmy Butler",
       "Moses Moody",
       "Gui Santos",
       "Lajae Jones",
-      "__SPACER__",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "PF": [
       "Draymond Green",
       "Yaxel Lendeborg",
       "Georges Niang",
-      "__SPACER__",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Alex Toohey",
+      "__SPACER__"
     ],
     "C": [
       "Kristaps Porzingis",
       "Al Horford",
       "Charles Bassey",
       "Malevy Leons",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__"
     ]
   },
   "HOU": {
