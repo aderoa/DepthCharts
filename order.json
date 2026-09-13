@@ -917,42 +917,33 @@
       "Jalen Green",
       "Collin Gillespie",
       "Pat Spencer",
-      "Koby Brea",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Koby Brea"
     ],
     "SG": [
       "Devin Booker",
       "Jordan Goodwin",
       "Haywood Highsmith",
-      "__SPACER__",
-      "Jamaree Bouyea",
-      "__SEPARATOR__"
+      "Jamaree Bouyea"
     ],
     "SF": [
       "Dillon Brooks",
       "Luke Kennard",
       "Rasheer Fleming",
-      "__SPACER__",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Isaiah Livers"
+      "__SPACER__"
     ],
     "PF": [
       "Miles Bridges",
       "Ryan Dunn",
       "Koa Peat",
-      "CJ Huntley",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "C": [
-      "Mark Williams",
       "Oso Ighodaro",
       "Khaman Maluach",
+      "CJ Huntley",
       "__SPACER__",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Mark Williams"
     ]
   },
   "POR": {
