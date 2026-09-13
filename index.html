@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-09-13c · unsigned draftees off the chart (cap holds, not rotation places). || 2026-09-13b · injuries applied to every team, not just the two not marked eliminated. || 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-09-13d · injury row and red cells in the Presto export too, not only the admin board. || 2026-09-13c · unsigned draftees off the chart (cap holds, not rotation places). || 2026-09-13b · injuries applied to every team, not just the two not marked eliminated. || 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -2884,6 +2884,10 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
 
   function cCls(p) {
     if (!p) return '';
+    // INJURED WINS OVER EVERYTHING ELSE. A two-way player who is out is out:
+    // the red says the thing that matters for the rotation, and .c-inj is
+    // already in the export stylesheet -- it was simply never applied here.
+    if (p._inj) return ' class="c-inj"';
     if (p.isDraftee) return ' class="c-draft"';
     if (p._ps) {
       if (p._ps.status === 'fa') return ' class="c-fa"';
@@ -2921,13 +2925,17 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
       }
     }
     
-    const aboveCols = {}, belowCols = {};
-    let maxAbove = 0, maxBelow = 0;
+    const aboveCols = {}, belowCols = {}, injCols = {};
+    let maxAbove = 0, maxBelow = 0, maxInj = 0;
     const placedNames = new Set();
+    // The same rule as the admin board: injured players sit apart, and only in
+    // the season being played.
+    const injuryRowYear = (year === '2026-27');
     
     positions.forEach(pos => {
       aboveCols[pos] = [];
       belowCols[pos] = [];
+      injCols[pos] = [];
       const names = order[pos] || [];
       names.forEach(n => {
         if (n === '__SPACER__') return;
@@ -2938,6 +2946,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
         if (ps.status === 'gone') return;
         const enriched = { ...p, _ps: ps };
         if (ps.status === 'fa') belowCols[pos].push(enriched);
+        else if (injuryRowYear && isInjuryRow(p)) injCols[pos].push({ ...enriched, _inj: true });
         else aboveCols[pos].push(enriched);
       });
     });
@@ -2952,6 +2961,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
       const pos = positions.includes(p.position) ? p.position : 'SF';
       const enriched = { ...p, _ps: ps };
       if (ps.status === 'fa') belowCols[pos].push(enriched);
+      else if (injuryRowYear && isInjuryRow(p)) injCols[pos].push({ ...enriched, _inj: true });
       else aboveCols[pos].push(enriched);
       placedNames.add(p.name);
     });
@@ -2959,6 +2969,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
     positions.forEach(pos => {
       if (aboveCols[pos].length > maxAbove) maxAbove = aboveCols[pos].length;
       if (belowCols[pos].length > maxBelow) maxBelow = belowCols[pos].length;
+      if (injCols[pos].length > maxInj) maxInj = injCols[pos].length;
     });
     
     if (maxAbove < 1) maxAbove = 1;
@@ -2981,6 +2992,34 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
       out += `<tr class="dc-data">`;
       rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? (p.isDraftee && (p.pick >= 31 || !(p.salary27 || p.salary)) ? pickLabel(p) : fmtSalFull(salForYear(p, year))) : ''}</td>`; });
       out += `</tr>`;
+    }
+
+    // Injury section (red) — directly under the healthy squad, because that is
+    // where the admin board puts it, and an export that disagrees with the board
+    // it was copied from is worse than no export at all.
+    if (maxInj > 0) {
+      out += `<tr><td colspan="5" style="height:3px;background:#dc2626;padding:0"></td></tr>`;
+      for (let r = 0; r < maxInj; r++) {
+        const rp = positions.map(pos => injCols[pos][r] || null);
+        if (!rp.some(p => p !== null)) continue;
+        out += `<tr class="dc-hs-row">`;
+        rp.forEach(p => { out += p && p.headshot
+          ? `<td><img src="${escDC(p.headshot)}" class="dc-hs-img"/></td>` : `<td></td>`; });
+        out += `</tr>`;
+        out += `<tr class="dc-data">`;
+        rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? `<strong>${escDC(p.name)}</strong>` : ''}</td>`; });
+        out += `</tr>`;
+        out += `<tr class="dc-data">`;
+        // The status where the salary would be: for a man who is out, when he is
+        // back is the more useful number.
+        rp.forEach(p => {
+          if (!p) { out += `<td></td>`; return; }
+          const st = (p.injuryStatus || '').trim();
+          const why = (p.injuryReason || '').trim();
+          out += `<td${cCls(p)}>${escDC(why ? st + ' \u00b7 ' + why : st)}</td>`;
+        });
+        out += `</tr>`;
+      }
     }
 
     // Draft picks section (green) — BETWEEN contracted players and FAs.
