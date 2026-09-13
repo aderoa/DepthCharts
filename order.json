@@ -486,22 +486,19 @@
       "Darius Garland",
       "Keaton Wagler",
       "Kobe Sanders",
-      "__SPACER__",
       "Yuki Kawamura"
     ],
     "SG": [
       "Kris Dunn",
       "Bradley Beal",
+      "Gradey Dick",
       "Cam Christie",
-      "Jalen Pickett",
-      "__SPACER__"
+      "Jalen Pickett"
     ],
     "SF": [
       "Brandon Ingram",
       "Max Strus",
       "Nick Martinelli",
-      "Gradey Dick",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jordan Miller"
     ],
@@ -509,15 +506,13 @@
       "Rui Hachimura",
       "Derrick Jones",
       "Baba Miller",
-      "Johni Broome",
-      "__SPACER__"
+      "Johni Broome"
     ],
     "C": [
       "Brook Lopez",
       "Isaiah Jackson",
       "Yanic Konan Niederhauser",
-      "Jamarion Sharp",
-      "__SPACER__"
+      "Jamarion Sharp"
     ]
   },
   "LAL": {
