@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -81,6 +81,9 @@ tbody td { padding:0.55rem 0.5rem; vertical-align:middle; white-space:nowrap; }
 
 /* Eliminated / Offseason styles */
 .admin-player-card.free-agent { background:#ffd580; }
+    /* The injured card: the same shape as a free agent's, in red rather than
+       amber, so the two sections are told apart at a glance. */
+    .admin-player-card.injured{background:#fef2f2;border-color:#fecaca}
 .admin-player-card.team-option { background:#fca5a5; }
 
 .admin-player-card.player-option { background:#33cccc; }
@@ -637,7 +640,11 @@ function addPhotoLinks(root) {
 
 // Whether unsigned free agents appear on the 2026-27 depth chart. Off: they are
 // not on anybody's chart until they sign. Turn it on to see them again.
+//
+// SHOW_FA_FUTURE is the same switch for 2027-28 and beyond, where a player whose
+// contract has run out is even less a member of anyone's rotation.
 let SHOW_FA_2627 = false;
+let SHOW_FA_FUTURE = false;
 
 // Whether the "missing from the depth chart" banner is shown at all.
 let SHOW_STALE_BANNER = false;
@@ -1517,6 +1524,27 @@ function isRfaEligible(p) {
 // authoritative; the 2025-26 colorCode is a fallback ONLY for roster-only players with no
 // 26-27 contract data (so a 2025-26 two-way like Alijah Martin who is GUARANTEED in 26-27
 // no longer shows as two-way next season).
+// ── the injury row ──
+//
+// Players who cannot be counted on for the coming season are shown apart from
+// the rest, as they used to be: a depth chart that lists a man out until March
+// among the healthy misrepresents the rotation.
+//
+// WHICH STATUSES. Out and Doubtful without argument. Questionable is included
+// because of where it comes from: the Injuries app puts a player there only
+// inside his RETURN WINDOW -- out until the optimistic date, questionable until
+// the pessimistic one -- so a questionable player is one working back from an
+// injury rather than one with a sore ankle this morning.
+//
+// If that turns out to over-include, take 'Questionable' out of this list and
+// nothing else needs changing.
+const INJURY_ROW_STATUSES = ['Out', 'Doubtful', 'Questionable'];
+
+function isInjuryRow(p) {
+  const st = (p && p.injuryStatus ? String(p.injuryStatus) : '').trim();
+  return st !== '' && INJURY_ROW_STATUSES.indexOf(st) !== -1;
+}
+
 function isTwoWay2627(p){
   const s=(p.status27||'').trim();
   if(s==='TWO-WAY'||s==='10-DAY') return true;
@@ -1581,6 +1609,14 @@ function getFuturePlayerStatus(p, endThreshold, year) {
     // Only show as FA in the first year after the contract expires
     // e.g. ends 2027 → FA in 2027-28 (threshold 2028), gone in 2028-29+
     if (effEnd === endThreshold - 1) {
+      // NOR IN ANY LATER YEAR EITHER.
+      //
+      // The same reasoning that took unsigned free agents off 2026-27 applies
+      // with more force further out: a player whose deal ends in 2027 is not on
+      // anybody's 2028-29 depth chart, and showing him under his current club
+      // asserts a future that nothing in the data supports. From 2027-28 on, a
+      // depth chart is the players under contract and nobody else.
+      if (!SHOW_FA_FUTURE) return { status: 'gone' };
       const isRFA = isRfaEligible(p);
       return { status: 'fa', faLabel: isRFA ? 'RFA' : 'UFA', sc: 'free-agent' };
     }
@@ -1614,7 +1650,7 @@ function renderFutureYearAdmin(year) {
   
   let html = `<div style="padding:0.5rem;margin-bottom:1rem;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;text-align:center">
     <span style="font-size:0.85rem;font-weight:700;color:#6366f1">📅 ${year} Season Depth Charts — All 30 Teams</span>
-    <div style="font-size:0.65rem;color:#6b7280;margin-top:0.2rem">Players under contract shown above separator · Free agents below in orange</div>
+    <div style="font-size:0.65rem;color:#6b7280;margin-top:0.2rem">Players under contract above the line &middot; injured below in red</div>
   </div>`;
   
   for (const team of NBA_TEAMS) {
@@ -1623,12 +1659,19 @@ function renderFutureYearAdmin(year) {
     const saved = savedOrders[team.abbrev] || null;
 
     // Split into contracted and FAs based on END year
-    const contractedByPos = {}, faByPos = {};
+    const contractedByPos = {}, faByPos = {}, injByPos = {};
     const globalPlaced = new Set();
     positions.forEach(pos => {
       contractedByPos[pos] = [];
       faByPos[pos] = [];
+      injByPos[pos] = [];
     });
+    // THE INJURY ROW IS FOR THE SEASON BEING PLAYED, and only that one.
+    //
+    // An injury is a fact about now: who is out this week. Applying it to
+    // 2029-30 would be asserting that a man will still be hurt in four years,
+    // which is nonsense -- so later years show their squads whole.
+    const injuryRowYear = (year === '2026-27');
 
     // Default draft placement (cascade-driven). Used when there's no saved
     // draft order, or to validate/fall back stale saved draft entries.
@@ -1663,6 +1706,7 @@ function renderFutureYearAdmin(year) {
           const ps = getFuturePlayerStatus(p, endThreshold, year);
           if (ps.status === 'gone') { globalPlaced.add(n); return; }
           if (ps.status === 'fa') faByPos[pos].push({ ...p, _ps: ps });
+          else if (injuryRowYear && isInjuryRow(p)) injByPos[pos].push({ ...p, _ps: ps });
           else contractedByPos[pos].push({ ...p, _ps: ps });
           globalPlaced.add(n);
         });
@@ -1675,6 +1719,7 @@ function renderFutureYearAdmin(year) {
       const ps = getFuturePlayerStatus(p, endThreshold, year);
       if (ps.status === 'gone') return;
       if (ps.status === 'fa') faByPos[pos].push({ ...p, _ps: ps });
+      else if (injuryRowYear && isInjuryRow(p)) injByPos[pos].push({ ...p, _ps: ps });
       else contractedByPos[pos].push({ ...p, _ps: ps });
     });
 
@@ -1744,6 +1789,25 @@ function renderFutureYearAdmin(year) {
         }
       }
       
+      // ── the injury row ──
+      //
+      // Below the healthy squad and above anything else, behind its own red
+      // line, so the depth chart above it reads as the rotation actually
+      // available. The status and the reason are on the card, because "out"
+      // and "out until March" are different pieces of news.
+      if (injByPos[pos].length) {
+        html += `<div class="admin-separator" style="background:#dc2626"></div>`;
+        injByPos[pos].forEach(p => {
+          const st = (p.injuryStatus || '').trim();
+          const why = (p.injuryReason || '').trim();
+          html += `<div class="admin-player-card injured" draggable="true"`
+            + ` data-player="${escDC(p.name)}" data-tv="${p.tradeValue}">`
+            + `<div class="admin-player-name">${escDC(p.name)}</div>`
+            + `<div class="admin-trade-value" style="color:#b91c1c">`
+            + escDC(why ? st + ' \u00b7 ' + why : st) + `</div></div>`;
+        });
+      }
+
       // Orange separator (before FAs) -- only where there are any. Without the
       // test it drew a line under an empty section once free agents were hidden.
       if (faByPos[pos].length) {
