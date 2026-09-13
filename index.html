@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-09-13d · injury row and red cells in the Presto export too, not only the admin board. || 2026-09-13c · unsigned draftees off the chart (cap holds, not rotation places). || 2026-09-13b · injuries applied to every team, not just the two not marked eliminated. || 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-09-13e · injured players show their salary like everyone else; the red cell carries the status. || 2026-09-13d · injury row and red cells in the Presto export too, not only the admin board. || 2026-09-13c · unsigned draftees off the chart (cap holds, not rotation places). || 2026-09-13b · injuries applied to every team, not just the two not marked eliminated. || 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -3010,14 +3010,11 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
         rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? `<strong>${escDC(p.name)}</strong>` : ''}</td>`; });
         out += `</tr>`;
         out += `<tr class="dc-data">`;
-        // The status where the salary would be: for a man who is out, when he is
-        // back is the more useful number.
-        rp.forEach(p => {
-          if (!p) { out += `<td></td>`; return; }
-          const st = (p.injuryStatus || '').trim();
-          const why = (p.injuryReason || '').trim();
-          out += `<td${cCls(p)}>${escDC(why ? st + ' \u00b7 ' + why : st)}</td>`;
-        });
+        // THE SALARY, as in every other section. The red cell already says he is
+        // unavailable; spending the line on "Out · knee" as well would make the
+        // injury block the one place in the chart where the money is missing,
+        // and the money is why the chart exists.
+        rp.forEach(p => { out += `<td${p ? cCls(p) : ''}>${p ? fmtSalFull(salForYear(p, year)) : ''}</td>`; });
         out += `</tr>`;
       }
     }
