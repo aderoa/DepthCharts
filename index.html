@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-09-13b · injuries applied to every team, not just the two not marked eliminated. || 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-09-13c · unsigned draftees off the chart (cap holds, not rotation places). || 2026-09-13b · injuries applied to every team, not just the two not marked eliminated. || 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -645,6 +645,10 @@ function addPhotoLinks(root) {
 // contract has run out is even less a member of anyone's rotation.
 let SHOW_FA_2627 = false;
 let SHOW_FA_FUTURE = false;
+
+// Whether drafted players who have not signed appear at all. Off: they are cap
+// holds, not rotation places.
+let SHOW_UNSIGNED_DRAFTEES = false;
 
 // Whether the "missing from the depth chart" banner is shown at all.
 let SHOW_STALE_BANNER = false;
@@ -1563,9 +1567,24 @@ function isTwoWay2627(p){
   return false;
 }
 function getFuturePlayerStatus(p, endThreshold, year) {
-  // Drafted players only count toward 2026-27 (their rookie season). They do NOT
-  // appear in later future years until they officially sign their first contract.
-  if (p.isDraftee) return year === '2026-27' ? { status: 'active', sc: '' } : { status: 'gone' };
+  // A DRAFTED PLAYER WHO HAS NOT SIGNED IS NOT ON THE DEPTH CHART EITHER.
+  //
+  // These entries are built only where no contract exists -- the loop that makes
+  // them skips any name already carrying 2026-27 data, so a signed rookie is a
+  // normal player and never reaches here. What is left is a draft pick with a cap
+  // hold against his team, which is an accounting entry, not a rotation place.
+  //
+  // Same reasoning as the unsigned free agents: a depth chart says who plays
+  // where, and nobody knows that about a man who has not signed. He returns the
+  // moment he does, as an ordinary contracted player.
+  //
+  // The projected-pick cards in the green section are a separate thing and are
+  // untouched: those are openly labelled as picks rather than presented as
+  // members of the rotation.
+  if (p.isDraftee) {
+    if (!SHOW_UNSIGNED_DRAFTEES) return { status: 'gone' };
+    return year === '2026-27' ? { status: 'active', sc: '' } : { status: 'gone' };
+  }
 
   // 2026-27 is the offseason signing year: what counts is the PRESENCE of
   // 2026-27 data, not the END year. Any player with 2026-27 data (a 2026-27
