@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T15:04:04.540Z",
+  "generated_at": "2026-09-14T19:40:55.494Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -58,16 +58,17 @@
         "SF": [
           "Hugo Gonzalez",
           "Dillon Mitchell",
-          "Tucker DeVries"
+          "Caleb Grill"
         ],
         "PF": [
           "Jordan Walsh",
           "Chris Cenac",
-          "Amari Williams"
+          "Tucker DeVries"
         ],
         "C": [
           "Mitchell Robinson",
-          "Luka Garza"
+          "Luka Garza",
+          "Amari Williams"
         ]
       }
     },
