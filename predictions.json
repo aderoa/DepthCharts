@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T19:44:36.906Z",
+  "generated_at": "2026-09-15T19:44:59.830Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -332,17 +332,20 @@
       "bench": {
         "PG": [
           "De'Anthony Melton",
-          "LJ Cryer"
+          "LJ Cryer",
+          "Deivon Smith"
         ],
         "SG": [
           "Gary Payton II",
           "Brandon Williams",
+          "Chance McMillian",
           "Dalen Terry",
           "Jimmy Butler"
         ],
         "SF": [
           "Will Richard",
           "Georges Niang",
+          "Dalen Terry",
           "Moses Moody"
         ],
         "PF": [
