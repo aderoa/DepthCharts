@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T22:27:44.309Z",
+  "generated_at": "2026-09-15T22:27:50.028Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -1055,23 +1055,20 @@
         "SG": [
           "Khris Middleton",
           "Kyshawn George",
-          "Jamir Watkins",
-          "Leaky Black"
+          "Jamir Watkins"
         ],
         "SF": [
           "Bilal Coulibaly",
-          "Will Riley",
-          "Cam Whitmore"
+          "Will Riley"
         ],
         "PF": [
           "Justin Champagnie",
-          "Felix Okpara",
-          "Anthony Gill"
+          "Anthony Gill",
+          "Felix Okpara"
         ],
         "C": [
           "Deandre Ayton",
-          "Tristan Vukcevic",
-          "Julian Reese"
+          "Tristan Vukcevic"
         ]
       }
     }
