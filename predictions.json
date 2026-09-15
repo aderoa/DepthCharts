@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T22:27:50.028Z",
+  "generated_at": "2026-09-15T22:27:52.399Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -1063,12 +1063,12 @@
         ],
         "PF": [
           "Justin Champagnie",
-          "Anthony Gill",
-          "Felix Okpara"
+          "Anthony Gill"
         ],
         "C": [
           "Deandre Ayton",
-          "Tristan Vukcevic"
+          "Tristan Vukcevic",
+          "Felix Okpara"
         ]
       }
     }
