@@ -191,35 +191,35 @@
       "Craig Porter",
       "Tyrese Proctor",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "SG": [
       "Donovan Mitchell",
       "Sam Merrill",
       "Meleek Thomas",
-      "Tristan Enaruna",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "Sean McNeil"
     ],
     "SF": [
       "Peyton Watson",
       "Jaylon Tyson",
       "Mario Hezonja",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Tristan Enaruna",
+      "__SPACER__"
     ],
     "PF": [
       "Evan Mobley",
       "Nae'Qwan Tomlin",
       "Riley Minix",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "C": [
       "Jarrett Allen",
       "Thomas Bryant",
       "Khalifa Diop",
       "Ernest Udeh",
-      "__SEPARATOR__"
+      "__SPACER__"
     ]
   },
   "DAL": {
