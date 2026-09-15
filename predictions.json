@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T19:06:44.747Z",
+  "generated_at": "2026-09-15T19:43:05.223Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -77,16 +77,18 @@
         "SG": "Terance Mann",
         "SF": "Michael Porter",
         "PF": "Julius Randle",
-        "C": "Day'Ron Sharpe"
+        "C": "Noah Clowney"
       },
       "bench": {
         "PG": [
           "Mikel Brown",
-          "Nolan Traore"
+          "Nolan Traore",
+          "Dwight Murray"
         ],
         "SG": [
           "Ben Saraf",
-          "Drake Powell"
+          "Drake Powell",
+          "Isaiah Wong"
         ],
         "SF": [
           "Keon Ellis",
@@ -96,13 +98,12 @@
         "PF": [
           "Moritz Wagner",
           "Joshua Jefferson",
-          "Tyler Bilodeau",
-          "Ochai Agbaji"
+          "Tyler Bilodeau"
         ],
         "C": [
-          "Noah Clowney",
           "Danny Wolf",
-          "Grant Nelson"
+          "Grant Nelson",
+          "Day'Ron Sharpe"
         ]
       }
     },
