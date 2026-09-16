@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T00:31:04.631Z",
+  "generated_at": "2026-09-16T17:00:22.629Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -693,28 +693,26 @@
       "bench": {
         "PG": [
           "Jose Alvarado",
-          "Tyler Kolek",
-          "Jaden Akins"
+          "Tyler Kolek"
         ],
         "SG": [
           "Miles McBride",
           "John Konchar",
-          "Mitch Mascari"
+          "Bruce Brown"
         ],
         "SF": [
           "Jordan Clarkson",
           "Pacome Dadiet",
-          "Paul Zilinskas"
+          "Ochai Agbaji"
         ],
         "PF": [
           "Landry Shamet",
-          "Mohamed Diawara",
-          "Toby Okani"
+          "Mohamed Diawara"
         ],
         "C": [
           "Andre Drummond",
-          "Liam Robbins",
-          "Nick Jourdain"
+          "Drew Eubanks",
+          "Liam Robbins"
         ]
       }
     },
