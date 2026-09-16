@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T23:54:37.339Z",
+  "generated_at": "2026-09-16T00:30:36.511Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -698,6 +698,7 @@
         ],
         "SG": [
           "Miles McBride",
+          "John Konchar",
           "Toby Okani",
           "Mitch Mascari"
         ],
@@ -708,12 +709,12 @@
         ],
         "PF": [
           "Landry Shamet",
-          "Mohamed Diawara",
-          "Igor Milicic Jr"
+          "Mohamed Diawara"
         ],
         "C": [
           "Andre Drummond",
-          "Liam Robbins"
+          "Liam Robbins",
+          "Nick Jourdain"
         ]
       }
     },
