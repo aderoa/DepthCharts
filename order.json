@@ -877,24 +877,28 @@
       "Jalen Green",
       "Collin Gillespie",
       "Pat Spencer",
-      "Koby Brea"
+      "Koby Brea",
+      "__SPACER__"
     ],
     "SG": [
       "Devin Booker",
       "Jordan Goodwin",
       "Haywood Highsmith",
-      "Jamaree Bouyea"
+      "Jordan Schakel",
+      "__SPACER__"
     ],
     "SF": [
       "Dillon Brooks",
       "Luke Kennard",
       "Rasheer Fleming",
+      "Jamaree Bouyea",
       "__SPACER__"
     ],
     "PF": [
       "Miles Bridges",
       "Ryan Dunn",
       "Koa Peat",
+      "__SPACER__",
       "__SPACER__"
     ],
     "C": [
@@ -902,6 +906,7 @@
       "Khaman Maluach",
       "Duop Reath",
       "CJ Huntley",
+      "__SPACER__",
       "__SEPARATOR__",
       "Mark Williams"
     ]
