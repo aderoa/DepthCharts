@@ -981,6 +981,8 @@
       "De'Aaron Fox",
       "Dylan Harper",
       "Jordan McLaughlin",
+      "Jayden Nunn",
+      "__SPACER__",
       "__SPACER__"
     ],
     "SG": [
@@ -993,12 +995,14 @@
       "Devin Vassell",
       "Harrison Barnes",
       "Carter Bryant",
-      "Taelon Peter"
+      "Taelon Peter",
+      "__SPACER__"
     ],
     "PF": [
       "Julian Champagnie",
       "Tobias Harris",
       "Maliq Brown",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Jayden Quaintance"
@@ -1007,6 +1011,7 @@
       "Victor Wembanyama",
       "Luke Kornet",
       "Tarris Reed",
+      "__SPACER__",
       "__SPACER__"
     ]
   },
