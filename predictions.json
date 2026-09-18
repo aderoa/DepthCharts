@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T19:47:27.857Z",
+  "generated_at": "2026-09-18T21:23:13.350Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -330,7 +330,8 @@
       "bench": {
         "PG": [
           "De'Anthony Melton",
-          "LJ Cryer"
+          "LJ Cryer",
+          "Nick Boyd"
         ],
         "SG": [
           "Gary Payton II",
@@ -341,16 +342,17 @@
         "SF": [
           "Will Richard",
           "Georges Niang",
+          "Elias Ralph",
           "Moses Moody"
         ],
         "PF": [
           "Yaxel Lendeborg",
-          "Alex Toohey",
-          "Malevy Leons"
+          "Alex Toohey"
         ],
         "C": [
           "Al Horford",
-          "Charles Bassey"
+          "Charles Bassey",
+          "Malevy Leons"
         ]
       }
     },
