@@ -981,41 +981,33 @@
       "De'Aaron Fox",
       "Dylan Harper",
       "Jordan McLaughlin",
-      "Ja'Kobi Gillespie",
-      "__SEPARATOR__",
-      "Lindy Waters III"
+      "__SPACER__"
     ],
     "SG": [
       "Stephon Castle",
       "Keldon Johnson",
       "David Jones",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Emanuel Miller"
+      "Ja'Kobi Gillespie"
     ],
     "SF": [
       "Devin Vassell",
       "Harrison Barnes",
       "Carter Bryant",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Kelly Olynyk"
+      "Taelon Peter"
     ],
     "PF": [
       "Julian Champagnie",
       "Tobias Harris",
-      "Jayden Quaintance",
       "Maliq Brown",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Mason Plumlee"
+      "Jayden Quaintance"
     ],
     "C": [
       "Victor Wembanyama",
       "Luke Kornet",
       "Tarris Reed",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Bismack Biyombo"
+      "__SPACER__"
     ]
   },
   "TOR": {
