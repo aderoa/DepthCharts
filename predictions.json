@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T00:17:58.525Z",
+  "generated_at": "2026-09-18T19:46:23.434Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -935,30 +935,26 @@
       "bench": {
         "PG": [
           "Dylan Harper",
-          "Jordan McLaughlin",
-          "Ja'Kobi Gillespie",
-          "Lindy Waters III"
+          "Jordan McLaughlin"
         ],
         "SG": [
           "Keldon Johnson",
           "David Jones",
-          "Emanuel Miller"
+          "Ja'Kobi Gillespie"
         ],
         "SF": [
           "Harrison Barnes",
           "Carter Bryant",
-          "Kelly Olynyk"
+          "Taelon Peter"
         ],
         "PF": [
           "Tobias Harris",
-          "Jayden Quaintance",
           "Maliq Brown",
-          "Mason Plumlee"
+          "Jayden Quaintance"
         ],
         "C": [
           "Luke Kornet",
-          "Tarris Reed",
-          "Bismack Biyombo"
+          "Tarris Reed"
         ]
       }
     },
