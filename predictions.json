@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T22:12:25.628Z",
+  "generated_at": "2026-09-21T22:49:56.915Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -261,23 +261,24 @@
       "bench": {
         "PG": [
           "Tyus Jones",
-          "KJ Simpson"
+          "KJ Simpson",
+          "Reese Dixon-Waters"
         ],
         "SG": [
           "DeMar DeRozan",
           "Julian Strawther",
           "Lonnie Walker",
-          "Bruce Brown"
+          "Keonte Jones"
         ],
         "SF": [
           "Spencer Jones",
           "Alpha Diallo",
-          "Bryce Hopkins",
-          "Curtis Jones"
+          "Bryce Hopkins"
         ],
         "PF": [
           "Zeke Nnaji",
-          "Trevon Brazile"
+          "Trevon Brazile",
+          "Cam Whitmore"
         ],
         "C": [
           "Marvin Bagley",
