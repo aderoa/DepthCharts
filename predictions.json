@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T20:57:08.803Z",
+  "generated_at": "2026-09-22T20:57:40.773Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -877,13 +877,14 @@
         "SG": [
           "Scoot Henderson",
           "John Tonje",
-          "Hyunjung Lee",
-          "Blake Wesley"
+          "Hyunjung Lee"
         ],
         "SF": [
           "Shaedon Sharpe",
           "Jeremy Sochan",
-          "Chris Youngblood"
+          "Chris Youngblood",
+          "Mark Armstrong",
+          "Keylan Boone"
         ],
         "PF": [
           "Sidy Cissoko",
@@ -893,7 +894,8 @@
         "C": [
           "Robert Williams",
           "Branden Carlson",
-          "Micah Potter"
+          "Micah Potter",
+          "Samson Johnson"
         ]
       }
     },
