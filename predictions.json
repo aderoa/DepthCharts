@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T19:57:46.549Z",
+  "generated_at": "2026-09-22T20:57:08.803Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -297,26 +297,28 @@
       "bench": {
         "PG": [
           "Daniss Jenkins",
-          "Ebuka Okorie"
+          "Ebuka Okorie",
+          "Drake Allen"
         ],
         "SG": [
           "Kevin Huerter",
           "Isaiah Joe",
-          "Elijah Harkless"
+          "Jordan Riley"
         ],
         "SF": [
           "Ron Holland",
           "Gary Harris",
-          "Chaz Lanier"
+          "Elijah Harkless"
         ],
         "PF": [
           "Javonte Green",
           "Taurean Prince",
-          "Isaac Jones"
+          "Chaz Lanier"
         ],
         "C": [
           "Tolu Smith",
-          "Ugonna Onyenso"
+          "Ugonna Onyenso",
+          "Isaac Jones"
         ]
       }
     },
