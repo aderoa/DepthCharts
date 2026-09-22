@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T19:08:10.590Z",
+  "generated_at": "2026-09-22T19:55:35.550Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -12,12 +12,10 @@
       "bench": {
         "PG": [
           "Kingston Flemings",
-          "Ryan Nembhard",
           "RayJ Dennis"
         ],
         "SG": [
           "Nickeil Alexander-Walker",
-          "Buddy Hield",
           "Keshon Gilbert"
         ],
         "SF": [
@@ -27,6 +25,7 @@
         ],
         "PF": [
           "Asa Newell",
+          "Dorian Finney-Smith",
           "Jalen Wilson",
           "Mouhamed Gueye"
         ],
