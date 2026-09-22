@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T19:55:49.014Z",
+  "generated_at": "2026-09-22T19:57:40.550Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -117,25 +117,25 @@
       "bench": {
         "PG": [
           "Dennis Schroeder",
+          "Ryan Nembhard",
           "Christian Anderson",
-          "Kylan Boswell",
-          "Bez Mbeng",
-          "Antonio Reeves"
+          "Kylan Boswell"
         ],
         "SG": [
           "Grayson Allen",
           "Sion James",
-          "Pat Connaughton"
+          "Pat Connaughton",
+          "Buddy Hield"
         ],
         "SF": [
           "Royce O'Neale",
-          "Liam McNeeley",
-          "Dorian Finney-Smith"
+          "Liam McNeeley"
         ],
         "PF": [
           "Grant Williams",
           "Tidjane Salaun",
-          "Michael Ajayi"
+          "Michael Ajayi",
+          "Tre Carroll"
         ],
         "C": [
           "Ryan Kalkbrenner",
