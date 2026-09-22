@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T20:57:40.773Z",
+  "generated_at": "2026-09-22T20:57:52.737Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -872,7 +872,8 @@
       "bench": {
         "PG": [
           "Jrue Holiday",
-          "Vit Krejci"
+          "Vit Krejci",
+          "Mark Armstrong"
         ],
         "SG": [
           "Scoot Henderson",
@@ -883,7 +884,6 @@
           "Shaedon Sharpe",
           "Jeremy Sochan",
           "Chris Youngblood",
-          "Mark Armstrong",
           "Keylan Boone"
         ],
         "PF": [
