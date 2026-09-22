@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T16:17:01.136Z",
+  "generated_at": "2026-09-22T16:17:32.605Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -626,12 +626,12 @@
       "bench": {
         "PG": [
           "Bones Hyland",
-          "Zyon Pullin"
+          "Zyon Pullin",
+          "Jalen Crutcher"
         ],
         "SG": [
           "Terrence Shannon",
           "Isaiah Evans",
-          "Stephen Thompson",
           "Donte DiVincenzo"
         ],
         "SF": [
