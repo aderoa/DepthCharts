@@ -1079,39 +1079,35 @@
       "Isaiah Collier",
       "Josh Okogie",
       "Tamar Bates",
-      "__SEPARATOR__",
-      "Bez Mbeng"
+      "__SPACER__"
     ],
     "SG": [
       "Darryn Peterson",
       "Ace Bailey",
       "Sviatoslav Mykhailiuk",
       "Terrell Brown",
-      "__SEPARATOR__",
-      "Hayden Gray"
+      "__SPACER__"
     ],
     "SF": [
       "Lauri Markkanen",
       "Brice Sensabaugh",
       "Josh Green",
-      "Trey Alexander",
-      "__SEPARATOR__",
-      "John Konchar"
+      "Trey Alexander"
     ],
     "PF": [
       "Jaren Jackson Jr",
       "Kyle Filipowski",
       "Blake Hinson",
       "Harrison Ingram",
-      "__SEPARATOR__",
-      "Kevin Love"
+      "__SPACER__"
     ],
     "C": [
       "Jusuf Nurkic",
       "Jaxson Hayes",
       "Mo Bamba",
+      "Ibrahima Diallo",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__"
     ]
   },
   "WAS": {
