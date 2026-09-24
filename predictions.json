@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T21:39:11.794Z",
+  "generated_at": "2026-09-24T22:17:58.421Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -631,7 +631,8 @@
       "bench": {
         "PG": [
           "Bones Hyland",
-          "Zyon Pullin"
+          "Zyon Pullin",
+          "Antonio Reeves"
         ],
         "SG": [
           "Terrence Shannon",
@@ -640,13 +641,11 @@
         ],
         "SF": [
           "Jaylen Clark",
-          "Cody Williams",
-          "Nate Santos"
+          "Cody Williams"
         ],
         "PF": [
           "Jonathan Kuminga",
-          "Trey Lyles",
-          "Payton Sandfort"
+          "Trey Lyles"
         ],
         "C": [
           "Joan Beringer",
