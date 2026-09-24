@@ -995,24 +995,28 @@
       "De'Aaron Fox",
       "Dylan Harper",
       "Jordan McLaughlin",
-      "Ja'Kobi Gillespie"
+      "Ja'Kobi Gillespie",
+      "Jon Elmore"
     ],
     "SG": [
       "Stephon Castle",
       "Keldon Johnson",
       "David Jones",
-      "Taelon Peter"
+      "Taelon Peter",
+      "__SPACER__"
     ],
     "SF": [
       "Devin Vassell",
       "Harrison Barnes",
       "Carter Bryant",
+      "__SPACER__",
       "__SPACER__"
     ],
     "PF": [
       "Julian Champagnie",
       "Tobias Harris",
       "Maliq Brown",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Jayden Quaintance"
@@ -1021,6 +1025,7 @@
       "Victor Wembanyama",
       "Luke Kornet",
       "Tarris Reed",
+      "Malik Williams",
       "__SPACER__"
     ]
   },
