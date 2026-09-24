@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T23:05:28.385Z",
+  "generated_at": "2026-09-24T23:05:31.084Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -957,8 +957,7 @@
         "PG": [
           "Dylan Harper",
           "Jordan McLaughlin",
-          "Ja'Kobi Gillespie",
-          "Jon Elmore"
+          "Ja'Kobi Gillespie"
         ],
         "SG": [
           "Keldon Johnson",
@@ -967,7 +966,8 @@
         ],
         "SF": [
           "Harrison Barnes",
-          "Carter Bryant"
+          "Carter Bryant",
+          "Jon Elmore"
         ],
         "PF": [
           "Tobias Harris",
