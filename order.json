@@ -122,14 +122,16 @@
       "Dennis Schroeder",
       "Ryan Nembhard",
       "Christian Anderson",
-      "Kylan Boswell"
+      "__SPACER__"
     ],
     "SG": [
-      "Kon Knueppel",
       "Grayson Allen",
       "Sion James",
       "Buddy Hield",
-      "__SPACER__"
+      "Kylan Boswell",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Kon Knueppel"
     ],
     "SF": [
       "Brandon Miller",
@@ -140,10 +142,12 @@
     ],
     "PF": [
       "Naz Reid",
-      "Grant Williams",
       "Tidjane Salaun",
       "Michael Ajayi",
-      "Tre Carroll"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Grant Williams"
     ],
     "C": [
       "Moussa Diabate",
