@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T21:37:28.418Z",
+  "generated_at": "2026-09-25T21:40:53.647Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -737,26 +737,29 @@
       "bench": {
         "PG": [
           "Ajay Mitchell",
-          "Nikola Topic"
+          "Nikola Topic",
+          "Robert McCray"
         ],
         "SG": [
           "Alex Caruso",
           "Bennett Stirtz",
-          "Otega Oweh"
+          "Otega Oweh",
+          "Zhaire Smith"
         ],
         "SF": [
           "Jared McCain",
           "Brooks Barnhizer",
-          "Josh Dix",
-          "Payton Sandfort"
+          "Josh Dix"
         ],
         "PF": [
           "Jaylin Williams",
-          "Kenrich Williams"
+          "Kenrich Williams",
+          "Andrew Holifield"
         ],
         "C": [
           "Aday Mara",
-          "Thomas Sorber"
+          "Thomas Sorber",
+          "Christoph Tilly"
         ]
       }
     },
