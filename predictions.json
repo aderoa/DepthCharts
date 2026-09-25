@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T21:37:25.579Z",
+  "generated_at": "2026-09-25T21:37:28.418Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -121,11 +121,11 @@
       "bench": {
         "PG": [
           "Dennis Schroeder",
-          "Ryan Nembhard",
-          "Christian Anderson"
+          "Ryan Nembhard"
         ],
         "SG": [
           "Sion James",
+          "Christian Anderson",
           "Kylan Boswell",
           "Kon Knueppel"
         ],
