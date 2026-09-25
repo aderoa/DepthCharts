@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T18:05:57.850Z",
+  "generated_at": "2026-09-25T18:06:10.360Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -855,16 +855,17 @@
         ],
         "SF": [
           "Luke Kennard",
-          "Rasheer Fleming"
+          "Rasheer Fleming",
+          "Phillip Wheeler"
         ],
         "PF": [
           "Ryan Dunn",
-          "Koa Peat"
+          "Koa Peat",
+          "CJ Huntley"
         ],
         "C": [
           "Khaman Maluach",
           "Duop Reath",
-          "CJ Huntley",
           "Mark Williams"
         ]
       }
