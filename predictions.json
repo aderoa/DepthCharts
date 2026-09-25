@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T21:37:21.711Z",
+  "generated_at": "2026-09-25T21:37:25.579Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -126,17 +126,17 @@
         ],
         "SG": [
           "Sion James",
-          "Buddy Hield",
           "Kylan Boswell",
           "Kon Knueppel"
         ],
         "SF": [
           "Royce O'Neale",
-          "Liam McNeeley",
+          "Buddy Hield",
           "Pat Connaughton"
         ],
         "PF": [
           "Tidjane Salaun",
+          "Liam McNeeley",
           "Michael Ajayi",
           "Grant Williams"
         ],
