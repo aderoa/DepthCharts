@@ -232,38 +232,35 @@
       "Marcus Sasser",
       "Sergio De Larrea",
       "John Poulakidas",
-      "__SEPARATOR__",
-      "Brandon Williams"
+      "__SPACER__"
     ],
     "SG": [
       "Max Christie",
       "Zaccharie Risacher",
       "Tarik Biberovic",
-      "Vsevolod Ishchenko",
-      "__SEPARATOR__"
+      "Seth Lundy",
+      "__SPACER__"
     ],
     "SF": [
       "Cooper Flagg",
       "Santiago Aldama",
       "Caleb Martin",
       "Jett Howard",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "PF": [
       "PJ Washington",
       "Morez Johnson",
       "Naji Marshall",
       "Tobi Lawal",
-      "__SEPARATOR__",
-      "Tyler Smith"
+      "__SPACER__"
     ],
     "C": [
       "Dereck Lively",
       "Daniel Gafford",
       "Moussa Cisse",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Dwight Powell"
+      "Dwight Powell",
+      "__SPACER__"
     ]
   },
   "DEN": {
