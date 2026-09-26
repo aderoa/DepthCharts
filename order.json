@@ -962,20 +962,20 @@
       "Ben Simmons",
       "Emanuel Sharp",
       "Elfrid Payton",
-      "Tristen Newton"
+      "__SPACER__"
     ],
     "SG": [
       "Zach LaVine",
       "Malik Monk",
       "Daeqwon Plowden",
-      "Adam Flagler",
+      "Tristen Newton",
       "__SPACER__"
     ],
     "SF": [
       "De'Andre Hunter",
       "Nique Clifford",
       "Alex Karaban",
-      "Gabe Levin",
+      "Adam Flagler",
       "__SPACER__"
     ],
     "PF": [
@@ -989,7 +989,7 @@
       "Domantas Sabonis",
       "Maxime Raynaud",
       "Jonathan Mogbo",
-      "Tyrone Marshall",
+      "__SPACER__",
       "__SPACER__"
     ]
   },
