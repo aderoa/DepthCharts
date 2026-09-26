@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T21:54:01.233Z",
+  "generated_at": "2026-09-26T00:00:37.442Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -924,7 +924,8 @@
         "PG": [
           "Ben Simmons",
           "Emanuel Sharp",
-          "Elfrid Payton"
+          "Elfrid Payton",
+          "Tristen Newton"
         ],
         "SG": [
           "Malik Monk",
@@ -934,16 +935,17 @@
         "SF": [
           "Nique Clifford",
           "Alex Karaban",
-          "Gabe Lavin"
+          "Gabe Levin"
         ],
         "PF": [
           "Precious Achiuwa",
           "Dylan Cardwell",
-          "Tyrone Marshall"
+          "Leaky Black"
         ],
         "C": [
           "Maxime Raynaud",
-          "Jonathan Mogbo"
+          "Jonathan Mogbo",
+          "Tyrone Marshall"
         ]
       }
     },
