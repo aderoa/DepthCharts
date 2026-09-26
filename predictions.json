@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T00:00:37.442Z",
+  "generated_at": "2026-09-26T00:00:49.294Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -848,26 +848,27 @@
         "PG": [
           "Collin Gillespie",
           "Jamaree Bouyea",
-          "Pat Spencer"
+          "Kennedy Chandler"
         ],
         "SG": [
           "Jordan Goodwin",
           "Haywood Highsmith",
-          "Koby Brea"
+          "Pat Spencer"
         ],
         "SF": [
           "Luke Kennard",
           "Rasheer Fleming",
-          "Phillip Wheeler"
+          "Koby Brea"
         ],
         "PF": [
           "Ryan Dunn",
           "Koa Peat",
-          "CJ Huntley"
+          "Phillip Wheeler"
         ],
         "C": [
           "Khaman Maluach",
           "Duop Reath",
+          "CJ Huntley",
           "Mark Williams"
         ]
       }
