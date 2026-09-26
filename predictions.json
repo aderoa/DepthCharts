@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T23:27:01.184Z",
+  "generated_at": "2026-09-26T23:27:07.247Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -158,18 +158,18 @@
       "bench": {
         "PG": [
           "Tre Jones",
-          "Jaylin Sellers"
+          "Jaylin Sellers",
+          "Peter Suder"
         ],
         "SG": [
           "Buddy Hield",
           "Dailyn Swain",
-          "Peter Suder",
-          "Drew Peterson"
+          "BJ Boston"
         ],
         "SF": [
           "Isaac Okoro",
           "Noa Essengue",
-          "BJ Boston"
+          "Drew Peterson"
         ],
         "PF": [
           "Jalen Smith",
