@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T00:00:49.294Z",
+  "generated_at": "2026-09-26T00:00:57.589Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -638,11 +638,13 @@
         "SG": [
           "Terrence Shannon",
           "Isaiah Evans",
+          "KJ Martin",
           "Donte DiVincenzo"
         ],
         "SF": [
           "Jaylen Clark",
-          "Cody Williams"
+          "Cody Williams",
+          "Norchad Omier"
         ],
         "PF": [
           "Jonathan Kuminga",
