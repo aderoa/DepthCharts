@@ -155,32 +155,37 @@
   "CHI": {
     "PG": [
       "Josh Giddey",
-      "Rob Dillingham",
       "Tre Jones",
-      "Jaylin Sellers"
+      "Jaylin Sellers",
+      "__SPACER__",
+      "__SPACER__"
     ],
     "SG": [
       "Norman Powell",
-      "Isaac Okoro",
+      "Buddy Hield",
       "Dailyn Swain",
       "Peter Suder"
     ],
     "SF": [
       "Matas Buzelis",
+      "Isaac Okoro",
       "Patrick Williams",
       "Noa Essengue",
+      "__SPACER__",
       "__SPACER__"
     ],
     "PF": [
       "Caleb Wilson",
       "Jalen Smith",
       "Leonard Miller",
+      "__SPACER__",
       "__SPACER__"
     ],
     "C": [
       "Nicolas Claxton",
       "Zach Collins",
       "Tobe Awaka",
+      "__SPACER__",
       "__SPACER__"
     ]
   },
