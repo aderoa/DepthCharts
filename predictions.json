@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T23:25:09.589Z",
+  "generated_at": "2026-09-26T23:27:01.184Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -163,20 +163,24 @@
         "SG": [
           "Buddy Hield",
           "Dailyn Swain",
-          "Peter Suder"
+          "Peter Suder",
+          "Drew Peterson"
         ],
         "SF": [
           "Isaac Okoro",
-          "Noa Essengue"
+          "Noa Essengue",
+          "BJ Boston"
         ],
         "PF": [
           "Jalen Smith",
           "Patrick Williams",
-          "Tobe Awaka"
+          "Tobe Awaka",
+          "Marquel Sutton"
         ],
         "C": [
           "Zach Collins",
-          "Leonard Miller"
+          "Leonard Miller",
+          "Orlando Robinson"
         ]
       }
     },
