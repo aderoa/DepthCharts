@@ -1123,12 +1123,14 @@
       "Trae Young",
       "Carlton Carrington",
       "Tre Mann",
-      "Alondes Williams"
+      "Alondes Williams",
+      "__SPACER__"
     ],
     "SG": [
       "Tre Johnson",
       "Khris Middleton",
       "Kyshawn George",
+      "Reece Beekman",
       "__SPACER__",
       "__SEPARATOR__",
       "Jamir Watkins"
@@ -1137,19 +1139,22 @@
       "AJ Dybantsa",
       "Bilal Coulibaly",
       "Will Riley",
+      "Chris Livingston",
       "__SPACER__"
     ],
     "PF": [
       "Anthony Davis",
       "Justin Champagnie",
       "Anthony Gill",
+      "Steve Settle",
       "__SPACER__"
     ],
     "C": [
       "Alex Sarr",
       "Deandre Ayton",
       "Tristan Vukcevic",
-      "Felix Okpara"
+      "Felix Okpara",
+      "__SPACER__"
     ]
   }
 }
