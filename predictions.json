@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T16:58:22.744Z",
+  "generated_at": "2026-09-27T17:03:22.014Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -568,20 +568,22 @@
         "SG": [
           "Klay Thompson",
           "Ryan Conwell",
-          "J'Vonne Hadley"
+          "Dennis Smith"
         ],
         "SF": [
           "Pelle Larsson",
           "Keshad Johnson",
-          "Myron Gardner"
+          "J'Vonne Hadley"
         ],
         "PF": [
           "Simone Fontecchio",
-          "Nikola Jovic"
+          "Nikola Jovic",
+          "Myron Gardner"
         ],
         "C": [
           "Bobby Portis",
           "Vladislav Goldin",
+          "Ian Schieffelin",
           "Nick Richards"
         ]
       }
