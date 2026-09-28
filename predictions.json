@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T23:50:53.317Z",
+  "generated_at": "2026-09-28T05:03:12.314Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -490,18 +490,19 @@
         "PG": [
           "Jaden Hardy",
           "Bronny James",
+          "Chris Manon",
           "Meechie Johnson"
         ],
         "SG": [
           "Collin Sexton",
           "Ziaire Williams",
-          "Chris Manon",
+          "Adou Thiero",
           "Chase Ross"
         ],
         "SF": [
           "Matisse Thybulle",
           "Cameron Carr",
-          "Adou Thiero"
+          "Cole Swider"
         ],
         "PF": [
           "Jake LaRavia",
@@ -511,7 +512,8 @@
         "C": [
           "Sandro Mamukelashvili",
           "Kevon Looney",
-          "Arthur Kaluma"
+          "Arthur Kaluma",
+          "William Kyle"
         ]
       }
     },
