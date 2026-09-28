@@ -478,11 +478,9 @@
       "Kris Dunn",
       "Bradley Beal",
       "Gradey Dick",
-      "Fletcher Loyer",
-      "__SPACER__"
+      "Fletcher Loyer"
     ],
     "SF": [
-      "Brandon Ingram",
       "Max Strus",
       "Cam Christie",
       "Blake Wesley",
@@ -494,16 +492,16 @@
       "Rui Hachimura",
       "Derrick Jones",
       "Baba Miller",
-      "__SPACER__",
       "Jalen Pickett",
-      "__SPACER__"
+      "Brandon Ingram"
     ],
     "C": [
       "Brook Lopez",
       "Isaiah Jackson",
-      "Yanic Konan Niederhauser",
       "Nick Martinelli",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Yanic Konan Niederhauser"
     ]
   },
   "LAL": {
