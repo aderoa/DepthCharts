@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T22:51:18.790Z",
+  "generated_at": "2026-09-28T23:37:53.448Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -85,28 +85,27 @@
       "bench": {
         "PG": [
           "Mikel Brown",
-          "Nolan Traore",
-          "Chaney Johnson"
+          "Nolan Traore"
         ],
         "SG": [
           "Ben Saraf",
           "Drake Powell",
-          "Dain Dainja"
+          "Chaney Johnson"
         ],
         "SF": [
           "Keon Ellis",
           "Josh Minott",
-          "Ben Humrichous"
+          "Dain Dainja"
         ],
         "PF": [
           "Moritz Wagner",
           "Joshua Jefferson",
-          "Tyler Bilodeau"
+          "Ben Humrichous"
         ],
         "C": [
           "Danny Wolf",
           "Grant Nelson",
-          "Nick Pringle",
+          "Tyler Bilodeau",
           "Day'Ron Sharpe"
         ]
       }
