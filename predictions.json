@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T20:22:50.329Z",
+  "generated_at": "2026-09-28T20:22:54.896Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -447,7 +447,7 @@
       "starters": {
         "PG": "Darius Garland",
         "SG": "Kris Dunn",
-        "SF": "Brandon Ingram",
+        "SF": "Max Strus",
         "PF": "Rui Hachimura",
         "C": "Brook Lopez"
       },
@@ -463,7 +463,6 @@
           "Fletcher Loyer"
         ],
         "SF": [
-          "Max Strus",
           "Cam Christie",
           "Blake Wesley",
           "Jordan Miller"
@@ -471,12 +470,13 @@
         "PF": [
           "Derrick Jones",
           "Baba Miller",
-          "Jalen Pickett"
+          "Jalen Pickett",
+          "Brandon Ingram"
         ],
         "C": [
           "Isaiah Jackson",
-          "Yanic Konan Niederhauser",
-          "Nick Martinelli"
+          "Nick Martinelli",
+          "Yanic Konan Niederhauser"
         ]
       }
     },
