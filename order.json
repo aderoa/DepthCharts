@@ -586,7 +586,6 @@
       "Dru Smith",
       "Tre Donaldson",
       "Bez Mbeng",
-      "__SPACER__",
       "__SPACER__"
     ],
     "SG": [
@@ -600,23 +599,22 @@
       "Tim Hardaway Jr",
       "Pelle Larsson",
       "Keshad Johnson",
-      "J'Vonne Hadley"
+      "J'Vonne Hadley",
+      "__SPACER__"
     ],
     "PF": [
       "Giannis Antetokounmpo",
       "Simone Fontecchio",
       "Nikola Jovic",
       "Myron Gardner",
-      "__SPACER__"
+      "Ian Schieffelin"
     ],
     "C": [
       "Bam Adebayo",
       "Bobby Portis",
+      "Nick Richards",
       "Vladislav Goldin",
-      "Ian Schieffelin",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Nick Richards"
+      "__SPACER__"
     ]
   },
   "MIL": {
