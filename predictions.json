@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T14:47:12.659Z",
+  "generated_at": "2026-09-30T14:47:15.182Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -714,12 +714,12 @@
         "PG": [
           "Jose Alvarado",
           "Tyler Kolek",
-          "Bruce Brown",
           "Jaden Akins"
         ],
         "SG": [
           "Miles McBride",
-          "Kevin McCullar"
+          "Kevin McCullar",
+          "Bruce Brown"
         ],
         "SF": [
           "Jordan Clarkson",
