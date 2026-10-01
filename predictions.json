@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T23:31:31.910Z",
+  "generated_at": "2026-10-01T23:31:55.351Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -379,29 +379,25 @@
         "PG": [
           "Marcus Smart",
           "Bruce Thornton",
-          "Sean Pedulla",
-          "JD Davison"
+          "Sean Pedulla"
         ],
         "SG": [
           "Reed Sheppard",
-          "Isaiah Crawford",
-          "Tristen Newton"
+          "Isaiah Crawford"
         ],
         "SF": [
           "Bogdan Bogdanovic",
-          "Jae'Sean Tate",
-          "Julian Phillips"
+          "Jae'Sean Tate"
         ],
         "PF": [
           "Tari Eason",
           "Quadir Copeland",
-          "Oscar Tshiebwe",
-          "Jeff Green"
+          "Julian Phillips"
         ],
         "C": [
           "Clint Capela",
           "Steven Adams",
-          "Rafael Castro"
+          "Oscar Tshiebwe"
         ]
       }
     },
