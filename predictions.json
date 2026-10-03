@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T01:35:10.394Z",
+  "generated_at": "2026-10-03T20:15:43.833Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -444,7 +444,7 @@
         "SG": "Kris Dunn",
         "SF": "Max Strus",
         "PF": "Rui Hachimura",
-        "C": "Brook Lopez"
+        "C": "Isaiah Jackson"
       },
       "bench": {
         "PG": [
@@ -469,7 +469,7 @@
           "Brandon Ingram"
         ],
         "C": [
-          "Isaiah Jackson",
+          "Brook Lopez",
           "Nick Martinelli",
           "Yanic Konan Niederhauser"
         ]
