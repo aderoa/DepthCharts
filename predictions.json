@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T17:59:02.253Z",
+  "generated_at": "2026-10-03T01:35:07.746Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -530,24 +530,23 @@
         ],
         "SG": [
           "Scotty Pippen Jr",
-          "Jordan Hawkins",
-          "Jahmai Mashack",
-          "Brendan Hausen"
+          "Micah Peavy",
+          "Jahmai Mashack"
         ],
         "SF": [
           "Karim Lopez",
           "Kris Murray",
-          "Micah Peavy"
+          "Olivier-Maxence Prosper"
         ],
         "PF": [
           "Jerami Grant",
-          "Taylor Hendricks",
-          "Olivier-Maxence Prosper"
+          "Taylor Hendricks"
         ],
         "C": [
           "Isaiah Stewart",
           "Quinten Post",
-          "GG Jackson"
+          "GG Jackson",
+          "Carson Cooper"
         ]
       }
     },
