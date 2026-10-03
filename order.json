@@ -467,7 +467,6 @@
       "Cam Christie",
       "Jalen Pickett",
       "Blake Wesley",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jordan Miller"
     ],
@@ -475,11 +474,13 @@
       "Rui Hachimura",
       "Derrick Jones",
       "Baba Miller",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Brandon Ingram"
     ],
     "C": [
-      "Brook Lopez",
       "Isaiah Jackson",
+      "Brook Lopez",
       "Nick Martinelli",
       "__SPACER__",
       "__SEPARATOR__",
