@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T23:51:01.191Z",
+  "generated_at": "2026-10-05T23:51:13.572Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -444,7 +444,7 @@
       "starters": {
         "PG": "Darius Garland",
         "SG": "Kris Dunn",
-        "SF": "Max Strus",
+        "SF": "Cam Christie",
         "PF": "Rui Hachimura",
         "C": "Isaiah Jackson"
       },
@@ -457,10 +457,10 @@
         "SG": [
           "Bradley Beal",
           "Gradey Dick",
-          "Fletcher Loyer"
+          "Fletcher Loyer",
+          "Max Strus"
         ],
         "SF": [
-          "Cam Christie",
           "Jalen Pickett",
           "Blake Wesley",
           "Jordan Miller"
