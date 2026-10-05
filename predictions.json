@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T23:36:21.143Z",
+  "generated_at": "2026-10-05T23:51:01.191Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -790,22 +790,23 @@
         "SG": [
           "Jamal Cain",
           "Jase Richardson",
-          "Alex Morales"
+          "Johnell Davis"
         ],
         "SF": [
           "Tristan Da Silva",
           "Noah Penda",
-          "Malaki Branham"
+          "Alex Morales"
         ],
         "PF": [
           "Nikola Vucevic",
           "Jonathan Isaac",
-          "Kevin Knox",
+          "Malaki Branham",
           "Izaiyah Nelson"
         ],
         "C": [
           "Goga Bitadze",
-          "Colin Castleton"
+          "Colin Castleton",
+          "Kevin Knox"
         ]
       }
     },
