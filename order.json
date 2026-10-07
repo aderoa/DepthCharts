@@ -837,40 +837,37 @@
       "Labaron Philon",
       "Caleb Love",
       "Jameer Nelson Jr",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "SG": [
       "VJ Edgecombe",
       "Anfernee Simons",
       "Kentavious Caldwell-Pope",
       "Duke Miles",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "SF": [
       "Jaylen Brown",
       "Dean Wade",
       "Jabari Walker",
       "Rayan Rupert",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "PF": [
       "LeBron James",
       "Dominick Barlow",
       "Justin Edwards",
       "Dillon Jones",
-      "__SPACER__",
-      "Saint Thomas",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "C": [
       "Joel Embiid",
-      "Ariel Hukporti",
       "Adem Bona",
       "Tacko Fall",
+      "Saint Thomas",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SEPARATOR__",
+      "Ariel Hukporti"
     ]
   },
   "PHX": {
