@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T05:30:55.273Z",
+  "generated_at": "2026-10-07T05:31:02.488Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -830,18 +830,18 @@
         ],
         "SF": [
           "Dean Wade",
-          "Jabari Walker",
-          "Rayan Rupert"
+          "Rayan Rupert",
+          "Dillon Jones"
         ],
         "PF": [
           "Dominick Barlow",
-          "Justin Edwards",
-          "Dillon Jones"
+          "Jabari Walker",
+          "Saint Thomas"
         ],
         "C": [
           "Adem Bona",
+          "Justin Edwards",
           "Tacko Fall",
-          "Saint Thomas",
           "Ariel Hukporti"
         ]
       }
