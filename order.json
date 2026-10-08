@@ -1064,36 +1064,33 @@
       "Keyonte George",
       "Isaiah Collier",
       "Josh Okogie",
-      "Tamar Bates",
-      "__SPACER__"
+      "Tamar Bates"
     ],
     "SG": [
       "Darryn Peterson",
       "Ace Bailey",
       "Sviatoslav Mykhailiuk",
-      "Trey Alexander",
-      "__SPACER__"
+      "Trey Alexander"
     ],
     "SF": [
       "Lauri Markkanen",
       "Brice Sensabaugh",
-      "Josh Green",
-      "Taylor Funk",
-      "__SPACER__"
+      "Taylor Funk"
     ],
     "PF": [
       "Jaren Jackson Jr",
-      "Kyle Filipowski",
+      "Josh Green",
+      "__SPACER__",
       "Blake Hinson",
-      "Harrison Ingram",
-      "__SPACER__"
+      "Harrison Ingram"
     ],
     "C": [
-      "Jusuf Nurkic",
       "Jaxson Hayes",
+      "Kyle Filipowski",
       "Mo Bamba",
       "Jonas Aidoo",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Jusuf Nurkic"
     ]
   },
   "WAS": {
