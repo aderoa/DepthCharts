@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T23:09:27.725Z",
+  "generated_at": "2026-10-09T23:09:30.253Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -542,11 +542,11 @@
         ],
         "PF": [
           "Jerami Grant",
-          "Taylor Hendricks",
-          "GG Jackson"
+          "Taylor Hendricks"
         ],
         "C": [
           "Quinten Post",
+          "GG Jackson",
           "Carson Cooper",
           "Isaiah Stewart"
         ]
