@@ -531,16 +531,13 @@
       "Ty Jerome",
       "Cam Spencer",
       "Walter Clayton",
-      "Javon Small",
-      "__SPACER__"
+      "Javon Small"
     ],
     "SG": [
       "Jaylen Wells",
       "Scotty Pippen Jr",
       "Micah Peavy",
-      "Jahmai Mashack",
-      "__SPACER__",
-      "__SPACER__"
+      "Jahmai Mashack"
     ],
     "SF": [
       "Cedric Coward",
@@ -552,15 +549,15 @@
       "Cameron Boozer",
       "Jerami Grant",
       "Taylor Hendricks",
-      "GG Jackson",
-      "__SPACER__"
+      "GG Jackson"
     ],
     "C": [
       "Zach Edey",
-      "Isaiah Stewart",
       "Quinten Post",
+      "__SPACER__",
       "Carson Cooper",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Isaiah Stewart"
     ]
   },
   "MIA": {
