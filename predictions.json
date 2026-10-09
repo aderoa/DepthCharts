@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T05:43:21.460Z",
+  "generated_at": "2026-10-09T23:09:27.725Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -546,9 +546,9 @@
           "GG Jackson"
         ],
         "C": [
-          "Isaiah Stewart",
           "Quinten Post",
-          "Carson Cooper"
+          "Carson Cooper",
+          "Isaiah Stewart"
         ]
       }
     },
