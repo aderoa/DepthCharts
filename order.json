@@ -953,36 +953,33 @@
       "Darius Acuff",
       "Ben Simmons",
       "Emanuel Sharp",
-      "Elfrid Payton",
-      "__SPACER__"
+      "Elfrid Payton"
     ],
     "SG": [
       "Zach LaVine",
       "Malik Monk",
-      "Daeqwon Plowden",
-      "Tristen Newton",
-      "__SPACER__"
+      "Adam Flagler",
+      "Tristen Newton"
     ],
     "SF": [
       "De'Andre Hunter",
       "Nique Clifford",
-      "Alex Karaban",
-      "Adam Flagler",
+      "Daeqwon Plowden",
       "__SPACER__"
     ],
     "PF": [
       "Keegan Murray",
       "Precious Achiuwa",
-      "Dylan Cardwell",
-      "Leaky Black",
-      "__SPACER__"
+      "Alex Karaban",
+      "Leaky Black"
     ],
     "C": [
       "Domantas Sabonis",
-      "Maxime Raynaud",
       "Jonathan Mogbo",
-      "Viktor Lakhin",
-      "__SPACER__"
+      "Dylan Cardwell",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Maxime Raynaud"
     ]
   },
   "SAS": {
