@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T06:02:59.920Z",
+  "generated_at": "2026-10-11T18:15:32.550Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -936,23 +936,22 @@
         ],
         "SG": [
           "Malik Monk",
-          "Daeqwon Plowden",
+          "Adam Flagler",
           "Tristen Newton"
         ],
         "SF": [
           "Nique Clifford",
-          "Alex Karaban",
-          "Adam Flagler"
+          "Daeqwon Plowden"
         ],
         "PF": [
           "Precious Achiuwa",
-          "Dylan Cardwell",
+          "Alex Karaban",
           "Leaky Black"
         ],
         "C": [
-          "Maxime Raynaud",
           "Jonathan Mogbo",
-          "Viktor Lakhin"
+          "Dylan Cardwell",
+          "Maxime Raynaud"
         ]
       }
     },
