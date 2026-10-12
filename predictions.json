@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T16:30:15.996Z",
+  "generated_at": "2026-10-12T17:30:42.871Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -941,16 +941,18 @@
         ],
         "SF": [
           "Nique Clifford",
-          "Daeqwon Plowden"
+          "Daeqwon Plowden",
+          "Damari Monsanto"
         ],
         "PF": [
           "Precious Achiuwa",
           "Alex Karaban",
-          "Leaky Black"
+          "Aaron Nkrumah"
         ],
         "C": [
           "Jonathan Mogbo",
           "Dylan Cardwell",
+          "Leaky Black",
           "Maxime Raynaud"
         ]
       }
