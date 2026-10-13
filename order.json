@@ -531,31 +531,36 @@
       "Ty Jerome",
       "Cam Spencer",
       "Walter Clayton",
-      "Javon Small"
+      "Javon Small",
+      "__SPACER__"
     ],
     "SG": [
       "Jaylen Wells",
       "Scotty Pippen Jr",
       "Micah Peavy",
-      "Jahmai Mashack"
+      "Jahmai Mashack",
+      "__SPACER__"
     ],
     "SF": [
       "Cedric Coward",
       "Karim Lopez",
       "Kris Murray",
-      "Olivier-Maxence Prosper"
+      "__SPACER__",
+      "Zach Cleveland"
     ],
     "PF": [
       "Cameron Boozer",
       "Jerami Grant",
-      "Taylor Hendricks"
+      "Taylor Hendricks",
+      "Olivier-Maxence Prosper",
+      "__SPACER__"
     ],
     "C": [
       "Zach Edey",
       "Quinten Post",
       "GG Jackson",
-      "__SPACER__",
       "Carson Cooper",
+      "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Stewart"
     ]
