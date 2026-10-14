@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T21:48:14.787Z",
+  "generated_at": "2026-10-14T21:52:53.605Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -965,8 +965,7 @@
         ],
         "SG": [
           "Keldon Johnson",
-          "Ja'Kobi Gillespie",
-          "Taelon Peter"
+          "Ja'Kobi Gillespie"
         ],
         "SF": [
           "Harrison Barnes",
@@ -975,15 +974,13 @@
           "Tobias Harris"
         ],
         "PF": [
-          "Maliq Brown",
           "Carter Bryant",
-          "Terry Taylor",
+          "Maliq Brown",
           "Jayden Quaintance"
         ],
         "C": [
           "Luke Kornet",
-          "Tarris Reed",
-          "Malik Williams"
+          "Tarris Reed"
         ]
       }
     },
