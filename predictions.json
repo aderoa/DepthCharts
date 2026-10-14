@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T18:02:02.044Z",
+  "generated_at": "2026-10-14T18:50:31.494Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -1014,19 +1014,18 @@
         ],
         "SF": [
           "Allen Graves",
-          "Jamison Battle",
-          "Malachi Smith"
+          "Malachi Smith",
+          "Tyson Degenhart"
         ],
         "PF": [
           "Kyle Anderson",
-          "Collin Murray-Boyles",
-          "Tyson Degenhart"
+          "Jamison Battle",
+          "Nate Bittle"
         ],
         "C": [
           "Trayce Jackson-Davis",
-          "Trey Jemison",
-          "Jamarion Sharp",
-          "Nate Bittle"
+          "Collin Murray-Boyles",
+          "Jamarion Sharp"
         ]
       }
     },
