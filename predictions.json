@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T01:46:12.162Z",
+  "generated_at": "2026-10-14T01:46:21.780Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -974,17 +974,17 @@
         ],
         "SG": [
           "Keldon Johnson",
-          "David Jones",
           "Taelon Peter"
         ],
         "SF": [
           "Harrison Barnes",
-          "Carter Bryant",
+          "David Jones",
+          "Jon Elmore",
           "Tobias Harris"
         ],
         "PF": [
           "Maliq Brown",
-          "Jon Elmore",
+          "Carter Bryant",
           "Jayden Quaintance"
         ],
         "C": [
