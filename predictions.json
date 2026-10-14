@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T02:12:32.655Z",
+  "generated_at": "2026-10-14T01:46:01.589Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -1048,23 +1048,22 @@
         ],
         "SG": [
           "Ace Bailey",
-          "Trey Alexander",
-          "Taylor Funk"
+          "Trey Alexander"
         ],
         "SF": [
           "Brice Sensabaugh",
           "Sviatoslav Mykhailiuk",
-          "Harrison Ingram"
+          "Taylor Funk"
         ],
         "PF": [
           "Josh Green",
           "Blake Hinson",
-          "Jonas Aidoo"
+          "Harrison Ingram"
         ],
         "C": [
           "Kyle Filipowski",
           "Mo Bamba",
-          "Mohamed Wague",
+          "Jonas Aidoo",
           "Jusuf Nurkic"
         ]
       }
