@@ -997,21 +997,22 @@
     "SG": [
       "Stephon Castle",
       "Keldon Johnson",
-      "David Jones",
+      "__SPACER__",
       "Taelon Peter"
     ],
     "SF": [
       "Devin Vassell",
       "Harrison Barnes",
-      "Carter Bryant",
+      "David Jones",
+      "Jon Elmore",
+      "__SEPARATOR__",
       "__SPACER__",
       "Tobias Harris"
     ],
     "PF": [
       "Julian Champagnie",
       "Maliq Brown",
-      "Jon Elmore",
-      "__SPACER__",
+      "Carter Bryant",
       "__SEPARATOR__",
       "Jayden Quaintance"
     ],
