@@ -113,18 +113,18 @@
   },
   "CHA": {
     "PG": [
-      "Coby White",
       "Dennis Schroeder",
       "Kylan Boswell",
       "Jarkel Joiner",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Coby White"
     ],
     "SG": [
       "Grayson Allen",
       "Sion James",
       "Christian Anderson",
-      "__SPACER__",
-      "__SPACER__",
+      "DaJuan Gordon",
       "__SEPARATOR__",
       "Kon Knueppel"
     ],
@@ -132,7 +132,6 @@
       "Brandon Miller",
       "Royce O'Neale",
       "Pat Connaughton",
-      "Wyatt Fricks",
       "__SPACER__"
     ],
     "PF": [
@@ -140,7 +139,6 @@
       "Tidjane Salaun",
       "Liam McNeeley",
       "Michael Ajayi",
-      "__SPACER__",
       "__SEPARATOR__",
       "Grant Williams"
     ],
@@ -148,8 +146,7 @@
       "Moussa Diabate",
       "Ryan Kalkbrenner",
       "Hannes Steinbach",
-      "PJ Hall",
-      "__SPACER__"
+      "PJ Hall"
     ]
   },
   "CHI": {
