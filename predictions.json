@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:42:49.544Z",
+  "generated_at": "2026-10-15T16:42:51.534Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -718,12 +718,12 @@
         "SF": [
           "Jordan Clarkson",
           "Pacome Dadiet",
-          "Tyler Nickel",
-          "Ochai Agbaji"
+          "Tyler Nickel"
         ],
         "PF": [
           "Landry Shamet",
-          "Mohamed Diawara"
+          "Mohamed Diawara",
+          "Ochai Agbaji"
         ],
         "C": [
           "Andre Drummond",
