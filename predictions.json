@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:44:09.177Z",
+  "generated_at": "2026-10-15T16:51:18.064Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -712,8 +712,8 @@
         ],
         "SG": [
           "Miles McBride",
-          "Kevin McCullar",
-          "Bruce Brown"
+          "Bruce Brown",
+          "Kevin McCullar"
         ],
         "SF": [
           "Jordan Clarkson",
@@ -722,13 +722,11 @@
         ],
         "PF": [
           "Landry Shamet",
-          "Mohamed Diawara",
-          "Ochai Agbaji"
+          "Mohamed Diawara"
         ],
         "C": [
           "Andre Drummond",
           "James Wiseman",
-          "Drew Eubanks",
           "Tony Bradley"
         ]
       }
