@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T17:05:27.538Z",
+  "generated_at": "2026-10-17T17:09:41.528Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -1060,7 +1060,7 @@
         "PG": [
           "Carlton Carrington",
           "Tre Mann",
-          "Jazian Gortman"
+          "Alondes Williams"
         ],
         "SG": [
           "Khris Middleton",
@@ -1071,16 +1071,17 @@
         "SF": [
           "Bilal Coulibaly",
           "Will Riley",
-          "Trevor Keels"
+          "Trevor Keels",
+          "Nolan Hickman"
         ],
         "PF": [
           "Justin Champagnie",
-          "Anthony Gill",
-          "Chris Livingston"
+          "Anthony Gill"
         ],
         "C": [
           "Deandre Ayton",
           "Felix Okpara",
+          "Chris Livingston",
           "Tristan Vukcevic"
         ]
       }
