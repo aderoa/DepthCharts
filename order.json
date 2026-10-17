@@ -1014,19 +1014,19 @@
       "Immanuel Quickley",
       "Jamal Shead",
       "Jaden Bradley",
-      "Tyreke Key"
+      "__SPACER__"
     ],
     "SG": [
       "RJ Barrett",
       "Ja'Kobe Walter",
       "Alijah Martin",
-      "Nimari Burnett"
+      "__SPACER__"
     ],
     "SF": [
       "Kawhi Leonard",
       "Allen Graves",
       "Malachi Smith",
-      "Tyson Degenhart"
+      "__SPACER__"
     ],
     "PF": [
       "Scottie Barnes",
@@ -1036,9 +1036,9 @@
     ],
     "C": [
       "Jakob Poeltl",
-      "Trayce Jackson-Davis",
       "Collin Murray-Boyles",
-      "Jamarion Sharp"
+      "Trayce Jackson-Davis",
+      "__SPACER__"
     ]
   },
   "UTA": {
