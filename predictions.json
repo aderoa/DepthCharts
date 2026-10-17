@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T11:18:08.882Z",
+  "generated_at": "2026-10-17T11:18:27.404Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -120,29 +120,29 @@
       "bench": {
         "PG": [
           "Kylan Boswell",
+          "Christian Anderson",
           "Jarkel Joiner",
           "Coby White"
         ],
         "SG": [
           "Sion James",
-          "Christian Anderson",
-          "DaJuan Gordon",
+          "Liam McNeeley",
+          "Latrell Wrightsell",
           "Kon Knueppel"
         ],
         "SF": [
           "Royce O'Neale",
-          "Pat Connaughton"
+          "Michael Ajayi"
         ],
         "PF": [
           "Tidjane Salaun",
+          "PJ Hall",
           "Liam McNeeley",
-          "Michael Ajayi",
           "Grant Williams"
         ],
         "C": [
           "Ryan Kalkbrenner",
-          "Hannes Steinbach",
-          "PJ Hall"
+          "Hannes Steinbach"
         ]
       }
     },
