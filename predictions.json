@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T11:26:55.417Z",
+  "generated_at": "2026-10-17T14:12:40.221Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -995,18 +995,15 @@
       "bench": {
         "PG": [
           "Jamal Shead",
-          "Jaden Bradley",
-          "Tyreke Key"
+          "Jaden Bradley"
         ],
         "SG": [
           "Ja'Kobe Walter",
-          "Alijah Martin",
-          "Nimari Burnett"
+          "Alijah Martin"
         ],
         "SF": [
           "Allen Graves",
-          "Malachi Smith",
-          "Tyson Degenhart"
+          "Malachi Smith"
         ],
         "PF": [
           "Kyle Anderson",
@@ -1014,9 +1011,8 @@
           "Nate Bittle"
         ],
         "C": [
-          "Trayce Jackson-Davis",
           "Collin Murray-Boyles",
-          "Jamarion Sharp"
+          "Trayce Jackson-Davis"
         ]
       }
     },
