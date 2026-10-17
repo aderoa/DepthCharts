@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T11:26:34.611Z",
+  "generated_at": "2026-10-17T11:26:43.435Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -451,12 +451,13 @@
       "bench": {
         "PG": [
           "Keaton Wagler",
-          "Kobe Sanders"
+          "Kobe Sanders",
+          "Blake Wesley"
         ],
         "SG": [
           "Bradley Beal",
-          "Blake Wesley",
-          "Fletcher Loyer",
+          "Cam Christie",
+          "Miye Oni",
           "Max Strus"
         ],
         "SF": [
@@ -472,6 +473,7 @@
         "C": [
           "Brook Lopez",
           "Nick Martinelli",
+          "Nathan Mensah",
           "Yanic Konan Niederhauser"
         ]
       }
