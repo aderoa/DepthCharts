@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T15:27:47.711Z",
+  "generated_at": "2026-10-17T15:32:48.593Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -562,24 +562,20 @@
       "bench": {
         "PG": [
           "Dru Smith",
-          "Tre Donaldson",
-          "Bez Mbeng"
+          "Tre Donaldson"
         ],
         "SG": [
           "Klay Thompson",
-          "Ryan Conwell",
-          "Gabe Madsen"
+          "Ryan Conwell"
         ],
         "SF": [
           "Pelle Larsson",
-          "Keshad Johnson",
-          "Myron Gardner"
+          "Myron Gardner",
+          "Keshad Johnson"
         ],
         "PF": [
           "Simone Fontecchio",
-          "Nikola Jovic",
-          "Kylor Kelley",
-          "Ezra Ausar"
+          "Nikola Jovic"
         ],
         "C": [
           "Bobby Portis",
