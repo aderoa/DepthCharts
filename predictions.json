@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T17:40:39.963Z",
+  "generated_at": "2026-10-17T17:53:21.688Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -157,20 +157,16 @@
       "bench": {
         "PG": [
           "Tre Jones",
-          "Jaylin Sellers",
-          "Jalen Bridges",
-          "Isaiah Stevens"
+          "Dailyn Swain",
+          "Jaylin Sellers"
         ],
         "SG": [
           "Buddy Hield",
-          "Dailyn Swain",
-          "Jordan Hawkins",
-          "BJ Boston"
+          "Jordan Hawkins"
         ],
         "SF": [
           "Isaac Okoro",
-          "Noa Essengue",
-          "Drew Peterson"
+          "Noa Essengue"
         ],
         "PF": [
           "Jalen Smith",
@@ -179,8 +175,7 @@
         ],
         "C": [
           "Zach Collins",
-          "Leonard Miller",
-          "Orlando Robinson"
+          "Leonard Miller"
         ]
       }
     },
