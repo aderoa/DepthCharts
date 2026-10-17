@@ -259,36 +259,33 @@
       "Jamal Murray",
       "Tyus Jones",
       "Ryan Nembhard",
-      "Dane Goodwin",
-      "__SPACER__"
+      "Dane Goodwin"
     ],
     "SG": [
       "Christian Braun",
       "DeMar DeRozan",
-      "Julian Strawther",
+      "Alpha Diallo",
       "Emanuel Miller",
-      "__SPACER__",
-      "Lonnie Walker"
+      "__SEPARATOR__",
+      "Julian Strawther"
     ],
     "SF": [
       "Cameron Johnson",
       "Spencer Jones",
-      "Alpha Diallo",
+      "__SPACER__",
       "Bryce Hopkins"
     ],
     "PF": [
       "Aaron Gordon",
       "Zeke Nnaji",
       "Trevon Brazile",
-      "Cam Whitmore",
-      "__SPACER__"
+      "Cam Whitmore"
     ],
     "C": [
       "Nikola Jokic",
       "Marvin Bagley",
       "DaRon Holmes",
-      "Coleman Hawkins",
-      "__SPACER__"
+      "Coleman Hawkins"
     ]
   },
   "DET": {
