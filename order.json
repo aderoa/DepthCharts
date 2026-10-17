@@ -375,7 +375,6 @@
       "Marcus Smart",
       "Bruce Thornton",
       "Sean Pedulla",
-      "__SPACER__",
       "__SPACER__"
     ],
     "SG": [
@@ -383,23 +382,20 @@
       "Reed Sheppard",
       "Isaiah Crawford",
       "Bryce Harris",
-      "__SPACER__",
       "__SPACER__"
     ],
     "SF": [
       "Kevin Durant",
       "Bogdan Bogdanovic",
       "Jae'Sean Tate",
-      "Caleb McConnell",
       "Cameron Matthews",
-      "__SPACER__"
+      "Caleb McConnell"
     ],
     "PF": [
       "Jabari Smith",
       "Tari Eason",
       "Quadir Copeland",
       "Julian Phillips",
-      "__SPACER__",
       "__SPACER__"
     ],
     "C": [
@@ -407,7 +403,6 @@
       "Clint Capela",
       "Steven Adams",
       "Oscar Tshiebwe",
-      "__SPACER__",
       "__SPACER__"
     ]
   },
