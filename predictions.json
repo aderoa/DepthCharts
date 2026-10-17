@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T18:35:58.762Z",
+  "generated_at": "2026-10-17T18:51:43.741Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -882,23 +882,21 @@
         ],
         "SG": [
           "Scoot Henderson",
-          "John Tonje",
-          "Caleb Houstan"
+          "John Tonje"
         ],
         "SF": [
           "Shaedon Sharpe",
-          "Jeremy Sochan",
-          "Chris Youngblood"
+          "Chris Youngblood",
+          "Jayson Kent"
         ],
         "PF": [
           "Sidy Cissoko",
           "Yang Hansen",
-          "Jayson Kent"
+          "Micah Potter"
         ],
         "C": [
           "Robert Williams",
-          "Branden Carlson",
-          "Micah Potter"
+          "Branden Carlson"
         ]
       }
     },
