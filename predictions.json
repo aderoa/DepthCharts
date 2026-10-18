@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T01:13:52.252Z",
+  "generated_at": "2026-10-18T01:16:31.870Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -661,17 +661,15 @@
         "PG": [
           "Jeremiah Fears",
           "AJ Johnson",
-          "Kobe Bufkin"
+          "Jaron Pierre"
         ],
         "SG": [
           "Jordan Poole",
-          "Bryce McGowens",
-          "Jaron Pierre"
+          "Bryce McGowens"
         ],
         "SF": [
           "Bennedict Mathurin",
-          "Trendon Watford",
-          "Caleb Houstan"
+          "Trendon Watford"
         ],
         "PF": [
           "Derik Queen",
@@ -681,8 +679,7 @@
         "C": [
           "Yves Missi",
           "DeAndre Jordan",
-          "Julian Reese",
-          "Christian Koloko"
+          "Julian Reese"
         ]
       }
     },
