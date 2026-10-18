@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T01:21:59.807Z",
+  "generated_at": "2026-10-18T01:29:00.372Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -1016,11 +1016,12 @@
         ],
         "PF": [
           "Josh Green",
+          "Mo Bamba",
           "Blake Hinson"
         ],
         "C": [
           "Kyle Filipowski",
-          "Mo Bamba",
+          "Tony Bradley",
           "Jusuf Nurkic"
         ]
       }
