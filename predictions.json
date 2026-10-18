@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T01:29:02.768Z",
+  "generated_at": "2026-10-18T01:41:22.364Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -260,13 +260,11 @@
       "bench": {
         "PG": [
           "Tyus Jones",
-          "Ryan Nembhard",
-          "Dane Goodwin"
+          "Ryan Nembhard"
         ],
         "SG": [
           "DeMar DeRozan",
           "Alpha Diallo",
-          "Emanuel Miller",
           "Julian Strawther"
         ],
         "SF": [
@@ -276,8 +274,7 @@
         ],
         "PF": [
           "Zeke Nnaji",
-          "Trevon Brazile",
-          "Coleman Hawkins"
+          "Trevon Brazile"
         ],
         "C": [
           "Marvin Bagley",
