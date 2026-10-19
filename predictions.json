@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T04:03:34.717Z",
+  "generated_at": "2026-10-19T22:37:15.077Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -470,8 +470,7 @@
       "bench": {
         "PG": [
           "Jaden Hardy",
-          "Bronny James",
-          "Aniwaniwa Tait-Jones"
+          "Bronny James"
         ],
         "SG": [
           "Collin Sexton",
@@ -480,19 +479,18 @@
         ],
         "SF": [
           "Matisse Thybulle",
-          "Cameron Carr",
-          "Adou Thiero"
+          "Cameron Carr"
         ],
         "PF": [
           "Jake LaRavia",
+          "Adou Thiero",
           "Dalton Knecht",
           "AK Okereke"
         ],
         "C": [
           "Sandro Mamukelashvili",
           "Kevon Looney",
-          "Arthur Kaluma",
-          "Rafael Castro"
+          "Arthur Kaluma"
         ]
       }
     },
