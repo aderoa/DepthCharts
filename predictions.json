@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T22:37:15.077Z",
+  "generated_at": "2026-10-19T22:39:32.781Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -505,18 +505,15 @@
       "bench": {
         "PG": [
           "Cam Spencer",
-          "Walter Clayton",
           "Javon Small"
         ],
         "SG": [
           "Scotty Pippen Jr",
-          "Micah Peavy",
           "Jahmai Mashack"
         ],
         "SF": [
           "Karim Lopez",
-          "Kris Murray",
-          "Zach Cleveland"
+          "Kris Murray"
         ],
         "PF": [
           "Jerami Grant",
