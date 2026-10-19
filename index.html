@@ -1551,13 +1551,37 @@ function isRfaEligible(p) {
 // the pessimistic one -- so a questionable player is one working back from an
 // injury rather than one with a sore ankle this morning.
 //
-// If that turns out to over-include, take 'Questionable' out of this list and
-// nothing else needs changing.
-const INJURY_ROW_STATUSES = ['Out', 'Doubtful', 'Questionable'];
+// QUESTIONABLE CAME OUT OF THIS LIST, which is what the note above always
+// said to do if it over-included -- and it did. A questionable player was
+// being shown below the red line as though he were out for the season, with
+// no way to say otherwise: the export asked this function INSTEAD OF reading
+// the saved order, so dragging him up on the board changed nothing here.
+//
+// Out and Doubtful still go below without argument. Questionable is now a
+// decision, made by placing him, and the separator-aware code in the export
+// path is what carries that decision through. The admin board already
+// behaved this way, so the two now agree about the same player.
+const INJURY_ROW_STATUSES = ['Out', 'Doubtful'];
 
 function isInjuryRow(p) {
   const st = (p && p.injuryStatus ? String(p.injuryStatus) : '').trim();
   return st !== '' && INJURY_ROW_STATUSES.indexOf(st) !== -1;
+}
+
+// Placed below the red line by hand, rather than sent there by his status.
+//
+// ONLY QUESTIONABLE, and that is a narrower rule than the admin board uses.
+// The board's below-the-line area holds anyone you drag there; the export's
+// injury row means "injured", and a healthy man sitting in it would be a
+// claim about him rather than a layout choice. So placement carries
+// Questionable through and nothing else.
+//
+// If you would rather the export mirrored the board exactly -- anyone
+// dragged down stays down -- this function is what to widen.
+function isQuestionable(p) {
+  const st = (p && p.injuryStatus ? String(p.injuryStatus) : '').trim();
+  if (st) return st === 'Questionable';
+  return !!(p && p.colorCode === 'questionable');
 }
 
 function isTwoWay2627(p){
@@ -1719,8 +1743,14 @@ function renderFutureYearAdmin(year) {
     if (saved) {
       positions.forEach(pos => {
         const names = saved[pos] || [];
+        // THE SEPARATOR IS A DECISION, not punctuation. The board writes it
+        // where you dropped the red line, and this build used to skip past it
+        // -- so the only thing deciding the injury row here was a player's
+        // status. Tracking it is what lets Questionable be yours to place.
+        let belowSep = false;
         names.forEach(n => {
-          if (n === '__SPACER__' || n === '__SEPARATOR__') return;
+          if (n === '__SPACER__') return;
+          if (n === '__SEPARATOR__') { belowSep = true; return; }
           // Saved draft pick entry: "__DRAFT__:PlayerName"
           if (n.indexOf('__DRAFT__:') === 0) {
             if (year !== '2026-27') return;  // draft picks only count for 2026-27
@@ -1736,7 +1766,9 @@ function renderFutureYearAdmin(year) {
           const ps = getFuturePlayerStatus(p, endThreshold, year);
           if (ps.status === 'gone') { globalPlaced.add(n); return; }
           if (ps.status === 'fa') faByPos[pos].push({ ...p, _ps: ps });
-          else if (injuryRowYear && isInjuryRow(p)) injByPos[pos].push({ ...p, _ps: ps });
+          else if (injuryRowYear
+                   && (isInjuryRow(p) || (belowSep && isQuestionable(p))))
+            injByPos[pos].push({ ...p, _ps: ps });
           else contractedByPos[pos].push({ ...p, _ps: ps });
           globalPlaced.add(n);
         });
