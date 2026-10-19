@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T22:41:57.588Z",
+  "generated_at": "2026-10-19T22:54:05.738Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -814,8 +814,7 @@
       "bench": {
         "PG": [
           "Collin Gillespie",
-          "Jamaree Bouyea",
-          "Kennedy Chandler"
+          "Jamaree Bouyea"
         ],
         "SG": [
           "Jordan Goodwin",
@@ -824,8 +823,7 @@
         ],
         "SF": [
           "Luke Kennard",
-          "Rasheer Fleming",
-          "Phillip Wheeler"
+          "Rasheer Fleming"
         ],
         "PF": [
           "Ryan Dunn",
@@ -835,6 +833,7 @@
         "C": [
           "Khaman Maluach",
           "Duop Reath",
+          "Drew Timme",
           "Mark Williams"
         ]
       }
