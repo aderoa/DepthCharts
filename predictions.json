@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T22:39:50.778Z",
+  "generated_at": "2026-10-19T22:39:55.004Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -338,12 +338,12 @@
           "Moses Moody"
         ],
         "PF": [
-          "Graham Ike"
+          "Graham Ike",
+          "Malevy Leons"
         ],
         "C": [
           "Al Horford",
           "Charles Bassey",
-          "Malevy Leons",
           "Kristaps Porzingis"
         ]
       }
