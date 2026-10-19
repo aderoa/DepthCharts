@@ -811,7 +811,7 @@
       "Jalen Green",
       "Collin Gillespie",
       "Jamaree Bouyea",
-      "Kennedy Chandler"
+      "__SPACER__"
     ],
     "SG": [
       "Devin Booker",
@@ -823,8 +823,7 @@
       "Dillon Brooks",
       "Luke Kennard",
       "Rasheer Fleming",
-      "__SPACER__",
-      "Phillip Wheeler"
+      "__SPACER__"
     ],
     "PF": [
       "Miles Bridges",
@@ -836,6 +835,7 @@
       "Oso Ighodaro",
       "Khaman Maluach",
       "Duop Reath",
+      "Drew Timme",
       "__SEPARATOR__",
       "Mark Williams"
     ]
