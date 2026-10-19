@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T22:55:39.433Z",
+  "generated_at": "2026-10-19T22:55:47.946Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -569,21 +569,21 @@
         ],
         "SG": [
           "Gary Trent Jr",
-          "Kevin Porter",
           "Caris LeVert",
+          "Kevin Porter",
           "Cormac Ryan"
         ],
         "SF": [
-          "AJ Green"
+          "AJ Green",
+          "Ousmane Dieng"
         ],
         "PF": [
           "Nate Ament",
-          "Ousmane Dieng"
+          "Bogoljub Markovic"
         ],
         "C": [
           "Kel'el Ware",
-          "Jericho Sims",
-          "Bogoljub Markovic"
+          "Jericho Sims"
         ]
       }
     },
