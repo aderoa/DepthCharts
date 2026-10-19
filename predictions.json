@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T22:40:08.116Z",
+  "generated_at": "2026-10-19T22:41:57.588Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -359,24 +359,20 @@
       "bench": {
         "PG": [
           "Marcus Smart",
-          "Bruce Thornton",
-          "Sean Pedulla"
+          "Bruce Thornton"
         ],
         "SG": [
           "Reed Sheppard",
-          "Isaiah Crawford",
-          "Bryce Harris"
+          "Isaiah Crawford"
         ],
         "SF": [
           "Bogdan Bogdanovic",
-          "Jae'Sean Tate",
-          "Cameron Matthews",
-          "Caleb McConnell"
+          "Jae'Sean Tate"
         ],
         "PF": [
           "Tari Eason",
-          "Quadir Copeland",
-          "Julian Phillips"
+          "Julian Phillips",
+          "Quadir Copeland"
         ],
         "C": [
           "Clint Capela",
