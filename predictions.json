@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T23:14:59.400Z",
+  "generated_at": "2026-10-20T14:08:57.561Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -111,7 +111,7 @@
     },
     "CHA": {
       "starters": {
-        "PG": "Dennis Schroeder",
+        "PG": "Coby White",
         "SG": "Grayson Allen",
         "SF": "Brandon Miller",
         "PF": "Naz Reid",
@@ -119,9 +119,9 @@
       },
       "bench": {
         "PG": [
+          "Dennis Schroeder",
           "Christian Anderson",
-          "Kylan Boswell",
-          "Coby White"
+          "Kylan Boswell"
         ],
         "SG": [
           "Sion James",
