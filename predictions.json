@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T14:08:57.561Z",
+  "generated_at": "2026-10-20T14:30:39.398Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -299,13 +299,13 @@
         ],
         "SF": [
           "Ron Holland",
-          "Gary Harris",
           "Chaz Lanier"
         ],
         "PF": [
           "Javonte Green",
-          "Taurean Prince",
-          "Isaac Jones"
+          "Gary Harris",
+          "Isaac Jones",
+          "Taurean Prince"
         ],
         "C": [
           "Paul Reed",
