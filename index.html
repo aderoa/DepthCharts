@@ -1597,6 +1597,22 @@ function isQuestionable(p) {
   return !!(p && p.colorCode === 'questionable');
 }
 
+// The class a status asks for, wherever the card is drawn. Empty for a
+// player whose status says nothing -- so it can be used with || and fill a
+// blank without overriding a colour that is already there.
+//
+// It exists because the admin board had no way to ask. The healthy rows
+// read _ps.sc, which only knows about contracts, and the injury row
+// hardcoded "injured" for everyone in it.
+function statusCls(p) {
+  const c = p && p.colorCode;
+  if (c === 'injured') return 'injured';
+  if (c === 'doubtful') return 'doubtful';
+  if (c === 'questionable') return 'questionable';
+  if (c === 'probable') return 'probable';
+  return '';
+}
+
 function isTwoWay2627(p){
   const s=(p.status27||'').trim();
   if(s==='TWO-WAY'||s==='10-DAY') return true;
@@ -1839,7 +1855,11 @@ function renderFutureYearAdmin(year) {
       // Contracted players
       let firstReal = true;
       contractedByPos[pos].forEach(p => {
-        const sc = p._ps.sc;
+        // THE CONTRACT STATUS STILL WINS. `||` fills the blank rather than
+        // replacing anything: a free agent stays orange, an option keeps its
+        // colour, and a questionable or probable player -- who had no class
+        // at all here -- finally gets one.
+        const sc = p._ps.sc || statusCls(p);
         const sal = salForYear(p, year);
         html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc} ${p.isDraftee?'draftee':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? '<span style="color:#15803d">'+pickLabel(p)+'</span>' : fmtSal(sal)}</div></div>`;
         firstReal = false;
@@ -1875,7 +1895,10 @@ function renderFutureYearAdmin(year) {
         injByPos[pos].forEach(p => {
           const st = (p.injuryStatus || '').trim();
           const why = (p.injuryReason || '').trim();
-          html += `<div class="admin-player-card injured" draggable="true"`
+          // NOT ALL THE SAME RED. This was hardcoded "injured", so Out and
+          // Doubtful looked identical in the one place you edit them. A
+          // player with no colorCode still reads red.
+          html += `<div class="admin-player-card ${statusCls(p) || 'injured'}" draggable="true"`
             + ` data-player="${escDC(p.name)}" data-tv="${p.tradeValue}">`
             + `<div class="admin-player-name">${escDC(p.name)}</div>`
             + `<div class="admin-trade-value" style="color:#b91c1c">`
