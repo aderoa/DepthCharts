@@ -2946,7 +2946,28 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
     // INJURED WINS OVER EVERYTHING ELSE. A two-way player who is out is out:
     // the red says the thing that matters for the rotation, and .c-inj is
     // already in the export stylesheet -- it was simply never applied here.
-    if (p._inj) return ' class="c-inj"';
+    //
+    // FOUR COLOURS, NOT ONE. This used to read p._inj alone -- a boolean set
+    // on whoever the injury row captured -- so the cell was red because of
+    // WHERE the man sat, not because of what his status said. Two things
+    // followed. A doubtful player was painted the same red as one out for
+    // the season, and every questionable, doubtful or probable player in the
+    // HEALTHY rows got no colour at all, because nothing here ever looked at
+    // colorCode.
+    //
+    // The second of those got worse when Questionable stopped going to the
+    // injury row: those players moved up and lost their colour entirely.
+    //
+    // The branch still comes first, so the rule above is unchanged. It just
+    // has four colours to say it with now, and says them from the status
+    // rather than from the seating.
+    if (p._inj || p.colorCode === 'injured' || p.colorCode === 'doubtful'
+        || p.colorCode === 'questionable' || p.colorCode === 'probable') {
+      if (p.colorCode === 'doubtful') return ' class="c-doubt"';
+      if (p.colorCode === 'questionable') return ' class="c-quest"';
+      if (p.colorCode === 'probable') return ' class="c-prob"';
+      return ' class="c-inj"';
+    }
     if (p.isDraftee) return ' class="c-draft"';
     if (p._ps) {
       if (p._ps.status === 'fa') return ' class="c-fa"';
