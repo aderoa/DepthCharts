@@ -545,8 +545,10 @@
     "PG": [
       "Ryan Rollins",
       "Kasparas Jakucionis",
+      "Caris LeVert",
+      "Kam Jones",
       "__SPACER__",
-      "Kam Jones"
+      "__SPACER__"
     ],
     "SG": [
       "Tyler Herro",
@@ -557,12 +559,15 @@
     ],
     "SF": [
       "Jaime Jaquez",
-      "AJ Green"
+      "AJ Green",
+      "Nate Ament",
+      "__SPACER__",
+      "__SPACER__"
     ],
     "PF": [
       "Kyle Kuzma",
       "Ousmane Dieng",
-      "Nate Ament",
+      "__SPACER__",
       "Bogoljub Markovic",
       "Pete Nance"
     ],
@@ -570,6 +575,7 @@
       "Myles Turner",
       "Kel'el Ware",
       "Jericho Sims",
+      "__SPACER__",
       "__SPACER__"
     ]
   },
