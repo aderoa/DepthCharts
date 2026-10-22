@@ -380,22 +380,25 @@
   "IND": {
     "PG": [
       "Tyrese Haliburton",
-      "TJ McConnell",
+      "Quenton Jackson",
       "Braden Smith",
-      "__SPACER__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "TJ McConnell"
     ],
     "SG": [
       "Andrew Nembhard",
       "Ben Sheppard",
-      "Quenton Jackson",
       "__SPACER__"
     ],
     "SF": [
-      "Aaron Nesmith",
       "Kelly Oubre",
       "Kobe Brown",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Aaron Nesmith",
       "Johnny Furphy"
     ],
     "PF": [
