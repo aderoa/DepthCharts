@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:47:10.490Z",
+  "generated_at": "2026-10-22T04:47:35.129Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -815,17 +815,17 @@
       },
       "bench": {
         "PG": [
-          "Jrue Holiday",
-          "Vit Krejci"
+          "Jrue Holiday"
         ],
         "SG": [
           "Scoot Henderson",
           "John Tonje"
         ],
         "SF": [
+          "Vit Krejci",
+          "Jayson Kent",
           "Shaedon Sharpe",
-          "Chris Youngblood",
-          "Jayson Kent"
+          "Chris Youngblood"
         ],
         "PF": [
           "Sidy Cissoko",
