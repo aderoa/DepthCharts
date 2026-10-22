@@ -7,12 +7,12 @@
       "__SPACER__"
     ],
     "SG": [
-      "Dyson Daniels",
       "Nickeil Alexander-Walker",
       "Keshon Gilbert",
-      "Kobe Johnson"
+      "__SPACER__"
     ],
     "SF": [
+      "Dyson Daniels",
       "Luguentz Dort",
       "Aaron Wiggins",
       "Corey Kispert",
@@ -22,7 +22,6 @@
       "Jalen Johnson",
       "Asa Newell",
       "Dorian Finney-Smith",
-      "Cameron Corhen",
       "__SPACER__",
       "__SEPARATOR__",
       "Mouhamed Gueye"
@@ -31,6 +30,7 @@
       "Onyeka Okongwu",
       "Jock Landale",
       "Zuby Ejiofor",
+      "__SPACER__",
       "__SEPARATOR__",
       "Henri Veesaar"
     ]
