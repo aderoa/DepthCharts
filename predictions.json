@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:45:07.551Z",
+  "generated_at": "2026-10-22T04:45:21.875Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -314,11 +314,11 @@
       },
       "bench": {
         "PG": [
+          "Brandon Williams",
           "LJ Cryer"
         ],
         "SG": [
           "Gary Payton II",
-          "Brandon Williams",
           "Brandin Podziemski",
           "Jimmy Butler"
         ],
