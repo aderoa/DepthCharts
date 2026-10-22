@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:36:21.806Z",
+  "generated_at": "2026-10-22T04:36:44.718Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -582,37 +582,32 @@
     "MIN": {
       "starters": {
         "PG": "LaMelo Ball",
-        "SG": "Ayo Dosunmu",
-        "SF": "Anthony Edwards",
-        "PF": "Jaden McDaniels",
+        "SG": "Anthony Edwards",
+        "SF": "Jaden McDaniels",
+        "PF": "Jonathan Kuminga",
         "C": "Rudy Gobert"
       },
       "bench": {
         "PG": [
           "Bones Hyland",
-          "Zyon Pullin",
-          "Antonio Reeves"
+          "Zyon Pullin"
         ],
         "SG": [
+          "Ayo Dosunmu",
           "Terrence Shannon",
           "Isaiah Evans",
-          "KJ Martin",
           "Donte DiVincenzo"
         ],
         "SF": [
           "Jaylen Clark",
-          "Cody Williams",
-          "Norchad Omier"
+          "Cody Williams"
         ],
         "PF": [
-          "Jonathan Kuminga",
-          "Trey Lyles",
-          "Drew Timme"
+          "Trey Lyles"
         ],
         "C": [
           "Joan Beringer",
-          "Rocco Zikarsky",
-          "Enrique Freeman"
+          "Rocco Zikarsky"
         ]
       }
     },
