@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:36:18.188Z",
+  "generated_at": "2026-10-22T04:36:21.806Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -531,11 +531,11 @@
         ],
         "SF": [
           "Pelle Larsson",
-          "Simone Fontecchio",
-          "Keshad Johnson"
+          "Simone Fontecchio"
         ],
         "PF": [
-          "Nikola Jovic"
+          "Nikola Jovic",
+          "Keshad Johnson"
         ],
         "C": [
           "Bobby Portis",
