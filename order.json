@@ -464,21 +464,27 @@
     ],
     "SG": [
       "Austin Reaves",
-      "Collin Sexton",
       "Ziaire Williams",
-      "Chris Manon"
+      "Chris Manon",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Collin Sexton"
     ],
     "SF": [
-      "Quentin Grimes",
       "Matisse Thybulle",
+      "Quentin Grimes",
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Cameron Carr"
     ],
     "PF": [
       "Jarred Vanderbilt",
       "Jake LaRavia",
-      "Adou Thiero",
-      "Dalton Knecht",
-      "AK Okereke"
+      "AK Okereke",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Adou Thiero"
     ],
     "C": [
       "Walker Kessler",
