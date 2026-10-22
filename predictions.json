@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:48:48.518Z",
+  "generated_at": "2026-10-22T19:02:51.329Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -289,17 +289,17 @@
         ],
         "SF": [
           "Kevin Huerter",
-          "Gary Harris"
+          "Gary Harris",
+          "Isaac Jones"
         ],
         "PF": [
           "Javonte Green",
           "Ron Holland",
-          "Isaac Jones",
-          "Taurean Prince"
+          "Tolu Smith"
         ],
         "C": [
           "Paul Reed",
-          "Tolu Smith",
+          "Taurean Prince",
           "Ugonna Onyenso"
         ]
       }
