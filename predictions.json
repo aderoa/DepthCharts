@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:35:50.406Z",
+  "generated_at": "2026-10-22T04:35:57.562Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -521,12 +521,11 @@
       },
       "bench": {
         "PG": [
+          "Ryan Conwell",
           "Dru Smith",
           "Tre Donaldson"
         ],
-        "SG": [
-          "Ryan Conwell"
-        ],
+        "SG": [],
         "SF": [
           "Tim Hardaway Jr",
           "Pelle Larsson",
