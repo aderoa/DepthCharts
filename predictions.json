@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:33:59.551Z",
+  "generated_at": "2026-10-22T04:34:07.971Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -739,12 +739,12 @@
         ],
         "PF": [
           "Nikola Vucevic",
-          "Jonathan Isaac",
-          "Izaiyah Nelson"
+          "Jonathan Isaac"
         ],
         "C": [
           "Goga Bitadze",
-          "Colin Castleton"
+          "Colin Castleton",
+          "Izaiyah Nelson"
         ]
       }
     },
