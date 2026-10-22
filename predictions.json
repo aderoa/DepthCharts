@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:41:20.815Z",
+  "generated_at": "2026-10-22T04:41:24.875Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -967,13 +967,13 @@
         ],
         "PF": [
           "Sviatoslav Mykhailiuk",
-          "Josh Green"
+          "Josh Green",
+          "Jusuf Nurkic"
         ],
         "C": [
           "Kyle Filipowski",
           "Mo Bamba",
-          "Tony Bradley",
-          "Jusuf Nurkic"
+          "Tony Bradley"
         ]
       }
     },
