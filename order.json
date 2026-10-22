@@ -40,36 +40,33 @@
       "Derrick White",
       "Mike Conley",
       "Ron Harper Jr",
-      "Milos Uzan",
       "__SPACER__"
     ],
     "SG": [
+      "Paul George",
       "Sam Hauser",
       "Payton Pritchard",
       "Baylor Scheierman",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Devin Carter"
     ],
     "SF": [
-      "Paul George",
+      "Jayson Tatum",
       "Hugo Gonzalez",
       "Dillon Mitchell",
-      "Hayden Gray",
-      "__SPACER__",
-      "Tucker DeVries"
+      "__SPACER__"
     ],
     "PF": [
-      "Jayson Tatum",
       "Jordan Walsh",
       "Chris Cenac",
-      "Gabe McGlothan",
       "__SPACER__"
     ],
     "C": [
       "Neemias Queta",
       "Mitchell Robinson",
       "Luka Garza",
-      "Amari Williams",
-      "__SPACER__"
+      "Amari Williams"
     ]
   },
   "BKN": {
