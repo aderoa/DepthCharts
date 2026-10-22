@@ -40,12 +40,12 @@
       "Derrick White",
       "Payton Pritchard",
       "Mike Conley",
-      "Ron Harper Jr",
       "__SPACER__"
     ],
     "SG": [
       "Paul George",
       "Sam Hauser",
+      "Ron Harper Jr",
       "__SPACER__",
       "__SEPARATOR__",
       "Devin Carter"
@@ -58,14 +58,14 @@
     ],
     "PF": [
       "Jordan Walsh",
+      "Luka Garza",
       "Baylor Scheierman",
-      "__SPACER__",
-      "Chris Cenac"
+      "__SPACER__"
     ],
     "C": [
       "Mitchell Robinson",
       "Neemias Queta",
-      "Luka Garza",
+      "Chris Cenac",
       "Amari Williams"
     ]
   },
