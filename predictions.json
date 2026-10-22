@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T03:50:30.189Z",
+  "generated_at": "2026-10-22T03:51:03.524Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -40,32 +40,28 @@
     "BOS": {
       "starters": {
         "PG": "Derrick White",
-        "SG": "Sam Hauser",
-        "SF": "Paul George",
-        "PF": "Jayson Tatum",
+        "SG": "Paul George",
+        "SF": "Jayson Tatum",
+        "PF": "Jordan Walsh",
         "C": "Neemias Queta"
       },
       "bench": {
         "PG": [
           "Mike Conley",
-          "Ron Harper Jr",
-          "Milos Uzan"
+          "Ron Harper Jr"
         ],
         "SG": [
+          "Sam Hauser",
           "Payton Pritchard",
           "Baylor Scheierman",
           "Devin Carter"
         ],
         "SF": [
           "Hugo Gonzalez",
-          "Dillon Mitchell",
-          "Hayden Gray",
-          "Tucker DeVries"
+          "Dillon Mitchell"
         ],
         "PF": [
-          "Jordan Walsh",
-          "Chris Cenac",
-          "Gabe McGlothan"
+          "Chris Cenac"
         ],
         "C": [
           "Mitchell Robinson",
