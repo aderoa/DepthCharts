@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:44:08.445Z",
+  "generated_at": "2026-10-22T04:45:04.472Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -307,19 +307,19 @@
     "GSW": {
       "starters": {
         "PG": "Stephen Curry",
-        "SG": "Brandin Podziemski",
+        "SG": "De'Anthony Melton",
         "SF": "Gui Santos",
         "PF": "Draymond Green",
         "C": "Yaxel Lendeborg"
       },
       "bench": {
         "PG": [
-          "De'Anthony Melton",
           "LJ Cryer"
         ],
         "SG": [
           "Gary Payton II",
           "Brandon Williams",
+          "Brandin Podziemski",
           "Jimmy Butler"
         ],
         "SF": [
@@ -332,8 +332,8 @@
           "Graham Ike"
         ],
         "C": [
-          "Charles Bassey",
           "Malevy Leons",
+          "Charles Bassey",
           "Kristaps Porzingis"
         ]
       }
