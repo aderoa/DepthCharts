@@ -765,19 +765,20 @@
     "SG": [
       "VJ Edgecombe",
       "Anfernee Simons",
-      "Rayan Rupert",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Dean Wade"
     ],
     "SF": [
       "Jaylen Brown",
       "Kentavious Caldwell-Pope",
+      "Rayan Rupert",
       "__SEPARATOR__",
       "Dominick Barlow"
     ],
     "PF": [
       "LeBron James",
       "Jabari Walker",
-      "__SPACER__",
       "Justin Edwards",
       "__SEPARATOR__",
       "Ariel Hukporti"
