@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:45:47.472Z",
+  "generated_at": "2026-10-22T04:45:51.861Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -446,7 +446,7 @@
         "PG": "Luka Doncic",
         "SG": "Austin Reaves",
         "SF": "Matisse Thybulle",
-        "PF": "Jarred Vanderbilt",
+        "PF": "Ziaire Williams",
         "C": "Walker Kessler"
       },
       "bench": {
@@ -455,7 +455,6 @@
           "Bronny James"
         ],
         "SG": [
-          "Ziaire Williams",
           "Chris Manon",
           "Collin Sexton"
         ],
@@ -464,6 +463,7 @@
           "Cameron Carr"
         ],
         "PF": [
+          "Jarred Vanderbilt",
           "Jake LaRavia",
           "AK Okereke",
           "Adou Thiero"
