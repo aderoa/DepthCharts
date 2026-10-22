@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T03:51:05.584Z",
+  "generated_at": "2026-10-22T03:51:12.557Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -47,12 +47,12 @@
       },
       "bench": {
         "PG": [
+          "Payton Pritchard",
           "Mike Conley",
           "Ron Harper Jr"
         ],
         "SG": [
           "Sam Hauser",
-          "Payton Pritchard",
           "Baylor Scheierman",
           "Devin Carter"
         ],
