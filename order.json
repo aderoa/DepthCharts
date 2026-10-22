@@ -824,7 +824,6 @@
     "PG": [
       "Ja Morant",
       "Jrue Holiday",
-      "Vit Krejci",
       "__SPACER__"
     ],
     "SG": [
@@ -835,9 +834,13 @@
     ],
     "SF": [
       "Toumani Camara",
+      "Vit Krejci",
+      "__SPACER__",
+      "Jayson Kent",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Shaedon Sharpe",
-      "Chris Youngblood",
-      "Jayson Kent"
+      "Chris Youngblood"
     ],
     "PF": [
       "Deni Avdija",
@@ -848,8 +851,10 @@
     "C": [
       "Donovan Clingan",
       "Robert Williams",
-      "Branden Carlson",
-      "__SPACER__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Branden Carlson"
     ]
   },
   "SAC": {
