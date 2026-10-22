@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:38:12.640Z",
+  "generated_at": "2026-10-22T04:38:16.515Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -74,7 +74,7 @@
         "SG": "Keon Ellis",
         "SF": "Michael Porter",
         "PF": "Julius Randle",
-        "C": "Noah Clowney"
+        "C": "Day'Ron Sharpe"
       },
       "bench": {
         "PG": [
@@ -95,9 +95,9 @@
           "Joshua Jefferson"
         ],
         "C": [
+          "Noah Clowney",
           "Danny Wolf",
           "Grant Nelson",
-          "Day'Ron Sharpe",
           "Tyler Bilodeau"
         ]
       }
