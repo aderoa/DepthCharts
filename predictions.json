@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:34:51.352Z",
+  "generated_at": "2026-10-22T04:35:01.014Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -555,6 +555,7 @@
       "bench": {
         "PG": [
           "Kasparas Jakucionis",
+          "Caris LeVert",
           "Kam Jones"
         ],
         "SG": [
@@ -564,11 +565,11 @@
           "Cormac Ryan"
         ],
         "SF": [
-          "AJ Green"
+          "AJ Green",
+          "Nate Ament"
         ],
         "PF": [
           "Ousmane Dieng",
-          "Nate Ament",
           "Bogoljub Markovic",
           "Pete Nance"
         ],
