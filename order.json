@@ -213,13 +213,13 @@
     "PG": [
       "Kyrie Irving",
       "Marcus Sasser",
-      "Sergio De Larrea",
+      "__SPACER__",
       "Walter Clayton",
       "Jett Howard"
     ],
     "SG": [
       "Max Christie",
-      "Zaccharie Risacher",
+      "Sergio De Larrea",
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
@@ -227,7 +227,7 @@
     ],
     "SF": [
       "Cooper Flagg",
-      "__SPACER__",
+      "Zaccharie Risacher",
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
