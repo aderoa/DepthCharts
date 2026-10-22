@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:38:00.401Z",
+  "generated_at": "2026-10-22T04:38:12.640Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -71,7 +71,7 @@
     "BKN": {
       "starters": {
         "PG": "Egor Demin",
-        "SG": "Terance Mann",
+        "SG": "Keon Ellis",
         "SF": "Michael Porter",
         "PF": "Julius Randle",
         "C": "Noah Clowney"
@@ -82,24 +82,23 @@
           "Nolan Traore"
         ],
         "SG": [
+          "Terance Mann",
           "Ben Saraf",
           "Drake Powell"
         ],
         "SF": [
-          "Keon Ellis",
           "Josh Minott",
           "Chaney Johnson"
         ],
         "PF": [
           "Moritz Wagner",
-          "Joshua Jefferson",
-          "Ben Humrichous"
+          "Joshua Jefferson"
         ],
         "C": [
           "Danny Wolf",
           "Grant Nelson",
-          "Tyler Bilodeau",
-          "Day'Ron Sharpe"
+          "Day'Ron Sharpe",
+          "Tyler Bilodeau"
         ]
       }
     },
