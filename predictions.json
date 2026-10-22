@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:47:44.824Z",
+  "generated_at": "2026-10-22T04:48:06.634Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -848,17 +848,14 @@
       },
       "bench": {
         "PG": [
-          "Ben Simmons",
           "Emanuel Sharp",
-          "Elfrid Payton"
+          "Ben Simmons"
         ],
         "SG": [
-          "Malik Monk",
-          "Adam Flagler",
-          "Tristen Newton"
+          "Nique Clifford",
+          "Malik Monk"
         ],
         "SF": [
-          "Nique Clifford",
           "Leaky Black"
         ],
         "PF": [
