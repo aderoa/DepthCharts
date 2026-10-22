@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:36:54.224Z",
+  "generated_at": "2026-10-22T04:36:56.589Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -595,11 +595,11 @@
         "SG": [
           "Ayo Dosunmu",
           "Terrence Shannon",
-          "Isaiah Evans",
           "Donte DiVincenzo"
         ],
         "SF": [
-          "Jaylen Clark"
+          "Jaylen Clark",
+          "Isaiah Evans"
         ],
         "PF": [
           "Trey Lyles",
