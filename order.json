@@ -992,34 +992,31 @@
     "PG": [
       "Trae Young",
       "Carlton Carrington",
-      "Tre Mann",
-      "Alondes Williams"
+      "Tre Mann"
     ],
     "SG": [
+      "Kyshawn George",
       "Tre Johnson",
       "Khris Middleton",
-      "Kyshawn George",
-      "Nolan Hickman",
       "__SEPARATOR__",
       "Jamir Watkins"
     ],
     "SF": [
-      "AJ Dybantsa",
       "Bilal Coulibaly",
       "Will Riley",
-      "Reece Beekman"
+      "Reece Beekman",
+      "__SEPARATOR__",
+      "AJ Dybantsa"
     ],
     "PF": [
       "Anthony Davis",
       "Justin Champagnie",
-      "Anthony Gill",
-      "Trevor Keels"
+      "Anthony Gill"
     ],
     "C": [
       "Alex Sarr",
       "Deandre Ayton",
       "Felix Okpara",
-      "Chris Livingston",
       "__SEPARATOR__",
       "Tristan Vukcevic"
     ]
