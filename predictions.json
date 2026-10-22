@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:46:26.531Z",
+  "generated_at": "2026-10-22T04:46:42.498Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -778,7 +778,7 @@
         "SG": "Devin Booker",
         "SF": "Dillon Brooks",
         "PF": "Miles Bridges",
-        "C": "Oso Ighodaro"
+        "C": "Khaman Maluach"
       },
       "bench": {
         "PG": [
@@ -787,20 +787,18 @@
         ],
         "SG": [
           "Jordan Goodwin",
-          "Pat Spencer",
-          "Koby Brea"
+          "Pat Spencer"
         ],
         "SF": [
-          "Luke Kennard",
-          "Rasheer Fleming"
+          "Rasheer Fleming",
+          "Luke Kennard"
         ],
         "PF": [
           "Ryan Dunn",
-          "Koa Peat",
-          "CJ Huntley"
+          "Koa Peat"
         ],
         "C": [
-          "Khaman Maluach",
+          "Oso Ighodaro",
           "Duop Reath",
           "Drew Timme",
           "Mark Williams"
