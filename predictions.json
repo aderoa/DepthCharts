@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:37:54.379Z",
+  "generated_at": "2026-10-22T04:38:00.401Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -114,17 +114,17 @@
       "bench": {
         "PG": [
           "Christian Anderson",
-          "Coby White",
-          "Kylan Boswell"
+          "Coby White"
         ],
         "SG": [
           "Grayson Allen",
           "Michael Ajayi",
-          "Kon Knueppel"
+          "Kylan Boswell"
         ],
         "SF": [
           "Liam McNeeley",
-          "Tidjane Salaun"
+          "Tidjane Salaun",
+          "Kon Knueppel"
         ],
         "PF": [
           "Royce O'Neale",
