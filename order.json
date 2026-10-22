@@ -525,13 +525,13 @@
     "SF": [
       "Andrew Wiggins",
       "Pelle Larsson",
-      "Simone Fontecchio",
-      "Keshad Johnson"
+      "__SPACER__",
+      "Simone Fontecchio"
     ],
     "PF": [
       "Giannis Antetokounmpo",
       "Nikola Jovic",
-      "__SPACER__"
+      "Keshad Johnson"
     ],
     "C": [
       "Bam Adebayo",
