@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:48:20.167Z",
+  "generated_at": "2026-10-22T04:48:48.518Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -415,10 +415,10 @@
       "bench": {
         "PG": [
           "Keaton Wagler",
-          "Kobe Sanders",
           "Bradley Beal"
         ],
         "SG": [
+          "Kobe Sanders",
           "Cam Christie",
           "Max Strus"
         ],
