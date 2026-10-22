@@ -420,11 +420,12 @@
     "PG": [
       "Darius Garland",
       "Keaton Wagler",
-      "Kobe Sanders",
+      "__SEPARATOR__",
       "Bradley Beal"
     ],
     "SG": [
       "Kris Dunn",
+      "Kobe Sanders",
       "Cam Christie",
       "__SPACER__",
       "__SEPARATOR__",
