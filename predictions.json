@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:43:26.461Z",
+  "generated_at": "2026-10-22T04:43:56.344Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -208,12 +208,13 @@
         "SG": "Max Christie",
         "SF": "Cooper Flagg",
         "PF": "PJ Washington",
-        "C": "Dereck Lively"
+        "C": "Daniel Gafford"
       },
       "bench": {
         "PG": [
           "Marcus Sasser",
-          "Sergio De Larrea"
+          "Sergio De Larrea",
+          "Walter Clayton"
         ],
         "SG": [
           "Zaccharie Risacher",
@@ -225,14 +226,13 @@
           "Caleb Martin"
         ],
         "PF": [
-          "Morez Johnson",
           "Naji Marshall",
           "Tobi Lawal"
         ],
         "C": [
-          "Daniel Gafford",
+          "Morez Johnson",
           "Moussa Cisse",
-          "Dwight Powell"
+          "Dereck Lively"
         ]
       }
     },
