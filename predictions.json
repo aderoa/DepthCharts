@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:33:27.529Z",
+  "generated_at": "2026-10-22T04:33:54.330Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -725,9 +725,8 @@
       },
       "bench": {
         "PG": [
-          "Anthony Black",
           "Jevon Carter",
-          "JD Davison"
+          "Anthony Black"
         ],
         "SG": [
           "Jamal Cain",
@@ -736,13 +735,11 @@
         ],
         "SF": [
           "Tristan Da Silva",
-          "Noah Penda",
-          "Malaki Branham"
+          "Noah Penda"
         ],
         "PF": [
           "Nikola Vucevic",
           "Jonathan Isaac",
-          "Kevin Knox",
           "Izaiyah Nelson"
         ],
         "C": [
