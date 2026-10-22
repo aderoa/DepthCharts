@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:47:35.129Z",
+  "generated_at": "2026-10-22T04:47:40.382Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -829,11 +829,11 @@
         ],
         "PF": [
           "Sidy Cissoko",
-          "Yang Hansen",
           "Micah Potter"
         ],
         "C": [
           "Robert Williams",
+          "Yang Hansen",
           "Branden Carlson"
         ]
       }
