@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:47:40.382Z",
+  "generated_at": "2026-10-22T04:47:44.824Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -819,12 +819,12 @@
         ],
         "SG": [
           "Scoot Henderson",
-          "John Tonje"
+          "John Tonje",
+          "Shaedon Sharpe"
         ],
         "SF": [
           "Vit Krejci",
           "Jayson Kent",
-          "Shaedon Sharpe",
           "Chris Youngblood"
         ],
         "PF": [
