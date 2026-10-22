@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:45:04.472Z",
+  "generated_at": "2026-10-22T04:45:07.551Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -309,8 +309,8 @@
         "PG": "Stephen Curry",
         "SG": "De'Anthony Melton",
         "SF": "Gui Santos",
-        "PF": "Draymond Green",
-        "C": "Yaxel Lendeborg"
+        "PF": "Yaxel Lendeborg",
+        "C": "Draymond Green"
       },
       "bench": {
         "PG": [
