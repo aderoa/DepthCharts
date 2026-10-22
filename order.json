@@ -459,14 +459,12 @@
     "PG": [
       "Luka Doncic",
       "Jaden Hardy",
-      "Bronny James",
-      "__SPACER__"
+      "Bronny James"
     ],
     "SG": [
       "Austin Reaves",
       "Quentin Grimes",
       "Chris Manon",
-      "__SPACER__",
       "__SEPARATOR__",
       "Collin Sexton"
     ],
@@ -474,22 +472,19 @@
       "Matisse Thybulle",
       "Jake LaRavia",
       "AK Okereke",
-      "__SPACER__",
       "__SEPARATOR__",
       "Cameron Carr"
     ],
     "PF": [
       "Ziaire Williams",
-      "Jarred Vanderbilt",
       "Kevon Looney",
-      "__SPACER__",
+      "Jarred Vanderbilt",
       "__SEPARATOR__",
       "Adou Thiero"
     ],
     "C": [
       "Walker Kessler",
       "Sandro Mamukelashvili",
-      "__SPACER__",
       "Arthur Kaluma"
     ]
   },
