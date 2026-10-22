@@ -141,13 +141,17 @@
     "PG": [
       "Josh Giddey",
       "Tre Jones",
-      "Dailyn Swain",
-      "Jaylin Sellers"
+      "Jaylin Sellers",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Dailyn Swain"
     ],
     "SG": [
       "Norman Powell",
       "Buddy Hield",
       "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Jordan Hawkins"
     ],
     "SF": [
@@ -158,15 +162,17 @@
     ],
     "PF": [
       "Caleb Wilson",
-      "Jalen Smith",
       "Patrick Williams",
       "Tobe Awaka"
     ],
     "C": [
-      "Nicolas Claxton",
+      "Jalen Smith",
       "Zach Collins",
       "Leonard Miller",
-      "__SPACER__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Nicolas Claxton"
     ]
   },
   "CLE": {
