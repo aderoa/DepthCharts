@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:45:38.411Z",
+  "generated_at": "2026-10-22T04:45:47.472Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -445,7 +445,7 @@
       "starters": {
         "PG": "Luka Doncic",
         "SG": "Austin Reaves",
-        "SF": "Quentin Grimes",
+        "SF": "Matisse Thybulle",
         "PF": "Jarred Vanderbilt",
         "C": "Walker Kessler"
       },
@@ -455,19 +455,18 @@
           "Bronny James"
         ],
         "SG": [
-          "Collin Sexton",
           "Ziaire Williams",
-          "Chris Manon"
+          "Chris Manon",
+          "Collin Sexton"
         ],
         "SF": [
-          "Matisse Thybulle",
+          "Quentin Grimes",
           "Cameron Carr"
         ],
         "PF": [
           "Jake LaRavia",
-          "Adou Thiero",
-          "Dalton Knecht",
-          "AK Okereke"
+          "AK Okereke",
+          "Adou Thiero"
         ],
         "C": [
           "Sandro Mamukelashvili",
