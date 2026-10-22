@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:43:11.672Z",
+  "generated_at": "2026-10-22T04:43:14.466Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -615,8 +615,8 @@
         "PG": "Jeremiah Fears",
         "SG": "Dejounte Murray",
         "SF": "Trey Murphy",
-        "PF": "Saddiq Bey",
-        "C": "Zion Williamson"
+        "PF": "Zion Williamson",
+        "C": "Yves Missi"
       },
       "bench": {
         "PG": [
@@ -633,12 +633,12 @@
           "Trendon Watford"
         ],
         "PF": [
+          "Saddiq Bey",
           "Derik Queen",
           "Karlo Matkovic",
           "Malik Dia"
         ],
         "C": [
-          "Yves Missi",
           "DeAndre Jordan",
           "Julian Reese"
         ]
