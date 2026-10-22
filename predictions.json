@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:44:02.456Z",
+  "generated_at": "2026-10-22T04:44:08.445Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -213,15 +213,15 @@
       "bench": {
         "PG": [
           "Marcus Sasser",
-          "Sergio De Larrea",
           "Walter Clayton",
           "Jett Howard"
         ],
         "SG": [
-          "Zaccharie Risacher",
+          "Sergio De Larrea",
           "Tarik Biberovic"
         ],
         "SF": [
+          "Zaccharie Risacher",
           "Caleb Martin"
         ],
         "PF": [
