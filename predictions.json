@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:42:48.511Z",
+  "generated_at": "2026-10-22T04:42:54.872Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -386,12 +386,12 @@
           "TJ McConnell"
         ],
         "SG": [
-          "Ben Sheppard"
+          "Ben Sheppard",
+          "Aaron Nesmith"
         ],
         "SF": [
           "Obi Toppin",
           "Kobe Brown",
-          "Aaron Nesmith",
           "Johnny Furphy"
         ],
         "PF": [
