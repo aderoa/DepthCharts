@@ -105,15 +105,16 @@
   },
   "CHA": {
     "PG": [
-      "Coby White",
       "Dennis Schroeder",
       "Christian Anderson",
-      "Kylan Boswell",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Coby White",
+      "Kylan Boswell"
     ],
     "SG": [
-      "Grayson Allen",
       "Sion James",
+      "Grayson Allen",
       "Liam McNeeley",
       "__SEPARATOR__",
       "Kon Knueppel"
