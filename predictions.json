@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T03:51:19.871Z",
+  "generated_at": "2026-10-22T03:51:31.518Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -48,11 +48,11 @@
       "bench": {
         "PG": [
           "Payton Pritchard",
-          "Mike Conley",
-          "Ron Harper Jr"
+          "Mike Conley"
         ],
         "SG": [
           "Sam Hauser",
+          "Ron Harper Jr",
           "Devin Carter"
         ],
         "SF": [
@@ -60,12 +60,12 @@
           "Dillon Mitchell"
         ],
         "PF": [
-          "Baylor Scheierman",
-          "Chris Cenac"
+          "Luka Garza",
+          "Baylor Scheierman"
         ],
         "C": [
           "Neemias Queta",
-          "Luka Garza",
+          "Chris Cenac",
           "Amari Williams"
         ]
       }
