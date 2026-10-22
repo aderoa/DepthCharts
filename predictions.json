@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:41:10.518Z",
+  "generated_at": "2026-10-22T04:41:20.815Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -954,20 +954,20 @@
       },
       "bench": {
         "PG": [
-          "Isaiah Collier",
-          "Josh Okogie"
+          "Isaiah Collier"
         ],
         "SG": [
           "Ace Bailey",
-          "Harrison Ingram",
+          "Josh Okogie",
           "Trey Alexander"
         ],
         "SF": [
           "Brice Sensabaugh",
-          "Josh Green"
+          "Harrison Ingram"
         ],
         "PF": [
-          "Sviatoslav Mykhailiuk"
+          "Sviatoslav Mykhailiuk",
+          "Josh Green"
         ],
         "C": [
           "Kyle Filipowski",
