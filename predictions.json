@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:36:11.395Z",
+  "generated_at": "2026-10-22T04:36:13.299Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -535,11 +535,11 @@
           "Keshad Johnson"
         ],
         "PF": [
-          "Nikola Jovic"
+          "Nikola Jovic",
+          "Nick Richards"
         ],
         "C": [
           "Bobby Portis",
-          "Nick Richards",
           "Vladislav Goldin"
         ]
       }
