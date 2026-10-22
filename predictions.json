@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T04:35:57.562Z",
+  "generated_at": "2026-10-22T04:36:01.595Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -525,9 +525,10 @@
           "Dru Smith",
           "Tre Donaldson"
         ],
-        "SG": [],
+        "SG": [
+          "Tim Hardaway Jr"
+        ],
         "SF": [
-          "Tim Hardaway Jr",
           "Pelle Larsson",
           "Myron Gardner",
           "Keshad Johnson"
