@@ -214,31 +214,39 @@
       "Kyrie Irving",
       "Marcus Sasser",
       "Sergio De Larrea",
-      "__SPACER__"
+      "Walter Clayton"
     ],
     "SG": [
       "Max Christie",
       "Zaccharie Risacher",
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Tarik Biberovic",
       "Jett Howard"
     ],
     "SF": [
       "Cooper Flagg",
+      "__SPACER__",
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Santiago Aldama",
-      "Caleb Martin",
-      "__SPACER__"
+      "Caleb Martin"
     ],
     "PF": [
       "PJ Washington",
-      "Morez Johnson",
       "Naji Marshall",
       "Tobi Lawal"
     ],
     "C": [
-      "Dereck Lively",
       "Daniel Gafford",
+      "Morez Johnson",
       "Moussa Cisse",
-      "Dwight Powell"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Dereck Lively"
     ]
   },
   "DEN": {
