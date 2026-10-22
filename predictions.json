@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T03:51:12.557Z",
+  "generated_at": "2026-10-22T03:51:19.871Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -53,7 +53,6 @@
         ],
         "SG": [
           "Sam Hauser",
-          "Baylor Scheierman",
           "Devin Carter"
         ],
         "SF": [
@@ -61,6 +60,7 @@
           "Dillon Mitchell"
         ],
         "PF": [
+          "Baylor Scheierman",
           "Chris Cenac"
         ],
         "C": [
