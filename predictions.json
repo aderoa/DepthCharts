@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T04:29:39.970Z",
+  "generated_at": "2026-10-23T15:24:31.570Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -147,8 +147,8 @@
       "bench": {
         "PG": [
           "Tre Jones",
-          "Jaylin Sellers",
-          "Dailyn Swain"
+          "Dailyn Swain",
+          "Jaylin Sellers"
         ],
         "SG": [
           "Buddy Hield",
@@ -655,6 +655,7 @@
         ],
         "SG": [
           "Miles McBride",
+          "Dalton Knecht",
           "Kevin McCullar"
         ],
         "SF": [
