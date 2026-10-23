@@ -491,20 +491,22 @@
     "PG": [
       "Ty Jerome",
       "Cam Spencer",
-      "Jahmai Mashack",
-      "Javon Small",
-      "__SPACER__"
+      "__SPACER__",
+      "Javon Small"
     ],
     "SG": [
       "Jaylen Wells",
       "Scotty Pippen Jr",
-      "Kris Murray"
+      "Jahmai Mashack",
+      "__SPACER__"
     ],
     "SF": [
-      "Cedric Coward",
       "GG Jackson",
       "Taylor Hendricks",
-      "__SPACER__"
+      "Kris Murray",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Cedric Coward"
     ],
     "PF": [
       "Cameron Boozer",
