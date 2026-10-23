@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T04:23:58.422Z",
+  "generated_at": "2026-10-23T04:25:41.772Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -447,13 +447,13 @@
       },
       "bench": {
         "PG": [
+          "Collin Sexton",
           "Jaden Hardy",
           "Bronny James"
         ],
         "SG": [
           "Quentin Grimes",
-          "Chris Manon",
-          "Collin Sexton"
+          "Chris Manon"
         ],
         "SF": [
           "Jake LaRavia",
