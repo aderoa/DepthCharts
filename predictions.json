@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T04:27:46.030Z",
+  "generated_at": "2026-10-23T04:28:38.682Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -187,18 +187,18 @@
           "Meleek Thomas"
         ],
         "SF": [
-          "Jaylon Tyson",
           "Tristan Enaruna"
         ],
         "PF": [
-          "Mario Hezonja",
+          "Jaylon Tyson",
           "Riley Minix",
           "Nae'Qwan Tomlin"
         ],
         "C": [
+          "Mario Hezonja",
           "Thomas Bryant",
-          "Khalifa Diop",
-          "Ernest Udeh"
+          "Ernest Udeh",
+          "Khalifa Diop"
         ]
       }
     },
