@@ -649,12 +649,15 @@
       "Jalen Brunson",
       "Jose Alvarado",
       "Tyler Kolek",
-      "Jaden Akins"
+      "Jaden Akins",
+      "__SPACER__"
     ],
     "SG": [
       "OG Anunoby",
       "Miles McBride",
+      "Dalton Knecht",
       "Kevin McCullar",
+      "__SPACER__",
       "__SPACER__"
     ],
     "SF": [
@@ -667,12 +670,14 @@
       "Josh Hart",
       "Landry Shamet",
       "Mohamed Diawara",
+      "__SPACER__",
       "__SPACER__"
     ],
     "C": [
       "Karl-Anthony Towns",
       "Andre Drummond",
       "James Wiseman",
+      "__SPACER__",
       "__SPACER__"
     ]
   },
