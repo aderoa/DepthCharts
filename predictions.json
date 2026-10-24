@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T02:45:22.577Z",
+  "generated_at": "2026-10-24T02:45:46.020Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -489,19 +489,19 @@
           "Jahmai Mashack"
         ],
         "SF": [
+          "Jerami Grant",
           "Taylor Hendricks",
           "Kris Murray",
           "Cedric Coward"
         ],
         "PF": [
-          "Jerami Grant",
+          "Isaiah Stewart",
           "Karim Lopez"
         ],
         "C": [
           "Quinten Post",
           "Olivier-Maxence Prosper",
-          "Carson Cooper",
-          "Isaiah Stewart"
+          "Carson Cooper"
         ]
       }
     },
