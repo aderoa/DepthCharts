@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T02:45:56.236Z",
+  "generated_at": "2026-10-24T16:48:24.364Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -711,7 +711,7 @@
         "PG": "Jalen Suggs",
         "SG": "Desmond Bane",
         "SF": "Franz Wagner",
-        "PF": "Paolo Banchero",
+        "PF": "Tristan Da Silva",
         "C": "Wendell Carter Jr"
       },
       "bench": {
@@ -725,11 +725,11 @@
           "Alex Morales"
         ],
         "SF": [
-          "Tristan Da Silva",
           "Noah Penda"
         ],
         "PF": [
           "Nikola Vucevic",
+          "Paolo Banchero",
           "Jonathan Isaac"
         ],
         "C": [
