@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T19:04:10.176Z",
+  "generated_at": "2026-10-24T20:05:15.001Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -305,34 +305,34 @@
     },
     "GSW": {
       "starters": {
-        "PG": "Stephen Curry",
-        "SG": "Brandin Podziemski",
+        "PG": "Will Richard",
+        "SG": "De'Anthony Melton",
         "SF": "Yaxel Lendeborg",
-        "PF": "Draymond Green",
+        "PF": "Georges Niang",
         "C": "Graham Ike"
       },
       "bench": {
         "PG": [
-          "Will Richard",
-          "LJ Cryer"
+          "LJ Cryer",
+          "Stephen Curry"
         ],
         "SG": [
-          "De'Anthony Melton",
           "Brandon Williams",
+          "Brandin Podziemski",
           "Jimmy Butler"
         ],
         "SF": [
-          "Gui Santos",
           "Gary Payton II",
           "Moses Moody"
         ],
         "PF": [
-          "Georges Niang",
+          "Gui Santos",
+          "Draymond Green",
           "Kristaps Porzingis"
         ],
         "C": [
-          "Al Horford",
           "Malevy Leons",
+          "Al Horford",
           "Charles Bassey"
         ]
       }
