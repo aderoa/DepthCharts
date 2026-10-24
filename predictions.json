@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T20:05:26.841Z",
+  "generated_at": "2026-10-24T20:05:32.016Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -275,7 +275,7 @@
         "SG": "Ausar Thompson",
         "SF": "Duncan Robinson",
         "PF": "John Collins",
-        "C": "Jalen Duren"
+        "C": "Paul Reed"
       },
       "bench": {
         "PG": [
@@ -293,13 +293,13 @@
         ],
         "PF": [
           "Ron Holland",
-          "Javonte Green",
-          "Isaac Jones"
+          "Javonte Green"
         ],
         "C": [
-          "Paul Reed",
           "Tolu Smith",
-          "Ugonna Onyenso"
+          "Isaac Jones",
+          "Ugonna Onyenso",
+          "Jalen Duren"
         ]
       }
     },
