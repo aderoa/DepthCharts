@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T02:41:06.151Z",
+  "generated_at": "2026-10-24T02:41:09.240Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -452,13 +452,13 @@
         ],
         "SG": [
           "Collin Sexton",
-          "Chris Manon"
+          "Chris Manon",
+          "Cameron Carr"
         ],
         "SF": [
           "Quentin Grimes",
           "Jarred Vanderbilt",
-          "Jake LaRavia",
-          "Cameron Carr"
+          "Jake LaRavia"
         ],
         "PF": [
           "Kevon Looney",
