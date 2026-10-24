@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T02:37:10.487Z",
+  "generated_at": "2026-10-24T02:37:57.244Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -351,8 +351,8 @@
           "Bruce Thornton"
         ],
         "SG": [
-          "Reed Sheppard",
-          "Isaiah Crawford"
+          "Isaiah Crawford",
+          "Reed Sheppard"
         ],
         "SF": [
           "Bogdan Bogdanovic",
@@ -364,8 +364,8 @@
           "Quadir Copeland"
         ],
         "C": [
-          "Clint Capela",
           "Steven Adams",
+          "Clint Capela",
           "Oscar Tshiebwe"
         ]
       }
