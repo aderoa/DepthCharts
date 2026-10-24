@@ -2,6 +2,17 @@
 <!-- BUILD 2026-10-20a · Questionable is placed, not forced: out of INJURY_ROW_STATUSES, and the export honours the separator for him. Four injury colours instead of one -- Out lightcoral, Doubtful #fdba74, Questionable #ffc94d, Probable #bbf7d0 -- across all THREE cCls() exporters and the admin board, which previously read _ps.sc (contracts only) above the line and hardcoded "injured" below it. || 2026-09-13e · injured players show their salary like everyone else; the red cell carries the status. || 2026-09-13d · injury row and red cells in the Presto export too, not only the admin board. || 2026-09-13c · unsigned draftees off the chart (cap holds, not rotation places). || 2026-09-13b · injuries applied to every team, not just the two not marked eliminated. || 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
+<script>
+/* THE PUBLIC PAGE IS hoopsmatic.com/depth-charts. A visitor to this github.io
+   copy is sent there; ?admin (the editor, which saves to this repo) and ?export
+   (embeds) stay here. */
+(function(){
+  if (/(^|\.)hoopsmatic\.com$/.test(location.hostname)) return;
+  var p = new URLSearchParams(location.search);
+  if (p.has('admin') || p.has('export')) return;
+  location.replace('https://hoopsmatic.com/depth-charts' + location.search + location.hash);
+})();
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NBA Depth Charts by Trade Value</title>
@@ -738,16 +749,18 @@ const ELIMINATED_ABBREVS = new Set(['MIL','CHI','BKN','IND','WAS','NOP','DAL','M
 // =====================================================
 // DATA URLs
 // =====================================================
-const API_KEY = 'AIzaSyCPUpmuvHXD-kt3Lylx5KW5IPHvQx-cygk';
 const SHEETS_ID = '11llk0icQqoi0JwJXat5KO8y2RQeBMN5rS9FhAY56Idc';
-const SHEETS_API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEETS_ID}/values`;
-// ON HOOPSMATIC.COM, THROUGH THE WORKER: /api/sheet returns the Sheets API's own
-// JSON unchanged, via sheetsFetch() -- a 10 s limit and a last-good copy if
-// Sheets stalls, as on 23 Oct. Elsewhere (github.io) the page asks Sheets itself.
+// NO API KEY IN THIS PAGE. Every copy reads the three tabs through the HoopsMatic
+// Worker's /api/sheet, which holds the key server-side and returns the Sheets
+// API's own JSON unchanged, via sheetsFetch() (a 10 s limit and a last-good copy
+// when Sheets stalls). On hoopsmatic.com that is same-origin; the github.io copy
+// -- the ?admin editor and ?export embeds -- calls it cross-origin (it answers
+// any origin).
 const ON_HOOPSMATIC = /(^|\.)hoopsmatic\.com$/.test(location.hostname);
-const TV_CSV_URL = ON_HOOPSMATIC ? '/api/sheet?tab=Sheet3' : `${SHEETS_API}/Sheet3?key=${API_KEY}`;
-const ROSTER_CSV_URL = ON_HOOPSMATIC ? '/api/sheet?tab=Sheet1' : `${SHEETS_API}/Sheet1?key=${API_KEY}`;
-const CONTRACTS_CSV_URL = ON_HOOPSMATIC ? '/api/sheet?tab=Sheet6' : `${SHEETS_API}/Sheet6?key=${API_KEY}`;
+const SHEETS_PROXY = ON_HOOPSMATIC ? '' : 'https://hoopsmatic.com';
+const TV_CSV_URL = SHEETS_PROXY + '/api/sheet?tab=Sheet3';
+const ROSTER_CSV_URL = SHEETS_PROXY + '/api/sheet?tab=Sheet1';
+const CONTRACTS_CSV_URL = SHEETS_PROXY + '/api/sheet?tab=Sheet6';
 const INJURIES_JSON_URL = 'https://aderoa.github.io/Injuries/injuries.json';
 
 let allPlayers = [], tradeValueMap = new Map(), draggedElement = null, draftLoaded = false;
