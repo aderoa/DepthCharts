@@ -258,7 +258,7 @@
     ],
     "SF": [
       "Alpha Diallo",
-      "__SPACER__",
+      "Zeke Nnaji",
       "Bryce Hopkins",
       "__SEPARATOR__",
       "Spencer Jones"
@@ -266,7 +266,7 @@
     "PF": [
       "Aaron Gordon",
       "Trevon Brazile",
-      "Zeke Nnaji",
+      "__SPACER__",
       "Cameron Johnson"
     ],
     "C": [
@@ -311,12 +311,13 @@
     "PG": [
       "Stephen Curry",
       "Brandon Williams",
-      "LJ Cryer",
-      "Brandin Podziemski"
+      "LJ Cryer"
     ],
     "SG": [
+      "Brandin Podziemski",
       "De'Anthony Melton",
       "Will Richard",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Jimmy Butler"
@@ -325,6 +326,7 @@
       "Gui Santos",
       "Gary Payton II",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Moses Moody"
     ],
@@ -332,12 +334,15 @@
       "Yaxel Lendeborg",
       "Georges Niang",
       "Graham Ike",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Kristaps Porzingis"
     ],
     "C": [
       "Draymond Green",
       "Al Horford",
       "Malevy Leons",
+      "__SPACER__",
       "__SEPARATOR__",
       "Charles Bassey"
     ]
