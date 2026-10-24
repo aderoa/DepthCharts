@@ -205,22 +205,23 @@
   },
   "DAL": {
     "PG": [
-      "Kyrie Irving",
       "Marcus Sasser",
+      "Sergio De Larrea",
       "Walter Clayton",
       "__SEPARATOR__",
+      "Kyrie Irving",
       "Jett Howard"
     ],
     "SG": [
       "Max Christie",
-      "Sergio De Larrea",
+      "Naji Marshall",
       "__SPACER__",
       "__SEPARATOR__",
       "Tarik Biberovic"
     ],
     "SF": [
       "Zaccharie Risacher",
-      "Naji Marshall",
+      "Morez Johnson",
       "__SPACER__",
       "__SEPARATOR__",
       "Cooper Flagg",
@@ -228,8 +229,8 @@
     ],
     "PF": [
       "PJ Washington",
-      "Morez Johnson",
       "Tobi Lawal",
+      "__SPACER__",
       "__SEPARATOR__",
       "Santiago Aldama"
     ],
