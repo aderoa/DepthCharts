@@ -350,9 +350,11 @@
     ],
     "SG": [
       "Amen Thompson",
-      "Reed Sheppard",
       "Isaiah Crawford",
-      "__SPACER__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Reed Sheppard"
     ],
     "SF": [
       "Kevin Durant",
@@ -368,8 +370,8 @@
     ],
     "C": [
       "Alperen Sengun",
-      "Clint Capela",
       "Steven Adams",
+      "Clint Capela",
       "Oscar Tshiebwe"
     ]
   },
