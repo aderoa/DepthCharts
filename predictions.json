@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T02:41:09.240Z",
+  "generated_at": "2026-10-24T02:43:37.780Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -240,7 +240,7 @@
       "starters": {
         "PG": "Jamal Murray",
         "SG": "Christian Braun",
-        "SF": "Cameron Johnson",
+        "SF": "Alpha Diallo",
         "PF": "Aaron Gordon",
         "C": "Nikola Jokic"
       },
@@ -255,13 +255,13 @@
           "Julian Strawther"
         ],
         "SF": [
-          "Alpha Diallo",
           "Bryce Hopkins",
           "Spencer Jones"
         ],
         "PF": [
           "Trevon Brazile",
-          "Zeke Nnaji"
+          "Zeke Nnaji",
+          "Cameron Johnson"
         ],
         "C": [
           "Marvin Bagley",
