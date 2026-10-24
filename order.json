@@ -762,7 +762,8 @@
     "PG": [
       "Tyrese Maxey",
       "Labaron Philon",
-      "Caleb Love"
+      "Caleb Love",
+      "LeBron James"
     ],
     "SG": [
       "VJ Edgecombe",
@@ -779,9 +780,9 @@
       "Dominick Barlow"
     ],
     "PF": [
-      "LeBron James",
       "Jabari Walker",
       "Justin Edwards",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ariel Hukporti"
     ],
