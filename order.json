@@ -518,8 +518,8 @@
   "MIA": {
     "PG": [
       "Davion Mitchell",
-      "Ryan Conwell",
       "Dru Smith",
+      "Ryan Conwell",
       "Tre Donaldson"
     ],
     "SG": [
@@ -531,20 +531,20 @@
     "SF": [
       "Andrew Wiggins",
       "Pelle Larsson",
-      "__SPACER__",
-      "Simone Fontecchio"
+      "Simone Fontecchio",
+      "__SPACER__"
     ],
     "PF": [
       "Giannis Antetokounmpo",
       "Nikola Jovic",
-      "Keshad Johnson"
+      "Keshad Johnson",
+      "__SPACER__"
     ],
     "C": [
       "Bam Adebayo",
       "Bobby Portis",
       "Nick Richards",
-      "Vladislav Goldin",
-      "__SPACER__"
+      "Vladislav Goldin"
     ]
   },
   "MIL": {
