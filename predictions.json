@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T17:07:27.217Z",
+  "generated_at": "2026-10-24T18:23:09.909Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -206,7 +206,7 @@
       "starters": {
         "PG": "Kyrie Irving",
         "SG": "Max Christie",
-        "SF": "Cooper Flagg",
+        "SF": "Zaccharie Risacher",
         "PF": "PJ Washington",
         "C": "Daniel Gafford"
       },
@@ -221,16 +221,16 @@
           "Tarik Biberovic"
         ],
         "SF": [
-          "Zaccharie Risacher",
+          "Naji Marshall",
+          "Cooper Flagg",
           "Caleb Martin"
         ],
         "PF": [
-          "Naji Marshall",
+          "Morez Johnson",
           "Tobi Lawal",
           "Santiago Aldama"
         ],
         "C": [
-          "Morez Johnson",
           "Moussa Cisse",
           "Dereck Lively"
         ]
