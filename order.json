@@ -289,20 +289,22 @@
     "SF": [
       "Duncan Robinson",
       "Kevin Huerter",
-      "Taurean Prince"
+      "Taurean Prince",
+      "__SPACER__"
     ],
     "PF": [
       "John Collins",
       "Ron Holland",
-      "Javonte Green",
-      "__SPACER__",
-      "Isaac Jones"
+      "Javonte Green"
     ],
     "C": [
-      "Jalen Duren",
       "Paul Reed",
       "Tolu Smith",
-      "Ugonna Onyenso"
+      "Isaac Jones",
+      "Ugonna Onyenso",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jalen Duren"
     ]
   },
   "GSW": {
