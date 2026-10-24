@@ -741,9 +741,13 @@ const ELIMINATED_ABBREVS = new Set(['MIL','CHI','BKN','IND','WAS','NOP','DAL','M
 const API_KEY = 'AIzaSyCPUpmuvHXD-kt3Lylx5KW5IPHvQx-cygk';
 const SHEETS_ID = '11llk0icQqoi0JwJXat5KO8y2RQeBMN5rS9FhAY56Idc';
 const SHEETS_API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEETS_ID}/values`;
-const TV_CSV_URL = `${SHEETS_API}/Sheet3?key=${API_KEY}`;
-const ROSTER_CSV_URL = `${SHEETS_API}/Sheet1?key=${API_KEY}`;
-const CONTRACTS_CSV_URL = `${SHEETS_API}/Sheet6?key=${API_KEY}`;
+// ON HOOPSMATIC.COM, THROUGH THE WORKER: /api/sheet returns the Sheets API's own
+// JSON unchanged, via sheetsFetch() -- a 10 s limit and a last-good copy if
+// Sheets stalls, as on 23 Oct. Elsewhere (github.io) the page asks Sheets itself.
+const ON_HOOPSMATIC = /(^|\.)hoopsmatic\.com$/.test(location.hostname);
+const TV_CSV_URL = ON_HOOPSMATIC ? '/api/sheet?tab=Sheet3' : `${SHEETS_API}/Sheet3?key=${API_KEY}`;
+const ROSTER_CSV_URL = ON_HOOPSMATIC ? '/api/sheet?tab=Sheet1' : `${SHEETS_API}/Sheet1?key=${API_KEY}`;
+const CONTRACTS_CSV_URL = ON_HOOPSMATIC ? '/api/sheet?tab=Sheet6' : `${SHEETS_API}/Sheet6?key=${API_KEY}`;
 const INJURIES_JSON_URL = 'https://aderoa.github.io/Injuries/injuries.json';
 
 let allPlayers = [], tradeValueMap = new Map(), draggedElement = null, draftLoaded = false;
