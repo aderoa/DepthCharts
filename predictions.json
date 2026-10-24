@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T02:30:42.776Z",
+  "generated_at": "2026-10-24T02:30:49.384Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -155,16 +155,16 @@
           "Jordan Hawkins"
         ],
         "SF": [
-          "Isaac Okoro"
+          "Isaac Okoro",
+          "Patrick Williams"
         ],
         "PF": [
           "Noa Essengue",
-          "Patrick Williams"
+          "Tobe Awaka"
         ],
         "C": [
           "Leonard Miller",
           "Zach Collins",
-          "Tobe Awaka",
           "Nicolas Claxton"
         ]
       }
