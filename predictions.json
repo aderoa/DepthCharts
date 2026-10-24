@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T16:48:27.192Z",
+  "generated_at": "2026-10-24T16:48:32.645Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -717,20 +717,20 @@
       "bench": {
         "PG": [
           "Jevon Carter",
+          "Alex Morales",
           "Anthony Black"
         ],
         "SG": [
           "Jase Richardson",
-          "Alex Morales"
+          "Noah Penda"
         ],
         "SF": [
           "Jamal Cain",
-          "Noah Penda"
+          "Jonathan Isaac"
         ],
         "PF": [
           "Nikola Vucevic",
-          "Paolo Banchero",
-          "Jonathan Isaac"
+          "Paolo Banchero"
         ],
         "C": [
           "Goga Bitadze",
