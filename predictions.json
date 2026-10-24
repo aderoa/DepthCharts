@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T16:48:24.364Z",
+  "generated_at": "2026-10-24T16:48:27.192Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -716,15 +716,15 @@
       },
       "bench": {
         "PG": [
-          "Jase Richardson",
           "Jevon Carter",
           "Anthony Black"
         ],
         "SG": [
-          "Jamal Cain",
+          "Jase Richardson",
           "Alex Morales"
         ],
         "SF": [
+          "Jamal Cain",
           "Noah Penda"
         ],
         "PF": [
