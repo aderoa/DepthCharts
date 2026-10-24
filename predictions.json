@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T17:07:14.819Z",
+  "generated_at": "2026-10-24T17:07:17.216Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -361,12 +361,12 @@
         ],
         "PF": [
           "Julian Phillips",
-          "Quadir Copeland",
-          "Steven Adams"
+          "Quadir Copeland"
         ],
         "C": [
           "Clint Capela",
-          "Oscar Tshiebwe"
+          "Oscar Tshiebwe",
+          "Steven Adams"
         ]
       }
     },
