@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T02:39:32.164Z",
+  "generated_at": "2026-10-24T02:41:06.151Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -447,21 +447,21 @@
       },
       "bench": {
         "PG": [
-          "Collin Sexton",
-          "Jaden Hardy"
-        ],
-        "SG": [
-          "Quentin Grimes",
+          "Jaden Hardy",
           "Bronny James"
         ],
+        "SG": [
+          "Collin Sexton",
+          "Chris Manon"
+        ],
         "SF": [
+          "Quentin Grimes",
+          "Jarred Vanderbilt",
           "Jake LaRavia",
-          "Chris Manon",
           "Cameron Carr"
         ],
         "PF": [
           "Kevon Looney",
-          "Jarred Vanderbilt",
           "AK Okereke",
           "Adou Thiero"
         ],
