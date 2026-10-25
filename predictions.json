@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T17:18:06.768Z",
+  "generated_at": "2026-10-25T18:41:40.892Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -842,12 +842,13 @@
         "PG": "Darius Acuff",
         "SG": "Zach LaVine",
         "SF": "De'Andre Hunter",
-        "PF": "Keegan Murray",
+        "PF": "Daeqwon Plowden",
         "C": "Domantas Sabonis"
       },
       "bench": {
         "PG": [
           "Emanuel Sharp",
+          "Sean Pedulla",
           "Ben Simmons"
         ],
         "SG": [
@@ -858,7 +859,7 @@
           "Leaky Black"
         ],
         "PF": [
-          "Daeqwon Plowden",
+          "Keegan Murray",
           "Alex Karaban",
           "Dylan Cardwell"
         ],
