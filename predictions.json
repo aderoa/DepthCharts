@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T22:46:34.820Z",
+  "generated_at": "2026-10-25T22:46:41.785Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -759,15 +759,15 @@
           "Dominick Barlow"
         ],
         "SF": [
-          "Rayan Rupert",
-          "Ariel Hukporti"
+          "Rayan Rupert"
         ],
         "PF": [
           "Dean Wade",
-          "Joel Embiid"
+          "Ariel Hukporti"
         ],
         "C": [
           "Justin Edwards",
+          "Joel Embiid",
           "Tacko Fall"
         ]
       }
