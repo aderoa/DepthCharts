@@ -808,29 +808,34 @@
     "PG": [
       "Jalen Green",
       "Collin Gillespie",
-      "Jamaree Bouyea"
+      "Jamaree Bouyea",
+      "__SPACER__"
     ],
     "SG": [
       "Devin Booker",
       "Jordan Goodwin",
-      "Pat Spencer"
+      "Pat Spencer",
+      "__SPACER__"
     ],
     "SF": [
       "Dillon Brooks",
-      "Ryan Dunn",
-      "Rasheer Fleming",
-      "__SEPARATOR__",
-      "Luke Kennard"
+      "Luke Kennard",
+      "__SPACER__",
+      "Rasheer Fleming"
     ],
     "PF": [
       "Miles Bridges",
-      "Oso Ighodaro",
-      "Koa Peat"
+      "Ryan Dunn",
+      "Koa Peat",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Oso Ighodaro"
     ],
     "C": [
       "Khaman Maluach",
       "Duop Reath",
       "Drew Timme",
+      "__SPACER__",
       "__SEPARATOR__",
       "Mark Williams"
     ]
