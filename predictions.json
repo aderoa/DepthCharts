@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T06:55:32.308Z",
+  "generated_at": "2026-10-25T06:55:45.489Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -609,7 +609,7 @@
         "SG": "Dejounte Murray",
         "SF": "Trey Murphy",
         "PF": "Zion Williamson",
-        "C": "Derik Queen"
+        "C": "DeAndre Jordan"
       },
       "bench": {
         "PG": [
@@ -631,8 +631,8 @@
           "Malik Dia"
         ],
         "C": [
+          "Derik Queen",
           "Karlo Matkovic",
-          "DeAndre Jordan",
           "Yves Missi"
         ]
       }
