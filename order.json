@@ -357,12 +357,11 @@
   },
   "HOU": {
     "PG": [
+      "Fred VanVleet",
       "Amen Thompson",
+      "Marcus Smart",
       "Bruce Thornton",
-      "__SPACER__",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Fred VanVleet"
+      "__SPACER__"
     ],
     "SG": [
       "Reed Sheppard",
@@ -378,7 +377,6 @@
     "PF": [
       "Jabari Smith",
       "Jae'Sean Tate",
-      "__SPACER__",
       "Quadir Copeland",
       "__SPACER__"
     ],
