@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T20:23:56.789Z",
+  "generated_at": "2026-10-25T21:05:29.436Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -113,12 +113,12 @@
       "bench": {
         "PG": [
           "Christian Anderson",
+          "Kylan Boswell",
           "Coby White"
         ],
         "SG": [
           "Grayson Allen",
-          "Michael Ajayi",
-          "Kylan Boswell"
+          "Michael Ajayi"
         ],
         "SF": [
           "Tidjane Salaun",
