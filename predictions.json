@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T17:04:15.238Z",
+  "generated_at": "2026-10-25T17:04:21.492Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -743,14 +743,13 @@
         "PG": "Tyrese Maxey",
         "SG": "VJ Edgecombe",
         "SF": "Jaylen Brown",
-        "PF": "Dean Wade",
+        "PF": "LeBron James",
         "C": "Adem Bona"
       },
       "bench": {
         "PG": [
           "Labaron Philon",
           "Caleb Love",
-          "LeBron James",
           "Jabari Walker"
         ],
         "SG": [
@@ -763,10 +762,11 @@
           "Ariel Hukporti"
         ],
         "PF": [
-          "Justin Edwards",
+          "Dean Wade",
           "Joel Embiid"
         ],
         "C": [
+          "Justin Edwards",
           "Tacko Fall"
         ]
       }
