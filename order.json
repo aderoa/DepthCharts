@@ -354,33 +354,37 @@
   "HOU": {
     "PG": [
       "Amen Thompson",
-      "Marcus Smart",
       "Bruce Thornton",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Marcus Smart",
       "Fred VanVleet"
     ],
     "SG": [
+      "Reed Sheppard",
       "Kevin Durant",
       "Bogdan Bogdanovic",
-      "Isaiah Crawford",
-      "__SEPARATOR__",
-      "Reed Sheppard"
+      "Isaiah Crawford"
     ],
     "SF": [
       "Tari Eason",
       "Jae'Sean Tate",
+      "__SPACER__",
       "__SPACER__"
     ],
     "PF": [
       "Jabari Smith",
       "Julian Phillips",
       "Quadir Copeland",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "C": [
       "Alperen Sengun",
       "Clint Capela",
       "Oscar Tshiebwe",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Steven Adams"
     ]
   },
