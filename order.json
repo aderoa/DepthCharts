@@ -468,33 +468,37 @@
   "LAL": {
     "PG": [
       "Luka Doncic",
+      "Collin Sexton",
       "Jaden Hardy",
-      "Bronny James"
+      "Bronny James",
+      "__SPACER__"
     ],
     "SG": [
       "Austin Reaves",
-      "Collin Sexton",
+      "Quentin Grimes",
       "Chris Manon",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Cameron Carr"
     ],
     "SF": [
       "Matisse Thybulle",
-      "Quentin Grimes",
-      "Jarred Vanderbilt",
-      "__SEPARATOR__",
-      "Jake LaRavia"
+      "Jake LaRavia",
+      "Jarred Vanderbilt"
     ],
     "PF": [
       "Ziaire Williams",
       "Kevon Looney",
       "AK Okereke",
+      "__SPACER__",
       "__SEPARATOR__",
       "Adou Thiero"
     ],
     "C": [
       "Walker Kessler",
       "Sandro Mamukelashvili",
-      "Arthur Kaluma"
+      "Arthur Kaluma",
+      "__SPACER__"
     ]
   },
   "MEM": {
