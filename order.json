@@ -109,6 +109,7 @@
     "PG": [
       "Dennis Schroeder",
       "Christian Anderson",
+      "Kylan Boswell",
       "__SPACER__",
       "__SEPARATOR__",
       "Coby White"
@@ -117,13 +118,13 @@
       "Sion James",
       "Grayson Allen",
       "Michael Ajayi",
-      "__SEPARATOR__",
-      "Kylan Boswell"
+      "__SPACER__"
     ],
     "SF": [
       "Brandon Miller",
       "Tidjane Salaun",
       "Liam McNeeley",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kon Knueppel"
     ],
@@ -131,13 +132,15 @@
       "Naz Reid",
       "Royce O'Neale",
       "PJ Hall",
+      "__SPACER__",
       "__SEPARATOR__",
       "Grant Williams"
     ],
     "C": [
       "Moussa Diabate",
       "Ryan Kalkbrenner",
-      "Hannes Steinbach"
+      "Hannes Steinbach",
+      "__SPACER__"
     ]
   },
   "CHI": {
