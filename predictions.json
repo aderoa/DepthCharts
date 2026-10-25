@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T23:45:55.443Z",
+  "generated_at": "2026-10-25T23:45:59.159Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -583,11 +583,11 @@
       "bench": {
         "PG": [
           "Ayo Dosunmu",
-          "Bones Hyland",
           "Zyon Pullin"
         ],
         "SG": [
           "Jaylen Clark",
+          "Bones Hyland",
           "Donte DiVincenzo"
         ],
         "SF": [
