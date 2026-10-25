@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T21:31:52.797Z",
+  "generated_at": "2026-10-25T21:32:01.970Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -352,14 +352,14 @@
         ],
         "SG": [
           "Reed Sheppard",
-          "Bogdan Bogdanovic"
-        ],
-        "SF": [
-          "Tari Eason",
           "Isaiah Crawford"
         ],
+        "SF": [
+          "Bogdan Bogdanovic",
+          "Jae'Sean Tate"
+        ],
         "PF": [
-          "Jae'Sean Tate",
+          "Tari Eason",
           "Julian Phillips",
           "Quadir Copeland"
         ],
