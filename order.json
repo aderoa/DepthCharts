@@ -470,13 +470,13 @@
       "Luka Doncic",
       "Collin Sexton",
       "Jaden Hardy",
-      "Bronny James",
+      "__SPACER__",
       "__SPACER__"
     ],
     "SG": [
       "Austin Reaves",
       "Quentin Grimes",
-      "Chris Manon",
+      "Bronny James",
       "__SPACER__",
       "__SEPARATOR__",
       "Cameron Carr"
@@ -484,13 +484,13 @@
     "SF": [
       "Matisse Thybulle",
       "Jake LaRavia",
-      "Jarred Vanderbilt"
+      "Chris Manon"
     ],
     "PF": [
       "Ziaire Williams",
       "Kevon Looney",
+      "Jarred Vanderbilt",
       "AK Okereke",
-      "__SPACER__",
       "__SEPARATOR__",
       "Adou Thiero"
     ],
