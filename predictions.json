@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T22:35:13.970Z",
+  "generated_at": "2026-10-25T22:46:34.820Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -742,7 +742,7 @@
     "PHI": {
       "starters": {
         "PG": "Tyrese Maxey",
-        "SG": "VJ Edgecombe",
+        "SG": "Anfernee Simons",
         "SF": "Jaylen Brown",
         "PF": "LeBron James",
         "C": "Adem Bona"
@@ -754,11 +754,11 @@
           "Jabari Walker"
         ],
         "SG": [
-          "Anfernee Simons",
+          "Kentavious Caldwell-Pope",
+          "VJ Edgecombe",
           "Dominick Barlow"
         ],
         "SF": [
-          "Kentavious Caldwell-Pope",
           "Rayan Rupert",
           "Ariel Hukporti"
         ],
