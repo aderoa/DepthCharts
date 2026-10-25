@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T21:28:46.393Z",
+  "generated_at": "2026-10-25T21:31:43.825Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -339,7 +339,7 @@
     },
     "HOU": {
       "starters": {
-        "PG": "Amen Thompson",
+        "PG": "Fred VanVleet",
         "SG": "Reed Sheppard",
         "SF": "Kevin Durant",
         "PF": "Jabari Smith",
@@ -347,8 +347,9 @@
       },
       "bench": {
         "PG": [
-          "Bruce Thornton",
-          "Fred VanVleet"
+          "Amen Thompson",
+          "Marcus Smart",
+          "Bruce Thornton"
         ],
         "SG": [
           "Bogdan Bogdanovic",
