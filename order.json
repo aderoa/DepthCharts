@@ -322,20 +322,19 @@
     "PG": [
       "Brandon Williams",
       "LJ Cryer",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Stephen Curry"
+      "Stephen Curry",
+      "__SPACER__"
     ],
     "SG": [
       "De'Anthony Melton",
       "Will Richard",
-      "__SEPARATOR__",
-      "__SPACER__",
-      "Brandin Podziemski"
+      "Brandin Podziemski",
+      "__SPACER__"
     ],
     "SF": [
       "Yaxel Lendeborg",
       "Gary Payton II",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Moses Moody",
@@ -344,17 +343,16 @@
     "PF": [
       "Gui Santos",
       "Georges Niang",
-      "__SPACER__",
-      "__SEPARATOR__",
       "Draymond Green",
-      "Kristaps Porzingis"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "C": [
       "Graham Ike",
       "Charles Bassey",
       "Malevy Leons",
-      "__SEPARATOR__",
-      "Al Horford"
+      "Al Horford",
+      "Kristaps Porzingis"
     ]
   },
   "HOU": {
