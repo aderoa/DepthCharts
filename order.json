@@ -950,13 +950,15 @@
     ],
     "SG": [
       "RJ Barrett",
-      "Ja'Kobe Walter",
       "Alijah Martin"
     ],
     "SF": [
-      "Kawhi Leonard",
+      "Ja'Kobe Walter",
       "Allen Graves",
-      "Malachi Smith"
+      "Malachi Smith",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Kawhi Leonard"
     ],
     "PF": [
       "Scottie Barnes",
