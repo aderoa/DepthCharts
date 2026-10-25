@@ -482,23 +482,19 @@
     "PG": [
       "Ty Jerome",
       "Cam Spencer",
-      "Jahmai Mashack",
-      "Javon Small",
-      "__SPACER__"
+      "__SPACER__",
+      "Javon Small"
     ],
     "SG": [
       "Jaylen Wells",
       "Scotty Pippen Jr",
-      "Kris Murray",
-      "__SPACER__",
+      "Jahmai Mashack",
       "__SPACER__"
     ],
     "SF": [
       "GG Jackson",
       "Jerami Grant",
-      "Taylor Hendricks",
-      "__SPACER__",
-      "__SPACER__",
+      "Kris Murray",
       "__SPACER__",
       "__SEPARATOR__",
       "Cedric Coward"
@@ -506,15 +502,16 @@
     "PF": [
       "Cameron Boozer",
       "Isaiah Stewart",
-      "Karim Lopez",
-      "__SPACER__",
+      "Taylor Hendricks",
       "__SPACER__"
     ],
     "C": [
-      "Zach Edey",
       "Quinten Post",
       "Olivier-Maxence Prosper",
-      "Carson Cooper"
+      "Karim Lopez",
+      "Carson Cooper",
+      "__SEPARATOR__",
+      "Zach Edey"
     ]
   },
   "MIA": {
