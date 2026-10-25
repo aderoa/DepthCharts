@@ -470,7 +470,6 @@
       "Luka Doncic",
       "Collin Sexton",
       "Jaden Hardy",
-      "__SPACER__",
       "__SPACER__"
     ],
     "SG": [
@@ -478,13 +477,14 @@
       "Quentin Grimes",
       "Bronny James",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Cameron Carr"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Matisse Thybulle",
       "Jake LaRavia",
-      "Chris Manon"
+      "Chris Manon",
+      "__SPACER__",
+      "Cameron Carr"
     ],
     "PF": [
       "Ziaire Williams",
