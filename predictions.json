@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T06:53:10.885Z",
+  "generated_at": "2026-10-25T06:53:14.895Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -213,7 +213,6 @@
       "bench": {
         "PG": [
           "Marcus Sasser",
-          "Walter Clayton",
           "Kyrie Irving"
         ],
         "SG": [
@@ -222,6 +221,7 @@
           "Tarik Biberovic"
         ],
         "SF": [
+          "Walter Clayton",
           "Cooper Flagg",
           "Caleb Martin"
         ],
