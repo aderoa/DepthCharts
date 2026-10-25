@@ -774,7 +774,6 @@
       "Tyrese Maxey",
       "Labaron Philon",
       "Caleb Love",
-      "LeBron James",
       "Jabari Walker"
     ],
     "SG": [
@@ -793,8 +792,9 @@
       "Ariel Hukporti"
     ],
     "PF": [
+      "LeBron James",
+      "__SPACER__",
       "Dean Wade",
-      "Justin Edwards",
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
@@ -802,7 +802,7 @@
     ],
     "C": [
       "Adem Bona",
-      "__SPACER__",
+      "Justin Edwards",
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
