@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T06:54:26.211Z",
+  "generated_at": "2026-10-25T06:54:28.329Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -341,7 +341,7 @@
       "starters": {
         "PG": "Amen Thompson",
         "SG": "Reed Sheppard",
-        "SF": "Tari Eason",
+        "SF": "Kevin Durant",
         "PF": "Jabari Smith",
         "C": "Alperen Sengun"
       },
@@ -352,11 +352,11 @@
           "Fred VanVleet"
         ],
         "SG": [
-          "Kevin Durant",
           "Bogdan Bogdanovic",
           "Isaiah Crawford"
         ],
         "SF": [
+          "Tari Eason",
           "Jae'Sean Tate"
         ],
         "PF": [
