@@ -212,12 +212,13 @@
   "DAL": {
     "PG": [
       "Kyrie Irving",
-      "Max Christie",
       "Marcus Sasser",
+      "__SEPARATOR__",
       "Tarik Biberovic"
     ],
     "SG": [
       "Zaccharie Risacher",
+      "__SPACER__",
       "Sergio De Larrea",
       "Jett Howard",
       "__SEPARATOR__",
@@ -225,7 +226,7 @@
     ],
     "SF": [
       "Walter Clayton",
-      "__SPACER__",
+      "Max Christie",
       "__SPACER__",
       "__SEPARATOR__",
       "Naji Marshall",
