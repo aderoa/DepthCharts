@@ -287,14 +287,13 @@
   "DET": {
     "PG": [
       "Cade Cunningham",
+      "Isaiah Joe",
       "Ebuka Okorie",
-      "__SPACER__",
-      "Isaiah Joe"
+      "__SPACER__"
     ],
     "SG": [
       "Daniss Jenkins",
       "Kevin Huerter",
-      "__SPACER__",
       "Elijah Harkless",
       "__SPACER__",
       "__SEPARATOR__",
@@ -309,7 +308,8 @@
     "PF": [
       "John Collins",
       "Javonte Green",
-      "Taurean Prince"
+      "Taurean Prince",
+      "__SPACER__"
     ],
     "C": [
       "Paul Reed",
