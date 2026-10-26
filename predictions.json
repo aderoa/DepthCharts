@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T00:28:44.027Z",
+  "generated_at": "2026-10-26T00:28:47.147Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -292,12 +292,12 @@
           "Taurean Prince"
         ],
         "PF": [
-          "Ron Holland"
+          "Ron Holland",
+          "Isaac Jones"
         ],
         "C": [
           "Javonte Green",
           "Tolu Smith",
-          "Isaac Jones",
           "Ugonna Onyenso",
           "Jalen Duren"
         ]
