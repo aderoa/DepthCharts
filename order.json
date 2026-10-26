@@ -398,14 +398,14 @@
     "SG": [
       "Andrew Nembhard",
       "Kelly Oubre",
-      "Kobe Brown",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ben Sheppard"
     ],
     "SF": [
       "Aaron Nesmith",
       "Jarace Walker",
-      "__SPACER__",
+      "Kobe Brown",
       "__SEPARATOR__",
       "Johnny Furphy"
     ],
@@ -697,38 +697,38 @@
   "OKC": {
     "PG": [
       "Shai Gilgeous-Alexander",
-      "Ajay Mitchell",
       "Bennett Stirtz",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Nikola Topic"
+      "Nikola Topic",
+      "__SPACER__"
     ],
     "SG": [
-      "Cason Wallace",
       "Alex Caruso",
+      "Ajay Mitchell",
       "Brooks Barnhizer",
       "__SPACER__",
       "__SEPARATOR__",
-      "Otega Oweh"
+      "Cason Wallace"
     ],
     "SF": [
-      "Jalen Williams",
       "Jared McCain",
       "Kenrich Williams",
-      "__SPACER__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jalen Williams"
     ],
     "PF": [
-      "Chet Holmgren",
       "Jaylin Williams",
       "Micah Peavy",
-      "__SPACER__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Chet Holmgren"
     ],
     "C": [
       "Isaiah Hartenstein",
       "Aday Mara",
       "Josh Dix",
-      "__SPACER__",
-      "__SEPARATOR__",
       "Thomas Sorber"
     ]
   },
