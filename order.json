@@ -217,19 +217,20 @@
       "Kyrie Irving",
       "Marcus Sasser",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Tarik Biberovic"
     ],
     "SG": [
       "Zaccharie Risacher",
       "Sergio De Larrea",
-      "Jett Howard",
-      "__SEPARATOR__",
-      "Cooper Flagg"
+      "Jett Howard"
     ],
     "SF": [
-      "Walter Clayton",
+      "Cooper Flagg",
       "Max Christie",
+      "Walter Clayton",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Caleb Martin",
@@ -239,12 +240,14 @@
       "PJ Washington",
       "Morez Johnson",
       "Tobi Lawal",
+      "__SPACER__",
       "__SEPARATOR__",
       "Santiago Aldama"
     ],
     "C": [
       "Daniel Gafford",
       "Moussa Cisse",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Dereck Lively"
@@ -362,33 +365,28 @@
       "Fred VanVleet",
       "Bruce Thornton",
       "Isaiah Crawford",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Marcus Smart"
+      "__SEPARATOR__"
     ],
     "SG": [
       "Amen Thompson",
       "Reed Sheppard",
       "Jae'Sean Tate",
-      "__SPACER__"
+      "Marcus Smart"
     ],
     "SF": [
       "Kevin Durant",
       "Bogdan Bogdanovic",
-      "Julian Phillips",
-      "__SPACER__"
+      "Julian Phillips"
     ],
     "PF": [
       "Jabari Smith",
       "Tari Eason",
-      "__SPACER__",
       "Quadir Copeland"
     ],
     "C": [
       "Alperen Sengun",
       "Clint Capela",
       "Oscar Tshiebwe",
-      "__SPACER__",
       "__SEPARATOR__",
       "Steven Adams"
     ]
