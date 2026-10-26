@@ -729,26 +729,28 @@
   },
   "ORL": {
     "PG": [
-      "Jalen Suggs",
       "Anthony Black",
-      "Alex Morales"
+      "Jevon Carter",
+      "Alex Morales",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jalen Suggs"
     ],
     "SG": [
       "Desmond Bane",
       "Jamal Cain",
-      "Jevon Carter",
       "__SEPARATOR__",
       "Noah Penda"
     ],
     "SF": [
       "Jase Richardson",
       "Tristan Da Silva",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jonathan Isaac"
     ],
     "PF": [
       "Franz Wagner",
-      "__SPACER__",
       "Nikola Vucevic",
       "__SPACER__",
       "__SEPARATOR__",
