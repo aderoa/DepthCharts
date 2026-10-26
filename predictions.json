@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T17:11:12.066Z",
+  "generated_at": "2026-10-26T18:26:18.717Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -375,7 +375,7 @@
         "SG": "Andrew Nembhard",
         "SF": "Aaron Nesmith",
         "PF": "Pascal Siakam",
-        "C": "Ivica Zubac"
+        "C": "Jay Huff"
       },
       "bench": {
         "PG": [
@@ -389,16 +389,16 @@
           "Ben Sheppard"
         ],
         "SF": [
-          "Obi Toppin",
           "Jarace Walker",
           "Johnny Furphy"
         ],
         "PF": [
-          "Larry Nance Jr",
+          "Obi Toppin",
           "Jalen Slawson"
         ],
         "C": [
-          "Jay Huff"
+          "Larry Nance Jr",
+          "Ivica Zubac"
         ]
       }
     },
