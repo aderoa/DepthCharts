@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T19:13:58.503Z",
+  "generated_at": "2026-10-26T19:20:17.069Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -686,20 +686,20 @@
           "Cason Wallace"
         ],
         "SG": [
-          "Alex Caruso",
-          "Brooks Barnhizer"
+          "Alex Caruso"
         ],
         "SF": [
-          "Kenrich Williams",
+          "Brooks Barnhizer",
           "Jalen Williams"
         ],
         "PF": [
-          "Aday Mara",
+          "Kenrich Williams",
           "Micah Peavy"
         ],
         "C": [
-          "Thomas Sorber",
+          "Aday Mara",
           "Josh Dix",
+          "Thomas Sorber",
           "Chet Holmgren"
         ]
       }
