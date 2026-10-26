@@ -501,10 +501,11 @@
     "PG": [
       "Ty Jerome",
       "Cam Spencer",
-      "__SPACER__",
-      "Javon Small"
+      "Javon Small",
+      "__SPACER__"
     ],
     "SG": [
+      "Cedric Coward",
       "Jaylen Wells",
       "Scotty Pippen Jr",
       "Jahmai Mashack",
@@ -513,10 +514,7 @@
     "SF": [
       "GG Jackson",
       "Jerami Grant",
-      "Kris Murray",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Cedric Coward"
+      "Kris Murray"
     ],
     "PF": [
       "Cameron Boozer",
@@ -527,9 +525,10 @@
     "C": [
       "Quinten Post",
       "Olivier-Maxence Prosper",
-      "Karim Lopez",
       "Carson Cooper",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Karim Lopez",
       "Zach Edey"
     ]
   },
