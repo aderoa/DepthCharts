@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T00:28:47.147Z",
+  "generated_at": "2026-10-26T00:40:44.231Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -474,7 +474,7 @@
     "MEM": {
       "starters": {
         "PG": "Ty Jerome",
-        "SG": "Jaylen Wells",
+        "SG": "Cedric Coward",
         "SF": "GG Jackson",
         "PF": "Cameron Boozer",
         "C": "Quinten Post"
@@ -485,13 +485,13 @@
           "Javon Small"
         ],
         "SG": [
+          "Jaylen Wells",
           "Scotty Pippen Jr",
           "Jahmai Mashack"
         ],
         "SF": [
           "Jerami Grant",
-          "Kris Murray",
-          "Cedric Coward"
+          "Kris Murray"
         ],
         "PF": [
           "Isaiah Stewart",
@@ -499,8 +499,8 @@
         ],
         "C": [
           "Olivier-Maxence Prosper",
-          "Karim Lopez",
           "Carson Cooper",
+          "Karim Lopez",
           "Zach Edey"
         ]
       }
