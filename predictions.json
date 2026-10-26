@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T18:41:05.466Z",
+  "generated_at": "2026-10-26T19:13:35.839Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -476,7 +476,7 @@
         "SG": "Cedric Coward",
         "SF": "Jaylen Wells",
         "PF": "Cameron Boozer",
-        "C": "Isaiah Stewart"
+        "C": "Zach Edey"
       },
       "bench": {
         "PG": [
@@ -497,10 +497,10 @@
           "Karim Lopez"
         ],
         "C": [
+          "Isaiah Stewart",
           "Quinten Post",
           "Olivier-Maxence Prosper",
-          "Carson Cooper",
-          "Zach Edey"
+          "Carson Cooper"
         ]
       }
     },
