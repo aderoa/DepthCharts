@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T19:45:51.324Z",
+  "generated_at": "2026-10-27T19:45:54.220Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -407,7 +407,7 @@
       "starters": {
         "PG": "Darius Garland",
         "SG": "Kris Dunn",
-        "SF": "Gradey Dick",
+        "SF": "Kobe Sanders",
         "PF": "Derrick Jones",
         "C": "Isaiah Jackson"
       },
@@ -417,11 +417,11 @@
           "Bradley Beal"
         ],
         "SG": [
-          "Kobe Sanders",
           "Cam Christie",
           "Max Strus"
         ],
         "SF": [
+          "Gradey Dick",
           "Jalen Pickett",
           "Jordan Miller",
           "Brandon Ingram"
