@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T19:17:35.937Z",
+  "generated_at": "2026-10-27T19:45:46.754Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -408,7 +408,7 @@
         "PG": "Darius Garland",
         "SG": "Kris Dunn",
         "SF": "Derrick Jones",
-        "PF": "Rui Hachimura",
+        "PF": "Baba Miller",
         "C": "Isaiah Jackson"
       },
       "bench": {
@@ -424,12 +424,12 @@
         "SF": [
           "Gradey Dick",
           "Jalen Pickett",
-          "Jordan Miller"
+          "Jordan Miller",
+          "Brandon Ingram"
         ],
         "PF": [
-          "Baba Miller",
           "Nick Martinelli",
-          "Brandon Ingram"
+          "Rui Hachimura"
         ],
         "C": [
           "Brook Lopez",
