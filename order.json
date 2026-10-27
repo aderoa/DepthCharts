@@ -988,21 +988,21 @@
     "SF": [
       "Ace Bailey",
       "Brice Sensabaugh",
-      "Kyle Filipowski",
+      "__SPACER__",
       "Harrison Ingram"
     ],
     "PF": [
       "Lauri Markkanen",
       "Sviatoslav Mykhailiuk",
-      "Mo Bamba",
-      "__SPACER__",
+      "Kyle Filipowski",
       "__SEPARATOR__",
       "Jusuf Nurkic"
     ],
     "C": [
       "Jaren Jackson Jr",
-      "Jaxson Hayes",
       "Tony Bradley",
+      "Mo Bamba",
+      "Jaxson Hayes",
       "__SPACER__"
     ]
   },
