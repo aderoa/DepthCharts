@@ -851,13 +851,13 @@
     "PG": [
       "Ja Morant",
       "Jrue Holiday",
-      "__SPACER__",
+      "John Tonje",
       "__SPACER__"
     ],
     "SG": [
       "Damian Lillard",
       "Scoot Henderson",
-      "John Tonje",
+      "__SPACER__",
       "Chris Youngblood",
       "__SEPARATOR__",
       "Shaedon Sharpe"
@@ -877,8 +877,8 @@
     "C": [
       "Donovan Clingan",
       "Robert Williams",
-      "__SPACER__",
-      "Branden Carlson"
+      "Branden Carlson",
+      "__SPACER__"
     ]
   },
   "SAC": {
