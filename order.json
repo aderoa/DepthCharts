@@ -983,19 +983,19 @@
     "SG": [
       "Darryn Peterson",
       "Josh Okogie",
-      "Josh Green",
+      "__SPACER__",
       "Kobe Bufkin"
     ],
     "SF": [
       "Ace Bailey",
       "Brice Sensabaugh",
-      "Harrison Ingram",
+      "Josh Green",
       "__SPACER__"
     ],
     "PF": [
       "Lauri Markkanen",
       "Sviatoslav Mykhailiuk",
-      "Tony Bradley",
+      "Harrison Ingram",
       "__SPACER__",
       "__SEPARATOR__",
       "Jusuf Nurkic"
@@ -1003,7 +1003,7 @@
     "C": [
       "Kyle Filipowski",
       "Mo Bamba",
-      "__SPACER__",
+      "Tony Bradley",
       "__SPACER__",
       "__SEPARATOR__",
       "Jaren Jackson Jr",
