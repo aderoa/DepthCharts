@@ -851,31 +851,33 @@
     "PG": [
       "Ja Morant",
       "Jrue Holiday",
+      "__SPACER__",
       "__SPACER__"
     ],
     "SG": [
       "Damian Lillard",
       "Scoot Henderson",
       "John Tonje",
+      "Chris Youngblood",
+      "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
     "SF": [
       "Toumani Camara",
       "Vit Krejci",
-      "Jayson Kent",
-      "__SEPARATOR__",
-      "Chris Youngblood"
+      "Micah Potter",
+      "Jayson Kent"
     ],
     "PF": [
       "Deni Avdija",
       "Sidy Cissoko",
-      "Micah Potter"
+      "Yang Hansen",
+      "__SPACER__"
     ],
     "C": [
       "Donovan Clingan",
       "Robert Williams",
-      "Yang Hansen",
-      "__SEPARATOR__",
+      "__SPACER__",
       "Branden Carlson"
     ]
   },
