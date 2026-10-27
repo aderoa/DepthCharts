@@ -421,6 +421,7 @@
     "PG": [
       "Darius Garland",
       "Keaton Wagler",
+      "__SPACER__",
       "__SEPARATOR__",
       "Bradley Beal"
     ],
@@ -428,7 +429,6 @@
       "Kris Dunn",
       "Kobe Sanders",
       "Cam Christie",
-      "__SPACER__",
       "__SEPARATOR__",
       "Max Strus"
     ],
@@ -437,14 +437,15 @@
       "Gradey Dick",
       "Jalen Pickett",
       "__SEPARATOR__",
-      "Jordan Miller"
+      "Jordan Miller",
+      "Brandon Ingram"
     ],
     "PF": [
-      "Rui Hachimura",
       "Baba Miller",
       "Nick Martinelli",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Brandon Ingram"
+      "Rui Hachimura"
     ],
     "C": [
       "Isaiah Jackson",
