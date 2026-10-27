@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T19:45:54.220Z",
+  "generated_at": "2026-10-27T19:59:41.757Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -516,15 +516,15 @@
       "bench": {
         "PG": [
           "Dru Smith",
-          "Ryan Conwell",
           "Tre Donaldson"
         ],
         "SG": [
           "Tim Hardaway Jr",
-          "Myron Gardner"
+          "Ryan Conwell"
         ],
         "SF": [
           "Pelle Larsson",
+          "Myron Gardner",
           "Simone Fontecchio"
         ],
         "PF": [
