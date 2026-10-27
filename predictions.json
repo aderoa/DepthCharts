@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T19:17:31.341Z",
+  "generated_at": "2026-10-27T19:17:35.937Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -955,7 +955,8 @@
         ],
         "SF": [
           "Brice Sensabaugh",
-          "Josh Green"
+          "Josh Green",
+          "Jaren Jackson Jr"
         ],
         "PF": [
           "Sviatoslav Mykhailiuk",
@@ -965,7 +966,6 @@
         "C": [
           "Mo Bamba",
           "Tony Bradley",
-          "Jaren Jackson Jr",
           "Jaxson Hayes"
         ]
       }
