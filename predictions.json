@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T20:03:29.583Z",
+  "generated_at": "2026-10-27T20:03:32.766Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -820,13 +820,13 @@
         ],
         "SG": [
           "Scoot Henderson",
+          "Jayson Kent",
           "Chris Youngblood",
           "Shaedon Sharpe"
         ],
         "SF": [
           "Vit Krejci",
-          "Micah Potter",
-          "Jayson Kent"
+          "Micah Potter"
         ],
         "PF": [
           "Sidy Cissoko",
