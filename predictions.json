@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T18:36:09.339Z",
+  "generated_at": "2026-10-27T19:17:25.913Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -942,7 +942,7 @@
         "SG": "Darryn Peterson",
         "SF": "Ace Bailey",
         "PF": "Lauri Markkanen",
-        "C": "Jaren Jackson Jr"
+        "C": "Kyle Filipowski"
       },
       "bench": {
         "PG": [
@@ -964,8 +964,8 @@
           "Jusuf Nurkic"
         ],
         "C": [
-          "Kyle Filipowski",
           "Mo Bamba",
+          "Jaren Jackson Jr",
           "Jaxson Hayes"
         ]
       }
