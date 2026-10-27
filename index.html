@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-10-20a · Questionable is placed, not forced: out of INJURY_ROW_STATUSES, and the export honours the separator for him. Four injury colours instead of one -- Out lightcoral, Doubtful #fdba74, Questionable #ffc94d, Probable #bbf7d0 -- across all THREE cCls() exporters and the admin board, which previously read _ps.sc (contracts only) above the line and hardcoded "injured" below it. || 2026-09-13e · injured players show their salary like everyone else; the red cell carries the status. || 2026-09-13d · injury row and red cells in the Presto export too, not only the admin board. || 2026-09-13c · unsigned draftees off the chart (cap holds, not rotation places). || 2026-09-13b · injuries applied to every team, not just the two not marked eliminated. || 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-10-27a · injury colours only on 2026-27: Out/Doubtful/Questionable/Probable cells no longer paint 2027-28..2030-31, on the admin board or in the copied export (the injury ROW was already 2026-27 only; the cell colour was not). || 2026-10-20a · Questionable is placed, not forced: out of INJURY_ROW_STATUSES, and the export honours the separator for him. Four injury colours instead of one -- Out lightcoral, Doubtful #fdba74, Questionable #ffc94d, Probable #bbf7d0 -- across all THREE cCls() exporters and the admin board, which previously read _ps.sc (contracts only) above the line and hardcoded "injured" below it. || 2026-09-13e · injured players show their salary like everyone else; the red cell carries the status. || 2026-09-13d · injury row and red cells in the Presto export too, not only the admin board. || 2026-09-13c · unsigned draftees off the chart (cap holds, not rotation places). || 2026-09-13b · injuries applied to every team, not just the two not marked eliminated. || 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
 <script>
@@ -1876,7 +1876,11 @@ function renderFutureYearAdmin(year) {
         // replacing anything: a free agent stays orange, an option keeps its
         // colour, and a questionable or probable player -- who had no class
         // at all here -- finally gets one.
-        const sc = p._ps.sc || statusCls(p);
+        //
+        // AND ONLY IN THE SEASON BEING PLAYED. The injury row was already kept
+        // to 2026-27, but the cell colour came from statusCls() in every year,
+        // so a man out this week was still painted red in 2029-30.
+        const sc = p._ps.sc || (injuryRowYear ? statusCls(p) : '');
         const sal = salForYear(p, year);
         html += `<div class="admin-player-card ${firstReal?'starter':''} ${sc} ${p.isDraftee?'draftee':''}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? '<span style="color:#15803d">'+pickLabel(p)+'</span>' : fmtSal(sal)}</div></div>`;
         firstReal = false;
@@ -3001,8 +3005,11 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
     // The branch still comes first, so the rule above is unchanged. It just
     // has four colours to say it with now, and says them from the status
     // rather than from the seating.
-    if (p._inj || p.colorCode === 'injured' || p.colorCode === 'doubtful'
-        || p.colorCode === 'questionable' || p.colorCode === 'probable') {
+    //
+    // ONLY IN THE SEASON BEING PLAYED. An injury is a fact about now; the
+    // injury row already stopped at 2026-27, and so does the colour.
+    if (year === '2026-27' && (p._inj || p.colorCode === 'injured' || p.colorCode === 'doubtful'
+        || p.colorCode === 'questionable' || p.colorCode === 'probable')) {
       if (p.colorCode === 'doubtful') return ' class="c-doubt"';
       if (p.colorCode === 'questionable') return ' class="c-quest"';
       if (p.colorCode === 'probable') return ' class="c-prob"';
