@@ -251,6 +251,7 @@
       "Jamal Murray",
       "Tyus Jones",
       "Ryan Nembhard",
+      "__SEPARATOR__",
       "Julian Strawther"
     ],
     "SG": [
@@ -263,14 +264,14 @@
     "SF": [
       "Bryce Hopkins",
       "Cam Whitmore",
-      "Zeke Nnaji",
+      "__SPACER__",
       "__SEPARATOR__",
       "Spencer Jones"
     ],
     "PF": [
       "Aaron Gordon",
       "Trevon Brazile",
-      "__SPACER__",
+      "Zeke Nnaji",
       "__SEPARATOR__",
       "Cameron Johnson"
     ],
