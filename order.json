@@ -532,20 +532,22 @@
     "PG": [
       "Davion Mitchell",
       "Dru Smith",
-      "Ryan Conwell",
+      "__SPACER__",
       "Tre Donaldson"
     ],
     "SG": [
       "Klay Thompson",
       "Tim Hardaway Jr",
-      "Myron Gardner",
+      "Ryan Conwell",
       "__SPACER__"
     ],
     "SF": [
       "Andrew Wiggins",
       "Pelle Larsson",
-      "Simone Fontecchio",
-      "__SPACER__"
+      "Myron Gardner",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Simone Fontecchio"
     ],
     "PF": [
       "Giannis Antetokounmpo",
