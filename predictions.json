@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T05:53:12.373Z",
+  "generated_at": "2026-10-27T05:53:40.080Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -515,8 +515,8 @@
       },
       "bench": {
         "PG": [
-          "Ryan Conwell",
           "Dru Smith",
+          "Ryan Conwell",
           "Tre Donaldson"
         ],
         "SG": [
