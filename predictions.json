@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T05:55:58.462Z",
+  "generated_at": "2026-10-27T05:56:01.037Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -348,11 +348,11 @@
       "bench": {
         "PG": [
           "Reed Sheppard",
-          "Bruce Thornton",
-          "Isaiah Crawford"
+          "Bruce Thornton"
         ],
         "SG": [
           "Bogdan Bogdanovic",
+          "Isaiah Crawford",
           "Marcus Smart"
         ],
         "SF": [
