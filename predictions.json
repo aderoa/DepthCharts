@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T23:34:03.982Z",
+  "generated_at": "2026-10-28T23:34:11.042Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -382,11 +382,11 @@
         "PG": [
           "Quenton Jackson",
           "Braden Smith",
-          "Tyrese Haliburton",
-          "TJ McConnell"
+          "Tyrese Haliburton"
         ],
         "SG": [
-          "Jarace Walker"
+          "Jarace Walker",
+          "TJ McConnell"
         ],
         "SF": [
           "Obi Toppin",
