@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T23:35:10.914Z",
+  "generated_at": "2026-10-28T23:37:05.405Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -308,8 +308,8 @@
         "PG": "Stephen Curry",
         "SG": "Brandin Podziemski",
         "SF": "Yaxel Lendeborg",
-        "PF": "Draymond Green",
-        "C": "Graham Ike"
+        "PF": "Georges Niang",
+        "C": "Draymond Green"
       },
       "bench": {
         "PG": [
@@ -327,7 +327,7 @@
           "Moses Moody"
         ],
         "PF": [
-          "Georges Niang",
+          "Graham Ike",
           "Gui Santos"
         ],
         "C": [
