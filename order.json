@@ -459,6 +459,7 @@
       "Collin Sexton",
       "Jaden Hardy",
       "Bronny James",
+      "__SPACER__",
       "__SEPARATOR__",
       "Luka Doncic"
     ],
@@ -466,27 +467,31 @@
       "Austin Reaves",
       "Quentin Grimes",
       "Chris Manon",
+      "__SPACER__",
       "__SEPARATOR__",
       "Cameron Carr"
     ],
     "SF": [
       "Matisse Thybulle",
       "Jarred Vanderbilt",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ziaire Williams"
     ],
     "PF": [
       "Jake LaRavia",
       "Kevon Looney",
+      "Arthur Kaluma",
       "__SPACER__",
-      "AK Okereke",
       "__SEPARATOR__",
       "Adou Thiero"
     ],
     "C": [
       "Walker Kessler",
       "Sandro Mamukelashvili",
-      "Arthur Kaluma"
+      "__SPACER__",
+      "Lawson Lovering"
     ]
   },
   "MEM": {
