@@ -392,10 +392,14 @@
     ],
     "SG": [
       "Kelly Oubre",
-      "Jarace Walker"
+      "Jarace Walker",
+      "__SPACER__",
+      "__SPACER__",
+      "__SPACER__"
     ],
     "SF": [
       "Aaron Nesmith",
+      "Kelly Oubre",
       "Obi Toppin",
       "__SPACER__",
       "__SEPARATOR__",
@@ -405,12 +409,14 @@
       "Pascal Siakam",
       "Jalen Slawson",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Johnny Furphy"
     ],
     "C": [
       "Jay Huff",
       "Larry Nance Jr",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Ivica Zubac"
