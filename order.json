@@ -357,17 +357,18 @@
     "SG": [
       "Amen Thompson",
       "Bogdan Bogdanovic",
-      "Isaiah Crawford",
       "__SEPARATOR__",
       "Marcus Smart"
     ],
     "SF": [
       "Kevin Durant",
-      "Jae'Sean Tate",
+      "Isaiah Crawford",
+      "__SPACER__",
       "Julian Phillips"
     ],
     "PF": [
       "Tari Eason",
+      "Jae'Sean Tate",
       "Quadir Copeland",
       "__SEPARATOR__",
       "Alperen Sengun"
@@ -376,7 +377,6 @@
       "Jabari Smith",
       "Clint Capela",
       "Oscar Tshiebwe",
-      "__SPACER__",
       "__SEPARATOR__",
       "Steven Adams"
     ]
