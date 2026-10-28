@@ -384,7 +384,7 @@
     "PG": [
       "Andrew Nembhard",
       "Quenton Jackson",
-      "Kobe Brown",
+      "__SPACER__",
       "Braden Smith",
       "__SEPARATOR__",
       "Tyrese Haliburton",
@@ -394,13 +394,12 @@
       "Kelly Oubre",
       "Jarace Walker",
       "__SPACER__",
-      "__SPACER__",
       "__SPACER__"
     ],
     "SF": [
       "Aaron Nesmith",
-      "Kelly Oubre",
       "Obi Toppin",
+      "Kobe Brown",
       "__SPACER__",
       "__SEPARATOR__",
       "Ben Sheppard"
