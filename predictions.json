@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T16:34:29.005Z",
+  "generated_at": "2026-10-28T17:38:13.917Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -372,7 +372,7 @@
     },
     "IND": {
       "starters": {
-        "PG": "Tyrese Haliburton",
+        "PG": "Quenton Jackson",
         "SG": "Kelly Oubre",
         "SF": "Aaron Nesmith",
         "PF": "Pascal Siakam",
@@ -380,13 +380,13 @@
       },
       "bench": {
         "PG": [
-          "Quenton Jackson",
+          "Kobe Brown",
           "Braden Smith",
+          "Tyrese Haliburton",
           "TJ McConnell"
         ],
         "SG": [
           "Jarace Walker",
-          "Kobe Brown",
           "Andrew Nembhard"
         ],
         "SF": [
