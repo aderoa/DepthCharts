@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T06:10:03.011Z",
+  "generated_at": "2026-10-28T06:10:31.052Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -272,7 +272,7 @@
     "DET": {
       "starters": {
         "PG": "Cade Cunningham",
-        "SG": "Daniss Jenkins",
+        "SG": "Ausar Thompson",
         "SF": "Duncan Robinson",
         "PF": "John Collins",
         "C": "Paul Reed"
@@ -283,9 +283,9 @@
           "Elijah Harkless"
         ],
         "SG": [
-          "Isaiah Joe",
+          "Daniss Jenkins",
           "Chaz Lanier",
-          "Ausar Thompson"
+          "Isaiah Joe"
         ],
         "SF": [
           "Kevin Huerter",
