@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T20:20:23.849Z",
+  "generated_at": "2026-10-28T05:30:47.520Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -575,7 +575,7 @@
     "MIN": {
       "starters": {
         "PG": "LaMelo Ball",
-        "SG": "Anthony Edwards",
+        "SG": "Bones Hyland",
         "SF": "Jaden McDaniels",
         "PF": "Jonathan Kuminga",
         "C": "Rudy Gobert"
@@ -586,13 +586,13 @@
           "Zyon Pullin"
         ],
         "SG": [
-          "Bones Hyland",
           "Jaylen Clark",
           "Donte DiVincenzo"
         ],
         "SF": [
           "Terrence Shannon",
-          "Isaiah Evans"
+          "Isaiah Evans",
+          "Anthony Edwards"
         ],
         "PF": [
           "Trey Lyles",
