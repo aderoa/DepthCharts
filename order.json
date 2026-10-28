@@ -380,16 +380,17 @@
   },
   "IND": {
     "PG": [
-      "Tyrese Haliburton",
       "Quenton Jackson",
+      "Kobe Brown",
+      "__SPACER__",
       "Braden Smith",
       "__SEPARATOR__",
+      "Tyrese Haliburton",
       "TJ McConnell"
     ],
     "SG": [
       "Kelly Oubre",
       "Jarace Walker",
-      "Kobe Brown",
       "__SEPARATOR__",
       "Andrew Nembhard"
     ],
@@ -404,6 +405,7 @@
       "Pascal Siakam",
       "Jalen Slawson",
       "__SPACER__",
+      "__SEPARATOR__",
       "Johnny Furphy"
     ],
     "C": [
