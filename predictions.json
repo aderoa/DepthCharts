@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T06:16:28.600Z",
+  "generated_at": "2026-10-28T06:16:42.451Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -285,19 +285,19 @@
         ],
         "SG": [
           "Kevin Huerter",
-          "Chaz Lanier",
           "Elijah Harkless"
         ],
         "SF": [
           "Ron Holland",
-          "Taurean Prince"
+          "Chaz Lanier"
         ],
         "PF": [
           "Javonte Green",
-          "Isaac Jones"
+          "Taurean Prince"
         ],
         "C": [
           "Tolu Smith",
+          "Isaac Jones",
           "Ugonna Onyenso",
           "Jalen Duren"
         ]
