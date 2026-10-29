@@ -351,16 +351,17 @@
   "HOU": {
     "PG": [
       "Fred VanVleet",
-      "Reed Sheppard",
-      "Bruce Thornton"
+      "Bruce Thornton",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Marcus Smart"
     ],
     "SG": [
       "Amen Thompson",
       "Bogdan Bogdanovic",
       "Isaiah Crawford",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Marcus Smart"
+      "Reed Sheppard"
     ],
     "SF": [
       "Kevin Durant",
@@ -377,6 +378,7 @@
     "C": [
       "Jabari Smith",
       "Clint Capela",
+      "__SPACER__",
       "__SEPARATOR__",
       "Steven Adams"
     ]
