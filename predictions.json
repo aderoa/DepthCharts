@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T06:45:08.359Z",
+  "generated_at": "2026-10-29T06:45:13.052Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -222,10 +222,10 @@
         ],
         "SF": [
           "Zaccharie Risacher",
-          "Caleb Martin",
           "Naji Marshall"
         ],
         "PF": [
+          "Caleb Martin",
           "Tobi Lawal",
           "Santiago Aldama"
         ],
