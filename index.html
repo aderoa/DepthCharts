@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD 2026-10-27b · the ?admin editor reads /api/sheet with nocache, so a contract typed into the sheet shows on the next load instead of up to five minutes later (Worker cache + browser cache). || 2026-10-27a · injury colours only on 2026-27: Out/Doubtful/Questionable/Probable cells no longer paint 2027-28..2030-31, on the admin board or in the copied export (the injury ROW was already 2026-27 only; the cell colour was not). || 2026-10-20a · Questionable is placed, not forced: out of INJURY_ROW_STATUSES, and the export honours the separator for him. Four injury colours instead of one -- Out lightcoral, Doubtful #fdba74, Questionable #ffc94d, Probable #bbf7d0 -- across all THREE cCls() exporters and the admin board, which previously read _ps.sc (contracts only) above the line and hardcoded "injured" below it. || 2026-09-13e · injured players show their salary like everyone else; the red cell carries the status. || 2026-09-13d · injury row and red cells in the Presto export too, not only the admin board. || 2026-09-13c · unsigned draftees off the chart (cap holds, not rotation places). || 2026-09-13b · injuries applied to every team, not just the two not marked eliminated. || 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
+<!-- BUILD 2026-10-29a · 10-DAY contracts take the non-guaranteed yellow (#e0e000) instead of the two-way purple, on every board and every export; no 2W badge for them. Placement below the line is unchanged. || 2026-10-27b · the ?admin editor reads /api/sheet with nocache, so a contract typed into the sheet shows on the next load instead of up to five minutes later (Worker cache + browser cache). || 2026-10-27a · injury colours only on 2026-27: Out/Doubtful/Questionable/Probable cells no longer paint 2027-28..2030-31, on the admin board or in the copied export (the injury ROW was already 2026-27 only; the cell colour was not). || 2026-10-20a · Questionable is placed, not forced: out of INJURY_ROW_STATUSES, and the export honours the separator for him. Four injury colours instead of one -- Out lightcoral, Doubtful #fdba74, Questionable #ffc94d, Probable #bbf7d0 -- across all THREE cCls() exporters and the admin board, which previously read _ps.sc (contracts only) above the line and hardcoded "injured" below it. || 2026-09-13e · injured players show their salary like everyone else; the red cell carries the status. || 2026-09-13d · injury row and red cells in the Presto export too, not only the admin board. || 2026-09-13c · unsigned draftees off the chart (cap holds, not rotation places). || 2026-09-13b · injuries applied to every team, not just the two not marked eliminated. || 2026-09-13a · injury row on 2026-27 (Out/Doubtful/Questionable below a red line); free agents removed from 2027-28 onward. || 2026-07-13c · removed the "Copy All Eliminated" button from #copyBtns2627 (A-K + L-Z halves cover it). || 2026-07-13b · base 2026-27 page now carries per-season Presto copy buttons for 2027-28..2030-31 (ATL-MEM / MIA-WAS halves) via copyFutureYearHalf() — reads each target year's saved order key, not the live DOM, so no tab-switching needed. Buttons live in #copyBtns2627 (the span actually shown on the 2026-27 landing view; #copyBtns2526 is dead now the season is over). || 2026-07-01c · 2026-27 two-way reads ST 26-27 only; signed rookies override draft pick; headshot backfill from draft DB; per-year future salaries (2027-28..2030-31); ESPN headshots: combiner->direct AND served un-proxied so they actually render; effective contract-end carries it to 2027-28+. RFA/UFA = rookie-scale (guarded) OR two-way OR <=3 YOS (YOS from contracts sheet); short-tenured vets are restricted. -->
 <html lang="en">
 <head>
 <script>
@@ -221,7 +221,7 @@ footer a { color:var(--accent); text-decoration:none; }
 .admin-drop-indicator { height:3px; background:var(--accent); border-radius:2px; margin:1px 0; pointer-events:none; box-shadow:0 0 6px rgba(59,130,246,0.4); }
 .admin-player-name { font-weight:600; font-size:0.75rem; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; pointer-events:none; }
 .admin-player-card.two-way { background:#e8d5f5; }
-.admin-player-card.ten-day { background:#fef3c7; }
+.admin-player-card.ten-day { background:#e0e000; }  /* 10-DAY = non-guaranteed yellow */
 /* Contract status colors — must come after .starter to override it */
 .admin-player-card.team-option { background:#fca5a5; }
 .admin-player-card.player-option { background:#33cccc; }
@@ -1406,14 +1406,14 @@ function renderDepthChart(teamAbbrev) {
       let sc = '', salDisplay = fmtSal(p.salary);
       if (isEliminated) {
         salDisplay = fmtSal(p.salary27 || p.salary);
-        sc = isTwoWay2627(p) ? 'two-way' : '';
+        sc = isTenDay2627(p) ? 'non-guaranteed' : isTwoWay2627(p) ? 'two-way' : '';
         if (p.status27 === 'TEAM OPT') { sc = 'team-option'; }
         else if (p.status27 === 'PLAYER OPT') { sc = 'player-option'; }
         else if (p.status27 === 'NOT G') { sc = 'non-guaranteed'; }
         else if (p.status27 === 'PARTIAL G') { sc = 'non-guaranteed'; }
       } else {
         // Apply injury/status color for playoff teams
-        if (p.colorCode === 'twoway') sc = 'two-way';
+        if (p.colorCode === 'twoway') sc = p.contractStatus === '10-DAY' ? 'non-guaranteed' : 'two-way';
         else if (p.colorCode === 'questionable') sc = 'questionable';
         else if (p.colorCode === 'doubtful') sc = 'doubtful';
         else if (p.colorCode === 'injured') sc = 'injured';
@@ -1470,8 +1470,8 @@ function renderDepthChart(teamAbbrev) {
           <div class="player-name">${p.name}</div>
           <div class="trade-value" style="color:#b45309;font-size:0.7rem">${isRfaEligible(p) ? 'Restricted' : 'Unrestricted'}</div></div>`;
       } else {
-        const twBadge = p.colorCode === 'twoway' ? ' <span style="font-size:0.55rem;padding:1px 4px;border-radius:3px;background:rgba(139,92,246,0.12);color:#8b5cf6;font-weight:700">2W</span>' : '';
-        const injSc = p.colorCode === 'twoway' ? 'two-way' : p.colorCode === 'injured' ? 'injured' : p.colorCode === 'doubtful' ? 'doubtful' : p.colorCode === 'questionable' ? 'questionable' : p.colorCode === 'probable' ? 'probable' : '';
+        const twBadge = p.colorCode === 'twoway' && p.contractStatus !== '10-DAY' ? ' <span style="font-size:0.55rem;padding:1px 4px;border-radius:3px;background:rgba(139,92,246,0.12);color:#8b5cf6;font-weight:700">2W</span>' : '';
+        const injSc = p.colorCode === 'twoway' ? (p.contractStatus === '10-DAY' ? 'non-guaranteed' : 'two-way') : p.colorCode === 'injured' ? 'injured' : p.colorCode === 'doubtful' ? 'doubtful' : p.colorCode === 'questionable' ? 'questionable' : p.colorCode === 'probable' ? 'probable' : '';
         html += `<div class="player-card ${injSc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}">
           <div class="player-image">${p.headshot?`<img src="${p.headshot}" alt="${p.name}" onerror="this.parentElement.innerHTML='<span class=\\'initials\\'>${initials(p.name)}</span>'">`:`<span class="initials">${initials(p.name)}</span>`}</div>
           <div class="player-name">${p.name}${twBadge}</div>
@@ -1639,6 +1639,13 @@ function statusCls(p) {
   return '';
 }
 
+// A 10-DAY CONTRACT IS COLOURED AS NON-GUARANTEED, not as two-way: it is a
+// short NBA deal, not a G League one. isTwoWay2627 still counts it for the FA
+// labels and for placement below the line; only the colour differs.
+function isTenDay2627(p){
+  const s=(p.status27||'').trim();
+  return s==='10-DAY' || (s==='' && p.contractStatus==='10-DAY');
+}
 function isTwoWay2627(p){
   const s=(p.status27||'').trim();
   if(s==='TWO-WAY'||s==='10-DAY') return true;
@@ -1691,6 +1698,7 @@ function getFuturePlayerStatus(p, endThreshold, year) {
     if (s27 === 'TEAM OPT')   return { status: 'to', sc: 'team-option' };
     if (s27 === 'PLAYER OPT')  return { status: 'po', sc: 'player-option' };
     if (s27 === 'NOT G' || s27 === 'PARTIAL G') return { status: 'ng', sc: 'non-guaranteed' };
+    if (isTenDay2627(p)) return { status: 'ng', sc: 'non-guaranteed' };
     if (isTwoWay2627(p)) return { status: 'tw', sc: 'two-way' };
     return { status: 'active', sc: '' };
   }
@@ -2063,8 +2071,8 @@ function renderAdminAllTeams() {
       html += `<div class="admin-separator"></div>`;
 
       injuredByPos[pos].forEach(p => {
-        const sc = p.colorCode==='twoway'?'two-way':p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':p.colorCode==='questionable'?'questionable':'';
-        html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${p.colorCode==='twoway'?' <span style="font-size:0.5rem;color:#8b5cf6">2W</span>':''}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? pickLabel(p) : fmtSal(p.salary)}</div></div>`;
+        const sc = p.colorCode==='twoway'?(p.contractStatus==='10-DAY'?'ten-day':'two-way'):p.colorCode==='injured'?'injured':p.colorCode==='doubtful'?'doubtful':p.colorCode==='questionable'?'questionable':'';
+        html += `<div class="admin-player-card ${sc}" draggable="true" data-player="${p.name}" data-tv="${p.tradeValue}"><div class="admin-player-name">${p.name}${p.colorCode==='twoway'&&p.contractStatus!=='10-DAY'?' <span style="font-size:0.5rem;color:#8b5cf6">2W</span>':''}</div><div class="admin-trade-value ${valClass(p.tradeValue)}">${p.isDraftee ? pickLabel(p) : fmtSal(p.salary)}</div></div>`;
       });
 
       html += '</div>';
@@ -2248,7 +2256,7 @@ const DC_PRESTO_CSS = '<style>\n'
 + '.dc-tbl tr.dc-hs-row{background-color:#fff}\n'
 + '.dc-tbl tr.dc-data{background-color:#f2f2f2}\n'
 + '.dc-tbl .dc-hs-img{display:block;width:80px;height:80px;object-fit:cover;margin:0 auto}\n'
-+ '.dc-tbl .c-10day{background-color:yellow}\n'
++ '.dc-tbl .c-10day{background-color:#e0e000}\n'
 + '.dc-tbl .c-2way{background-color:#e1bee7}\n'
 + '.dc-tbl .c-inj{background-color:lightcoral}\n'
 + '.dc-tbl .c-doubt{background-color:#fdba74}\n'
@@ -2614,6 +2622,7 @@ function generateExportHTMLByList(teamOrders, withHeadshots, teamList, isOffseas
       if (p.status27 === 'TEAM OPT') return ' class="c-to"';
       if (p.status27 === 'PLAYER OPT') return ' class="c-po"';
       if (p.status27 === 'NOT G' || p.status27 === 'PARTIAL G') return ' class="c-ng"';
+      if (isTenDay2627(p)) return ' class="c-ng"';
       if (isTwoWay2627(p)) return ' class="c-2way"';
       return '';
     }
@@ -3032,6 +3041,7 @@ function generateFutureYearExportHTML(teamOrders, teamList, year, endThreshold) 
       if (p._ps.status === 'ng') return ' class="c-ng"';
       if (p._ps.status === 'tw') return ' class="c-2way"';
     }
+    if (p.contractStatus === '10-DAY') return ' class="c-ng"';
     if (p.colorCode === 'twoway') return ' class="c-2way"';
     return '';
   }
