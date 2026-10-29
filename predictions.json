@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T06:40:49.261Z",
+  "generated_at": "2026-10-29T06:41:44.151Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -352,20 +352,20 @@
         ],
         "SG": [
           "Bogdan Bogdanovic",
+          "Isaiah Crawford",
           "Marcus Smart"
         ],
         "SF": [
-          "Isaiah Crawford",
+          "Jae'Sean Tate",
           "Julian Phillips"
         ],
         "PF": [
-          "Jae'Sean Tate",
+          "Oscar Tshiebwe",
           "Quadir Copeland",
           "Alperen Sengun"
         ],
         "C": [
           "Clint Capela",
-          "Oscar Tshiebwe",
           "Steven Adams"
         ]
       }
