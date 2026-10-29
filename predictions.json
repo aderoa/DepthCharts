@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T06:37:33.263Z",
+  "generated_at": "2026-10-29T06:37:37.791Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -959,13 +959,13 @@
           "Lauri Markkanen"
         ],
         "PF": [
+          "Mo Bamba",
           "Harrison Ingram",
           "Jaren Jackson Jr"
         ],
         "C": [
-          "Mo Bamba",
-          "Tony Bradley",
           "Jaxson Hayes",
+          "Tony Bradley",
           "Jusuf Nurkic"
         ]
       }
