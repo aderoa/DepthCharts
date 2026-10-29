@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T06:43:03.968Z",
+  "generated_at": "2026-10-29T06:43:14.646Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -615,25 +615,25 @@
       "bench": {
         "PG": [
           "Herb Jones",
-          "Jordan Poole",
           "AJ Johnson",
           "Jaron Pierre"
         ],
         "SG": [
           "Bennedict Mathurin",
-          "Bryce McGowens"
+          "Jordan Poole"
         ],
         "SF": [
           "Saddiq Bey",
-          "Trendon Watford"
+          "Bryce McGowens"
         ],
         "PF": [
           "Karlo Matkovic",
-          "Julian Reese"
+          "Trendon Watford",
+          "Malik Dia"
         ],
         "C": [
           "Derik Queen",
-          "Malik Dia",
+          "Julian Reese",
           "Yves Missi"
         ]
       }
