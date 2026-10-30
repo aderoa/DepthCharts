@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T18:43:28.288Z",
+  "generated_at": "2026-10-30T18:43:35.467Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -817,12 +817,11 @@
       "bench": {
         "PG": [
           "Scoot Henderson",
-          "John Tonje",
           "Ja Morant"
         ],
         "SG": [
           "Vit Krejci",
-          "Jayson Kent",
+          "John Tonje",
           "Shaedon Sharpe"
         ],
         "SF": [
@@ -830,7 +829,8 @@
           "Chris Youngblood"
         ],
         "PF": [
-          "Micah Potter"
+          "Micah Potter",
+          "Jayson Kent"
         ],
         "C": [
           "Yang Hansen",
