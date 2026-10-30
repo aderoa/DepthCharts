@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T08:25:43.223Z",
+  "generated_at": "2026-10-30T08:26:18.461Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -179,12 +179,12 @@
       },
       "bench": {
         "PG": [
-          "Craig Porter",
-          "Tyrese Proctor"
+          "Craig Porter"
         ],
         "SG": [
-          "Meleek Thomas",
-          "Tristan Enaruna"
+          "Tyrese Proctor",
+          "Tristan Enaruna",
+          "Meleek Thomas"
         ],
         "SF": [
           "Sam Merrill",
