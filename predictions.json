@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T08:25:16.953Z",
+  "generated_at": "2026-10-30T08:25:30.644Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -610,7 +610,7 @@
         "SG": "Herb Jones",
         "SF": "Trey Murphy",
         "PF": "Zion Williamson",
-        "C": "DeAndre Jordan"
+        "C": "Karlo Matkovic"
       },
       "bench": {
         "PG": [
@@ -628,11 +628,11 @@
           "Trendon Watford"
         ],
         "PF": [
-          "Karlo Matkovic",
+          "Derik Queen",
           "Malik Dia"
         ],
         "C": [
-          "Derik Queen",
+          "DeAndre Jordan",
           "Julian Reese",
           "Yves Missi"
         ]
