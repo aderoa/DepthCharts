@@ -857,13 +857,15 @@
   },
   "POR": {
     "PG": [
-      "Ja Morant",
       "Jrue Holiday",
-      "John Tonje"
+      "Scoot Henderson",
+      "John Tonje",
+      "__SEPARATOR__",
+      "Ja Morant"
     ],
     "SG": [
       "Damian Lillard",
-      "Scoot Henderson",
+      "__SPACER__",
       "Jayson Kent",
       "__SEPARATOR__",
       "Shaedon Sharpe"
