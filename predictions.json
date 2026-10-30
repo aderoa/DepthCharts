@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T17:29:59.882Z",
+  "generated_at": "2026-10-30T17:57:32.731Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -406,16 +406,18 @@
       "starters": {
         "PG": "Darius Garland",
         "SG": "Kris Dunn",
-        "SF": "Kobe Sanders",
-        "PF": "Derrick Jones",
+        "SF": "Derrick Jones",
+        "PF": "Rui Hachimura",
         "C": "Isaiah Jackson"
       },
       "bench": {
         "PG": [
           "Keaton Wagler",
+          "Blake Wesley",
           "Bradley Beal"
         ],
         "SG": [
+          "Kobe Sanders",
           "Cam Christie",
           "Max Strus"
         ],
@@ -427,8 +429,7 @@
         ],
         "PF": [
           "Baba Miller",
-          "Nick Martinelli",
-          "Rui Hachimura"
+          "Nick Martinelli"
         ],
         "C": [
           "Brook Lopez",
