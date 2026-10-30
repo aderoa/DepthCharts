@@ -895,13 +895,11 @@
     ],
     "SG": [
       "Zach LaVine",
-      "Malik Monk",
-      "Nique Clifford"
+      "Malik Monk"
     ],
     "SF": [
       "De'Andre Hunter",
-      "Daeqwon Plowden",
-      "__SPACER__",
+      "Nique Clifford",
       "Leaky Black",
       "__SEPARATOR__",
       "Keegan Murray"
@@ -909,7 +907,9 @@
     "PF": [
       "Precious Achiuwa",
       "Alex Karaban",
+      "Daeqwon Plowden",
       "__SEPARATOR__",
+      "__SPACER__",
       "Dylan Cardwell"
     ],
     "C": [
