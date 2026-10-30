@@ -396,20 +396,22 @@
       "Quenton Jackson",
       "Braden Smith",
       "__SEPARATOR__",
-      "Tyrese Haliburton"
+      "Tyrese Haliburton",
+      "TJ McConnell"
     ],
     "SG": [
       "Kelly Oubre",
       "Jarace Walker",
       "__SPACER__",
-      "TJ McConnell"
+      "__SEPARATOR__",
+      "Ben Sheppard"
     ],
     "SF": [
       "Aaron Nesmith",
-      "Obi Toppin",
       "Kobe Brown",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Ben Sheppard"
+      "Obi Toppin"
     ],
     "PF": [
       "Pascal Siakam",
