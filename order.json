@@ -181,23 +181,27 @@
     "PG": [
       "James Harden",
       "Craig Porter",
-      "Tristan Enaruna"
+      "Tyrese Proctor",
+      "__SPACER__"
     ],
     "SG": [
       "Donovan Mitchell",
       "Meleek Thomas",
+      "Tristan Enaruna",
       "Tyrese Proctor",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "SF": [
       "Peyton Watson",
       "Sam Merrill",
-      "Riley Minix"
+      "Riley Minix",
+      "__SPACER__"
     ],
     "PF": [
       "Evan Mobley",
       "Jaylon Tyson",
       "Ernest Udeh",
+      "__SPACER__",
       "__SEPARATOR__",
       "Nae'Qwan Tomlin"
     ],
