@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T17:03:12.392Z",
+  "generated_at": "2026-10-31T17:03:16.578Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -753,12 +753,12 @@
       "bench": {
         "PG": [
           "Labaron Philon",
-          "Caleb Love"
+          "Caleb Love",
+          "Jaylen Brown"
         ],
         "SG": [
           "Anfernee Simons",
-          "Jabari Walker",
-          "Jaylen Brown"
+          "Jabari Walker"
         ],
         "SF": [
           "Rayan Rupert",
