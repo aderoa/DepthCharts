@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T21:19:30.363Z",
+  "generated_at": "2026-10-31T21:19:34.260Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -762,14 +762,14 @@
         ],
         "SF": [
           "Kentavious Caldwell-Pope",
-          "Rayan Rupert",
           "Dominick Barlow"
         ],
         "PF": [
-          "Justin Edwards",
+          "Rayan Rupert",
           "Ariel Hukporti"
         ],
         "C": [
+          "Justin Edwards",
           "Tacko Fall",
           "Joel Embiid"
         ]
