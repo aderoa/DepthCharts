@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T05:14:56.063Z",
+  "generated_at": "2026-10-31T05:15:07.594Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -780,7 +780,7 @@
         "SG": "Devin Booker",
         "SF": "Dillon Brooks",
         "PF": "Miles Bridges",
-        "C": "Khaman Maluach"
+        "C": "Oso Ighodaro"
       },
       "bench": {
         "PG": [
@@ -797,10 +797,10 @@
         ],
         "PF": [
           "Ryan Dunn",
-          "Koa Peat",
-          "Oso Ighodaro"
+          "Koa Peat"
         ],
         "C": [
+          "Khaman Maluach",
           "Duop Reath",
           "Drew Timme",
           "Mark Williams"
