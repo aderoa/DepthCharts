@@ -807,7 +807,7 @@
     "SF": [
       "Jaylen Brown",
       "Kentavious Caldwell-Pope",
-      "Rayan Rupert",
+      "__SPACER__",
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
@@ -815,7 +815,7 @@
     ],
     "PF": [
       "Dean Wade",
-      "Justin Edwards",
+      "Rayan Rupert",
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
@@ -823,7 +823,7 @@
     ],
     "C": [
       "Adem Bona",
-      "__SPACER__",
+      "Justin Edwards",
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
