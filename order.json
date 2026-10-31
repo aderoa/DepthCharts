@@ -803,28 +803,34 @@
       "VJ Edgecombe",
       "Anfernee Simons",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jabari Walker"
     ],
     "SF": [
-      "LeBron James",
       "Kentavious Caldwell-Pope",
       "Rayan Rupert",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
+      "LeBron James",
       "Dominick Barlow"
     ],
     "PF": [
       "Dean Wade",
       "Justin Edwards",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ariel Hukporti"
     ],
     "C": [
-      "Joel Embiid",
       "Adem Bona",
       "__SPACER__",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Joel Embiid",
       "Tacko Fall"
     ]
   },
