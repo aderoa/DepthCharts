@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T21:19:52.689Z",
+  "generated_at": "2026-10-31T21:26:38.313Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -610,7 +610,7 @@
     "NOP": {
       "starters": {
         "PG": "Jeremiah Fears",
-        "SG": "Dejounte Murray",
+        "SG": "Herb Jones",
         "SF": "Trey Murphy",
         "PF": "Zion Williamson",
         "C": "Karlo Matkovic"
@@ -618,10 +618,10 @@
       "bench": {
         "PG": [
           "Bryce McGowens",
-          "Jaron Pierre"
+          "Jaron Pierre",
+          "Dejounte Murray"
         ],
         "SG": [
-          "Herb Jones",
           "AJ Johnson",
           "Jordan Poole"
         ],
