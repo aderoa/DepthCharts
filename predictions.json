@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T05:14:41.458Z",
+  "generated_at": "2026-10-31T05:14:50.695Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -240,8 +240,8 @@
       "starters": {
         "PG": "Jamal Murray",
         "SG": "Christian Braun",
-        "SF": "Aaron Gordon",
-        "PF": "Trevon Brazile",
+        "SF": "Cameron Johnson",
+        "PF": "Aaron Gordon",
         "C": "Nikola Jokic"
       },
       "bench": {
@@ -259,9 +259,9 @@
           "Spencer Jones"
         ],
         "PF": [
+          "Trevon Brazile",
           "Cam Whitmore",
-          "Zeke Nnaji",
-          "Cameron Johnson"
+          "Zeke Nnaji"
         ],
         "C": [
           "Marvin Bagley",
