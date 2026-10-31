@@ -72,28 +72,29 @@
   "BKN": {
     "PG": [
       "Nolan Traore",
-      "Mikel Brown",
       "Ben Saraf",
-      "__SPACER__",
+      "Terance Mann",
       "__SPACER__",
       "__SEPARATOR__",
-      "Egor Demin"
+      "Mikel Brown"
     ],
     "SG": [
       "Chaney Johnson",
       "Keon Ellis",
-      "Terance Mann"
+      "Drake Powell",
+      "__SPACER__",
+      "Egor Demin"
     ],
     "SF": [
       "Michael Porter",
       "Josh Minott",
-      "__SPACER__",
-      "Drake Powell"
+      "Joshua Jefferson",
+      "__SPACER__"
     ],
     "PF": [
       "Julius Randle",
       "Moritz Wagner",
-      "Joshua Jefferson",
+      "__SPACER__",
       "Tyler Bilodeau"
     ],
     "C": [
