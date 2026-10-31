@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T23:33:50.954Z",
+  "generated_at": "2026-10-31T23:33:58.698Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -483,18 +483,18 @@
       },
       "bench": {
         "PG": [
-          "Ty Jerome",
           "Kris Murray",
-          "Javon Small"
+          "Javon Small",
+          "Ty Jerome"
         ],
         "SG": [
-          "Scotty Pippen Jr",
-          "Taylor Hendricks"
+          "Taylor Hendricks",
+          "Jahmai Mashack",
+          "Scotty Pippen Jr"
         ],
         "SF": [
           "GG Jackson",
-          "Olivier-Maxence Prosper",
-          "Jahmai Mashack"
+          "Olivier-Maxence Prosper"
         ],
         "PF": [
           "Jerami Grant",
