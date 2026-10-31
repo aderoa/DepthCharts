@@ -366,9 +366,7 @@
     "PG": [
       "Fred VanVleet",
       "Marcus Smart",
-      "Bruce Thornton",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Bruce Thornton"
     ],
     "SG": [
       "Amen Thompson",
@@ -383,6 +381,7 @@
       "Julian Phillips"
     ],
     "PF": [
+      "Jabari Smith",
       "Tari Eason",
       "Oscar Tshiebwe",
       "Quadir Copeland",
@@ -390,8 +389,8 @@
       "Alperen Sengun"
     ],
     "C": [
-      "Jabari Smith",
       "Clint Capela",
+      "Jabari Smith",
       "__SPACER__",
       "__SEPARATOR__",
       "Steven Adams"
