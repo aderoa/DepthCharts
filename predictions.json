@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T21:26:38.313Z",
+  "generated_at": "2026-10-31T21:26:46.592Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -623,11 +623,12 @@
         ],
         "SG": [
           "AJ Johnson",
+          "Trendon Watford",
           "Jordan Poole"
         ],
         "SF": [
           "Bennedict Mathurin",
-          "Trendon Watford"
+          "Malik Dia"
         ],
         "PF": [
           "Saddiq Bey",
@@ -636,7 +637,6 @@
         "C": [
           "Derik Queen",
           "DeAndre Jordan",
-          "Malik Dia",
           "Yves Missi"
         ]
       }
