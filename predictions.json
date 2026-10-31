@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T20:10:35.484Z",
+  "generated_at": "2026-10-31T21:04:42.383Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -78,21 +78,21 @@
       },
       "bench": {
         "PG": [
-          "Mikel Brown",
           "Ben Saraf",
-          "Egor Demin"
+          "Terance Mann",
+          "Mikel Brown"
         ],
         "SG": [
           "Keon Ellis",
-          "Terance Mann"
+          "Drake Powell",
+          "Egor Demin"
         ],
         "SF": [
           "Josh Minott",
-          "Drake Powell"
+          "Joshua Jefferson"
         ],
         "PF": [
           "Moritz Wagner",
-          "Joshua Jefferson",
           "Tyler Bilodeau"
         ],
         "C": [
