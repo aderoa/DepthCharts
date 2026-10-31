@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T18:04:23.176Z",
+  "generated_at": "2026-10-31T18:06:25.852Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -943,7 +943,7 @@
         "PG": "Keyonte George",
         "SG": "Darryn Peterson",
         "SF": "Ace Bailey",
-        "PF": "Josh Green",
+        "PF": "Lauri Markkanen",
         "C": "Jaxson Hayes"
       },
       "bench": {
@@ -957,10 +957,10 @@
         ],
         "SF": [
           "Brice Sensabaugh",
-          "Harrison Ingram",
-          "Lauri Markkanen"
+          "Harrison Ingram"
         ],
         "PF": [
+          "Josh Green",
           "Sviatoslav Mykhailiuk",
           "Kyle Filipowski",
           "Jaren Jackson Jr"
