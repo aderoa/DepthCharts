@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T20:10:05.109Z",
+  "generated_at": "2026-10-31T20:10:22.040Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -954,15 +954,16 @@
         ],
         "SG": [
           "Brice Sensabaugh",
-          "Josh Okogie",
           "Kobe Bufkin"
         ],
         "SF": [
-          "Sviatoslav Mykhailiuk",
-          "Harrison Ingram"
+          "Brice Sensabaugh",
+          "Josh Green",
+          "Harrison Ingram",
+          "Josh Okogie"
         ],
         "PF": [
-          "Josh Green",
+          "Sviatoslav Mykhailiuk",
           "Kyle Filipowski",
           "Jaren Jackson Jr"
         ],
