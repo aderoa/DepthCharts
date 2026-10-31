@@ -185,24 +185,19 @@
     ],
     "SG": [
       "Donovan Mitchell",
+      "Meleek Thomas",
       "Tyrese Proctor",
       "Riley Minix",
-      "__SPACER__",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Meleek Thomas"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Peyton Watson",
       "Sam Merrill",
-      "Ernest Udeh",
-      "__SPACER__"
+      "Ernest Udeh"
     ],
     "PF": [
       "Evan Mobley",
       "Jaylon Tyson",
-      "Khalifa Diop",
-      "__SPACER__",
       "__SEPARATOR__",
       "Nae'Qwan Tomlin"
     ],
@@ -210,7 +205,7 @@
       "Jarrett Allen",
       "Mario Hezonja",
       "Thomas Bryant",
-      "__SPACER__"
+      "Khalifa Diop"
     ]
   },
   "DAL": {
