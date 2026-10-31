@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T21:26:46.592Z",
+  "generated_at": "2026-10-31T22:11:59.928Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -580,7 +580,7 @@
         "SG": "Ayo Dosunmu",
         "SF": "Jaden McDaniels",
         "PF": "Jonathan Kuminga",
-        "C": "Rudy Gobert"
+        "C": "Joan Beringer"
       },
       "bench": {
         "PG": [
@@ -602,7 +602,7 @@
           "Enrique Freeman"
         ],
         "C": [
-          "Joan Beringer",
+          "Rudy Gobert",
           "Rocco Zikarsky"
         ]
       }
