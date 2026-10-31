@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T05:17:46.525Z",
+  "generated_at": "2026-10-31T05:18:01.292Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -80,14 +80,14 @@
         "PG": [
           "Mikel Brown",
           "Ben Saraf",
-          "Terance Mann",
           "Egor Demin"
         ],
         "SG": [
           "Keon Ellis",
-          "Josh Minott"
+          "Terance Mann"
         ],
         "SF": [
+          "Josh Minott",
           "Drake Powell"
         ],
         "PF": [
