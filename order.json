@@ -328,34 +328,34 @@
       "De'Anthony Melton",
       "Brandon Williams",
       "LJ Cryer",
-      "__SPACER__",
       "__SEPARATOR__",
       "Stephen Curry"
     ],
     "SG": [
       "Brandin Podziemski",
       "Will Richard",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jimmy Butler"
     ],
     "SF": [
       "Yaxel Lendeborg",
       "Gary Payton II",
+      "__SPACER__",
       "__SEPARATOR__",
       "Moses Moody"
     ],
     "PF": [
       "Gui Santos",
       "Georges Niang",
-      "Malevy Leons"
+      "Malevy Leons",
+      "Draymond Green"
     ],
     "C": [
       "Graham Ike",
       "Al Horford",
       "Charles Bassey",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Draymond Green",
       "Kristaps Porzingis"
     ]
   },
