@@ -473,32 +473,35 @@
     "PG": [
       "Luka Doncic",
       "Jaden Hardy",
-      "Bronny James"
+      "Bronny James",
+      "__SPACER__"
     ],
     "SG": [
       "Austin Reaves",
       "Collin Sexton",
       "Chris Manon",
-      "__SEPARATOR__",
-      "Cameron Carr"
+      "__SPACER__"
     ],
     "SF": [
       "Matisse Thybulle",
       "Quentin Grimes",
-      "Kevon Looney",
+      "Cameron Carr",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ziaire Williams"
     ],
     "PF": [
       "Jake LaRavia",
       "Jarred Vanderbilt",
-      "Arthur Kaluma",
+      "Kevon Looney",
+      "__SPACER__",
       "__SEPARATOR__",
       "Adou Thiero"
     ],
     "C": [
       "Walker Kessler",
       "Sandro Mamukelashvili",
+      "Arthur Kaluma",
       "Lawson Lovering"
     ]
   },
