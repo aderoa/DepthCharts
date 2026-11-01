@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T23:37:02.330Z",
+  "generated_at": "2026-11-01T00:05:52.392Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -454,21 +454,21 @@
         ],
         "SG": [
           "Collin Sexton",
-          "Chris Manon",
-          "Cameron Carr"
+          "Chris Manon"
         ],
         "SF": [
           "Quentin Grimes",
-          "Kevon Looney",
+          "Cameron Carr",
           "Ziaire Williams"
         ],
         "PF": [
           "Jarred Vanderbilt",
-          "Arthur Kaluma",
+          "Kevon Looney",
           "Adou Thiero"
         ],
         "C": [
           "Sandro Mamukelashvili",
+          "Arthur Kaluma",
           "Lawson Lovering"
         ]
       }
