@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T00:45:17.886Z",
+  "generated_at": "2026-11-01T00:45:24.246Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -484,10 +484,10 @@
       "bench": {
         "PG": [
           "Javon Small",
-          "Kris Murray",
           "Ty Jerome"
         ],
         "SG": [
+          "Kris Murray",
           "Taylor Hendricks",
           "Jahmai Mashack",
           "Scotty Pippen Jr"
