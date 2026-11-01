@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T20:34:15.990Z",
+  "generated_at": "2026-11-01T20:34:22.411Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -339,7 +339,7 @@
     },
     "HOU": {
       "starters": {
-        "PG": "Marcus Smart",
+        "PG": "Fred VanVleet",
         "SG": "Amen Thompson",
         "SF": "Kevin Durant",
         "PF": "Jabari Smith",
@@ -347,20 +347,20 @@
       },
       "bench": {
         "PG": [
-          "Bruce Thornton",
-          "Fred VanVleet"
+          "Marcus Smart",
+          "Bruce Thornton"
         ],
         "SG": [
           "Bogdan Bogdanovic",
+          "Isaiah Crawford",
           "Reed Sheppard"
         ],
         "SF": [
-          "Tari Eason",
-          "Isaiah Crawford",
+          "Jae'Sean Tate",
           "Julian Phillips"
         ],
         "PF": [
-          "Jae'Sean Tate",
+          "Tari Eason",
           "Quadir Copeland"
         ],
         "C": [
