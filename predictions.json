@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T20:04:04.760Z",
+  "generated_at": "2026-11-01T20:04:08.953Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -621,17 +621,17 @@
         ],
         "SG": [
           "Herb Jones",
-          "Bennedict Mathurin",
           "AJ Johnson",
           "Jordan Poole"
         ],
         "SF": [
-          "Trendon Watford",
-          "Malik Dia"
+          "Bennedict Mathurin",
+          "Trendon Watford"
         ],
         "PF": [
           "Saddiq Bey",
-          "Julian Reese"
+          "Julian Reese",
+          "Malik Dia"
         ],
         "C": [
           "Derik Queen",
