@@ -508,9 +508,8 @@
   "MEM": {
     "PG": [
       "Cam Spencer",
-      "Kris Murray",
       "Javon Small",
-      "__SPACER__",
+      "Kris Murray",
       "__SEPARATOR__",
       "Ty Jerome"
     ],
@@ -518,27 +517,23 @@
       "Cedric Coward",
       "Taylor Hendricks",
       "Jahmai Mashack",
-      "__SPACER__",
       "__SEPARATOR__",
       "Scotty Pippen Jr"
     ],
     "SF": [
       "Jaylen Wells",
       "GG Jackson",
-      "Olivier-Maxence Prosper",
-      "__SPACER__"
+      "Olivier-Maxence Prosper"
     ],
     "PF": [
       "Cameron Boozer",
       "Jerami Grant",
-      "Karim Lopez",
-      "__SPACER__"
+      "Karim Lopez"
     ],
     "C": [
       "Zach Edey",
       "Isaiah Stewart",
       "Carson Cooper",
-      "__SPACER__",
       "__SEPARATOR__",
       "Quinten Post"
     ]
