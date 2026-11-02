@@ -965,15 +965,17 @@
     ],
     "PF": [
       "Scottie Barnes",
-      "Trayce Jackson-Davis",
-      "__SPACER__",
       "Kyle Anderson",
       "__SEPARATOR__",
       "Nate Bittle"
     ],
     "C": [
-      "Jakob Poeltl",
-      "Collin Murray-Boyles"
+      "Trayce Jackson-Davis",
+      "Collin Murray-Boyles",
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jakob Poeltl"
     ]
   },
   "UTA": {
