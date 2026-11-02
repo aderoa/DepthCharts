@@ -204,24 +204,23 @@
   },
   "DAL": {
     "PG": [
-      "Kyrie Irving",
+      "Walter Clayton",
       "Marcus Sasser",
       "__SPACER__",
       "__SEPARATOR__",
-      "Sergio De Larrea"
+      "Kyrie Irving"
     ],
     "SG": [
       "Max Christie",
-      "Walter Clayton",
       "Jett Howard",
       "__SEPARATOR__",
-      "Tarik Biberovic"
+      "Sergio De Larrea"
     ],
     "SF": [
       "Cooper Flagg",
       "Zaccharie Risacher",
-      "__SEPARATOR__",
-      "Naji Marshall"
+      "Naji Marshall",
+      "Tarik Biberovic"
     ],
     "PF": [
       "PJ Washington",
@@ -234,7 +233,6 @@
       "Daniel Gafford",
       "Morez Johnson",
       "Moussa Cisse",
-      "__SPACER__",
       "__SEPARATOR__",
       "Dereck Lively"
     ]
