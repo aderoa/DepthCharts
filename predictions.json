@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T05:26:42.936Z",
+  "generated_at": "2026-11-02T05:29:13.991Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -579,7 +579,7 @@
         "SG": "Ayo Dosunmu",
         "SF": "Jaden McDaniels",
         "PF": "Jonathan Kuminga",
-        "C": "Joan Beringer"
+        "C": "Rudy Gobert"
       },
       "bench": {
         "PG": [
@@ -593,16 +593,16 @@
         ],
         "SF": [
           "Terrence Shannon",
+          "Cody Williams",
           "Anthony Edwards"
         ],
         "PF": [
-          "Cody Williams",
+          "Trey Lyles",
           "Enrique Freeman"
         ],
         "C": [
-          "Trey Lyles",
-          "Rocco Zikarsky",
-          "Rudy Gobert"
+          "Joan Beringer",
+          "Rocco Zikarsky"
         ]
       }
     },
