@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T20:44:01.748Z",
+  "generated_at": "2026-11-02T20:44:51.009Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -70,8 +70,8 @@
     },
     "BKN": {
       "starters": {
-        "PG": "Nolan Traore",
-        "SG": "Chaney Johnson",
+        "PG": "Mikel Brown",
+        "SG": "Nolan Traore",
         "SF": "Michael Porter",
         "PF": "Julius Randle",
         "C": "Day'Ron Sharpe"
@@ -79,10 +79,10 @@
       "bench": {
         "PG": [
           "Terance Mann",
-          "Ben Saraf",
-          "Mikel Brown"
+          "Ben Saraf"
         ],
         "SG": [
+          "Chaney Johnson",
           "Keon Ellis",
           "Drake Powell",
           "Egor Demin"
