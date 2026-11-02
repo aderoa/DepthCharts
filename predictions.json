@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T20:44:51.009Z",
+  "generated_at": "2026-11-02T20:44:55.495Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -84,15 +84,15 @@
         "SG": [
           "Chaney Johnson",
           "Keon Ellis",
-          "Drake Powell",
           "Egor Demin"
         ],
         "SF": [
           "Josh Minott",
-          "Joshua Jefferson"
+          "Drake Powell"
         ],
         "PF": [
           "Moritz Wagner",
+          "Joshua Jefferson",
           "Tyler Bilodeau"
         ],
         "C": [
