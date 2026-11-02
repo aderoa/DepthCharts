@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T05:32:41.794Z",
+  "generated_at": "2026-11-02T05:38:55.486Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -78,8 +78,8 @@
       },
       "bench": {
         "PG": [
-          "Ben Saraf",
           "Terance Mann",
+          "Ben Saraf",
           "Mikel Brown"
         ],
         "SG": [
