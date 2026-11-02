@@ -886,7 +886,8 @@
     ],
     "SG": [
       "Zach LaVine",
-      "Malik Monk"
+      "Malik Monk",
+      "__SPACER__"
     ],
     "SF": [
       "De'Andre Hunter",
@@ -900,13 +901,12 @@
       "Alex Karaban",
       "Daeqwon Plowden",
       "__SEPARATOR__",
-      "__SPACER__",
-      "Dylan Cardwell"
+      "__SPACER__"
     ],
     "C": [
       "Domantas Sabonis",
       "Jonathan Mogbo",
-      "__SPACER__",
+      "Dylan Cardwell",
       "__SEPARATOR__",
       "Maxime Raynaud"
     ]
