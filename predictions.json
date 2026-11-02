@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T05:30:26.579Z",
+  "generated_at": "2026-11-02T05:32:38.882Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -474,7 +474,7 @@
     },
     "MEM": {
       "starters": {
-        "PG": "Cam Spencer",
+        "PG": "Ty Jerome",
         "SG": "Cedric Coward",
         "SF": "Jaylen Wells",
         "PF": "Cameron Boozer",
@@ -482,9 +482,9 @@
       },
       "bench": {
         "PG": [
+          "Cam Spencer",
           "Javon Small",
-          "Jahmai Mashack",
-          "Ty Jerome"
+          "Jahmai Mashack"
         ],
         "SG": [
           "Kris Murray",
