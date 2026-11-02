@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T05:39:44.371Z",
+  "generated_at": "2026-11-02T05:40:31.312Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -921,15 +921,15 @@
         ],
         "SG": [
           "Allen Graves",
-          "Alijah Martin"
+          "Malachi Smith"
         ],
         "SF": [
-          "Jamison Battle",
-          "Malachi Smith",
+          "Alijah Martin",
+          "Kyle Anderson",
           "Kawhi Leonard"
         ],
         "PF": [
-          "Kyle Anderson",
+          "Jamison Battle",
           "Nate Bittle"
         ],
         "C": [
