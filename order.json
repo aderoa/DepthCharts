@@ -781,12 +781,12 @@
     "PG": [
       "Tyrese Maxey",
       "Labaron Philon",
-      "Caleb Love",
-      "LeBron James"
+      "Caleb Love"
     ],
     "SG": [
       "VJ Edgecombe",
       "Anfernee Simons",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Dominick Barlow"
@@ -795,10 +795,13 @@
       "Jaylen Brown",
       "Kentavious Caldwell-Pope",
       "Rayan Rupert",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ariel Hukporti"
     ],
     "PF": [
+      "LeBron James",
+      "__SPACER__",
       "Dean Wade",
       "Jabari Walker",
       "__SPACER__",
@@ -808,9 +811,8 @@
     "C": [
       "Adem Bona",
       "Justin Edwards",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Tacko Fall"
+      "Tacko Fall",
+      "__SPACER__"
     ]
   },
   "PHX": {
