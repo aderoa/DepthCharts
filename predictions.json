@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T20:48:19.533Z",
+  "generated_at": "2026-11-02T20:48:40.346Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -361,12 +361,12 @@
         ],
         "PF": [
           "Tari Eason",
-          "Quadir Copeland"
+          "Quadir Copeland",
+          "Steven Adams"
         ],
         "C": [
-          "Clint Capela",
           "Oscar Tshiebwe",
-          "Steven Adams"
+          "Clint Capela"
         ]
       }
     },
