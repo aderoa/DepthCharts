@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T20:43:57.348Z",
+  "generated_at": "2026-11-02T20:44:01.748Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -719,15 +719,15 @@
       "bench": {
         "PG": [
           "Alex Morales",
-          "Jevon Carter",
           "Anthony Black",
           "Jalen Suggs"
         ],
         "SG": [
-          "Jamal Cain",
+          "Jevon Carter",
           "Noah Penda"
         ],
         "SF": [
+          "Jamal Cain",
           "Jonathan Isaac"
         ],
         "PF": [
