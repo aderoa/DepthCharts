@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T20:45:06.652Z",
+  "generated_at": "2026-11-02T20:45:42.365Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -983,17 +983,16 @@
       "bench": {
         "PG": [
           "Carlton Carrington",
-          "Tre Mann"
+          "Tre Mann",
+          "Reece Beekman"
         ],
         "SG": [
           "Tre Johnson",
-          "Reece Beekman",
           "Jamir Watkins"
         ],
         "SF": [
           "Khris Middleton",
-          "Will Riley",
-          "Justin Champagnie"
+          "Will Riley"
         ],
         "PF": [
           "Bilal Coulibaly",
