@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T20:47:17.161Z",
+  "generated_at": "2026-11-02T20:47:19.626Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -374,7 +374,7 @@
       "starters": {
         "PG": "Quenton Jackson",
         "SG": "Kelly Oubre",
-        "SF": "Kobe Brown",
+        "SF": "Obi Toppin",
         "PF": "Jalen Slawson",
         "C": "Jay Huff"
       },
@@ -390,8 +390,8 @@
           "Tyrese Haliburton"
         ],
         "SF": [
-          "Aaron Nesmith",
-          "Obi Toppin"
+          "Kobe Brown",
+          "Aaron Nesmith"
         ],
         "PF": [
           "Pascal Siakam",
