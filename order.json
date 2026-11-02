@@ -67,8 +67,8 @@
   "BKN": {
     "PG": [
       "Nolan Traore",
-      "Ben Saraf",
       "Terance Mann",
+      "Ben Saraf",
       "__SPACER__",
       "__SEPARATOR__",
       "Mikel Brown"
@@ -78,6 +78,7 @@
       "Keon Ellis",
       "Drake Powell",
       "__SPACER__",
+      "__SEPARATOR__",
       "Egor Demin"
     ],
     "SF": [
@@ -89,8 +90,8 @@
     "PF": [
       "Julius Randle",
       "Moritz Wagner",
-      "__SPACER__",
-      "Tyler Bilodeau"
+      "Tyler Bilodeau",
+      "__SPACER__"
     ],
     "C": [
       "Day'Ron Sharpe",
