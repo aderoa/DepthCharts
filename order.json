@@ -391,14 +391,15 @@
       "Quenton Jackson",
       "Braden Smith",
       "__SEPARATOR__",
-      "Andrew Nembhard",
+      "Tyrese Haliburton",
       "TJ McConnell"
     ],
     "SG": [
       "Kelly Oubre",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Ben Sheppard",
-      "Tyrese Haliburton"
+      "Andrew Nembhard",
+      "Ben Sheppard"
     ],
     "SF": [
       "Obi Toppin",
@@ -410,7 +411,6 @@
       "Jarace Walker",
       "Jalen Slawson",
       "__SEPARATOR__",
-      "__SPACER__",
       "Pascal Siakam",
       "Johnny Furphy"
     ],
