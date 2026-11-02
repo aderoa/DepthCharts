@@ -423,6 +423,7 @@
       "Darius Garland",
       "Keaton Wagler",
       "Blake Wesley",
+      "__SPACER__",
       "__SEPARATOR__",
       "Bradley Beal"
     ],
@@ -430,27 +431,30 @@
       "Kris Dunn",
       "Kobe Sanders",
       "Cam Christie",
-      "__SEPARATOR__",
       "Max Strus"
     ],
     "SF": [
-      "Derrick Jones",
       "Gradey Dick",
       "__SPACER__",
       "Jalen Pickett",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Derrick Jones",
       "Jordan Miller"
     ],
     "PF": [
-      "Rui Hachimura",
       "Baba Miller",
+      "__SPACER__",
       "Nick Martinelli",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Rui Hachimura",
       "Brandon Ingram"
     ],
     "C": [
       "Isaiah Jackson",
       "Brook Lopez",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Yanic Konan Niederhauser"
