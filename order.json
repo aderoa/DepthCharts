@@ -396,7 +396,6 @@
     ],
     "SG": [
       "Kelly Oubre",
-      "Jarace Walker",
       "__SEPARATOR__",
       "Ben Sheppard",
       "Tyrese Haliburton"
@@ -404,14 +403,14 @@
     "SF": [
       "Obi Toppin",
       "Kobe Brown",
-      "__SPACER__",
       "__SEPARATOR__",
       "Aaron Nesmith"
     ],
     "PF": [
+      "Jarace Walker",
       "Jalen Slawson",
-      "__SPACER__",
       "__SEPARATOR__",
+      "__SPACER__",
       "Pascal Siakam",
       "Johnny Furphy"
     ],
