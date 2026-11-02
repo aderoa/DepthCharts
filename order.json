@@ -1023,6 +1023,7 @@
       "Trae Young",
       "Carlton Carrington",
       "Tre Mann",
+      "__SEPARATOR__",
       "Reece Beekman"
     ],
     "SG": [
@@ -1035,19 +1036,23 @@
     "SF": [
       "AJ Dybantsa",
       "Khris Middleton",
-      "Will Riley",
-      "__SEPARATOR__"
+      "Justin Champagnie"
     ],
     "PF": [
       "Anthony Davis",
       "Bilal Coulibaly",
-      "Anthony Gill"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Anthony Gill",
+      "Justin Champagnie"
     ],
     "C": [
-      "Alex Sarr",
       "Deandre Ayton",
+      "Will Riley",
+      "__SPACER__",
       "Felix Okpara",
       "__SEPARATOR__",
+      "Alex Sarr",
       "Tristan Vukcevic"
     ]
   }
