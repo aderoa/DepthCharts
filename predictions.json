@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T05:29:13.991Z",
+  "generated_at": "2026-11-02T05:30:26.579Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -912,7 +912,7 @@
         "SG": "RJ Barrett",
         "SF": "Ja'Kobe Walter",
         "PF": "Scottie Barnes",
-        "C": "Jakob Poeltl"
+        "C": "Trayce Jackson-Davis"
       },
       "bench": {
         "PG": [
@@ -929,12 +929,12 @@
           "Kawhi Leonard"
         ],
         "PF": [
-          "Trayce Jackson-Davis",
           "Kyle Anderson",
           "Nate Bittle"
         ],
         "C": [
-          "Collin Murray-Boyles"
+          "Collin Murray-Boyles",
+          "Jakob Poeltl"
         ]
       }
     },
