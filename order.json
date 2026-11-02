@@ -74,7 +74,7 @@
       "Nolan Traore",
       "Chaney Johnson",
       "Keon Ellis",
-      "Drake Powell",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Egor Demin"
@@ -82,14 +82,14 @@
     "SF": [
       "Michael Porter",
       "Josh Minott",
-      "Joshua Jefferson",
+      "Drake Powell",
       "__SPACER__"
     ],
     "PF": [
       "Julius Randle",
       "Moritz Wagner",
-      "Tyler Bilodeau",
-      "__SPACER__"
+      "Joshua Jefferson",
+      "Tyler Bilodeau"
     ],
     "C": [
       "Day'Ron Sharpe",
