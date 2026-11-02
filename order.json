@@ -354,36 +354,31 @@
     "PG": [
       "Fred VanVleet",
       "Marcus Smart",
-      "Bruce Thornton",
-      "__SPACER__"
+      "Bruce Thornton"
     ],
     "SG": [
       "Amen Thompson",
       "Bogdan Bogdanovic",
       "Isaiah Crawford",
-      "__SPACER__",
       "__SEPARATOR__",
       "Reed Sheppard"
     ],
     "SF": [
       "Kevin Durant",
       "Jae'Sean Tate",
-      "__SPACER__",
       "Julian Phillips"
     ],
     "PF": [
       "Jabari Smith",
       "Tari Eason",
       "Quadir Copeland",
-      "__SPACER__"
+      "Steven Adams"
     ],
     "C": [
       "Alperen Sengun",
-      "Clint Capela",
       "Oscar Tshiebwe",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Steven Adams"
+      "Clint Capela"
     ]
   },
   "IND": {
