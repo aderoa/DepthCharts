@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T21:05:22.170Z",
+  "generated_at": "2026-11-02T21:05:24.280Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -309,7 +309,7 @@
         "SG": "Brandin Podziemski",
         "SF": "Yaxel Lendeborg",
         "PF": "Georges Niang",
-        "C": "Graham Ike"
+        "C": "Draymond Green"
       },
       "bench": {
         "PG": [
@@ -327,10 +327,10 @@
         ],
         "PF": [
           "Gui Santos",
-          "Malevy Leons",
-          "Draymond Green"
+          "Malevy Leons"
         ],
         "C": [
+          "Graham Ike",
           "Al Horford",
           "Charles Bassey",
           "Kristaps Porzingis"
