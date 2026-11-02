@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T21:04:50.407Z",
+  "generated_at": "2026-11-02T21:04:58.580Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -443,7 +443,7 @@
         "PG": "Luka Doncic",
         "SG": "Austin Reaves",
         "SF": "Matisse Thybulle",
-        "PF": "Jake LaRavia",
+        "PF": "Ziaire Williams",
         "C": "Walker Kessler"
       },
       "bench": {
@@ -457,17 +457,17 @@
         ],
         "SF": [
           "Quentin Grimes",
-          "Cameron Carr",
-          "Ziaire Williams"
+          "Cameron Carr"
         ],
         "PF": [
+          "Jake LaRavia",
           "Jarred Vanderbilt",
-          "Kevon Looney",
-          "Adou Thiero",
-          "Arthur Kaluma"
+          "Arthur Kaluma",
+          "Adou Thiero"
         ],
         "C": [
           "Sandro Mamukelashvili",
+          "Kevon Looney",
           "Lawson Lovering"
         ]
       }
