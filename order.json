@@ -311,23 +311,25 @@
       "Stephen Curry",
       "De'Anthony Melton",
       "LJ Cryer",
+      "__SEPARATOR__",
       "Brandon Williams"
     ],
     "SG": [
-      "Brandin Podziemski",
       "Will Richard",
+      "Gary Payton II",
       "__SEPARATOR__",
       "Jimmy Butler"
     ],
     "SF": [
-      "Yaxel Lendeborg",
-      "Gary Payton II",
+      "Brandin Podziemski",
+      "Georges Niang",
       "Malevy Leons",
       "__SEPARATOR__",
       "Moses Moody"
     ],
     "PF": [
-      "Georges Niang",
+      "Yaxel Lendeborg",
+      "__SPACER__",
       "Gui Santos",
       "Graham Ike"
     ],
