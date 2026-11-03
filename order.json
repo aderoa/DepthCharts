@@ -312,14 +312,12 @@
     "PG": [
       "Stephen Curry",
       "De'Anthony Melton",
-      "__SPACER__",
-      "LJ Cryer"
+      "LJ Cryer",
+      "Brandon Williams"
     ],
     "SG": [
       "Brandin Podziemski",
       "Will Richard",
-      "Brandon Williams",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jimmy Butler"
     ],
@@ -327,7 +325,6 @@
       "Yaxel Lendeborg",
       "Gary Payton II",
       "Malevy Leons",
-      "__SPACER__",
       "__SEPARATOR__",
       "Moses Moody"
     ],
@@ -340,8 +337,6 @@
       "Draymond Green",
       "Al Horford",
       "Charles Bassey",
-      "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Kristaps Porzingis"
     ]
