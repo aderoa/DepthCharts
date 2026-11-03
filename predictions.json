@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T06:34:21.383Z",
+  "generated_at": "2026-11-03T06:34:34.659Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -49,22 +49,22 @@
           "Mike Conley"
         ],
         "SG": [
+          "Sam Hauser",
           "Ron Harper Jr",
-          "Dillon Mitchell",
           "Devin Carter"
         ],
         "SF": [
-          "Sam Hauser",
-          "Chris Cenac",
+          "Jordan Walsh",
+          "Dillon Mitchell",
           "Paul George"
         ],
         "PF": [
-          "Jordan Walsh",
-          "Amari Williams"
+          "Luka Garza",
+          "Chris Cenac"
         ],
         "C": [
           "Mitchell Robinson",
-          "Luka Garza"
+          "Amari Williams"
         ]
       }
     },
