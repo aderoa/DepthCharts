@@ -632,13 +632,15 @@
   "NOP": {
     "PG": [
       "Jeremiah Fears",
-      "Dejounte Murray",
       "Bryce McGowens",
       "Jaron Pierre",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Dejounte Murray"
     ],
     "SG": [
       "Herb Jones",
+      "Bennedict Mathurin",
       "AJ Johnson",
       "__SPACER__",
       "__SEPARATOR__",
@@ -646,15 +648,15 @@
     ],
     "SF": [
       "Trey Murphy",
-      "Bennedict Mathurin",
-      "Trendon Watford",
-      "__SPACER__"
+      "Saddiq Bey",
+      "Malik Dia"
     ],
     "PF": [
       "Zion Williamson",
-      "Saddiq Bey",
+      "Trendon Watford",
+      "__SPACER__",
       "Julian Reese",
-      "Malik Dia"
+      "__SPACER__"
     ],
     "C": [
       "Karlo Matkovic",
