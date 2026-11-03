@@ -594,33 +594,29 @@
       "LaMelo Ball",
       "Bones Hyland",
       "Zyon Pullin",
-      "__SPACER__"
+      "Donte DiVincenzo"
     ],
     "SG": [
       "Ayo Dosunmu",
       "Jaylen Clark",
       "Isaiah Evans",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Donte DiVincenzo"
+      "Anthony Edwards"
     ],
     "SF": [
       "Jaden McDaniels",
-      "Terrence Shannon",
       "Cody Williams",
       "__SPACER__",
       "__SEPARATOR__",
-      "Anthony Edwards"
+      "Terrence Shannon"
     ],
     "PF": [
       "Jonathan Kuminga",
       "Trey Lyles",
-      "Enrique Freeman",
-      "__SPACER__"
+      "Enrique Freeman"
     ],
     "C": [
       "Rudy Gobert",
-      "__SPACER__",
       "Joan Beringer",
       "Rocco Zikarsky"
     ]
