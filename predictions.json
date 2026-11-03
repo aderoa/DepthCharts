@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T06:33:53.508Z",
+  "generated_at": "2026-11-03T06:33:57.641Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -11,16 +11,16 @@
       },
       "bench": {
         "PG": [
-          "Corey Kispert",
           "RayJ Dennis",
           "Kingston Flemings"
         ],
         "SG": [
-          "Aaron Wiggins",
+          "Corey Kispert",
           "Keshon Gilbert",
           "Jalen Johnson"
         ],
         "SF": [
+          "Aaron Wiggins",
           "Dorian Finney-Smith",
           "Jalen Wilson",
           "Mouhamed Gueye"
