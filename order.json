@@ -317,6 +317,7 @@
     "SG": [
       "Will Richard",
       "Gary Payton II",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jimmy Butler"
     ],
@@ -329,9 +330,8 @@
     ],
     "PF": [
       "Yaxel Lendeborg",
-      "__SPACER__",
-      "Gui Santos",
-      "Graham Ike"
+      "Graham Ike",
+      "Gui Santos"
     ],
     "C": [
       "Draymond Green",
