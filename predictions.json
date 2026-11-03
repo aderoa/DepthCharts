@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T05:09:45.512Z",
+  "generated_at": "2026-11-03T05:10:55.325Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -584,17 +584,17 @@
       "bench": {
         "PG": [
           "Bones Hyland",
-          "Zyon Pullin"
+          "Zyon Pullin",
+          "Donte DiVincenzo"
         ],
         "SG": [
           "Jaylen Clark",
           "Isaiah Evans",
-          "Donte DiVincenzo"
+          "Anthony Edwards"
         ],
         "SF": [
-          "Terrence Shannon",
           "Cody Williams",
-          "Anthony Edwards"
+          "Terrence Shannon"
         ],
         "PF": [
           "Trey Lyles",
