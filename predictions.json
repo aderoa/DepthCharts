@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T06:34:18.489Z",
+  "generated_at": "2026-11-03T06:34:21.383Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -41,7 +41,7 @@
         "SG": "Hugo Gonzalez",
         "SF": "Baylor Scheierman",
         "PF": "Jayson Tatum",
-        "C": "Mitchell Robinson"
+        "C": "Neemias Queta"
       },
       "bench": {
         "PG": [
@@ -63,7 +63,7 @@
           "Amari Williams"
         ],
         "C": [
-          "Neemias Queta",
+          "Mitchell Robinson",
           "Luka Garza"
         ]
       }
