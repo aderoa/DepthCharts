@@ -631,12 +631,13 @@
   },
   "NOP": {
     "PG": [
+      "Jeremiah Fears",
       "Dejounte Murray",
       "Bryce McGowens",
-      "Jaron Pierre"
+      "Jaron Pierre",
+      "__SPACER__"
     ],
     "SG": [
-      "Jeremiah Fears",
       "Herb Jones",
       "AJ Johnson",
       "__SPACER__",
@@ -647,7 +648,6 @@
       "Trey Murphy",
       "Bennedict Mathurin",
       "Trendon Watford",
-      "__SPACER__",
       "__SPACER__"
     ],
     "PF": [
