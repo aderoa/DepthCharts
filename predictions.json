@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-02T21:07:03.246Z",
+  "generated_at": "2026-11-03T05:03:08.128Z",
   "teams": {
     "ATL": {
       "starters": {
         "PG": "CJ McCollum",
         "SG": "Nickeil Alexander-Walker",
         "SF": "Dyson Daniels",
-        "PF": "Jalen Johnson",
+        "PF": "Dorian Finney-Smith",
         "C": "Onyeka Okongwu"
       },
       "bench": {
@@ -25,11 +25,11 @@
           "Mouhamed Gueye"
         ],
         "PF": [
-          "Dorian Finney-Smith",
+          "Asa Newell",
+          "Jalen Johnson",
           "Jock Landale"
         ],
         "C": [
-          "Asa Newell",
           "Zuby Ejiofor",
           "Henri Veesaar"
         ]
