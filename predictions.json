@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T05:06:02.156Z",
+  "generated_at": "2026-11-03T05:08:42.458Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -173,7 +173,7 @@
       "starters": {
         "PG": "James Harden",
         "SG": "Donovan Mitchell",
-        "SF": "Peyton Watson",
+        "SF": "Jaylon Tyson",
         "PF": "Evan Mobley",
         "C": "Jarrett Allen"
       },
@@ -188,10 +188,10 @@
         ],
         "SF": [
           "Sam Merrill",
-          "Riley Minix"
+          "Riley Minix",
+          "Peyton Watson"
         ],
         "PF": [
-          "Jaylon Tyson",
           "Ernest Udeh",
           "Nae'Qwan Tomlin"
         ],
