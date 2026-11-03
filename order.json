@@ -142,13 +142,13 @@
       "Josh Giddey",
       "Tre Jones",
       "Dailyn Swain",
-      "__SPACER__",
       "Jaylin Sellers"
     ],
     "SG": [
       "Norman Powell",
       "Buddy Hield",
-      "Jordan Hawkins"
+      "Jordan Hawkins",
+      "__SPACER__"
     ],
     "SF": [
       "Matas Buzelis",
@@ -164,8 +164,8 @@
     ],
     "C": [
       "Jalen Smith",
-      "Leonard Miller",
       "Zach Collins",
+      "Leonard Miller",
       "__SPACER__",
       "__SEPARATOR__",
       "Nicolas Claxton"
