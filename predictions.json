@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T06:36:30.039Z",
+  "generated_at": "2026-11-03T06:36:39.639Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -180,19 +180,19 @@
       "bench": {
         "PG": [
           "Craig Porter",
-          "Tyrese Proctor"
-        ],
-        "SG": [
-          "Sam Merrill",
           "Tristan Enaruna"
         ],
+        "SG": [
+          "Tyrese Proctor",
+          "Riley Minix"
+        ],
         "SF": [
-          "Jaylon Tyson",
-          "Riley Minix",
+          "Sam Merrill",
+          "Ernest Udeh",
           "Peyton Watson"
         ],
         "PF": [
-          "Ernest Udeh",
+          "Jaylon Tyson",
           "Khalifa Diop",
           "Nae'Qwan Tomlin"
         ],
