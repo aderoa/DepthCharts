@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T05:04:46.681Z",
+  "generated_at": "2026-11-03T05:04:50.498Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -247,12 +247,12 @@
       "bench": {
         "PG": [
           "Tyus Jones",
-          "Ryan Nembhard",
-          "Julian Strawther"
+          "Ryan Nembhard"
         ],
         "SG": [
           "DeMar DeRozan",
-          "Cam Whitmore"
+          "Cam Whitmore",
+          "Julian Strawther"
         ],
         "SF": [
           "Alpha Diallo",
