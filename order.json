@@ -71,14 +71,14 @@
     "PG": [
       "Nolan Traore",
       "Mikel Brown",
-      "Terance Mann",
       "Ben Saraf",
+      "__SPACER__",
       "__SPACER__"
     ],
     "SG": [
       "Chaney Johnson",
       "Keon Ellis",
-      "Drake Powell",
+      "Terance Mann",
       "__SPACER__",
       "__SEPARATOR__",
       "Egor Demin"
@@ -86,7 +86,7 @@
     "SF": [
       "Michael Porter",
       "Josh Minott",
-      "__SPACER__"
+      "Drake Powell"
     ],
     "PF": [
       "Julius Randle",
