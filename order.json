@@ -381,16 +381,17 @@
   },
   "IND": {
     "PG": [
-      "Quenton Jackson",
+      "__SPACER__",
       "Braden Smith",
       "__SEPARATOR__",
       "Tyrese Haliburton",
       "TJ McConnell"
     ],
     "SG": [
-      "Kelly Oubre",
+      "Quenton Jackson",
       "__SPACER__",
       "__SEPARATOR__",
+      "Kelly Oubre",
       "Andrew Nembhard",
       "Ben Sheppard"
     ],
@@ -402,8 +403,8 @@
       "Aaron Nesmith"
     ],
     "PF": [
-      "__SPACER__",
       "Jalen Slawson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Pascal Siakam",
       "Johnny Furphy"
