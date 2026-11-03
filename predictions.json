@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T06:35:17.411Z",
+  "generated_at": "2026-11-03T06:35:40.520Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -112,17 +112,17 @@
       },
       "bench": {
         "PG": [
+          "Dennis Schroeder",
           "Christian Anderson",
           "Kylan Boswell"
         ],
         "SG": [
-          "Dennis Schroeder",
-          "Liam McNeeley",
+          "Grayson Allen",
           "Michael Ajayi"
         ],
         "SF": [
-          "Grayson Allen",
           "Tidjane Salaun",
+          "Liam McNeeley",
           "Kon Knueppel"
         ],
         "PF": [
