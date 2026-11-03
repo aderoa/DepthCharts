@@ -351,10 +351,10 @@
     ],
     "SG": [
       "Amen Thompson",
+      "Reed Sheppard",
       "Bogdan Bogdanovic",
       "Isaiah Crawford",
-      "__SEPARATOR__",
-      "Reed Sheppard"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Kevin Durant",
@@ -365,11 +365,13 @@
       "Jabari Smith",
       "Tari Eason",
       "Quadir Copeland",
+      "__SEPARATOR__",
       "Steven Adams"
     ],
     "C": [
       "Alperen Sengun",
       "Oscar Tshiebwe",
+      "__SPACER__",
       "__SEPARATOR__",
       "Clint Capela"
     ]
