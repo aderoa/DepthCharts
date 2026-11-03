@@ -324,13 +324,14 @@
     "SF": [
       "Brandin Podziemski",
       "Georges Niang",
-      "Malevy Leons",
+      "__SPACER__",
       "__SEPARATOR__",
       "Moses Moody"
     ],
     "PF": [
       "Yaxel Lendeborg",
       "Al Horford",
+      "Malevy Leons",
       "__SEPARATOR__",
       "Gui Santos"
     ],
@@ -338,10 +339,8 @@
       "Draymond Green",
       "Graham Ike",
       "Charles Bassey",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Kristaps Porzingis",
-      "Graham Ike"
+      "Kristaps Porzingis"
     ]
   },
   "HOU": {
