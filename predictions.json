@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T04:40:10.011Z",
+  "generated_at": "2026-11-04T04:40:16.406Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -374,7 +374,7 @@
       "starters": {
         "PG": "Andrew Nembhard",
         "SG": "Aaron Nesmith",
-        "SF": "Jarace Walker",
+        "SF": "Kelly Oubre",
         "PF": "Pascal Siakam",
         "C": "Jay Huff"
       },
@@ -386,10 +386,10 @@
         ],
         "SG": [
           "Quenton Jackson",
-          "Kelly Oubre",
           "Ben Sheppard"
         ],
         "SF": [
+          "Jarace Walker",
           "Kobe Brown",
           "Obi Toppin"
         ],
