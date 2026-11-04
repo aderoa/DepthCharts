@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T04:34:15.239Z",
+  "generated_at": "2026-11-04T04:35:20.425Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -204,7 +204,7 @@
     },
     "DAL": {
       "starters": {
-        "PG": "Max Christie",
+        "PG": "Kyrie Irving",
         "SG": "Cooper Flagg",
         "SF": "Caleb Martin",
         "PF": "PJ Washington",
@@ -213,7 +213,7 @@
       "bench": {
         "PG": [
           "Marcus Sasser",
-          "Kyrie Irving"
+          "Max Christie"
         ],
         "SG": [
           "Walter Clayton",
