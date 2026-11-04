@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T17:37:19.812Z",
+  "generated_at": "2026-11-04T04:32:06.424Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -39,7 +39,7 @@
       "starters": {
         "PG": "Derrick White",
         "SG": "Hugo Gonzalez",
-        "SF": "Baylor Scheierman",
+        "SF": "Paul George",
         "PF": "Jayson Tatum",
         "C": "Neemias Queta"
       },
@@ -54,9 +54,9 @@
           "Devin Carter"
         ],
         "SF": [
+          "Baylor Scheierman",
           "Jordan Walsh",
-          "Dillon Mitchell",
-          "Paul George"
+          "Dillon Mitchell"
         ],
         "PF": [
           "Luka Garza",
