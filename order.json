@@ -702,22 +702,21 @@
     "PG": [
       "Shai Gilgeous-Alexander",
       "Bennett Stirtz",
-      "__SPACER__",
+      "Dalen Terry",
       "__SEPARATOR__",
-      "Nikola Topic",
-      "Cason Wallace"
+      "Nikola Topic"
     ],
     "SG": [
       "Ajay Mitchell",
       "Jared McCain",
       "Brooks Barnhizer",
       "__SEPARATOR__",
-      "Alex Caruso"
+      "Alex Caruso",
+      "Cason Wallace"
     ],
     "SF": [
       "Kenrich Williams",
       "Micah Peavy",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Jalen Williams"
@@ -725,6 +724,7 @@
     "PF": [
       "Jaylin Williams",
       "Josh Dix",
+      "__SPACER__",
       "__SEPARATOR__",
       "Chet Holmgren"
     ],
