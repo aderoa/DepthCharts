@@ -205,12 +205,11 @@
   },
   "DAL": {
     "PG": [
-      "Max Christie",
+      "Kyrie Irving",
       "Marcus Sasser",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Kyrie Irving"
+      "Max Christie"
     ],
     "SG": [
       "Cooper Flagg",
@@ -222,6 +221,7 @@
     "SF": [
       "Caleb Martin",
       "Zaccharie Risacher",
+      "__SPACER__",
       "__SEPARATOR__",
       "Tarik Biberovic"
     ],
