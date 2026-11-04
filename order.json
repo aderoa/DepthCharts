@@ -669,35 +669,32 @@
       "Jalen Brunson",
       "Jose Alvarado",
       "Tyler Kolek",
-      "Jaden Akins",
-      "__SPACER__"
+      "Jaden Akins"
     ],
     "SG": [
       "OG Anunoby",
       "Miles McBride",
       "Dalton Knecht",
-      "Kevin McCullar",
-      "__SPACER__",
       "__SPACER__"
     ],
     "SF": [
       "Mikal Bridges",
       "Jordan Clarkson",
-      "Pacome Dadiet",
-      "Tyler Nickel"
+      "Tyler Nickel",
+      "__SPACER__"
     ],
     "PF": [
-      "Josh Hart",
       "Landry Shamet",
       "Mohamed Diawara",
+      "Pacome Dadiet",
       "__SPACER__",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Josh Hart"
     ],
     "C": [
       "Karl-Anthony Towns",
       "Andre Drummond",
       "James Wiseman",
-      "__SPACER__",
       "__SPACER__"
     ]
   },
