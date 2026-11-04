@@ -437,20 +437,20 @@
       "Derrick Jones",
       "Gradey Dick",
       "Jalen Pickett",
-      "__SEPARATOR__",
       "__SPACER__",
+      "__SEPARATOR__",
       "Brandon Ingram"
     ],
     "PF": [
       "Rui Hachimura",
       "Kobe Sanders",
-      "Baba Miller",
+      "__SPACER__",
       "Nick Martinelli"
     ],
     "C": [
       "Brook Lopez",
       "Isaiah Jackson",
-      "__SPACER__",
+      "Baba Miller",
       "__SPACER__",
       "__SEPARATOR__",
       "Yanic Konan Niederhauser"
