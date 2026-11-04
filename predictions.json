@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T04:40:26.278Z",
+  "generated_at": "2026-11-04T04:40:33.509Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -373,8 +373,8 @@
     "IND": {
       "starters": {
         "PG": "Andrew Nembhard",
-        "SG": "Aaron Nesmith",
-        "SF": "Kelly Oubre",
+        "SG": "Kelly Oubre",
+        "SF": "Aaron Nesmith",
         "PF": "Pascal Siakam",
         "C": "Jay Huff"
       },
