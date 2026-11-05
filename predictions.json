@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T08:03:12.064Z",
+  "generated_at": "2026-11-05T08:03:49.635Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -858,12 +858,12 @@
         ],
         "SF": [
           "Nique Clifford",
-          "Leaky Black",
           "Keegan Murray"
         ],
         "PF": [
-          "Daeqwon Plowden",
-          "Alex Karaban"
+          "Leaky Black",
+          "Alex Karaban",
+          "Daeqwon Plowden"
         ],
         "C": [
           "Dylan Cardwell",
