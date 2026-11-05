@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T07:55:46.531Z",
+  "generated_at": "2026-11-05T07:55:51.912Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -377,7 +377,7 @@
         "SG": "Andrew Nembhard",
         "SF": "Aaron Nesmith",
         "PF": "Pascal Siakam",
-        "C": "Jay Huff"
+        "C": "Ivica Zubac"
       },
       "bench": {
         "PG": [
@@ -399,8 +399,8 @@
           "Johnny Furphy"
         ],
         "C": [
-          "Larry Nance Jr",
-          "Ivica Zubac"
+          "Jay Huff",
+          "Larry Nance Jr"
         ]
       }
     },
