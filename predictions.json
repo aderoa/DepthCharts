@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T07:56:08.190Z",
+  "generated_at": "2026-11-05T07:56:16.044Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -382,21 +382,21 @@
       "bench": {
         "PG": [
           "Quenton Jackson",
-          "Tyrese Haliburton",
-          "TJ McConnell"
+          "Tyrese Haliburton"
         ],
         "SG": [
           "Kobe Brown",
-          "Kelly Oubre",
-          "Ben Sheppard"
+          "TJ McConnell"
         ],
         "SF": [
           "Obi Toppin",
-          "Jarace Walker"
+          "Jarace Walker",
+          "Ben Sheppard"
         ],
         "PF": [
           "Larry Nance Jr",
-          "Jalen Slawson"
+          "Jalen Slawson",
+          "Kelly Oubre"
         ],
         "C": [
           "Jay Huff",
