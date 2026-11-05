@@ -809,27 +809,31 @@
     ],
     "SG": [
       "Devin Booker",
-      "Jordan Goodwin",
       "Pat Spencer",
-      "__SPACER__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jordan Goodwin"
     ],
     "SF": [
       "Dillon Brooks",
       "Luke Kennard",
-      "Rasheer Fleming",
-      "__SPACER__"
+      "Koa Peat",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Rasheer Fleming"
     ],
     "PF": [
       "Miles Bridges",
       "Ryan Dunn",
-      "Koa Peat",
+      "Drew Timme",
+      "__SPACER__",
       "__SPACER__"
     ],
     "C": [
       "Khaman Maluach",
       "Oso Ighodaro",
       "Duop Reath",
-      "Drew Timme",
       "__SEPARATOR__",
       "Mark Williams"
     ]
