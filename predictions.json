@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T07:54:19.926Z",
+  "generated_at": "2026-11-05T07:54:25.046Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -55,12 +55,12 @@
         ],
         "SF": [
           "Jordan Walsh",
-          "Dillon Mitchell"
+          "Dillon Mitchell",
+          "Jayson Tatum"
         ],
         "PF": [
           "Luka Garza",
-          "Chris Cenac",
-          "Jayson Tatum"
+          "Chris Cenac"
         ],
         "C": [
           "Mitchell Robinson",
