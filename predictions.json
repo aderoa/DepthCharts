@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T07:55:24.554Z",
+  "generated_at": "2026-11-05T07:55:34.829Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -644,7 +644,7 @@
     "NYK": {
       "starters": {
         "PG": "Jalen Brunson",
-        "SG": "Miles McBride",
+        "SG": "Landry Shamet",
         "SF": "OG Anunoby",
         "PF": "Mikal Bridges",
         "C": "Karl-Anthony Towns"
@@ -656,11 +656,11 @@
           "Jaden Akins"
         ],
         "SG": [
-          "Jordan Clarkson",
+          "Miles McBride",
           "Dalton Knecht"
         ],
         "SF": [
-          "Landry Shamet",
+          "Jordan Clarkson",
           "Tyler Nickel"
         ],
         "PF": [
