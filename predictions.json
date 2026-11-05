@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T07:59:19.562Z",
+  "generated_at": "2026-11-05T07:59:25.493Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -699,11 +699,11 @@
         ],
         "PF": [
           "Micah Peavy",
-          "Jaylin Williams",
-          "Chet Holmgren"
+          "Jaylin Williams"
         ],
         "C": [
           "Josh Dix",
+          "Chet Holmgren",
           "Thomas Sorber"
         ]
       }
