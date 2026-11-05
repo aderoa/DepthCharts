@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T08:03:03.560Z",
+  "generated_at": "2026-11-05T08:03:05.626Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -217,9 +217,9 @@
           "Sergio De Larrea"
         ],
         "SG": [
-          "Walter Clayton",
           "Jett Howard",
-          "Max Christie"
+          "Max Christie",
+          "Walter Clayton"
         ],
         "SF": [
           "Caleb Martin",
