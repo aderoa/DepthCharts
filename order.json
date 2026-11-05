@@ -630,15 +630,17 @@
     ],
     "SG": [
       "Dejounte Murray",
-      "Herb Jones",
-      "Bennedict Mathurin"
+      "Bennedict Mathurin",
+      "__SPACER__"
     ],
     "SF": [
-      "Trey Murphy",
+      "Herb Jones",
       "Bryce McGowens",
       "Trendon Watford",
       "Malik Dia",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Trey Murphy"
     ],
     "PF": [
       "Zion Williamson",
