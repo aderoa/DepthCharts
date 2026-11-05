@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T07:58:34.045Z",
+  "generated_at": "2026-11-05T07:58:49.127Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -179,26 +179,26 @@
       },
       "bench": {
         "PG": [
+          "Meleek Thomas",
           "Craig Porter",
           "Tristan Enaruna"
         ],
         "SG": [
-          "Meleek Thomas",
+          "Sam Merrill",
           "Norchad Omier"
         ],
         "SF": [
-          "Sam Merrill",
+          "Jaylon Tyson",
           "Riley Minix",
           "Peyton Watson"
         ],
         "PF": [
-          "Jaylon Tyson",
+          "Mario Hezonja",
           "Khalifa Diop",
           "Ernest Udeh",
           "Nae'Qwan Tomlin"
         ],
         "C": [
-          "Mario Hezonja",
           "Thomas Bryant"
         ]
       }
