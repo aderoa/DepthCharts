@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T08:01:58.983Z",
+  "generated_at": "2026-11-05T08:02:38.239Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -787,21 +787,21 @@
           "Jamaree Bouyea"
         ],
         "SG": [
-          "Jordan Goodwin",
-          "Pat Spencer"
+          "Pat Spencer",
+          "Jordan Goodwin"
         ],
         "SF": [
           "Luke Kennard",
+          "Koa Peat",
           "Rasheer Fleming"
         ],
         "PF": [
           "Ryan Dunn",
-          "Koa Peat"
+          "Drew Timme"
         ],
         "C": [
           "Oso Ighodaro",
           "Duop Reath",
-          "Drew Timme",
           "Mark Williams"
         ]
       }
