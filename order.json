@@ -244,19 +244,20 @@
     "PG": [
       "Jamal Murray",
       "Tyus Jones",
-      "Ryan Nembhard",
-      "__SEPARATOR__"
+      "Ryan Nembhard"
     ],
     "SG": [
       "Christian Braun",
-      "DeMar DeRozan",
+      "Bryce Hopkins",
       "Cam Whitmore",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "DeMar DeRozan",
       "Julian Strawther"
     ],
     "SF": [
       "Cameron Johnson",
       "Alpha Diallo",
-      "Bryce Hopkins",
       "__SEPARATOR__",
       "Spencer Jones"
     ],
