@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T07:55:19.763Z",
+  "generated_at": "2026-11-05T07:55:24.554Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -651,8 +651,8 @@
       },
       "bench": {
         "PG": [
-          "Jose Alvarado",
           "Tyler Kolek",
+          "Jose Alvarado",
           "Jaden Akins"
         ],
         "SG": [
