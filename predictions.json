@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T07:58:49.127Z",
+  "generated_at": "2026-11-05T07:58:51.293Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -194,12 +194,12 @@
         ],
         "PF": [
           "Mario Hezonja",
-          "Khalifa Diop",
           "Ernest Udeh",
           "Nae'Qwan Tomlin"
         ],
         "C": [
-          "Thomas Bryant"
+          "Thomas Bryant",
+          "Khalifa Diop"
         ]
       }
     },
