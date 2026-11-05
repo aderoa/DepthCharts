@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T07:59:13.171Z",
+  "generated_at": "2026-11-05T07:59:19.562Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -685,7 +685,6 @@
       "bench": {
         "PG": [
           "Bennett Stirtz",
-          "Dalen Terry",
           "Nikola Topic"
         ],
         "SG": [
@@ -695,15 +694,16 @@
         ],
         "SF": [
           "Jared McCain",
-          "Micah Peavy",
+          "Dalen Terry",
           "Jalen Williams"
         ],
         "PF": [
-          "Josh Dix",
+          "Micah Peavy",
           "Jaylin Williams",
           "Chet Holmgren"
         ],
         "C": [
+          "Josh Dix",
           "Thomas Sorber"
         ]
       }
