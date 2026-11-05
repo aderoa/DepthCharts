@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-04T19:08:25.028Z",
+  "generated_at": "2026-11-05T07:53:04.393Z",
   "teams": {
     "ATL": {
       "starters": {
-        "PG": "CJ McCollum",
+        "PG": "Kingston Flemings",
         "SG": "Nickeil Alexander-Walker",
         "SF": "Dyson Daniels",
         "PF": "Luguentz Dort",
@@ -11,7 +11,7 @@
       },
       "bench": {
         "PG": [
-          "Kingston Flemings",
+          "CJ McCollum",
           "RayJ Dennis"
         ],
         "SG": [
