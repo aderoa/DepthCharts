@@ -695,7 +695,6 @@
     "PG": [
       "Shai Gilgeous-Alexander",
       "Bennett Stirtz",
-      "Dalen Terry",
       "__SEPARATOR__",
       "Nikola Topic"
     ],
@@ -709,14 +708,14 @@
     "SF": [
       "Kenrich Williams",
       "Jared McCain",
-      "Micah Peavy",
+      "Dalen Terry",
       "__SEPARATOR__",
+      "__SPACER__",
       "Jalen Williams"
     ],
     "PF": [
       "Aday Mara",
-      "Josh Dix",
-      "__SPACER__",
+      "Micah Peavy",
       "__SPACER__",
       "__SEPARATOR__",
       "Jaylin Williams",
@@ -724,6 +723,7 @@
     ],
     "C": [
       "Isaiah Hartenstein",
+      "Josh Dix",
       "__SPACER__",
       "__SEPARATOR__",
       "Thomas Sorber"
