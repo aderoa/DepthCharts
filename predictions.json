@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T05:22:56.928Z",
+  "generated_at": "2026-11-06T05:23:00.655Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -463,12 +463,12 @@
         ],
         "PF": [
           "Jarred Vanderbilt",
-          "Kevon Looney",
-          "Arthur Kaluma",
-          "Adou Thiero"
+          "Adou Thiero",
+          "Arthur Kaluma"
         ],
         "C": [
           "Sandro Mamukelashvili",
+          "Kevon Looney",
           "Lawson Lovering"
         ]
       }
