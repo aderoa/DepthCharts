@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T05:17:04.371Z",
+  "generated_at": "2026-11-06T05:17:10.147Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -213,22 +213,22 @@
       },
       "bench": {
         "PG": [
+          "Walter Clayton",
           "Marcus Sasser",
           "Sergio De Larrea"
         ],
         "SG": [
           "Zaccharie Risacher",
-          "Walter Clayton",
           "Jett Howard"
         ],
         "SF": [
+          "Naji Marshall",
           "Caleb Martin",
           "Tarik Biberovic"
         ],
         "PF": [
-          "Naji Marshall",
-          "Tobi Lawal",
-          "Santiago Aldama"
+          "Santiago Aldama",
+          "Tobi Lawal"
         ],
         "C": [
           "Morez Johnson",
