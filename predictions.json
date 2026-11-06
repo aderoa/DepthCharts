@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T05:18:04.048Z",
+  "generated_at": "2026-11-06T05:18:27.337Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -26,11 +26,11 @@
         ],
         "PF": [
           "Dorian Finney-Smith",
-          "Asa Newell",
-          "Jock Landale"
+          "Asa Newell"
         ],
         "C": [
           "Zuby Ejiofor",
+          "Jock Landale",
           "Henri Veesaar"
         ]
       }
