@@ -3,12 +3,13 @@
     "PG": [
       "Kingston Flemings",
       "CJ McCollum",
-      "RayJ Dennis"
+      "RayJ Dennis",
+      "Keshon Gilbert"
     ],
     "SG": [
       "Nickeil Alexander-Walker",
       "Corey Kispert",
-      "Keshon Gilbert",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jalen Johnson"
     ],
@@ -21,9 +22,10 @@
     ],
     "PF": [
       "Luguentz Dort",
-      "Asa Newell",
       "Dorian Finney-Smith",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Asa Newell",
       "Jock Landale"
     ],
     "C": [
