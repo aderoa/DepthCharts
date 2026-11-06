@@ -209,6 +209,7 @@
   "DAL": {
     "PG": [
       "Kyrie Irving",
+      "Walter Clayton",
       "Marcus Sasser",
       "__SPACER__",
       "__SPACER__",
@@ -218,12 +219,12 @@
     "SG": [
       "Max Christie",
       "Zaccharie Risacher",
-      "Walter Clayton",
       "Jett Howard",
       "__SPACER__"
     ],
     "SF": [
       "Cooper Flagg",
+      "Naji Marshall",
       "Caleb Martin",
       "__SPACER__",
       "__SEPARATOR__",
@@ -231,9 +232,8 @@
     ],
     "PF": [
       "PJ Washington",
-      "Naji Marshall",
-      "Tobi Lawal",
-      "Santiago Aldama"
+      "Santiago Aldama",
+      "Tobi Lawal"
     ],
     "C": [
       "Daniel Gafford",
