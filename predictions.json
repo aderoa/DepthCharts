@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T05:14:22.779Z",
+  "generated_at": "2026-11-06T05:14:28.541Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -618,16 +618,16 @@
       "bench": {
         "PG": [
           "Jordan Poole",
+          "AJ Johnson",
           "Jaron Pierre"
         ],
         "SG": [
           "Bennedict Mathurin",
-          "AJ Johnson"
+          "Bryce McGowens"
         ],
         "SF": [
           "Herb Jones",
-          "Saddiq Bey",
-          "Bryce McGowens"
+          "Saddiq Bey"
         ],
         "PF": [
           "Trendon Watford",
