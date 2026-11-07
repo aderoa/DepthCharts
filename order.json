@@ -976,7 +976,8 @@
     "PG": [
       "Keyonte George",
       "Isaiah Collier",
-      "Trey Alexander"
+      "Trey Alexander",
+      "__SPACER__"
     ],
     "SG": [
       "Darryn Peterson",
@@ -1001,9 +1002,8 @@
     "C": [
       "Jaxson Hayes",
       "Sviatoslav Mykhailiuk",
-      "Mo Bamba",
       "Tony Bradley",
-      "__SPACER__",
+      "Mo Bamba",
       "__SEPARATOR__",
       "Jusuf Nurkic"
     ]
