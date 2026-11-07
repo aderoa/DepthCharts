@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T06:50:21.645Z",
+  "generated_at": "2026-11-07T06:50:32.045Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -55,15 +55,15 @@
           "Devin Carter"
         ],
         "SF": [
+          "Sam Hauser",
           "Dillon Mitchell"
         ],
         "PF": [
-          "Sam Hauser",
+          "Luka Garza",
           "Chris Cenac"
         ],
         "C": [
           "Mitchell Robinson",
-          "Luka Garza",
           "Amari Williams"
         ]
       }
