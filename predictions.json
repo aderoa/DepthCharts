@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T06:50:32.045Z",
+  "generated_at": "2026-11-07T06:50:40.414Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -50,21 +50,21 @@
         ],
         "SG": [
           "Hugo Gonzalez",
-          "Baylor Scheierman",
           "Ron Harper Jr",
           "Devin Carter"
         ],
         "SF": [
           "Sam Hauser",
-          "Dillon Mitchell"
+          "Baylor Scheierman"
         ],
         "PF": [
           "Luka Garza",
-          "Chris Cenac"
+          "Dillon Mitchell",
+          "Amari Williams"
         ],
         "C": [
           "Mitchell Robinson",
-          "Amari Williams"
+          "Chris Cenac"
         ]
       }
     },
