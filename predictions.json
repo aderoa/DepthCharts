@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T18:05:03.758Z",
+  "generated_at": "2026-11-07T19:17:49.865Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -712,8 +712,8 @@
     "ORL": {
       "starters": {
         "PG": "Anthony Black",
-        "SG": "Desmond Bane",
-        "SF": "Jase Richardson",
+        "SG": "Jase Richardson",
+        "SF": "Tristan Da Silva",
         "PF": "Franz Wagner",
         "C": "Wendell Carter Jr"
       },
@@ -724,6 +724,7 @@
         ],
         "SG": [
           "Jevon Carter",
+          "Desmond Bane",
           "Noah Penda"
         ],
         "SF": [
@@ -731,7 +732,6 @@
           "Jonathan Isaac"
         ],
         "PF": [
-          "Tristan Da Silva",
           "Goga Bitadze",
           "Paolo Banchero"
         ],
