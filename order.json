@@ -392,18 +392,19 @@
   },
   "IND": {
     "PG": [
-      "Braden Smith",
+      "Andrew Nembhard",
       "TJ McConnell",
-      "Quenton Jackson",
+      "Braden Smith",
+      "__SPACER__",
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Tyrese Haliburton"
     ],
     "SG": [
-      "Andrew Nembhard",
+      "Kelly Oubre",
       "Kobe Brown",
-      "__SPACER__"
+      "Quenton Jackson"
     ],
     "SF": [
       "Aaron Nesmith",
@@ -416,8 +417,7 @@
     "PF": [
       "Pascal Siakam",
       "Larry Nance Jr",
-      "Jalen Slawson",
-      "Kelly Oubre"
+      "Jalen Slawson"
     ],
     "C": [
       "Ivica Zubac",
