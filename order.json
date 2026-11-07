@@ -44,6 +44,7 @@
       "__SPACER__"
     ],
     "SG": [
+      "Paul George",
       "Hugo Gonzalez",
       "Baylor Scheierman",
       "Ron Harper Jr",
@@ -52,12 +53,12 @@
       "Devin Carter"
     ],
     "SF": [
-      "Paul George",
-      "Jordan Walsh",
-      "Dillon Mitchell"
+      "Jayson Tatum",
+      "Dillon Mitchell",
+      "__SPACER__"
     ],
     "PF": [
-      "Jayson Tatum",
+      "Jordan Walsh",
       "Sam Hauser",
       "Chris Cenac",
       "__SPACER__"
@@ -66,8 +67,7 @@
       "Neemias Queta",
       "Mitchell Robinson",
       "Luka Garza",
-      "Amari Williams",
-      "__SPACER__"
+      "Amari Williams"
     ]
   },
   "BKN": {
