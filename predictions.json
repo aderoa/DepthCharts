@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T06:55:37.978Z",
+  "generated_at": "2026-11-07T06:55:58.746Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -483,16 +483,16 @@
       },
       "bench": {
         "PG": [
-          "Cam Spencer",
-          "Jahmai Mashack",
-          "Javon Small"
+          "Javon Small",
+          "Jahmai Mashack"
         ],
         "SG": [
-          "Kris Murray",
+          "Cam Spencer",
           "Taylor Hendricks",
           "Scotty Pippen Jr"
         ],
         "SF": [
+          "Kris Murray",
           "GG Jackson",
           "Olivier-Maxence Prosper"
         ],
@@ -501,9 +501,9 @@
           "Karim Lopez"
         ],
         "C": [
-          "Isaiah Stewart",
           "Quinten Post",
-          "Carson Cooper"
+          "Carson Cooper",
+          "Isaiah Stewart"
         ]
       }
     },
