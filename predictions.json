@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T06:53:28.361Z",
+  "generated_at": "2026-11-07T06:54:22.640Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -948,12 +948,11 @@
       },
       "bench": {
         "PG": [
-          "Brice Sensabaugh",
           "Isaiah Collier",
           "Trey Alexander"
         ],
         "SG": [
-          "Josh Green",
+          "Brice Sensabaugh",
           "Kobe Bufkin"
         ],
         "SF": [
@@ -961,11 +960,12 @@
           "Harrison Ingram"
         ],
         "PF": [
-          "Sviatoslav Mykhailiuk",
+          "Josh Green",
           "Kyle Filipowski",
           "Jaren Jackson Jr"
         ],
         "C": [
+          "Sviatoslav Mykhailiuk",
           "Mo Bamba",
           "Tony Bradley",
           "Jusuf Nurkic"
