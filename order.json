@@ -107,16 +107,15 @@
   "CHA": {
     "PG": [
       "Coby White",
-      "Dennis Schroeder",
       "Christian Anderson",
-      "Kylan Boswell"
+      "Kylan Boswell",
+      "__SEPARATOR__",
+      "Dennis Schroeder"
     ],
     "SG": [
-      "Sion James",
       "Grayson Allen",
-      "__SPACER__",
+      "Sion James",
       "Michael Ajayi",
-      "__SPACER__",
       "__SEPARATOR__",
       "Kon Knueppel"
     ],
@@ -129,15 +128,15 @@
       "Naz Reid",
       "Royce O'Neale",
       "PJ Hall",
-      "__SPACER__",
       "__SEPARATOR__",
       "Grant Williams"
     ],
     "C": [
-      "Moussa Diabate",
       "Ryan Kalkbrenner",
       "Hannes Steinbach",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Moussa Diabate"
     ]
   },
   "CHI": {
