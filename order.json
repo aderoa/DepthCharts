@@ -177,37 +177,37 @@
   "CLE": {
     "PG": [
       "James Harden",
-      "Meleek Thomas",
+      "Tyrese Proctor",
       "Craig Porter",
       "__SPACER__"
     ],
     "SG": [
       "Donovan Mitchell",
-      "Sam Merrill",
+      "Meleek Thomas",
       "Tristan Enaruna",
       "__SPACER__"
     ],
     "SF": [
-      "Tyrese Proctor",
-      "Jaylon Tyson",
-      "Norchad Omier",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Peyton Watson"
+      "Peyton Watson",
+      "Sam Merrill",
+      "Norchad Omier"
     ],
     "PF": [
       "Evan Mobley",
-      "Mario Hezonja",
+      "Jaylon Tyson",
       "Ernest Udeh",
       "__SPACER__",
       "__SEPARATOR__",
       "Nae'Qwan Tomlin"
     ],
     "C": [
-      "Jarrett Allen",
       "Thomas Bryant",
+      "Mario Hezonja",
       "Khalifa Diop",
-      "__SPACER__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jarrett Allen"
     ]
   },
   "DAL": {
