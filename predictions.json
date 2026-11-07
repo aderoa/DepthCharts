@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T19:17:57.965Z",
+  "generated_at": "2026-11-07T22:23:39.353Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -381,12 +381,12 @@
       },
       "bench": {
         "PG": [
+          "TJ McConnell",
           "Quenton Jackson",
           "Tyrese Haliburton"
         ],
         "SG": [
-          "Kobe Brown",
-          "TJ McConnell"
+          "Kobe Brown"
         ],
         "SF": [
           "Obi Toppin",
