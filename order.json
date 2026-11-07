@@ -939,38 +939,36 @@
   },
   "TOR": {
     "PG": [
-      "Immanuel Quickley",
       "Jamal Shead",
       "Jaden Bradley",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Immanuel Quickley"
     ],
     "SG": [
       "RJ Barrett",
       "Allen Graves",
-      "Malachi Smith",
-      "__SPACER__"
+      "Malachi Smith"
     ],
     "SF": [
       "Ja'Kobe Walter",
       "Alijah Martin",
-      "__SPACER__",
       "Kevin McCullar",
       "__SEPARATOR__",
       "Kawhi Leonard"
     ],
     "PF": [
-      "Scottie Barnes",
       "Jamison Battle",
       "Kyle Anderson",
       "__SPACER__",
       "__SEPARATOR__",
-      "Nate Bittle"
+      "Scottie Barnes"
     ],
     "C": [
       "Collin Murray-Boyles",
       "Jakob Poeltl",
       "Trayce Jackson-Davis",
-      "__SPACER__"
+      "Nate Bittle"
     ]
   },
   "UTA": {
