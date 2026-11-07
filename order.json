@@ -975,15 +975,14 @@
   "UTA": {
     "PG": [
       "Keyonte George",
-      "Brice Sensabaugh",
       "Isaiah Collier",
-      "Trey Alexander",
-      "__SPACER__"
+      "Trey Alexander"
     ],
     "SG": [
       "Darryn Peterson",
-      "Josh Green",
-      "Kobe Bufkin"
+      "Brice Sensabaugh",
+      "Kobe Bufkin",
+      "__SPACER__"
     ],
     "SF": [
       "Ace Bailey",
@@ -993,7 +992,7 @@
     ],
     "PF": [
       "Lauri Markkanen",
-      "Sviatoslav Mykhailiuk",
+      "Josh Green",
       "Kyle Filipowski",
       "__SPACER__",
       "__SEPARATOR__",
@@ -1001,6 +1000,7 @@
     ],
     "C": [
       "Jaxson Hayes",
+      "Sviatoslav Mykhailiuk",
       "Mo Bamba",
       "Tony Bradley",
       "__SPACER__",
