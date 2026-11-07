@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T06:21:40.217Z",
+  "generated_at": "2026-11-07T06:23:20.076Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -173,32 +173,32 @@
       "starters": {
         "PG": "James Harden",
         "SG": "Donovan Mitchell",
-        "SF": "Tyrese Proctor",
+        "SF": "Peyton Watson",
         "PF": "Evan Mobley",
-        "C": "Jarrett Allen"
+        "C": "Thomas Bryant"
       },
       "bench": {
         "PG": [
-          "Meleek Thomas",
+          "Tyrese Proctor",
           "Craig Porter"
         ],
         "SG": [
-          "Sam Merrill",
+          "Meleek Thomas",
           "Tristan Enaruna"
         ],
         "SF": [
-          "Jaylon Tyson",
-          "Norchad Omier",
-          "Peyton Watson"
+          "Sam Merrill",
+          "Norchad Omier"
         ],
         "PF": [
-          "Mario Hezonja",
+          "Jaylon Tyson",
           "Ernest Udeh",
           "Nae'Qwan Tomlin"
         ],
         "C": [
-          "Thomas Bryant",
-          "Khalifa Diop"
+          "Mario Hezonja",
+          "Khalifa Diop",
+          "Jarrett Allen"
         ]
       }
     },
