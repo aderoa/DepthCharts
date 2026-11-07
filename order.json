@@ -848,14 +848,14 @@
     "PG": [
       "Damian Lillard",
       "Jrue Holiday",
-      "John Tonje",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ja Morant"
     ],
     "SG": [
       "Scoot Henderson",
       "Chris Youngblood",
-      "__SPACER__",
+      "John Tonje",
       "__SEPARATOR__",
       "Shaedon Sharpe"
     ],
@@ -863,6 +863,7 @@
       "Toumani Camara",
       "Sidy Cissoko",
       "Jayson Kent",
+      "__SEPARATOR__",
       "Vit Krejci"
     ],
     "PF": [
