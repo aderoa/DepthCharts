@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T06:57:20.247Z",
+  "generated_at": "2026-11-07T06:57:40.948Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -818,11 +818,11 @@
       "bench": {
         "PG": [
           "Jrue Holiday",
-          "John Tonje",
           "Ja Morant"
         ],
         "SG": [
           "Chris Youngblood",
+          "John Tonje",
           "Shaedon Sharpe"
         ],
         "SF": [
