@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T06:24:10.543Z",
+  "generated_at": "2026-11-07T06:49:19.290Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -977,8 +977,8 @@
         "PG": "Trae Young",
         "SG": "Kyshawn George",
         "SF": "AJ Dybantsa",
-        "PF": "Will Riley",
-        "C": "Alex Sarr"
+        "PF": "Alex Sarr",
+        "C": "Deandre Ayton"
       },
       "bench": {
         "PG": [
@@ -995,12 +995,12 @@
           "Justin Champagnie"
         ],
         "PF": [
+          "Will Riley",
           "Bilal Coulibaly",
           "Anthony Gill",
           "Anthony Davis"
         ],
         "C": [
-          "Deandre Ayton",
           "Felix Okpara",
           "Tristan Vukcevic"
         ]
