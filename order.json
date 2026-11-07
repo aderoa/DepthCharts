@@ -395,37 +395,32 @@
       "Andrew Nembhard",
       "TJ McConnell",
       "Braden Smith",
-      "__SPACER__",
-      "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tyrese Haliburton"
     ],
     "SG": [
       "Kelly Oubre",
       "Kobe Brown",
-      "Quenton Jackson"
+      "Quenton Jackson",
+      "Ben Sheppard"
     ],
     "SF": [
       "Aaron Nesmith",
       "Obi Toppin",
       "__SPACER__",
       "__SEPARATOR__",
-      "Ben Sheppard"
+      "Johnny Furphy"
     ],
     "PF": [
       "Pascal Siakam",
       "Jarace Walker",
-      "__SPACER__",
       "Jalen Slawson"
     ],
     "C": [
       "Ivica Zubac",
       "Jay Huff",
       "Larry Nance Jr",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Johnny Furphy"
+      "__SEPARATOR__"
     ]
   },
   "LAC": {
