@@ -252,19 +252,20 @@
     "PG": [
       "Jamal Murray",
       "Tyus Jones",
-      "__SPACER__",
-      "Ryan Nembhard"
+      "Ryan Nembhard",
+      "__SPACER__"
     ],
     "SG": [
       "Christian Braun",
       "DeMar DeRozan",
-      "Bryce Hopkins",
+      "Spencer Jones",
       "__SPACER__"
     ],
     "SF": [
       "Cameron Johnson",
       "Alpha Diallo",
       "Cam Whitmore",
+      "Bryce Hopkins",
       "__SPACER__",
       "__SEPARATOR__",
       "Julian Strawther"
@@ -272,8 +273,7 @@
     "PF": [
       "Aaron Gordon",
       "Trevon Brazile",
-      "Zeke Nnaji",
-      "Spencer Jones"
+      "Zeke Nnaji"
     ],
     "C": [
       "Nikola Jokic",
