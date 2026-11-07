@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T22:23:47.248Z",
+  "generated_at": "2026-11-07T22:23:52.217Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -391,15 +391,15 @@
         ],
         "SF": [
           "Obi Toppin",
-          "Jarace Walker",
           "Ben Sheppard"
         ],
         "PF": [
-          "Larry Nance Jr",
+          "Jarace Walker",
           "Jalen Slawson"
         ],
         "C": [
           "Jay Huff",
+          "Larry Nance Jr",
           "Johnny Furphy"
         ]
       }
