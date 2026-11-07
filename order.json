@@ -891,15 +891,17 @@
       "__SPACER__"
     ],
     "SF": [
-      "De'Andre Hunter",
-      "Nique Clifford",
       "Leaky Black",
-      "__SEPARATOR__"
+      "Nique Clifford",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "De'Andre Hunter"
     ],
     "PF": [
       "Precious Achiuwa",
       "Daeqwon Plowden",
       "Alex Karaban",
+      "__SEPARATOR__",
       "Keegan Murray"
     ],
     "C": [
