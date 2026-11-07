@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T22:23:52.217Z",
+  "generated_at": "2026-11-07T22:23:58.931Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -387,11 +387,12 @@
         ],
         "SG": [
           "Kobe Brown",
-          "Quenton Jackson"
+          "Quenton Jackson",
+          "Ben Sheppard"
         ],
         "SF": [
           "Obi Toppin",
-          "Ben Sheppard"
+          "Johnny Furphy"
         ],
         "PF": [
           "Jarace Walker",
@@ -399,8 +400,7 @@
         ],
         "C": [
           "Jay Huff",
-          "Larry Nance Jr",
-          "Johnny Furphy"
+          "Larry Nance Jr"
         ]
       }
     },
