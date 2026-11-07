@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T19:17:49.865Z",
+  "generated_at": "2026-11-07T19:17:57.965Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -724,16 +724,16 @@
         ],
         "SG": [
           "Jevon Carter",
-          "Desmond Bane",
-          "Noah Penda"
+          "Desmond Bane"
         ],
         "SF": [
           "Jamal Cain",
-          "Jonathan Isaac"
+          "Noah Penda"
         ],
         "PF": [
           "Goga Bitadze",
-          "Paolo Banchero"
+          "Paolo Banchero",
+          "Jonathan Isaac"
         ],
         "C": [
           "Nikola Vucevic",
