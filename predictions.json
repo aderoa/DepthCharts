@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T06:55:08.212Z",
+  "generated_at": "2026-11-07T06:55:12.109Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -218,14 +218,16 @@
         ],
         "SG": [
           "Max Christie",
+          "Zaccharie Risacher",
           "Jett Howard"
         ],
         "SF": [
+          "Zaccharie Risacher",
+          "Santiago Aldama",
           "Tarik Biberovic"
         ],
         "PF": [
           "Naji Marshall",
-          "Santiago Aldama",
           "Tobi Lawal"
         ],
         "C": [
