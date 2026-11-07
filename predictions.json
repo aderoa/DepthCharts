@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T06:55:58.746Z",
+  "generated_at": "2026-11-07T06:56:04.093Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -493,8 +493,7 @@
         ],
         "SF": [
           "Kris Murray",
-          "GG Jackson",
-          "Olivier-Maxence Prosper"
+          "GG Jackson"
         ],
         "PF": [
           "Jerami Grant",
@@ -502,6 +501,7 @@
         ],
         "C": [
           "Quinten Post",
+          "Olivier-Maxence Prosper",
           "Carson Cooper",
           "Isaiah Stewart"
         ]
