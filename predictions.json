@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T17:24:55.167Z",
+  "generated_at": "2026-11-07T18:03:55.466Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -173,7 +173,7 @@
       "starters": {
         "PG": "James Harden",
         "SG": "Donovan Mitchell",
-        "SF": "Sam Merrill",
+        "SF": "Meleek Thomas",
         "PF": "Peyton Watson",
         "C": "Evan Mobley"
       },
@@ -183,10 +183,10 @@
           "Craig Porter"
         ],
         "SG": [
-          "Tristan Enaruna"
+          "Tristan Enaruna",
+          "Sam Merrill"
         ],
         "SF": [
-          "Meleek Thomas",
           "Norchad Omier",
           "Jaylon Tyson"
         ],
