@@ -147,25 +147,27 @@
       "Dailyn Swain"
     ],
     "SG": [
-      "Norman Powell",
       "Buddy Hield",
-      "Jordan Hawkins"
+      "Isaac Okoro",
+      "Jordan Hawkins",
+      "__SEPARATOR__",
+      "Norman Powell"
     ],
     "SF": [
       "Matas Buzelis",
-      "Isaac Okoro",
+      "__SPACER__",
       "Patrick Williams"
     ],
     "PF": [
       "Caleb Wilson",
       "Noa Essengue",
-      "Leonard Miller",
-      "__SEPARATOR__"
+      "Leonard Miller"
     ],
     "C": [
       "Jalen Smith",
       "Nicolas Claxton",
       "Tobe Awaka",
+      "__SEPARATOR__",
       "Zach Collins"
     ]
   },
