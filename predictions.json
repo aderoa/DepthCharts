@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T06:24:40.687Z",
+  "generated_at": "2026-11-08T06:24:58.876Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -88,16 +88,16 @@
         ],
         "SF": [
           "Chaney Johnson",
-          "Josh Minott",
           "Drake Powell"
         ],
         "PF": [
           "Moritz Wagner",
-          "Joshua Jefferson",
+          "Josh Minott",
           "Tyler Bilodeau"
         ],
         "C": [
           "Noah Clowney",
+          "Joshua Jefferson",
           "Grant Nelson"
         ]
       }
