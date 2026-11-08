@@ -113,16 +113,18 @@
       "Dennis Schroeder"
     ],
     "SG": [
-      "Grayson Allen",
       "Sion James",
+      "Liam McNeeley",
       "Michael Ajayi",
       "__SEPARATOR__",
       "Kon Knueppel"
     ],
     "SF": [
-      "Brandon Miller",
+      "Grayson Allen",
       "Tidjane Salaun",
-      "Liam McNeeley"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Brandon Miller"
     ],
     "PF": [
       "Naz Reid",
