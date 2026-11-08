@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T06:14:42.233Z",
+  "generated_at": "2026-11-08T06:23:38.216Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -373,8 +373,8 @@
     },
     "IND": {
       "starters": {
-        "PG": "Andrew Nembhard",
-        "SG": "Kelly Oubre",
+        "PG": "Braden Smith",
+        "SG": "Andrew Nembhard",
         "SF": "Aaron Nesmith",
         "PF": "Pascal Siakam",
         "C": "Ivica Zubac"
@@ -382,10 +382,10 @@
       "bench": {
         "PG": [
           "TJ McConnell",
-          "Braden Smith",
           "Tyrese Haliburton"
         ],
         "SG": [
+          "Kelly Oubre",
           "Kobe Brown",
           "Quenton Jackson",
           "Ben Sheppard"
