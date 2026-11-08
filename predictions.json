@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T18:51:09.578Z",
+  "generated_at": "2026-11-08T22:19:33.834Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -105,8 +105,8 @@
     "CHA": {
       "starters": {
         "PG": "Coby White",
-        "SG": "Grayson Allen",
-        "SF": "Brandon Miller",
+        "SG": "Sion James",
+        "SF": "Grayson Allen",
         "PF": "Naz Reid",
         "C": "Ryan Kalkbrenner"
       },
@@ -117,13 +117,13 @@
           "Dennis Schroeder"
         ],
         "SG": [
-          "Sion James",
+          "Liam McNeeley",
           "Michael Ajayi",
           "Kon Knueppel"
         ],
         "SF": [
           "Tidjane Salaun",
-          "Liam McNeeley"
+          "Brandon Miller"
         ],
         "PF": [
           "Royce O'Neale",
