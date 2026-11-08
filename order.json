@@ -390,6 +390,7 @@
     "PG": [
       "Braden Smith",
       "TJ McConnell",
+      "__SPACER__",
       "__SEPARATOR__",
       "Tyrese Haliburton"
     ],
@@ -403,14 +404,13 @@
     "SF": [
       "Aaron Nesmith",
       "Kelly Oubre",
-      "Obi Toppin",
-      "__SPACER__",
+      "Jarace Walker",
       "__SEPARATOR__",
       "Johnny Furphy"
     ],
     "PF": [
       "Pascal Siakam",
-      "Jarace Walker",
+      "Obi Toppin",
       "Jalen Slawson"
     ],
     "C": [
