@@ -179,6 +179,7 @@
     "SG": [
       "Donovan Mitchell",
       "Tyrese Proctor",
+      "__SPACER__",
       "__SEPARATOR__",
       "Sam Merrill"
     ],
@@ -186,14 +187,13 @@
       "Meleek Thomas",
       "Mario Hezonja",
       "Norchad Omier",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jaylon Tyson"
     ],
     "PF": [
       "Peyton Watson",
-      "Ernest Udeh",
       "Riley Minix",
+      "Ernest Udeh",
       "__SEPARATOR__",
       "Nae'Qwan Tomlin"
     ],
