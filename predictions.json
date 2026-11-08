@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T06:12:21.385Z",
+  "generated_at": "2026-11-08T06:12:23.628Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -430,11 +430,11 @@
         ],
         "PF": [
           "Kobe Sanders",
-          "Nick Martinelli"
+          "Nick Martinelli",
+          "Isaiah Jackson"
         ],
         "C": [
           "Baba Miller",
-          "Isaiah Jackson",
           "Yanic Konan Niederhauser"
         ]
       }
