@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T06:26:37.772Z",
+  "generated_at": "2026-11-08T06:26:59.337Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -307,8 +307,8 @@
     "GSW": {
       "starters": {
         "PG": "Stephen Curry",
-        "SG": "Will Richard",
-        "SF": "Brandin Podziemski",
+        "SG": "Brandin Podziemski",
+        "SF": "Gui Santos",
         "PF": "Yaxel Lendeborg",
         "C": "Draymond Green"
       },
@@ -318,6 +318,7 @@
           "LJ Cryer"
         ],
         "SG": [
+          "Will Richard",
           "Brandon Williams",
           "Gary Payton II",
           "Jimmy Butler"
@@ -328,7 +329,6 @@
           "Moses Moody"
         ],
         "PF": [
-          "Gui Santos",
           "Graham Ike"
         ],
         "C": [
