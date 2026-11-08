@@ -72,7 +72,7 @@
   "BKN": {
     "PG": [
       "Nolan Traore",
-      "Mikel Brown",
+      "__SPACER__",
       "Ben Saraf",
       "__SPACER__",
       "__SEPARATOR__",
@@ -82,13 +82,14 @@
       "Michael Porter",
       "Terance Mann",
       "Keon Ellis",
-      "__SPACER__"
+      "__SPACER__",
+      "Mikel Brown"
     ],
     "SF": [
       "Danny Wolf",
       "Chaney Johnson",
-      "__SPACER__",
-      "Drake Powell"
+      "Drake Powell",
+      "__SPACER__"
     ],
     "PF": [
       "Julius Randle",
