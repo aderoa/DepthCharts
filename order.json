@@ -388,16 +388,17 @@
   },
   "IND": {
     "PG": [
-      "Andrew Nembhard",
-      "TJ McConnell",
       "Braden Smith",
+      "TJ McConnell",
       "__SEPARATOR__",
       "Tyrese Haliburton"
     ],
     "SG": [
+      "Andrew Nembhard",
       "Kelly Oubre",
       "Kobe Brown",
       "Quenton Jackson",
+      "__SEPARATOR__",
       "Ben Sheppard"
     ],
     "SF": [
@@ -415,8 +416,7 @@
     "C": [
       "Ivica Zubac",
       "Jay Huff",
-      "Larry Nance Jr",
-      "__SEPARATOR__"
+      "Larry Nance Jr"
     ]
   },
   "LAC": {
