@@ -1010,21 +1010,21 @@
     "PG": [
       "Trae Young",
       "Carlton Carrington",
-      "Tre Mann",
       "__SEPARATOR__",
       "Reece Beekman"
     ],
     "SG": [
       "Kyshawn George",
-      "Tre Johnson",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jamir Watkins"
+      "Jamir Watkins",
+      "Tre Mann"
     ],
     "SF": [
       "AJ Dybantsa",
+      "Tre Johnson",
       "Khris Middleton",
-      "__SPACER__",
       "__SEPARATOR__",
       "Justin Champagnie"
     ],
