@@ -147,21 +147,21 @@
       "Dailyn Swain"
     ],
     "SG": [
-      "Buddy Hield",
       "Isaac Okoro",
+      "Buddy Hield",
       "Jordan Hawkins",
       "__SEPARATOR__",
       "Norman Powell"
     ],
     "SF": [
       "Matas Buzelis",
-      "Noa Essengue"
+      "Noa Essengue",
+      "__SPACER__"
     ],
     "PF": [
       "Caleb Wilson",
       "Leonard Miller",
-      "Patrick Williams",
-      "__SPACER__"
+      "Patrick Williams"
     ],
     "C": [
       "Jalen Smith",
