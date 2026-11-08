@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T22:21:29.819Z",
+  "generated_at": "2026-11-08T22:21:36.046Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -864,11 +864,11 @@
         ],
         "PF": [
           "Precious Achiuwa",
-          "Dylan Cardwell",
           "Alex Karaban"
         ],
         "C": [
           "Jonathan Mogbo",
+          "Dylan Cardwell",
           "Maxime Raynaud"
         ]
       }
