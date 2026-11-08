@@ -452,13 +452,15 @@
   },
   "LAL": {
     "PG": [
-      "Luka Doncic",
+      "Austin Reaves",
       "Collin Sexton",
       "Jaden Hardy",
-      "__SPACER__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Luka Doncic"
     ],
     "SG": [
-      "Austin Reaves",
       "Quentin Grimes",
       "Bronny James",
       "__SPACER__"
