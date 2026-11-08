@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T06:09:00.676Z",
+  "generated_at": "2026-11-08T06:10:03.376Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -324,16 +324,16 @@
         ],
         "SF": [
           "Georges Niang",
+          "Malevy Leons",
           "Moses Moody"
         ],
         "PF": [
-          "Al Horford",
-          "Malevy Leons",
-          "Gui Santos"
+          "Gui Santos",
+          "Graham Ike"
         ],
         "C": [
+          "Al Horford",
           "Charles Bassey",
-          "Graham Ike",
           "Kristaps Porzingis"
         ]
       }
