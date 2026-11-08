@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T06:10:03.376Z",
+  "generated_at": "2026-11-08T06:10:57.621Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -784,16 +784,16 @@
       },
       "bench": {
         "PG": [
-          "Collin Gillespie"
+          "Collin Gillespie",
+          "Jamaree Bouyea"
         ],
         "SG": [
           "Pat Spencer",
-          "Jamaree Bouyea",
+          "Koa Peat",
           "Jordan Goodwin"
         ],
         "SF": [
           "Luke Kennard",
-          "Koa Peat",
           "Rasheer Fleming"
         ],
         "PF": [
