@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T02:31:53.685Z",
+  "generated_at": "2026-11-09T02:33:29.295Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -489,12 +489,12 @@
         "SG": [
           "Cam Spencer",
           "Taylor Hendricks",
-          "Richie Saunders",
           "Scotty Pippen Jr"
         ],
         "SF": [
           "Kris Murray",
-          "GG Jackson"
+          "GG Jackson",
+          "Richie Saunders"
         ],
         "PF": [
           "Jerami Grant",
@@ -503,7 +503,6 @@
         "C": [
           "Quinten Post",
           "Olivier-Maxence Prosper",
-          "Carson Cooper",
           "Isaiah Stewart"
         ]
       }
