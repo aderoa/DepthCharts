@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T02:35:37.757Z",
+  "generated_at": "2026-11-09T02:35:43.408Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -862,10 +862,10 @@
           "Daeqwon Plowden"
         ],
         "PF": [
-          "Alex Karaban"
+          "Alex Karaban",
+          "Domantas Sabonis"
         ],
         "C": [
-          "Domantas Sabonis",
           "Jonathan Mogbo",
           "Dylan Cardwell",
           "Maxime Raynaud"
