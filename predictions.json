@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T18:38:23.747Z",
+  "generated_at": "2026-11-09T18:40:40.288Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -876,7 +876,7 @@
         "PG": "De'Aaron Fox",
         "SG": "Dylan Harper",
         "SF": "Stephon Castle",
-        "PF": "Devin Vassell",
+        "PF": "Julian Champagnie",
         "C": "Victor Wembanyama"
       },
       "bench": {
@@ -889,11 +889,11 @@
           "Jordan McLaughlin"
         ],
         "SF": [
-          "Julian Champagnie",
           "David Jones",
           "Tobias Harris"
         ],
         "PF": [
+          "Devin Vassell",
           "Carter Bryant",
           "Maliq Brown",
           "Jayden Quaintance"
