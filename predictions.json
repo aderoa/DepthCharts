@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T02:33:47.553Z",
+  "generated_at": "2026-11-09T02:35:37.757Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -846,7 +846,7 @@
         "SG": "Zach LaVine",
         "SF": "De'Andre Hunter",
         "PF": "Keegan Murray",
-        "C": "Domantas Sabonis"
+        "C": "Precious Achiuwa"
       },
       "bench": {
         "PG": [
@@ -862,10 +862,10 @@
           "Daeqwon Plowden"
         ],
         "PF": [
-          "Precious Achiuwa",
           "Alex Karaban"
         ],
         "C": [
+          "Domantas Sabonis",
           "Jonathan Mogbo",
           "Dylan Cardwell",
           "Maxime Raynaud"
