@@ -37,26 +37,26 @@
   },
   "BOS": {
     "PG": [
-      "Derrick White",
-      "Payton Pritchard",
       "Mike Conley",
+      "Payton Pritchard",
       "__SPACER__"
     ],
     "SG": [
-      "Paul George",
       "Hugo Gonzalez",
       "Ron Harper Jr",
       "__SPACER__",
       "__SEPARATOR__",
-      "Devin Carter"
+      "Devin Carter",
+      "Derrick White"
     ],
     "SF": [
-      "Jayson Tatum",
+      "Paul George",
       "Sam Hauser",
       "Baylor Scheierman",
       "__SPACER__"
     ],
     "PF": [
+      "Jayson Tatum",
       "Jordan Walsh",
       "Luka Garza",
       "Dillon Mitchell",
