@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T02:37:03.054Z",
+  "generated_at": "2026-11-09T02:37:05.235Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -456,11 +456,11 @@
         "SG": [
           "Ziaire Williams",
           "Bronny James",
-          "Cameron Carr",
           "Chris Manon"
         ],
         "SF": [
-          "Jarred Vanderbilt"
+          "Jarred Vanderbilt",
+          "Cameron Carr"
         ],
         "PF": [
           "Adou Thiero",
