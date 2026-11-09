@@ -973,34 +973,31 @@
     "PG": [
       "Keyonte George",
       "Isaiah Collier",
-      "Trey Alexander",
-      "__SPACER__"
+      "Trey Alexander"
     ],
     "SG": [
       "Darryn Peterson",
       "Brice Sensabaugh",
-      "Kobe Bufkin",
-      "__SPACER__"
+      "Kobe Bufkin"
     ],
     "SF": [
       "Ace Bailey",
       "Josh Okogie",
       "Harrison Ingram",
+      "__SEPARATOR__",
       "Lauri Markkanen"
     ],
     "PF": [
       "Josh Green",
-      "Kyle Filipowski",
+      "Sviatoslav Mykhailiuk",
       "Tony Bradley",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jaren Jackson Jr"
     ],
     "C": [
       "Jaxson Hayes",
-      "Sviatoslav Mykhailiuk",
+      "Kyle Filipowski",
       "Mo Bamba",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jusuf Nurkic"
     ]
