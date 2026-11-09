@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T18:40:42.799Z",
+  "generated_at": "2026-11-09T18:40:46.674Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -881,15 +881,15 @@
       },
       "bench": {
         "PG": [
-          "Keldon Johnson",
+          "Jordan McLaughlin",
           "Ja'Kobi Gillespie"
         ],
         "SG": [
-          "Harrison Barnes",
-          "Jordan McLaughlin",
+          "Keldon Johnson",
           "Devin Vassell"
         ],
         "SF": [
+          "Harrison Barnes",
           "David Jones",
           "Tobias Harris"
         ],
