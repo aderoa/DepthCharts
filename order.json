@@ -221,13 +221,13 @@
     "SG": [
       "Cooper Flagg",
       "Max Christie",
-      "Zaccharie Risacher",
+      "__SPACER__",
       "Jett Howard"
     ],
     "SF": [
       "Caleb Martin",
-      "Zaccharie Risacher",
       "Santiago Aldama",
+      "Zaccharie Risacher",
       "__SPACER__",
       "__SEPARATOR__",
       "Tarik Biberovic"
@@ -235,8 +235,8 @@
     "PF": [
       "PJ Washington",
       "Naji Marshall",
-      "__SPACER__",
-      "Tobi Lawal"
+      "Tobi Lawal",
+      "__SPACER__"
     ],
     "C": [
       "Daniel Gafford",
