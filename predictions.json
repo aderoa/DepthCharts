@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T15:14:27.074Z",
+  "generated_at": "2026-11-09T18:38:23.747Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -440,8 +440,8 @@
     },
     "LAL": {
       "starters": {
-        "PG": "Austin Reaves",
-        "SG": "Quentin Grimes",
+        "PG": "Luka Doncic",
+        "SG": "Austin Reaves",
         "SF": "Matisse Thybulle",
         "PF": "Jake LaRavia",
         "C": "Walker Kessler"
@@ -449,13 +449,13 @@
       "bench": {
         "PG": [
           "Collin Sexton",
-          "Jaden Hardy",
-          "Luka Doncic"
+          "Jaden Hardy"
         ],
         "SG": [
           "Ziaire Williams",
           "Bronny James",
-          "Chris Manon"
+          "Chris Manon",
+          "Quentin Grimes"
         ],
         "SF": [
           "Jarred Vanderbilt",
