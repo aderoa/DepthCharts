@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T02:40:44.423Z",
+  "generated_at": "2026-11-09T02:40:58.407Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -844,7 +844,7 @@
         "PG": "Darius Acuff",
         "SG": "Zach LaVine",
         "SF": "De'Andre Hunter",
-        "PF": "Keegan Murray",
+        "PF": "Dylan Cardwell",
         "C": "Precious Achiuwa"
       },
       "bench": {
@@ -860,13 +860,13 @@
           "Leaky Black"
         ],
         "PF": [
+          "Keegan Murray",
           "Alex Karaban",
           "Daeqwon Plowden",
           "Domantas Sabonis"
         ],
         "C": [
           "Jonathan Mogbo",
-          "Dylan Cardwell",
           "Maxime Raynaud"
         ]
       }
