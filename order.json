@@ -448,24 +448,24 @@
   },
   "LAL": {
     "PG": [
-      "Austin Reaves",
+      "Luka Doncic",
       "Collin Sexton",
-      "Jaden Hardy",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Luka Doncic"
+      "Jaden Hardy"
     ],
     "SG": [
-      "Quentin Grimes",
+      "Austin Reaves",
       "Ziaire Williams",
       "Bronny James",
+      "Chris Manon",
       "__SPACER__",
-      "Chris Manon"
+      "__SEPARATOR__",
+      "Quentin Grimes"
     ],
     "SF": [
       "Matisse Thybulle",
       "Jarred Vanderbilt",
-      "Cameron Carr"
+      "Cameron Carr",
+      "__SPACER__"
     ],
     "PF": [
       "Jake LaRavia",
