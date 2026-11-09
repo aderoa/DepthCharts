@@ -360,19 +360,20 @@
       "Kevin Durant",
       "Bogdan Bogdanovic",
       "Jae'Sean Tate",
+      "__SEPARATOR__",
       "Steven Adams"
     ],
     "PF": [
       "Jabari Smith",
       "Tari Eason",
-      "Julian Phillips",
       "__SEPARATOR__",
       "Oscar Tshiebwe"
     ],
     "C": [
       "Alperen Sengun",
-      "Quadir Copeland",
+      "Julian Phillips",
       "__SPACER__",
+      "Quadir Copeland",
       "__SEPARATOR__",
       "Clint Capela"
     ]
