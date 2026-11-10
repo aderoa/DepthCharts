@@ -437,11 +437,13 @@
       "Rui Hachimura",
       "Kobe Sanders",
       "Nick Martinelli",
-      "Isaiah Jackson"
+      "__SEPARATOR__"
     ],
     "C": [
+      "Isaiah Jackson",
       "Brook Lopez",
       "Baba Miller",
+      "__SPACER__",
       "__SEPARATOR__",
       "Yanic Konan Niederhauser"
     ]
