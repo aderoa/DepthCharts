@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T19:21:36.573Z",
+  "generated_at": "2026-11-10T19:28:02.161Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -609,8 +609,8 @@
       "starters": {
         "PG": "Jeremiah Fears",
         "SG": "Dejounte Murray",
-        "SF": "Herb Jones",
-        "PF": "Saddiq Bey",
+        "SF": "Trey Murphy",
+        "PF": "Zion Williamson",
         "C": "Karlo Matkovic"
       },
       "bench": {
@@ -619,18 +619,18 @@
           "Jaron Pierre"
         ],
         "SG": [
-          "AJ Johnson",
-          "Trey Murphy"
+          "Herb Jones",
+          "AJ Johnson"
         ],
         "SF": [
+          "Bennedict Mathurin",
           "Bryce McGowens",
           "Malik Dia",
           "Trendon Watford"
         ],
         "PF": [
-          "Bennedict Mathurin",
-          "Julian Reese",
-          "Zion Williamson"
+          "Saddiq Bey",
+          "Julian Reese"
         ],
         "C": [
           "Derik Queen",
