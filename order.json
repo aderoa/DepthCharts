@@ -489,12 +489,14 @@
     "PG": [
       "Ty Jerome",
       "Javon Small",
-      "Jahmai Mashack"
+      "Jahmai Mashack",
+      "__SPACER__"
     ],
     "SG": [
       "Cedric Coward",
       "Cam Spencer",
       "Taylor Hendricks",
+      "__SPACER__",
       "__SEPARATOR__",
       "Scotty Pippen Jr"
     ],
@@ -502,6 +504,7 @@
       "Jaylen Wells",
       "GG Jackson",
       "Kris Murray",
+      "__SPACER__",
       "__SEPARATOR__",
       "Richie Saunders"
     ],
@@ -513,9 +516,11 @@
     ],
     "C": [
       "Zach Edey",
-      "Quinten Post",
       "Olivier-Maxence Prosper",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Quinten Post"
     ]
   },
   "MIA": {
