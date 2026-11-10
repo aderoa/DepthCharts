@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T05:57:55.830Z",
+  "generated_at": "2026-11-10T05:58:14.889Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -976,7 +976,7 @@
         "PG": "Trae Young",
         "SG": "Kyshawn George",
         "SF": "AJ Dybantsa",
-        "PF": "Bilal Coulibaly",
+        "PF": "Anthony Davis",
         "C": "Alex Sarr"
       },
       "bench": {
@@ -985,8 +985,8 @@
           "Reece Beekman"
         ],
         "SG": [
-          "Jamir Watkins",
-          "Tre Mann"
+          "Tre Mann",
+          "Jamir Watkins"
         ],
         "SF": [
           "Tre Johnson",
@@ -996,7 +996,7 @@
         "PF": [
           "Will Riley",
           "Anthony Gill",
-          "Anthony Davis"
+          "Bilal Coulibaly"
         ],
         "C": [
           "Deandre Ayton",
