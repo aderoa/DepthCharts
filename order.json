@@ -947,26 +947,26 @@
     "SG": [
       "RJ Barrett",
       "Allen Graves",
-      "Malachi Smith"
+      "Malachi Smith",
+      "Kawhi Leonard"
     ],
     "SF": [
       "Ja'Kobe Walter",
       "Alijah Martin",
       "Kevin McCullar",
       "__SEPARATOR__",
-      "Kawhi Leonard"
+      "Scottie Barnes"
     ],
     "PF": [
-      "Collin Murray-Boyles",
       "Jamison Battle",
       "Kyle Anderson",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Scottie Barnes"
+      "Collin Murray-Boyles"
     ],
     "C": [
       "Jakob Poeltl",
       "Trayce Jackson-Davis",
+      "__SPACER__",
       "__SEPARATOR__",
       "Nate Bittle"
     ]
