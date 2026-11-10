@@ -453,12 +453,14 @@
       "Collin Sexton",
       "Jaden Hardy",
       "__SPACER__",
+      "__SEPARATOR__",
       "Austin Reaves"
     ],
     "SG": [
       "Matisse Thybulle",
+      "Cameron Carr",
       "Bronny James",
-      "Chris Manon",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Quentin Grimes"
@@ -466,8 +468,7 @@
     "SF": [
       "Ziaire Williams",
       "Jarred Vanderbilt",
-      "Cameron Carr",
-      "__SPACER__"
+      "Chris Manon"
     ],
     "PF": [
       "Jake LaRavia",
