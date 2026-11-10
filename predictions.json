@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T21:48:25.190Z",
+  "generated_at": "2026-11-10T22:27:37.453Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -147,16 +147,16 @@
       "bench": {
         "PG": [
           "Tre Jones",
-          "Jaylin Sellers",
-          "Dailyn Swain"
+          "Jaylin Sellers"
         ],
         "SG": [
-          "Jordan Hawkins",
+          "Dailyn Swain",
           "Buddy Hield",
           "Norman Powell"
         ],
         "SF": [
-          "Noa Essengue"
+          "Noa Essengue",
+          "Jordan Hawkins"
         ],
         "PF": [
           "Patrick Williams",
