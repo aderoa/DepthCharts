@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T06:03:32.446Z",
+  "generated_at": "2026-11-10T06:05:24.738Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -274,8 +274,8 @@
         "PG": "Cade Cunningham",
         "SG": "Ausar Thompson",
         "SF": "Duncan Robinson",
-        "PF": "John Collins",
-        "C": "Paul Reed"
+        "PF": "Javonte Green",
+        "C": "John Collins"
       },
       "bench": {
         "PG": [
@@ -292,10 +292,10 @@
           "Chaz Lanier"
         ],
         "PF": [
-          "Javonte Green",
           "Taurean Prince"
         ],
         "C": [
+          "Paul Reed",
           "Tolu Smith",
           "Isaac Jones",
           "Ugonna Onyenso",
