@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T22:48:47.822Z",
+  "generated_at": "2026-11-10T22:48:52.249Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -79,16 +79,16 @@
       "bench": {
         "PG": [
           "Mikel Brown",
-          "Terance Mann",
           "Ben Saraf"
         ],
         "SG": [
-          "Nolan Traore"
+          "Nolan Traore",
+          "Terance Mann"
         ],
         "SF": [
           "Chaney Johnson",
-          "Joshua Jefferson",
-          "Keon Ellis"
+          "Keon Ellis",
+          "Joshua Jefferson"
         ],
         "PF": [
           "Moritz Wagner",
