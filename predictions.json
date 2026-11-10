@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T06:00:39.843Z",
+  "generated_at": "2026-11-10T06:00:48.918Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -441,8 +441,8 @@
     "LAL": {
       "starters": {
         "PG": "Luka Doncic",
-        "SG": "Ziaire Williams",
-        "SF": "Matisse Thybulle",
+        "SG": "Matisse Thybulle",
+        "SF": "Ziaire Williams",
         "PF": "Jake LaRavia",
         "C": "Walker Kessler"
       },
