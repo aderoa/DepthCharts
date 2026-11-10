@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T06:05:24.738Z",
+  "generated_at": "2026-11-10T06:05:28.834Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -272,9 +272,9 @@
     "DET": {
       "starters": {
         "PG": "Cade Cunningham",
-        "SG": "Ausar Thompson",
-        "SF": "Duncan Robinson",
-        "PF": "Javonte Green",
+        "SG": "Kevin Huerter",
+        "SF": "Ausar Thompson",
+        "PF": "Duncan Robinson",
         "C": "John Collins"
       },
       "bench": {
@@ -284,7 +284,6 @@
           "Isaiah Joe"
         ],
         "SG": [
-          "Kevin Huerter",
           "Elijah Harkless"
         ],
         "SF": [
@@ -292,6 +291,7 @@
           "Chaz Lanier"
         ],
         "PF": [
+          "Javonte Green",
           "Taurean Prince"
         ],
         "C": [
