@@ -626,32 +626,34 @@
     "PG": [
       "Jeremiah Fears",
       "Jordan Poole",
-      "Jaron Pierre"
+      "Jaron Pierre",
+      "__SPACER__"
     ],
     "SG": [
       "Dejounte Murray",
-      "AJ Johnson",
-      "__SPACER__",
-      "Trey Murphy"
+      "Herb Jones",
+      "AJ Johnson"
     ],
     "SF": [
-      "Herb Jones",
+      "Trey Murphy",
+      "Bennedict Mathurin",
       "Bryce McGowens",
       "Malik Dia",
+      "__SPACER__",
       "__SEPARATOR__",
       "Trendon Watford"
     ],
     "PF": [
+      "Zion Williamson",
       "Saddiq Bey",
-      "Bennedict Mathurin",
       "Julian Reese",
-      "__SEPARATOR__",
-      "Zion Williamson"
+      "__SPACER__"
     ],
     "C": [
       "Karlo Matkovic",
       "Derik Queen",
       "DeAndre Jordan",
+      "__SPACER__",
       "__SEPARATOR__",
       "Yves Missi"
     ]
