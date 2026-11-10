@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T05:56:28.778Z",
+  "generated_at": "2026-11-10T05:57:09.278Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -909,7 +909,7 @@
         "PG": "Jamal Shead",
         "SG": "RJ Barrett",
         "SF": "Ja'Kobe Walter",
-        "PF": "Collin Murray-Boyles",
+        "PF": "Jamison Battle",
         "C": "Jakob Poeltl"
       },
       "bench": {
@@ -919,17 +919,17 @@
         ],
         "SG": [
           "Allen Graves",
-          "Malachi Smith"
+          "Malachi Smith",
+          "Kawhi Leonard"
         ],
         "SF": [
           "Alijah Martin",
           "Kevin McCullar",
-          "Kawhi Leonard"
+          "Scottie Barnes"
         ],
         "PF": [
-          "Jamison Battle",
           "Kyle Anderson",
-          "Scottie Barnes"
+          "Collin Murray-Boyles"
         ],
         "C": [
           "Trayce Jackson-Davis",
