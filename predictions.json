@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T22:48:40.435Z",
+  "generated_at": "2026-11-10T22:48:47.822Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -83,21 +83,21 @@
           "Ben Saraf"
         ],
         "SG": [
-          "Nolan Traore",
-          "Keon Ellis",
-          "Drake Powell"
+          "Nolan Traore"
         ],
         "SF": [
           "Chaney Johnson",
-          "Josh Minott"
+          "Joshua Jefferson",
+          "Keon Ellis"
         ],
         "PF": [
           "Moritz Wagner",
+          "Drake Powell",
           "Tyler Bilodeau"
         ],
         "C": [
           "Noah Clowney",
-          "Joshua Jefferson",
+          "Josh Minott",
           "Grant Nelson"
         ]
       }
