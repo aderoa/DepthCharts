@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T05:55:30.975Z",
+  "generated_at": "2026-11-10T05:56:06.149Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -409,7 +409,7 @@
         "SG": "Kris Dunn",
         "SF": "Derrick Jones",
         "PF": "Rui Hachimura",
-        "C": "Brook Lopez"
+        "C": "Isaiah Jackson"
       },
       "bench": {
         "PG": [
@@ -429,10 +429,10 @@
         ],
         "PF": [
           "Kobe Sanders",
-          "Nick Martinelli",
-          "Isaiah Jackson"
+          "Nick Martinelli"
         ],
         "C": [
+          "Brook Lopez",
           "Baba Miller",
           "Yanic Konan Niederhauser"
         ]
