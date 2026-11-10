@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T06:06:59.323Z",
+  "generated_at": "2026-11-10T06:07:14.272Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -217,12 +217,11 @@
           "Sergio De Larrea"
         ],
         "SG": [
-          "Zaccharie Risacher",
-          "Max Christie"
+          "Max Christie",
+          "Jett Howard"
         ],
         "SF": [
-          "Santiago Aldama",
-          "Jett Howard",
+          "Zaccharie Risacher",
           "Tarik Biberovic"
         ],
         "PF": [
@@ -231,6 +230,7 @@
           "Morez Johnson"
         ],
         "C": [
+          "Santiago Aldama",
           "Moussa Cisse",
           "Dereck Lively"
         ]
