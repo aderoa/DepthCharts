@@ -2247,7 +2247,7 @@ function attachCardDrag(card, container, teamAbbrev) {
 // =====================================================
 // EXPORT HTML — shared generator
 // =====================================================
-const DC_PRESTO_CSS = '<style>\n'
+const DC_CSS_RULES = ''
 + '.dc-wrap{font-family:sans-serif;max-width:800px;margin:0 auto;overflow-x:auto;font-size:16px;text-align:center}\n'
 + '.dc-wrap .dc-team{text-align:center;font-size:1.2em;margin-bottom:.5em}\n'
 + '.dc-tbl{width:100%;text-align:center;border-collapse:collapse;font-size:12px}\n'
@@ -2266,8 +2266,12 @@ const DC_PRESTO_CSS = '<style>\n'
 + '.dc-tbl .c-to{background-color:#fca5a5}\n'
 + '.dc-tbl .c-po{background-color:#33cccc}\n'
 + '.dc-tbl .c-ng{background-color:#e0e000}\n'
-+ '.dc-tbl .c-draft{background-color:#86efac}\n'
-+ '<' + '/style>';
++ '.dc-tbl .c-draft{background-color:#86efac}\n';
+// PRESTO WANTS @scope. A <style> element in the body is refused unless its
+// rules sit inside an @scope rule ("Style rule ... not allowed outside an
+// @scope rule in a style element in body"). @scope with no selector scopes
+// to the style element's parent, which holds the chart pasted beside it.
+const DC_PRESTO_CSS = '<style>\n@scope {\n' + DC_CSS_RULES + '}\n' + '<' + '/style>';
 
 function generateExportHTML(teamOrders, withHeadshots, startIdx, endIdx) {
   const positions = ['PG','SG','SF','PF','C'];
@@ -2469,7 +2473,9 @@ async function renderExportView(exportParam, withHeadshots) {
     statusEl.style.display = 'none';
     // Inject the DC export CSS into page
     const cssEl = document.createElement('style');
-    cssEl.textContent = DC_PRESTO_CSS.replace(/<\/?style>/g, '');
+    // The bare rules: an unprefixed @scope in <head> would scope to <head>
+    // and match nothing in the page.
+    cssEl.textContent = DC_CSS_RULES;
     document.head.appendChild(cssEl);
     const wrapper = document.createElement('div');
     wrapper.innerHTML = html;
