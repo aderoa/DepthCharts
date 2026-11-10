@@ -357,11 +357,11 @@
     ],
     "SG": [
       "Amen Thompson",
-      "Marcus Smart",
-      "Isaiah Crawford"
+      "Marcus Smart"
     ],
     "SF": [
       "Kevin Durant",
+      "__SPACER__",
       "Bogdan Bogdanovic",
       "Jae'Sean Tate",
       "__SEPARATOR__",
@@ -369,7 +369,7 @@
     ],
     "PF": [
       "Jabari Smith",
-      "__SPACER__",
+      "Isaiah Crawford",
       "Julian Phillips",
       "__SEPARATOR__",
       "Oscar Tshiebwe"
