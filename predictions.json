@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T21:44:04.084Z",
+  "generated_at": "2026-11-10T21:44:08.333Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -857,7 +857,8 @@
           "Malik Monk"
         ],
         "SF": [
-          "Leaky Black"
+          "Leaky Black",
+          "Daeqwon Plowden"
         ],
         "PF": [
           "Keegan Murray",
@@ -865,7 +866,6 @@
           "Domantas Sabonis"
         ],
         "C": [
-          "Daeqwon Plowden",
           "Jonathan Mogbo",
           "Maxime Raynaud"
         ]
