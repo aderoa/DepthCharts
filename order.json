@@ -815,25 +815,25 @@
       "Devin Booker",
       "Jordan Goodwin",
       "Jamaree Bouyea",
-      "Koa Peat"
+      "__SPACER__"
     ],
     "SF": [
       "Dillon Brooks",
       "Luke Kennard",
-      "Rasheer Fleming",
+      "Koa Peat",
       "__SPACER__"
     ],
     "PF": [
       "Miles Bridges",
       "Ryan Dunn",
-      "Drew Timme",
+      "Rasheer Fleming",
       "__SPACER__"
     ],
     "C": [
       "Oso Ighodaro",
       "Khaman Maluach",
       "Duop Reath",
-      "__SPACER__",
+      "Drew Timme",
       "__SEPARATOR__",
       "Mark Williams"
     ]
