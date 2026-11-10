@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T22:30:35.234Z",
+  "generated_at": "2026-11-10T22:48:32.983Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -78,14 +78,14 @@
       },
       "bench": {
         "PG": [
+          "Mikel Brown",
           "Terance Mann",
           "Ben Saraf",
           "Egor Demin"
         ],
         "SG": [
           "Keon Ellis",
-          "Drake Powell",
-          "Mikel Brown"
+          "Drake Powell"
         ],
         "SF": [
           "Chaney Johnson",
