@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T05:59:09.040Z",
+  "generated_at": "2026-11-10T05:59:14.299Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -179,14 +179,14 @@
       },
       "bench": {
         "PG": [
-          "Tyrese Proctor",
           "Craig Porter"
         ],
         "SG": [
-          "Meleek Thomas",
+          "Tyrese Proctor",
           "Sam Merrill"
         ],
         "SF": [
+          "Meleek Thomas",
           "Norchad Omier",
           "Riley Minix",
           "Jaylon Tyson"
