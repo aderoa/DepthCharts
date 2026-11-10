@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T06:02:02.105Z",
+  "generated_at": "2026-11-10T06:02:22.469Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -26,10 +26,10 @@
         ],
         "PF": [
           "Aaron Wiggins",
-          "Dorian Finney-Smith",
-          "Jock Landale"
+          "Dorian Finney-Smith"
         ],
         "C": [
+          "Jock Landale",
           "Zuby Ejiofor",
           "Henri Veesaar"
         ]
