@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T23:03:22.345Z",
+  "generated_at": "2026-11-10T23:03:55.126Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -497,12 +497,12 @@
         ],
         "PF": [
           "Jerami Grant",
-          "Karim Lopez"
+          "Karim Lopez",
+          "Isaiah Stewart"
         ],
         "C": [
           "Quinten Post",
-          "Olivier-Maxence Prosper",
-          "Isaiah Stewart"
+          "Olivier-Maxence Prosper"
         ]
       }
     },
