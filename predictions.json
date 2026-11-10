@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T06:09:36.026Z",
+  "generated_at": "2026-11-10T06:09:40.738Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -351,8 +351,7 @@
           "Bruce Thornton"
         ],
         "SG": [
-          "Marcus Smart",
-          "Isaiah Crawford"
+          "Marcus Smart"
         ],
         "SF": [
           "Bogdan Bogdanovic",
@@ -360,6 +359,7 @@
           "Steven Adams"
         ],
         "PF": [
+          "Isaiah Crawford",
           "Julian Phillips",
           "Oscar Tshiebwe"
         ],
