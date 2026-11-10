@@ -947,6 +947,7 @@
       "RJ Barrett",
       "Allen Graves",
       "Malachi Smith",
+      "__SEPARATOR__",
       "Kawhi Leonard"
     ],
     "SF": [
@@ -957,8 +958,9 @@
       "Scottie Barnes"
     ],
     "PF": [
-      "Jamison Battle",
       "Kyle Anderson",
+      "Jamison Battle",
+      "__SPACER__",
       "__SEPARATOR__",
       "Collin Murray-Boyles"
     ],
