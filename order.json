@@ -39,13 +39,13 @@
       "Derrick White",
       "Payton Pritchard",
       "Mike Conley",
-      "__SPACER__",
       "__SPACER__"
     ],
     "SG": [
-      "Paul George",
       "Hugo Gonzalez",
       "Ron Harper Jr",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Devin Carter"
     ],
@@ -53,7 +53,8 @@
       "Jayson Tatum",
       "Baylor Scheierman",
       "Dillon Mitchell",
-      "__SPACER__"
+      "__SPACER__",
+      "Paul George"
     ],
     "PF": [
       "Jordan Walsh",
