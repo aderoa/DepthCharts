@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T16:42:28.301Z",
+  "generated_at": "2026-11-11T16:42:31.537Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -78,11 +78,11 @@
       },
       "bench": {
         "PG": [
+          "Nolan Traore",
           "Ben Saraf",
           "Mikel Brown"
         ],
         "SG": [
-          "Nolan Traore",
           "Terance Mann"
         ],
         "SF": [
