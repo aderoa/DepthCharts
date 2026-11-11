@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T17:40:03.141Z",
+  "generated_at": "2026-11-11T17:40:10.029Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -927,12 +927,12 @@
         ],
         "PF": [
           "Alijah Martin",
-          "Collin Murray-Boyles"
+          "Collin Murray-Boyles",
+          "Nate Bittle"
         ],
         "C": [
           "Jamison Battle",
-          "Trayce Jackson-Davis",
-          "Nate Bittle"
+          "Trayce Jackson-Davis"
         ]
       }
     },
