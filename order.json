@@ -216,6 +216,7 @@
       "Kyrie Irving",
       "Walter Clayton",
       "Marcus Sasser",
+      "__SPACER__",
       "__SEPARATOR__",
       "Sergio De Larrea"
     ],
@@ -229,19 +230,21 @@
       "Caleb Martin",
       "Santiago Aldama",
       "Jett Howard",
+      "__SPACER__",
       "__SEPARATOR__",
       "Tarik Biberovic"
     ],
     "PF": [
       "PJ Washington",
       "Naji Marshall",
-      "Tobi Lawal",
-      "__SEPARATOR__",
-      "Morez Johnson"
+      "Tobi Lawal"
     ],
     "C": [
       "Daniel Gafford",
+      "Morez Johnson",
       "Moussa Cisse",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Dereck Lively"
     ]
