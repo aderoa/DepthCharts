@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T19:04:42.210Z",
+  "generated_at": "2026-11-11T19:05:25.568Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -546,7 +546,7 @@
         "SG": "Ryan Rollins",
         "SF": "Jaime Jaquez",
         "PF": "Kyle Kuzma",
-        "C": "Myles Turner"
+        "C": "Kel'el Ware"
       },
       "bench": {
         "PG": [
@@ -565,12 +565,12 @@
         ],
         "PF": [
           "Nate Ament",
-          "Bogoljub Markovic",
           "Pete Nance"
         ],
         "C": [
-          "Kel'el Ware",
-          "Jericho Sims"
+          "Jericho Sims",
+          "Bogoljub Markovic",
+          "Myles Turner"
         ]
       }
     },
