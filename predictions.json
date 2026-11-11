@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T22:03:37.153Z",
+  "generated_at": "2026-11-11T22:03:40.588Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -81,12 +81,12 @@
         "PG": [
           "Terance Mann",
           "Ben Saraf",
-          "Nolan Traore",
           "Mikel Brown"
         ],
         "SG": [
           "Keon Ellis",
-          "Drake Powell"
+          "Drake Powell",
+          "Nolan Traore"
         ],
         "SF": [
           "Chaney Johnson",
