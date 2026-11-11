@@ -559,20 +559,22 @@
     "PG": [
       "Brayden Burries",
       "Kasparas Jakucionis",
-      "Caris LeVert",
       "Kam Jones"
     ],
     "SG": [
-      "Tyler Herro",
       "Ryan Rollins",
-      "Gary Trent Jr",
-      "Cormac Ryan"
+      "AJ Green",
+      "Caris LeVert",
+      "Cormac Ryan",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Tyler Herro"
     ],
     "SF": [
       "Jaime Jaquez",
-      "AJ Green",
-      "__SPACER__",
-      "Ousmane Dieng"
+      "Ousmane Dieng",
+      "Gary Trent Jr",
+      "__SPACER__"
     ],
     "PF": [
       "Kyle Kuzma",
