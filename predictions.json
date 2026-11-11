@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T22:00:22.273Z",
+  "generated_at": "2026-11-11T22:01:16.441Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -676,7 +676,7 @@
     "OKC": {
       "starters": {
         "PG": "Shai Gilgeous-Alexander",
-        "SG": "Ajay Mitchell",
+        "SG": "Alex Caruso",
         "SF": "Jared McCain",
         "PF": "Kenrich Williams",
         "C": "Isaiah Hartenstein"
@@ -684,10 +684,10 @@
       "bench": {
         "PG": [
           "Bennett Stirtz",
+          "Ajay Mitchell",
           "Nikola Topic"
         ],
         "SG": [
-          "Alex Caruso",
           "Brooks Barnhizer",
           "Cason Wallace"
         ],
