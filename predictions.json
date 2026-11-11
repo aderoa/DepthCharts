@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T18:17:49.503Z",
+  "generated_at": "2026-11-11T19:04:34.533Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -315,25 +315,25 @@
       "bench": {
         "PG": [
           "De'Anthony Melton",
-          "LJ Cryer",
-          "Will Richard"
+          "LJ Cryer"
         ],
         "SG": [
+          "Will Richard",
           "Brandon Williams",
-          "Gary Payton II",
           "Jimmy Butler"
         ],
         "SF": [
-          "Georges Niang",
-          "Moses Moody"
+          "Malevy Leons",
+          "Moses Moody",
+          "Gary Payton II"
         ],
         "PF": [
-          "Al Horford",
-          "Malevy Leons"
+          "Georges Niang",
+          "Graham Ike"
         ],
         "C": [
+          "Al Horford",
           "Charles Bassey",
-          "Graham Ike",
           "Kristaps Porzingis"
         ]
       }
