@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T18:17:45.328Z",
+  "generated_at": "2026-11-11T18:17:49.503Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -161,11 +161,11 @@
         ],
         "PF": [
           "Noa Essengue",
-          "Leonard Miller",
-          "Zach Collins"
+          "Leonard Miller"
         ],
         "C": [
           "Nicolas Claxton",
+          "Zach Collins",
           "Tobe Awaka"
         ]
       }
