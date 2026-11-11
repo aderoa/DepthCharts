@@ -569,14 +569,14 @@
     "PG": [
       "Brayden Burries",
       "Kasparas Jakucionis",
-      "Kam Jones"
+      "Kam Jones",
+      "__SPACER__"
     ],
     "SG": [
       "Ryan Rollins",
       "AJ Green",
       "Caris LeVert",
       "Cormac Ryan",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tyler Herro"
     ],
@@ -589,14 +589,16 @@
     "PF": [
       "Kyle Kuzma",
       "Nate Ament",
-      "Bogoljub Markovic",
-      "Pete Nance"
+      "Pete Nance",
+      "__SPACER__"
     ],
     "C": [
-      "Myles Turner",
       "Kel'el Ware",
       "Jericho Sims",
-      "__SPACER__"
+      "Bogoljub Markovic",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Myles Turner"
     ]
   },
   "MIN": {
