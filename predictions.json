@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T06:37:49.856Z",
+  "generated_at": "2026-11-11T06:37:53.791Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -46,15 +46,15 @@
       "bench": {
         "PG": [
           "Payton Pritchard",
-          "Mike Conley",
-          "Ron Harper Jr"
+          "Mike Conley"
         ],
         "SG": [
           "Hugo Gonzalez",
-          "Baylor Scheierman",
+          "Ron Harper Jr",
           "Devin Carter"
         ],
         "SF": [
+          "Baylor Scheierman",
           "Dillon Mitchell"
         ],
         "PF": [
