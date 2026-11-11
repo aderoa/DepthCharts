@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T22:01:16.441Z",
+  "generated_at": "2026-11-11T22:01:23.335Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -676,8 +676,8 @@
     "OKC": {
       "starters": {
         "PG": "Shai Gilgeous-Alexander",
-        "SG": "Alex Caruso",
-        "SF": "Jared McCain",
+        "SG": "Jared McCain",
+        "SF": "Nique Clifford",
         "PF": "Kenrich Williams",
         "C": "Isaiah Hartenstein"
       },
@@ -688,11 +688,11 @@
           "Nikola Topic"
         ],
         "SG": [
-          "Brooks Barnhizer",
+          "Alex Caruso",
           "Cason Wallace"
         ],
         "SF": [
-          "Nique Clifford",
+          "Brooks Barnhizer",
           "Jalen Williams"
         ],
         "PF": [
