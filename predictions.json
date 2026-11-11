@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T22:02:46.114Z",
+  "generated_at": "2026-11-11T22:02:51.037Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -228,10 +228,10 @@
         ],
         "PF": [
           "Naji Marshall",
-          "Tobi Lawal",
-          "Morez Johnson"
+          "Tobi Lawal"
         ],
         "C": [
+          "Morez Johnson",
           "Moussa Cisse",
           "Dereck Lively"
         ]
