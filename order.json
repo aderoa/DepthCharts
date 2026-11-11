@@ -742,29 +742,31 @@
     "PG": [
       "Anthony Black",
       "Alex Morales",
-      "Jevon Carter",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jalen Suggs"
     ],
     "SG": [
       "Desmond Bane",
-      "Jamal Cain",
+      "Jevon Carter",
       "__SPACER__",
+      "__SEPARATOR__",
       "Noah Penda"
     ],
     "SF": [
       "Jase Richardson",
-      "Tristan Da Silva",
+      "Jamal Cain",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jonathan Isaac"
+      "Tristan Da Silva"
     ],
     "PF": [
       "Franz Wagner",
       "Goga Bitadze",
       "__SPACER__",
       "__SEPARATOR__",
-      "Paolo Banchero"
+      "Paolo Banchero",
+      "Jonathan Isaac"
     ],
     "C": [
       "Wendell Carter Jr",
