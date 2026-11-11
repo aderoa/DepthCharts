@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T19:04:38.565Z",
+  "generated_at": "2026-11-11T19:04:42.210Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -315,11 +315,11 @@
       "bench": {
         "PG": [
           "De'Anthony Melton",
-          "LJ Cryer"
+          "LJ Cryer",
+          "Brandon Williams"
         ],
         "SG": [
           "Will Richard",
-          "Brandon Williams",
           "Jimmy Butler"
         ],
         "SF": [
