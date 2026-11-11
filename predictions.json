@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T18:03:28.663Z",
+  "generated_at": "2026-11-11T18:03:32.285Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -644,8 +644,8 @@
       "starters": {
         "PG": "Jalen Brunson",
         "SG": "OG Anunoby",
-        "SF": "Jordan Clarkson",
-        "PF": "Mikal Bridges",
+        "SF": "Mikal Bridges",
+        "PF": "Josh Hart",
         "C": "Karl-Anthony Towns"
       },
       "bench": {
@@ -660,8 +660,8 @@
           "Dalton Knecht"
         ],
         "SF": [
-          "Tyler Nickel",
-          "Josh Hart"
+          "Jordan Clarkson",
+          "Tyler Nickel"
         ],
         "PF": [
           "Mohamed Diawara",
