@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T06:40:05.307Z",
+  "generated_at": "2026-11-11T06:40:12.284Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -939,14 +939,15 @@
     },
     "UTA": {
       "starters": {
-        "PG": "Josh Okogie",
+        "PG": "Ace Bailey",
         "SG": "Darryn Peterson",
-        "SF": "Ace Bailey",
+        "SF": "Sviatoslav Mykhailiuk",
         "PF": "Josh Green",
         "C": "Jaxson Hayes"
       },
       "bench": {
         "PG": [
+          "Josh Okogie",
           "Isaiah Collier",
           "Trey Alexander",
           "Keyonte George"
@@ -955,7 +956,6 @@
           "Kobe Bufkin"
         ],
         "SF": [
-          "Sviatoslav Mykhailiuk",
           "Brice Sensabaugh",
           "Lauri Markkanen"
         ],
