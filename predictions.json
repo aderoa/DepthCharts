@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T18:03:32.285Z",
+  "generated_at": "2026-11-11T18:03:41.114Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -650,12 +650,11 @@
       },
       "bench": {
         "PG": [
-          "Tyler Kolek",
           "Jose Alvarado",
           "Jaden Akins"
         ],
         "SG": [
-          "Landry Shamet",
+          "Tyler Kolek",
           "Miles McBride",
           "Dalton Knecht"
         ],
@@ -664,6 +663,7 @@
           "Tyler Nickel"
         ],
         "PF": [
+          "Landry Shamet",
           "Mohamed Diawara",
           "Pacome Dadiet"
         ],
