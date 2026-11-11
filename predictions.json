@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T22:00:14.505Z",
+  "generated_at": "2026-11-11T22:00:19.782Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -827,11 +827,11 @@
         ],
         "SF": [
           "Micah Potter",
-          "Jayson Kent",
-          "Vit Krejci"
+          "Jayson Kent"
         ],
         "PF": [
-          "Robert Williams"
+          "Robert Williams",
+          "Vit Krejci"
         ],
         "C": [
           "Branden Carlson",
