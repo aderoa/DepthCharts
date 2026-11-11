@@ -951,23 +951,24 @@
     ],
     "SF": [
       "Ja'Kobe Walter",
-      "Alijah Martin",
       "Kevin McCullar",
+      "__SPACER__",
       "__SEPARATOR__",
       "Scottie Barnes"
     ],
     "PF": [
       "Kyle Anderson",
-      "Jamison Battle",
+      "Alijah Martin",
       "__SPACER__",
       "__SEPARATOR__",
       "Collin Murray-Boyles"
     ],
     "C": [
       "Jakob Poeltl",
-      "Trayce Jackson-Davis",
+      "Jamison Battle",
       "__SPACER__",
       "__SEPARATOR__",
+      "Trayce Jackson-Davis",
       "Nate Bittle"
     ]
   },
