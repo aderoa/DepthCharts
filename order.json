@@ -221,12 +221,14 @@
     ],
     "SG": [
       "Cooper Flagg",
+      "Zaccharie Risacher",
       "Max Christie",
-      "Jett Howard"
+      "__SPACER__"
     ],
     "SF": [
       "Caleb Martin",
-      "Zaccharie Risacher",
+      "Santiago Aldama",
+      "Jett Howard",
       "__SEPARATOR__",
       "Tarik Biberovic"
     ],
@@ -239,9 +241,7 @@
     ],
     "C": [
       "Daniel Gafford",
-      "Santiago Aldama",
       "Moussa Cisse",
-      "__SPACER__",
       "__SEPARATOR__",
       "Dereck Lively"
     ]
