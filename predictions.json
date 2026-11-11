@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T22:00:19.782Z",
+  "generated_at": "2026-11-11T22:00:22.273Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -822,12 +822,12 @@
         "SG": [
           "Sidy Cissoko",
           "John Tonje",
-          "Chris Youngblood",
           "Shaedon Sharpe"
         ],
         "SF": [
           "Micah Potter",
-          "Jayson Kent"
+          "Jayson Kent",
+          "Chris Youngblood"
         ],
         "PF": [
           "Robert Williams",
