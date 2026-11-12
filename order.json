@@ -325,21 +325,22 @@
     "SG": [
       "Brandin Podziemski",
       "Will Richard",
-      "Gary Payton II",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Jimmy Butler"
+      "Gary Payton II"
     ],
     "SF": [
       "Yaxel Lendeborg",
       "Gui Santos",
       "__SPACER__",
       "__SEPARATOR__",
-      "Moses Moody"
+      "Jimmy Butler"
     ],
     "PF": [
       "Draymond Green",
       "Georges Niang",
-      "Malevy Leons"
+      "Malevy Leons",
+      "Moses Moody"
     ],
     "C": [
       "Al Horford",
