@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T07:38:28.688Z",
+  "generated_at": "2026-11-12T07:38:31.981Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -625,16 +625,16 @@
         ],
         "SF": [
           "Saddiq Bey",
-          "Malik Dia",
           "Trey Murphy"
         ],
         "PF": [
           "Derik Queen",
-          "Julian Reese",
+          "Malik Dia",
           "Trendon Watford"
         ],
         "C": [
           "DeAndre Jordan",
+          "Julian Reese",
           "Yves Missi"
         ]
       }
