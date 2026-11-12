@@ -36,39 +36,33 @@
   },
   "BOS": {
     "PG": [
+      "Derrick White",
       "Mike Conley",
       "Payton Pritchard",
-      "Ron Harper Jr",
-      "__SPACER__"
+      "Ron Harper Jr"
     ],
     "SG": [
-      "Derrick White",
+      "Baylor Scheierman",
       "Hugo Gonzalez",
       "Dillon Mitchell",
-      "Ron Harper Jr",
-      "__SPACER__",
       "__SEPARATOR__",
       "Devin Carter"
     ],
     "SF": [
       "Jayson Tatum",
-      "Baylor Scheierman",
       "Amari Williams",
-      "__SPACER__",
       "__SEPARATOR__",
       "Paul George"
     ],
     "PF": [
       "Jordan Walsh",
       "Sam Hauser",
-      "Luka Garza",
-      "__SPACER__"
+      "Luka Garza"
     ],
     "C": [
       "Neemias Queta",
       "Mitchell Robinson",
-      "Chris Cenac",
-      "__SPACER__"
+      "Chris Cenac"
     ]
   },
   "BKN": {
