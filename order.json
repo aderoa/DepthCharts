@@ -319,6 +319,7 @@
       "Stephen Curry",
       "De'Anthony Melton",
       "LJ Cryer",
+      "__SEPARATOR__",
       "Brandon Williams"
     ],
     "SG": [
@@ -329,6 +330,7 @@
       "Jimmy Butler"
     ],
     "SF": [
+      "Yaxel Lendeborg",
       "Gui Santos",
       "Gary Payton II",
       "Malevy Leons",
@@ -336,12 +338,11 @@
       "Moses Moody"
     ],
     "PF": [
-      "Yaxel Lendeborg",
+      "Draymond Green",
       "Georges Niang",
       "Graham Ike"
     ],
     "C": [
-      "Draymond Green",
       "Al Horford",
       "Charles Bassey",
       "__SEPARATOR__",
