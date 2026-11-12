@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T07:38:31.981Z",
+  "generated_at": "2026-11-12T07:38:49.234Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -708,19 +708,19 @@
     },
     "ORL": {
       "starters": {
-        "PG": "Anthony Black",
-        "SG": "Desmond Bane",
-        "SF": "Jase Richardson",
+        "PG": "Alex Morales",
+        "SG": "Anthony Black",
+        "SF": "Desmond Bane",
         "PF": "Franz Wagner",
         "C": "Wendell Carter Jr"
       },
       "bench": {
         "PG": [
-          "Alex Morales",
+          "Jevon Carter",
           "Jalen Suggs"
         ],
         "SG": [
-          "Jevon Carter",
+          "Jase Richardson",
           "Jamal Cain"
         ],
         "SF": [
