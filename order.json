@@ -626,27 +626,29 @@
     ],
     "SG": [
       "Dejounte Murray",
+      "Bryce McGowens",
       "AJ Johnson",
+      "__SEPARATOR__",
       "Bennedict Mathurin"
     ],
     "SF": [
       "Herb Jones",
-      "Bryce McGowens",
+      "Saddiq Bey",
       "Malik Dia",
-      "__SPACER__",
       "__SEPARATOR__",
       "Trey Murphy"
     ],
     "PF": [
       "Zion Williamson",
-      "Saddiq Bey",
+      "Derik Queen",
       "Julian Reese",
+      "__SEPARATOR__",
       "Trendon Watford"
     ],
     "C": [
       "Karlo Matkovic",
-      "Derik Queen",
       "DeAndre Jordan",
+      "__SPACER__",
       "__SEPARATOR__",
       "Yves Missi"
     ]
