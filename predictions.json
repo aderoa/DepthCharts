@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:33:48.440Z",
+  "generated_at": "2026-11-12T06:33:55.207Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -109,7 +109,7 @@
         "SG": "Sion James",
         "SF": "Grayson Allen",
         "PF": "Naz Reid",
-        "C": "Ryan Kalkbrenner"
+        "C": "Moussa Diabate"
       },
       "bench": {
         "PG": [
@@ -132,8 +132,8 @@
           "PJ Hall"
         ],
         "C": [
-          "Hannes Steinbach",
-          "Moussa Diabate"
+          "Ryan Kalkbrenner",
+          "Hannes Steinbach"
         ]
       }
     },
