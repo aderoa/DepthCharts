@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:35:40.935Z",
+  "generated_at": "2026-11-12T06:35:56.669Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -543,7 +543,7 @@
     "MIL": {
       "starters": {
         "PG": "Brayden Burries",
-        "SG": "Ryan Rollins",
+        "SG": "Tyler Herro",
         "SF": "Jaime Jaquez",
         "PF": "Kyle Kuzma",
         "C": "Kel'el Ware"
@@ -554,10 +554,10 @@
           "Kam Jones"
         ],
         "SG": [
+          "Ryan Rollins",
           "AJ Green",
           "Caris LeVert",
-          "Cormac Ryan",
-          "Tyler Herro"
+          "Cormac Ryan"
         ],
         "SF": [
           "Ousmane Dieng",
