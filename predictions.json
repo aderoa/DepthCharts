@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:31:31.142Z",
+  "generated_at": "2026-11-12T06:33:48.440Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -124,12 +124,12 @@
         ],
         "SF": [
           "Tidjane Salaun",
+          "Royce O'Neale",
           "Brandon Miller"
         ],
         "PF": [
-          "Royce O'Neale",
-          "PJ Hall",
-          "Grant Williams"
+          "Grant Williams",
+          "PJ Hall"
         ],
         "C": [
           "Hannes Steinbach",
