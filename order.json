@@ -970,7 +970,6 @@
       "Ace Bailey",
       "Isaiah Collier",
       "Trey Alexander",
-      "__SEPARATOR__",
       "Keyonte George"
     ],
     "SG": [
@@ -983,12 +982,15 @@
       "Josh Okogie",
       "Sviatoslav Mykhailiuk",
       "Harrison Ingram",
+      "__SPACER__",
       "__SEPARATOR__",
       "Lauri Markkanen"
     ],
     "PF": [
       "Josh Green",
       "Kyle Filipowski",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jaren Jackson Jr"
     ],
@@ -996,6 +998,7 @@
       "Jaxson Hayes",
       "Mo Bamba",
       "Tony Bradley",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jusuf Nurkic"
     ]
