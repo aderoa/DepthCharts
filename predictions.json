@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T07:35:29.990Z",
+  "generated_at": "2026-11-12T07:35:33.474Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -45,8 +45,8 @@
       },
       "bench": {
         "PG": [
-          "Mike Conley",
           "Payton Pritchard",
+          "Mike Conley",
           "Ron Harper Jr"
         ],
         "SG": [
