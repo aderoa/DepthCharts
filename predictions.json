@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T07:39:17.311Z",
+  "generated_at": "2026-11-12T07:39:27.736Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -938,7 +938,7 @@
     },
     "UTA": {
       "starters": {
-        "PG": "Isaiah Collier",
+        "PG": "Keyonte George",
         "SG": "Darryn Peterson",
         "SF": "Ace Bailey",
         "PF": "Josh Green",
@@ -946,8 +946,8 @@
       },
       "bench": {
         "PG": [
-          "Trey Alexander",
-          "Keyonte George"
+          "Isaiah Collier",
+          "Trey Alexander"
         ],
         "SG": [
           "Brice Sensabaugh",
