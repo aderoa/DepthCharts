@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T07:42:28.373Z",
+  "generated_at": "2026-11-12T07:42:31.894Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -677,7 +677,7 @@
         "PG": "Shai Gilgeous-Alexander",
         "SG": "Alex Caruso",
         "SF": "Jared McCain",
-        "PF": "Kenrich Williams",
+        "PF": "Aday Mara",
         "C": "Isaiah Hartenstein"
       },
       "bench": {
@@ -696,11 +696,11 @@
           "Jalen Williams"
         ],
         "PF": [
-          "Josh Dix",
+          "Kenrich Williams",
           "Jaylin Williams"
         ],
         "C": [
-          "Aday Mara",
+          "Josh Dix",
           "Chet Holmgren",
           "Thomas Sorber"
         ]
