@@ -945,11 +945,9 @@
   },
   "TOR": {
     "PG": [
+      "Immanuel Quickley",
       "Jamal Shead",
-      "Jaden Bradley",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Immanuel Quickley"
+      "Jaden Bradley"
     ],
     "SG": [
       "RJ Barrett",
@@ -968,9 +966,8 @@
     "PF": [
       "Kyle Anderson",
       "Alijah Martin",
-      "__SPACER__",
-      "__SEPARATOR__",
       "Collin Murray-Boyles",
+      "__SEPARATOR__",
       "Nate Bittle"
     ],
     "C": [
