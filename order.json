@@ -316,11 +316,12 @@
   },
   "GSW": {
     "PG": [
-      "Stephen Curry",
       "De'Anthony Melton",
       "LJ Cryer",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Brandon Williams"
+      "Brandon Williams",
+      "Stephen Curry"
     ],
     "SG": [
       "Brandin Podziemski",
@@ -340,6 +341,7 @@
       "Draymond Green",
       "Georges Niang",
       "Malevy Leons",
+      "__SEPARATOR__",
       "Moses Moody"
     ],
     "C": [
