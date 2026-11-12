@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T07:42:40.201Z",
+  "generated_at": "2026-11-12T07:48:14.192Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -853,19 +853,20 @@
           "Ben Simmons"
         ],
         "SG": [
-          "Malik Monk"
+          "Malik Monk",
+          "Daeqwon Plowden"
         ],
         "SF": [
           "Leaky Black",
-          "Daeqwon Plowden"
+          "Alex Karaban"
         ],
         "PF": [
           "Keegan Murray",
-          "Alex Karaban"
+          "Jonathan Mogbo"
         ],
         "C": [
           "Dylan Cardwell",
-          "Jonathan Mogbo",
+          "Mason Plumlee",
           "Maxime Raynaud"
         ]
       }
