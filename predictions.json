@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:18:10.350Z",
+  "generated_at": "2026-11-14T23:18:30.831Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -843,7 +843,7 @@
         "PG": "Darius Acuff",
         "SG": "Zach LaVine",
         "SF": "De'Andre Hunter",
-        "PF": "Precious Achiuwa",
+        "PF": "Keegan Murray",
         "C": "Domantas Sabonis"
       },
       "bench": {
@@ -853,16 +853,16 @@
           "Ben Simmons"
         ],
         "SG": [
-          "Malik Monk",
-          "Daeqwon Plowden"
+          "Malik Monk"
         ],
         "SF": [
           "Leaky Black",
           "Alex Karaban"
         ],
         "PF": [
-          "Keegan Murray",
-          "Jonathan Mogbo"
+          "Daeqwon Plowden",
+          "Jonathan Mogbo",
+          "Precious Achiuwa"
         ],
         "C": [
           "Dylan Cardwell",
