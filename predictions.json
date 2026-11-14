@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:12:58.023Z",
+  "generated_at": "2026-11-14T23:13:03.578Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -510,7 +510,7 @@
       "starters": {
         "PG": "Davion Mitchell",
         "SG": "Tim Hardaway Jr",
-        "SF": "Andrew Wiggins",
+        "SF": "Myron Gardner",
         "PF": "Giannis Antetokounmpo",
         "C": "Bam Adebayo"
       },
@@ -521,10 +521,10 @@
           "Tre Donaldson"
         ],
         "SG": [
-          "Myron Gardner",
           "Klay Thompson"
         ],
         "SF": [
+          "Andrew Wiggins",
           "Keshad Johnson",
           "Pelle Larsson"
         ],
