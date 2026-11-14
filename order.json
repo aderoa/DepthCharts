@@ -531,12 +531,12 @@
       "Klay Thompson",
       "Tim Hardaway Jr",
       "Ryan Conwell",
-      "Keshad Johnson"
+      "__SPACER__"
     ],
     "SF": [
       "Myron Gardner",
       "Andrew Wiggins",
-      "Nikola Jovic",
+      "Keshad Johnson",
       "__SPACER__",
       "__SEPARATOR__",
       "Pelle Larsson"
@@ -544,14 +544,14 @@
     "PF": [
       "Giannis Antetokounmpo",
       "Simone Fontecchio",
-      "Nick Richards",
+      "Nikola Jovic",
       "__SPACER__"
     ],
     "C": [
       "Bam Adebayo",
       "Bobby Portis",
-      "Vladislav Goldin",
-      "__SPACER__"
+      "Nick Richards",
+      "Vladislav Goldin"
     ]
   },
   "MIL": {
