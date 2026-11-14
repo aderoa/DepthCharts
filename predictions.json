@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:12:13.512Z",
+  "generated_at": "2026-11-14T23:12:16.552Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -726,14 +726,14 @@
         ],
         "SF": [
           "Jamal Cain",
-          "Nikola Vucevic",
           "Jonathan Isaac"
         ],
         "PF": [
-          "Goga Bitadze",
+          "Nikola Vucevic",
           "Paolo Banchero"
         ],
         "C": [
+          "Goga Bitadze",
           "Colin Castleton",
           "Izaiyah Nelson"
         ]
