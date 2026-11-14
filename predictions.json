@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:15:31.686Z",
+  "generated_at": "2026-11-14T23:15:37.557Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -941,8 +941,8 @@
       "starters": {
         "PG": "Keyonte George",
         "SG": "Darryn Peterson",
-        "SF": "Josh Okogie",
-        "PF": "Josh Green",
+        "SF": "Ace Bailey",
+        "PF": "Josh Okogie",
         "C": "Jaxson Hayes"
       },
       "bench": {
@@ -955,11 +955,12 @@
           "Kobe Bufkin"
         ],
         "SF": [
-          "Ace Bailey",
+          "Josh Okogie",
           "Harrison Ingram",
           "Lauri Markkanen"
         ],
         "PF": [
+          "Josh Green",
           "Sviatoslav Mykhailiuk",
           "Kyle Filipowski",
           "Jaren Jackson Jr"
