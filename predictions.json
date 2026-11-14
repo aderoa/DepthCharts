@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:24:14.814Z",
+  "generated_at": "2026-11-14T23:24:16.952Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -360,10 +360,10 @@
         ],
         "PF": [
           "Tari Eason",
-          "Julian Phillips",
-          "Steven Adams"
+          "Julian Phillips"
         ],
         "C": [
+          "Steven Adams",
           "Oscar Tshiebwe",
           "Quadir Copeland",
           "Clint Capela"
