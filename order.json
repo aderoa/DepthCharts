@@ -621,23 +621,22 @@
   "NOP": {
     "PG": [
       "Jeremiah Fears",
-      "Jordan Poole",
+      "__SPACER__",
       "Jaron Pierre",
       "__SEPARATOR__",
       "Dejounte Murray"
     ],
     "SG": [
       "Herb Jones",
-      "AJ Johnson",
-      "__SPACER__",
+      "Jordan Poole",
       "__SEPARATOR__",
       "Bryce McGowens"
     ],
     "SF": [
       "Saddiq Bey",
+      "AJ Johnson",
       "Julian Reese",
       "Malik Dia",
-      "__SPACER__",
       "__SEPARATOR__",
       "Bennedict Mathurin",
       "Trey Murphy"
@@ -645,6 +644,7 @@
     "PF": [
       "Zion Williamson",
       "Derik Queen",
+      "__SPACER__",
       "__SEPARATOR__",
       "Trendon Watford"
     ],
