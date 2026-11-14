@@ -736,6 +736,7 @@
       "Desmond Bane",
       "Jevon Carter",
       "Jase Richardson",
+      "__SEPARATOR__",
       "Noah Penda"
     ],
     "SF": [
@@ -748,6 +749,7 @@
     "PF": [
       "Franz Wagner",
       "Nikola Vucevic",
+      "__SPACER__",
       "__SEPARATOR__",
       "Paolo Banchero"
     ],
@@ -755,7 +757,6 @@
       "Wendell Carter Jr",
       "Goga Bitadze",
       "Colin Castleton",
-      "__SPACER__",
       "__SEPARATOR__",
       "Izaiyah Nelson"
     ]
