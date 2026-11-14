@@ -569,22 +569,24 @@
       "Cormac Ryan"
     ],
     "SF": [
-      "Ousmane Dieng",
       "Jaime Jaquez",
       "Caris LeVert",
-      "__SPACER__"
+      "Pete Nance",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Ousmane Dieng"
     ],
     "PF": [
       "Kyle Kuzma",
       "Nate Ament",
       "Jericho Sims",
-      "Pete Nance"
+      "__SPACER__"
     ],
     "C": [
       "Myles Turner",
       "Kel'el Ware",
-      "__SPACER__",
-      "Bogoljub Markovic"
+      "Bogoljub Markovic",
+      "__SPACER__"
     ]
   },
   "MIN": {
