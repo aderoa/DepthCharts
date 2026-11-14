@@ -1,22 +1,22 @@
 {
   "ATL": {
     "PG": [
-      "Kingston Flemings",
       "CJ McCollum",
+      "Luguentz Dort",
       "RayJ Dennis",
       "__SEPARATOR__",
-      "Keshon Gilbert"
+      "Kingston Flemings"
     ],
     "SG": [
       "Nickeil Alexander-Walker",
-      "Luguentz Dort",
+      "Corey Kispert",
+      "__SPACER__",
       "Jalen Wilson",
-      "__SEPARATOR__"
+      "Keshon Gilbert"
     ],
     "SF": [
       "Dyson Daniels",
       "Aaron Wiggins",
-      "Corey Kispert",
       "__SEPARATOR__",
       "Asa Newell"
     ],
@@ -24,6 +24,7 @@
       "Jalen Johnson",
       "Zuby Ejiofor",
       "Dorian Finney-Smith",
+      "__SEPARATOR__",
       "Mouhamed Gueye"
     ],
     "C": [
