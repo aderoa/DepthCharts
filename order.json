@@ -624,6 +624,8 @@
       "Jeremiah Fears",
       "Jordan Poole",
       "Jaron Pierre",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Dejounte Murray"
     ],
     "SG": [
@@ -637,22 +639,24 @@
     "SF": [
       "Saddiq Bey",
       "Bennedict Mathurin",
+      "Malik Dia",
+      "__SPACER__",
       "__SEPARATOR__",
       "Trey Murphy"
     ],
     "PF": [
       "Zion Williamson",
       "Derik Queen",
-      "Malik Dia",
+      "Julian Reese",
+      "__SPACER__",
       "__SEPARATOR__",
       "Trendon Watford"
     ],
     "C": [
       "DeAndre Jordan",
+      "Yves Missi",
       "Karlo Matkovic",
-      "Julian Reese",
-      "__SEPARATOR__",
-      "Yves Missi"
+      "__SPACER__"
     ]
   },
   "NYK": {
