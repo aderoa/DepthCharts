@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:18:01.335Z",
+  "generated_at": "2026-11-14T23:18:10.350Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -824,12 +824,12 @@
           "Shaedon Sharpe"
         ],
         "SF": [
-          "Micah Potter",
           "Jayson Kent",
           "Chris Youngblood"
         ],
         "PF": [
           "Robert Williams",
+          "Micah Potter",
           "Vit Krejci"
         ],
         "C": [
