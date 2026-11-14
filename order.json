@@ -359,34 +359,31 @@
     "PG": [
       "Fred VanVleet",
       "Reed Sheppard",
-      "Bruce Thornton",
-      "__SPACER__"
+      "Bruce Thornton"
     ],
     "SG": [
       "Amen Thompson",
-      "Marcus Smart",
-      "Isaiah Crawford",
-      "__SPACER__"
+      "Jae'Sean Tate",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Marcus Smart"
     ],
     "SF": [
       "Kevin Durant",
       "Bogdan Bogdanovic",
-      "Jae'Sean Tate",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Isaiah Crawford"
     ],
     "PF": [
       "Jabari Smith",
       "Tari Eason",
       "Julian Phillips",
+      "__SEPARATOR__",
       "Steven Adams"
     ],
     "C": [
       "Alperen Sengun",
       "Oscar Tshiebwe",
       "Quadir Copeland",
-      "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Clint Capela"
     ]
