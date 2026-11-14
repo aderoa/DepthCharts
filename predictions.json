@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:25:11.306Z",
+  "generated_at": "2026-11-14T23:25:16.601Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -754,21 +754,21 @@
         ],
         "SG": [
           "Anfernee Simons",
-          "Rayan Rupert"
+          "Rayan Rupert",
+          "Dominick Barlow"
         ],
         "SF": [
           "Kentavious Caldwell-Pope",
-          "Dominick Barlow"
+          "Ariel Hukporti"
         ],
         "PF": [
           "Justin Edwards",
-          "Ariel Hukporti"
+          "Adem Bona"
         ],
         "C": [
           "Jabari Walker",
           "Tacko Fall",
-          "Joel Embiid",
-          "Adem Bona"
+          "Joel Embiid"
         ]
       }
     },
