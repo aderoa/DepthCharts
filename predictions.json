@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:13:18.308Z",
+  "generated_at": "2026-11-14T23:14:17.422Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -139,9 +139,9 @@
     "CHI": {
       "starters": {
         "PG": "Josh Giddey",
-        "SG": "Isaac Okoro",
+        "SG": "Norman Powell",
         "SF": "Matas Buzelis",
-        "PF": "Caleb Wilson",
+        "PF": "Noa Essengue",
         "C": "Jalen Smith"
       },
       "bench": {
@@ -151,16 +151,16 @@
           "Dailyn Swain"
         ],
         "SG": [
+          "Isaac Okoro",
           "Jordan Hawkins",
-          "Buddy Hield",
-          "Norman Powell"
+          "Buddy Hield"
         ],
         "SF": [
           "Patrick Williams"
         ],
         "PF": [
-          "Noa Essengue",
-          "Leonard Miller"
+          "Leonard Miller",
+          "Caleb Wilson"
         ],
         "C": [
           "Nicolas Claxton",
