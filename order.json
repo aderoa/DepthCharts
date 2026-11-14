@@ -526,20 +526,20 @@
     "PG": [
       "Davion Mitchell",
       "Dru Smith",
-      "__SPACER__",
-      "Tre Donaldson"
+      "Tre Donaldson",
+      "__SPACER__"
     ],
     "SG": [
       "Tim Hardaway Jr",
       "Ryan Conwell",
-      "__SPACER__",
+      "Keshad Johnson",
       "__SEPARATOR__",
       "Klay Thompson"
     ],
     "SF": [
       "Myron Gardner",
       "Andrew Wiggins",
-      "Keshad Johnson",
+      "Nikola Jovic",
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
@@ -548,13 +548,13 @@
     "PF": [
       "Giannis Antetokounmpo",
       "Simone Fontecchio",
-      "Nikola Jovic",
+      "Nick Richards",
       "__SPACER__"
     ],
     "C": [
       "Bam Adebayo",
       "Bobby Portis",
-      "Nick Richards",
+      "__SPACER__",
       "Vladislav Goldin"
     ]
   },
