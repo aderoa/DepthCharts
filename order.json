@@ -144,28 +144,28 @@
     "SG": [
       "Norman Powell",
       "Buddy Hield",
-      "Dailyn Swain"
+      "Dailyn Swain",
+      "Caleb Wilson"
     ],
     "SF": [
       "Isaac Okoro",
       "Patrick Williams",
-      "Jordan Hawkins"
+      "Jordan Hawkins",
+      "Jalen Smith"
     ],
     "PF": [
       "Matas Buzelis",
       "Noa Essengue",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Caleb Wilson"
+      "Tobe Awaka"
     ],
     "C": [
       "Leonard Miller",
       "Zach Collins",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Jalen Smith",
-      "Nicolas Claxton",
-      "Tobe Awaka"
+      "Nicolas Claxton"
     ]
   },
   "CLE": {
