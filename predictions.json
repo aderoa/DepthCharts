@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:13:07.879Z",
+  "generated_at": "2026-11-14T23:13:18.308Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -521,20 +521,20 @@
         ],
         "SG": [
           "Ryan Conwell",
+          "Keshad Johnson",
           "Klay Thompson"
         ],
         "SF": [
           "Andrew Wiggins",
-          "Keshad Johnson",
+          "Nikola Jovic",
           "Pelle Larsson"
         ],
         "PF": [
           "Simone Fontecchio",
-          "Nikola Jovic"
+          "Nick Richards"
         ],
         "C": [
           "Bobby Portis",
-          "Nick Richards",
           "Vladislav Goldin"
         ]
       }
