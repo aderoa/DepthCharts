@@ -530,21 +530,25 @@
       "Tre Donaldson"
     ],
     "SG": [
-      "Klay Thompson",
+      "Tim Hardaway Jr",
       "Myron Gardner",
-      "Tim Hardaway Jr"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Klay Thompson"
     ],
     "SF": [
-      "Pelle Larsson",
       "Andrew Wiggins",
       "Keshad Johnson",
-      "__SPACER__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Pelle Larsson"
     ],
     "PF": [
       "Giannis Antetokounmpo",
       "Simone Fontecchio",
       "Nikola Jovic",
-      "__SPACER__",
       "__SPACER__"
     ],
     "C": [
