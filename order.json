@@ -568,13 +568,13 @@
       "Tyler Herro",
       "Gary Trent Jr",
       "AJ Green",
-      "__SPACER__",
       "Cormac Ryan"
     ],
     "SF": [
       "Ousmane Dieng",
       "Jaime Jaquez",
-      "Caris LeVert"
+      "Caris LeVert",
+      "__SPACER__"
     ],
     "PF": [
       "Kyle Kuzma",
@@ -583,12 +583,10 @@
       "__SPACER__"
     ],
     "C": [
+      "Myles Turner",
       "Kel'el Ware",
       "Jericho Sims",
-      "Bogoljub Markovic",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Myles Turner"
+      "Bogoljub Markovic"
     ]
   },
   "MIN": {
