@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:11:13.488Z",
+  "generated_at": "2026-11-14T23:11:32.472Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -545,7 +545,7 @@
         "SG": "Tyler Herro",
         "SF": "Ousmane Dieng",
         "PF": "Kyle Kuzma",
-        "C": "Kel'el Ware"
+        "C": "Myles Turner"
       },
       "bench": {
         "PG": [
@@ -567,9 +567,9 @@
           "Pete Nance"
         ],
         "C": [
+          "Kel'el Ware",
           "Jericho Sims",
-          "Bogoljub Markovic",
-          "Myles Turner"
+          "Bogoljub Markovic"
         ]
       }
     },
