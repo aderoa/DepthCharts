@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:26:24.822Z",
+  "generated_at": "2026-11-14T23:26:29.353Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -615,15 +615,15 @@
       },
       "bench": {
         "PG": [
-          "Jordan Poole",
           "Jaron Pierre",
           "Dejounte Murray"
         ],
         "SG": [
-          "AJ Johnson",
+          "Jordan Poole",
           "Bryce McGowens"
         ],
         "SF": [
+          "AJ Johnson",
           "Julian Reese",
           "Malik Dia",
           "Bennedict Mathurin",
