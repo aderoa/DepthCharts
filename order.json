@@ -511,7 +511,6 @@
     "SF": [
       "Jaylen Wells",
       "Taylor Hendricks",
-      "GG Jackson",
       "__SEPARATOR__",
       "Richie Saunders"
     ],
@@ -521,10 +520,12 @@
       "Karim Lopez"
     ],
     "C": [
-      "Zach Edey",
       "Isaiah Stewart",
+      "GG Jackson",
       "Olivier-Maxence Prosper",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Zach Edey",
       "Quinten Post"
     ]
   },
