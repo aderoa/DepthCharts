@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:26:29.353Z",
+  "generated_at": "2026-11-14T23:26:33.948Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -626,16 +626,17 @@
           "AJ Johnson",
           "Julian Reese",
           "Malik Dia",
-          "Bennedict Mathurin",
-          "Trey Murphy"
+          "Bennedict Mathurin"
         ],
         "PF": [
           "Derik Queen",
-          "Trendon Watford"
+          "Trendon Watford",
+          "Trey Murphy"
         ],
         "C": [
           "Yves Missi",
-          "Karlo Matkovic"
+          "Karlo Matkovic",
+          "Trendon Watford"
         ]
       }
     },
