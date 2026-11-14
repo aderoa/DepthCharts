@@ -174,8 +174,6 @@
     "PG": [
       "Tyrese Proctor",
       "Craig Porter",
-      "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "James Harden"
     ],
@@ -189,22 +187,19 @@
     "SF": [
       "Jaylon Tyson",
       "Ernest Udeh",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Peyton Watson",
-      "Nae'Qwan Tomlin"
+      "Peyton Watson"
     ],
     "PF": [
-      "__SPACER__",
       "Mario Hezonja",
       "Riley Minix",
       "__SEPARATOR__",
-      "Evan Mobley"
+      "Evan Mobley",
+      "Nae'Qwan Tomlin"
     ],
     "C": [
       "Thomas Bryant",
       "Khalifa Diop",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jarrett Allen"
     ]
