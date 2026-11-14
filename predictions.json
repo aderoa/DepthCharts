@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:17:30.395Z",
+  "generated_at": "2026-11-14T23:17:40.096Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -881,19 +881,19 @@
       },
       "bench": {
         "PG": [
+          "Keldon Johnson",
           "Jordan McLaughlin",
           "Ja'Kobi Gillespie"
         ],
         "SG": [
-          "Keldon Johnson"
+          "Harrison Barnes"
         ],
         "SF": [
-          "Harrison Barnes",
+          "Julian Champagnie",
           "David Jones",
           "Tobias Harris"
         ],
         "PF": [
-          "Julian Champagnie",
           "Carter Bryant",
           "Maliq Brown",
           "Jayden Quaintance"
