@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:25:52.182Z",
+  "generated_at": "2026-11-14T23:25:54.883Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -59,12 +59,12 @@
         ],
         "PF": [
           "Jordan Walsh",
+          "Chris Cenac",
           "Amari Williams"
         ],
         "C": [
           "Mitchell Robinson",
-          "Luka Garza",
-          "Chris Cenac"
+          "Luka Garza"
         ]
       }
     },
