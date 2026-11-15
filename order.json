@@ -948,32 +948,35 @@
     "PG": [
       "Immanuel Quickley",
       "Jamal Shead",
-      "Jaden Bradley"
+      "Jaden Bradley",
+      "__SPACER__"
     ],
     "SG": [
       "RJ Barrett",
       "Allen Graves",
       "Malachi Smith",
+      "__SPACER__",
       "__SEPARATOR__",
       "Kawhi Leonard"
     ],
     "SF": [
+      "Scottie Barnes",
       "Ja'Kobe Walter",
       "Alijah Martin",
-      "Kevin McCullar",
-      "__SEPARATOR__",
-      "Scottie Barnes"
+      "Kevin McCullar"
     ],
     "PF": [
       "Collin Murray-Boyles",
       "Jamison Battle",
       "Kyle Anderson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Nate Bittle"
     ],
     "C": [
       "Jakob Poeltl",
       "Trayce Jackson-Davis",
+      "__SPACER__",
       "__SPACER__"
     ]
   },
