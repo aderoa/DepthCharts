@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T17:37:54.287Z",
+  "generated_at": "2026-11-15T17:38:03.503Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -381,8 +381,8 @@
       },
       "bench": {
         "PG": [
-          "Braden Smith",
           "TJ McConnell",
+          "Braden Smith",
           "Tyrese Haliburton"
         ],
         "SG": [
