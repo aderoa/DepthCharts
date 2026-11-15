@@ -388,11 +388,11 @@
   },
   "IND": {
     "PG": [
-      "Andrew Nembhard",
-      "TJ McConnell",
       "Braden Smith",
+      "TJ McConnell",
       "__SPACER__",
       "__SEPARATOR__",
+      "Andrew Nembhard",
       "Tyrese Haliburton"
     ],
     "SG": [
@@ -405,6 +405,7 @@
     "SF": [
       "Aaron Nesmith",
       "Jarace Walker",
+      "__SPACER__",
       "__SEPARATOR__",
       "Johnny Furphy"
     ],
