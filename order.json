@@ -75,19 +75,18 @@
       "__SPACER__"
     ],
     "SG": [
-      "Danny Wolf",
+      "Michael Porter",
       "Nolan Traore",
-      "Keon Ellis"
+      "Keon Ellis",
+      "__SPACER__"
     ],
     "SF": [
-      "Julius Randle",
+      "Danny Wolf",
       "Terance Mann",
-      "Drake Powell",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Michael Porter"
+      "Drake Powell"
     ],
     "PF": [
+      "Julius Randle",
       "Noah Clowney",
       "Chaney Johnson",
       "Joshua Jefferson",
@@ -97,8 +96,7 @@
       "Day'Ron Sharpe",
       "Moritz Wagner",
       "Josh Minott",
-      "Grant Nelson",
-      "__SPACER__"
+      "Grant Nelson"
     ]
   },
   "CHA": {
