@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T00:49:14.825Z",
+  "generated_at": "2026-11-15T01:00:41.399Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -106,7 +106,7 @@
       "starters": {
         "PG": "Coby White",
         "SG": "Sion James",
-        "SF": "Grayson Allen",
+        "SF": "Brandon Miller",
         "PF": "Naz Reid",
         "C": "Moussa Diabate"
       },
@@ -122,9 +122,9 @@
           "Kon Knueppel"
         ],
         "SF": [
+          "Grayson Allen",
           "Royce O'Neale",
-          "Liam McNeeley",
-          "Brandon Miller"
+          "Liam McNeeley"
         ],
         "PF": [
           "Grant Williams",
