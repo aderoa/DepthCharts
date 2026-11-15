@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T22:04:05.232Z",
+  "generated_at": "2026-11-15T22:04:12.860Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -87,13 +87,12 @@
         ],
         "SF": [
           "Chaney Johnson",
-          "Keon Ellis",
-          "Joshua Jefferson",
-          "Drake Powell"
+          "Drake Powell",
+          "Joshua Jefferson"
         ],
         "PF": [
           "Noah Clowney",
-          "Drake Powell",
+          "Keon Ellis",
           "Tyler Bilodeau"
         ],
         "C": [
