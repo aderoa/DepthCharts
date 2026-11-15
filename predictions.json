@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T20:54:29.352Z",
+  "generated_at": "2026-11-15T20:54:37.443Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -876,7 +876,7 @@
       "starters": {
         "PG": "Dylan Harper",
         "SG": "Stephon Castle",
-        "SF": "Julian Champagnie",
+        "SF": "Harrison Barnes",
         "PF": "Devin Vassell",
         "C": "Victor Wembanyama"
       },
@@ -887,10 +887,10 @@
           "De'Aaron Fox"
         ],
         "SG": [
-          "Harrison Barnes",
           "Ja'Kobi Gillespie"
         ],
         "SF": [
+          "Julian Champagnie",
           "David Jones",
           "Tobias Harris"
         ],
