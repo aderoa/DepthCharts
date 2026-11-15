@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T22:29:40.351Z",
+  "generated_at": "2026-11-15T22:38:02.907Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -589,16 +589,17 @@
           "Donte DiVincenzo"
         ],
         "SG": [
-          "Jaylen Clark",
           "Isaiah Evans",
           "Anthony Edwards"
         ],
         "SF": [
           "Terrence Shannon",
-          "Cody Williams"
+          "Cody Williams",
+          "Jaylen Clark"
         ],
         "PF": [
-          "Trey Lyles"
+          "Trey Lyles",
+          "Johni Broome"
         ],
         "C": [
           "Joan Beringer",
