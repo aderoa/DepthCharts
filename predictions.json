@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T23:23:36.582Z",
+  "generated_at": "2026-11-15T23:23:50.705Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -213,12 +213,12 @@
       },
       "bench": {
         "PG": [
-          "Walter Clayton",
           "Marcus Sasser",
           "Kyrie Irving",
           "Sergio De Larrea"
         ],
         "SG": [
+          "Walter Clayton",
           "Jett Howard",
           "Max Christie"
         ],
