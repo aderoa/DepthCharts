@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T22:06:27.684Z",
+  "generated_at": "2026-11-15T22:06:53.137Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -876,8 +876,8 @@
       "starters": {
         "PG": "Dylan Harper",
         "SG": "Stephon Castle",
-        "SF": "Harrison Barnes",
-        "PF": "Devin Vassell",
+        "SF": "Devin Vassell",
+        "PF": "Julian Champagnie",
         "C": "Victor Wembanyama"
       },
       "bench": {
@@ -890,7 +890,7 @@
           "Keldon Johnson"
         ],
         "SF": [
-          "Julian Champagnie",
+          "Harrison Barnes",
           "David Jones",
           "Tobias Harris"
         ],
