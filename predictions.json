@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T22:03:04.182Z",
+  "generated_at": "2026-11-15T22:03:45.519Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -71,9 +71,9 @@
     "BKN": {
       "starters": {
         "PG": "Egor Demin",
-        "SG": "Danny Wolf",
-        "SF": "Julius Randle",
-        "PF": "Noah Clowney",
+        "SG": "Michael Porter",
+        "SF": "Danny Wolf",
+        "PF": "Julius Randle",
         "C": "Day'Ron Sharpe"
       },
       "bench": {
@@ -87,10 +87,10 @@
         ],
         "SF": [
           "Terance Mann",
-          "Drake Powell",
-          "Michael Porter"
+          "Drake Powell"
         ],
         "PF": [
+          "Noah Clowney",
           "Chaney Johnson",
           "Joshua Jefferson",
           "Tyler Bilodeau"
