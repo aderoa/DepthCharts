@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T23:22:54.984Z",
+  "generated_at": "2026-11-15T23:22:59.656Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -206,8 +206,8 @@
     "DAL": {
       "starters": {
         "PG": "Cooper Flagg",
-        "SG": "Jett Howard",
-        "SF": "Caleb Martin",
+        "SG": "Caleb Martin",
+        "SF": "Naji Marshall",
         "PF": "PJ Washington",
         "C": "Daniel Gafford"
       },
@@ -219,6 +219,7 @@
           "Sergio De Larrea"
         ],
         "SG": [
+          "Jett Howard",
           "Max Christie"
         ],
         "SF": [
@@ -226,7 +227,6 @@
           "Tarik Biberovic"
         ],
         "PF": [
-          "Naji Marshall",
           "Santiago Aldama",
           "Morez Johnson"
         ],
