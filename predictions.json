@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T22:07:05.315Z",
+  "generated_at": "2026-11-15T22:07:09.453Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -953,22 +953,22 @@
         ],
         "SG": [
           "Brice Sensabaugh",
-          "Kobe Bufkin"
+          "Kobe Bufkin",
+          "Lauri Markkanen"
         ],
         "SF": [
           "Josh Okogie",
           "Harrison Ingram",
-          "Lauri Markkanen"
+          "Jaren Jackson Jr"
         ],
         "PF": [
           "Sviatoslav Mykhailiuk",
           "Kyle Filipowski",
-          "Jaren Jackson Jr"
+          "Jusuf Nurkic"
         ],
         "C": [
           "Tony Bradley",
-          "Jaxson Hayes",
-          "Jusuf Nurkic"
+          "Jaxson Hayes"
         ]
       }
     },
