@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T23:22:41.505Z",
+  "generated_at": "2026-11-15T23:22:48.478Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -924,18 +924,18 @@
           "Malachi Smith"
         ],
         "SF": [
-          "Jamison Battle",
+          "Alijah Martin",
           "Kevin McCullar",
           "Kawhi Leonard"
         ],
         "PF": [
-          "Alijah Martin",
+          "Jamison Battle",
+          "Kyle Anderson",
           "Nate Bittle"
         ],
         "C": [
           "Jakob Poeltl",
-          "Trayce Jackson-Davis",
-          "Kyle Anderson"
+          "Trayce Jackson-Davis"
         ]
       }
     },
