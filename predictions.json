@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T00:18:40.740Z",
+  "generated_at": "2026-11-15T00:18:42.867Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -83,12 +83,12 @@
         ],
         "SG": [
           "Keon Ellis",
-          "Terance Mann",
-          "Michael Porter"
+          "Terance Mann"
         ],
         "SF": [
           "Chaney Johnson",
-          "Drake Powell"
+          "Drake Powell",
+          "Michael Porter"
         ],
         "PF": [
           "Moritz Wagner",
