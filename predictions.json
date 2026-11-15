@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T22:38:58.096Z",
+  "generated_at": "2026-11-15T22:39:08.137Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -354,19 +354,19 @@
         ],
         "SG": [
           "Bogdan Bogdanovic",
-          "Jae'Sean Tate",
           "Marcus Smart"
         ],
         "SF": [
-          "Tari Eason",
+          "Jae'Sean Tate",
           "Isaiah Crawford"
         ],
         "PF": [
-          "Quadir Copeland",
+          "Tari Eason",
           "Julian Phillips"
         ],
         "C": [
           "Oscar Tshiebwe",
+          "Quadir Copeland",
           "Clint Capela"
         ]
       }
