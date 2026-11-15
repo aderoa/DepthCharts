@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T21:45:02.028Z",
+  "generated_at": "2026-11-15T21:45:04.390Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -176,7 +176,7 @@
         "SG": "Donovan Mitchell",
         "SF": "Jaylon Tyson",
         "PF": "Mario Hezonja",
-        "C": "Thomas Bryant"
+        "C": "Jarrett Allen"
       },
       "bench": {
         "PG": [
@@ -198,8 +198,8 @@
           "Evan Mobley"
         ],
         "C": [
+          "Thomas Bryant",
           "Khalifa Diop",
-          "Jarrett Allen",
           "Evan Mobley"
         ]
       }
