@@ -501,7 +501,6 @@
     "SG": [
       "Cedric Coward",
       "Kris Murray",
-      "Jahmai Mashack",
       "__SPACER__",
       "__SEPARATOR__",
       "Scotty Pippen Jr"
@@ -509,6 +508,7 @@
     "SF": [
       "Jaylen Wells",
       "Taylor Hendricks",
+      "Jahmai Mashack",
       "__SEPARATOR__",
       "Richie Saunders"
     ],
@@ -537,23 +537,23 @@
     ],
     "SG": [
       "Klay Thompson",
-      "Tim Hardaway Jr",
+      "Andrew Wiggins",
+      "__SPACER__",
       "Ryan Conwell",
       "__SPACER__"
     ],
     "SF": [
       "Myron Gardner",
-      "Andrew Wiggins",
-      "Keshad Johnson",
+      "Simone Fontecchio",
+      "Tim Hardaway Jr",
       "__SPACER__",
       "__SEPARATOR__",
       "Pelle Larsson"
     ],
     "PF": [
       "Giannis Antetokounmpo",
-      "Simone Fontecchio",
       "Nikola Jovic",
-      "__SPACER__"
+      "Keshad Johnson"
     ],
     "C": [
       "Bam Adebayo",
