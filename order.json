@@ -930,18 +930,18 @@
     ],
     "SG": [
       "Stephon Castle",
-      "Keldon Johnson"
+      "Keldon Johnson",
+      "__SPACER__"
     ],
     "SF": [
+      "Devin Vassell",
       "Harrison Barnes",
-      "Julian Champagnie",
       "David Jones",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tobias Harris"
     ],
     "PF": [
-      "Devin Vassell",
+      "Julian Champagnie",
       "Carter Bryant",
       "Maliq Brown",
       "__SEPARATOR__",
