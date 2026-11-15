@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T21:22:38.372Z",
+  "generated_at": "2026-11-15T21:25:24.693Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -909,7 +909,7 @@
       "starters": {
         "PG": "Immanuel Quickley",
         "SG": "RJ Barrett",
-        "SF": "Ja'Kobe Walter",
+        "SF": "Scottie Barnes",
         "PF": "Collin Murray-Boyles",
         "C": "Jakob Poeltl"
       },
@@ -924,9 +924,9 @@
           "Kawhi Leonard"
         ],
         "SF": [
+          "Ja'Kobe Walter",
           "Alijah Martin",
-          "Kevin McCullar",
-          "Scottie Barnes"
+          "Kevin McCullar"
         ],
         "PF": [
           "Jamison Battle",
