@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T21:25:24.693Z",
+  "generated_at": "2026-11-15T21:25:29.342Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -925,16 +925,16 @@
         ],
         "SF": [
           "Ja'Kobe Walter",
-          "Alijah Martin",
           "Kevin McCullar"
         ],
         "PF": [
           "Jamison Battle",
-          "Kyle Anderson",
+          "Alijah Martin",
           "Nate Bittle"
         ],
         "C": [
-          "Trayce Jackson-Davis"
+          "Trayce Jackson-Davis",
+          "Kyle Anderson"
         ]
       }
     },
