@@ -996,24 +996,25 @@
       "Kobe Bufkin"
     ],
     "SF": [
+      "Ace Bailey",
       "Josh Okogie",
-      "Sviatoslav Mykhailiuk",
       "Harrison Ingram",
       "__SEPARATOR__",
       "Lauri Markkanen"
     ],
     "PF": [
-      "Ace Bailey",
       "Josh Green",
+      "Sviatoslav Mykhailiuk",
       "Kyle Filipowski",
       "__SEPARATOR__",
       "Jaren Jackson Jr"
     ],
     "C": [
-      "Jaxson Hayes",
       "Mo Bamba",
       "Tony Bradley",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Jaxson Hayes",
       "Jusuf Nurkic"
     ]
   },
