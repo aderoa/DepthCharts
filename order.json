@@ -218,7 +218,6 @@
       "Cooper Flagg",
       "Walter Clayton",
       "Marcus Sasser",
-      "__SPACER__",
       "__SEPARATOR__",
       "Kyrie Irving",
       "Sergio De Larrea"
@@ -232,17 +231,17 @@
     ],
     "SF": [
       "Naji Marshall",
-      "__SPACER__",
+      "Zaccharie Risacher",
       "__SPACER__",
       "__SEPARATOR__",
       "Tarik Biberovic"
     ],
     "PF": [
       "PJ Washington",
-      "Zaccharie Risacher",
+      "__SPACER__",
+      "Morez Johnson",
       "__SEPARATOR__",
-      "Santiago Aldama",
-      "Morez Johnson"
+      "Santiago Aldama"
     ],
     "C": [
       "Daniel Gafford",
