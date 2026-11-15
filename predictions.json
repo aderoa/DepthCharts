@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T00:37:48.801Z",
+  "generated_at": "2026-11-15T00:49:14.825Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -71,9 +71,9 @@
     "BKN": {
       "starters": {
         "PG": "Egor Demin",
-        "SG": "Nolan Traore",
-        "SF": "Danny Wolf",
-        "PF": "Julius Randle",
+        "SG": "Danny Wolf",
+        "SF": "Julius Randle",
+        "PF": "Noah Clowney",
         "C": "Day'Ron Sharpe"
       },
       "bench": {
@@ -82,6 +82,7 @@
           "Ben Saraf"
         ],
         "SG": [
+          "Nolan Traore",
           "Keon Ellis",
           "Terance Mann"
         ],
@@ -96,7 +97,6 @@
           "Tyler Bilodeau"
         ],
         "C": [
-          "Noah Clowney",
           "Josh Minott",
           "Grant Nelson"
         ]
