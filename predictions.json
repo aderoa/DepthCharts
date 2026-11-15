@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T23:17:55.657Z",
+  "generated_at": "2026-11-15T23:22:12.993Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -17,20 +17,20 @@
         ],
         "SG": [
           "Corey Kispert",
-          "Jalen Wilson",
-          "Keshon Gilbert"
+          "Jalen Wilson"
         ],
         "SF": [
           "Aaron Wiggins",
           "Asa Newell"
         ],
         "PF": [
-          "Zuby Ejiofor",
           "Dorian Finney-Smith",
           "Mouhamed Gueye"
         ],
         "C": [
+          "Zuby Ejiofor",
           "Jock Landale",
+          "Rafael Castro",
           "Henri Veesaar"
         ]
       }
