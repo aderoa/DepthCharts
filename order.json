@@ -78,12 +78,10 @@
       "Danny Wolf",
       "Nolan Traore",
       "Keon Ellis",
-      "Terance Mann",
-      "__SPACER__"
+      "Terance Mann"
     ],
     "SF": [
       "Julius Randle",
-      "Chaney Johnson",
       "Drake Powell",
       "__SPACER__",
       "__SEPARATOR__",
@@ -91,14 +89,16 @@
     ],
     "PF": [
       "Noah Clowney",
-      "Moritz Wagner",
+      "Chaney Johnson",
       "Joshua Jefferson",
       "Tyler Bilodeau"
     ],
     "C": [
       "Day'Ron Sharpe",
+      "Moritz Wagner",
       "Josh Minott",
-      "Grant Nelson"
+      "Grant Nelson",
+      "__SPACER__"
     ]
   },
   "CHA": {
