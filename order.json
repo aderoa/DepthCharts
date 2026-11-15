@@ -144,12 +144,14 @@
       "Norman Powell",
       "Buddy Hield",
       "Dailyn Swain",
+      "__SEPARATOR__",
       "Caleb Wilson"
     ],
     "SF": [
       "Isaac Okoro",
       "Patrick Williams",
       "Jordan Hawkins",
+      "__SEPARATOR__",
       "Jalen Smith"
     ],
     "PF": [
@@ -160,9 +162,9 @@
       "Tobe Awaka"
     ],
     "C": [
-      "Leonard Miller",
       "Zach Collins",
-      "__SPACER__",
+      "Leonard Miller",
+      "Orlando Robinson",
       "__SEPARATOR__",
       "Nicolas Claxton"
     ]
