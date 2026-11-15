@@ -374,24 +374,24 @@
     "SG": [
       "Kevin Durant",
       "Bogdan Bogdanovic",
-      "Jae'Sean Tate",
+      "__SPACER__",
       "__SEPARATOR__",
       "Marcus Smart"
     ],
     "SF": [
       "Jabari Smith",
-      "Tari Eason",
+      "Jae'Sean Tate",
       "Isaiah Crawford"
     ],
     "PF": [
       "Alperen Sengun",
-      "Quadir Copeland",
+      "Tari Eason",
       "Julian Phillips"
     ],
     "C": [
       "Steven Adams",
       "Oscar Tshiebwe",
-      "__SPACER__",
+      "Quadir Copeland",
       "__SEPARATOR__",
       "Clint Capela"
     ]
