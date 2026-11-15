@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T16:46:36.314Z",
+  "generated_at": "2026-11-15T16:46:39.934Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -382,21 +382,21 @@
       "bench": {
         "PG": [
           "TJ McConnell",
-          "Andrew Nembhard",
           "Tyrese Haliburton"
         ],
         "SG": [
           "Quenton Jackson",
           "Kobe Brown",
-          "Ben Sheppard"
+          "Andrew Nembhard"
         ],
         "SF": [
           "Jarace Walker",
-          "Johnny Furphy"
+          "Ben Sheppard"
         ],
         "PF": [
           "Obi Toppin",
-          "Jalen Slawson"
+          "Jalen Slawson",
+          "Johnny Furphy"
         ],
         "C": [
           "Larry Nance Jr",
