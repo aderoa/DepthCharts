@@ -388,6 +388,7 @@
   },
   "IND": {
     "PG": [
+      "Quenton Jackson",
       "Braden Smith",
       "TJ McConnell",
       "__SPACER__",
@@ -396,7 +397,6 @@
     ],
     "SG": [
       "Kelly Oubre",
-      "Quenton Jackson",
       "Kobe Brown",
       "__SEPARATOR__",
       "Andrew Nembhard"
@@ -412,6 +412,7 @@
       "Pascal Siakam",
       "Obi Toppin",
       "Jalen Slawson",
+      "__SEPARATOR__",
       "Johnny Furphy"
     ],
     "C": [
