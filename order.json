@@ -1034,20 +1034,20 @@
       "Bilal Coulibaly",
       "__SPACER__",
       "__SEPARATOR__",
-      "Tre Johnson",
-      "Jamir Watkins"
+      "Tre Johnson"
     ],
     "SF": [
       "AJ Dybantsa",
-      "__SPACER__",
       "Khris Middleton",
-      "__SEPARATOR__",
-      "Justin Champagnie"
+      "__SPACER__",
+      "Jamir Watkins"
     ],
     "PF": [
       "Anthony Davis",
       "Will Riley",
-      "Anthony Gill"
+      "Anthony Gill",
+      "__SEPARATOR__",
+      "Justin Champagnie"
     ],
     "C": [
       "Alex Sarr",
