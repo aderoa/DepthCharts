@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T22:06:19.682Z",
+  "generated_at": "2026-11-15T22:06:27.684Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -118,13 +118,13 @@
         ],
         "SG": [
           "Grayson Allen",
-          "Tidjane Salaun",
           "Liam McNeeley",
           "Michael Ajayi",
           "Kon Knueppel"
         ],
         "SF": [
-          "Royce O'Neale"
+          "Royce O'Neale",
+          "Tidjane Salaun"
         ],
         "PF": [
           "Grant Williams",
