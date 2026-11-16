@@ -184,20 +184,20 @@
       "James Harden",
       "Craig Porter",
       "__SPACER__",
-      "__SEPARATOR__"
+      "Sam Merrill"
     ],
     "SG": [
       "Donovan Mitchell",
       "Tyrese Proctor",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Sam Merrill"
+      "__SEPARATOR__"
     ],
     "SF": [
-      "Jaylon Tyson",
       "Meleek Thomas",
       "Norchad Omier",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Jaylon Tyson",
       "Peyton Watson"
     ],
     "PF": [
@@ -211,6 +211,7 @@
       "Jarrett Allen",
       "Thomas Bryant",
       "Khalifa Diop",
+      "__SEPARATOR__",
       "Evan Mobley"
     ]
   },
