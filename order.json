@@ -901,25 +901,27 @@
     "SG": [
       "Malik Monk",
       "Daeqwon Plowden",
+      "__SPACER__",
       "__SEPARATOR__",
       "Zach LaVine"
     ],
     "SF": [
+      "Keegan Murray",
       "Leaky Black",
-      "Alex Karaban",
       "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
       "De'Andre Hunter"
     ],
     "PF": [
-      "Keegan Murray",
-      "Jonathan Mogbo",
-      "__SPACER__",
+      "Domantas Sabonis",
+      "Alex Karaban",
       "__SEPARATOR__",
       "Precious Achiuwa"
     ],
     "C": [
-      "Domantas Sabonis",
       "Dylan Cardwell",
+      "Jonathan Mogbo",
       "Mason Plumlee",
       "__SEPARATOR__",
       "Maxime Raynaud"
