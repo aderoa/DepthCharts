@@ -366,34 +366,38 @@
   },
   "HOU": {
     "PG": [
-      "Amen Thompson",
+      "Fred VanVleet",
       "Reed Sheppard",
-      "Bruce Thornton",
-      "__SEPARATOR__",
-      "Fred VanVleet"
+      "Bruce Thornton"
     ],
     "SG": [
-      "Kevin Durant",
+      "Amen Thompson",
       "Bogdan Bogdanovic",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Marcus Smart"
     ],
     "SF": [
-      "Jabari Smith",
+      "Kevin Durant",
       "Jae'Sean Tate",
-      "Isaiah Crawford"
+      "Isaiah Crawford",
+      "__SPACER__",
+      "__SPACER__"
     ],
     "PF": [
-      "Alperen Sengun",
+      "Jabari Smith",
       "Tari Eason",
-      "Julian Phillips"
+      "Julian Phillips",
+      "__SPACER__"
     ],
     "C": [
-      "Steven Adams",
+      "Alperen Sengun",
       "Oscar Tshiebwe",
       "Quadir Copeland",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Steven Adams",
       "Clint Capela"
     ]
   },
