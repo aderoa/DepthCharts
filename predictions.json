@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T23:46:50.818Z",
+  "generated_at": "2026-11-16T23:46:53.733Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -719,10 +719,10 @@
       },
       "bench": {
         "PG": [
+          "Jevon Carter",
           "Alex Morales"
         ],
         "SG": [
-          "Jevon Carter",
           "Jase Richardson",
           "Noah Penda"
         ],
