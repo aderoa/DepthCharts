@@ -389,7 +389,8 @@
       "Jabari Smith",
       "Tari Eason",
       "Julian Phillips",
-      "__SPACER__"
+      "__SPACER__",
+      "Steven Adams"
     ],
     "C": [
       "Alperen Sengun",
@@ -397,7 +398,6 @@
       "Quadir Copeland",
       "__SPACER__",
       "__SEPARATOR__",
-      "Steven Adams",
       "Clint Capela"
     ]
   },
@@ -512,14 +512,12 @@
       "Cam Spencer",
       "Javon Small",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Ty Jerome"
     ],
     "SG": [
       "Cedric Coward",
       "Kris Murray",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Scotty Pippen Jr"
@@ -528,22 +526,19 @@
       "Jaylen Wells",
       "Taylor Hendricks",
       "Jahmai Mashack",
-      "__SPACER__",
       "__SEPARATOR__",
       "Richie Saunders"
     ],
     "PF": [
       "Cameron Boozer",
-      "Jerami Grant",
-      "__SPACER__",
       "Karim Lopez",
       "__SEPARATOR__",
       "GG Jackson"
     ],
     "C": [
-      "Isaiah Stewart",
       "Olivier-Maxence Prosper",
-      "__SPACER__",
+      "Jerami Grant",
+      "Isaiah Stewart",
       "__SPACER__",
       "__SEPARATOR__",
       "Quinten Post",
