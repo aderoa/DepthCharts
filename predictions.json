@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T17:47:18.429Z",
+  "generated_at": "2026-11-16T18:08:32.870Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -340,17 +340,16 @@
     },
     "HOU": {
       "starters": {
-        "PG": "Amen Thompson",
-        "SG": "Kevin Durant",
-        "SF": "Jabari Smith",
-        "PF": "Alperen Sengun",
-        "C": "Steven Adams"
+        "PG": "Fred VanVleet",
+        "SG": "Amen Thompson",
+        "SF": "Kevin Durant",
+        "PF": "Jabari Smith",
+        "C": "Alperen Sengun"
       },
       "bench": {
         "PG": [
           "Reed Sheppard",
-          "Bruce Thornton",
-          "Fred VanVleet"
+          "Bruce Thornton"
         ],
         "SG": [
           "Bogdan Bogdanovic",
@@ -362,7 +361,8 @@
         ],
         "PF": [
           "Tari Eason",
-          "Julian Phillips"
+          "Julian Phillips",
+          "Steven Adams"
         ],
         "C": [
           "Oscar Tshiebwe",
