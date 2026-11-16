@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T01:13:43.263Z",
+  "generated_at": "2026-11-16T01:13:46.444Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -562,11 +562,11 @@
         "SF": [
           "Kyle Kuzma",
           "Caris LeVert",
-          "Pete Nance",
           "Ousmane Dieng"
         ],
         "PF": [
-          "Nate Ament"
+          "Nate Ament",
+          "Pete Nance"
         ],
         "C": [
           "Kel'el Ware",
