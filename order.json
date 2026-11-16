@@ -58,13 +58,13 @@
     "PF": [
       "Jordan Walsh",
       "Baylor Scheierman",
-      "Chris Cenac",
-      "Amari Williams"
+      "Chris Cenac"
     ],
     "C": [
-      "Neemias Queta",
-      "Mitchell Robinson",
       "Luka Garza",
+      "Mitchell Robinson",
+      "Amari Williams",
+      "Neemias Queta",
       "__SPACER__"
     ]
   },
@@ -793,7 +793,8 @@
     "PG": [
       "Tyrese Maxey",
       "Labaron Philon",
-      "Caleb Love"
+      "Caleb Love",
+      "LeBron James"
     ],
     "SG": [
       "VJ Edgecombe",
@@ -815,7 +816,6 @@
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
-      "LeBron James",
       "Adem Bona"
     ],
     "C": [
