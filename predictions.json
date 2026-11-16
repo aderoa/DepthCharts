@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T01:33:41.375Z",
+  "generated_at": "2026-11-16T13:47:02.431Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -11,7 +11,6 @@
       },
       "bench": {
         "PG": [
-          "Luguentz Dort",
           "RayJ Dennis",
           "Kingston Flemings"
         ],
@@ -21,10 +20,11 @@
           "Asa Newell"
         ],
         "SF": [
-          "Aaron Wiggins",
+          "Luguentz Dort",
           "Mouhamed Gueye"
         ],
         "PF": [
+          "Aaron Wiggins",
           "Dorian Finney-Smith",
           "Jock Landale"
         ],
