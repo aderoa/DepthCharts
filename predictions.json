@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T01:06:51.881Z",
+  "generated_at": "2026-11-16T01:07:00.981Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -684,26 +684,26 @@
       },
       "bench": {
         "PG": [
-          "Nikola Topic"
+          "Nikola Topic",
+          "Cason Wallace"
         ],
         "SG": [
           "Bennett Stirtz",
           "Brooks Barnhizer",
-          "Cason Wallace"
+          "Jalen Williams"
         ],
         "SF": [
           "Alex Caruso",
-          "Jalen Williams"
+          "Jaylin Williams"
         ],
         "PF": [
           "Nique Clifford",
           "Micah Peavy",
-          "Jaylin Williams"
+          "Chet Holmgren"
         ],
         "C": [
           "Aday Mara",
           "Josh Dix",
-          "Chet Holmgren",
           "Thomas Sorber"
         ]
       }
