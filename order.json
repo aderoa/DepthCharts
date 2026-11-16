@@ -728,26 +728,27 @@
       "Ajay Mitchell",
       "Bennett Stirtz",
       "Brooks Barnhizer",
+      "__SEPARATOR__",
       "Jalen Williams"
     ],
     "SF": [
       "Jared McCain",
       "Alex Caruso",
-      "__SPACER__",
+      "Micah Peavy",
       "__SEPARATOR__",
       "Jaylin Williams"
     ],
     "PF": [
       "Kenrich Williams",
       "Nique Clifford",
-      "Micah Peavy",
+      "Josh Dix",
       "__SEPARATOR__",
       "Chet Holmgren"
     ],
     "C": [
       "Isaiah Hartenstein",
       "Aday Mara",
-      "Josh Dix",
+      "__SPACER__",
       "__SEPARATOR__",
       "Thomas Sorber"
     ]
