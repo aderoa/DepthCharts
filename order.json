@@ -509,12 +509,14 @@
       "Cam Spencer",
       "Javon Small",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ty Jerome"
     ],
     "SG": [
       "Cedric Coward",
       "Kris Murray",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Scotty Pippen Jr"
@@ -523,22 +525,22 @@
       "Jaylen Wells",
       "Taylor Hendricks",
       "Jahmai Mashack",
+      "__SPACER__",
       "__SEPARATOR__",
       "Richie Saunders"
     ],
     "PF": [
       "Cameron Boozer",
+      "Olivier-Maxence Prosper",
       "Karim Lopez",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Stewart",
       "GG Jackson"
     ],
     "C": [
-      "Olivier-Maxence Prosper",
       "Jerami Grant",
-      "__SPACER__",
-      "__SEPARATOR__",
       "Quinten Post",
       "Zach Edey"
     ]
