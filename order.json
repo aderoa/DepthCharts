@@ -2,7 +2,6 @@
   "ATL": {
     "PG": [
       "CJ McCollum",
-      "Luguentz Dort",
       "RayJ Dennis",
       "__SEPARATOR__",
       "Kingston Flemings"
@@ -10,20 +9,22 @@
     "SG": [
       "Nickeil Alexander-Walker",
       "Corey Kispert",
+      "__SPACER__",
       "Jalen Wilson",
+      "__SEPARATOR__",
       "Asa Newell"
     ],
     "SF": [
       "Dyson Daniels",
-      "Aaron Wiggins",
+      "Luguentz Dort",
       "__SPACER__",
       "__SEPARATOR__",
       "Mouhamed Gueye"
     ],
     "PF": [
       "Jalen Johnson",
+      "Aaron Wiggins",
       "Dorian Finney-Smith",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jock Landale"
     ],
