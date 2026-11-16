@@ -584,17 +584,18 @@
       "AJ Green",
       "Kasparas Jakucionis",
       "Kam Jones",
-      "__SPACER__",
       "__SEPARATOR__",
       "Ryan Rollins"
     ],
     "SG": [
       "Tyler Herro",
       "Gary Trent Jr",
-      "Cormac Ryan"
+      "Cormac Ryan",
+      "__SPACER__"
     ],
     "SF": [
       "Jaime Jaquez",
+      "Kyle Kuzma",
       "Caris LeVert",
       "Pete Nance",
       "__SPACER__",
@@ -602,9 +603,8 @@
       "Ousmane Dieng"
     ],
     "PF": [
-      "Kyle Kuzma",
-      "Nate Ament",
       "Jericho Sims",
+      "Nate Ament",
       "__SPACER__"
     ],
     "C": [
