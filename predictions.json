@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T01:16:59.666Z",
+  "generated_at": "2026-11-16T01:17:03.693Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -844,7 +844,7 @@
       "starters": {
         "PG": "Darius Acuff",
         "SG": "Malik Monk",
-        "SF": "Daeqwon Plowden",
+        "SF": "Leaky Black",
         "PF": "Keegan Murray",
         "C": "Domantas Sabonis"
       },
@@ -855,10 +855,10 @@
           "Ben Simmons"
         ],
         "SG": [
-          "Leaky Black",
           "Zach LaVine"
         ],
         "SF": [
+          "Daeqwon Plowden",
           "De'Andre Hunter"
         ],
         "PF": [
