@@ -52,20 +52,23 @@
     "SF": [
       "Jayson Tatum",
       "Hugo Gonzalez",
-      "Ron Harper Jr",
-      "Dillon Mitchell"
+      "Ron Harper Jr"
     ],
     "PF": [
       "Jordan Walsh",
       "Baylor Scheierman",
-      "Chris Cenac"
+      "Dillon Mitchell",
+      "Chris Cenac",
+      "__SPACER__"
     ],
     "C": [
       "Luka Garza",
       "Mitchell Robinson",
+      "Chris Cenac",
       "Amari Williams",
-      "Neemias Queta",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Neemias Queta"
     ]
   },
   "BKN": {
