@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T18:09:55.474Z",
+  "generated_at": "2026-11-16T22:49:30.975Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -41,7 +41,7 @@
         "SG": "Paul George",
         "SF": "Jayson Tatum",
         "PF": "Jordan Walsh",
-        "C": "Neemias Queta"
+        "C": "Luka Garza"
       },
       "bench": {
         "PG": [
@@ -59,12 +59,12 @@
         ],
         "PF": [
           "Baylor Scheierman",
-          "Chris Cenac",
-          "Amari Williams"
+          "Chris Cenac"
         ],
         "C": [
           "Mitchell Robinson",
-          "Luka Garza"
+          "Amari Williams",
+          "Neemias Queta"
         ]
       }
     },
@@ -752,7 +752,8 @@
       "bench": {
         "PG": [
           "Labaron Philon",
-          "Caleb Love"
+          "Caleb Love",
+          "LeBron James"
         ],
         "SG": [
           "Anfernee Simons",
@@ -765,7 +766,6 @@
         ],
         "PF": [
           "Justin Edwards",
-          "LeBron James",
           "Adem Bona"
         ],
         "C": [
