@@ -297,22 +297,20 @@
     "PG": [
       "Cade Cunningham",
       "Ebuka Okorie",
-      "Elijah Harkless",
       "__SPACER__",
       "__SEPARATOR__",
       "Isaiah Joe"
     ],
     "SG": [
       "Daniss Jenkins",
-      "__SPACER__",
       "Chaz Lanier",
-      "__SPACER__",
+      "Elijah Harkless",
+      "__SEPARATOR__",
       "Duncan Robinson"
     ],
     "SF": [
       "Ausar Thompson",
       "Kevin Huerter",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Ron Holland"
@@ -321,14 +319,12 @@
       "Javonte Green",
       "Isaac Jones",
       "Tolu Smith",
-      "__SPACER__",
       "__SEPARATOR__",
       "Taurean Prince"
     ],
     "C": [
       "John Collins",
       "Paul Reed",
-      "__SPACER__",
       "Ugonna Onyenso",
       "__SEPARATOR__",
       "Jalen Duren"
