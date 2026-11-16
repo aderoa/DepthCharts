@@ -304,14 +304,14 @@
     ],
     "SG": [
       "Daniss Jenkins",
-      "Kevin Huerter",
+      "__SPACER__",
       "Chaz Lanier",
       "__SPACER__",
       "Duncan Robinson"
     ],
     "SF": [
       "Ausar Thompson",
-      "__SPACER__",
+      "Kevin Huerter",
       "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
@@ -320,7 +320,7 @@
     "PF": [
       "Javonte Green",
       "Isaac Jones",
-      "__SPACER__",
+      "Tolu Smith",
       "__SPACER__",
       "__SEPARATOR__",
       "Taurean Prince"
@@ -328,7 +328,7 @@
     "C": [
       "John Collins",
       "Paul Reed",
-      "Tolu Smith",
+      "__SPACER__",
       "Ugonna Onyenso",
       "__SEPARATOR__",
       "Jalen Duren"
