@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T22:51:27.932Z",
+  "generated_at": "2026-11-16T22:52:01.618Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -875,15 +875,14 @@
     },
     "SAS": {
       "starters": {
-        "PG": "Dylan Harper",
-        "SG": "Stephon Castle",
-        "SF": "Devin Vassell",
-        "PF": "Julian Champagnie",
+        "PG": "Jordan McLaughlin",
+        "SG": "Dylan Harper",
+        "SF": "Stephon Castle",
+        "PF": "Devin Vassell",
         "C": "Victor Wembanyama"
       },
       "bench": {
         "PG": [
-          "Jordan McLaughlin",
           "Ja'Kobi Gillespie",
           "De'Aaron Fox"
         ],
@@ -896,6 +895,7 @@
           "Tobias Harris"
         ],
         "PF": [
+          "Julian Champagnie",
           "Carter Bryant",
           "Maliq Brown",
           "Jayden Quaintance"
