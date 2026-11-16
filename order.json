@@ -901,13 +901,15 @@
       "Ben Simmons"
     ],
     "SG": [
-      "Zach LaVine",
       "Malik Monk",
-      "__SPACER__"
+      "Leaky Black",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Zach LaVine"
     ],
     "SF": [
       "De'Andre Hunter",
-      "Leaky Black",
+      "__SPACER__",
       "Alex Karaban"
     ],
     "PF": [
