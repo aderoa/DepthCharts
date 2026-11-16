@@ -937,14 +937,14 @@
     "PG": [
       "De'Aaron Fox",
       "Keldon Johnson",
-      "Jordan McLaughlin",
-      "__SPACER__",
-      "__SPACER__"
+      "Jordan McLaughlin"
     ],
     "SG": [
       "Dylan Harper",
       "Harrison Barnes",
-      "Ja'Kobi Gillespie"
+      "Ja'Kobi Gillespie",
+      "__SPACER__",
+      "__SPACER__"
     ],
     "SF": [
       "Stephon Castle",
@@ -956,9 +956,9 @@
     ],
     "PF": [
       "Devin Vassell",
-      "__SPACER__",
       "Carter Bryant",
       "Maliq Brown",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jayden Quaintance"
     ],
