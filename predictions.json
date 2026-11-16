@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T22:53:30.010Z",
+  "generated_at": "2026-11-16T22:53:34.693Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -285,20 +285,20 @@
           "Isaiah Joe"
         ],
         "SG": [
-          "Kevin Huerter",
           "Chaz Lanier",
           "Duncan Robinson"
         ],
         "SF": [
+          "Kevin Huerter",
           "Ron Holland"
         ],
         "PF": [
           "Isaac Jones",
+          "Tolu Smith",
           "Taurean Prince"
         ],
         "C": [
           "Paul Reed",
-          "Tolu Smith",
           "Ugonna Onyenso",
           "Jalen Duren"
         ]
