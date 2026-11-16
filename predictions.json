@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T13:47:25.135Z",
+  "generated_at": "2026-11-16T13:47:47.018Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -694,16 +694,16 @@
         ],
         "SF": [
           "Alex Caruso",
+          "Micah Peavy",
           "Jaylin Williams"
         ],
         "PF": [
           "Nique Clifford",
-          "Micah Peavy",
+          "Josh Dix",
           "Chet Holmgren"
         ],
         "C": [
           "Aday Mara",
-          "Josh Dix",
           "Thomas Sorber"
         ]
       }
