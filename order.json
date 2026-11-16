@@ -902,13 +902,13 @@
       "Malik Monk",
       "Leaky Black",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Zach LaVine"
     ],
     "SF": [
       "Keegan Murray",
       "Daeqwon Plowden",
+      "__SPACER__",
       "__SEPARATOR__",
       "De'Andre Hunter"
     ],
@@ -921,8 +921,8 @@
     ],
     "C": [
       "Dylan Cardwell",
-      "Jonathan Mogbo",
       "Mason Plumlee",
+      "Jonathan Mogbo",
       "__SEPARATOR__",
       "Maxime Raynaud"
     ]
