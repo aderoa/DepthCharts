@@ -184,19 +184,20 @@
     ],
     "SG": [
       "Donovan Mitchell",
-      "Meleek Thomas"
+      "Meleek Thomas",
+      "__SPACER__"
     ],
     "SF": [
       "Tyrese Proctor",
-      "__SPACER__",
       "Mario Hezonja",
       "Norchad Omier",
+      "Riley Minix",
       "__SEPARATOR__",
       "Jaylon Tyson"
     ],
     "PF": [
       "Peyton Watson",
-      "Riley Minix",
+      "Norchad Omier",
       "Ernest Udeh",
       "__SEPARATOR__",
       "Nae'Qwan Tomlin"
