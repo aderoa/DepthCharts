@@ -376,20 +376,22 @@
       "Amen Thompson"
     ],
     "SF": [
+      "Jabari Smith",
       "Tari Eason",
-      "Isaiah Crawford"
+      "Isaiah Crawford",
+      "__SPACER__",
+      "__SPACER__"
     ],
     "PF": [
-      "Jabari Smith",
+      "Alperen Sengun",
       "Jae'Sean Tate",
-      "Julian Phillips",
-      "__SEPARATOR__",
-      "Steven Adams"
+      "Julian Phillips"
     ],
     "C": [
-      "Alperen Sengun",
+      "Steven Adams",
       "Oscar Tshiebwe",
       "Quadir Copeland",
+      "__SPACER__",
       "__SEPARATOR__",
       "Clint Capela"
     ]
