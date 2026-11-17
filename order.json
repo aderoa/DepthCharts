@@ -179,18 +179,19 @@
       "James Harden",
       "Craig Porter",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Sam Merrill"
     ],
     "SG": [
       "Donovan Mitchell",
       "Meleek Thomas",
+      "__SPACER__",
       "__SPACER__"
     ],
     "SF": [
       "Tyrese Proctor",
       "Mario Hezonja",
-      "Norchad Omier",
       "Riley Minix",
       "__SEPARATOR__",
       "Jaylon Tyson"
@@ -199,6 +200,8 @@
       "Peyton Watson",
       "Norchad Omier",
       "Ernest Udeh",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Nae'Qwan Tomlin"
     ],
@@ -206,6 +209,7 @@
       "Jarrett Allen",
       "Thomas Bryant",
       "Khalifa Diop",
+      "__SPACER__",
       "__SEPARATOR__",
       "Evan Mobley"
     ]
