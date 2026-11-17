@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T21:35:35.342Z",
+  "generated_at": "2026-11-17T22:03:55.556Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -551,9 +551,9 @@
       },
       "bench": {
         "PG": [
+          "Ryan Rollins",
           "Kasparas Jakucionis",
-          "Kam Jones",
-          "Ryan Rollins"
+          "Kam Jones"
         ],
         "SG": [
           "Gary Trent Jr",
