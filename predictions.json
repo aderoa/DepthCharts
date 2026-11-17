@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T22:33:29.704Z",
+  "generated_at": "2026-11-17T22:33:42.216Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -227,12 +227,12 @@
           "Tarik Biberovic"
         ],
         "PF": [
-          "Santiago Aldama"
+          "Santiago Aldama",
+          "Tobi Lawal"
         ],
         "C": [
           "Morez Johnson",
           "Moussa Cisse",
-          "Tobi Lawal",
           "Dereck Lively"
         ]
       }
