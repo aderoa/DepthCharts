@@ -617,21 +617,24 @@
     ],
     "SG": [
       "Ayo Dosunmu",
-      "Terrence Shannon",
       "Isaiah Evans",
       "__SEPARATOR__",
       "Anthony Edwards"
     ],
     "SF": [
-      "Jaden McDaniels",
+      "Terrence Shannon",
       "Cody Williams",
       "__SPACER__",
+      "__SEPARATOR__",
       "Jaylen Clark"
     ],
     "PF": [
-      "Jonathan Kuminga",
+      "Jaden McDaniels",
       "Trey Lyles",
-      "Johni Broome"
+      "Johni Broome",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Jonathan Kuminga"
     ],
     "C": [
       "Rudy Gobert",
