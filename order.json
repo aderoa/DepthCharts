@@ -482,22 +482,22 @@
     "SF": [
       "Matisse Thybulle",
       "Jarred Vanderbilt",
-      "Chris Manon",
-      "__SPACER__",
-      "Cameron Carr"
+      "Cameron Carr",
+      "Chris Manon"
     ],
     "PF": [
       "Jake LaRavia",
       "Adou Thiero",
       "Arthur Kaluma",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "C": [
-      "Walker Kessler",
       "Sandro Mamukelashvili",
       "Kevon Looney",
-      "Carson Cooper"
+      "Carson Cooper",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Walker Kessler"
     ]
   },
   "MEM": {
