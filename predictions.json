@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T19:18:08.815Z",
+  "generated_at": "2026-11-17T20:59:31.462Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -342,9 +342,9 @@
       "starters": {
         "PG": "Fred VanVleet",
         "SG": "Kevin Durant",
-        "SF": "Tari Eason",
-        "PF": "Jabari Smith",
-        "C": "Alperen Sengun"
+        "SF": "Jabari Smith",
+        "PF": "Alperen Sengun",
+        "C": "Steven Adams"
       },
       "bench": {
         "PG": [
@@ -357,12 +357,12 @@
           "Amen Thompson"
         ],
         "SF": [
+          "Tari Eason",
           "Isaiah Crawford"
         ],
         "PF": [
           "Jae'Sean Tate",
-          "Julian Phillips",
-          "Steven Adams"
+          "Julian Phillips"
         ],
         "C": [
           "Oscar Tshiebwe",
