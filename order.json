@@ -217,21 +217,20 @@
   },
   "DAL": {
     "PG": [
-      "Cooper Flagg",
-      "__SPACER__",
+      "Kyrie Irving",
+      "Walter Clayton",
       "Marcus Sasser",
       "__SEPARATOR__",
-      "Kyrie Irving",
       "Sergio De Larrea"
     ],
     "SG": [
-      "Caleb Martin",
-      "Walter Clayton",
+      "Cooper Flagg",
       "Jett Howard",
       "__SEPARATOR__",
       "Max Christie"
     ],
     "SF": [
+      "Caleb Martin",
       "Naji Marshall",
       "Zaccharie Risacher",
       "__SPACER__",
@@ -248,8 +247,9 @@
     "C": [
       "Daniel Gafford",
       "Moussa Cisse",
-      "Tobi Lawal",
+      "__SPACER__",
       "__SEPARATOR__",
+      "Tobi Lawal",
       "Dereck Lively"
     ]
   },
