@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T01:10:54.774Z",
+  "generated_at": "2026-11-17T01:16:02.470Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -445,7 +445,7 @@
         "SG": "Quentin Grimes",
         "SF": "Matisse Thybulle",
         "PF": "Jake LaRavia",
-        "C": "Walker Kessler"
+        "C": "Sandro Mamukelashvili"
       },
       "bench": {
         "PG": [
@@ -459,17 +459,17 @@
         ],
         "SF": [
           "Jarred Vanderbilt",
-          "Chris Manon",
-          "Cameron Carr"
+          "Cameron Carr",
+          "Chris Manon"
         ],
         "PF": [
           "Adou Thiero",
           "Arthur Kaluma"
         ],
         "C": [
-          "Sandro Mamukelashvili",
           "Kevon Looney",
-          "Carson Cooper"
+          "Carson Cooper",
+          "Walker Kessler"
         ]
       }
     },
