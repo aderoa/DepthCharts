@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T20:59:31.462Z",
+  "generated_at": "2026-11-17T20:59:39.077Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -348,20 +348,20 @@
       },
       "bench": {
         "PG": [
-          "Reed Sheppard",
-          "Bruce Thornton",
-          "Marcus Smart"
+          "Marcus Smart",
+          "Bruce Thornton"
         ],
         "SG": [
-          "Bogdan Bogdanovic",
+          "Reed Sheppard",
+          "Isaiah Crawford",
           "Amen Thompson"
         ],
         "SF": [
-          "Tari Eason",
-          "Isaiah Crawford"
+          "Bogdan Bogdanovic",
+          "Jae'Sean Tate"
         ],
         "PF": [
-          "Jae'Sean Tate",
+          "Tari Eason",
           "Julian Phillips"
         ],
         "C": [
