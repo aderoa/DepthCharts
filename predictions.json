@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T01:16:08.134Z",
+  "generated_at": "2026-11-17T19:18:01.186Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -579,8 +579,8 @@
       "starters": {
         "PG": "LaMelo Ball",
         "SG": "Ayo Dosunmu",
-        "SF": "Jaden McDaniels",
-        "PF": "Jonathan Kuminga",
+        "SF": "Terrence Shannon",
+        "PF": "Jaden McDaniels",
         "C": "Rudy Gobert"
       },
       "bench": {
@@ -590,7 +590,6 @@
           "Donte DiVincenzo"
         ],
         "SG": [
-          "Terrence Shannon",
           "Isaiah Evans",
           "Anthony Edwards"
         ],
@@ -600,7 +599,8 @@
         ],
         "PF": [
           "Trey Lyles",
-          "Johni Broome"
+          "Johni Broome",
+          "Jonathan Kuminga"
         ],
         "C": [
           "Joan Beringer",
