@@ -611,35 +611,36 @@
     "PG": [
       "LaMelo Ball",
       "Bones Hyland",
-      "Zyon Pullin",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Donte DiVincenzo"
+      "Zyon Pullin"
     ],
     "SG": [
       "Ayo Dosunmu",
       "Isaiah Evans",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Anthony Edwards"
+      "Donte DiVincenzo"
     ],
     "SF": [
       "Terrence Shannon",
       "Cody Williams",
       "__SPACER__",
       "__SEPARATOR__",
-      "Jaylen Clark"
+      "Anthony Edwards"
     ],
     "PF": [
       "Jaden McDaniels",
       "Trey Lyles",
       "Johni Broome",
-      "__SPACER__",
       "__SEPARATOR__",
-      "Jonathan Kuminga"
+      "Jaylen Clark"
     ],
     "C": [
       "Rudy Gobert",
       "Joan Beringer",
-      "Rocco Zikarsky"
+      "Rocco Zikarsky",
+      "Jonathan Kuminga"
     ]
   },
   "NOP": {
