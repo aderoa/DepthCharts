@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-17T20:59:39.077Z",
+  "generated_at": "2026-11-17T21:04:03.609Z",
   "teams": {
     "ATL": {
       "starters": {
-        "PG": "CJ McCollum",
+        "PG": "RayJ Dennis",
         "SG": "Nickeil Alexander-Walker",
         "SF": "Dyson Daniels",
         "PF": "Jalen Johnson",
@@ -11,21 +11,21 @@
       },
       "bench": {
         "PG": [
-          "RayJ Dennis",
+          "Corey Kispert",
+          "CJ McCollum",
           "Kingston Flemings"
         ],
         "SG": [
-          "Corey Kispert",
+          "Luguentz Dort",
           "Jalen Wilson",
           "Asa Newell"
         ],
         "SF": [
-          "Luguentz Dort",
-          "Dorian Finney-Smith",
+          "Aaron Wiggins",
           "Mouhamed Gueye"
         ],
         "PF": [
-          "Aaron Wiggins",
+          "Dorian Finney-Smith",
           "Jock Landale"
         ],
         "C": [
