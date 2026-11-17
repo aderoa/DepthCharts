@@ -550,22 +550,20 @@
     "SG": [
       "Klay Thompson",
       "Andrew Wiggins",
-      "__SPACER__",
       "Ryan Conwell",
       "__SPACER__"
     ],
     "SF": [
+      "Pelle Larsson",
       "Myron Gardner",
       "Simone Fontecchio",
-      "Tim Hardaway Jr",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Pelle Larsson"
+      "Tim Hardaway Jr"
     ],
     "PF": [
       "Giannis Antetokounmpo",
       "Nikola Jovic",
-      "Keshad Johnson"
+      "Keshad Johnson",
+      "__SPACER__"
     ],
     "C": [
       "Bam Adebayo",
