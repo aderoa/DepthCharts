@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T18:35:13.647Z",
+  "generated_at": "2026-11-18T18:35:16.005Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -175,7 +175,7 @@
         "PG": "James Harden",
         "SG": "Donovan Mitchell",
         "SF": "Tyrese Proctor",
-        "PF": "Norchad Omier",
+        "PF": "Mario Hezonja",
         "C": "Jarrett Allen"
       },
       "bench": {
@@ -188,11 +188,11 @@
           "Jaylon Tyson"
         ],
         "SF": [
-          "Mario Hezonja",
           "Riley Minix",
           "Peyton Watson"
         ],
         "PF": [
+          "Norchad Omier",
           "Ernest Udeh",
           "Nae'Qwan Tomlin"
         ],
