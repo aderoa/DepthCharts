@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T14:23:43.159Z",
+  "generated_at": "2026-11-18T14:24:25.981Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -274,8 +274,8 @@
       "starters": {
         "PG": "Cade Cunningham",
         "SG": "Daniss Jenkins",
-        "SF": "Ausar Thompson",
-        "PF": "Javonte Green",
+        "SF": "Kevin Huerter",
+        "PF": "Ausar Thompson",
         "C": "John Collins"
       },
       "bench": {
@@ -289,7 +289,7 @@
           "Duncan Robinson"
         ],
         "SF": [
-          "Kevin Huerter",
+          "Javonte Green",
           "Ron Holland"
         ],
         "PF": [
