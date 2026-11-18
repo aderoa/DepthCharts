@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T23:41:35.639Z",
+  "generated_at": "2026-11-18T23:41:42.884Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -323,17 +323,17 @@
         ],
         "SF": [
           "Gary Payton II",
-          "Malevy Leons",
           "Jimmy Butler"
         ],
         "PF": [
           "Georges Niang",
-          "Graham Ike",
+          "Malevy Leons",
           "Moses Moody"
         ],
         "C": [
-          "Al Horford",
           "Charles Bassey",
+          "Graham Ike",
+          "Al Horford",
           "Kristaps Porzingis"
         ]
       }
