@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T14:27:36.153Z",
+  "generated_at": "2026-11-18T14:27:44.744Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -462,13 +462,13 @@
           "Chris Manon"
         ],
         "PF": [
-          "Adou Thiero",
+          "Sandro Mamukelashvili",
           "Cameron Carr"
         ],
         "C": [
-          "Sandro Mamukelashvili",
-          "Arthur Kaluma",
           "Carson Cooper",
+          "Adou Thiero",
+          "Arthur Kaluma",
           "Walker Kessler"
         ]
       }
