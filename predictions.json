@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T22:15:58.638Z",
+  "generated_at": "2026-11-18T22:16:02.647Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -860,16 +860,16 @@
           "Zach LaVine"
         ],
         "SF": [
-          "Daeqwon Plowden"
+          "Daeqwon Plowden",
+          "Alex Karaban"
         ],
         "PF": [
           "Precious Achiuwa",
-          "Alex Karaban"
+          "Jonathan Mogbo"
         ],
         "C": [
           "Dylan Cardwell",
           "Mason Plumlee",
-          "Jonathan Mogbo",
           "Maxime Raynaud"
         ]
       }
