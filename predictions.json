@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T23:38:47.074Z",
+  "generated_at": "2026-11-18T23:39:03.991Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -415,26 +415,25 @@
       "bench": {
         "PG": [
           "Keaton Wagler",
-          "Blake Wesley",
+          "Cam Christie",
           "Bradley Beal"
         ],
         "SG": [
           "Max Strus",
-          "Cam Christie",
+          "Jalen Pickett",
           "Jordan Miller"
         ],
         "SF": [
           "Gradey Dick",
-          "Jalen Pickett",
+          "Nick Martinelli",
           "Brandon Ingram"
         ],
         "PF": [
           "Kobe Sanders",
-          "Nick Martinelli"
+          "Baba Miller"
         ],
         "C": [
           "Isaiah Jackson",
-          "Baba Miller",
           "Yanic Konan Niederhauser"
         ]
       }
