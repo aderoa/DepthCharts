@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T23:39:52.538Z",
+  "generated_at": "2026-11-18T23:39:57.970Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -180,8 +180,7 @@
       },
       "bench": {
         "PG": [
-          "Craig Porter",
-          "Sam Merrill"
+          "Craig Porter"
         ],
         "SG": [
           "Meleek Thomas",
@@ -189,6 +188,7 @@
           "Jaylon Tyson"
         ],
         "SF": [
+          "Sam Merrill",
           "Peyton Watson"
         ],
         "PF": [
