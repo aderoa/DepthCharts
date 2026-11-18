@@ -610,15 +610,15 @@
     ],
     "SG": [
       "Ayo Dosunmu",
-      "Isaiah Evans",
+      "Terrence Shannon",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Donte DiVincenzo"
     ],
     "SF": [
-      "Terrence Shannon",
       "Cody Williams",
-      "__SPACER__",
+      "Isaiah Evans",
       "__SEPARATOR__",
       "Anthony Edwards"
     ],
@@ -633,6 +633,7 @@
       "Rudy Gobert",
       "Joan Beringer",
       "Rocco Zikarsky",
+      "__SEPARATOR__",
       "Jonathan Kuminga"
     ]
   },
