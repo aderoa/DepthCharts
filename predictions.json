@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T23:39:57.970Z",
+  "generated_at": "2026-11-18T23:40:18.998Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -743,7 +743,7 @@
     },
     "PHI": {
       "starters": {
-        "PG": "Tyrese Maxey",
+        "PG": "Labaron Philon",
         "SG": "VJ Edgecombe",
         "SF": "LeBron James",
         "PF": "Dean Wade",
@@ -751,12 +751,12 @@
       },
       "bench": {
         "PG": [
-          "Labaron Philon"
+          "Tyrese Maxey"
         ],
         "SG": [
-          "Jaylen Brown",
           "Anfernee Simons",
-          "Caleb Love"
+          "Caleb Love",
+          "Jaylen Brown"
         ],
         "SF": [
           "Kentavious Caldwell-Pope",
