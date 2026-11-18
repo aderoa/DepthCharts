@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T14:21:16.980Z",
+  "generated_at": "2026-11-18T14:23:14.930Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -812,8 +812,8 @@
       "starters": {
         "PG": "Damian Lillard",
         "SG": "Sidy Cissoko",
-        "SF": "Toumani Camara",
-        "PF": "Deni Avdija",
+        "SF": "Jayson Kent",
+        "PF": "Toumani Camara",
         "C": "Donovan Clingan"
       },
       "bench": {
@@ -827,12 +827,12 @@
           "Shaedon Sharpe"
         ],
         "SF": [
-          "Jayson Kent",
+          "Micah Potter",
           "Chris Youngblood"
         ],
         "PF": [
           "Robert Williams",
-          "Micah Potter",
+          "Deni Avdija",
           "Vit Krejci"
         ],
         "C": [
