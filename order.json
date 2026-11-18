@@ -329,22 +329,23 @@
     "SF": [
       "Yaxel Lendeborg",
       "Gary Payton II",
-      "Malevy Leons",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jimmy Butler"
     ],
     "PF": [
       "Gui Santos",
       "Georges Niang",
-      "Graham Ike",
+      "Malevy Leons",
       "__SEPARATOR__",
       "Moses Moody"
     ],
     "C": [
       "Draymond Green",
-      "Al Horford",
       "Charles Bassey",
+      "Graham Ike",
       "__SEPARATOR__",
+      "Al Horford",
       "Kristaps Porzingis"
     ]
   },
