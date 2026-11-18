@@ -773,16 +773,16 @@
   },
   "PHI": {
     "PG": [
-      "Tyrese Maxey",
       "Labaron Philon",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Tyrese Maxey",
+      "__SPACER__"
     ],
     "SG": [
       "VJ Edgecombe",
-      "Jaylen Brown",
       "Anfernee Simons",
-      "Caleb Love"
+      "Caleb Love",
+      "__SEPARATOR__",
+      "Jaylen Brown"
     ],
     "SF": [
       "LeBron James",
