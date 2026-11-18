@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T23:37:47.584Z",
+  "generated_at": "2026-11-18T23:37:53.451Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -910,7 +910,7 @@
     "TOR": {
       "starters": {
         "PG": "Immanuel Quickley",
-        "SG": "RJ Barrett",
+        "SG": "Allen Graves",
         "SF": "Ja'Kobe Walter",
         "PF": "Collin Murray-Boyles",
         "C": "Jakob Poeltl"
@@ -921,22 +921,22 @@
           "Jaden Bradley"
         ],
         "SG": [
-          "Allen Graves",
           "Malachi Smith",
-          "Kawhi Leonard"
+          "RJ Barrett"
         ],
         "SF": [
           "Alijah Martin",
           "Kevin McCullar",
-          "Scottie Barnes"
+          "Kawhi Leonard"
         ],
         "PF": [
           "Jamison Battle",
           "Kyle Anderson",
-          "Nate Bittle"
+          "Scottie Barnes"
         ],
         "C": [
-          "Trayce Jackson-Davis"
+          "Trayce Jackson-Davis",
+          "Nate Bittle"
         ]
       }
     },
