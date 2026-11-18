@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T14:23:27.845Z",
+  "generated_at": "2026-11-18T14:23:43.159Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -579,7 +579,7 @@
       "starters": {
         "PG": "LaMelo Ball",
         "SG": "Ayo Dosunmu",
-        "SF": "Terrence Shannon",
+        "SF": "Cody Williams",
         "PF": "Jaden McDaniels",
         "C": "Rudy Gobert"
       },
@@ -589,11 +589,11 @@
           "Zyon Pullin"
         ],
         "SG": [
-          "Isaiah Evans",
+          "Terrence Shannon",
           "Donte DiVincenzo"
         ],
         "SF": [
-          "Cody Williams",
+          "Isaiah Evans",
           "Anthony Edwards"
         ],
         "PF": [
