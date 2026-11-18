@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T22:15:43.649Z",
+  "generated_at": "2026-11-18T22:15:48.617Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -460,17 +460,16 @@
         "SF": [
           "Jarred Vanderbilt",
           "Cameron Carr",
-          "Chris Manon",
           "Chris Manon"
         ],
         "PF": [
           "Sandro Mamukelashvili",
-          "Adou Thiero"
+          "Adou Thiero",
+          "Arthur Kaluma"
         ],
         "C": [
           "Kevon Looney",
-          "Carson Cooper",
-          "Arthur Kaluma"
+          "Carson Cooper"
         ]
       }
     },
