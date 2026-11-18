@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T14:23:21.750Z",
+  "generated_at": "2026-11-18T14:23:27.845Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -811,8 +811,8 @@
     "POR": {
       "starters": {
         "PG": "Damian Lillard",
-        "SG": "Sidy Cissoko",
-        "SF": "Jayson Kent",
+        "SG": "Jayson Kent",
+        "SF": "Sidy Cissoko",
         "PF": "Toumani Camara",
         "C": "Donovan Clingan"
       },
