@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T01:33:20.827Z",
+  "generated_at": "2026-11-19T05:51:27.391Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -948,8 +948,7 @@
       },
       "bench": {
         "PG": [
-          "Isaiah Collier",
-          "Trey Alexander"
+          "Isaiah Collier"
         ],
         "SG": [
           "Brice Sensabaugh",
@@ -967,8 +966,9 @@
           "Jusuf Nurkic"
         ],
         "C": [
+          "Jaxson Hayes",
           "Tony Bradley",
-          "Jaxson Hayes"
+          "Jonas Aidoo"
         ]
       }
     },
