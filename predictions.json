@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T01:13:47.070Z",
+  "generated_at": "2026-11-19T01:13:56.232Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -151,8 +151,7 @@
         ],
         "SG": [
           "Buddy Hield",
-          "Dailyn Swain",
-          "Caleb Wilson"
+          "Dailyn Swain"
         ],
         "SF": [
           "Patrick Williams",
@@ -161,12 +160,13 @@
         "PF": [
           "Zach Collins",
           "Noa Essengue",
-          "Tobe Awaka"
+          "Caleb Wilson"
         ],
         "C": [
           "Nicolas Claxton",
           "Leonard Miller",
-          "Orlando Robinson"
+          "Orlando Robinson",
+          "Tobe Awaka"
         ]
       }
     },
