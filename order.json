@@ -323,28 +323,28 @@
       "Will Richard",
       "Gary Payton II",
       "__SEPARATOR__",
-      "__SPACER__",
       "Brandon Williams"
     ],
     "SF": [
       "Yaxel Lendeborg",
       "Georges Niang",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jimmy Butler"
     ],
     "PF": [
       "Draymond Green",
       "Gui Santos",
-      "__SPACER__",
+      "Graham Ike",
       "__SEPARATOR__",
       "Moses Moody"
     ],
     "C": [
+      "Al Horford",
       "Charles Bassey",
-      "Graham Ike",
+      "__SPACER__",
       "Malevy Leons",
       "__SEPARATOR__",
-      "Al Horford",
       "Kristaps Porzingis"
     ]
   },
