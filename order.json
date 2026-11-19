@@ -207,30 +207,26 @@
   "DAL": {
     "PG": [
       "Kyrie Irving",
-      "Max Christie",
-      "__SPACER__",
+      "Walter Clayton",
       "Marcus Sasser",
-      "__SPACER__",
       "__SEPARATOR__",
       "Sergio De Larrea"
     ],
     "SG": [
       "Cooper Flagg",
       "Zaccharie Risacher",
-      "Walter Clayton"
+      "Max Christie"
     ],
     "SF": [
       "Caleb Martin",
       "Naji Marshall",
       "Jett Howard",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tarik Biberovic"
     ],
     "PF": [
       "PJ Washington",
       "Santiago Aldama",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Tobi Lawal"
@@ -239,7 +235,6 @@
       "Daniel Gafford",
       "Morez Johnson",
       "Moussa Cisse",
-      "__SPACER__",
       "__SEPARATOR__",
       "Dereck Lively"
     ]
