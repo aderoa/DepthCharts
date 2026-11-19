@@ -389,13 +389,13 @@
       "Quenton Jackson",
       "TJ McConnell",
       "Braden Smith",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tyrese Haliburton"
     ],
     "SG": [
       "Kelly Oubre",
       "Kobe Brown",
+      "__SPACER__",
       "__SEPARATOR__",
       "Andrew Nembhard"
     ],
@@ -415,8 +415,8 @@
     ],
     "C": [
       "Ivica Zubac",
-      "Larry Nance Jr",
-      "Jay Huff"
+      "Jay Huff",
+      "Larry Nance Jr"
     ]
   },
   "LAC": {
