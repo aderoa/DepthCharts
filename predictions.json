@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T00:33:17.864Z",
+  "generated_at": "2026-11-19T00:34:02.779Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -907,8 +907,8 @@
     "TOR": {
       "starters": {
         "PG": "Immanuel Quickley",
-        "SG": "Allen Graves",
-        "SF": "Ja'Kobe Walter",
+        "SG": "Ja'Kobe Walter",
+        "SF": "Jamison Battle",
         "PF": "Collin Murray-Boyles",
         "C": "Jakob Poeltl"
       },
@@ -923,7 +923,7 @@
           "RJ Barrett"
         ],
         "SF": [
-          "Jamison Battle",
+          "Allen Graves",
           "Kevin McCullar",
           "Kawhi Leonard"
         ],
