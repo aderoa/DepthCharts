@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T21:47:30.461Z",
+  "generated_at": "2026-11-19T21:47:35.801Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -559,16 +559,16 @@
         ],
         "SF": [
           "Gary Trent Jr",
-          "Caris LeVert",
           "Ousmane Dieng"
         ],
         "PF": [
           "Nate Ament",
-          "Pete Nance",
+          "Caris LeVert",
           "Kyle Kuzma"
         ],
         "C": [
           "Bogoljub Markovic",
+          "Pete Nance",
           "Myles Turner"
         ]
       }
