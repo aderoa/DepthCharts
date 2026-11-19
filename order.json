@@ -558,36 +558,32 @@
   "MIL": {
     "PG": [
       "Ryan Rollins",
-      "Brayden Burries",
       "Kasparas Jakucionis",
-      "__SPACER__"
+      "Kam Jones"
     ],
     "SG": [
       "Tyler Herro",
-      "AJ Green",
-      "Kam Jones",
-      "__SPACER__"
+      "Brayden Burries",
+      "Cormac Ryan"
     ],
     "SF": [
       "Jaime Jaquez",
-      "Gary Trent Jr",
-      "Cormac Ryan",
-      "__SPACER__",
+      "AJ Green",
+      "Caris LeVert",
       "__SEPARATOR__",
       "Ousmane Dieng"
     ],
     "PF": [
       "Jericho Sims",
-      "Nate Ament",
-      "Caris LeVert",
-      "__SPACER__",
+      "Gary Trent Jr",
+      "Pete Nance",
+      "__SEPARATOR__",
       "Kyle Kuzma"
     ],
     "C": [
       "Kel'el Ware",
+      "Nate Ament",
       "Bogoljub Markovic",
-      "Pete Nance",
-      "__SPACER__",
       "__SEPARATOR__",
       "Myles Turner"
     ]
