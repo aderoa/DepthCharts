@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T00:15:27.155Z",
+  "generated_at": "2026-11-19T00:17:57.402Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -213,17 +213,17 @@
       },
       "bench": {
         "PG": [
-          "Walter Clayton",
+          "Max Christie",
           "Marcus Sasser",
           "Sergio De Larrea"
         ],
         "SG": [
           "Zaccharie Risacher",
-          "Jett Howard",
-          "Max Christie"
+          "Walter Clayton"
         ],
         "SF": [
           "Naji Marshall",
+          "Jett Howard",
           "Tarik Biberovic"
         ],
         "PF": [
