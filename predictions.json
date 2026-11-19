@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T21:49:40.574Z",
+  "generated_at": "2026-11-19T21:50:13.347Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -272,17 +272,16 @@
     },
     "DET": {
       "starters": {
-        "PG": "Daniss Jenkins",
-        "SG": "Kevin Huerter",
-        "SF": "Ausar Thompson",
-        "PF": "Javonte Green",
+        "PG": "Cade Cunningham",
+        "SG": "Daniss Jenkins",
+        "SF": "Kevin Huerter",
+        "PF": "Ausar Thompson",
         "C": "John Collins"
       },
       "bench": {
         "PG": [
           "Isaiah Joe",
-          "Ebuka Okorie",
-          "Cade Cunningham"
+          "Ebuka Okorie"
         ],
         "SG": [
           "Elijah Harkless",
@@ -293,6 +292,7 @@
           "Ron Holland"
         ],
         "PF": [
+          "Javonte Green",
           "Paul Reed",
           "Isaac Jones",
           "Taurean Prince"
