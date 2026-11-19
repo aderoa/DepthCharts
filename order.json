@@ -560,9 +560,7 @@
       "Brayden Burries",
       "Ryan Rollins",
       "Kasparas Jakucionis",
-      "Kam Jones",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Kam Jones"
     ],
     "SG": [
       "Tyler Herro",
@@ -571,9 +569,9 @@
       "Cormac Ryan"
     ],
     "SF": [
-      "Kyle Kuzma",
       "Jaime Jaquez",
       "Caris LeVert",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Ousmane Dieng"
@@ -582,13 +580,16 @@
       "Jericho Sims",
       "Nate Ament",
       "Pete Nance",
-      "__SPACER__"
+      "__SPACER__",
+      "Kyle Kuzma"
     ],
     "C": [
-      "Myles Turner",
       "Kel'el Ware",
       "Bogoljub Markovic",
-      "__SPACER__"
+      "__SPACER__",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Myles Turner"
     ]
   },
   "MIN": {
