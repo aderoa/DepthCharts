@@ -280,27 +280,28 @@
   },
   "DET": {
     "PG": [
-      "Cade Cunningham",
+      "Daniss Jenkins",
       "Elijah Harkless",
       "Ebuka Okorie",
+      "Isaiah Joe",
       "__SEPARATOR__",
-      "Isaiah Joe"
+      "Cade Cunningham"
     ],
     "SG": [
-      "Daniss Jenkins",
-      "Chaz Lanier",
+      "Kevin Huerter",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Duncan Robinson"
     ],
     "SF": [
-      "Kevin Huerter",
-      "Javonte Green",
+      "Ausar Thompson",
+      "Chaz Lanier",
       "__SEPARATOR__",
       "Ron Holland"
     ],
     "PF": [
-      "Ausar Thompson",
+      "Javonte Green",
       "Paul Reed",
       "Isaac Jones",
       "__SEPARATOR__",
@@ -309,7 +310,6 @@
     "C": [
       "John Collins",
       "Tolu Smith",
-      "__SPACER__",
       "Ugonna Onyenso",
       "__SEPARATOR__",
       "Jalen Duren"
