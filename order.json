@@ -881,30 +881,33 @@
       "Darius Acuff",
       "Emanuel Sharp",
       "Sean Pedulla",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ben Simmons"
     ],
     "SG": [
       "Zach LaVine",
       "Malik Monk",
-      "Leaky Black",
       "__SPACER__",
-      "__SEPARATOR__"
+      "Daeqwon Plowden",
+      "__SPACER__"
     ],
     "SF": [
       "De'Andre Hunter",
-      "Daeqwon Plowden",
+      "Leaky Black",
       "Alex Karaban"
     ],
     "PF": [
       "Keegan Murray",
       "Precious Achiuwa",
-      "Jonathan Mogbo"
+      "Jonathan Mogbo",
+      "__SPACER__"
     ],
     "C": [
       "Domantas Sabonis",
       "Dylan Cardwell",
       "Mason Plumlee",
+      "__SPACER__",
       "__SEPARATOR__",
       "Maxime Raynaud"
     ]
