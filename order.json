@@ -507,7 +507,6 @@
       "Jaylen Wells",
       "Olivier-Maxence Prosper",
       "Kris Murray",
-      "__SPACER__",
       "__SEPARATOR__",
       "Richie Saunders"
     ],
@@ -520,8 +519,9 @@
     ],
     "C": [
       "Zach Edey",
+      "__SPACER__",
       "Quinten Post",
-      "Zach Edey",
+      "__SEPARATOR__",
       "Isaiah Stewart"
     ]
   },
