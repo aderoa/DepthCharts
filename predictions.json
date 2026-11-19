@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T21:47:53.336Z",
+  "generated_at": "2026-11-19T21:48:59.127Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -87,17 +87,17 @@
         ],
         "SF": [
           "Danny Wolf",
-          "Chaney Johnson",
-          "Joshua Jefferson"
+          "Chaney Johnson"
         ],
         "PF": [
           "Moritz Wagner",
           "Drake Powell",
-          "Tyler Bilodeau"
+          "Joshua Jefferson"
         ],
         "C": [
           "Noah Clowney",
           "Josh Minott",
+          "Tyler Bilodeau",
           "Grant Nelson"
         ]
       }
