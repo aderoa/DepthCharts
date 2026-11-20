@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T22:03:23.909Z",
+  "generated_at": "2026-11-20T22:03:32.090Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -550,12 +550,12 @@
       "bench": {
         "PG": [
           "Kasparas Jakucionis",
+          "Cormac Ryan",
           "Kam Jones"
         ],
         "SG": [
           "Ryan Rollins",
-          "AJ Green",
-          "Cormac Ryan"
+          "AJ Green"
         ],
         "SF": [
           "Gary Trent Jr",
