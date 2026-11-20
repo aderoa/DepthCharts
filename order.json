@@ -326,13 +326,13 @@
     "SG": [
       "Brandin Podziemski",
       "Will Richard",
-      "Gary Payton II",
       "__SEPARATOR__",
       "Brandon Williams"
     ],
     "SF": [
       "Yaxel Lendeborg",
-      "Georges Niang",
+      "Gary Payton II",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Jimmy Butler",
@@ -340,8 +340,8 @@
     ],
     "PF": [
       "Gui Santos",
+      "Georges Niang",
       "Graham Ike",
-      "__SPACER__",
       "__SEPARATOR__",
       "Draymond Green"
     ],
