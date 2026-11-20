@@ -567,14 +567,14 @@
       "Brayden Burries",
       "Ryan Rollins",
       "Kasparas Jakucionis",
-      "Cormac Ryan",
+      "__SPACER__",
       "Kam Jones"
     ],
     "SG": [
       "Tyler Herro",
       "Gary Trent Jr",
       "AJ Green",
-      "__SPACER__"
+      "Cormac Ryan"
     ],
     "SF": [
       "Kyle Kuzma",
@@ -587,13 +587,13 @@
     "PF": [
       "Nate Ament",
       "Jericho Sims",
-      "Caris LeVert",
-      "__SPACER__"
+      "Caris LeVert"
     ],
     "C": [
       "Myles Turner",
       "Kel'el Ware",
-      "Bogoljub Markovic"
+      "Bogoljub Markovic",
+      "__SPACER__"
     ]
   },
   "MIN": {
