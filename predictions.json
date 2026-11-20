@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T00:48:46.991Z",
+  "generated_at": "2026-11-20T00:49:47.000Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -684,12 +684,12 @@
       "bench": {
         "PG": [
           "Bennett Stirtz",
-          "Nikola Topic",
-          "Cason Wallace"
+          "Nikola Topic"
         ],
         "SG": [
           "Alex Caruso",
-          "Brooks Barnhizer"
+          "Brooks Barnhizer",
+          "Cason Wallace"
         ],
         "SF": [
           "Nique Clifford",
