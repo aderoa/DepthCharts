@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T23:07:04.783Z",
+  "generated_at": "2026-11-20T23:07:08.890Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -474,15 +474,15 @@
     },
     "MEM": {
       "starters": {
-        "PG": "Cam Spencer",
+        "PG": "Ty Jerome",
         "SG": "Cedric Coward",
         "SF": "Jaylen Wells",
         "PF": "Taylor Hendricks",
-        "C": "Zach Edey"
+        "C": "Isaiah Stewart"
       },
       "bench": {
         "PG": [
-          "Ty Jerome",
+          "Cam Spencer",
           "Javon Small"
         ],
         "SG": [
@@ -500,8 +500,8 @@
           "GG Jackson"
         ],
         "C": [
-          "Isaiah Stewart",
           "Quinten Post",
+          "Zach Edey",
           "Cameron Boozer"
         ]
       }
