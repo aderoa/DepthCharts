@@ -387,7 +387,7 @@
   "IND": {
     "PG": [
       "Andrew Nembhard",
-      "Quenton Jackson",
+      "__SPACER__",
       "TJ McConnell",
       "Braden Smith",
       "__SEPARATOR__",
@@ -395,12 +395,12 @@
     ],
     "SG": [
       "Kelly Oubre",
-      "Kobe Brown"
+      "Quenton Jackson"
     ],
     "SF": [
       "Aaron Nesmith",
       "Jarace Walker",
-      "__SPACER__",
+      "Kobe Brown",
       "__SEPARATOR__",
       "Ben Sheppard"
     ],
