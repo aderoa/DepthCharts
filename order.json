@@ -502,22 +502,22 @@
     "SF": [
       "Jaylen Wells",
       "Olivier-Maxence Prosper",
-      "Kris Murray",
+      "__SPACER__",
       "__SEPARATOR__",
       "Richie Saunders"
     ],
     "PF": [
       "Taylor Hendricks",
+      "Kris Murray",
       "Karim Lopez",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jerami Grant",
       "GG Jackson"
     ],
     "C": [
+      "Zach Edey",
       "Isaiah Stewart",
       "Quinten Post",
-      "Zach Edey",
       "__SEPARATOR__",
       "Cameron Boozer"
     ]
