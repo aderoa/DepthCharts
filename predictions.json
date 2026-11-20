@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T11:02:20.335Z",
+  "generated_at": "2026-11-20T11:02:59.484Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -324,12 +324,12 @@
         ],
         "SF": [
           "Georges Niang",
-          "Jimmy Butler"
+          "Jimmy Butler",
+          "Moses Moody"
         ],
         "PF": [
-          "Draymond Green",
           "Graham Ike",
-          "Moses Moody"
+          "Draymond Green"
         ],
         "C": [
           "Al Horford",
