@@ -781,13 +781,13 @@
       "Anfernee Simons",
       "Labaron Philon",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Tyrese Maxey"
     ],
     "SG": [
       "VJ Edgecombe",
       "Caleb Love",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jaylen Brown"
     ],
@@ -800,13 +800,11 @@
     ],
     "PF": [
       "LeBron James",
-      "Justin Edwards",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Dominick Barlow"
+      "Justin Edwards"
     ],
     "C": [
       "Joel Embiid",
+      "Dominick Barlow",
       "Tacko Fall",
       "__SPACER__",
       "__SEPARATOR__",
