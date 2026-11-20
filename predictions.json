@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T11:04:27.590Z",
+  "generated_at": "2026-11-20T11:04:31.336Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -543,7 +543,7 @@
       "starters": {
         "PG": "Brayden Burries",
         "SG": "Tyler Herro",
-        "SF": "AJ Green",
+        "SF": "Pete Nance",
         "PF": "Nate Ament",
         "C": "Kel'el Ware"
       },
@@ -558,9 +558,9 @@
         ],
         "SF": [
           "Jaime Jaquez",
+          "AJ Green",
           "Caris LeVert",
-          "Ousmane Dieng",
-          "Pete Nance"
+          "Ousmane Dieng"
         ],
         "PF": [
           "Jericho Sims",
