@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T22:05:06.909Z",
+  "generated_at": "2026-11-20T22:05:10.380Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -763,12 +763,12 @@
           "Dean Wade"
         ],
         "PF": [
-          "Justin Edwards"
+          "Justin Edwards",
+          "Adem Bona"
         ],
         "C": [
           "Dominick Barlow",
           "Tacko Fall",
-          "Adem Bona",
           "Ariel Hukporti"
         ]
       }
