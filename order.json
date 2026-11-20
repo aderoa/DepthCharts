@@ -120,14 +120,17 @@
     ],
     "SF": [
       "Brandon Miller",
-      "Royce O'Neale",
       "Tidjane Salaun",
+      "__SEPARATOR__",
       "Grayson Allen"
     ],
     "PF": [
       "Naz Reid",
-      "Grant Williams",
-      "PJ Hall"
+      "Royce O'Neale",
+      "PJ Hall",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Grant Williams"
     ],
     "C": [
       "Moussa Diabate",
