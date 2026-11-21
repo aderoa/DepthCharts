@@ -631,15 +631,16 @@
     "SG": [
       "Herb Jones",
       "Jordan Poole",
-      "AJ Johnson",
+      "__SPACER__",
       "__SEPARATOR__",
       "Bryce McGowens"
     ],
     "SF": [
       "Saddiq Bey",
-      "Trey Murphy",
+      "AJ Johnson",
       "Julian Reese",
       "__SEPARATOR__",
+      "Trey Murphy",
       "Bennedict Mathurin"
     ],
     "PF": [
