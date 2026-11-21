@@ -761,11 +761,9 @@
   },
   "PHI": {
     "PG": [
+      "Tyrese Maxey",
       "Anfernee Simons",
-      "Labaron Philon",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Tyrese Maxey"
+      "Labaron Philon"
     ],
     "SG": [
       "VJ Edgecombe",
@@ -785,6 +783,7 @@
       "LeBron James",
       "Justin Edwards",
       "__SPACER__",
+      "__SEPARATOR__",
       "Adem Bona"
     ],
     "C": [
