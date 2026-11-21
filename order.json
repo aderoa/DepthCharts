@@ -702,23 +702,22 @@
     ],
     "SG": [
       "Ajay Mitchell",
+      "Nique Clifford",
       "Brooks Barnhizer",
-      "__SPACER__",
       "__SEPARATOR__",
       "Alex Caruso",
       "Cason Wallace"
     ],
     "SF": [
       "Jared McCain",
-      "Nique Clifford",
       "Micah Peavy",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jalen Williams"
     ],
     "PF": [
       "Aday Mara",
       "Kenrich Williams",
-      "__SPACER__",
       "Josh Dix",
       "__SEPARATOR__",
       "Chet Holmgren"
@@ -726,6 +725,7 @@
     "C": [
       "Isaiah Hartenstein",
       "Jaylin Williams",
+      "__SPACER__",
       "__SEPARATOR__",
       "Thomas Sorber"
     ]
