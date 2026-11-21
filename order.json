@@ -556,7 +556,6 @@
       "Brayden Burries",
       "Ryan Rollins",
       "Kasparas Jakucionis",
-      "__SPACER__",
       "Kam Jones"
     ],
     "SG": [
@@ -566,7 +565,6 @@
       "Cormac Ryan"
     ],
     "SF": [
-      "Kyle Kuzma",
       "Jaime Jaquez",
       "Pete Nance",
       "__SPACER__",
@@ -574,9 +572,11 @@
       "Ousmane Dieng"
     ],
     "PF": [
+      "Kyle Kuzma",
       "Nate Ament",
       "Jericho Sims",
-      "Caris LeVert"
+      "Caris LeVert",
+      "__SPACER__"
     ],
     "C": [
       "Myles Turner",
