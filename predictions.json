@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T16:05:32.493Z",
+  "generated_at": "2026-11-21T16:05:37.207Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -651,17 +651,17 @@
       "bench": {
         "PG": [
           "Tyler Kolek",
-          "Jaden Akins",
-          "Jordan Clarkson"
+          "Jaden Akins"
         ],
         "SG": [
           "Jose Alvarado",
           "Tyler Nickel",
-          "OG Anunoby"
+          "Jordan Clarkson"
         ],
         "SF": [
           "Miles McBride",
-          "Dalton Knecht"
+          "Dalton Knecht",
+          "OG Anunoby"
         ],
         "PF": [
           "Mohamed Diawara",
