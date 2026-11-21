@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T00:42:22.667Z",
+  "generated_at": "2026-11-21T00:42:32.628Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -678,7 +678,7 @@
         "PG": "Shai Gilgeous-Alexander",
         "SG": "Ajay Mitchell",
         "SF": "Jared McCain",
-        "PF": "Aday Mara",
+        "PF": "Micah Peavy",
         "C": "Isaiah Hartenstein"
       },
       "bench": {
@@ -687,16 +687,16 @@
           "Nikola Topic"
         ],
         "SG": [
-          "Alex Caruso",
+          "Nique Clifford",
           "Brooks Barnhizer",
+          "Alex Caruso",
           "Cason Wallace"
         ],
         "SF": [
-          "Nique Clifford",
-          "Micah Peavy",
           "Jalen Williams"
         ],
         "PF": [
+          "Aday Mara",
           "Kenrich Williams",
           "Josh Dix",
           "Chet Holmgren"
