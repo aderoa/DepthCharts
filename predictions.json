@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T17:34:59.709Z",
+  "generated_at": "2026-11-21T17:35:12.517Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -543,8 +543,8 @@
       "starters": {
         "PG": "Brayden Burries",
         "SG": "Tyler Herro",
-        "SF": "Kyle Kuzma",
-        "PF": "Nate Ament",
+        "SF": "Jaime Jaquez",
+        "PF": "Kyle Kuzma",
         "C": "Myles Turner"
       },
       "bench": {
@@ -559,11 +559,11 @@
           "Cormac Ryan"
         ],
         "SF": [
-          "Jaime Jaquez",
           "Pete Nance",
           "Ousmane Dieng"
         ],
         "PF": [
+          "Nate Ament",
           "Jericho Sims",
           "Caris LeVert"
         ],
