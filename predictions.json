@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T20:51:40.723Z",
+  "generated_at": "2026-11-21T22:06:01.426Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -380,22 +380,22 @@
       },
       "bench": {
         "PG": [
-          "TJ McConnell",
           "Braden Smith",
           "Tyrese Haliburton"
         ],
         "SG": [
           "Quenton Jackson",
-          "Ben Sheppard"
+          "TJ McConnell"
         ],
         "SF": [
           "Jarace Walker",
           "Kobe Brown",
-          "Johnny Furphy"
+          "Ben Sheppard"
         ],
         "PF": [
           "Obi Toppin",
-          "Jalen Slawson"
+          "Jalen Slawson",
+          "Johnny Furphy"
         ],
         "C": [
           "Larry Nance Jr",
