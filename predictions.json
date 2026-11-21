@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T20:51:32.036Z",
+  "generated_at": "2026-11-21T20:51:36.750Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -46,24 +46,24 @@
       "bench": {
         "PG": [
           "Payton Pritchard",
+          "Devin Carter",
           "Derrick White"
         ],
         "SG": [
           "Sam Hauser",
-          "Devin Carter"
+          "Ron Harper Jr"
         ],
         "SF": [
           "Baylor Scheierman",
-          "Ron Harper Jr",
           "Dillon Mitchell",
           "Jayson Tatum"
         ],
         "PF": [
-          "Chris Cenac"
+          "Chris Cenac",
+          "Amari Williams"
         ],
         "C": [
           "Luka Garza",
-          "Amari Williams",
           "Mitchell Robinson"
         ]
       }
