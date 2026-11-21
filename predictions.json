@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T00:09:18.449Z",
+  "generated_at": "2026-11-21T00:10:25.117Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -71,8 +71,8 @@
     "BKN": {
       "starters": {
         "PG": "Egor Demin",
-        "SG": "Nolan Traore",
-        "SF": "Michael Porter",
+        "SG": "Michael Porter",
+        "SF": "Danny Wolf",
         "PF": "Julius Randle",
         "C": "Day'Ron Sharpe"
       },
@@ -82,11 +82,11 @@
           "Ben Saraf"
         ],
         "SG": [
+          "Nolan Traore",
           "Keon Ellis",
           "Terance Mann"
         ],
         "SF": [
-          "Danny Wolf",
           "Chaney Johnson"
         ],
         "PF": [
