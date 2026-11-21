@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T16:05:28.626Z",
+  "generated_at": "2026-11-21T16:05:32.493Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -656,16 +656,16 @@
         ],
         "SG": [
           "Jose Alvarado",
-          "Dalton Knecht",
           "Tyler Nickel",
           "OG Anunoby"
         ],
         "SF": [
           "Miles McBride",
-          "Pacome Dadiet"
+          "Dalton Knecht"
         ],
         "PF": [
-          "Mohamed Diawara"
+          "Mohamed Diawara",
+          "Pacome Dadiet"
         ],
         "C": [
           "Andre Drummond",
