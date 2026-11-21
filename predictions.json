@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T22:06:01.426Z",
+  "generated_at": "2026-11-21T22:21:45.924Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -697,10 +697,10 @@
         ],
         "PF": [
           "Kenrich Williams",
-          "Josh Dix",
           "Chet Holmgren"
         ],
         "C": [
+          "Josh Dix",
           "Jaylin Williams",
           "Thomas Sorber"
         ]
