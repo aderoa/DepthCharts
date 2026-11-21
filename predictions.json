@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T17:34:56.138Z",
+  "generated_at": "2026-11-21T17:34:59.709Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -750,10 +750,10 @@
       },
       "bench": {
         "PG": [
-          "Anfernee Simons",
           "Labaron Philon"
         ],
         "SG": [
+          "Anfernee Simons",
           "Caleb Love",
           "Jaylen Brown"
         ],
