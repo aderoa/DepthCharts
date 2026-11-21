@@ -762,13 +762,13 @@
   "PHI": {
     "PG": [
       "Tyrese Maxey",
-      "Anfernee Simons",
-      "Labaron Philon"
+      "Labaron Philon",
+      "__SPACER__"
     ],
     "SG": [
       "VJ Edgecombe",
+      "Anfernee Simons",
       "Caleb Love",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jaylen Brown"
     ],
