@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T03:45:00.809Z",
+  "generated_at": "2026-11-21T16:05:24.079Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -643,7 +643,7 @@
     "NYK": {
       "starters": {
         "PG": "Jalen Brunson",
-        "SG": "OG Anunoby",
+        "SG": "Jose Alvarado",
         "SF": "Mikal Bridges",
         "PF": "Josh Hart",
         "C": "Karl-Anthony Towns"
@@ -651,17 +651,17 @@
       "bench": {
         "PG": [
           "Tyler Kolek",
-          "Jordan Clarkson",
-          "Jaden Akins"
+          "Jaden Akins",
+          "Jordan Clarkson"
         ],
         "SG": [
-          "Jose Alvarado",
-          "Dalton Knecht"
+          "Dalton Knecht",
+          "Tyler Nickel",
+          "OG Anunoby"
         ],
         "SF": [
           "Miles McBride",
-          "Pacome Dadiet",
-          "Tyler Nickel"
+          "Pacome Dadiet"
         ],
         "PF": [
           "Landry Shamet",
