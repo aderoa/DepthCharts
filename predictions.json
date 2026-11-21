@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T00:42:32.628Z",
+  "generated_at": "2026-11-21T00:42:36.702Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -693,16 +693,16 @@
           "Cason Wallace"
         ],
         "SF": [
+          "Kenrich Williams",
           "Jalen Williams"
         ],
         "PF": [
-          "Aday Mara",
-          "Kenrich Williams",
+          "Jaylin Williams",
           "Josh Dix",
           "Chet Holmgren"
         ],
         "C": [
-          "Jaylin Williams",
+          "Aday Mara",
           "Thomas Sorber"
         ]
       }
