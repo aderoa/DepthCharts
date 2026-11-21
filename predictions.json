@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T18:19:39.991Z",
+  "generated_at": "2026-11-21T18:39:50.670Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -549,23 +549,23 @@
       },
       "bench": {
         "PG": [
-          "Ryan Rollins",
           "Kasparas Jakucionis",
+          "AJ Green",
           "Kam Jones"
         ],
         "SG": [
+          "Ryan Rollins",
           "Gary Trent Jr",
-          "AJ Green",
           "Cormac Ryan"
         ],
         "SF": [
-          "Nate Ament",
+          "Caris LeVert",
           "Pete Nance",
           "Ousmane Dieng"
         ],
         "PF": [
-          "Jericho Sims",
-          "Caris LeVert"
+          "Nate Ament",
+          "Jericho Sims"
         ],
         "C": [
           "Kel'el Ware",
