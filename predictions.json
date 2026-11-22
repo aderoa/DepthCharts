@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T00:36:08.387Z",
+  "generated_at": "2026-11-22T00:38:01.212Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -610,7 +610,7 @@
         "PG": "Jeremiah Fears",
         "SG": "Herb Jones",
         "SF": "Saddiq Bey",
-        "PF": "Zion Williamson",
+        "PF": "Derik Queen",
         "C": "Yves Missi"
       },
       "bench": {
@@ -629,12 +629,12 @@
           "Bennedict Mathurin"
         ],
         "PF": [
-          "Derik Queen",
+          "Karlo Matkovic",
           "Malik Dia",
+          "Zion Williamson",
           "Trendon Watford"
         ],
         "C": [
-          "Karlo Matkovic",
           "DeAndre Jordan"
         ]
       }
