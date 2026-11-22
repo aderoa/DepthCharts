@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T02:36:16.624Z",
+  "generated_at": "2026-11-22T02:36:25.634Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -53,17 +53,17 @@
           "Ron Harper Jr"
         ],
         "SF": [
-          "Dillon Mitchell",
           "Baylor Scheierman",
+          "Dillon Mitchell",
           "Jayson Tatum"
         ],
         "PF": [
           "Jordan Walsh",
-          "Chris Cenac",
-          "Amari Williams"
+          "Chris Cenac"
         ],
         "C": [
           "Luka Garza",
+          "Amari Williams",
           "Mitchell Robinson"
         ]
       }
