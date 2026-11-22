@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T22:16:08.653Z",
+  "generated_at": "2026-11-22T22:16:14.623Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -754,20 +754,20 @@
           "Caleb Love"
         ],
         "SG": [
-          "Anfernee Simons"
+          "Anfernee Simons",
+          "Jabari Walker"
         ],
         "SF": [
           "Kentavious Caldwell-Pope",
-          "Jabari Walker",
+          "Justin Edwards",
           "Rayan Rupert"
         ],
         "PF": [
           "Dean Wade",
-          "Justin Edwards"
+          "Adem Bona"
         ],
         "C": [
           "Dominick Barlow",
-          "Adem Bona",
           "Tacko Fall",
           "Ariel Hukporti"
         ]
