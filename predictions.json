@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T23:12:59.785Z",
+  "generated_at": "2026-11-22T23:35:46.155Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -949,17 +949,17 @@
       },
       "bench": {
         "PG": [
-          "Isaiah Collier"
+          "Isaiah Collier",
+          "Kobe Bufkin"
         ],
         "SG": [
           "Brice Sensabaugh",
-          "Kobe Bufkin",
+          "Harrison Ingram",
           "Lauri Markkanen"
         ],
         "SF": [
           "Josh Okogie",
           "Kyle Filipowski",
-          "Harrison Ingram",
           "Jaren Jackson Jr"
         ],
         "PF": [
