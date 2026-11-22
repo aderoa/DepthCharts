@@ -41,29 +41,32 @@
       "Payton Pritchard",
       "Mike Conley",
       "Devin Carter",
-      "__SEPARATOR__",
       "Derrick White"
     ],
     "SG": [
       "Sam Hauser",
       "Baylor Scheierman",
-      "Ron Harper Jr"
+      "Ron Harper Jr",
+      "__SPACER__"
     ],
     "SF": [
-      "Paul George",
+      "Hugo Gonzalez",
       "Jordan Walsh",
       "Dillon Mitchell",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Jayson Tatum"
+      "Paul George"
     ],
     "PF": [
-      "Hugo Gonzalez",
+      "Jayson Tatum",
       "Chris Cenac",
-      "Amari Williams"
+      "Amari Williams",
+      "__SPACER__"
     ],
     "C": [
       "Neemias Queta",
       "Luka Garza",
+      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Mitchell Robinson"
