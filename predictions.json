@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T00:11:49.264Z",
+  "generated_at": "2026-11-22T00:35:11.887Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -475,8 +475,8 @@
       "starters": {
         "PG": "Ty Jerome",
         "SG": "Cedric Coward",
-        "SF": "Jaylen Wells",
-        "PF": "Taylor Hendricks",
+        "SF": "Jahmai Mashack",
+        "PF": "Jaylen Wells",
         "C": "Zach Edey"
       },
       "bench": {
@@ -485,14 +485,15 @@
           "Javon Small"
         ],
         "SG": [
-          "Jahmai Mashack",
           "Scotty Pippen Jr"
         ],
         "SF": [
+          "Jaylen Wells",
           "Olivier-Maxence Prosper",
           "Richie Saunders"
         ],
         "PF": [
+          "Taylor Hendricks",
           "Kris Murray",
           "Karim Lopez",
           "Jerami Grant",
