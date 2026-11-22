@@ -847,6 +847,7 @@
       "Ja Morant"
     ],
     "SG": [
+      "Sidy Cissoko",
       "Jayson Kent",
       "Scoot Henderson",
       "__SPACER__",
@@ -854,17 +855,16 @@
       "Shaedon Sharpe"
     ],
     "SF": [
-      "Sidy Cissoko",
+      "Toumani Camara",
       "John Tonje",
       "Micah Potter",
       "__SEPARATOR__",
       "Vit Krejci"
     ],
     "PF": [
-      "Toumani Camara",
+      "Deni Avdija",
       "Robert Williams",
       "Yang Hansen",
-      "__SPACER__",
       "__SEPARATOR__",
       "Chris Youngblood"
     ],
@@ -872,8 +872,7 @@
       "Donovan Clingan",
       "Branden Carlson",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Deni Avdija"
+      "__SEPARATOR__"
     ]
   },
   "SAC": {
