@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T18:48:09.640Z",
+  "generated_at": "2026-11-22T18:49:23.365Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -285,12 +285,12 @@
         ],
         "SG": [
           "Elijah Harkless",
+          "Chaz Lanier",
           "Duncan Robinson"
         ],
         "SF": [
-          "Chaz Lanier",
-          "Isaac Jones",
-          "Ron Holland"
+          "Ron Holland",
+          "Isaac Jones"
         ],
         "PF": [
           "Javonte Green",
