@@ -51,8 +51,8 @@
     ],
     "SF": [
       "Paul George",
-      "Dillon Mitchell",
       "Baylor Scheierman",
+      "Dillon Mitchell",
       "__SEPARATOR__",
       "Jayson Tatum"
     ],
@@ -60,12 +60,12 @@
       "Hugo Gonzalez",
       "Jordan Walsh",
       "Chris Cenac",
-      "Amari Williams"
+      "__SPACER__"
     ],
     "C": [
       "Neemias Queta",
       "Luka Garza",
-      "__SPACER__",
+      "Amari Williams",
       "__SEPARATOR__",
       "Mitchell Robinson"
     ]
