@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T22:14:22.192Z",
+  "generated_at": "2026-11-22T22:14:26.805Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -930,12 +930,12 @@
           "Kawhi Leonard"
         ],
         "PF": [
-          "Jamison Battle"
+          "Jamison Battle",
+          "Nate Bittle"
         ],
         "C": [
           "Jakob Poeltl",
-          "Trayce Jackson-Davis",
-          "Nate Bittle"
+          "Trayce Jackson-Davis"
         ]
       }
     },
