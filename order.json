@@ -142,13 +142,15 @@
     "PG": [
       "Josh Giddey",
       "Tre Jones",
-      "Dailyn Swain",
+      "__SPACER__",
       "Jaylin Sellers"
     ],
     "SG": [
       "Buddy Hield",
       "Jordan Hawkins",
+      "Dailyn Swain",
       "__SPACER__",
+      "__SEPARATOR__",
       "Norman Powell"
     ],
     "SF": [
