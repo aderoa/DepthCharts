@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T00:11:41.466Z",
+  "generated_at": "2026-11-22T00:11:49.264Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -825,16 +825,16 @@
         ],
         "SF": [
           "Jayson Kent",
-          "Micah Potter",
           "Vit Krejci"
         ],
         "PF": [
           "Robert Williams",
-          "Yang Hansen",
+          "Micah Potter",
           "Chris Youngblood"
         ],
         "C": [
-          "Branden Carlson"
+          "Branden Carlson",
+          "Yang Hansen"
         ]
       }
     },
