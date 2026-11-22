@@ -39,24 +39,21 @@
   },
   "BOS": {
     "PG": [
-      "Mike Conley",
       "Payton Pritchard",
+      "Mike Conley",
       "Devin Carter",
-      "__SPACER__",
       "__SEPARATOR__",
       "Derrick White"
     ],
     "SG": [
-      "Paul George",
       "Sam Hauser",
-      "Ron Harper Jr",
-      "__SPACER__"
+      "Paul George",
+      "Ron Harper Jr"
     ],
     "SF": [
       "Hugo Gonzalez",
-      "__SPACER__",
       "Dillon Mitchell",
-      "__SPACER__",
+      "Baylor Scheierman",
       "__SEPARATOR__",
       "Jayson Tatum"
     ],
@@ -68,7 +65,6 @@
     "C": [
       "Neemias Queta",
       "Luka Garza",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Mitchell Robinson"
