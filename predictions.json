@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T22:16:50.787Z",
+  "generated_at": "2026-11-22T22:17:07.278Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -511,7 +511,7 @@
         "PG": "Davion Mitchell",
         "SG": "Klay Thompson",
         "SF": "Pelle Larsson",
-        "PF": "Giannis Antetokounmpo",
+        "PF": "Nikola Jovic",
         "C": "Bam Adebayo"
       },
       "bench": {
@@ -528,9 +528,9 @@
           "Tim Hardaway Jr"
         ],
         "PF": [
-          "Nikola Jovic",
           "Simone Fontecchio",
-          "Keshad Johnson"
+          "Keshad Johnson",
+          "Giannis Antetokounmpo"
         ],
         "C": [
           "Bobby Portis",
