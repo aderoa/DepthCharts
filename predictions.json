@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T00:38:03.188Z",
+  "generated_at": "2026-11-22T01:32:53.691Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -645,7 +645,7 @@
         "SG": "Landry Shamet",
         "SF": "Mikal Bridges",
         "PF": "Josh Hart",
-        "C": "Karl-Anthony Towns"
+        "C": "Andre Drummond"
       },
       "bench": {
         "PG": [
@@ -653,22 +653,22 @@
           "Jaden Akins"
         ],
         "SG": [
+          "Miles McBride",
           "Jose Alvarado",
           "Tyler Nickel",
           "Jordan Clarkson"
         ],
         "SF": [
-          "Miles McBride",
-          "Dalton Knecht",
+          "Pacome Dadiet",
           "OG Anunoby"
         ],
         "PF": [
           "Mohamed Diawara",
-          "Pacome Dadiet"
+          "Dalton Knecht"
         ],
         "C": [
-          "Andre Drummond",
-          "James Wiseman"
+          "James Wiseman",
+          "Karl-Anthony Towns"
         ]
       }
     },
