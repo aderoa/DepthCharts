@@ -74,7 +74,7 @@
       "Egor Demin",
       "Mikel Brown",
       "Ben Saraf",
-      "Terance Mann",
+      "__SPACER__",
       "__SPACER__",
       "__SPACER__",
       "__SPACER__",
@@ -84,27 +84,27 @@
     "SG": [
       "Michael Porter",
       "Keon Ellis",
-      "Drake Powell"
+      "Terance Mann"
     ],
     "SF": [
       "Danny Wolf",
       "Chaney Johnson",
-      "__SPACER__",
+      "Drake Powell",
       "__SPACER__",
       "__SPACER__"
     ],
     "PF": [
       "Julius Randle",
       "Moritz Wagner",
-      "__SPACER__",
       "Joshua Jefferson",
+      "Tyler Bilodeau",
       "__SPACER__"
     ],
     "C": [
       "Day'Ron Sharpe",
       "Noah Clowney",
       "Josh Minott",
-      "Tyler Bilodeau",
+      "__SPACER__",
       "Grant Nelson"
     ]
   },
