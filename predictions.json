@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T17:18:14.528Z",
+  "generated_at": "2026-11-22T18:47:26.545Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -11,8 +11,8 @@
       },
       "bench": {
         "PG": [
-          "RayJ Dennis",
           "Kingston Flemings",
+          "RayJ Dennis",
           "CJ McCollum"
         ],
         "SG": [
