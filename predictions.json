@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T18:49:26.517Z",
+  "generated_at": "2026-11-22T20:07:40.914Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -849,6 +849,7 @@
       },
       "bench": {
         "PG": [
+          "Gabe Vincent",
           "Emanuel Sharp",
           "Sean Pedulla",
           "Ben Simmons"
