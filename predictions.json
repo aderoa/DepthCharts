@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T02:36:12.335Z",
+  "generated_at": "2026-11-22T02:36:16.624Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -39,8 +39,8 @@
       "starters": {
         "PG": "Payton Pritchard",
         "SG": "Sam Hauser",
-        "SF": "Hugo Gonzalez",
-        "PF": "Jordan Walsh",
+        "SF": "Paul George",
+        "PF": "Hugo Gonzalez",
         "C": "Neemias Queta"
       },
       "bench": {
@@ -50,7 +50,6 @@
           "Derrick White"
         ],
         "SG": [
-          "Paul George",
           "Ron Harper Jr"
         ],
         "SF": [
@@ -59,6 +58,7 @@
           "Jayson Tatum"
         ],
         "PF": [
+          "Jordan Walsh",
           "Chris Cenac",
           "Amari Williams"
         ],
