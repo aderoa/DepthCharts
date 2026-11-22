@@ -632,36 +632,37 @@
       "Jeremiah Fears",
       "Jaron Pierre",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Dejounte Murray"
     ],
     "SG": [
       "Herb Jones",
       "Jordan Poole",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Bryce McGowens"
+      "__SPACER__"
     ],
     "SF": [
       "Saddiq Bey",
+      "Bryce McGowens",
       "AJ Johnson",
       "Julian Reese",
-      "__SEPARATOR__",
       "Trey Murphy",
+      "__SEPARATOR__",
       "Bennedict Mathurin"
     ],
     "PF": [
       "Derik Queen",
       "Karlo Matkovic",
       "Malik Dia",
+      "__SPACER__",
       "__SEPARATOR__",
       "Trendon Watford"
     ],
     "C": [
       "Yves Missi",
-      "__SPACER__",
       "DeAndre Jordan",
-      "Zion Williamson"
+      "Zion Williamson",
+      "__SPACER__"
     ]
   },
   "NYK": {
