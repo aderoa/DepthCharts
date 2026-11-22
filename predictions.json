@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T18:47:26.545Z",
+  "generated_at": "2026-11-22T18:48:00.381Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -139,7 +139,7 @@
     "CHI": {
       "starters": {
         "PG": "Josh Giddey",
-        "SG": "Norman Powell",
+        "SG": "Buddy Hield",
         "SF": "Isaac Okoro",
         "PF": "Matas Buzelis",
         "C": "Jalen Smith"
@@ -151,8 +151,8 @@
           "Jaylin Sellers"
         ],
         "SG": [
-          "Buddy Hield",
-          "Jordan Hawkins"
+          "Jordan Hawkins",
+          "Norman Powell"
         ],
         "SF": [
           "Patrick Williams",
