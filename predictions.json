@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T22:15:00.552Z",
+  "generated_at": "2026-11-22T22:15:05.279Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -676,8 +676,8 @@
     "OKC": {
       "starters": {
         "PG": "Ajay Mitchell",
-        "SG": "Nique Clifford",
-        "SF": "Jared McCain",
+        "SG": "Jared McCain",
+        "SF": "Kenrich Williams",
         "PF": "Aday Mara",
         "C": "Isaiah Hartenstein"
       },
@@ -688,16 +688,16 @@
           "Nikola Topic"
         ],
         "SG": [
+          "Nique Clifford",
           "Brooks Barnhizer",
           "Alex Caruso",
           "Cason Wallace"
         ],
         "SF": [
-          "Micah Peavy",
           "Jalen Williams"
         ],
         "PF": [
-          "Kenrich Williams",
+          "Micah Peavy",
           "Chet Holmgren"
         ],
         "C": [
