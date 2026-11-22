@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T00:38:01.212Z",
+  "generated_at": "2026-11-22T00:38:03.188Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -631,11 +631,11 @@
         "PF": [
           "Karlo Matkovic",
           "Malik Dia",
-          "Zion Williamson",
           "Trendon Watford"
         ],
         "C": [
-          "DeAndre Jordan"
+          "DeAndre Jordan",
+          "Zion Williamson"
         ]
       }
     },
