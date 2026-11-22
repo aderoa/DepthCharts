@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T22:16:14.623Z",
+  "generated_at": "2026-11-22T22:16:25.606Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -750,25 +750,25 @@
       },
       "bench": {
         "PG": [
+          "Anfernee Simons",
           "Labaron Philon",
           "Caleb Love"
         ],
         "SG": [
-          "Anfernee Simons",
+          "Kentavious Caldwell-Pope",
           "Jabari Walker"
         ],
         "SF": [
-          "Kentavious Caldwell-Pope",
-          "Justin Edwards",
+          "Dean Wade",
           "Rayan Rupert"
         ],
         "PF": [
-          "Dean Wade",
-          "Adem Bona"
+          "Dominick Barlow",
+          "Justin Edwards"
         ],
         "C": [
-          "Dominick Barlow",
           "Tacko Fall",
+          "Adem Bona",
           "Ariel Hukporti"
         ]
       }
