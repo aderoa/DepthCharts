@@ -405,9 +405,9 @@
       "TJ McConnell"
     ],
     "SF": [
-      "Aaron Nesmith",
       "Jarace Walker",
       "Kobe Brown",
+      "__SPACER__",
       "__SEPARATOR__",
       "Ben Sheppard"
     ],
@@ -415,12 +415,14 @@
       "Pascal Siakam",
       "Obi Toppin",
       "Jalen Slawson",
-      "Johnny Furphy"
+      "__SEPARATOR__",
+      "Aaron Nesmith"
     ],
     "C": [
       "Ivica Zubac",
       "Larry Nance Jr",
-      "Jay Huff"
+      "Jay Huff",
+      "Johnny Furphy"
     ]
   },
   "LAC": {
