@@ -323,14 +323,12 @@
       "De'Anthony Melton",
       "LJ Cryer",
       "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Stephen Curry"
     ],
     "SG": [
       "Brandin Podziemski",
       "Will Richard",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Brandon Williams"
@@ -339,22 +337,20 @@
       "Yaxel Lendeborg",
       "Georges Niang",
       "Gary Payton II",
-      "__SPACER__",
       "__SEPARATOR__",
       "Jimmy Butler"
     ],
     "PF": [
+      "Draymond Green",
       "Gui Santos",
       "Al Horford",
       "Graham Ike",
+      "__SEPARATOR__",
       "Moses Moody"
     ],
     "C": [
-      "Draymond Green",
       "Charles Bassey",
       "Malevy Leons",
-      "__SPACER__",
-      "__SPACER__",
       "__SEPARATOR__",
       "Kristaps Porzingis"
     ]
