@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T01:42:43.341Z",
+  "generated_at": "2026-11-23T18:21:25.878Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -375,7 +375,7 @@
       "starters": {
         "PG": "Andrew Nembhard",
         "SG": "Kelly Oubre",
-        "SF": "Aaron Nesmith",
+        "SF": "Jarace Walker",
         "PF": "Pascal Siakam",
         "C": "Ivica Zubac"
       },
@@ -389,18 +389,18 @@
           "TJ McConnell"
         ],
         "SF": [
-          "Jarace Walker",
           "Kobe Brown",
           "Ben Sheppard"
         ],
         "PF": [
           "Obi Toppin",
           "Jalen Slawson",
-          "Johnny Furphy"
+          "Aaron Nesmith"
         ],
         "C": [
           "Larry Nance Jr",
-          "Jay Huff"
+          "Jay Huff",
+          "Johnny Furphy"
         ]
       }
     },
