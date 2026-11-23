@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T21:10:05.245Z",
+  "generated_at": "2026-11-23T21:12:08.379Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -39,7 +39,7 @@
       "starters": {
         "PG": "Derrick White",
         "SG": "Sam Hauser",
-        "SF": "Hugo Gonzalez",
+        "SF": "Paul George",
         "PF": "Jayson Tatum",
         "C": "Neemias Queta"
       },
@@ -53,9 +53,9 @@
           "Devin Carter"
         ],
         "SF": [
+          "Hugo Gonzalez",
           "Jordan Walsh",
-          "Ron Harper Jr",
-          "Paul George"
+          "Ron Harper Jr"
         ],
         "PF": [
           "Chris Cenac",
