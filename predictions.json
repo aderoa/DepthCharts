@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T01:05:12.990Z",
+  "generated_at": "2026-11-23T01:06:42.918Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -309,8 +309,8 @@
         "PG": "De'Anthony Melton",
         "SG": "Brandin Podziemski",
         "SF": "Yaxel Lendeborg",
-        "PF": "Gui Santos",
-        "C": "Draymond Green"
+        "PF": "Draymond Green",
+        "C": "Charles Bassey"
       },
       "bench": {
         "PG": [
@@ -327,12 +327,12 @@
           "Jimmy Butler"
         ],
         "PF": [
+          "Gui Santos",
           "Al Horford",
           "Graham Ike",
           "Moses Moody"
         ],
         "C": [
-          "Charles Bassey",
           "Malevy Leons",
           "Kristaps Porzingis"
         ]
