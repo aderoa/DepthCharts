@@ -679,11 +679,13 @@
       "Jalen Brunson",
       "Tyler Kolek",
       "Jaden Akins",
+      "__SEPARATOR__",
       "Miles McBride"
     ],
     "SG": [
       "Landry Shamet",
       "Jose Alvarado",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jordan Clarkson"
     ],
@@ -700,11 +702,9 @@
       "Mohamed Diawara"
     ],
     "C": [
+      "Karl-Anthony Towns",
       "Andre Drummond",
-      "James Wiseman",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Karl-Anthony Towns"
+      "James Wiseman"
     ]
   },
   "OKC": {
