@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T00:02:48.490Z",
+  "generated_at": "2026-11-23T00:15:18.860Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -646,7 +646,7 @@
         "SG": "Landry Shamet",
         "SF": "Mikal Bridges",
         "PF": "Josh Hart",
-        "C": "Andre Drummond"
+        "C": "Karl-Anthony Towns"
       },
       "bench": {
         "PG": [
@@ -668,8 +668,8 @@
           "Mohamed Diawara"
         ],
         "C": [
-          "James Wiseman",
-          "Karl-Anthony Towns"
+          "Andre Drummond",
+          "James Wiseman"
         ]
       }
     },
