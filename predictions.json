@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T21:12:16.737Z",
+  "generated_at": "2026-11-23T21:12:19.145Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -59,11 +59,11 @@
         ],
         "PF": [
           "Chris Cenac",
-          "Dillon Mitchell",
-          "Amari Williams"
+          "Dillon Mitchell"
         ],
         "C": [
           "Luka Garza",
+          "Amari Williams",
           "Mitchell Robinson"
         ]
       }
