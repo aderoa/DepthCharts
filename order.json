@@ -708,13 +708,13 @@
   "OKC": {
     "PG": [
       "Shai Gilgeous-Alexander",
-      "Ajay Mitchell",
+      "__SPACER__",
       "Bennett Stirtz",
       "__SEPARATOR__",
       "Nikola Topic"
     ],
     "SG": [
-      "Jared McCain",
+      "Ajay Mitchell",
       "Brooks Barnhizer",
       "__SPACER__",
       "__SEPARATOR__",
@@ -722,15 +722,15 @@
       "Cason Wallace"
     ],
     "SF": [
-      "Kenrich Williams",
+      "Jared McCain",
       "Nique Clifford",
       "__SPACER__",
       "__SEPARATOR__",
       "Jalen Williams"
     ],
     "PF": [
+      "Kenrich Williams",
       "Micah Peavy",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Jaylin Williams",
