@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T18:21:25.878Z",
+  "generated_at": "2026-11-23T18:21:35.461Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -374,8 +374,8 @@
     "IND": {
       "starters": {
         "PG": "Andrew Nembhard",
-        "SG": "Kelly Oubre",
-        "SF": "Jarace Walker",
+        "SG": "Quenton Jackson",
+        "SF": "Kelly Oubre",
         "PF": "Pascal Siakam",
         "C": "Ivica Zubac"
       },
@@ -385,20 +385,20 @@
           "Tyrese Haliburton"
         ],
         "SG": [
-          "Quenton Jackson",
+          "Jarace Walker",
           "TJ McConnell"
         ],
         "SF": [
+          "Obi Toppin",
           "Kobe Brown",
           "Ben Sheppard"
         ],
         "PF": [
-          "Obi Toppin",
+          "Larry Nance Jr",
           "Jalen Slawson",
           "Aaron Nesmith"
         ],
         "C": [
-          "Larry Nance Jr",
           "Jay Huff",
           "Johnny Furphy"
         ]
