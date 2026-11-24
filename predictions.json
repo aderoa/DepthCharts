@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T22:19:01.418Z",
+  "generated_at": "2026-11-24T22:19:04.326Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -127,11 +127,11 @@
         ],
         "PF": [
           "Grant Williams",
-          "Royce O'Neale",
-          "PJ Hall"
+          "Royce O'Neale"
         ],
         "C": [
           "Hannes Steinbach",
+          "PJ Hall",
           "Ryan Kalkbrenner"
         ]
       }
