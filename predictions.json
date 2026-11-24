@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T00:41:04.242Z",
+  "generated_at": "2026-11-24T00:41:24.861Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -610,8 +610,8 @@
     "NOP": {
       "starters": {
         "PG": "Jeremiah Fears",
-        "SG": "Trey Murphy",
-        "SF": "Saddiq Bey",
+        "SG": "Jordan Poole",
+        "SF": "Trey Murphy",
         "PF": "Zion Williamson",
         "C": "Yves Missi"
       },
@@ -622,10 +622,10 @@
           "Dejounte Murray"
         ],
         "SG": [
-          "Jordan Poole",
           "Bryce McGowens"
         ],
         "SF": [
+          "Saddiq Bey",
           "Herb Jones",
           "Julian Reese",
           "Bennedict Mathurin"
