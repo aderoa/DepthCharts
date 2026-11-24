@@ -903,9 +903,11 @@
   },
   "SAS": {
     "PG": [
-      "De'Aaron Fox",
       "Jordan McLaughlin",
-      "Ja'Kobi Gillespie"
+      "Ja'Kobi Gillespie",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "De'Aaron Fox"
     ],
     "SG": [
       "Stephon Castle",
@@ -929,9 +931,11 @@
       "Jayden Quaintance"
     ],
     "C": [
-      "Victor Wembanyama",
       "Luke Kornet",
-      "Tarris Reed"
+      "Tarris Reed",
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Victor Wembanyama"
     ]
   },
   "TOR": {
