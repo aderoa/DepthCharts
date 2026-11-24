@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T00:03:34.185Z",
+  "generated_at": "2026-11-24T00:03:36.863Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -550,12 +550,12 @@
       },
       "bench": {
         "PG": [
-          "Brayden Burries",
           "Kasparas Jakucionis",
           "AJ Green",
           "Kam Jones"
         ],
         "SG": [
+          "Brayden Burries",
           "Gary Trent Jr",
           "Cormac Ryan"
         ],
