@@ -942,21 +942,21 @@
     ],
     "SG": [
       "Ja'Kobe Walter",
+      "Alijah Martin",
       "Malachi Smith",
-      "__SPACER__",
       "__SEPARATOR__",
       "RJ Barrett"
     ],
     "SF": [
       "Allen Graves",
-      "Alijah Martin",
+      "Jamison Battle",
       "Kevin McCullar",
       "__SEPARATOR__",
       "Kawhi Leonard"
     ],
     "PF": [
       "Scottie Barnes",
-      "Jamison Battle",
+      "Trayce Jackson-Davis",
       "Kyle Anderson",
       "__SEPARATOR__",
       "Nate Bittle"
@@ -964,7 +964,7 @@
     "C": [
       "Jakob Poeltl",
       "Collin Murray-Boyles",
-      "Trayce Jackson-Davis"
+      "__SPACER__"
     ]
   },
   "UTA": {
