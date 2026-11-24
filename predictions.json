@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T00:41:26.902Z",
+  "generated_at": "2026-11-24T00:41:49.463Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -747,7 +747,7 @@
         "SG": "VJ Edgecombe",
         "SF": "Jaylen Brown",
         "PF": "LeBron James",
-        "C": "Dominick Barlow"
+        "C": "Jabari Walker"
       },
       "bench": {
         "PG": [
@@ -763,7 +763,7 @@
           "Rayan Rupert"
         ],
         "PF": [
-          "Jabari Walker",
+          "Dominick Barlow",
           "Justin Edwards",
           "Joel Embiid"
         ],
