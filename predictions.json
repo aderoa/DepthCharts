@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T04:09:29.190Z",
+  "generated_at": "2026-11-24T04:09:43.158Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -964,10 +964,10 @@
         ],
         "PF": [
           "Sviatoslav Mykhailiuk",
-          "Kyle Filipowski",
           "Jusuf Nurkic"
         ],
         "C": [
+          "Kyle Filipowski",
           "Tony Bradley",
           "Jonas Aidoo",
           "Jaxson Hayes"
