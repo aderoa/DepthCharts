@@ -388,14 +388,14 @@
   },
   "IND": {
     "PG": [
-      "Andrew Nembhard",
       "Braden Smith",
-      "__SPACER__",
+      "Quenton Jackson",
       "__SEPARATOR__",
       "Tyrese Haliburton"
     ],
     "SG": [
-      "Quenton Jackson",
+      "Andrew Nembhard",
+      "__SPACER__",
       "Jarace Walker",
       "__SPACER__",
       "__SEPARATOR__",
@@ -417,8 +417,9 @@
     ],
     "C": [
       "Ivica Zubac",
-      "__SPACER__",
       "Jay Huff",
+      "__SPACER__",
+      "__SEPARATOR__",
       "Johnny Furphy"
     ]
   },
