@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T00:03:03.599Z",
+  "generated_at": "2026-11-24T00:03:31.162Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -542,7 +542,7 @@
     },
     "MIL": {
       "starters": {
-        "PG": "Brayden Burries",
+        "PG": "Ryan Rollins",
         "SG": "Tyler Herro",
         "SF": "Jaime Jaquez",
         "PF": "Kyle Kuzma",
@@ -550,12 +550,12 @@
       },
       "bench": {
         "PG": [
+          "Brayden Burries",
           "Kasparas Jakucionis",
           "AJ Green",
           "Kam Jones"
         ],
         "SG": [
-          "Ryan Rollins",
           "Gary Trent Jr",
           "Cormac Ryan"
         ],
