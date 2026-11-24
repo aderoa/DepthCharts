@@ -565,6 +565,7 @@
   },
   "MIL": {
     "PG": [
+      "Ryan Rollins",
       "Brayden Burries",
       "Kasparas Jakucionis",
       "AJ Green",
@@ -572,7 +573,6 @@
     ],
     "SG": [
       "Tyler Herro",
-      "Ryan Rollins",
       "Gary Trent Jr",
       "Cormac Ryan"
     ],
@@ -580,9 +580,7 @@
       "Jaime Jaquez",
       "Ousmane Dieng",
       "Caris LeVert",
-      "Pete Nance",
-      "__SPACER__",
-      "__SEPARATOR__"
+      "Pete Nance"
     ],
     "PF": [
       "Kyle Kuzma",
