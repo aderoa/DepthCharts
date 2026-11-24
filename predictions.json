@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T04:09:45.384Z",
+  "generated_at": "2026-11-24T04:09:59.348Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -884,11 +884,11 @@
       },
       "bench": {
         "PG": [
-          "Jordan McLaughlin",
           "Ja'Kobi Gillespie",
           "De'Aaron Fox"
         ],
         "SG": [
+          "Jordan McLaughlin",
           "David Jones",
           "Dylan Harper"
         ],
