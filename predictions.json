@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T00:05:12.526Z",
+  "generated_at": "2026-11-24T00:05:42.533Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -408,7 +408,7 @@
     "LAC": {
       "starters": {
         "PG": "Darius Garland",
-        "SG": "Max Strus",
+        "SG": "Derrick Jones",
         "SF": "Brandon Ingram",
         "PF": "Rui Hachimura",
         "C": "Brook Lopez"
@@ -420,12 +420,12 @@
           "Bradley Beal"
         ],
         "SG": [
+          "Max Strus",
           "Kris Dunn",
           "Jalen Pickett",
           "Jordan Miller"
         ],
         "SF": [
-          "Derrick Jones",
           "Gradey Dick",
           "Nick Martinelli"
         ],
