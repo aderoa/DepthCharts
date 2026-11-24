@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T23:39:56.725Z",
+  "generated_at": "2026-11-24T00:03:03.599Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -70,7 +70,7 @@
     },
     "BKN": {
       "starters": {
-        "PG": "Egor Demin",
+        "PG": "Mikel Brown",
         "SG": "Michael Porter",
         "SF": "Danny Wolf",
         "PF": "Julius Randle",
@@ -78,7 +78,7 @@
       },
       "bench": {
         "PG": [
-          "Mikel Brown",
+          "Egor Demin",
           "Ben Saraf",
           "Nolan Traore"
         ],
