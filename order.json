@@ -72,12 +72,9 @@
   },
   "BKN": {
     "PG": [
-      "Egor Demin",
       "Mikel Brown",
+      "Egor Demin",
       "Ben Saraf",
-      "__SPACER__",
-      "__SPACER__",
-      "__SPACER__",
       "__SPACER__",
       "__SEPARATOR__",
       "Nolan Traore"
@@ -85,27 +82,25 @@
     "SG": [
       "Michael Porter",
       "Keon Ellis",
-      "Terance Mann"
+      "Terance Mann",
+      "__SPACER__"
     ],
     "SF": [
       "Danny Wolf",
       "Chaney Johnson",
       "Drake Powell",
-      "__SPACER__",
       "__SPACER__"
     ],
     "PF": [
       "Julius Randle",
       "Moritz Wagner",
       "Joshua Jefferson",
-      "Tyler Bilodeau",
-      "__SPACER__"
+      "Tyler Bilodeau"
     ],
     "C": [
       "Day'Ron Sharpe",
       "Noah Clowney",
       "Josh Minott",
-      "__SPACER__",
       "Grant Nelson"
     ]
   },
