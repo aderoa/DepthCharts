@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T01:10:13.349Z",
+  "generated_at": "2026-11-24T01:10:23.646Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -396,10 +396,10 @@
         ],
         "PF": [
           "Jalen Slawson",
-          "Larry Nance Jr",
           "Aaron Nesmith"
         ],
         "C": [
+          "Larry Nance Jr",
           "Jay Huff",
           "Johnny Furphy"
         ]
