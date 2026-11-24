@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T02:49:06.006Z",
+  "generated_at": "2026-11-24T02:49:08.294Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -444,7 +444,7 @@
         "PG": "Luka Doncic",
         "SG": "Quentin Grimes",
         "SF": "Matisse Thybulle",
-        "PF": "Ziaire Williams",
+        "PF": "Jake LaRavia",
         "C": "Walker Kessler"
       },
       "bench": {
@@ -463,9 +463,9 @@
           "Chris Manon"
         ],
         "PF": [
+          "Ziaire Williams",
           "Kevon Looney",
-          "Arthur Kaluma",
-          "Jake LaRavia"
+          "Arthur Kaluma"
         ],
         "C": [
           "Sandro Mamukelashvili",
