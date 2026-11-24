@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T00:03:36.863Z",
+  "generated_at": "2026-11-24T00:03:45.209Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -679,7 +679,7 @@
         "PG": "Shai Gilgeous-Alexander",
         "SG": "Ajay Mitchell",
         "SF": "Jared McCain",
-        "PF": "Kenrich Williams",
+        "PF": "Micah Peavy",
         "C": "Isaiah Hartenstein"
       },
       "bench": {
@@ -697,7 +697,7 @@
           "Jalen Williams"
         ],
         "PF": [
-          "Micah Peavy",
+          "Kenrich Williams",
           "Jaylin Williams",
           "Chet Holmgren"
         ],
