@@ -881,21 +881,23 @@
   "SAC": {
     "PG": [
       "Darius Acuff",
-      "Emanuel Sharp",
       "Gabe Vincent",
+      "__SPACER__",
       "Sean Pedulla",
       "__SEPARATOR__",
       "Ben Simmons"
     ],
     "SG": [
-      "Zach LaVine",
       "Malik Monk",
+      "Emanuel Sharp",
       "Daeqwon Plowden",
-      "__SPACER__"
+      "__SEPARATOR__",
+      "Zach LaVine"
     ],
     "SF": [
       "De'Andre Hunter",
       "Leaky Black",
+      "__SPACER__",
       "Alex Karaban",
       "__SPACER__"
     ],
