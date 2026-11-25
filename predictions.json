@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T00:03:23.198Z",
+  "generated_at": "2026-11-25T00:04:16.503Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -272,8 +272,8 @@
     },
     "DET": {
       "starters": {
-        "PG": "Isaiah Joe",
-        "SG": "Daniss Jenkins",
+        "PG": "Daniss Jenkins",
+        "SG": "Isaiah Joe",
         "SF": "Kevin Huerter",
         "PF": "Ausar Thompson",
         "C": "John Collins"
