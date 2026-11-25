@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T20:17:59.483Z",
+  "generated_at": "2026-11-25T20:18:05.230Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -524,16 +524,16 @@
           "Dru Smith"
         ],
         "SF": [
+          "Nikola Jovic",
           "Tim Hardaway Jr",
           "Andrew Wiggins"
         ],
         "PF": [
-          "Bobby Portis",
           "Simone Fontecchio",
           "Keshad Johnson"
         ],
         "C": [
-          "Nikola Jovic",
+          "Bobby Portis",
           "Nick Richards",
           "Vladislav Goldin"
         ]
