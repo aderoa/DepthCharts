@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T22:19:04.326Z",
+  "generated_at": "2026-11-25T00:03:09.622Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -688,20 +688,20 @@
           "Nikola Topic"
         ],
         "SG": [
-          "Brooks Barnhizer",
           "Alex Caruso"
         ],
         "SF": [
-          "Nique Clifford",
+          "Brooks Barnhizer",
           "Jalen Williams"
         ],
         "PF": [
-          "Kenrich Williams",
+          "Nique Clifford",
+          "Josh Dix",
           "Jaylin Williams",
           "Chet Holmgren"
         ],
         "C": [
-          "Josh Dix",
+          "Kenrich Williams",
           "Aday Mara",
           "Thomas Sorber"
         ]
