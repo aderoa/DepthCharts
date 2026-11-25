@@ -706,32 +706,35 @@
     "PG": [
       "Shai Gilgeous-Alexander",
       "Bennett Stirtz",
+      "__SPACER__",
       "__SEPARATOR__",
       "Cason Wallace",
       "Nikola Topic"
     ],
     "SG": [
       "Ajay Mitchell",
-      "Brooks Barnhizer",
-      "__SEPARATOR__",
-      "Alex Caruso"
+      "Alex Caruso",
+      "__SPACER__"
     ],
     "SF": [
       "Jared McCain",
-      "Nique Clifford",
+      "Brooks Barnhizer",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jalen Williams"
     ],
     "PF": [
       "Micah Peavy",
-      "Kenrich Williams",
+      "Nique Clifford",
+      "Josh Dix",
       "__SEPARATOR__",
       "Jaylin Williams",
       "Chet Holmgren"
     ],
     "C": [
       "Isaiah Hartenstein",
-      "Josh Dix",
+      "Kenrich Williams",
+      "__SPACER__",
       "__SEPARATOR__",
       "Aday Mara",
       "Thomas Sorber"
