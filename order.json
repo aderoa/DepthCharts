@@ -216,6 +216,7 @@
       "Kyrie Irving",
       "Walter Clayton",
       "Marcus Sasser",
+      "__SPACER__",
       "__SEPARATOR__",
       "Sergio De Larrea"
     ],
@@ -223,12 +224,12 @@
       "Cooper Flagg",
       "Zaccharie Risacher",
       "Max Christie",
-      "Jett Howard",
-      "__SEPARATOR__"
+      "__SPACER__"
     ],
     "SF": [
       "Caleb Martin",
       "Naji Marshall",
+      "Jett Howard",
       "__SPACER__",
       "__SEPARATOR__",
       "Tarik Biberovic"
@@ -237,6 +238,7 @@
       "PJ Washington",
       "Santiago Aldama",
       "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Tobi Lawal"
     ],
@@ -244,6 +246,7 @@
       "Daniel Gafford",
       "Morez Johnson",
       "Moussa Cisse",
+      "__SPACER__",
       "__SEPARATOR__",
       "Dereck Lively"
     ]
