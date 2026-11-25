@@ -282,14 +282,14 @@
   },
   "DET": {
     "PG": [
-      "Isaiah Joe",
+      "Daniss Jenkins",
       "Elijah Harkless",
       "__SPACER__",
       "__SEPARATOR__",
       "Cade Cunningham"
     ],
     "SG": [
-      "Daniss Jenkins",
+      "Isaiah Joe",
       "Chaz Lanier",
       "__SPACER__",
       "__SEPARATOR__",
@@ -299,6 +299,7 @@
       "Kevin Huerter",
       "Ron Holland",
       "Isaac Jones",
+      "__SEPARATOR__",
       "Duncan Robinson"
     ],
     "PF": [
