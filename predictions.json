@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T01:15:25.592Z",
+  "generated_at": "2026-11-26T01:24:37.048Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -313,12 +313,12 @@
       },
       "bench": {
         "PG": [
+          "Brandon Williams",
           "LJ Cryer",
           "Stephen Curry"
         ],
         "SG": [
-          "Will Richard",
-          "Brandon Williams"
+          "Will Richard"
         ],
         "SF": [
           "Georges Niang",
