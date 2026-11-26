@@ -910,36 +910,36 @@
   "SAS": {
     "PG": [
       "Stephon Castle",
-      "Jordan McLaughlin",
+      "__SPACER__",
       "Ja'Kobi Gillespie",
       "__SEPARATOR__",
       "De'Aaron Fox"
     ],
     "SG": [
       "Julian Champagnie",
-      "Keldon Johnson",
+      "Jordan McLaughlin",
       "David Jones",
       "__SEPARATOR__",
       "Dylan Harper"
     ],
     "SF": [
       "Harrison Barnes",
-      "Carter Bryant",
-      "__SPACER__",
+      "Keldon Johnson",
       "__SEPARATOR__",
       "Tobias Harris"
     ],
     "PF": [
       "Devin Vassell",
-      "Tarris Reed",
+      "Carter Bryant",
       "Maliq Brown",
       "__SEPARATOR__",
       "Jayden Quaintance"
     ],
     "C": [
       "Victor Wembanyama",
-      "__SPACER__",
-      "Luke Kornet"
+      "Tarris Reed",
+      "Luke Kornet",
+      "__SPACER__"
     ]
   },
   "TOR": {
