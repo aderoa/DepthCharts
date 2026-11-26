@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T03:45:57.786Z",
+  "generated_at": "2026-11-26T03:46:00.924Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -893,16 +893,16 @@
           "Dylan Harper"
         ],
         "SF": [
+          "Carter Bryant",
           "Tobias Harris"
         ],
         "PF": [
-          "Carter Bryant",
+          "Tarris Reed",
           "Maliq Brown",
           "Jayden Quaintance"
         ],
         "C": [
-          "Luke Kornet",
-          "Tarris Reed"
+          "Luke Kornet"
         ]
       }
     },
