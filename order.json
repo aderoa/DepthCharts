@@ -916,6 +916,7 @@
     "PG": [
       "Stephon Castle",
       "Ja'Kobi Gillespie",
+      "__SPACER__",
       "__SEPARATOR__",
       "De'Aaron Fox"
     ],
@@ -923,7 +924,6 @@
       "Julian Champagnie",
       "Jordan McLaughlin",
       "David Jones",
-      "__SPACER__",
       "__SEPARATOR__",
       "Dylan Harper"
     ],
@@ -942,11 +942,9 @@
       "Jayden Quaintance"
     ],
     "C": [
+      "Victor Wembanyama",
       "Luke Kornet",
-      "Tarris Reed",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Victor Wembanyama"
+      "Tarris Reed"
     ]
   },
   "TOR": {
