@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T01:37:11.605Z",
+  "generated_at": "2026-11-26T02:09:06.247Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -879,7 +879,7 @@
         "SG": "Julian Champagnie",
         "SF": "Harrison Barnes",
         "PF": "Devin Vassell",
-        "C": "Luke Kornet"
+        "C": "Victor Wembanyama"
       },
       "bench": {
         "PG": [
@@ -901,8 +901,8 @@
           "Jayden Quaintance"
         ],
         "C": [
-          "Tarris Reed",
-          "Victor Wembanyama"
+          "Luke Kornet",
+          "Tarris Reed"
         ]
       }
     },
