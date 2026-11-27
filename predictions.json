@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T20:54:53.286Z",
+  "generated_at": "2026-11-27T20:54:58.549Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -142,7 +142,7 @@
         "SG": "Buddy Hield",
         "SF": "Isaac Okoro",
         "PF": "Matas Buzelis",
-        "C": "Nicolas Claxton"
+        "C": "Jalen Smith"
       },
       "bench": {
         "PG": [
@@ -159,13 +159,13 @@
           "Leonard Miller"
         ],
         "PF": [
+          "Zach Collins",
           "Noa Essengue",
           "Caleb Wilson"
         ],
         "C": [
-          "Zach Collins",
-          "Tobe Awaka",
-          "Jalen Smith"
+          "Nicolas Claxton",
+          "Tobe Awaka"
         ]
       }
     },
