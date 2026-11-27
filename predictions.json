@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T05:02:15.078Z",
+  "generated_at": "2026-11-27T20:54:53.286Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -155,11 +155,11 @@
           "Norman Powell"
         ],
         "SF": [
-          "Patrick Williams"
+          "Patrick Williams",
+          "Leonard Miller"
         ],
         "PF": [
           "Noa Essengue",
-          "Leonard Miller",
           "Caleb Wilson"
         ],
         "C": [
