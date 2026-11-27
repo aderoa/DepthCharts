@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T23:32:39.610Z",
+  "generated_at": "2026-11-27T23:48:35.350Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -575,19 +575,19 @@
     },
     "MIN": {
       "starters": {
-        "PG": "Bones Hyland",
-        "SG": "Ayo Dosunmu",
+        "PG": "Ayo Dosunmu",
+        "SG": "Terrence Shannon",
         "SF": "Jaden McDaniels",
         "PF": "Jonathan Kuminga",
         "C": "Rudy Gobert"
       },
       "bench": {
         "PG": [
+          "Bones Hyland",
           "Zyon Pullin",
           "LaMelo Ball"
         ],
         "SG": [
-          "Terrence Shannon",
           "Donte DiVincenzo"
         ],
         "SF": [
