@@ -776,25 +776,26 @@
   "PHI": {
     "PG": [
       "Tyrese Maxey",
-      "__SPACER__",
-      "Labaron Philon"
+      "Labaron Philon",
+      "__SPACER__"
     ],
     "SG": [
       "VJ Edgecombe",
       "Anfernee Simons",
-      "Caleb Love"
+      "Caleb Love",
+      "Jaylen Brown"
     ],
     "SF": [
-      "Dean Wade",
       "Kentavious Caldwell-Pope",
+      "Justin Edwards",
       "Rayan Rupert",
       "__SEPARATOR__",
-      "Jaylen Brown"
+      "Dean Wade"
     ],
     "PF": [
       "LeBron James",
       "Dominick Barlow",
-      "Justin Edwards",
+      "__SPACER__",
       "__SEPARATOR__",
       "Joel Embiid"
     ],
