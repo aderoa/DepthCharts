@@ -459,17 +459,15 @@
       "Luka Doncic",
       "Collin Sexton",
       "Jaden Hardy",
-      "__SPACER__",
       "__SPACER__"
     ],
     "SG": [
+      "Austin Reaves",
       "Quentin Grimes",
       "Cameron Carr",
       "Bronny James",
       "__SPACER__",
-      "__SPACER__",
-      "__SEPARATOR__",
-      "Austin Reaves"
+      "__SEPARATOR__"
     ],
     "SF": [
       "Matisse Thybulle",
@@ -481,15 +479,12 @@
       "Jake LaRavia",
       "Jarred Vanderbilt",
       "Kevon Looney",
-      "Arthur Kaluma",
-      "__SPACER__",
-      "__SPACER__"
+      "Arthur Kaluma"
     ],
     "C": [
       "Walker Kessler",
       "Sandro Mamukelashvili",
       "Carson Cooper",
-      "__SPACER__",
       "__SPACER__"
     ]
   },
