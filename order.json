@@ -87,15 +87,17 @@
     ],
     "SF": [
       "Danny Wolf",
-      "Moritz Wagner",
       "Drake Powell",
       "Chaney Johnson",
-      "__SPACER__"
+      "__SPACER__",
+      "__SEPARATOR__"
     ],
     "PF": [
       "Julius Randle",
       "Grant Nelson",
-      "Josh Minott"
+      "Josh Minott",
+      "__SPACER__",
+      "Moritz Wagner"
     ],
     "C": [
       "Day'Ron Sharpe",
