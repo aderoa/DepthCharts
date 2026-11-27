@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T20:54:58.549Z",
+  "generated_at": "2026-11-27T20:55:22.237Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -440,7 +440,7 @@
     "LAL": {
       "starters": {
         "PG": "Luka Doncic",
-        "SG": "Quentin Grimes",
+        "SG": "Austin Reaves",
         "SF": "Matisse Thybulle",
         "PF": "Jake LaRavia",
         "C": "Walker Kessler"
@@ -451,9 +451,9 @@
           "Jaden Hardy"
         ],
         "SG": [
+          "Quentin Grimes",
           "Cameron Carr",
-          "Bronny James",
-          "Austin Reaves"
+          "Bronny James"
         ],
         "SF": [
           "Ziaire Williams",
