@@ -385,12 +385,12 @@
   },
   "IND": {
     "PG": [
+      "Andrew Nembhard",
       "Braden Smith",
       "Quenton Jackson",
       "__SPACER__",
       "__SEPARATOR__",
-      "Tyrese Haliburton",
-      "Andrew Nembhard"
+      "Tyrese Haliburton"
     ],
     "SG": [
       "Kelly Oubre",
@@ -408,14 +408,14 @@
     ],
     "PF": [
       "Pascal Siakam",
-      "Jalen Slawson"
+      "Jalen Slawson",
+      "Johnny Furphy"
     ],
     "C": [
       "Ivica Zubac",
       "Larry Nance Jr",
       "Jay Huff",
-      "__SEPARATOR__",
-      "Johnny Furphy"
+      "__SEPARATOR__"
     ]
   },
   "LAC": {
