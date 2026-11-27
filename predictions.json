@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T20:57:04.340Z",
+  "generated_at": "2026-11-27T20:57:08.168Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -808,7 +808,7 @@
     },
     "POR": {
       "starters": {
-        "PG": "Damian Lillard",
+        "PG": "Scoot Henderson",
         "SG": "Sidy Cissoko",
         "SF": "Toumani Camara",
         "PF": "Deni Avdija",
@@ -816,10 +816,10 @@
       },
       "bench": {
         "PG": [
-          "Jrue Holiday"
+          "Jrue Holiday",
+          "Damian Lillard"
         ],
         "SG": [
-          "Scoot Henderson",
           "John Tonje",
           "Ja Morant"
         ],
