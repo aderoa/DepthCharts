@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T23:03:17.128Z",
+  "generated_at": "2026-11-27T23:32:39.610Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -745,7 +745,7 @@
       "starters": {
         "PG": "Tyrese Maxey",
         "SG": "VJ Edgecombe",
-        "SF": "Dean Wade",
+        "SF": "Kentavious Caldwell-Pope",
         "PF": "LeBron James",
         "C": "Jabari Walker"
       },
@@ -755,16 +755,16 @@
         ],
         "SG": [
           "Anfernee Simons",
-          "Caleb Love"
+          "Caleb Love",
+          "Jaylen Brown"
         ],
         "SF": [
-          "Kentavious Caldwell-Pope",
+          "Justin Edwards",
           "Rayan Rupert",
-          "Jaylen Brown"
+          "Dean Wade"
         ],
         "PF": [
           "Dominick Barlow",
-          "Justin Edwards",
           "Joel Embiid"
         ],
         "C": [
