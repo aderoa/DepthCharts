@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T04:59:17.262Z",
+  "generated_at": "2026-11-27T04:59:20.228Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -381,10 +381,10 @@
       "bench": {
         "PG": [
           "Braden Smith",
-          "Quenton Jackson",
           "Tyrese Haliburton"
         ],
         "SG": [
+          "Quenton Jackson",
           "TJ McConnell"
         ],
         "SF": [
