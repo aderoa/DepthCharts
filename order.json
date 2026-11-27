@@ -591,9 +591,9 @@
   },
   "MIN": {
     "PG": [
-      "LaMelo Ball",
       "Bones Hyland",
-      "Zyon Pullin"
+      "Zyon Pullin",
+      "LaMelo Ball"
     ],
     "SG": [
       "Ayo Dosunmu",
@@ -606,7 +606,6 @@
       "Jaden McDaniels",
       "Cody Williams",
       "Isaiah Evans",
-      "__SPACER__",
       "__SEPARATOR__",
       "Anthony Edwards"
     ],
@@ -620,8 +619,7 @@
     "C": [
       "Rudy Gobert",
       "Joan Beringer",
-      "Rocco Zikarsky",
-      "__SEPARATOR__"
+      "Rocco Zikarsky"
     ]
   },
   "NOP": {
