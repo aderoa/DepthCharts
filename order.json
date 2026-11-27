@@ -839,14 +839,15 @@
   },
   "POR": {
     "PG": [
-      "Damian Lillard",
+      "Scoot Henderson",
       "Jrue Holiday",
       "__SPACER__",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Damian Lillard"
     ],
     "SG": [
       "Sidy Cissoko",
-      "Scoot Henderson",
       "John Tonje",
       "__SEPARATOR__",
       "Ja Morant"
@@ -869,6 +870,7 @@
       "Donovan Clingan",
       "Branden Carlson",
       "Yang Hansen",
+      "__SEPARATOR__",
       "Chris Youngblood"
     ]
   },
