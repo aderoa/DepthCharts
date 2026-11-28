@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T00:38:45.229Z",
+  "generated_at": "2026-11-28T00:43:59.893Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -817,25 +817,25 @@
       "bench": {
         "PG": [
           "Jrue Holiday",
-          "Damian Lillard"
+          "Damian Lillard",
+          "Ja Morant"
         ],
         "SG": [
           "Jayson Kent",
           "John Tonje",
-          "Ja Morant"
+          "Shaedon Sharpe"
         ],
         "SF": [
           "Micah Potter",
-          "Shaedon Sharpe"
+          "Vit Krejci"
         ],
         "PF": [
           "Robert Williams",
-          "Vit Krejci"
+          "Chris Youngblood"
         ],
         "C": [
           "Branden Carlson",
-          "Yang Hansen",
-          "Chris Youngblood"
+          "Yang Hansen"
         ]
       }
     },
