@@ -785,6 +785,7 @@
       "VJ Edgecombe",
       "Anfernee Simons",
       "Caleb Love",
+      "__SEPARATOR__",
       "Jaylen Brown"
     ],
     "SF": [
@@ -798,8 +799,7 @@
       "LeBron James",
       "Dominick Barlow",
       "__SPACER__",
-      "__SEPARATOR__",
-      "Joel Embiid"
+      "__SEPARATOR__"
     ],
     "C": [
       "Jabari Walker",
