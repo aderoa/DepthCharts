@@ -843,8 +843,8 @@
   },
   "POR": {
     "PG": [
-      "Scoot Henderson",
       "Jrue Holiday",
+      "Scoot Henderson",
       "__SPACER__",
       "__SEPARATOR__",
       "Damian Lillard",
@@ -874,8 +874,9 @@
     "C": [
       "Donovan Clingan",
       "Branden Carlson",
-      "Yang Hansen",
-      "__SEPARATOR__"
+      "__SPACER__",
+      "__SEPARATOR__",
+      "Yang Hansen"
     ]
   },
   "SAC": {
