@@ -210,16 +210,17 @@
   },
   "DAL": {
     "PG": [
-      "Kyrie Irving",
       "Walter Clayton",
       "Marcus Sasser",
+      "__SPACER__",
       "__SEPARATOR__",
-      "Sergio De Larrea"
+      "Kyrie Irving"
     ],
     "SG": [
       "Cooper Flagg",
       "Naji Marshall",
-      "Max Christie"
+      "Max Christie",
+      "Sergio De Larrea"
     ],
     "SF": [
       "Caleb Martin",
