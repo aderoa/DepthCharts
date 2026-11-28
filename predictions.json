@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T02:00:52.125Z",
+  "generated_at": "2026-11-28T02:04:38.223Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -485,17 +485,18 @@
         ],
         "SG": [
           "Cam Spencer",
-          "Jahmai Mashack",
           "Richie Saunders"
         ],
         "SF": [
           "Taylor Hendricks",
-          "Karim Lopez",
+          "Jahmai Mashack",
           "GG Jackson"
         ],
         "PF": [
           "Olivier-Maxence Prosper",
-          "Cameron Boozer"
+          "Karim Lopez",
+          "Cameron Boozer",
+          "Jerami Grant"
         ],
         "C": [
           "Quinten Post",
