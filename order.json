@@ -393,12 +393,12 @@
     "SG": [
       "Kelly Oubre",
       "Quenton Jackson",
+      "__SPACER__",
       "__SEPARATOR__",
       "TJ McConnell"
     ],
     "SF": [
       "Aaron Nesmith",
-      "__SPACER__",
       "Jarace Walker",
       "Kobe Brown",
       "__SEPARATOR__",
@@ -408,13 +408,13 @@
       "Pascal Siakam",
       "Obi Toppin",
       "Jalen Slawson",
+      "__SEPARATOR__",
       "Johnny Furphy"
     ],
     "C": [
       "Ivica Zubac",
-      "Larry Nance Jr",
       "Jay Huff",
-      "__SEPARATOR__"
+      "Larry Nance Jr"
     ]
   },
   "LAC": {
