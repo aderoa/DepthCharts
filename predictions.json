@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T00:08:27.372Z",
+  "generated_at": "2026-11-28T00:24:30.992Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -204,7 +204,7 @@
     },
     "DAL": {
       "starters": {
-        "PG": "Kyrie Irving",
+        "PG": "Walter Clayton",
         "SG": "Cooper Flagg",
         "SF": "Caleb Martin",
         "PF": "Zaccharie Risacher",
@@ -212,13 +212,13 @@
       },
       "bench": {
         "PG": [
-          "Walter Clayton",
           "Marcus Sasser",
-          "Sergio De Larrea"
+          "Kyrie Irving"
         ],
         "SG": [
           "Naji Marshall",
-          "Max Christie"
+          "Max Christie",
+          "Sergio De Larrea"
         ],
         "SF": [
           "PJ Washington",
