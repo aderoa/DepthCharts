@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T01:44:40.467Z",
+  "generated_at": "2026-11-28T01:44:46.457Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -887,11 +887,11 @@
         ],
         "SG": [
           "Julian Champagnie",
-          "Jordan McLaughlin",
-          "David Jones"
+          "Jordan McLaughlin"
         ],
         "SF": [
           "Harrison Barnes",
+          "David Jones",
           "Tobias Harris"
         ],
         "PF": [
