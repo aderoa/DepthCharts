@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T00:38:24.169Z",
+  "generated_at": "2026-11-28T00:38:45.229Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -38,7 +38,7 @@
     "BOS": {
       "starters": {
         "PG": "Derrick White",
-        "SG": "Sam Hauser",
+        "SG": "Hugo Gonzalez",
         "SF": "Paul George",
         "PF": "Jayson Tatum",
         "C": "Neemias Queta"
@@ -53,11 +53,11 @@
           "Devin Carter"
         ],
         "SF": [
-          "Baylor Scheierman",
+          "Sam Hauser",
           "Dillon Mitchell"
         ],
         "PF": [
-          "Hugo Gonzalez",
+          "Baylor Scheierman",
           "Jordan Walsh"
         ],
         "C": [
