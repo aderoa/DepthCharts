@@ -498,23 +498,24 @@
     "SG": [
       "Cedric Coward",
       "Cam Spencer",
-      "Jahmai Mashack",
+      "__SPACER__",
       "__SEPARATOR__",
       "Richie Saunders"
     ],
     "SF": [
       "Jaylen Wells",
       "Taylor Hendricks",
-      "Karim Lopez",
+      "Jahmai Mashack",
       "__SEPARATOR__",
       "GG Jackson"
     ],
     "PF": [
       "Kris Murray",
       "Olivier-Maxence Prosper",
-      "__SPACER__",
+      "Karim Lopez",
       "__SEPARATOR__",
-      "Cameron Boozer"
+      "Cameron Boozer",
+      "Jerami Grant"
     ],
     "C": [
       "Zach Edey",
