@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T01:11:16.236Z",
+  "generated_at": "2026-11-28T01:39:17.985Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -945,31 +945,31 @@
         "SG": "Darryn Peterson",
         "SF": "Ace Bailey",
         "PF": "Josh Green",
-        "C": "Mo Bamba"
+        "C": "Jusuf Nurkic"
       },
       "bench": {
         "PG": [
-          "Isaiah Collier"
+          "Isaiah Collier",
+          "Kobe Bufkin"
         ],
         "SG": [
           "Brice Sensabaugh",
-          "Kobe Bufkin",
+          "Harrison Ingram",
           "Lauri Markkanen"
         ],
         "SF": [
           "Josh Okogie",
-          "Harrison Ingram",
           "Jaren Jackson Jr"
         ],
         "PF": [
           "Sviatoslav Mykhailiuk",
-          "Jusuf Nurkic",
           "Jonas Aidoo"
         ],
         "C": [
+          "Jaxson Hayes",
           "Kyle Filipowski",
           "Tony Bradley",
-          "Jaxson Hayes"
+          "Mo Bamba"
         ]
       }
     },
