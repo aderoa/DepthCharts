@@ -784,10 +784,10 @@
     "SG": [
       "VJ Edgecombe",
       "Anfernee Simons",
-      "Caleb Love",
-      "__SEPARATOR__"
+      "Caleb Love"
     ],
     "SF": [
+      "LeBron James",
       "Kentavious Caldwell-Pope",
       "Justin Edwards",
       "Rayan Rupert",
@@ -795,9 +795,9 @@
       "Jaylen Brown"
     ],
     "PF": [
-      "LeBron James",
       "Dominick Barlow",
       "Adem Bona",
+      "__SEPARATOR__",
       "Dean Wade"
     ],
     "C": [
