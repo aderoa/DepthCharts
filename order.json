@@ -912,22 +912,22 @@
   },
   "SAS": {
     "PG": [
+      "De'Aaron Fox",
       "Stephon Castle",
-      "__SPACER__",
       "Ja'Kobi Gillespie",
-      "__SEPARATOR__",
-      "De'Aaron Fox"
+      "__SPACER__"
     ],
     "SG": [
       "Julian Champagnie",
       "Jordan McLaughlin",
       "David Jones",
-      "__SEPARATOR__",
       "Dylan Harper"
     ],
     "SF": [
       "Harrison Barnes",
       "Keldon Johnson",
+      "__SPACER__",
+      "__SPACER__",
       "__SEPARATOR__",
       "Tobias Harris"
     ],
@@ -935,6 +935,7 @@
       "Devin Vassell",
       "Carter Bryant",
       "Maliq Brown",
+      "__SPACER__",
       "__SEPARATOR__",
       "Jayden Quaintance"
     ],
