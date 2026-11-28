@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T00:08:18.817Z",
+  "generated_at": "2026-11-28T00:08:25.389Z",
   "teams": {
     "ATL": {
       "starters": {
@@ -492,17 +492,17 @@
         "SF": [
           "Taylor Hendricks",
           "Karim Lopez",
+          "GG Jackson",
           "Jerami Grant"
         ],
         "PF": [
           "Olivier-Maxence Prosper",
-          "GG Jackson"
+          "Cameron Boozer"
         ],
         "C": [
           "Quinten Post",
-          "Isaiah Stewart",
           "Lawson Lovering",
-          "Cameron Boozer"
+          "Isaiah Stewart"
         ]
       }
     },
